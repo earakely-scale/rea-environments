@@ -85,7 +85,7 @@ def main():
                           f"Use only the environment's tools. Answer with the value only, nothing else.")
         steps = [
             {"id": "env", "type": "deploy_env", "env_id": a.env, "sandbox_type": "local"},
-            {"id": "agent", "type": "deploy_agent", "agent_name": a.agent, "env_ids": [a.env], "env_step_id": "env", "sandbox_type": "local"},
+            {"id": "agent", "type": "deploy_agent", "a2a_agent_id": a.agent, "agent_name": a.agent, "env_ids": [a.env], "env_step_id": "env", "sandbox_type": "local"},
             {"id": "ask", "type": "prompt_agent", "agent_name": a.agent, "prompt_id": "q", "prompt": prompt, "max_turns": 6, **({"model": a.model} if a.model else {})},
             {"id": "grade", "type": "agent_prompt_response_verifier", "prompt_id": "q", "verifier_id": "retrieval",
              "criteria": [{"type": "response_contains", "criterion": f"response states {field}", "needles": [value]}]},
