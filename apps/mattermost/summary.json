@@ -1,0 +1,156 @@
+{
+ "app": "mattermost",
+ "app_version": {
+  "x_version_id": "12.0.0.38519854955.1075cfe2b49072f29d81aa34ec1eacddd79e439aa930a34a6835d60c6c8579a8.false",
+  "client_version": "12.0.0",
+  "build_number": "38519854955",
+  "build_hash": "1f5e0e9ba40da7ba0741659346e0a385a623d6a4",
+  "build_date": "Wed Oct 14 06:07:45 UTC 2026",
+  "ping_status": "OK"
+ },
+ "images": {
+  "mattermost": "mattermost/mattermost-team-edition@sha256:c213d4eb01c2973a3814f57dab4e0629287b92896cb2f98d27134aa62ee5c3cc",
+  "postgres": "postgres@sha256:721873c34ceb9f8d8fc265984940dc982404c105f19ad51be9fdc5970a6080ea"
+ },
+ "toolchain": {
+  "playwright_core": "1.58.2",
+  "chromium": "155.0.8059.79 (snap, --no-sandbox)",
+  "node": "v24.22.0",
+  "docker": "29.9.1",
+  "compose": "v5.6.0",
+  "python": "3.12.3",
+  "vm": "Ubuntu 24.04 amd64"
+ },
+ "seed": {
+  "team": "lighthouse-rota",
+  "channels": 4,
+  "users": 3,
+  "root_posts": 12,
+  "thread_replies": 3,
+  "reactions": 1,
+  "pinned": 1,
+  "private_channels": 1
+ },
+ "capture": {
+  "scope": {
+   "keep_regex": "^/api/v4/",
+   "drop_regex": "login|logout|signup|password|session|token|oauth|csrf|roles/names|/image|limits|/agents|properties/groups|status/ids|users/ids|config/client|license/client|trial-license|users/stats|analytics|system/notices|client_perf|access_control|drafts|/unread|members/me/view|channel_members|categories|preferences|threads$",
+   "max_body": 60000,
+   "max_records": 140
+  },
+  "scoped_records": 129,
+  "scoped_har_bytes": 322821,
+  "scoped_har_sha256": "e5874c112d0ab28d94c68595073b1e0512f0cadc8a47b5bf40914ef8d4cf470f",
+  "methods": {
+   "GET": 119,
+   "PUT": 2,
+   "POST": 7,
+   "DELETE": 1
+  },
+  "statuses": {
+   "200": 127,
+   "201": 1,
+   "404": 1
+  },
+  "excluded_by_reason": {
+   "other-origin": 0,
+   "path": 796,
+   "non-json": 0,
+   "auth": 323,
+   "big-body": 0,
+   "over-max": 0
+  },
+  "scope_tool_summary": {
+   "kept": 129,
+   "dropped": {
+    "other-origin": 0,
+    "path": 796,
+    "non-json": 0,
+    "auth": 323,
+    "big-body": 0,
+    "over-max": 0
+   },
+   "methods": {
+    "GET": 119,
+    "PUT": 2,
+    "POST": 7,
+    "DELETE": 1
+   },
+   "bytes": 322218
+  }
+ },
+ "credential_grep": {
+  "MM_ADMIN_PASS_hits": 0,
+  "SEED_USER_PASS_hits": 0,
+  "PG_PASS_hits": 0,
+  "hf__hits": 0,
+  "ghp__hits": 0,
+  "Bearer _hits": 0,
+  "MMAUTHTOKEN_hits": 0,
+  "MMCSRF_hits": 0
+ },
+ "rea": {
+  "version": "6.6.0",
+  "capture_evidence_id": "ev_7cc07ebe56003462bbd033d9c12c3a92d92badddff6f9199083c68e9a60357ba",
+  "capture_sensitive_value_count": 0,
+  "capture_total_records": 129,
+  "manifest_view_evidence_id": "ev_97f3c9f89c92adf208d73e8e8e5de3dcb34c5a19fac09fbb29280d423f3f5342",
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "template_rules": [
+   "after-uid-literal",
+   "opaque-token",
+   "sibling-variance"
+  ],
+  "origin": "http://127.0.0.1:3104",
+  "name": "127-0-0-1-3104",
+  "tool_count": 37,
+  "tools_by_method": {
+   "GET": 28,
+   "POST": 6,
+   "DELETE": 1,
+   "PUT": 2
+  },
+  "params_by_rule": {
+   "opaque-token": 32,
+   "numeric": 1
+  },
+  "params_total": 33,
+  "query_names_count": 16,
+  "query_names": [
+   "collapsedThreads",
+   "collapsedThreadsExtended",
+   "direction",
+   "exclude_files_count",
+   "exclude_policy_constrained",
+   "extended",
+   "for_directory",
+   "in_channel",
+   "in_team",
+   "include_deleted",
+   "include_total_count",
+   "page",
+   "perPage",
+   "per_page",
+   "skipFetchThreads",
+   "sort"
+  ],
+  "excluded_groups": 0,
+  "excluded_groups_by_reason": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "templated_groups": 26,
+  "norules": {
+   "manifest_view_evidence_id": "ev_520a920a6a48370899829dcef7b21b4fdb812eb8f8b9abda7c5784cb1d1dfdaf",
+   "confidence": "inferred",
+   "tool_count": 58,
+   "templated_groups": 1,
+   "params_by_rule": {
+    "numeric": 1
+   }
+  }
+ }
+}

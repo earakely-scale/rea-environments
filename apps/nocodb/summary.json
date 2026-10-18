@@ -1,0 +1,216 @@
+{
+ "app": "nocodb",
+ "app_image": "nocodb/nocodb:latest",
+ "app_image_digest": "sha256:27d2fd14670db892ac721849d4f071edce47e386a1e74c921a0162644b9c213d",
+ "app_version": "2026.09.1",
+ "rea_version": "6.6.0",
+ "capture": {
+  "scoped_har": "nocodb.scoped.har",
+  "scoped_har_sha256": "fe7e31fddd225d7bd00ecd8739fd0a2a474ef7a36aa79398900bc81499093f65",
+  "scoped_har_bytes": 324797,
+  "scoped_records": 105,
+  "methods_in_har": {
+   "GET": 80,
+   "POST": 23,
+   "PATCH": 1,
+   "DELETE": 1
+  },
+  "scope_summary": {
+   "kept": 105,
+   "dropped": {
+    "other-origin": 24,
+    "path": 2534,
+    "non-json": 0,
+    "auth": 11,
+    "big-body": 2,
+    "over-max": 0
+   },
+   "methods": {
+    "GET": 80,
+    "POST": 23,
+    "PATCH": 1,
+    "DELETE": 1
+   },
+   "bytes": 324091
+  },
+  "credential_grep_hits": 0,
+  "credential_grep_patterns": [
+   "<admin password literal>",
+   "hf_",
+   "ghp_",
+   "Bearer ",
+   "eyJ (JWT prefix)",
+   "xc-auth",
+   "refresh_token"
+  ],
+  "scope_command": "scope_har.py nocodb.har nocodb.scoped.har --origin http://127.0.0.1:3103 --keep-regex ^/api/ --drop-regex login|logout|signin|signup|password|session|token|oauth|csrf|/auth/ --max-records 150 (default --max-body 60000)",
+  "dropped_detail": {
+   "big-body": [
+    {
+     "method": "GET",
+     "path": "/api/v2/internal/nc/{baseId}",
+     "query": "operation=workflowNodes",
+     "bytes": 262203,
+     "count": 2
+    }
+   ],
+   "auth": {
+    "POST /auth/token/refresh": 1,
+    "POST /api/v1/auth/user/signin": 1,
+    "GET /api/v1/auth/user/me": 9
+   },
+   "other-origin": {
+    "app.chatwoot.com (support widget loaded by the NocoDB UI; not our data)": 6,
+    "data:/blob: URLs": 18
+   },
+   "path (non-/api/ same-origin: SPA shell, JS/CSS bundles, fonts, icons)": 2534
+  },
+  "ui_pages_visited": [
+   "/ (signin form)",
+   "/nc/{baseId} (base overview)",
+   "/nc/{baseId}/{vesselsTableId}/{viewId}/vessels-vessels (grid view, sidebar click)",
+   "/nc/{baseId}/{portCallsTableId}/{viewId}/port-calls-port-calls (grid view, sidebar click)",
+   "...port-calls-port-calls?page=field (table details: fields)"
+  ],
+  "scripted_sequence_calls": 37,
+  "raw_har_api_requests_seen": 117
+ },
+ "evidence": {
+  "capture_evidence_id": "ev_c2296ec7318f8978720a75499d6fb34a6c5f5f8943f2da32acc1eaaad450e08e",
+  "capture_sha256": "fe7e31fddd225d7bd00ecd8739fd0a2a474ef7a36aa79398900bc81499093f65",
+  "capture_total_records": 105,
+  "manifest_view_evidence_id": "ev_12b6ec59bee2946b7b74a675d71335b5c56a2c026712583c6342ca0a752d8616",
+  "manifest_parent_evidence_id": "ev_c2296ec7318f8978720a75499d6fb34a6c5f5f8943f2da32acc1eaaad450e08e",
+  "manifest_view_digest": "67dc3ce3bade67356c5b4eba4430e17303a59e7faeada017a85f1e5a54f168de",
+  "manifest_norules_view_evidence_id": "ev_98629f8a878998eb1e29ca6a1800dc5fa0f2e1ef92db8f87bbc90e56dbb7b961",
+  "manifest_norules_view_digest": "52c13ca4216884e3184306791d12d591a5b82eae1631f6498ad9f0a6758de8b2"
+ },
+ "manifest": {
+  "origin": "http://127.0.0.1:3103",
+  "name": "127-0-0-1-3103",
+  "template_rules": [
+   "after-uid-literal",
+   "opaque-token",
+   "sibling-variance"
+  ],
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 28,
+   "total": 28,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "tools": 28,
+  "tools_by_method": {
+   "GET": 23,
+   "POST": 3,
+   "DELETE": 1,
+   "PATCH": 1
+  },
+  "templated_groups": 20,
+  "params_total": 25,
+  "params_by_rule": {
+   "opaque-token": 24,
+   "numeric": 1
+  },
+  "query_names": 13,
+  "query_name_list": [
+   "fields",
+   "includeM2M",
+   "includeSortAndFilterColumns",
+   "include_button_filter_columns",
+   "include_row_color",
+   "is_read",
+   "limit",
+   "offset",
+   "operation",
+   "parent_id",
+   "sort",
+   "tableId",
+   "where"
+  ],
+  "excluded_groups": 0,
+  "excluded_by_reason": {},
+  "unknowns": [
+   {
+    "kind": "authorization-model",
+    "statement": "Authorization headers and cookies are structurally excluded from captures; the manifest states no authorization model."
+   },
+   {
+    "kind": "response-semantics",
+    "statement": "Recorded statuses and bodies are retained only as pointers to parent records; the manifest states no response semantics."
+   },
+   {
+    "kind": "state-transition",
+    "statement": "Recorded exchanges are independent observations; the manifest states no ordering, side effects or state transitions between tools."
+   }
+  ],
+  "limitations_count": 9,
+  "tool_names": [
+   "get_db_data_noco_views_by_uid_uid_2_uid_3",
+   "get_db_data_noco_views_count_by_uid_uid_2_uid_3",
+   "get_db_meta_nocodb_info",
+   "get_db_meta_projects_by_uid",
+   "get_db_meta_projects_tables_by_uid",
+   "get_db_meta_projects_users_by_uid",
+   "get_license_status",
+   "get_notifications",
+   "get_version",
+   "get_workspaces",
+   "get_internal_nc_by_uid",
+   "post_internal_nc_by_uid",
+   "post_internal_wqsswtut_by_uid",
+   "get_meta_bases",
+   "get_meta_bases_by_uid",
+   "get_meta_bases_info_by_uid",
+   "get_meta_bases_record_templates_all_by_uid",
+   "get_meta_bases_tables_by_uid",
+   "get_meta_nocodb_info",
+   "get_meta_tables_by_uid",
+   "get_meta_tables_views_by_uid",
+   "get_meta_workspaces_nc_integrations",
+   "delete_tables_records_by_uid",
+   "get_tables_records_by_uid",
+   "patch_tables_records_by_uid",
+   "post_tables_records_by_uid",
+   "get_tables_records_count_by_uid",
+   "get_tables_records_by_uid_id"
+  ],
+  "params_by_rule_note": "all 24 path parameters came from the opt-in opaque-token rule (NocoDB base/table/view ids are 15-char lowercase alphanumerics); after-uid-literal and sibling-variance contributed 0 here; the numeric record id is rea built-in. The workspace literals wqsswtut and nc were not templated (single observed value, not opaque-token shaped).",
+  "statuses_observed": [
+   200,
+   404
+  ]
+ },
+ "manifest_norules": {
+  "tools": 35,
+  "tools_by_method": {
+   "GET": 30,
+   "POST": 3,
+   "DELETE": 1,
+   "PATCH": 1
+  },
+  "params_total": 2,
+  "templated_groups": 2,
+  "excluded_groups": 0,
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 35,
+   "total": 35,
+   "next_offset": null,
+   "exhausted": true
+  }
+ },
+ "seeded_objects": {
+  "bases": 1,
+  "tables": 2,
+  "rows_per_table": 8,
+  "base_title": "Lighthouse Rota",
+  "tables_list": [
+   "Vessels",
+   "Port Calls"
+  ]
+ }
+}

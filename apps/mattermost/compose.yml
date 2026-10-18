@@ -1,0 +1,52 @@
+# Mattermost Team Edition + Postgres for the rea showcase capture. Binds loopback only.
+# Secrets come from the 600-mode .admin dotenv file: docker compose -p rea-mattermost --env-file .admin -f compose.yml up -d
+name: rea-mattermost
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: mmuser
+      POSTGRES_PASSWORD: ${PG_PASS:?PG_PASS must come from .admin}
+      POSTGRES_DB: mattermost
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mmuser -d mattermost"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+  app:
+    image: mattermost/mattermost-team-edition:latest
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:3104:8065"
+    environment:
+      MM_SQLSETTINGS_DRIVERNAME: postgres
+      MM_SQLSETTINGS_DATASOURCE: "postgres://mmuser:${PG_PASS}@db:5432/mattermost?sslmode=disable&connect_timeout=10"
+      MM_SERVICESETTINGS_SITEURL: http://127.0.0.1:3104
+      MM_TEAMSETTINGS_ENABLEOPENSERVER: "true"
+      MM_SERVICESETTINGS_ENABLEDEVELOPER: "false"
+      # capture hygiene: no onboarding wizard, no plugin bundles, no outbound telemetry/alerts, no mail
+      MM_SERVICESETTINGS_ENABLEONBOARDINGFLOW: "false"
+      MM_PLUGINSETTINGS_ENABLE: "false"
+      MM_LOGSETTINGS_ENABLEDIAGNOSTICS: "false"
+      MM_SERVICESETTINGS_ENABLESECURITYFIXALERT: "false"
+      MM_EMAILSETTINGS_SENDEMAILNOTIFICATIONS: "false"
+      MM_EMAILSETTINGS_REQUIREEMAILVERIFICATION: "false"
+    volumes:
+      - mmconfig:/mattermost/config
+      - mmdata:/mattermost/data
+      - mmlogs:/mattermost/logs
+      - mmplugins:/mattermost/plugins
+      - mmclientplugins:/mattermost/client/plugins
+      - mmbleve:/mattermost/bleve-indexes
+volumes:
+  pgdata: {}
+  mmconfig: {}
+  mmdata: {}
+  mmlogs: {}
+  mmplugins: {}
+  mmclientplugins: {}
+  mmbleve: {}

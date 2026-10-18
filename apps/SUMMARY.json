@@ -1,0 +1,215 @@
+{
+ "grafana": {
+  "app_version": "13.2.4",
+  "origin": "http://127.0.0.1:3101",
+  "manifest_name": "127-0-0-1-3101",
+  "scoped_records": 105,
+  "methods": {
+   "GET": 97,
+   "POST": 5,
+   "PUT": 1,
+   "DELETE": 2
+  },
+  "scoped_har_bytes": 210061,
+  "scoped_har_sha256": "df4073963373141fa0abc3405d29e3cfe46a751e6dc7e4a051831a0b4b76323c",
+  "capture_evidence_id": "ev_29b2e855bc335aae5b1092deb7dc25fcf82c26d6d8ef61f12808371611dbfeaa",
+  "manifest_evidence_id": "ev_147d9d4ae195a6e8c1e1b0d158b982f0d23e984f24d30fa4acb9ac907fcca3ff",
+  "manifest_norules_evidence_id": "ev_2053c8653c67cd6aa74e6b94242691f0aac684e0ddfabb391cd589a84f8ca80d",
+  "tools": 48,
+  "tools_by_method": {
+   "GET": 41,
+   "POST": 4,
+   "DELETE": 2,
+   "PUT": 1
+  },
+  "tools_norules": 50,
+  "templated_groups": 11,
+  "params_by_rule": {
+   "after-uid-literal": 5,
+   "opaque-token": 2,
+   "numeric": 4
+  },
+  "params_total": 11,
+  "query_names": 32,
+  "tools_with_body_shape": 5,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "fee5fa58733f3c37aa8d7427300667af207498431c873180bd591e2782eeec66",
+  "parent_digest": "29b2e855bc335aae5b1092deb7dc25fcf82c26d6d8ef61f12808371611dbfeaa"
+ },
+ "gitea": {
+  "app_version": "28.1.0",
+  "origin": "http://127.0.0.1:3102",
+  "manifest_name": "127-0-0-1-3102",
+  "scoped_records": 97,
+  "methods": {
+   "GET": 92,
+   "POST": 2,
+   "PATCH": 2,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 310109,
+  "scoped_har_sha256": "40801721c583336d92f7bd882767095a8c682bf1b9880ea62c6dce72fc1c186b",
+  "capture_evidence_id": "ev_1a2a26cf486e359cd4ee757d73a47f3544f937fc2877a815de9b3416349c2556",
+  "manifest_evidence_id": "ev_989ab6936d49511fae9956a43c67254d91e48eb263fd558d04133a50cf86344b",
+  "manifest_norules_evidence_id": "ev_47f987c92efe6f7609e1670606bce16584836e562f0449e9e3a72e923b8b72c5",
+  "tools": 77,
+  "tools_by_method": {
+   "GET": 73,
+   "POST": 2,
+   "DELETE": 1,
+   "PATCH": 1
+  },
+  "tools_norules": 77,
+  "templated_groups": 21,
+  "params_by_rule": {
+   "numeric": 19,
+   "hex": 2
+  },
+  "params_total": 21,
+  "query_names": 8,
+  "tools_with_body_shape": 3,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "d160df2d1510f3bf665d454a45301b985a3535b6eea1793bded1e9691b62b075",
+  "parent_digest": "1a2a26cf486e359cd4ee757d73a47f3544f937fc2877a815de9b3416349c2556"
+ },
+ "nocodb": {
+  "app_version": "2026.09.1",
+  "origin": "http://127.0.0.1:3103",
+  "manifest_name": "127-0-0-1-3103",
+  "scoped_records": 105,
+  "methods": {
+   "GET": 80,
+   "POST": 23,
+   "PATCH": 1,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 324797,
+  "scoped_har_sha256": "fe7e31fddd225d7bd00ecd8739fd0a2a474ef7a36aa79398900bc81499093f65",
+  "capture_evidence_id": "ev_c2296ec7318f8978720a75499d6fb34a6c5f5f8943f2da32acc1eaaad450e08e",
+  "manifest_evidence_id": "ev_12b6ec59bee2946b7b74a675d71335b5c56a2c026712583c6342ca0a752d8616",
+  "manifest_norules_evidence_id": "ev_98629f8a878998eb1e29ca6a1800dc5fa0f2e1ef92db8f87bbc90e56dbb7b961",
+  "tools": 28,
+  "tools_by_method": {
+   "GET": 23,
+   "POST": 3,
+   "DELETE": 1,
+   "PATCH": 1
+  },
+  "tools_norules": 35,
+  "templated_groups": 20,
+  "params_by_rule": {
+   "opaque-token": 24,
+   "numeric": 1
+  },
+  "params_total": 25,
+  "query_names": 13,
+  "tools_with_body_shape": 3,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "67dc3ce3bade67356c5b4eba4430e17303a59e7faeada017a85f1e5a54f168de",
+  "parent_digest": "c2296ec7318f8978720a75499d6fb34a6c5f5f8943f2da32acc1eaaad450e08e"
+ },
+ "mattermost": {
+  "app_version": "12.0.0",
+  "origin": "http://127.0.0.1:3104",
+  "manifest_name": "127-0-0-1-3104",
+  "scoped_records": 129,
+  "methods": {
+   "GET": 119,
+   "PUT": 2,
+   "POST": 7,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 322821,
+  "scoped_har_sha256": "e5874c112d0ab28d94c68595073b1e0512f0cadc8a47b5bf40914ef8d4cf470f",
+  "capture_evidence_id": "ev_7cc07ebe56003462bbd033d9c12c3a92d92badddff6f9199083c68e9a60357ba",
+  "manifest_evidence_id": "ev_97f3c9f89c92adf208d73e8e8e5de3dcb34c5a19fac09fbb29280d423f3f5342",
+  "manifest_norules_evidence_id": "ev_520a920a6a48370899829dcef7b21b4fdb812eb8f8b9abda7c5784cb1d1dfdaf",
+  "tools": 37,
+  "tools_by_method": {
+   "GET": 28,
+   "POST": 6,
+   "DELETE": 1,
+   "PUT": 2
+  },
+  "tools_norules": 58,
+  "templated_groups": 26,
+  "params_by_rule": {
+   "opaque-token": 32,
+   "numeric": 1
+  },
+  "params_total": 33,
+  "query_names": 16,
+  "tools_with_body_shape": 6,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "79d4c613d0958989c5fe3854e20ec04a72c862a7ed3d94c41d71d8e55fd46e2e",
+  "parent_digest": "7cc07ebe56003462bbd033d9c12c3a92d92badddff6f9199083c68e9a60357ba"
+ },
+ "ghost": {
+  "app_version": "5.130",
+  "origin": "http://127.0.0.1:3105",
+  "manifest_name": "127-0-0-1-3105",
+  "scoped_records": 76,
+  "methods": {
+   "GET": 72,
+   "POST": 3,
+   "PUT": 1
+  },
+  "scoped_har_bytes": 356170,
+  "scoped_har_sha256": "cf7eb90b391c2b83b4863f7c61be70b78f7aaa398bc182b15acafaa423a497ad",
+  "capture_evidence_id": "ev_f2f21b681f5ab8a313f4bff3cd2d36d1b5e864451d881cc8052a76d4c892e69a",
+  "manifest_evidence_id": "ev_9f7b1b2e995efe7a7d513eb662d9f12d005183bbd5e464e6fa407b1e3a4aa320",
+  "manifest_norules_evidence_id": "ev_cbe80916a0b9871d6b92e80de3e064df23e7c5a6b2ad7e2f31b7dd8d41d48788",
+  "tools": 36,
+  "tools_by_method": {
+   "GET": 33,
+   "POST": 2,
+   "PUT": 1
+  },
+  "tools_norules": 37,
+  "templated_groups": 4,
+  "params_by_rule": {
+   "opaque-token": 4
+  },
+  "params_total": 4,
+  "query_names": 11,
+  "tools_with_body_shape": 3,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "f523de458880f9d52c4bd4a724e76e0aa24325692444b59a159cfad0833ea8af",
+  "parent_digest": "f2f21b681f5ab8a313f4bff3cd2d36d1b5e864451d881cc8052a76d4c892e69a"
+ }
+}

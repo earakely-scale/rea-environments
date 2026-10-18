@@ -1,0 +1,22 @@
+# Ghost 5 (sqlite) for the rea showcase capture. Loopback only; one compose project: rea-ghost.
+services:
+  ghost:
+    image: ghost:5-alpine
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3105:2368"
+    environment:
+      url: http://127.0.0.1:3105
+      database__client: sqlite3
+      database__connection__filename: /var/lib/ghost/content/data/ghost.db
+      # Staff device verification would email a 2FA code on every new-device sign-in; no mail transport here.
+      security__staffDeviceVerification: "false"
+    volumes:
+      - ghost-content:/var/lib/ghost/content
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:2368/ghost/api/admin/site/"]
+      interval: 5s
+      timeout: 5s
+      retries: 36
+volumes:
+  ghost-content: {}

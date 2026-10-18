@@ -1,0 +1,37 @@
+# Gitea for the rea showcase capture: sqlite, loopback-only, throwaway data volume.
+# Compose project: rea-gitea   (always pass -p rea-gitea; other apps share this VM)
+services:
+  gitea:
+    image: gitea/gitea:latest
+    container_name: rea-gitea
+    restart: unless-stopped
+    environment:
+      USER_UID: "1000"
+      USER_GID: "1000"
+      GITEA__security__INSTALL_LOCK: "true"
+      GITEA__database__DB_TYPE: sqlite3
+      GITEA__database__PATH: /data/gitea/gitea.db
+      GITEA__server__ROOT_URL: http://127.0.0.1:3102/
+      GITEA__server__HTTP_PORT: "3000"
+      GITEA__server__DOMAIN: 127.0.0.1
+      GITEA__server__DISABLE_SSH: "true"
+      GITEA__server__START_SSH_SERVER: "false"
+      GITEA__server__OFFLINE_MODE: "true"
+      GITEA__service__DISABLE_REGISTRATION: "true"
+      GITEA__service__REQUIRE_SIGNIN_VIEW: "false"
+      GITEA__mailer__ENABLED: "false"
+      GITEA__openid__ENABLE_OPENID_SIGNIN: "false"
+      GITEA__openid__ENABLE_OPENID_SIGNUP: "false"
+      GITEA__repository__DEFAULT_BRANCH: main
+      GITEA__log__LEVEL: Info
+    ports:
+      - "127.0.0.1:3102:3000"
+    volumes:
+      - gitea-data:/data
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:3000/api/healthz"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+volumes:
+  gitea-data: {}

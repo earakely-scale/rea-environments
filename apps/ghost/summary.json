@@ -1,0 +1,310 @@
+{
+ "app": "ghost",
+ "image": "ghost:5-alpine",
+ "image_digest": "ghost@sha256:a0506f3f05f5bdc6c950c5113cdcdb1e1f96fbf15f6dc0a39fc093c25348bdb5",
+ "app_version": "5.130",
+ "app_version_full": "5.130.6",
+ "site_title": "Lighthouse Rota",
+ "compose_project": "rea-ghost",
+ "origin": "http://127.0.0.1:3105",
+ "database": "sqlite3 (/var/lib/ghost/content/data/ghost.db)",
+ "tooling": {
+  "rea": "6.6.0",
+  "playwright-core": "1.58.2",
+  "chromium": "Chromium 155.0.8059.79 snap",
+  "node": "v24.22.0",
+  "python": "3.12.3",
+  "docker": "29.9.1",
+  "compose": "v5.6.0",
+  "vm": "Ubuntu 24.04 amd64"
+ },
+ "scoped_har": {
+  "file": "ghost.scoped.har",
+  "sha256": "cf7eb90b391c2b83b4863f7c61be70b78f7aaa398bc182b15acafaa423a497ad",
+  "bytes": 356170,
+  "records": 76,
+  "methods": {
+   "GET": 72,
+   "POST": 3,
+   "PUT": 1
+  },
+  "statuses": {
+   "200": 73,
+   "201": 1,
+   "403": 1,
+   "404": 1
+  }
+ },
+ "scope_har": {
+  "origin": "http://127.0.0.1:3105",
+  "keep_regex": "^/ghost/api/",
+  "drop_regex": "default (login|logout|signup|password|session|token|oauth|csrf)",
+  "max_body": 60000,
+  "max_records": 150,
+  "kept": 76,
+  "dropped": {
+   "other-origin": 35,
+   "path": 27,
+   "non-json": 1,
+   "auth": 1,
+   "big-body": 0,
+   "over-max": 0
+  },
+  "notes": [
+   "auth=1 is POST /ghost/api/admin/session (login)",
+   "non-json=1 is DELETE /ghost/api/admin/posts/{id}/ (204, no content type), so the manifest has no DELETE tool"
+  ]
+ },
+ "credential_grep": {
+  "admin_password_literal_hits": 0,
+  "token_shape_hits_hf_ghp_Bearer": 0,
+  "session_cookie_name_hits": 0,
+  "result": "pass"
+ },
+ "evidence": {
+  "capture_evidence_id": "ev_f2f21b681f5ab8a313f4bff3cd2d36d1b5e864451d881cc8052a76d4c892e69a",
+  "capture_total_records": 76,
+  "capture_confidence": "observed",
+  "manifest_evidence_id": "ev_9f7b1b2e995efe7a7d513eb662d9f12d005183bbd5e464e6fa407b1e3a4aa320",
+  "manifest_norules_evidence_id": "ev_cbe80916a0b9871d6b92e80de3e064df23e7c5a6b2ad7e2f31b7dd8d41d48788",
+  "manifest_view_digest": "f523de458880f9d52c4bd4a724e76e0aa24325692444b59a159cfad0833ea8af"
+ },
+ "manifest": {
+  "evidence_id": "ev_9f7b1b2e995efe7a7d513eb662d9f12d005183bbd5e464e6fa407b1e3a4aa320",
+  "confidence": "inferred",
+  "view_digest": "f523de458880f9d52c4bd4a724e76e0aa24325692444b59a159cfad0833ea8af",
+  "template_rules": [
+   "after-uid-literal",
+   "opaque-token",
+   "sibling-variance"
+  ],
+  "tools": 36,
+  "tools_by_method": {
+   "GET": 33,
+   "POST": 2,
+   "PUT": 1
+  },
+  "templated_groups": 4,
+  "params_by_rule": {
+   "opaque-token": 4,
+   "after-uid-literal": 0,
+   "sibling-variance": 0
+  },
+  "params_total": 4,
+  "query_parameter_names_total": 54,
+  "query_parameter_names_distinct": [
+   "allFilter",
+   "fields",
+   "filter",
+   "formats",
+   "group",
+   "include",
+   "limit",
+   "order",
+   "page",
+   "source",
+   "status"
+  ],
+  "tools_with_body_shape": 3,
+  "statuses_seen": [
+   200,
+   201,
+   403,
+   404
+  ],
+  "records": 76,
+  "excluded": 0,
+  "excluded_by_reason": {},
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 36,
+   "total": 36,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "limitations_count": 9,
+  "tool_names": [
+   "get_ghost_admin_authentication_setup",
+   "get_ghost_admin_config",
+   "get_ghost_admin_incoming_recommendations",
+   "get_ghost_admin_integrations",
+   "get_ghost_admin_invites",
+   "get_ghost_admin_labels",
+   "get_ghost_admin_members",
+   "get_ghost_admin_members_by_uid",
+   "get_ghost_admin_newsletters",
+   "get_ghost_admin_notifications",
+   "get_ghost_admin_offers",
+   "get_ghost_admin_pages",
+   "get_ghost_admin_posts",
+   "post_ghost_admin_posts",
+   "get_ghost_admin_posts_slug_blue_heron_kitchen_tide_table_men",
+   "get_ghost_admin_posts_by_uid",
+   "put_ghost_admin_posts_by_uid",
+   "get_ghost_admin_recommendations",
+   "get_ghost_admin_roles",
+   "get_ghost_admin_search_index_pages",
+   "get_ghost_admin_search_index_posts",
+   "get_ghost_admin_search_index_tags",
+   "get_ghost_admin_search_index_users",
+   "get_ghost_admin_settings",
+   "get_ghost_admin_site",
+   "get_ghost_admin_snippets",
+   "get_ghost_admin_stats_member_count",
+   "post_ghost_admin_stats_posts_member_counts",
+   "get_ghost_admin_stats_referrers",
+   "get_ghost_admin_tags",
+   "get_ghost_admin_tags_by_uid",
+   "get_ghost_admin_themes",
+   "get_ghost_admin_themes_active",
+   "get_ghost_admin_tiers",
+   "get_ghost_admin_users",
+   "get_ghost_admin_users_me"
+  ]
+ },
+ "manifest_norules": {
+  "evidence_id": "ev_cbe80916a0b9871d6b92e80de3e064df23e7c5a6b2ad7e2f31b7dd8d41d48788",
+  "confidence": "derived",
+  "view_digest": "61f651bd96e3d9b82a005bd3e8f4d4db0dc3279d8024ec83cf2ff7470a61f81a",
+  "template_rules": [],
+  "tools": 37,
+  "tools_by_method": {
+   "GET": 34,
+   "POST": 2,
+   "PUT": 1
+  },
+  "templated_groups": 0,
+  "params_by_rule": {
+   "after-uid-literal": 0,
+   "opaque-token": 0,
+   "sibling-variance": 0
+  },
+  "params_total": 0,
+  "query_parameter_names_total": 54,
+  "query_parameter_names_distinct": [
+   "allFilter",
+   "fields",
+   "filter",
+   "formats",
+   "group",
+   "include",
+   "limit",
+   "order",
+   "page",
+   "source",
+   "status"
+  ],
+  "tools_with_body_shape": 3,
+  "statuses_seen": [
+   200,
+   201,
+   403,
+   404
+  ],
+  "records": 76,
+  "excluded": 0,
+  "excluded_by_reason": {},
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 37,
+   "total": 37,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "limitations_count": 8,
+  "tool_names": [
+   "get_ghost_admin_authentication_setup",
+   "get_ghost_admin_config",
+   "get_ghost_admin_incoming_recommendations",
+   "get_ghost_admin_integrations",
+   "get_ghost_admin_invites",
+   "get_ghost_admin_labels",
+   "get_ghost_admin_members",
+   "get_ghost_admin_members_6ad47b5d1023b500010873f8",
+   "get_ghost_admin_newsletters",
+   "get_ghost_admin_notifications",
+   "get_ghost_admin_offers",
+   "get_ghost_admin_pages",
+   "get_ghost_admin_posts",
+   "post_ghost_admin_posts",
+   "get_ghost_admin_posts_6ad47b5c1023b500010873e3",
+   "get_ghost_admin_posts_6ad47ba51023b5000108740b",
+   "put_ghost_admin_posts_6ad47ba51023b5000108740b",
+   "get_ghost_admin_posts_slug_blue_heron_kitchen_tide_table_men",
+   "get_ghost_admin_recommendations",
+   "get_ghost_admin_roles",
+   "get_ghost_admin_search_index_pages",
+   "get_ghost_admin_search_index_posts",
+   "get_ghost_admin_search_index_tags",
+   "get_ghost_admin_search_index_users",
+   "get_ghost_admin_settings",
+   "get_ghost_admin_site",
+   "get_ghost_admin_snippets",
+   "get_ghost_admin_stats_member_count",
+   "post_ghost_admin_stats_posts_member_counts",
+   "get_ghost_admin_stats_referrers",
+   "get_ghost_admin_tags",
+   "get_ghost_admin_tags_6ad47b5c1023b500010873df",
+   "get_ghost_admin_themes",
+   "get_ghost_admin_themes_active",
+   "get_ghost_admin_tiers",
+   "get_ghost_admin_users",
+   "get_ghost_admin_users_me"
+  ]
+ },
+ "manifest_vs_norules": {
+  "tools": [
+   36,
+   37
+  ],
+  "templated_groups": [
+   4,
+   0
+  ],
+  "note": "with rules the four by-id literal tools (members/{uid}, posts/{uid} GET+PUT, tags/{uid}) collapse into 3 {uid} templates (2 posts ids merge), 37 -> 36 tools; after-uid-literal and sibling-variance matched nothing in this capture (the /posts/slug/<slug>/ literal stays a literal tool)"
+ },
+ "seeded_objects": {
+  "owner": "Rea Admin <rea-admin@example.test> (bio + location updated)",
+  "blog_title": "Lighthouse Rota",
+  "tags": [
+   "Granite Ledger",
+   "Blue Heron Kitchen"
+  ],
+  "posts_published": [
+   "Granite Ledger: Quarterly Stone Count",
+   "Blue Heron Kitchen opens its tide-table menu"
+  ],
+  "posts_draft": [
+   "Lighthouse Rota: winter shift plan (draft)"
+  ],
+  "pages": [
+   "About the Lighthouse Rota"
+  ],
+  "members": [
+   "Ada Finch <ada.finch@example.test> (label Rota Crew)"
+  ],
+  "newsletter": "default, untouched",
+  "scratch_during_capture": "post Rea scratch post created, edited (PUT), read, deleted (204), re-read (404)"
+ },
+ "ui_pages_visited": [
+  "/ghost/#/signin (login)",
+  "/ghost/#/posts",
+  "/ghost/#/editor/post/<id>",
+  "/ghost/#/pages",
+  "/ghost/#/tags",
+  "/ghost/#/members",
+  "/ghost/#/settings"
+ ],
+ "resource_constraint": false,
+ "budget_note": "view limitations state a 32 MiB input / 96 MiB reply / 64-level nesting budget and a 192 MiB Node old-generation heap for HAR; the 356 KB scoped HAR is far below"
+}

@@ -1,0 +1,5 @@
+# replay-qa: the image is built from this folder's Dockerfile.
+image = { dockerfile = "Dockerfile" }
+
+[metadata]
+default_model = "openai/gpt-oss-120b:groq"

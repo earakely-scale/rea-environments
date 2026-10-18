@@ -1,0 +1,45 @@
+{
+ "app": "gitea",
+ "app_version": "28.1.0",
+ "image_digest": "gitea/gitea@sha256:f505a0d3a41323b786e05942fc7a4075e07ae7c169fd9485649aa55ee543a21a",
+ "scoped_records": 97,
+ "methods": {
+  "GET": 92,
+  "POST": 2,
+  "PATCH": 2,
+  "DELETE": 1
+ },
+ "scoped_har_sha256": "40801721c583336d92f7bd882767095a8c682bf1b9880ea62c6dce72fc1c186b",
+ "scoped_har_bytes": 310109,
+ "capture_evidence_id": "ev_1a2a26cf486e359cd4ee757d73a47f3544f937fc2877a815de9b3416349c2556",
+ "manifest_view_evidence_id": "ev_989ab6936d49511fae9956a43c67254d91e48eb263fd558d04133a50cf86344b",
+ "manifest_norules_evidence_id": "ev_47f987c92efe6f7609e1670606bce16584836e562f0449e9e3a72e923b8b72c5",
+ "tools": 77,
+ "tools_by_method": {
+  "GET": 73,
+  "POST": 2,
+  "DELETE": 1,
+  "PATCH": 1
+ },
+ "tools_norules": 77,
+ "templated_groups": 21,
+ "templated_groups_norules": 21,
+ "params_by_rule": {
+  "numeric": 19,
+  "hex": 2
+ },
+ "query_names": 8,
+ "excluded_by_reason": {},
+ "unknowns": [
+  "authorization-model",
+  "response-semantics",
+  "state-transition"
+ ],
+ "confidence": "inferred",
+ "authority": "historical-reference",
+ "credential_grep_hits": {
+  "credential_literal_hits": 0,
+  "token_shape_hits": 0
+ },
+ "seeded_objects": "users ada.finch, rui.castellanos; org lighthouse-rota (team keepers); repos granite-ledger (README, ledger/2026-q1.csv, docs/rota.md) and blue-heron-kitchen; 2 labels; milestone Spring Tide; 4 issues (2 labelled, 1 assigned, 1 closed); 2 comments; 1 branch + 1 PR on granite-ledger"
+}

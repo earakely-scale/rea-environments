@@ -1,0 +1,304 @@
+{
+  "app": "grafana",
+  "image": "grafana/grafana:latest",
+  "image_digest": "grafana/grafana@sha256:dbbc38ea21103cefb50396340cd88afec779c7e070b0a7bf5a75b4ce46651d3f",
+  "app_version": "13.2.4",
+  "app_version_source": "GET /api/health (version field), also recorded as HAR record /api/health",
+  "rea_version": "6.6.0",
+  "playwright_core": "1.58.2",
+  "chromium": "155.0.8059.79 (snap, /snap/bin/chromium, launchPersistentContext --no-sandbox)",
+  "origin": "http://127.0.0.1:3101",
+  "compose_project": "rea-grafana",
+  "host_port": "127.0.0.1:3101",
+  "seeded_objects": {
+    "folders": 1,
+    "dashboards": 2,
+    "panels": 3,
+    "datasources": 1,
+    "teams": 1,
+    "extra_users": 1,
+    "annotations": 2,
+    "playlists": 1,
+    "ids": {
+      "grafana_version": "13.2.4",
+      "folder_uid": "lighthouse-rota",
+      "datasource_uid": "rea-testdata",
+      "dashboard_uids": [
+        "granite-ledger",
+        "blue-heron-kitchen"
+      ],
+      "team_id": 1,
+      "team_name": "Night Shift",
+      "user_id": 2,
+      "user_login": "ada.finch",
+      "playlist_name": "Lighthouse Rotation",
+      "annotation_tags": [
+        "seed"
+      ]
+    }
+  },
+  "capture": {
+    "ui_pages_visited": [
+      "/login",
+      "/dashboards",
+      "/connections/datasources",
+      "/admin/users",
+      "/admin/teams",
+      "/explore",
+      "/alerting/list",
+      "/d/granite-ledger/granite-ledger-overview",
+      "/d/blue-heron-kitchen/blue-heron-kitchen-ops"
+    ],
+    "scripted_calls": 38,
+    "scripted_non_2xx": [
+      "GET /api/dashboards/uid/scratch-tide -> 404",
+      "GET /api/folders/scratch-pier -> 404"
+    ],
+    "full_har_bytes": 119358184,
+    "full_har_removed": true
+  },
+  "scoping": {
+    "tool": "scope_har.py",
+    "keep_regex": "^/api/|^/apis/",
+    "drop_regex": "login|logout|signup|password|session|token|oauth|csrf|^/api/plugins/|/ofrep/|/user-storage/|/advisor",
+    "max_body": 60000,
+    "max_records": 150,
+    "kept": 105,
+    "dropped_by_reason": {
+      "non-api-path": 340,
+      "drop-regex-auth-patterns": 4,
+      "drop-regex-noise-patterns": 53,
+      "other-origin": 0,
+      "non-json": 0,
+      "big-body": 0,
+      "over-max": 0
+    },
+    "noise_pattern_breakdown": {
+      "/api/plugins/*/settings": 39,
+      "/apis/features.grafana.app/.../ofrep/v1/evaluate/flags": 9,
+      "/apis/userstorage.grafana.app/.../user-storage/*": 3,
+      "/apis/advisor.grafana.app/*": 2
+    },
+    "scope_tool_raw_summary": {
+      "kept": 105,
+      "dropped": {
+        "other-origin": 0,
+        "path": 340,
+        "non-json": 0,
+        "auth": 57,
+        "big-body": 0,
+        "over-max": 0
+      },
+      "methods": {
+        "GET": 97,
+        "POST": 5,
+        "PUT": 1,
+        "DELETE": 2
+      },
+      "bytes": 209348
+    }
+  },
+  "scoped_har": {
+    "path": "grafana.scoped.har",
+    "sha256": "df4073963373141fa0abc3405d29e3cfe46a751e6dc7e4a051831a0b4b76323c",
+    "bytes": 210061,
+    "records": 105,
+    "methods": {
+      "GET": 97,
+      "POST": 5,
+      "PUT": 1,
+      "DELETE": 2
+    },
+    "statuses": {
+      "200": 103,
+      "404": 2
+    }
+  },
+  "credential_check": {
+    "method": "grep -o -F <admin password> | wc -l, same for the seeded viewer password; grep -o for hf_[A-Za-z0-9]{8,}, ghp_, 'Bearer '; run on the VM before copy-back",
+    "admin_password_hits": 0,
+    "viewer_password_hits": 0,
+    "hf_hits": 0,
+    "ghp_hits": 0,
+    "bearer_hits": 0,
+    "scrubbed_markers": 0,
+    "cookie_headers": 0,
+    "total_hits": 0
+  },
+  "rea": {
+    "capture_evidence_id": "ev_29b2e855bc335aae5b1092deb7dc25fcf82c26d6d8ef61f12808371611dbfeaa",
+    "capture_confidence": "observed",
+    "capture_authority": "historical-reference",
+    "capture_total_records": 105,
+    "manifest_view_evidence_id": "ev_147d9d4ae195a6e8c1e1b0d158b982f0d23e984f24d30fa4acb9ac907fcca3ff",
+    "manifest_view_digest": "fee5fa58733f3c37aa8d7427300667af207498431c873180bd591e2782eeec66",
+    "manifest_confidence": "inferred",
+    "manifest_authority": "historical-reference",
+    "manifest_norules_evidence_id": "ev_2053c8653c67cd6aa74e6b94242691f0aac684e0ddfabb391cd589a84f8ca80d",
+    "manifest_norules_view_digest": "98603a6a1b26e55a97e4864d34ac796ac472022020aadc18893b7fd728fdb242",
+    "template_rules": [
+      "after-uid-literal",
+      "opaque-token",
+      "sibling-variance"
+    ],
+    "coverage": {
+      "status": "complete-within-view",
+      "examined": 48,
+      "total": 48,
+      "next_offset": null,
+      "exhausted": true
+    },
+    "resource_constraint": false
+  },
+  "manifest": {
+    "tools": 48,
+    "tools_by_method": {
+      "GET": 41,
+      "POST": 4,
+      "DELETE": 2,
+      "PUT": 1
+    },
+    "templated_tools": 11,
+    "templated_groups": 11,
+    "params_total": 11,
+    "params_by_rule": {
+      "after-uid-literal": 5,
+      "opaque-token": 2,
+      "numeric": 4
+    },
+    "query_parameter_names_distinct": 32,
+    "query_parameter_names_sum_over_tools": 42,
+    "query_parameter_names": [
+      "accesscontrol",
+      "active",
+      "activeLast30Days",
+      "dashboardUID",
+      "dashboard_uid",
+      "ds_type",
+      "fieldSelector",
+      "filter",
+      "folder",
+      "folderUIDs",
+      "from",
+      "group",
+      "group_limit",
+      "inhibited",
+      "isLegacyCall",
+      "limit",
+      "limit_alerts",
+      "loginOrEmail",
+      "matchAny",
+      "name",
+      "page",
+      "perpage",
+      "query",
+      "requestId",
+      "resource",
+      "silenced",
+      "sort",
+      "sourceUID",
+      "tag",
+      "tags",
+      "to",
+      "type"
+    ],
+    "excluded_groups": 0,
+    "excluded_by_reason": {},
+    "unknowns": [
+      {
+        "kind": "authorization-model",
+        "statement": "Authorization headers and cookies are structurally excluded from captures; the manifest states no authorization model."
+      },
+      {
+        "kind": "response-semantics",
+        "statement": "Recorded statuses and bodies are retained only as pointers to parent records; the manifest states no response semantics."
+      },
+      {
+        "kind": "state-transition",
+        "statement": "Recorded exchanges are independent observations; the manifest states no ordering, side effects or state transitions between tools."
+      }
+    ],
+    "limitations_count": 9,
+    "tool_names": [
+      "delete_dashboards_by_uid",
+      "delete_folders_scratch_pier",
+      "get_alertmanager_grafana_alerts",
+      "get_annotations",
+      "get_dashboard",
+      "get_dashboard_dashboards_blue_heron_kitchen_dto",
+      "get_dashboard_dashboards_granite_ledger_dto",
+      "get_dashboard_search",
+      "get_dashboards_by_uid",
+      "get_dashboards_versions_by_uid",
+      "get_datasources",
+      "get_datasources_by_uid",
+      "get_datasources_correlations",
+      "get_datasources_resources_scenarios_by_uid",
+      "get_folders",
+      "get_folders_general",
+      "get_folders_lighthouse_rota",
+      "get_folders_scratch_pier",
+      "get_health",
+      "get_notifications_receivers",
+      "get_notifications_routingtrees",
+      "get_org",
+      "get_org_users",
+      "get_playlists",
+      "get_playlists_by_uid",
+      "get_playlists_items_by_uid",
+      "get_preferences_preferences",
+      "get_preferences_preferences_merged",
+      "get_prometheus_grafana_rules",
+      "get_provisioning_settings",
+      "get_quotas_usage",
+      "get_search",
+      "get_teams_by_id",
+      "get_teams_members_by_id",
+      "get_teams_search",
+      "get_user",
+      "get_user_orgs",
+      "get_user_stars",
+      "get_user_teams",
+      "get_users_by_id",
+      "get_users_lookup",
+      "get_users_search",
+      "get_users_teams_by_id",
+      "post_dashboards_db",
+      "post_ds_query",
+      "post_folders",
+      "post_query_history",
+      "put_folders_scratch_pier"
+    ]
+  },
+  "manifest_norules": {
+    "tools": 50,
+    "tools_by_method": {
+      "GET": 43,
+      "POST": 4,
+      "DELETE": 2,
+      "PUT": 1
+    },
+    "templated_groups": 4,
+    "params_total": 4,
+    "tools_only_with_rules": [
+      "delete_dashboards_by_uid",
+      "get_dashboards_by_uid",
+      "get_dashboards_versions_by_uid",
+      "get_datasources_by_uid",
+      "get_datasources_resources_scenarios_by_uid",
+      "get_playlists_by_uid",
+      "get_playlists_items_by_uid"
+    ],
+    "tools_only_without_rules": [
+      "delete_dashboards_uid_scratch_tide",
+      "get_dashboards_uid_blue_heron_kitchen",
+      "get_dashboards_uid_granite_ledger",
+      "get_dashboards_uid_granite_ledger_versions",
+      "get_dashboards_uid_scratch_tide",
+      "get_datasources_uid_rea_testdata",
+      "get_datasources_uid_rea_testdata_resources_scenarios",
+      "get_playlists_fg1kwzj9hzvnke",
+      "get_playlists_fg1kwzj9hzvnke_items"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+services:
+  nocodb:
+    image: nocodb/nocodb:latest
+    ports:
+      - "127.0.0.1:3103:8080"
+    environment:
+      NC_DISABLE_TELE: "true"
+      NC_PUBLIC_URL: "http://127.0.0.1:3103"
+    volumes:
+      - nocodb_data:/usr/app/data
+    restart: unless-stopped
+volumes:
+  nocodb_data:
