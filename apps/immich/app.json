@@ -1,0 +1,15 @@
+{
+  "app": "immich",
+  "title": "Immich",
+  "repo": "ImmichEnv-REA",
+  "license": "AGPL-3.0",
+  "authors": "the Immich contributors",
+  "hf_license": "apache-2.0",
+  "version": "3.3.3",
+  "image": "ghcr.io/immich-app/immich-server:v3.3.3",
+  "image_digest": "sha256:bae7664ff3aa4c2c1fcbdcdd86b40b105643c5f861f3e6a770fc760089f25862",
+  "port": 3207,
+  "keep_regex": "^/api/(?!socket\\.io)",
+  "domain": "self-hosted photo and video library",
+  "exclude_tools": "server|config|timeline|memories|preferences|onboarding|api_keys|cluster_groups|ocr|map_markers|statistics|version|explore"
+}

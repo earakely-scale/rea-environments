@@ -1,0 +1,252 @@
+{
+ "app": "baserow",
+ "image": "baserow/baserow:2.4.1",
+ "image_digest": "baserow/baserow@sha256:2229bc0ad9c8e1c3c44cef3324ff0501639d44a7b6f64026ebaa44f61cfb038e",
+ "app_version": "2.4.1",
+ "app_version_full": "2.4.1 (GET /api/settings/ answers without a version; the OpenAPI document at /api/schema.json reports info.version 2.4.1)",
+ "database": "PostgreSQL and Redis bundled inside the all-in-one image (volume baserow-data at /baserow/data)",
+ "workspace": "Saltmarsh Depot Cooperative",
+ "compose_project": "rea-baserow",
+ "origin": "http://127.0.0.1:3204",
+ "tooling": {
+  "rea": "6.6.0",
+  "playwright-core": "1.58.2",
+  "chromium": "Chromium 155.0.8059.79 snap",
+  "node": "v24.22.0",
+  "python": "3.12.3",
+  "docker": "29.9.1",
+  "compose": "5.6.0",
+  "vm": "Ubuntu 24.04 amd64"
+ },
+ "scoped_har": {
+  "file": "baserow.scoped.har",
+  "sha256": "286207ccf9bec4e41170bbd802886c9bf3d11de51501e01faad00ffda415d93d",
+  "bytes": 157373,
+  "records": 83,
+  "methods": {
+   "GET": 80,
+   "POST": 1,
+   "PATCH": 1,
+   "DELETE": 1
+  },
+  "statuses": {
+   "200": 81,
+   "204": 1,
+   "404": 1
+  }
+ },
+ "scope_har": {
+  "origin": "http://127.0.0.1:3204",
+  "keep_regex": "^/api/",
+  "drop_regex": "default (login|logout|signup|password|session|token|oauth|csrf)",
+  "max_body": 60000,
+  "max_records": 150,
+  "kept": 83,
+  "dropped": {
+   "other-origin": 0,
+   "path": 1421,
+   "non-json": 0,
+   "auth": 2,
+   "big-body": 0,
+   "over-max": 0
+  },
+  "notes": [
+   "auth=2 is POST /api/user/token-auth/ (UI login, the response carries the JWT pair) and one more token-path request",
+   "path=1421 is the Nuxt shell, JS/CSS chunks, fonts, images and the realtime websocket upgrade",
+   "DELETE /api/database/rows/table/{id}/{id}/ answers 204 with no body and is kept"
+  ]
+ },
+ "credential_grep": {
+  "admin_password_literal_hits": 0,
+  "jwt_prefix_eyJ_hits": 0,
+  "token_shape_hits_hf_ghp_Bearer_JWT": 0,
+  "cookie_names_jwt_token_user_session_hits": 0,
+  "result": "pass"
+ },
+ "manifest": {
+  "evidence_id": "ev_d41265c6d4379a907ba76eeebbfe708af1f9e04618bbab29c47d7ba9b1c2ac7c",
+  "confidence": "inferred",
+  "view_digest": "73d85eadcc80001f918310d2f48939ec00ef24e06fc49408d713cdaf45587cdd",
+  "tools": 31,
+  "tools_by_method": {
+   "GET": 28,
+   "POST": 1,
+   "DELETE": 1,
+   "PATCH": 1
+  },
+  "templated_groups": 23,
+  "params_by_rule": {
+   "numeric": 27
+  },
+  "params_total": 27,
+  "query_parameter_names_distinct": [
+   "filter__field_3539__single_select_equal",
+   "include",
+   "limit",
+   "limit_linked_items",
+   "offset",
+   "order_by",
+   "page",
+   "query",
+   "search",
+   "size",
+   "states",
+   "table__361",
+   "user_field_names",
+   "view",
+   "workspace_ids"
+  ],
+  "tools_with_body_shape": 2,
+  "excluded": 0,
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "tool_names": [
+   "get_admin_users",
+   "get_applications",
+   "get_applications_workspace_by_id",
+   "get_applications_by_id",
+   "get_database_field_rules_by_id",
+   "get_database_fields_table_by_id",
+   "get_database_fields_by_id",
+   "get_database_fields_unique_row_values_by_id",
+   "get_database_rows_names",
+   "get_database_rows_table_by_id",
+   "post_database_rows_table_by_id",
+   "delete_database_rows_table_by_id_id_2",
+   "get_database_rows_table_by_id_id_2",
+   "patch_database_rows_table_by_id_id_2",
+   "get_database_rows_table_history_by_id_id_2",
+   "get_database_tables_database_by_id",
+   "get_database_tables_by_id",
+   "get_database_views_filter_by_id",
+   "get_database_views_gallery_by_id",
+   "get_database_views_grid_by_id",
+   "get_database_views_table_by_id",
+   "get_database_views_by_id",
+   "get_database_views_filters_by_id",
+   "get_database_views_sortings_by_id",
+   "get_jobs",
+   "get_last_viewed_items",
+   "get_search_workspace_by_id",
+   "get_trash",
+   "get_user_dashboard",
+   "get_workspaces",
+   "get_workspaces_users_workspace_by_id"
+  ]
+ },
+ "manifest_norules": {
+  "evidence_id": "ev_c6d455ba21c86b13bdf6da89c040de1cfaf37dcbdd511fc54edc494a075c247c",
+  "confidence": "inferred",
+  "view_digest": "0c801797976980555668aad97dd649edb06357c308f328e9e7832777065ebd56",
+  "tools": 31,
+  "tools_by_method": {
+   "GET": 28,
+   "POST": 1,
+   "DELETE": 1,
+   "PATCH": 1
+  },
+  "templated_groups": 23,
+  "params_by_rule": {
+   "numeric": 27
+  },
+  "params_total": 27,
+  "query_parameter_names_distinct": [
+   "filter__field_3539__single_select_equal",
+   "include",
+   "limit",
+   "limit_linked_items",
+   "offset",
+   "order_by",
+   "page",
+   "query",
+   "search",
+   "size",
+   "states",
+   "table__361",
+   "user_field_names",
+   "view",
+   "workspace_ids"
+  ],
+  "tools_with_body_shape": 2,
+  "excluded": 0,
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "tool_names": [
+   "get_admin_users",
+   "get_applications",
+   "get_applications_workspace_by_id",
+   "get_applications_by_id",
+   "get_database_field_rules_by_id",
+   "get_database_fields_table_by_id",
+   "get_database_fields_by_id",
+   "get_database_fields_unique_row_values_by_id",
+   "get_database_rows_names",
+   "get_database_rows_table_by_id",
+   "post_database_rows_table_by_id",
+   "delete_database_rows_table_by_id_id_2",
+   "get_database_rows_table_by_id_id_2",
+   "patch_database_rows_table_by_id_id_2",
+   "get_database_rows_table_history_by_id_id_2",
+   "get_database_tables_database_by_id",
+   "get_database_tables_by_id",
+   "get_database_views_filter_by_id",
+   "get_database_views_gallery_by_id",
+   "get_database_views_grid_by_id",
+   "get_database_views_table_by_id",
+   "get_database_views_by_id",
+   "get_database_views_filters_by_id",
+   "get_database_views_sortings_by_id",
+   "get_jobs",
+   "get_last_viewed_items",
+   "get_search_workspace_by_id",
+   "get_trash",
+   "get_user_dashboard",
+   "get_workspaces",
+   "get_workspaces_users_workspace_by_id"
+  ]
+ },
+ "evidence": {
+  "capture_evidence_id": "ev_85d6e0f7e7c20d307a860f6c35f7e696fa6baf0e1a54f19060d77989e82fadac",
+  "capture_total_records": 83,
+  "capture_confidence": "observed"
+ },
+ "seeded_objects": {
+  "owner": "Rea Admin <rea-admin@example.test> (first sign-up, instance staff)",
+  "workspace": "Saltmarsh Depot Cooperative",
+  "databases": [
+   "Lighthouse Rota (3 tables)",
+   "Granite Ledger Archive (empty)"
+  ],
+  "tables": {
+   "Stations": "Name, Region, Beam range (nm), Commissioned (date), Lamp, Staffed (boolean), Description (long text); rows Granite Point Light, Copperfield Annex Beacon, Blue Heron Spit, Saltmarsh Depot Tower",
+   "Keepers": "Name, Email, Station (link to Stations), Rank (single select Head/Assistant/Relief keeper), Shifts per month, Certified (boolean), Notes; rows Ada Finch, Rui Castellanos, Mina Okafor, Tomas Vey, Ilse Marrow",
+   "Supply Orders": "Order code, Item, Quantity, Station (link), Stage (single select Requested/Shipped/Delivered), Supplier, Requested by (link to Keepers); rows SO-4471..SO-4474"
+  },
+  "edits": "Ada Finch Shifts per month 12 -> 14 (row history entry)",
+  "views": [
+   "Certified keepers (grid, filter Certified = true, sort Shifts per month desc)",
+   "Open orders (grid, filter Stage != Delivered)",
+   "Station cards (gallery)",
+   "Request supplies (form, title and description)"
+  ],
+  "scratch_during_capture": "supply order SO-9001 'Scratch lantern wicks' created (POST), edited (PATCH), read, deleted (204), re-read (404), orders listed again"
+ },
+ "ui_pages_visited": [
+  "/login (login)",
+  "/all-workspaces",
+  "/workspace/{id}",
+  "/database/{db}/table/{Stations}/{grid}",
+  "/database/{db}/table/{Keepers}/{grid}",
+  "/database/{db}/table/{Keepers}/{Certified keepers grid}",
+  "/database/{db}/table/{Supply Orders}/{grid}",
+  "/database/{db}/table/{Stations}/{gallery}",
+  "/admin/users",
+  "/database/{db}/table/{Keepers}/{grid}/row/{Mina Okafor} (row modal)"
+ ]
+}

@@ -1,0 +1,27 @@
+# Sonarr 4 (linuxserver image, built-in SQLite) for the rea showcase capture. Loopback only; one compose project: rea-sonarr.
+# No indexers, download clients or series: everything seeded is an offline settings object (see seed.py).
+services:
+  sonarr:
+    image: lscr.io/linuxserver/sonarr:4.0.20.3014-ls329
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3221:8989"
+    environment:
+      PUID: "1000"
+      PGID: "1000"
+      TZ: Etc/UTC
+      # Sonarr's double-underscore config overrides: no analytics, forms login required for every address.
+      SONARR__LOG__ANALYTICSENABLED: "False"
+      SONARR__AUTH__METHOD: Forms
+      SONARR__AUTH__REQUIRED: Enabled
+    volumes:
+      - sonarr-config:/config
+      - sonarr-data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS -o /dev/null http://127.0.0.1:8989/ping || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 60
+volumes:
+  sonarr-config: {}
+  sonarr-data: {}

@@ -1,0 +1,373 @@
+{
+ "app": "directus",
+ "image": "directus/directus:11.17.4",
+ "image_digest": "directus/directus@sha256:eb326f679ae847c0a776f93b972761dc2ebe84980e0b9d274a6bc31cd62809f7",
+ "app_version": "11.17.4",
+ "app_version_full": "11.17.4 (package.json of the image; GET /server/info reports the same)",
+ "database": "sqlite3 (/directus/database/data.db in the directus-db volume)",
+ "licence_note": "Business Source License 1.1 by Monospace, Inc.; additional use grant for entities under US $5M total finances; change license GPL-3.0 three years after each release (/directus/license in the image)",
+ "compose_project": "rea-directus",
+ "origin": "http://127.0.0.1:3223",
+ "tooling": {
+  "rea": "6.6.0",
+  "playwright-core": "1.58.2",
+  "chromium": "Chromium 155.0.8059.79 snap",
+  "node": "v24.22.0",
+  "python": "3.12.3",
+  "docker": "29.9.1",
+  "compose": "5.6.0",
+  "vm": "Ubuntu 24.04 amd64"
+ },
+ "scoped_har": {
+  "file": "directus.scoped.har",
+  "sha256": "1667a554741c257c7831f80302833dfff820050f35866ac9f0fd6bc1d6e5a8c9",
+  "bytes": 219187,
+  "records": 90,
+  "methods": {
+   "GET": 77,
+   "PATCH": 11,
+   "POST": 1,
+   "DELETE": 1
+  },
+  "statuses": {
+   "200": 78,
+   "204": 11,
+   "403": 1
+  }
+ },
+ "scope_har": {
+  "origin": "http://127.0.0.1:3223",
+  "keep_regex": "^/(items|collections|fields|users|roles|policies|permissions|folders|files|presets|dashboards|panels|flows|operations|comments|activity|revisions|relations|settings|server|translations|notifications|shares|versions)(/|$)",
+  "drop_regex": "default (login|logout|signup|password|session|token|oauth|csrf)",
+  "max_body": 60000,
+  "max_records": 150,
+  "kept": 90,
+  "dropped": {
+   "other-origin": 0,
+   "path": 37,
+   "non-json": 0,
+   "auth": 2,
+   "big-body": 1,
+   "over-max": 0
+  },
+  "notes": [
+   "path=37: 33 Data Studio assets under /admin, GET /auth?sessionOnly x2, POST /auth/refresh, GET /extensions/sources/index.js, POST /graphql (the Insights metric panel)",
+   "auth=2: GET /admin/login and POST /auth/login (session mode; the session cookie is httpOnly and never in a body)",
+   "big-body=1: GET /fields (326,054 bytes: every field of every system and user collection)",
+   "kept DELETE /items/provisions/{id} (204) and PATCH /users/me/track/page (204) as empty API replies; rea then excludes both groups as non-json (mime type x-unknown), so the manifest has no DELETE tool"
+  ]
+ },
+ "credential_grep": {
+  "admin_password_literal_hits": 0,
+  "key_hits": 0,
+  "secret_hits": 0,
+  "token_shape_hits_hf_ghp_Bearer": 0,
+  "session_cookie_name_hits": 0,
+  "jwt_prefix_eyJ_hits": 0,
+  "result": "pass"
+ },
+ "evidence": {
+  "capture_evidence_id": "ev_726c10bf55a915e584548f44ddfcacfabb7b72780f9ce24a1a1d18d093836af2",
+  "capture_total_records": 90,
+  "capture_confidence": "observed",
+  "manifest_evidence_id": "ev_df3fc9049d7dd8e54cbefab23250d29be75af6e6ba7bbc9c3cc092e64c134c58",
+  "manifest_norules_evidence_id": "ev_2457c64e65ef78f193b7d85c778320f714e3e568b924b107e0b9a83bbcf227a2",
+  "manifest_view_digest": "638e5bb97125c3ed5a50106b5d9cd6c484b0d0dd2b96ef232574da93ccb5a262"
+ },
+ "manifest": {
+  "evidence_id": "ev_df3fc9049d7dd8e54cbefab23250d29be75af6e6ba7bbc9c3cc092e64c134c58",
+  "confidence": "inferred",
+  "view_digest": "638e5bb97125c3ed5a50106b5d9cd6c484b0d0dd2b96ef232574da93ccb5a262",
+  "template_rules": [
+   "after-uid-literal",
+   "opaque-token",
+   "sibling-variance"
+  ],
+  "tools": 43,
+  "tools_by_method": {
+   "GET": 41,
+   "POST": 1,
+   "PATCH": 1
+  },
+  "templated_groups": 14,
+  "params_by_rule": {
+   "uuid": 9,
+   "numeric": 4
+  },
+  "params_total": 13,
+  "query_parameter_names_total": 73,
+  "query_parameter_names_distinct": [
+   "aggregate",
+   "aggregate[countDistinct]",
+   "aggregate[countDistinct][0]",
+   "aggregate[count]",
+   "fields",
+   "fields[]",
+   "filter",
+   "filter[_and][0][collection][_eq]",
+   "filter[_and][0][recipient][_eq]",
+   "filter[_and][0][status][_eq]",
+   "filter[_and][0][type][_nnull]",
+   "filter[_and][1][folder][_null]",
+   "filter[_and][1][item][_eq]",
+   "filter[_and][1][status][_eq]",
+   "filter[_and][2][version][_null]",
+   "filter[language][_eq]",
+   "filter[role][_eq]",
+   "filter[role][_null]",
+   "filter[user][_eq]",
+   "filter[user][_null]",
+   "limit",
+   "page",
+   "search",
+   "sort",
+   "sort[]"
+  ],
+  "tools_with_body_shape": 2,
+  "statuses_seen": [
+   200,
+   403
+  ],
+  "records": 79,
+  "excluded": 2,
+  "excluded_by_reason": {
+   "non-json": 2
+  },
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 43,
+   "total": 43,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "limitations_count": 9,
+  "tool_names": [
+   "get_collections",
+   "get_collections_crew_rota",
+   "get_collections_provisions",
+   "get_comments",
+   "get_comments_by_uuid",
+   "get_dashboards",
+   "get_dashboards_by_uuid",
+   "get_fields_crew_rota",
+   "get_fields_provisions_storage_bay",
+   "get_files",
+   "get_files_by_uuid",
+   "get_flows",
+   "get_flows_by_uuid",
+   "get_folders",
+   "get_folders_by_uuid",
+   "get_items_crew_rota",
+   "get_items_crew_rota_by_id",
+   "get_items_provisions",
+   "post_items_provisions",
+   "get_items_provisions_by_id",
+   "patch_items_provisions_by_id",
+   "get_notifications",
+   "get_panels",
+   "get_panels_by_uuid",
+   "get_permissions",
+   "get_permissions_me",
+   "get_policies_me_globals",
+   "get_policies_by_uuid",
+   "get_presets",
+   "get_presets_by_id",
+   "get_relations",
+   "get_revisions",
+   "get_roles",
+   "get_roles_me",
+   "get_roles_by_uuid",
+   "get_server_info",
+   "get_settings",
+   "get_shares",
+   "get_translations",
+   "get_users",
+   "get_users_me",
+   "get_users_by_uuid",
+   "get_versions"
+  ]
+ },
+ "manifest_norules": {
+  "evidence_id": "ev_2457c64e65ef78f193b7d85c778320f714e3e568b924b107e0b9a83bbcf227a2",
+  "confidence": "inferred",
+  "view_digest": "bdc33f92fdfd57284c0d83b6d04f1c97ebf5b911c43c0ce67ac7294563637bc0",
+  "template_rules": [],
+  "tools": 43,
+  "tools_by_method": {
+   "GET": 41,
+   "POST": 1,
+   "PATCH": 1
+  },
+  "templated_groups": 14,
+  "params_by_rule": {
+   "uuid": 9,
+   "numeric": 4
+  },
+  "params_total": 13,
+  "query_parameter_names_total": 73,
+  "query_parameter_names_distinct": [
+   "aggregate",
+   "aggregate[countDistinct]",
+   "aggregate[countDistinct][0]",
+   "aggregate[count]",
+   "fields",
+   "fields[]",
+   "filter",
+   "filter[_and][0][collection][_eq]",
+   "filter[_and][0][recipient][_eq]",
+   "filter[_and][0][status][_eq]",
+   "filter[_and][0][type][_nnull]",
+   "filter[_and][1][folder][_null]",
+   "filter[_and][1][item][_eq]",
+   "filter[_and][1][status][_eq]",
+   "filter[_and][2][version][_null]",
+   "filter[language][_eq]",
+   "filter[role][_eq]",
+   "filter[role][_null]",
+   "filter[user][_eq]",
+   "filter[user][_null]",
+   "limit",
+   "page",
+   "search",
+   "sort",
+   "sort[]"
+  ],
+  "tools_with_body_shape": 2,
+  "statuses_seen": [
+   200,
+   403
+  ],
+  "records": 79,
+  "excluded": 2,
+  "excluded_by_reason": {
+   "non-json": 2
+  },
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 43,
+   "total": 43,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "limitations_count": 8,
+  "tool_names": [
+   "get_collections",
+   "get_collections_crew_rota",
+   "get_collections_provisions",
+   "get_comments",
+   "get_comments_by_uuid",
+   "get_dashboards",
+   "get_dashboards_by_uuid",
+   "get_fields_crew_rota",
+   "get_fields_provisions_storage_bay",
+   "get_files",
+   "get_files_by_uuid",
+   "get_flows",
+   "get_flows_by_uuid",
+   "get_folders",
+   "get_folders_by_uuid",
+   "get_items_crew_rota",
+   "get_items_crew_rota_by_id",
+   "get_items_provisions",
+   "post_items_provisions",
+   "get_items_provisions_by_id",
+   "patch_items_provisions_by_id",
+   "get_notifications",
+   "get_panels",
+   "get_panels_by_uuid",
+   "get_permissions",
+   "get_permissions_me",
+   "get_policies_me_globals",
+   "get_policies_by_uuid",
+   "get_presets",
+   "get_presets_by_id",
+   "get_relations",
+   "get_revisions",
+   "get_roles",
+   "get_roles_me",
+   "get_roles_by_uuid",
+   "get_server_info",
+   "get_settings",
+   "get_shares",
+   "get_translations",
+   "get_users",
+   "get_users_me",
+   "get_users_by_uuid",
+   "get_versions"
+  ]
+ },
+ "manifest_vs_norules": {
+  "tools": [
+   43,
+   43
+  ],
+  "templated_groups": [
+   14,
+   14
+  ],
+  "note": "Directus ids are UUIDs (users, roles, policies, folders, files, dashboards, panels, flows, comments) or auto-increment integers (items, presets); rea's built-in uuid and numeric rules template all of them (9 uuid + 4 numeric parameters, 14 groups), so the three opt-in rules change nothing: 43 tools with and without them. Collection names (crew_rota, provisions) are plain words and stay literal, so each collection has its own items, collections and fields tools."
+ },
+ "seeded_objects": "two user collections with notes and field notes, crew_rota (Ada Finch, Rui Castellanos, Mina Okafor, Tomas Vey, Marisol Okonkwo-Reyes with role titles, shifts, watch stations) and provisions (Saffron Tide Biscuits, Pale Meridian Tea, Ember Compass Matches, Silver Anvil Rivets, Northern Quill Ink with category, quantity, bay, supplier note); folders Lighthouse Rota Archive and Granite Ledger Scans with one uploaded text file (Granite Ledger tally GL-2291); policy Rota Editing with 4 permissions; roles Rota Editors and Depot Viewers; users Ada Finch and Rui Castellanos; the admin's profile; bookmark Night shift crew; Insights dashboard Depot Overview with panel Provisions on hand; manual flow Announce new provisions; a comment on Ada Finch's rota entry",
+ "seeded_objects_detail": {
+  "admin": "rea-admin@example.com (Rea Admin, title Rota Archivist, location Granite Point), bootstrapped from ADMIN_EMAIL/ADMIN_PASSWORD",
+  "collections": {
+   "crew_rota": "note 'Who keeps which watch for the Lighthouse Rota.'; fields name, role_title, shift (dropdown Dawn/Day/Evening/Night), watch_station, notes; 5 items",
+   "provisions": "note 'Stores held at the Saltmarsh Depot for the rota.'; fields title, category, quantity, unit, storage_bay, supplier_note; 5 items"
+  },
+  "folders": [
+   "Lighthouse Rota Archive",
+   "Granite Ledger Scans (child)"
+  ],
+  "files": [
+   "granite-ledger-gl-2291.txt, title 'Granite Ledger tally GL-2291', multipart upload into Granite Ledger Scans"
+  ],
+  "policies": [
+   "Rota Editing (crew_rota create/read/update, provisions read; app access)"
+  ],
+  "roles": [
+   "Rota Editors (with the Rota Editing policy)",
+   "Depot Viewers"
+  ],
+  "users": [
+   "Ada Finch <ada.finch@example.com> Tide Table Keeper",
+   "Rui Castellanos <rui.castellanos@example.com> Quarry Auditor"
+  ],
+  "presets": [
+   "bookmark Night shift crew (crew_rota, shift = Night)"
+  ],
+  "dashboards": [
+   "Depot Overview, panel Provisions on hand (metric, sum of quantity)"
+  ],
+  "flows": [
+   "Announce new provisions (manual trigger, inactive)"
+  ],
+  "comments": [
+   "'Ada swaps the January night watch with Tomas Vey.' on crew_rota item 1"
+  ],
+  "scratch_during_capture": "provision Rea Scratch Provision created (POST 200), edited (PATCH 200), read, deleted (DELETE 204), re-read (403, Directus answers 403 for a missing item)"
+ },
+ "ui_pages_visited": [
+  "/admin/login (sign-in; 'Remind Later' on the project-owner dialog)",
+  "/admin/content/crew_rota",
+  "/admin/content/provisions",
+  "/admin/content/provisions/2 (row click)",
+  "/admin/users",
+  "/admin/files",
+  "/admin/insights",
+  "/admin/insights/<dashboard id>",
+  "/admin/settings (project)",
+  "/admin/settings/data-model",
+  "/admin/settings/flows"
+ ],
+ "resource_constraint": false
+}

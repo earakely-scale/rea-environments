@@ -1,0 +1,314 @@
+{
+ "app": "sonarr",
+ "title": "Sonarr",
+ "repo": "SonarrEnv-REA",
+ "image": "lscr.io/linuxserver/sonarr:4.0.20.3014-ls329",
+ "image_digest": "lscr.io/linuxserver/sonarr@sha256:44b06045a98bc1f237b9ffefc4b28dab64cb29305e4a2a94875ae93b5224e4cc",
+ "images": {
+  "lscr.io/linuxserver/sonarr:4.0.20.3014-ls329": {
+   "digest": "lscr.io/linuxserver/sonarr@sha256:44b06045a98bc1f237b9ffefc4b28dab64cb29305e4a2a94875ae93b5224e4cc"
+  }
+ },
+ "app_version": "4.0.20.3014",
+ "app_version_full": "4.0.20.3014 (linuxserver build ls329)",
+ "licence": "GPL-3.0",
+ "compose_project": "rea-sonarr",
+ "origin": "http://127.0.0.1:3221",
+ "database": "SQLite (/config/sonarr.db, built in)",
+ "tooling": {
+  "rea": "6.6.0",
+  "playwright-core": "1.58.2",
+  "chromium": "Chromium 155.0.8059.79 snap",
+  "node": "v24.22.0",
+  "python": "3.12.3",
+  "docker": "29.9.1",
+  "compose": "5.6.0",
+  "vm": "Ubuntu 24.04 amd64"
+ },
+ "seeded_objects": "Offline settings objects only: 4 tags, 2 root folders, 3 custom formats, 2 quality profiles with custom-format scores, 2 release profiles, 1 delay profile, 2 Custom Script connections, 3 import-list exclusions, 1 auto-tagging rule; forms login for rea-admin; no series (they need a live metadata lookup of real shows)",
+ "seeded_names": {
+  "tags": [
+   "blue-heron-kitchen",
+   "granite-ledger",
+   "lighthouse-rota",
+   "saltmarsh-depot"
+  ],
+  "rootfolders": [
+   "/data/granite-ledger-films",
+   "/data/lighthouse-rota-archive"
+  ],
+  "customformats": [
+   "Blue Heron Kitchen Subtitles",
+   "Granite Ledger Remux",
+   "Saltmarsh Depot x265"
+  ],
+  "qualityprofiles": [
+   "Granite Ledger Archive SD",
+   "Lighthouse Rota HD"
+  ],
+  "releaseprofiles": [
+   "Copperfield Annex Preferred",
+   "Tide Table Filter"
+  ],
+  "delayprofiles": [
+   "1",
+   "2"
+  ],
+  "notifications": [
+   "Copperfield Annex Script",
+   "Night Shift Pager"
+  ],
+  "importlistexclusions": [
+   "Blue Heron Kitchen Nights",
+   "Granite Ledger Chronicles",
+   "The Saltmarsh Depot Hour"
+  ],
+  "autotagging": [
+   "Night Shift Dramas"
+  ]
+ },
+ "ui_pages_visited": [
+  "/login",
+  "/calendar",
+  "/activity/queue",
+  "/wanted/missing",
+  "/settings/profiles",
+  "/settings/customformats",
+  "/settings/tags",
+  "/settings/connect",
+  "/system/status"
+ ],
+ "scripted_calls": {
+  "total": 59,
+  "by_method": {
+   "GET": 53,
+   "POST": 2,
+   "PUT": 2,
+   "DELETE": 2
+  },
+  "non_2xx": [
+   {
+    "method": "GET",
+    "path": "/api/v3/tag/6",
+    "status": 404
+   }
+  ]
+ },
+ "scoped_har": {
+  "file": "sonarr.scoped.har",
+  "sha256": "25abe37ab890a22325bc85ae5852ba96517238117328fe8c818656386883654e",
+  "bytes": 333903,
+  "records": 98,
+  "methods": {
+   "GET": 94,
+   "POST": 2,
+   "PUT": 2
+  },
+  "statuses": {
+   "200": 93,
+   "201": 2,
+   "202": 2,
+   "404": 1
+  }
+ },
+ "scope_har": {
+  "origin": "http://127.0.0.1:3221",
+  "keep_regex": "^/api/v3/",
+  "kept": 98,
+  "dropped": {
+   "other-origin": 0,
+   "path": 18,
+   "non-json": 2,
+   "auth": 3,
+   "big-body": 1,
+   "over-max": 0
+  },
+  "methods": {
+   "GET": 94,
+   "POST": 2,
+   "PUT": 2
+  },
+  "bytes": 333370
+ },
+ "credential_grep": {
+  "admin_file_value_hits": 0,
+  "token_shape_hits": 0,
+  "session_cookie_name_hits": 0,
+  "result": "pass"
+ },
+ "notes": [
+  "Forms login; the UI and the scripted fetches send X-Api-Key from window.Sonarr.apiKey; config/host is never read (its response holds the API key and password) and is in the drop regex as a guard.",
+  "DELETE /api/v3/tag/{id} and /api/v3/releaseprofile/{id} answer 200 with an empty body and no content type (HAR mimeType x-unknown); scope_har keeps empty replies only for 202/204 or a blank mimeType, so the two DELETEs were dropped as non-json."
+ ],
+ "manifests": {
+  "rules": {
+   "evidence_id": "ev_1ca510bb7f5f8a7e2d424e9f69d110dd4d569368cdeabe28ea2f7594add08a0d",
+   "confidence": "inferred",
+   "tools": 48,
+   "tools_by_method": {
+    "GET": 44,
+    "POST": 2,
+    "PUT": 2
+   },
+   "templated_groups": 14,
+   "params_by_rule": {
+    "numeric": 14
+   },
+   "query_parameter_names_distinct": [
+    "all",
+    "end",
+    "includeUnknownSeriesItems",
+    "monitored",
+    "page",
+    "pageSize",
+    "sortDirection",
+    "sortKey",
+    "start"
+   ],
+   "tools_with_body_shape": 4,
+   "excluded": 0,
+   "unknowns": [
+    "authorization-model",
+    "response-semantics",
+    "state-transition"
+   ],
+   "tool_names": [
+    "get_autotagging",
+    "get_autotagging_by_id",
+    "get_calendar",
+    "get_config_mediamanagement",
+    "get_config_naming",
+    "get_config_ui",
+    "get_customfilter",
+    "get_customformat",
+    "get_customformat_by_id",
+    "get_delayprofile",
+    "get_delayprofile_by_id",
+    "get_diskspace",
+    "get_downloadclient",
+    "get_health",
+    "get_importlist",
+    "get_importlistexclusion",
+    "get_importlistexclusion_paged",
+    "get_importlistexclusion_by_id",
+    "get_indexer",
+    "get_indexerflag",
+    "get_language",
+    "get_language_by_id",
+    "get_localization_language",
+    "get_notification",
+    "get_notification_by_id",
+    "get_qualitydefinition",
+    "get_qualitydefinition_by_id",
+    "get_qualityprofile",
+    "get_qualityprofile_by_id",
+    "get_queue",
+    "get_queue_details",
+    "get_queue_status",
+    "get_releaseprofile",
+    "post_releaseprofile",
+    "get_releaseprofile_by_id",
+    "put_releaseprofile_by_id",
+    "get_rootfolder",
+    "get_rootfolder_by_id",
+    "get_series",
+    "get_system_status",
+    "get_system_task",
+    "get_tag",
+    "post_tag",
+    "get_tag_detail",
+    "get_tag_detail_by_id",
+    "get_tag_by_id",
+    "put_tag_by_id",
+    "get_wanted_missing"
+   ]
+  },
+  "norules": {
+   "evidence_id": "ev_41d25acb3dd4817028221edb513c0f356fe773c16bdc43d1f96873bac0c574ae",
+   "confidence": "inferred",
+   "tools": 48,
+   "tools_by_method": {
+    "GET": 44,
+    "POST": 2,
+    "PUT": 2
+   },
+   "templated_groups": 14,
+   "params_by_rule": {
+    "numeric": 14
+   },
+   "query_parameter_names_distinct": [
+    "all",
+    "end",
+    "includeUnknownSeriesItems",
+    "monitored",
+    "page",
+    "pageSize",
+    "sortDirection",
+    "sortKey",
+    "start"
+   ],
+   "tools_with_body_shape": 4,
+   "excluded": 0,
+   "unknowns": [
+    "authorization-model",
+    "response-semantics",
+    "state-transition"
+   ],
+   "tool_names": [
+    "get_autotagging",
+    "get_autotagging_by_id",
+    "get_calendar",
+    "get_config_mediamanagement",
+    "get_config_naming",
+    "get_config_ui",
+    "get_customfilter",
+    "get_customformat",
+    "get_customformat_by_id",
+    "get_delayprofile",
+    "get_delayprofile_by_id",
+    "get_diskspace",
+    "get_downloadclient",
+    "get_health",
+    "get_importlist",
+    "get_importlistexclusion",
+    "get_importlistexclusion_paged",
+    "get_importlistexclusion_by_id",
+    "get_indexer",
+    "get_indexerflag",
+    "get_language",
+    "get_language_by_id",
+    "get_localization_language",
+    "get_notification",
+    "get_notification_by_id",
+    "get_qualitydefinition",
+    "get_qualitydefinition_by_id",
+    "get_qualityprofile",
+    "get_qualityprofile_by_id",
+    "get_queue",
+    "get_queue_details",
+    "get_queue_status",
+    "get_releaseprofile",
+    "post_releaseprofile",
+    "get_releaseprofile_by_id",
+    "put_releaseprofile_by_id",
+    "get_rootfolder",
+    "get_rootfolder_by_id",
+    "get_series",
+    "get_system_status",
+    "get_system_task",
+    "get_tag",
+    "post_tag",
+    "get_tag_detail",
+    "get_tag_detail_by_id",
+    "get_tag_by_id",
+    "put_tag_by_id",
+    "get_wanted_missing"
+   ]
+  }
+ },
+ "capture_evidence": {
+  "evidence_id": "ev_c572a89136acc993cc0d84090da837a73206dc0d45291613dbd7a616120c4850",
+  "records": 98,
+  "confidence": "observed"
+ }
+}

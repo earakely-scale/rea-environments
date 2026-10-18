@@ -10,15 +10,15 @@ the Evidence it came from, and nothing executes {{APP_NAME}}. Tasks are graded d
 
 ## What's in it
 
-- **{{TOOL_COUNT}} tools** ({{TOOLS_BY_METHOD}}) over {{SCOPED_RECORDS}} recorded exchanges on `{{ORIGIN}}`; {{EXCLUDED_COUNT}}
-  recorded groups excluded as UI pages, assets or other origins.
+- **{{TOOL_COUNT}} tools** ({{TOOLS_BY_METHOD}}) over {{SCOPED_RECORDS}} recorded exchanges on `{{ORIGIN}}`; {{EXCLUDED_TEXT}}.
 - **Path parameters**: {{PARAMS_BY_RULE}}. REA's four format rules (numeric, uuid, hex, iso-date) applied unconditionally;
   the three opt-in rules (`after-uid-literal`, `opaque-token`, `sibling-variance`) were requested and are labelled per
-  parameter. Without them the manifest has {{TOOL_COUNT_NORULES}} tools, one per literal path.
+  parameter. With the four format rules alone the manifest has {{TOOL_COUNT_NORULES}} tools.
 - **Unknowns** the manifest states explicitly: authorization model, response semantics beyond recorded exchanges, state
   transitions between tools.
-- **{{TASK_COUNT}} retrieval tasks** (`evals/{{ENV_ID}}-retrieval.toml`): each asks one factual question answerable through
-  exactly one recorded exchange; reward 1 if the response contains the recorded value, else 0. Plus `smoke`, which
+- **{{TASK_COUNT}} retrieval tasks** (`evals/{{ENV_ID}}-retrieval.toml`): each asks one factual question about a seeded object,
+  with a distinct answer that the app does not ship by default, answerable through
+  a recorded exchange; reward 1 if the response contains the recorded value, else 0. Plus `smoke`, which
   deploys the environment and checks replay through the MCP endpoint.
 - **{{EPISODE_COUNT}} recorded episodes** by {{MODELS}} through the Hugging Face router, with their chat transcripts.
 - **Provenance**: capture `{{CAPTURE_EVIDENCE_ID}}` (scoped HAR sha256 `{{HAR_SHA256}}`, {{HAR_BYTES}} bytes), manifest view

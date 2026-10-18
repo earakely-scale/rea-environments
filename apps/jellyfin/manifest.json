@@ -1,0 +1,1530 @@
+{
+ "evidence_id": "ev_e0005f7fdf6adba22caf1ff60dd317660ec3e9e5fbf91991a6bfdfd803d9feea",
+ "subject": {
+  "name": "jellyfin.scoped.har",
+  "digest": {
+   "sha256": "eb1bf56ca3ad61fccf0c9aec11fc580ae2929cf9703d8de26ff40f7fa7f602cc"
+  },
+  "local_path": "/home/ubuntu/capture/jellyfin/jellyfin.scoped.har",
+  "format": "file",
+  "architecture": null
+ },
+ "provider": {
+  "id": "rea-analysis-view",
+  "name": "REA analysis view projection",
+  "version": "1"
+ },
+ "analysis_profile": null,
+ "predicate_type": "rea.analysis-view",
+ "operation": "inspect_analysis_view",
+ "parameters": {
+  "parent_evidence_id": "ev_e0e8efc19b07b4df61b2a5753a06282b27892bc8404746372201bfdd27662ba9",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "raw_result": null,
+ "normalized_result": {
+  "parent_evidence_id": "ev_e0e8efc19b07b4df61b2a5753a06282b27892bc8404746372201bfdd27662ba9",
+  "parent_operation": "inspect_web_network_capture",
+  "parent_digest": "e0e8efc19b07b4df61b2a5753a06282b27892bc8404746372201bfdd27662ba9",
+  "view_digest": "7e72d58877f1dd3d1525e9f9ef4e7ab6f4e18a2193f16dcc85a37629e7e6f981",
+  "artifact": {
+   "path": "/home/ubuntu/capture/jellyfin/jellyfin.scoped.har",
+   "sha256": "eb1bf56ca3ad61fccf0c9aec11fc580ae2929cf9703d8de26ff40f7fa7f602cc"
+  },
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 34,
+   "total": 34,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "limitations": [
+   "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+   "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+   "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+   "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+   "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+   "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+   "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+   "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+   "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+  ],
+  "unknowns": [
+   {
+    "kind": "authorization-model",
+    "statement": "Authorization headers and cookies are structurally excluded from captures; the manifest states no authorization model."
+   },
+   {
+    "kind": "response-semantics",
+    "statement": "Recorded statuses and bodies are retained only as pointers to parent records; the manifest states no response semantics."
+   },
+   {
+    "kind": "state-transition",
+    "statement": "Recorded exchanges are independent observations; the manifest states no ordering, side effects or state transitions between tools."
+   }
+  ],
+  "origin": "http://127.0.0.1:3224",
+  "name": "127-0-0-1-3224",
+  "tools": [
+   {
+    "name": "get_albums_similar_by_hash",
+    "method": "GET",
+    "path_template": "/Albums/{hex}/Similar",
+    "api_surface_template": "/Albums/{hex}/Similar",
+    "params": [
+     {
+      "index": 1,
+      "name": "hash",
+      "rule": "hex",
+      "basis": "inferred",
+      "observed_values": [
+       "6300cdb369f4c14985c6df46417de861"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "limit",
+     "userId"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     49
+    ]
+   },
+   {
+    "name": "get_artists",
+    "method": "GET",
+    "path_template": "/Artists",
+    "api_surface_template": "/Artists",
+    "params": [],
+    "query_parameter_names": [
+     "fields",
+     "userId"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     44
+    ]
+   },
+   {
+    "name": "get_artists_ada_20finch_20quartet",
+    "method": "GET",
+    "path_template": "/Artists/Ada%20Finch%20Quartet",
+    "api_surface_template": "/Artists/Ada%20Finch%20Quartet",
+    "params": [],
+    "query_parameter_names": [
+     "userId"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     45
+    ]
+   },
+   {
+    "name": "get_artists_blue_20heron_20kitchen_20band",
+    "method": "GET",
+    "path_template": "/Artists/Blue%20Heron%20Kitchen%20Band",
+    "api_surface_template": "/Artists/Blue%20Heron%20Kitchen%20Band",
+    "params": [],
+    "query_parameter_names": [
+     "userId"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     46
+    ]
+   },
+   {
+    "name": "get_branding_configuration",
+    "method": "GET",
+    "path_template": "/Branding/Configuration",
+    "api_surface_template": "/Branding/Configuration",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     1
+    ]
+   },
+   {
+    "name": "get_displaypreferences_usersettings",
+    "method": "GET",
+    "path_template": "/DisplayPreferences/usersettings",
+    "api_surface_template": "/DisplayPreferences/usersettings",
+    "params": [],
+    "query_parameter_names": [
+     "client",
+     "userId"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     2,
+     7
+    ]
+   },
+   {
+    "name": "get_items",
+    "method": "GET",
+    "path_template": "/Items",
+    "api_surface_template": "/Items",
+    "params": [],
+    "query_parameter_names": [
+     "fields",
+     "includeItemTypes",
+     "isFavorite",
+     "parentId",
+     "recursive",
+     "searchTerm",
+     "sortBy",
+     "userId"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     42,
+     52,
+     54,
+     61,
+     62,
+     71
+    ]
+   },
+   {
+    "name": "get_items_counts",
+    "method": "GET",
+    "path_template": "/Items/Counts",
+    "api_surface_template": "/Items/Counts",
+    "params": [],
+    "query_parameter_names": [
+     "userId"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     59
+    ]
+   },
+   {
+    "name": "get_items_filters",
+    "method": "GET",
+    "path_template": "/Items/Filters",
+    "api_surface_template": "/Items/Filters",
+    "params": [],
+    "query_parameter_names": [
+     "parentId",
+     "userId"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     58
+    ]
+   },
+   {
+    "name": "get_items_latest",
+    "method": "GET",
+    "path_template": "/Items/Latest",
+    "api_surface_template": "/Items/Latest",
+    "params": [],
+    "query_parameter_names": [
+     "limit",
+     "parentId",
+     "userId"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     57
+    ]
+   },
+   {
+    "name": "get_items_by_hash",
+    "method": "GET",
+    "path_template": "/Items/{hex}",
+    "api_surface_template": "/Items/{hex}",
+    "params": [
+     {
+      "index": 1,
+      "name": "hash",
+      "rule": "hex",
+      "basis": "inferred",
+      "observed_values": [
+       "2774589b45efad94f4119ea6792461d2",
+       "2a8cef05e71e5bdb446685b5c0852311",
+       "6300cdb369f4c14985c6df46417de861",
+       "d24d724b20ae0d7f3eb2fcf70b8cf3f2",
+       "fa496e47ab00a64c5e354fea5eafe900"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "userId"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200,
+     404
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     39,
+     40,
+     51,
+     53,
+     65,
+     70
+    ]
+   },
+   {
+    "name": "get_items_ancestors_by_hash",
+    "method": "GET",
+    "path_template": "/Items/{hex}/Ancestors",
+    "api_surface_template": "/Items/{hex}/Ancestors",
+    "params": [
+     {
+      "index": 1,
+      "name": "hash",
+      "rule": "hex",
+      "basis": "inferred",
+      "observed_values": [
+       "692714480b0d4d767aa4fae2fa5ad545"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "userId"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     43
+    ]
+   },
+   {
+    "name": "get_items_similar_by_hash",
+    "method": "GET",
+    "path_template": "/Items/{hex}/Similar",
+    "api_surface_template": "/Items/{hex}/Similar",
+    "params": [
+     {
+      "index": 1,
+      "name": "hash",
+      "rule": "hex",
+      "basis": "inferred",
+      "observed_values": [
+       "2774589b45efad94f4119ea6792461d2",
+       "6300cdb369f4c14985c6df46417de861",
+       "db9ecc6dff9ccaa96042cf1007d24901"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "ExcludeArtistIds",
+     "fields",
+     "limit",
+     "userId"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     21,
+     26,
+     55
+    ]
+   },
+   {
+    "name": "get_library_mediafolders",
+    "method": "GET",
+    "path_template": "/Library/MediaFolders",
+    "api_surface_template": "/Library/MediaFolders",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     37
+    ]
+   },
+   {
+    "name": "get_library_virtualfolders",
+    "method": "GET",
+    "path_template": "/Library/VirtualFolders",
+    "api_surface_template": "/Library/VirtualFolders",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     31,
+     36
+    ]
+   },
+   {
+    "name": "get_musicgenres",
+    "method": "GET",
+    "path_template": "/MusicGenres",
+    "api_surface_template": "/MusicGenres",
+    "params": [],
+    "query_parameter_names": [
+     "userId"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     47
+    ]
+   },
+   {
+    "name": "get_musicgenres_kitchen_20jazz",
+    "method": "GET",
+    "path_template": "/MusicGenres/Kitchen%20Jazz",
+    "api_surface_template": "/MusicGenres/Kitchen%20Jazz",
+    "params": [],
+    "query_parameter_names": [
+     "userId"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     48
+    ]
+   },
+   {
+    "name": "post_playlists",
+    "method": "POST",
+    "path_template": "/Playlists",
+    "api_surface_template": "/Playlists",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "Name": "string",
+      "Ids": "array",
+      "UserId": "string",
+      "MediaType": "string"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     63
+    ]
+   },
+   {
+    "name": "get_playlists_items_by_hash",
+    "method": "GET",
+    "path_template": "/Playlists/{hex}/Items",
+    "api_surface_template": "/Playlists/{hex}/Items",
+    "params": [
+     {
+      "index": 1,
+      "name": "hash",
+      "rule": "hex",
+      "basis": "inferred",
+      "observed_values": [
+       "2774589b45efad94f4119ea6792461d2",
+       "d24d724b20ae0d7f3eb2fcf70b8cf3f2"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "EnableImageTypes",
+     "Fields",
+     "UserId",
+     "userId"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     29,
+     50,
+     68
+    ]
+   },
+   {
+    "name": "get_playlists_users_by_hash_hash_2",
+    "method": "GET",
+    "path_template": "/Playlists/{hex}/Users/{hex}",
+    "api_surface_template": "/Playlists/{hex}/Users/{hex}",
+    "params": [
+     {
+      "index": 1,
+      "name": "hash",
+      "rule": "hex",
+      "basis": "inferred",
+      "observed_values": [
+       "2774589b45efad94f4119ea6792461d2"
+      ]
+     },
+     {
+      "index": 3,
+      "name": "hash_2",
+      "rule": "hex",
+      "basis": "inferred",
+      "observed_values": [
+       "d8378f2b5f1b45d98649fff63abc1e13"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     27,
+     28
+    ]
+   },
+   {
+    "name": "get_search_hints",
+    "method": "GET",
+    "path_template": "/Search/Hints",
+    "api_surface_template": "/Search/Hints",
+    "params": [],
+    "query_parameter_names": [
+     "limit",
+     "searchTerm",
+     "userId"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     60
+    ]
+   },
+   {
+    "name": "get_shows_nextup",
+    "method": "GET",
+    "path_template": "/Shows/NextUp",
+    "api_surface_template": "/Shows/NextUp",
+    "params": [],
+    "query_parameter_names": [
+     "DisableFirstEpisode",
+     "EnableImageTypes",
+     "EnableResumable",
+     "EnableRewatching",
+     "EnableTotalRecordCount",
+     "Fields",
+     "ImageTypeLimit",
+     "Limit",
+     "NextUpDateCutoff",
+     "UserId"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     13
+    ]
+   },
+   {
+    "name": "get_system_info",
+    "method": "GET",
+    "path_template": "/System/Info",
+    "api_surface_template": "/System/Info",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     5,
+     30,
+     32
+    ]
+   },
+   {
+    "name": "get_system_info_public",
+    "method": "GET",
+    "path_template": "/System/Info/Public",
+    "api_surface_template": "/System/Info/Public",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     0
+    ]
+   },
+   {
+    "name": "post_userfavoriteitems_by_hash",
+    "method": "POST",
+    "path_template": "/UserFavoriteItems/{hex}",
+    "api_surface_template": "/UserFavoriteItems/{hex}",
+    "params": [
+     {
+      "index": 1,
+      "name": "hash",
+      "rule": "hex",
+      "basis": "inferred",
+      "observed_values": [
+       "d24d724b20ae0d7f3eb2fcf70b8cf3f2"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "userId"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     67
+    ]
+   },
+   {
+    "name": "get_useritems_userdata_by_hash",
+    "method": "GET",
+    "path_template": "/UserItems/{hex}/UserData",
+    "api_surface_template": "/UserItems/{hex}/UserData",
+    "params": [
+     {
+      "index": 1,
+      "name": "hash",
+      "rule": "hex",
+      "basis": "inferred",
+      "observed_values": [
+       "b75dcb4f4e42bab7e01f0e8203244879"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "userId"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     56
+    ]
+   },
+   {
+    "name": "get_userviews",
+    "method": "GET",
+    "path_template": "/UserViews",
+    "api_surface_template": "/UserViews",
+    "params": [],
+    "query_parameter_names": [
+     "userId"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     9,
+     38
+    ]
+   },
+   {
+    "name": "get_users",
+    "method": "GET",
+    "path_template": "/Users",
+    "api_surface_template": "/Users",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     33
+    ]
+   },
+   {
+    "name": "get_users_me",
+    "method": "GET",
+    "path_template": "/Users/Me",
+    "api_surface_template": "/Users/Me",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     35
+    ]
+   },
+   {
+    "name": "get_users_by_hash",
+    "method": "GET",
+    "path_template": "/Users/{hex}",
+    "api_surface_template": "/Users/{hex}",
+    "params": [
+     {
+      "index": 1,
+      "name": "hash",
+      "rule": "hex",
+      "basis": "inferred",
+      "observed_values": [
+       "d8378f2b5f1b45d98649fff63abc1e13",
+       "fa61afa9d3a4467c9204027af98ccf5e"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     3,
+     4,
+     6,
+     8,
+     34
+    ]
+   },
+   {
+    "name": "get_users_items_by_hash",
+    "method": "GET",
+    "path_template": "/Users/{hex}/Items",
+    "api_surface_template": "/Users/{hex}/Items",
+    "params": [
+     {
+      "index": 1,
+      "name": "hash",
+      "rule": "hex",
+      "basis": "inferred",
+      "observed_values": [
+       "d8378f2b5f1b45d98649fff63abc1e13"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "AlbumIds",
+     "ContributingArtistIds",
+     "EnableImageTypes",
+     "ExcludeItemIds",
+     "Fields",
+     "ImageTypeLimit",
+     "IncludeItemTypes",
+     "Limit",
+     "ParentId",
+     "Recursive",
+     "SortBy",
+     "SortOrder",
+     "StartIndex"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     18,
+     22,
+     23,
+     24
+    ]
+   },
+   {
+    "name": "get_users_items_latest_by_hash",
+    "method": "GET",
+    "path_template": "/Users/{hex}/Items/Latest",
+    "api_surface_template": "/Users/{hex}/Items/Latest",
+    "params": [
+     {
+      "index": 1,
+      "name": "hash",
+      "rule": "hex",
+      "basis": "inferred",
+      "observed_values": [
+       "d8378f2b5f1b45d98649fff63abc1e13"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "EnableImageTypes",
+     "Fields",
+     "ImageTypeLimit",
+     "Limit",
+     "ParentId"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     14,
+     15,
+     16
+    ]
+   },
+   {
+    "name": "get_users_items_resume_by_hash",
+    "method": "GET",
+    "path_template": "/Users/{hex}/Items/Resume",
+    "api_surface_template": "/Users/{hex}/Items/Resume",
+    "params": [
+     {
+      "index": 1,
+      "name": "hash",
+      "rule": "hex",
+      "basis": "inferred",
+      "observed_values": [
+       "d8378f2b5f1b45d98649fff63abc1e13"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "EnableImageTypes",
+     "EnableTotalRecordCount",
+     "Fields",
+     "ImageTypeLimit",
+     "Limit",
+     "MediaTypes",
+     "Recursive"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     10,
+     11,
+     12
+    ]
+   },
+   {
+    "name": "get_users_items_by_hash_hash_2",
+    "method": "GET",
+    "path_template": "/Users/{hex}/Items/{hex}",
+    "api_surface_template": "/Users/{hex}/Items/{hex}",
+    "params": [
+     {
+      "index": 1,
+      "name": "hash",
+      "rule": "hex",
+      "basis": "inferred",
+      "observed_values": [
+       "d8378f2b5f1b45d98649fff63abc1e13"
+      ]
+     },
+     {
+      "index": 3,
+      "name": "hash_2",
+      "rule": "hex",
+      "basis": "inferred",
+      "observed_values": [
+       "2774589b45efad94f4119ea6792461d2",
+       "6300cdb369f4c14985c6df46417de861",
+       "885d93c5c0c8bf986da2ebfb581602ed",
+       "911cb375d4dbd9806dd58ec6b6cee9e9"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     17,
+     20,
+     25,
+     41
+    ]
+   }
+  ],
+  "records": [
+   {
+    "ordinal": 0,
+    "method": "GET",
+    "path": "/System/Info/Public",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 1,
+    "method": "GET",
+    "path": "/Branding/Configuration",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 2,
+    "method": "GET",
+    "path": "/DisplayPreferences/usersettings",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 3,
+    "method": "GET",
+    "path": "/Users/d8378f2b5f1b45d98649fff63abc1e13",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 4,
+    "method": "GET",
+    "path": "/Users/d8378f2b5f1b45d98649fff63abc1e13",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 5,
+    "method": "GET",
+    "path": "/System/Info",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 6,
+    "method": "GET",
+    "path": "/Users/d8378f2b5f1b45d98649fff63abc1e13",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 7,
+    "method": "GET",
+    "path": "/DisplayPreferences/usersettings",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 8,
+    "method": "GET",
+    "path": "/Users/d8378f2b5f1b45d98649fff63abc1e13",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 9,
+    "method": "GET",
+    "path": "/UserViews",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 10,
+    "method": "GET",
+    "path": "/Users/d8378f2b5f1b45d98649fff63abc1e13/Items/Resume",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 11,
+    "method": "GET",
+    "path": "/Users/d8378f2b5f1b45d98649fff63abc1e13/Items/Resume",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 12,
+    "method": "GET",
+    "path": "/Users/d8378f2b5f1b45d98649fff63abc1e13/Items/Resume",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 13,
+    "method": "GET",
+    "path": "/Shows/NextUp",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 14,
+    "method": "GET",
+    "path": "/Users/d8378f2b5f1b45d98649fff63abc1e13/Items/Latest",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 15,
+    "method": "GET",
+    "path": "/Users/d8378f2b5f1b45d98649fff63abc1e13/Items/Latest",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 16,
+    "method": "GET",
+    "path": "/Users/d8378f2b5f1b45d98649fff63abc1e13/Items/Latest",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 17,
+    "method": "GET",
+    "path": "/Users/d8378f2b5f1b45d98649fff63abc1e13/Items/911cb375d4dbd9806dd58ec6b6cee9e9",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 18,
+    "method": "GET",
+    "path": "/Users/d8378f2b5f1b45d98649fff63abc1e13/Items",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 20,
+    "method": "GET",
+    "path": "/Users/d8378f2b5f1b45d98649fff63abc1e13/Items/6300cdb369f4c14985c6df46417de861",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 21,
+    "method": "GET",
+    "path": "/Items/6300cdb369f4c14985c6df46417de861/Similar",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 22,
+    "method": "GET",
+    "path": "/Users/d8378f2b5f1b45d98649fff63abc1e13/Items",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 23,
+    "method": "GET",
+    "path": "/Users/d8378f2b5f1b45d98649fff63abc1e13/Items",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 24,
+    "method": "GET",
+    "path": "/Users/d8378f2b5f1b45d98649fff63abc1e13/Items",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 25,
+    "method": "GET",
+    "path": "/Users/d8378f2b5f1b45d98649fff63abc1e13/Items/2774589b45efad94f4119ea6792461d2",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 26,
+    "method": "GET",
+    "path": "/Items/2774589b45efad94f4119ea6792461d2/Similar",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 27,
+    "method": "GET",
+    "path": "/Playlists/2774589b45efad94f4119ea6792461d2/Users/d8378f2b5f1b45d98649fff63abc1e13",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 28,
+    "method": "GET",
+    "path": "/Playlists/2774589b45efad94f4119ea6792461d2/Users/d8378f2b5f1b45d98649fff63abc1e13",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 29,
+    "method": "GET",
+    "path": "/Playlists/2774589b45efad94f4119ea6792461d2/Items",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 30,
+    "method": "GET",
+    "path": "/System/Info",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 31,
+    "method": "GET",
+    "path": "/Library/VirtualFolders",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 32,
+    "method": "GET",
+    "path": "/System/Info",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 33,
+    "method": "GET",
+    "path": "/Users",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 34,
+    "method": "GET",
+    "path": "/Users/fa61afa9d3a4467c9204027af98ccf5e",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 35,
+    "method": "GET",
+    "path": "/Users/Me",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 36,
+    "method": "GET",
+    "path": "/Library/VirtualFolders",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 37,
+    "method": "GET",
+    "path": "/Library/MediaFolders",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 38,
+    "method": "GET",
+    "path": "/UserViews",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 39,
+    "method": "GET",
+    "path": "/Items/6300cdb369f4c14985c6df46417de861",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 40,
+    "method": "GET",
+    "path": "/Items/fa496e47ab00a64c5e354fea5eafe900",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 41,
+    "method": "GET",
+    "path": "/Users/d8378f2b5f1b45d98649fff63abc1e13/Items/885d93c5c0c8bf986da2ebfb581602ed",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 42,
+    "method": "GET",
+    "path": "/Items",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 43,
+    "method": "GET",
+    "path": "/Items/692714480b0d4d767aa4fae2fa5ad545/Ancestors",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 44,
+    "method": "GET",
+    "path": "/Artists",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 45,
+    "method": "GET",
+    "path": "/Artists/Ada%20Finch%20Quartet",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 46,
+    "method": "GET",
+    "path": "/Artists/Blue%20Heron%20Kitchen%20Band",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 47,
+    "method": "GET",
+    "path": "/MusicGenres",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 48,
+    "method": "GET",
+    "path": "/MusicGenres/Kitchen%20Jazz",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 49,
+    "method": "GET",
+    "path": "/Albums/6300cdb369f4c14985c6df46417de861/Similar",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 50,
+    "method": "GET",
+    "path": "/Playlists/2774589b45efad94f4119ea6792461d2/Items",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 51,
+    "method": "GET",
+    "path": "/Items/2774589b45efad94f4119ea6792461d2",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 52,
+    "method": "GET",
+    "path": "/Items",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 53,
+    "method": "GET",
+    "path": "/Items/2a8cef05e71e5bdb446685b5c0852311",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 54,
+    "method": "GET",
+    "path": "/Items",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 55,
+    "method": "GET",
+    "path": "/Items/db9ecc6dff9ccaa96042cf1007d24901/Similar",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 56,
+    "method": "GET",
+    "path": "/UserItems/b75dcb4f4e42bab7e01f0e8203244879/UserData",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 57,
+    "method": "GET",
+    "path": "/Items/Latest",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 58,
+    "method": "GET",
+    "path": "/Items/Filters",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 59,
+    "method": "GET",
+    "path": "/Items/Counts",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 60,
+    "method": "GET",
+    "path": "/Search/Hints",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 61,
+    "method": "GET",
+    "path": "/Items",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 62,
+    "method": "GET",
+    "path": "/Items",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 63,
+    "method": "POST",
+    "path": "/Playlists",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 65,
+    "method": "GET",
+    "path": "/Items/d24d724b20ae0d7f3eb2fcf70b8cf3f2",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 67,
+    "method": "POST",
+    "path": "/UserFavoriteItems/d24d724b20ae0d7f3eb2fcf70b8cf3f2",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 68,
+    "method": "GET",
+    "path": "/Playlists/d24d724b20ae0d7f3eb2fcf70b8cf3f2/Items",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 70,
+    "method": "GET",
+    "path": "/Items/d24d724b20ae0d7f3eb2fcf70b8cf3f2",
+    "status": 404,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 71,
+    "method": "GET",
+    "path": "/Items",
+    "status": 200,
+    "content_type": "application/json"
+   }
+  ],
+  "excluded": [
+   {
+    "method": "POST",
+    "origin": "http://127.0.0.1:3224",
+    "path_template": "/DisplayPreferences/usersettings",
+    "reason": "non-json"
+   },
+   {
+    "method": "DELETE",
+    "origin": "http://127.0.0.1:3224",
+    "path_template": "/Items/{hex}",
+    "reason": "non-json"
+   },
+   {
+    "method": "POST",
+    "origin": "http://127.0.0.1:3224",
+    "path_template": "/Items/{hex}",
+    "reason": "non-json"
+   },
+   {
+    "method": "POST",
+    "origin": "http://127.0.0.1:3224",
+    "path_template": "/Playlists/{hex}/Items",
+    "reason": "non-json"
+   }
+  ],
+  "templated_groups": 16,
+  "kind": "environment-manifest",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "confidence": "inferred",
+ "authority": "historical-reference",
+ "environment": null,
+ "limitations": [
+  "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+  "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+  "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+  "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+  "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+  "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+  "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+  "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+  "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+ ],
+ "relationship_coverage": null,
+ "locations": [
+  {
+   "kind": "artifact-path",
+   "path": "/home/ubuntu/capture/jellyfin/jellyfin.scoped.har"
+  }
+ ],
+ "evidence_links": [
+  "ev_e0e8efc19b07b4df61b2a5753a06282b27892bc8404746372201bfdd27662ba9"
+ ]
+}

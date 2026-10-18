@@ -1,0 +1,15 @@
+{
+  "app": "baserow",
+  "title": "Baserow",
+  "repo": "BaserowEnv-REA",
+  "license": "MIT",
+  "authors": "Baserow B.V.",
+  "hf_license": "apache-2.0",
+  "version": "2.4.1",
+  "image": "baserow/baserow:2.4.1",
+  "image_digest": "sha256:2229bc0ad9c8e1c3c44cef3324ff0501639d44a7b6f64026ebaa44f61cfb038e",
+  "port": 3204,
+  "keep_regex": "^/api/",
+  "domain": "no-code databases (spreadsheet-style tables)",
+  "exclude_tools": "settings|notifications|jobs$|last_viewed|user_dashboard|field_rules|trash$|unique_row_values"
+}

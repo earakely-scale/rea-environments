@@ -1,0 +1,1468 @@
+{
+ "evidence_id": "ev_12cd79fbad0e4c228684699815fdee9521ba2b9ede6c2b891c504603d1e4e457",
+ "subject": {
+  "name": "homebox.scoped.har",
+  "digest": {
+   "sha256": "249dbf323faaf79dc6a91d856dc6e7ebc494f2e8bfa3b15af85de7af0bcbf2cf"
+  },
+  "local_path": "/home/ubuntu/capture/homebox/homebox.scoped.har",
+  "format": "file",
+  "architecture": null
+ },
+ "provider": {
+  "id": "rea-analysis-view",
+  "name": "REA analysis view projection",
+  "version": "1"
+ },
+ "analysis_profile": null,
+ "predicate_type": "rea.analysis-view",
+ "operation": "inspect_analysis_view",
+ "parameters": {
+  "parent_evidence_id": "ev_cb9cef1bb6902484524658e34cfb3aa220e1f06dd807e8da93c2089899872e1c",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "raw_result": null,
+ "normalized_result": {
+  "parent_evidence_id": "ev_cb9cef1bb6902484524658e34cfb3aa220e1f06dd807e8da93c2089899872e1c",
+  "parent_operation": "inspect_web_network_capture",
+  "parent_digest": "cb9cef1bb6902484524658e34cfb3aa220e1f06dd807e8da93c2089899872e1c",
+  "view_digest": "da0c2a3473cd51ad682dbbaef9e634d163e3530b714c44bb7007eb09abaaeb8f",
+  "artifact": {
+   "path": "/home/ubuntu/capture/homebox/homebox.scoped.har",
+   "sha256": "249dbf323faaf79dc6a91d856dc6e7ebc494f2e8bfa3b15af85de7af0bcbf2cf"
+  },
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 28,
+   "total": 28,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "limitations": [
+   "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+   "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+   "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+   "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+   "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+   "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+   "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+   "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+   "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+  ],
+  "unknowns": [
+   {
+    "kind": "authorization-model",
+    "statement": "Authorization headers and cookies are structurally excluded from captures; the manifest states no authorization model."
+   },
+   {
+    "kind": "response-semantics",
+    "statement": "Recorded statuses and bodies are retained only as pointers to parent records; the manifest states no response semantics."
+   },
+   {
+    "kind": "state-transition",
+    "statement": "Recorded exchanges are independent observations; the manifest states no ordering, side effects or state transitions between tools."
+   }
+  ],
+  "origin": "http://127.0.0.1:3208",
+  "name": "127-0-0-1-3208",
+  "tools": [
+   {
+    "name": "get_currencies",
+    "method": "GET",
+    "path_template": "/api/v1/currencies",
+    "api_surface_template": "/api/v1/currencies",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     16
+    ]
+   },
+   {
+    "name": "get_entities",
+    "method": "GET",
+    "path_template": "/api/v1/entities",
+    "api_surface_template": "/api/v1/entities",
+    "params": [],
+    "query_parameter_names": [
+     "entityTypeIds",
+     "filterChildren",
+     "includeArchived",
+     "isLocation",
+     "matchAllTags",
+     "negateTags",
+     "onlyWithPhoto",
+     "onlyWithoutPhoto",
+     "orderBy",
+     "orderDirection",
+     "page",
+     "pageSize",
+     "parentIds",
+     "q",
+     "tags"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     7,
+     9,
+     11,
+     14,
+     22,
+     25,
+     27,
+     32,
+     39,
+     44,
+     58,
+     75,
+     76,
+     82,
+     83,
+     85,
+     90
+    ]
+   },
+   {
+    "name": "post_entities",
+    "method": "POST",
+    "path_template": "/api/v1/entities",
+    "api_surface_template": "/api/v1/entities",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "name": "string",
+      "description": "string",
+      "entityTypeId": "string",
+      "parentId": "string",
+      "quantity": "number"
+     }
+    },
+    "statuses": [
+     201
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     81
+    ]
+   },
+   {
+    "name": "get_entities_fields",
+    "method": "GET",
+    "path_template": "/api/v1/entities/fields",
+    "api_surface_template": "/api/v1/entities/fields",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     24,
+     77
+    ]
+   },
+   {
+    "name": "get_entities_fields_values",
+    "method": "GET",
+    "path_template": "/api/v1/entities/fields/values",
+    "api_surface_template": "/api/v1/entities/fields/values",
+    "params": [],
+    "query_parameter_names": [
+     "field"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     78
+    ]
+   },
+   {
+    "name": "get_entities_tree",
+    "method": "GET",
+    "path_template": "/api/v1/entities/tree",
+    "api_surface_template": "/api/v1/entities/tree",
+    "params": [],
+    "query_parameter_names": [
+     "withItems"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     15,
+     20,
+     74,
+     84
+    ]
+   },
+   {
+    "name": "delete_entities_by_uuid",
+    "method": "DELETE",
+    "path_template": "/api/v1/entities/{uuid}",
+    "api_surface_template": "/api/v1/entities/{uuid}",
+    "params": [
+     {
+      "index": 3,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "c0074fab-479d-493d-b0ef-bc853338da16"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     204
+    ],
+    "content_types": [],
+    "record_ordinals": [
+     88
+    ]
+   },
+   {
+    "name": "get_entities_by_uuid",
+    "method": "GET",
+    "path_template": "/api/v1/entities/{uuid}",
+    "api_surface_template": "/api/v1/entities/{uuid}",
+    "params": [
+     {
+      "index": 3,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "0f509218-b46e-42d4-a9c4-767ebba68f24",
+       "2dc1a853-9ead-415d-9833-ee197e6ef268",
+       "3c7d1d3d-a9b0-4639-ac29-7443dbea61da",
+       "89b5025f-3e99-415b-9f67-4ae913ae5023",
+       "992eb021-ae6d-4e4d-90de-4269da5de8ff",
+       "a607103c-56c1-469e-86b3-af4fad212416",
+       "ab27f29a-a9a1-4267-b5f9-e64aba2b6cc3",
+       "b1954c1c-3e68-483c-bfee-481857e9b771",
+       "be94b1d1-c1ff-4688-ac4a-b8f3a557393f",
+       "c0074fab-479d-493d-b0ef-bc853338da16",
+       "fbecbecb-3b25-4934-9cd1-b30e1f94af5e"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200,
+     404
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     21,
+     26,
+     28,
+     31,
+     33,
+     59,
+     60,
+     61,
+     62,
+     63,
+     64,
+     65,
+     66,
+     67,
+     68,
+     87,
+     89
+    ]
+   },
+   {
+    "name": "put_entities_by_uuid",
+    "method": "PUT",
+    "path_template": "/api/v1/entities/{uuid}",
+    "api_surface_template": "/api/v1/entities/{uuid}",
+    "params": [
+     {
+      "index": 3,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "c0074fab-479d-493d-b0ef-bc853338da16"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "id": "string",
+      "name": "string",
+      "description": "string",
+      "quantity": "number",
+      "entityTypeId": "string",
+      "parentId": "string",
+      "tagIds": "array",
+      "fields": "array"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     86
+    ]
+   },
+   {
+    "name": "get_entities_maintenance_by_uuid",
+    "method": "GET",
+    "path_template": "/api/v1/entities/{uuid}/maintenance",
+    "api_surface_template": "/api/v1/entities/{uuid}/maintenance",
+    "params": [
+     {
+      "index": 3,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "a607103c-56c1-469e-86b3-af4fad212416",
+       "fbecbecb-3b25-4934-9cd1-b30e1f94af5e"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "status"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     36,
+     71,
+     72
+    ]
+   },
+   {
+    "name": "get_entities_path_by_uuid",
+    "method": "GET",
+    "path_template": "/api/v1/entities/{uuid}/path",
+    "api_surface_template": "/api/v1/entities/{uuid}/path",
+    "params": [
+     {
+      "index": 3,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "a607103c-56c1-469e-86b3-af4fad212416",
+       "be94b1d1-c1ff-4688-ac4a-b8f3a557393f",
+       "fbecbecb-3b25-4934-9cd1-b30e1f94af5e"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     29,
+     34,
+     69,
+     70
+    ]
+   },
+   {
+    "name": "get_entity_types",
+    "method": "GET",
+    "path_template": "/api/v1/entity-types",
+    "api_surface_template": "/api/v1/entity-types",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     8,
+     51
+    ]
+   },
+   {
+    "name": "get_groups",
+    "method": "GET",
+    "path_template": "/api/v1/groups",
+    "api_surface_template": "/api/v1/groups",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     5,
+     12,
+     47
+    ]
+   },
+   {
+    "name": "get_groups_all",
+    "method": "GET",
+    "path_template": "/api/v1/groups/all",
+    "api_surface_template": "/api/v1/groups/all",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     17
+    ]
+   },
+   {
+    "name": "get_groups_members",
+    "method": "GET",
+    "path_template": "/api/v1/groups/members",
+    "api_surface_template": "/api/v1/groups/members",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     42
+    ]
+   },
+   {
+    "name": "get_groups_statistics",
+    "method": "GET",
+    "path_template": "/api/v1/groups/statistics",
+    "api_surface_template": "/api/v1/groups/statistics",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     10,
+     45,
+     48
+    ]
+   },
+   {
+    "name": "get_groups_statistics_locations",
+    "method": "GET",
+    "path_template": "/api/v1/groups/statistics/locations",
+    "api_surface_template": "/api/v1/groups/statistics/locations",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     49
+    ]
+   },
+   {
+    "name": "get_groups_statistics_tags",
+    "method": "GET",
+    "path_template": "/api/v1/groups/statistics/tags",
+    "api_surface_template": "/api/v1/groups/statistics/tags",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     50
+    ]
+   },
+   {
+    "name": "get_maintenance",
+    "method": "GET",
+    "path_template": "/api/v1/maintenance",
+    "api_surface_template": "/api/v1/maintenance",
+    "params": [],
+    "query_parameter_names": [
+     "status"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     40,
+     73
+    ]
+   },
+   {
+    "name": "get_status",
+    "method": "GET",
+    "path_template": "/api/v1/status",
+    "api_surface_template": "/api/v1/status",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     0,
+     1,
+     4,
+     23,
+     30,
+     35
+    ]
+   },
+   {
+    "name": "get_tags",
+    "method": "GET",
+    "path_template": "/api/v1/tags",
+    "api_surface_template": "/api/v1/tags",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     6,
+     37,
+     52
+    ]
+   },
+   {
+    "name": "get_tags_by_uuid",
+    "method": "GET",
+    "path_template": "/api/v1/tags/{uuid}",
+    "api_surface_template": "/api/v1/tags/{uuid}",
+    "params": [
+     {
+      "index": 3,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "22681436-85f0-42e1-ac3d-fff47e1609b9",
+       "7bf5e814-51c3-4d5a-8c40-2270446b5464",
+       "7e94a51a-6aba-4f7b-9169-88b23068105f",
+       "c2ba7443-9b97-430d-b099-5271479225d9",
+       "d775ccc9-1e26-490d-87f3-e91f319e970c"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     38,
+     53,
+     54,
+     55,
+     56,
+     57
+    ]
+   },
+   {
+    "name": "get_templates",
+    "method": "GET",
+    "path_template": "/api/v1/templates",
+    "api_surface_template": "/api/v1/templates",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     41,
+     79
+    ]
+   },
+   {
+    "name": "get_templates_by_uuid",
+    "method": "GET",
+    "path_template": "/api/v1/templates/{uuid}",
+    "api_surface_template": "/api/v1/templates/{uuid}",
+    "params": [
+     {
+      "index": 3,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "41e97d1f-e29b-4a97-a942-e8b8777e142e"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     80
+    ]
+   },
+   {
+    "name": "get_users_self",
+    "method": "GET",
+    "path_template": "/api/v1/users/self",
+    "api_surface_template": "/api/v1/users/self",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     3,
+     13,
+     46
+    ]
+   },
+   {
+    "name": "get_users_self_api_keys",
+    "method": "GET",
+    "path_template": "/api/v1/users/self/api-keys",
+    "api_surface_template": "/api/v1/users/self/api-keys",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     43
+    ]
+   },
+   {
+    "name": "get_users_self_settings",
+    "method": "GET",
+    "path_template": "/api/v1/users/self/settings",
+    "api_surface_template": "/api/v1/users/self/settings",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     2,
+     19
+    ]
+   },
+   {
+    "name": "put_users_self_settings",
+    "method": "PUT",
+    "path_template": "/api/v1/users/self/settings",
+    "api_surface_template": "/api/v1/users/self/settings",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "showDetails": "boolean",
+      "showEmpty": "boolean",
+      "editorAdvancedView": "boolean",
+      "theme": "string",
+      "itemsPerTablePage": "number",
+      "displayLegacyHeader": "boolean",
+      "legacyImageFit": "boolean",
+      "language": "null",
+      "overrideFormatLocale": "null",
+      "duplicateSettings": "object",
+      "quickActions": "object",
+      "savedSearches": "array"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     18
+    ]
+   }
+  ],
+  "records": [
+   {
+    "ordinal": 0,
+    "method": "GET",
+    "path": "/api/v1/status",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 1,
+    "method": "GET",
+    "path": "/api/v1/status",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 2,
+    "method": "GET",
+    "path": "/api/v1/users/self/settings",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 3,
+    "method": "GET",
+    "path": "/api/v1/users/self",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 4,
+    "method": "GET",
+    "path": "/api/v1/status",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 5,
+    "method": "GET",
+    "path": "/api/v1/groups",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 6,
+    "method": "GET",
+    "path": "/api/v1/tags",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 7,
+    "method": "GET",
+    "path": "/api/v1/entities",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 8,
+    "method": "GET",
+    "path": "/api/v1/entity-types",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 9,
+    "method": "GET",
+    "path": "/api/v1/entities",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 10,
+    "method": "GET",
+    "path": "/api/v1/groups/statistics",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 11,
+    "method": "GET",
+    "path": "/api/v1/entities",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 12,
+    "method": "GET",
+    "path": "/api/v1/groups",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 13,
+    "method": "GET",
+    "path": "/api/v1/users/self",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 14,
+    "method": "GET",
+    "path": "/api/v1/entities",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 15,
+    "method": "GET",
+    "path": "/api/v1/entities/tree",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 16,
+    "method": "GET",
+    "path": "/api/v1/currencies",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 17,
+    "method": "GET",
+    "path": "/api/v1/groups/all",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 18,
+    "method": "PUT",
+    "path": "/api/v1/users/self/settings",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 19,
+    "method": "GET",
+    "path": "/api/v1/users/self/settings",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 20,
+    "method": "GET",
+    "path": "/api/v1/entities/tree",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 21,
+    "method": "GET",
+    "path": "/api/v1/entities/3c7d1d3d-a9b0-4639-ac29-7443dbea61da",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 22,
+    "method": "GET",
+    "path": "/api/v1/entities",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 23,
+    "method": "GET",
+    "path": "/api/v1/status",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 24,
+    "method": "GET",
+    "path": "/api/v1/entities/fields",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 25,
+    "method": "GET",
+    "path": "/api/v1/entities",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 26,
+    "method": "GET",
+    "path": "/api/v1/entities/be94b1d1-c1ff-4688-ac4a-b8f3a557393f",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 27,
+    "method": "GET",
+    "path": "/api/v1/entities",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 28,
+    "method": "GET",
+    "path": "/api/v1/entities/be94b1d1-c1ff-4688-ac4a-b8f3a557393f",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 29,
+    "method": "GET",
+    "path": "/api/v1/entities/be94b1d1-c1ff-4688-ac4a-b8f3a557393f/path",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 30,
+    "method": "GET",
+    "path": "/api/v1/status",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 31,
+    "method": "GET",
+    "path": "/api/v1/entities/a607103c-56c1-469e-86b3-af4fad212416",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 32,
+    "method": "GET",
+    "path": "/api/v1/entities",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 33,
+    "method": "GET",
+    "path": "/api/v1/entities/a607103c-56c1-469e-86b3-af4fad212416",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 34,
+    "method": "GET",
+    "path": "/api/v1/entities/a607103c-56c1-469e-86b3-af4fad212416/path",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 35,
+    "method": "GET",
+    "path": "/api/v1/status",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 36,
+    "method": "GET",
+    "path": "/api/v1/entities/a607103c-56c1-469e-86b3-af4fad212416/maintenance",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 37,
+    "method": "GET",
+    "path": "/api/v1/tags",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 38,
+    "method": "GET",
+    "path": "/api/v1/tags/22681436-85f0-42e1-ac3d-fff47e1609b9",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 39,
+    "method": "GET",
+    "path": "/api/v1/entities",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 40,
+    "method": "GET",
+    "path": "/api/v1/maintenance",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 41,
+    "method": "GET",
+    "path": "/api/v1/templates",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 42,
+    "method": "GET",
+    "path": "/api/v1/groups/members",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 43,
+    "method": "GET",
+    "path": "/api/v1/users/self/api-keys",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 44,
+    "method": "GET",
+    "path": "/api/v1/entities",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 45,
+    "method": "GET",
+    "path": "/api/v1/groups/statistics",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 46,
+    "method": "GET",
+    "path": "/api/v1/users/self",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 47,
+    "method": "GET",
+    "path": "/api/v1/groups",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 48,
+    "method": "GET",
+    "path": "/api/v1/groups/statistics",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 49,
+    "method": "GET",
+    "path": "/api/v1/groups/statistics/locations",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 50,
+    "method": "GET",
+    "path": "/api/v1/groups/statistics/tags",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 51,
+    "method": "GET",
+    "path": "/api/v1/entity-types",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 52,
+    "method": "GET",
+    "path": "/api/v1/tags",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 53,
+    "method": "GET",
+    "path": "/api/v1/tags/d775ccc9-1e26-490d-87f3-e91f319e970c",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 54,
+    "method": "GET",
+    "path": "/api/v1/tags/22681436-85f0-42e1-ac3d-fff47e1609b9",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 55,
+    "method": "GET",
+    "path": "/api/v1/tags/7e94a51a-6aba-4f7b-9169-88b23068105f",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 56,
+    "method": "GET",
+    "path": "/api/v1/tags/7bf5e814-51c3-4d5a-8c40-2270446b5464",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 57,
+    "method": "GET",
+    "path": "/api/v1/tags/c2ba7443-9b97-430d-b099-5271479225d9",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 58,
+    "method": "GET",
+    "path": "/api/v1/entities",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 59,
+    "method": "GET",
+    "path": "/api/v1/entities/3c7d1d3d-a9b0-4639-ac29-7443dbea61da",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 60,
+    "method": "GET",
+    "path": "/api/v1/entities/0f509218-b46e-42d4-a9c4-767ebba68f24",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 61,
+    "method": "GET",
+    "path": "/api/v1/entities/ab27f29a-a9a1-4267-b5f9-e64aba2b6cc3",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 62,
+    "method": "GET",
+    "path": "/api/v1/entities/b1954c1c-3e68-483c-bfee-481857e9b771",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 63,
+    "method": "GET",
+    "path": "/api/v1/entities/be94b1d1-c1ff-4688-ac4a-b8f3a557393f",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 64,
+    "method": "GET",
+    "path": "/api/v1/entities/a607103c-56c1-469e-86b3-af4fad212416",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 65,
+    "method": "GET",
+    "path": "/api/v1/entities/fbecbecb-3b25-4934-9cd1-b30e1f94af5e",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 66,
+    "method": "GET",
+    "path": "/api/v1/entities/992eb021-ae6d-4e4d-90de-4269da5de8ff",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 67,
+    "method": "GET",
+    "path": "/api/v1/entities/2dc1a853-9ead-415d-9833-ee197e6ef268",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 68,
+    "method": "GET",
+    "path": "/api/v1/entities/89b5025f-3e99-415b-9f67-4ae913ae5023",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 69,
+    "method": "GET",
+    "path": "/api/v1/entities/be94b1d1-c1ff-4688-ac4a-b8f3a557393f/path",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 70,
+    "method": "GET",
+    "path": "/api/v1/entities/fbecbecb-3b25-4934-9cd1-b30e1f94af5e/path",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 71,
+    "method": "GET",
+    "path": "/api/v1/entities/a607103c-56c1-469e-86b3-af4fad212416/maintenance",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 72,
+    "method": "GET",
+    "path": "/api/v1/entities/fbecbecb-3b25-4934-9cd1-b30e1f94af5e/maintenance",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 73,
+    "method": "GET",
+    "path": "/api/v1/maintenance",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 74,
+    "method": "GET",
+    "path": "/api/v1/entities/tree",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 75,
+    "method": "GET",
+    "path": "/api/v1/entities",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 76,
+    "method": "GET",
+    "path": "/api/v1/entities",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 77,
+    "method": "GET",
+    "path": "/api/v1/entities/fields",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 78,
+    "method": "GET",
+    "path": "/api/v1/entities/fields/values",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 79,
+    "method": "GET",
+    "path": "/api/v1/templates",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 80,
+    "method": "GET",
+    "path": "/api/v1/templates/41e97d1f-e29b-4a97-a942-e8b8777e142e",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 81,
+    "method": "POST",
+    "path": "/api/v1/entities",
+    "status": 201,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 82,
+    "method": "GET",
+    "path": "/api/v1/entities",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 83,
+    "method": "GET",
+    "path": "/api/v1/entities",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 84,
+    "method": "GET",
+    "path": "/api/v1/entities/tree",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 85,
+    "method": "GET",
+    "path": "/api/v1/entities",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 86,
+    "method": "PUT",
+    "path": "/api/v1/entities/c0074fab-479d-493d-b0ef-bc853338da16",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 87,
+    "method": "GET",
+    "path": "/api/v1/entities/c0074fab-479d-493d-b0ef-bc853338da16",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 88,
+    "method": "DELETE",
+    "path": "/api/v1/entities/c0074fab-479d-493d-b0ef-bc853338da16",
+    "status": 204,
+    "content_type": null
+   },
+   {
+    "ordinal": 89,
+    "method": "GET",
+    "path": "/api/v1/entities/c0074fab-479d-493d-b0ef-bc853338da16",
+    "status": 404,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 90,
+    "method": "GET",
+    "path": "/api/v1/entities",
+    "status": 200,
+    "content_type": "application/json"
+   }
+  ],
+  "excluded": [],
+  "templated_groups": 7,
+  "kind": "environment-manifest",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "confidence": "inferred",
+ "authority": "historical-reference",
+ "environment": null,
+ "limitations": [
+  "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+  "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+  "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+  "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+  "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+  "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+  "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+  "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+  "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+ ],
+ "relationship_coverage": null,
+ "locations": [
+  {
+   "kind": "artifact-path",
+   "path": "/home/ubuntu/capture/homebox/homebox.scoped.har"
+  }
+ ],
+ "evidence_links": [
+  "ev_cb9cef1bb6902484524658e34cfb3aa220e1f06dd807e8da93c2089899872e1c"
+ ]
+}

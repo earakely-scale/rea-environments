@@ -1,0 +1,1609 @@
+{
+ "evidence_id": "ev_b1030270ddcec481e452055bb5db7711cf3539cb97b7d86b9733f1023452fafa",
+ "subject": {
+  "name": "keycloak.scoped.har",
+  "digest": {
+   "sha256": "7c78d99263c9fb922b3fbf714619a3d378f08781b2f677d6a473bd28d5b85b3b"
+  },
+  "local_path": "/home/ubuntu/capture/keycloak/keycloak.scoped.har",
+  "format": "file",
+  "architecture": null
+ },
+ "provider": {
+  "id": "rea-analysis-view",
+  "name": "REA analysis view projection",
+  "version": "1"
+ },
+ "analysis_profile": null,
+ "predicate_type": "rea.analysis-view",
+ "operation": "inspect_analysis_view",
+ "parameters": {
+  "parent_evidence_id": "ev_21d8808f42337b36a19f943f7bca1058d9f2c73b660d5bce1f10b05539ca525d",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "raw_result": null,
+ "normalized_result": {
+  "parent_evidence_id": "ev_21d8808f42337b36a19f943f7bca1058d9f2c73b660d5bce1f10b05539ca525d",
+  "parent_operation": "inspect_web_network_capture",
+  "parent_digest": "21d8808f42337b36a19f943f7bca1058d9f2c73b660d5bce1f10b05539ca525d",
+  "view_digest": "fe4d22680496c9af6776c662329fcd74cf38561f91904031d2a666881fc3a34d",
+  "artifact": {
+   "path": "/home/ubuntu/capture/keycloak/keycloak.scoped.har",
+   "sha256": "7c78d99263c9fb922b3fbf714619a3d378f08781b2f677d6a473bd28d5b85b3b"
+  },
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 40,
+   "total": 40,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "limitations": [
+   "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+   "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+   "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+   "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+   "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+   "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+   "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+   "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+   "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+  ],
+  "unknowns": [
+   {
+    "kind": "authorization-model",
+    "statement": "Authorization headers and cookies are structurally excluded from captures; the manifest states no authorization model."
+   },
+   {
+    "kind": "response-semantics",
+    "statement": "Recorded statuses and bodies are retained only as pointers to parent records; the manifest states no response semantics."
+   },
+   {
+    "kind": "state-transition",
+    "statement": "Recorded exchanges are independent observations; the manifest states no ordering, side effects or state transitions between tools."
+   }
+  ],
+  "origin": "http://127.0.0.1:3210",
+  "name": "127-0-0-1-3210",
+  "tools": [
+   {
+    "name": "get_admin_realms_lighthouse_rota",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota",
+    "api_surface_template": "/admin/realms/lighthouse-rota",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     0,
+     33,
+     37,
+     45,
+     48,
+     50,
+     52,
+     54,
+     58,
+     60,
+     61,
+     63
+    ]
+   },
+   {
+    "name": "get_admin_realms_lighthouse_rota_attack_detection_brute_forc",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota/attack-detection/brute-force/users/{uuid}",
+    "api_surface_template": "/admin/realms/lighthouse-rota/attack-detection/brute-force/users/{uuid}",
+    "params": [
+     {
+      "index": 6,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "22b61766-08f3-4ad1-86b5-c5703ebad11f"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     41
+    ]
+   },
+   {
+    "name": "get_admin_realms_lighthouse_rota_authentication_flows_by_uui",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota/authentication/flows/{uuid}",
+    "api_surface_template": "/admin/realms/lighthouse-rota/authentication/flows/{uuid}",
+    "params": [
+     {
+      "index": 5,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "d4eb267b-e73b-4a25-bd38-dbd542065622"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     32
+    ]
+   },
+   {
+    "name": "get_admin_realms_lighthouse_rota_authentication_required_act",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota/authentication/required-actions",
+    "api_surface_template": "/admin/realms/lighthouse-rota/authentication/required-actions",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     44
+    ]
+   },
+   {
+    "name": "get_admin_realms_lighthouse_rota_client_scopes",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota/client-scopes",
+    "api_surface_template": "/admin/realms/lighthouse-rota/client-scopes",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     57
+    ]
+   },
+   {
+    "name": "get_admin_realms_lighthouse_rota_client_scopes_by_uuid",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota/client-scopes/{uuid}",
+    "api_surface_template": "/admin/realms/lighthouse-rota/client-scopes/{uuid}",
+    "params": [
+     {
+      "index": 4,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "5d28a80a-abc8-451c-b837-7801e79a84fb"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     27
+    ]
+   },
+   {
+    "name": "get_admin_realms_lighthouse_rota_clients",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota/clients",
+    "api_surface_template": "/admin/realms/lighthouse-rota/clients",
+    "params": [],
+    "query_parameter_names": [
+     "clientId"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     18
+    ]
+   },
+   {
+    "name": "get_admin_realms_lighthouse_rota_clients_2",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota/clients/",
+    "api_surface_template": "/admin/realms/lighthouse-rota/clients/",
+    "params": [],
+    "query_parameter_names": [
+     "first",
+     "max"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     49
+    ]
+   },
+   {
+    "name": "get_admin_realms_lighthouse_rota_clients_by_uuid",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota/clients/{uuid}",
+    "api_surface_template": "/admin/realms/lighthouse-rota/clients/{uuid}",
+    "params": [
+     {
+      "index": 4,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "29ace5d9-4d8b-41ad-b822-e0bf67507028",
+       "62ccc535-35be-4053-9829-d46c9aa9a60f"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     19,
+     20,
+     51
+    ]
+   },
+   {
+    "name": "get_admin_realms_lighthouse_rota_clients_roles_by_uuid",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota/clients/{uuid}/roles",
+    "api_surface_template": "/admin/realms/lighthouse-rota/clients/{uuid}/roles",
+    "params": [
+     {
+      "index": 4,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "62ccc535-35be-4053-9829-d46c9aa9a60f"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     21
+    ]
+   },
+   {
+    "name": "get_admin_realms_lighthouse_rota_clients_roles_till_operator",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota/clients/{uuid}/roles/till-operator",
+    "api_surface_template": "/admin/realms/lighthouse-rota/clients/{uuid}/roles/till-operator",
+    "params": [
+     {
+      "index": 4,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "29ace5d9-4d8b-41ad-b822-e0bf67507028"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     22
+    ]
+   },
+   {
+    "name": "get_admin_realms_lighthouse_rota_default_default_client_scop",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota/default-default-client-scopes",
+    "api_surface_template": "/admin/realms/lighthouse-rota/default-default-client-scopes",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     55
+    ]
+   },
+   {
+    "name": "get_admin_realms_lighthouse_rota_default_optional_client_sco",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota/default-optional-client-scopes",
+    "api_surface_template": "/admin/realms/lighthouse-rota/default-optional-client-scopes",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     56
+    ]
+   },
+   {
+    "name": "get_admin_realms_lighthouse_rota_groups",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota/groups",
+    "api_surface_template": "/admin/realms/lighthouse-rota/groups",
+    "params": [],
+    "query_parameter_names": [
+     "exact",
+     "first",
+     "global",
+     "max",
+     "search"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     10,
+     17,
+     46
+    ]
+   },
+   {
+    "name": "get_admin_realms_lighthouse_rota_groups_2",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota/groups/",
+    "api_surface_template": "/admin/realms/lighthouse-rota/groups/",
+    "params": [],
+    "query_parameter_names": [
+     "max"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     47
+    ]
+   },
+   {
+    "name": "get_admin_realms_lighthouse_rota_groups_by_uuid",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota/groups/{uuid}",
+    "api_surface_template": "/admin/realms/lighthouse-rota/groups/{uuid}",
+    "params": [
+     {
+      "index": 4,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "0945b85e-a22c-426f-bb35-689473f6806b",
+       "7776bb23-b230-44e4-86e0-a5532a4e1b56",
+       "82d0392e-6911-488c-991c-48ed82b44aad",
+       "e280fd1e-0d5c-4183-8a65-a3791264aa83"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     11,
+     12,
+     13,
+     14
+    ]
+   },
+   {
+    "name": "get_admin_realms_lighthouse_rota_groups_children_by_uuid",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota/groups/{uuid}/children",
+    "api_surface_template": "/admin/realms/lighthouse-rota/groups/{uuid}/children",
+    "params": [
+     {
+      "index": 4,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "7776bb23-b230-44e4-86e0-a5532a4e1b56"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     15
+    ]
+   },
+   {
+    "name": "get_admin_realms_lighthouse_rota_groups_members_by_uuid",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota/groups/{uuid}/members",
+    "api_surface_template": "/admin/realms/lighthouse-rota/groups/{uuid}/members",
+    "params": [
+     {
+      "index": 4,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "0945b85e-a22c-426f-bb35-689473f6806b"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     16
+    ]
+   },
+   {
+    "name": "get_admin_realms_lighthouse_rota_localization_en",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota/localization/en",
+    "api_surface_template": "/admin/realms/lighthouse-rota/localization/en",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     65
+    ]
+   },
+   {
+    "name": "get_admin_realms_lighthouse_rota_organizations",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota/organizations",
+    "api_surface_template": "/admin/realms/lighthouse-rota/organizations",
+    "params": [],
+    "query_parameter_names": [
+     "first",
+     "max"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     28
+    ]
+   },
+   {
+    "name": "get_admin_realms_lighthouse_rota_organizations_2",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota/organizations/",
+    "api_surface_template": "/admin/realms/lighthouse-rota/organizations/",
+    "params": [],
+    "query_parameter_names": [
+     "first",
+     "max"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     38,
+     59
+    ]
+   },
+   {
+    "name": "get_admin_realms_lighthouse_rota_organizations_by_uuid",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota/organizations/{uuid}",
+    "api_surface_template": "/admin/realms/lighthouse-rota/organizations/{uuid}",
+    "params": [
+     {
+      "index": 4,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "7261538a-e446-48ff-af0a-342936cd8d2e",
+       "e4b369df-9883-40cb-a270-aeceb898ebfa"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     29,
+     30
+    ]
+   },
+   {
+    "name": "get_admin_realms_lighthouse_rota_organizations_members_by_uu",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota/organizations/{uuid}/members",
+    "api_surface_template": "/admin/realms/lighthouse-rota/organizations/{uuid}/members",
+    "params": [
+     {
+      "index": 4,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "7261538a-e446-48ff-af0a-342936cd8d2e"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     31
+    ]
+   },
+   {
+    "name": "post_admin_realms_lighthouse_rota_partialimport",
+    "method": "POST",
+    "path_template": "/admin/realms/lighthouse-rota/partialImport",
+    "api_surface_template": "/admin/realms/lighthouse-rota/partialImport",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "ifResourceExists": "string",
+      "users": "array"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     67
+    ]
+   },
+   {
+    "name": "get_admin_realms_lighthouse_rota_roles",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota/roles",
+    "api_surface_template": "/admin/realms/lighthouse-rota/roles",
+    "params": [],
+    "query_parameter_names": [
+     "first",
+     "max"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     23,
+     53
+    ]
+   },
+   {
+    "name": "get_admin_realms_lighthouse_rota_roles_by_id_by_uuid",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota/roles-by-id/{uuid}",
+    "api_surface_template": "/admin/realms/lighthouse-rota/roles-by-id/{uuid}",
+    "params": [
+     {
+      "index": 4,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "237dfaf6-63ef-4f99-945d-e53f00912633"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     25
+    ]
+   },
+   {
+    "name": "get_admin_realms_lighthouse_rota_roles_galley_steward_groups",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota/roles/galley-steward/groups",
+    "api_surface_template": "/admin/realms/lighthouse-rota/roles/galley-steward/groups",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     26
+    ]
+   },
+   {
+    "name": "get_admin_realms_lighthouse_rota_roles_tide_keeper",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota/roles/tide-keeper",
+    "api_surface_template": "/admin/realms/lighthouse-rota/roles/tide-keeper",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     24
+    ]
+   },
+   {
+    "name": "get_admin_realms_lighthouse_rota_ui_ext_authentication_manag",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota/ui-ext/authentication-management/flows",
+    "api_surface_template": "/admin/realms/lighthouse-rota/ui-ext/authentication-management/flows",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     62
+    ]
+   },
+   {
+    "name": "get_admin_realms_lighthouse_rota_ui_ext_brute_force_user",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota/ui-ext/brute-force-user",
+    "api_surface_template": "/admin/realms/lighthouse-rota/ui-ext/brute-force-user",
+    "params": [],
+    "query_parameter_names": [
+     "briefRepresentation",
+     "first",
+     "max",
+     "q"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     36
+    ]
+   },
+   {
+    "name": "get_admin_realms_lighthouse_rota_ui_ext_info",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota/ui-ext/info",
+    "api_surface_template": "/admin/realms/lighthouse-rota/ui-ext/info",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     35
+    ]
+   },
+   {
+    "name": "get_admin_realms_lighthouse_rota_ui_ext_realms_names",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota/ui-ext/realms/names",
+    "api_surface_template": "/admin/realms/lighthouse-rota/ui-ext/realms/names",
+    "params": [],
+    "query_parameter_names": [
+     "search"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     64
+    ]
+   },
+   {
+    "name": "get_admin_realms_lighthouse_rota_users",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota/users",
+    "api_surface_template": "/admin/realms/lighthouse-rota/users",
+    "params": [],
+    "query_parameter_names": [
+     "briefRepresentation",
+     "first",
+     "max",
+     "search"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     1,
+     6
+    ]
+   },
+   {
+    "name": "get_admin_realms_lighthouse_rota_users_count",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota/users/count",
+    "api_surface_template": "/admin/realms/lighthouse-rota/users/count",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     72
+    ]
+   },
+   {
+    "name": "get_admin_realms_lighthouse_rota_users_profile",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota/users/profile",
+    "api_surface_template": "/admin/realms/lighthouse-rota/users/profile",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     34,
+     39,
+     43,
+     66
+    ]
+   },
+   {
+    "name": "get_admin_realms_lighthouse_rota_users_by_uuid",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota/users/{uuid}",
+    "api_surface_template": "/admin/realms/lighthouse-rota/users/{uuid}",
+    "params": [
+     {
+      "index": 4,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "19cac069-3d62-4ca9-abc7-86f5db125cb6",
+       "22b61766-08f3-4ad1-86b5-c5703ebad11f",
+       "41c1c89c-91ef-45a8-9862-9f8f146205ac",
+       "882fcd36-1dd4-47f7-8c73-133fd80ccdff",
+       "cbcbc117-4819-47c2-ba5d-8cb8fafc8421"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "userProfileMetadata"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200,
+     404
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     2,
+     3,
+     4,
+     5,
+     42,
+     69,
+     71
+    ]
+   },
+   {
+    "name": "get_admin_realms_lighthouse_rota_users_groups_by_uuid",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota/users/{uuid}/groups",
+    "api_surface_template": "/admin/realms/lighthouse-rota/users/{uuid}/groups",
+    "params": [
+     {
+      "index": 4,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "22b61766-08f3-4ad1-86b5-c5703ebad11f"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     7
+    ]
+   },
+   {
+    "name": "get_admin_realms_lighthouse_rota_users_role_mappings_clients",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota/users/{uuid}/role-mappings/clients/{uuid}",
+    "api_surface_template": "/admin/realms/lighthouse-rota/users/{uuid}/role-mappings/clients/{uuid}",
+    "params": [
+     {
+      "index": 4,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "19cac069-3d62-4ca9-abc7-86f5db125cb6"
+      ]
+     },
+     {
+      "index": 7,
+      "name": "uuid_2",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "29ace5d9-4d8b-41ad-b822-e0bf67507028"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     9
+    ]
+   },
+   {
+    "name": "get_admin_realms_lighthouse_rota_users_role_mappings_realm_b",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota/users/{uuid}/role-mappings/realm",
+    "api_surface_template": "/admin/realms/lighthouse-rota/users/{uuid}/role-mappings/realm",
+    "params": [
+     {
+      "index": 4,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "41c1c89c-91ef-45a8-9862-9f8f146205ac"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     8
+    ]
+   },
+   {
+    "name": "get_admin_realms_lighthouse_rota_users_unmanagedattributes_b",
+    "method": "GET",
+    "path_template": "/admin/realms/lighthouse-rota/users/{uuid}/unmanagedAttributes",
+    "api_surface_template": "/admin/realms/lighthouse-rota/users/{uuid}/unmanagedAttributes",
+    "params": [
+     {
+      "index": 4,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "22b61766-08f3-4ad1-86b5-c5703ebad11f"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     40
+    ]
+   }
+  ],
+  "records": [
+   {
+    "ordinal": 0,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 1,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/users",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 2,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/users/41c1c89c-91ef-45a8-9862-9f8f146205ac",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 3,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/users/19cac069-3d62-4ca9-abc7-86f5db125cb6",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 4,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/users/cbcbc117-4819-47c2-ba5d-8cb8fafc8421",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 5,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/users/22b61766-08f3-4ad1-86b5-c5703ebad11f",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 6,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/users",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 7,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/users/22b61766-08f3-4ad1-86b5-c5703ebad11f/groups",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 8,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/users/41c1c89c-91ef-45a8-9862-9f8f146205ac/role-mappings/realm",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 9,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/users/19cac069-3d62-4ca9-abc7-86f5db125cb6/role-mappings/clients/29ace5d9-4d8b-41ad-b822-e0bf67507028",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 10,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/groups",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 11,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/groups/0945b85e-a22c-426f-bb35-689473f6806b",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 12,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/groups/7776bb23-b230-44e4-86e0-a5532a4e1b56",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 13,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/groups/e280fd1e-0d5c-4183-8a65-a3791264aa83",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 14,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/groups/82d0392e-6911-488c-991c-48ed82b44aad",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 15,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/groups/7776bb23-b230-44e4-86e0-a5532a4e1b56/children",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 16,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/groups/0945b85e-a22c-426f-bb35-689473f6806b/members",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 17,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/groups",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 18,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/clients",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 19,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/clients/29ace5d9-4d8b-41ad-b822-e0bf67507028",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 20,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/clients/62ccc535-35be-4053-9829-d46c9aa9a60f",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 21,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/clients/62ccc535-35be-4053-9829-d46c9aa9a60f/roles",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 22,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/clients/29ace5d9-4d8b-41ad-b822-e0bf67507028/roles/till-operator",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 23,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/roles",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 24,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/roles/tide-keeper",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 25,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/roles-by-id/237dfaf6-63ef-4f99-945d-e53f00912633",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 26,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/roles/galley-steward/groups",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 27,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/client-scopes/5d28a80a-abc8-451c-b837-7801e79a84fb",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 28,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/organizations",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 29,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/organizations/7261538a-e446-48ff-af0a-342936cd8d2e",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 30,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/organizations/e4b369df-9883-40cb-a270-aeceb898ebfa",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 31,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/organizations/7261538a-e446-48ff-af0a-342936cd8d2e/members",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 32,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/authentication/flows/d4eb267b-e73b-4a25-bd38-dbd542065622",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 33,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 34,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/users/profile",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 35,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/ui-ext/info",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 36,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/ui-ext/brute-force-user",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 37,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 38,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/organizations/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 39,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/users/profile",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 40,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/users/22b61766-08f3-4ad1-86b5-c5703ebad11f/unmanagedAttributes",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 41,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/attack-detection/brute-force/users/22b61766-08f3-4ad1-86b5-c5703ebad11f",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 42,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/users/22b61766-08f3-4ad1-86b5-c5703ebad11f",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 43,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/users/profile",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 44,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/authentication/required-actions",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 45,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 46,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/groups",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 47,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/groups/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 48,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 49,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/clients/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 50,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 51,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/clients/62ccc535-35be-4053-9829-d46c9aa9a60f",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 52,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 53,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/roles",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 54,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 55,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/default-default-client-scopes",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 56,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/default-optional-client-scopes",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 57,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/client-scopes",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 58,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 59,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/organizations/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 60,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 61,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 62,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/ui-ext/authentication-management/flows",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 63,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 64,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/ui-ext/realms/names",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 65,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/localization/en",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 66,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/users/profile",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 67,
+    "method": "POST",
+    "path": "/admin/realms/lighthouse-rota/partialImport",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 69,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/users/882fcd36-1dd4-47f7-8c73-133fd80ccdff",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 71,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/users/882fcd36-1dd4-47f7-8c73-133fd80ccdff",
+    "status": 404,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 72,
+    "method": "GET",
+    "path": "/admin/realms/lighthouse-rota/users/count",
+    "status": 200,
+    "content_type": "application/json"
+   }
+  ],
+  "excluded": [
+   {
+    "method": "DELETE",
+    "origin": "http://127.0.0.1:3210",
+    "path_template": "/admin/realms/lighthouse-rota/users/{uuid}",
+    "reason": "non-json"
+   },
+   {
+    "method": "PUT",
+    "origin": "http://127.0.0.1:3210",
+    "path_template": "/admin/realms/lighthouse-rota/users/{uuid}",
+    "reason": "non-json"
+   }
+  ],
+  "templated_groups": 19,
+  "kind": "environment-manifest",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "confidence": "inferred",
+ "authority": "historical-reference",
+ "environment": null,
+ "limitations": [
+  "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+  "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+  "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+  "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+  "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+  "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+  "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+  "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+  "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+ ],
+ "relationship_coverage": null,
+ "locations": [
+  {
+   "kind": "artifact-path",
+   "path": "/home/ubuntu/capture/keycloak/keycloak.scoped.har"
+  }
+ ],
+ "evidence_links": [
+  "ev_21d8808f42337b36a19f943f7bca1058d9f2c73b660d5bce1f10b05539ca525d"
+ ]
+}

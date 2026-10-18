@@ -1,0 +1,15 @@
+{
+  "app": "linkding",
+  "title": "linkding",
+  "repo": "LinkdingEnv-REA",
+  "license": "MIT",
+  "authors": "Sascha I\u00dfbr\u00fccker and the linkding contributors",
+  "hf_license": "apache-2.0",
+  "version": "1.47.0",
+  "image": "sissbruecker/linkding:1.47.0",
+  "image_digest": "sha256:e35cb50e0581178f245125ffaa909c565416c94c9f22ace305a7d234a4345522",
+  "port": 3203,
+  "keep_regex": "^/api/",
+  "domain": "self-hosted bookmark manager",
+  "exclude_tools": "download|health$|version$"
+}

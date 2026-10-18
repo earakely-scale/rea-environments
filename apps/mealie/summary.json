@@ -1,0 +1,361 @@
+{
+ "app": "mealie",
+ "title": "Mealie",
+ "image": "ghcr.io/mealie-recipes/mealie:v3.28.0",
+ "image_digest": "ghcr.io/mealie-recipes/mealie@sha256:8b02290f4d1806f02acac6f25f6d48a3c965612fda1f8e914d5af533276f8688",
+ "app_version": "3.28",
+ "app_version_full": "v3.28.0",
+ "licence": "AGPL-3.0",
+ "compose_project": "rea-mealie",
+ "origin": "http://127.0.0.1:3212",
+ "database": "sqlite (/app/data/mealie.db in the mealie-data volume)",
+ "tooling": {
+  "rea": "6.6.0",
+  "playwright-core": "1.58.2",
+  "chromium": "Chromium 155.0.8059.79 snap",
+  "node": "v24.22.0",
+  "python": "3.12.3",
+  "docker": "29.9.1",
+  "compose": "5.6.0",
+  "vm": "Ubuntu 24.04 amd64"
+ },
+ "scoped_har": {
+  "file": "mealie.scoped.har",
+  "sha256": "069d5a884bd4ab155e0e7b8c751891e08718d18a50b006f2a9a25f4d2f2350d6",
+  "bytes": 288867,
+  "records": 139,
+  "methods": {
+   "GET": 136,
+   "POST": 1,
+   "PATCH": 1,
+   "DELETE": 1
+  },
+  "statuses": {
+   "200": 137,
+   "201": 1,
+   "404": 1
+  }
+ },
+ "scope_har": {
+  "origin": "http://127.0.0.1:3212",
+  "keep_regex": "^/api/",
+  "drop_regex": "default (login|logout|signup|password|session|token|oauth|csrf)",
+  "max_body": 60000,
+  "max_records": 150,
+  "kept": 139,
+  "dropped": {
+   "other-origin": 0,
+   "path": 2022,
+   "non-json": 9,
+   "auth": 4,
+   "big-body": 0,
+   "over-max": 0
+  },
+  "notes": [
+   "keep_regex ^/api/ covers the whole REST API; the UI's static assets and pages are dropped as path",
+   "non-json=9 are the user's profile image (/api/media/users/<id>/profile.webp, image/webp)",
+   "auth=4: POST /api/auth/token and /login page loads",
+   "139 kept is close to the 140 target ceiling: every UI page load refetches groups/self, households/self, cookbooks, categories, tags, tools, foods and units"
+  ]
+ },
+ "credential_grep": {
+  "admin_value_literal_hits": 0,
+  "token_shape_hits_hf_ghp_Bearer": 0,
+  "session_cookie_name_hits": 0,
+  "result": "pass"
+ },
+ "evidence": {
+  "capture_evidence_id": "ev_b23b02ad2cf3e1cf793dae77441e7867b7043564dbe0ed4d18d89776611239be",
+  "capture_total_records": 139,
+  "capture_confidence": "observed",
+  "manifest_evidence_id": "ev_6976682a576ab89896833d0e89eb2f1fa4d48b9e3cef4c8449ee4f4a87979d5c",
+  "manifest_norules_evidence_id": "ev_7adf8020f1e1ec7f1876aa037463173f4bbe9cfbee6da9c890bda79b7bcebb77",
+  "manifest_view_digest": "27c785e952a0439ca9bfa4d16c3ced7272d2113bfcba65efd807696ba16d0428"
+ },
+ "manifest": {
+  "evidence_id": "ev_6976682a576ab89896833d0e89eb2f1fa4d48b9e3cef4c8449ee4f4a87979d5c",
+  "confidence": "inferred",
+  "view_digest": "27c785e952a0439ca9bfa4d16c3ced7272d2113bfcba65efd807696ba16d0428",
+  "tools": 39,
+  "tools_by_method": {
+   "GET": 36,
+   "POST": 1,
+   "DELETE": 1,
+   "PATCH": 1
+  },
+  "templated_groups": 12,
+  "params_by_rule": {
+   "uuid": 10,
+   "numeric": 1,
+   "sibling-variance": 1
+  },
+  "params_total": 12,
+  "query_parameter_names_total": 60,
+  "query_parameter_names_distinct": [
+   "categories",
+   "cookbook",
+   "end_date",
+   "orderBy",
+   "orderByNullPosition",
+   "orderDirection",
+   "page",
+   "paginationSeed",
+   "perPage",
+   "requireAllCategories",
+   "requireAllFoods",
+   "requireAllTags",
+   "requireAllTools",
+   "search",
+   "searchSeed",
+   "start_date"
+  ],
+  "tools_with_body_shape": 2,
+  "statuses_seen": [
+   200,
+   201,
+   404
+  ],
+  "records": 139,
+  "excluded": 0,
+  "excluded_by_reason": {},
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 39,
+   "total": 39,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "limitations_count": 9,
+  "tool_names": [
+   "get_app_about",
+   "get_app_about_startup_info",
+   "get_app_about_theme",
+   "get_comments_by_uuid",
+   "get_foods",
+   "get_foods_by_uuid",
+   "get_groups_households",
+   "get_groups_households_by_uuid",
+   "get_groups_labels",
+   "get_groups_members",
+   "get_groups_self",
+   "get_households_cookbooks",
+   "get_households_cookbooks_spring_tide_menu",
+   "get_households_cookbooks_by_uuid",
+   "get_households_mealplans",
+   "get_households_mealplans_rules",
+   "get_households_mealplans_by_id",
+   "get_households_self",
+   "get_households_self_recipes_smoked_kelp_broth",
+   "get_households_shopping_items_by_uuid",
+   "get_households_shopping_lists",
+   "get_households_shopping_lists_by_uuid",
+   "get_organizers_categories",
+   "get_organizers_categories_slug_quarry_lunches",
+   "get_organizers_categories_by_uuid",
+   "get_organizers_tags",
+   "get_organizers_tags_by_uuid",
+   "get_organizers_tools",
+   "get_organizers_tools_by_uuid",
+   "get_recipes",
+   "post_recipes",
+   "delete_recipes_rea_scratch_recipe",
+   "patch_recipes_rea_scratch_recipe",
+   "get_recipes_smoked_kelp_broth_comments",
+   "get_recipes_by_recipe_id",
+   "get_units",
+   "get_units_by_uuid",
+   "get_users_self",
+   "get_users_self_ratings"
+  ]
+ },
+ "manifest_norules": {
+  "evidence_id": "ev_7adf8020f1e1ec7f1876aa037463173f4bbe9cfbee6da9c890bda79b7bcebb77",
+  "confidence": "inferred",
+  "view_digest": "8db1a770675efc5712c20cf9a832cdb1b58f4f7d63bb2b5009a91361b625ce28",
+  "tools": 44,
+  "tools_by_method": {
+   "GET": 41,
+   "POST": 1,
+   "DELETE": 1,
+   "PATCH": 1
+  },
+  "templated_groups": 11,
+  "params_by_rule": {
+   "uuid": 10,
+   "numeric": 1
+  },
+  "params_total": 11,
+  "query_parameter_names_total": 60,
+  "query_parameter_names_distinct": [
+   "categories",
+   "cookbook",
+   "end_date",
+   "orderBy",
+   "orderByNullPosition",
+   "orderDirection",
+   "page",
+   "paginationSeed",
+   "perPage",
+   "requireAllCategories",
+   "requireAllFoods",
+   "requireAllTags",
+   "requireAllTools",
+   "search",
+   "searchSeed",
+   "start_date"
+  ],
+  "tools_with_body_shape": 2,
+  "statuses_seen": [
+   200,
+   201,
+   404
+  ],
+  "records": 139,
+  "excluded": 0,
+  "excluded_by_reason": {},
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 44,
+   "total": 44,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "limitations_count": 8,
+  "tool_names": [
+   "get_app_about",
+   "get_app_about_startup_info",
+   "get_app_about_theme",
+   "get_comments_by_uuid",
+   "get_foods",
+   "get_foods_by_uuid",
+   "get_groups_households",
+   "get_groups_households_by_uuid",
+   "get_groups_labels",
+   "get_groups_members",
+   "get_groups_self",
+   "get_households_cookbooks",
+   "get_households_cookbooks_spring_tide_menu",
+   "get_households_cookbooks_by_uuid",
+   "get_households_mealplans",
+   "get_households_mealplans_rules",
+   "get_households_mealplans_by_id",
+   "get_households_self",
+   "get_households_self_recipes_smoked_kelp_broth",
+   "get_households_shopping_items_by_uuid",
+   "get_households_shopping_lists",
+   "get_households_shopping_lists_by_uuid",
+   "get_organizers_categories",
+   "get_organizers_categories_slug_quarry_lunches",
+   "get_organizers_categories_by_uuid",
+   "get_organizers_tags",
+   "get_organizers_tags_by_uuid",
+   "get_organizers_tools",
+   "get_organizers_tools_by_uuid",
+   "get_recipes",
+   "post_recipes",
+   "get_recipes_copperfield_ginger_tea",
+   "get_recipes_granite_ledger_oat_bars",
+   "get_recipes_lamp_watch_barley_stew",
+   "delete_recipes_rea_scratch_recipe",
+   "get_recipes_rea_scratch_recipe",
+   "patch_recipes_rea_scratch_recipe",
+   "get_recipes_saltmarsh_samphire_hash",
+   "get_recipes_smoked_kelp_broth",
+   "get_recipes_smoked_kelp_broth_comments",
+   "get_units",
+   "get_units_by_uuid",
+   "get_users_self",
+   "get_users_self_ratings"
+  ]
+ },
+ "manifest_vs_norules": {
+  "tools": [
+   39,
+   44
+  ],
+  "templated_groups": [
+   12,
+   11
+  ],
+  "note": "Organizer, food, unit, cookbook, shopping-list, item and comment ids are UUIDs and meal-plan ids are integers; rea's built-in uuid and numeric rules template both in every view. The opt-in sibling-variance rule folds the five recipe slugs (/api/recipes/<slug>) into one get_recipes_by_recipe_id tool; without it each slug is its own literal tool. The scratch recipe's PATCH and DELETE stay literal (one slug each)."
+ },
+ "seeded_objects": "a group Lighthouse Rota with household Blue Heron Kitchen, 2 users, 5 recipes written from JSON, 3 categories, 4 tags, 2 tools, 3 foods, 2 units, 2 cookbooks, 2 shopping lists with 4 items, 3 meal-plan entries and 2 comments",
+ "seeded_objects_detail": {
+  "admin": "default changeme@example.com / MyPassword replaced: password from .admin, renamed rea-admin (Rea Admin, rea-admin@example.test)",
+  "group_household": "group Lighthouse Rota, household Blue Heron Kitchen (renamed from the defaults)",
+  "crew": "mina-okafor (Mina Okafor, mina.okafor@example.test), author of both comments",
+  "categories": [
+   "Tide-Table Suppers",
+   "Quarry Lunches",
+   "Night-Shift Snacks"
+  ],
+  "tags": [
+   "smoked-kelp",
+   "one-pot",
+   "night-shift",
+   "foraged"
+  ],
+  "tools": [
+   "Cast-iron kettle",
+   "Kelp smoker"
+  ],
+  "foods": {
+   "dried kelp": "Bladderwrack dried on the Saltmarsh Depot racks.",
+   "pearl barley": "Polished barley for the lamp-watch stew.",
+   "samphire": "Marsh samphire picked at low tide behind the depot."
+  },
+  "units": {
+   "crate": "A Saltmarsh Depot supply crate.",
+   "ladle": "The Blue Heron Kitchen serving ladle."
+  },
+  "recipes": {
+   "Smoked Kelp Broth": "36 bowls; Tide-Table Suppers",
+   "Granite Ledger Oat Bars": "24 bars; Quarry Lunches",
+   "Lamp-Watch Barley Stew": "12 bowls; Tide-Table Suppers",
+   "Saltmarsh Samphire Hash": "6 plates; Quarry Lunches",
+   "Copperfield Ginger Tea": "1 flask; Night-Shift Snacks"
+  },
+  "cookbooks": {
+   "Spring Tide Menu": "category filter Tide-Table Suppers",
+   "Quarry Packs": "category filter Quarry Lunches"
+  },
+  "shopping_lists": {
+   "Saltmarsh Depot order": [
+    "Twelve crates of dried kelp (12 crate)",
+    "Four sacks of pearl barley"
+   ],
+   "Granite Ledger pantry": [
+    "Rolled oats for 24 bars",
+    "Two jars of heather honey"
+   ]
+  },
+  "mealplans": [
+   "2026-11-14 dinner Smoked Kelp Broth",
+   "2026-11-15 lunch Granite Ledger Oat Bars",
+   "2026-11-16 side note Kelp delivery day"
+  ],
+  "scratch_during_capture": "recipe Rea scratch recipe created (POST 201, answers its slug), edited (PATCH 200), read, deleted (DELETE 200 with the deleted recipe), re-read (404)"
+ },
+ "ui_pages_visited": [
+  "/login",
+  "/g/lighthouse-rota",
+  "/g/lighthouse-rota/r/smoked-kelp-broth",
+  "/g/lighthouse-rota/cookbooks/spring-tide-menu",
+  "/g/lighthouse-rota/recipes/categories",
+  "/g/lighthouse-rota/recipes/tags",
+  "/household/mealplan/planner/view",
+  "/shopping-lists",
+  "/shopping-lists/<Saltmarsh Depot order>"
+ ],
+ "auth_note": "The web UI signs in with POST /api/auth/token (form body), keeps the JWT in the non-httpOnly cookie mealie.access_token and sends it as a bearer header. The scripted fetch calls read the cookie inside the page and send the same header. The login exchange is dropped by the scope's auth filter; headers and cookies are stripped."
+}

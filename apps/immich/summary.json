@@ -1,0 +1,328 @@
+{
+ "app": "immich",
+ "image": "ghcr.io/immich-app/immich-server:v3.3.3",
+ "image_digest": "ghcr.io/immich-app/immich-server@sha256:bae7664ff3aa4c2c1fcbdcdd86b40b105643c5f861f3e6a770fc760089f25862",
+ "app_version": "3.3.3",
+ "app_version_full": "3.3.3 (GET /api/server/version: major 3, minor 3, patch 3)",
+ "database": "PostgreSQL 14 with VectorChord (ghcr.io/immich-app/postgres:14-vectorchord0.4.3-pgvectors0.2.0) + Valkey 9.1.2; uploads in a named volume at /data",
+ "other_images": {
+  "ghcr.io/immich-app/postgres:14-vectorchord0.4.3-pgvectors0.2.0": "ghcr.io/immich-app/postgres@sha256:bcf63357191b76a916ae5eb93464d65c07511da41e3bf7a8416db519b40b1c23",
+  "docker.io/valkey/valkey:9.1.2-alpine": "valkey/valkey@sha256:48332870af354a799964c0012ae1194a0bf2bf894eb508f945810596dc2d8d11"
+ },
+ "machine_learning": "no machine-learning container; machineLearning.enabled=false and newVersionCheck.enabled=false set through PUT /api/system-config by the seed",
+ "compose_project": "rea-immich",
+ "origin": "http://127.0.0.1:3207",
+ "tooling": {
+  "rea": "6.6.0",
+  "playwright-core": "1.58.2",
+  "chromium": "Chromium 155.0.8059.79 snap",
+  "node": "v24.22.0",
+  "python": "3.12.3",
+  "docker": "29.9.1",
+  "compose": "5.6.0",
+  "agent-env": "agent-env 0.9.1334",
+  "vm": "Ubuntu 24.04 amd64"
+ },
+ "scoped_har": {
+  "file": "immich.scoped.har",
+  "sha256": "a525d5143fb73344d07d44ce129c5d9be7d83ef9a2d5dfc2f453bfa80b0647d0",
+  "bytes": 228076,
+  "records": 120,
+  "methods": {
+   "GET": 116,
+   "POST": 2,
+   "PATCH": 1,
+   "DELETE": 1
+  },
+  "statuses": {
+   "200": 117,
+   "201": 1,
+   "204": 1,
+   "400": 1
+  }
+ },
+ "scope_har": {
+  "origin": "http://127.0.0.1:3207",
+  "keep_regex": "^/api/(?!socket\\.io)",
+  "kept": 120,
+  "dropped": {
+   "other-origin": 0,
+   "path": 197,
+   "non-json": 36,
+   "auth": 3,
+   "big-body": 0,
+   "over-max": 0
+  },
+  "methods": {
+   "GET": 116,
+   "POST": 2,
+   "PATCH": 1,
+   "DELETE": 1
+  },
+  "bytes": 227506
+ },
+ "credential_grep": {
+  "admin_secret_literal_hits": 0,
+  "token_shape_hits_hf_ghp_Bearer": 0,
+  "result": "pass"
+ },
+ "manifest": {
+  "evidence_id": "ev_fda1218791c0c5ced99ef79739463e0a102755b2cdf71df008e93bd52e3ba617",
+  "confidence": "inferred",
+  "view_digest": "b020aed8dcf38dce0be98bf4f188aaedd6edff1fb468619d4554591eff5796a1",
+  "tools": 45,
+  "tools_by_method": {
+   "GET": 41,
+   "POST": 2,
+   "DELETE": 1,
+   "PATCH": 1
+  },
+  "templated_groups": 13,
+  "params_by_rule": {
+   "uuid": 13
+  },
+  "params_total": 13,
+  "query_parameter_names_distinct": [
+   "albumId",
+   "assetId",
+   "direction",
+   "for",
+   "id",
+   "isOwned",
+   "isShared",
+   "isUpcoming",
+   "level",
+   "name",
+   "order",
+   "page",
+   "size",
+   "timeBucket",
+   "type",
+   "unread",
+   "userId",
+   "visibility",
+   "withDeleted",
+   "withHidden",
+   "withPartners",
+   "withStacked"
+  ],
+  "tools_with_body_shape": 3,
+  "statuses_seen": [
+   200,
+   201,
+   204,
+   400
+  ],
+  "excluded": 0,
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "tool_names": [
+   "get_activities",
+   "get_activities_statistics",
+   "get_admin_users",
+   "get_admin_users_by_uuid",
+   "get_albums",
+   "post_albums",
+   "delete_albums_by_uuid",
+   "get_albums_by_uuid",
+   "patch_albums_by_uuid",
+   "get_albums_map_markers_by_uuid",
+   "get_api_keys",
+   "get_assets_by_uuid",
+   "get_assets_ocr_by_uuid",
+   "get_cluster_groups_users_by_uuid",
+   "get_faces",
+   "get_libraries",
+   "get_libraries_by_uuid",
+   "get_memories",
+   "get_memories_statistics",
+   "get_notifications",
+   "get_partners",
+   "get_people",
+   "get_people_by_uuid",
+   "get_public_config",
+   "get_search_explore",
+   "post_search_metadata",
+   "get_search_person",
+   "get_server_about",
+   "get_server_config",
+   "get_server_features",
+   "get_server_media_types",
+   "get_server_storage",
+   "get_server_version_history",
+   "get_shared_links",
+   "get_shared_links_by_uuid",
+   "get_system_config",
+   "get_system_config_defaults",
+   "get_tags",
+   "get_tags_by_uuid",
+   "get_timeline_bucket",
+   "get_timeline_buckets",
+   "get_users",
+   "get_users_me",
+   "get_users_me_preferences",
+   "get_users_by_uuid"
+  ]
+ },
+ "manifest_norules": {
+  "evidence_id": "ev_534b8b25b622007e06bda40b6a5c685a0fe74031d5103908cd8c9139c11e4948",
+  "confidence": "inferred",
+  "view_digest": "5fde120cb67c75ec2f9c3682e23ba120e83434296c3acb5b86af5d81dcd63223",
+  "tools": 45,
+  "tools_by_method": {
+   "GET": 41,
+   "POST": 2,
+   "DELETE": 1,
+   "PATCH": 1
+  },
+  "templated_groups": 13,
+  "params_by_rule": {
+   "uuid": 13
+  },
+  "params_total": 13,
+  "query_parameter_names_distinct": [
+   "albumId",
+   "assetId",
+   "direction",
+   "for",
+   "id",
+   "isOwned",
+   "isShared",
+   "isUpcoming",
+   "level",
+   "name",
+   "order",
+   "page",
+   "size",
+   "timeBucket",
+   "type",
+   "unread",
+   "userId",
+   "visibility",
+   "withDeleted",
+   "withHidden",
+   "withPartners",
+   "withStacked"
+  ],
+  "tools_with_body_shape": 3,
+  "statuses_seen": [
+   200,
+   201,
+   204,
+   400
+  ],
+  "excluded": 0,
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "tool_names": [
+   "get_activities",
+   "get_activities_statistics",
+   "get_admin_users",
+   "get_admin_users_by_uuid",
+   "get_albums",
+   "post_albums",
+   "delete_albums_by_uuid",
+   "get_albums_by_uuid",
+   "patch_albums_by_uuid",
+   "get_albums_map_markers_by_uuid",
+   "get_api_keys",
+   "get_assets_by_uuid",
+   "get_assets_ocr_by_uuid",
+   "get_cluster_groups_users_by_uuid",
+   "get_faces",
+   "get_libraries",
+   "get_libraries_by_uuid",
+   "get_memories",
+   "get_memories_statistics",
+   "get_notifications",
+   "get_partners",
+   "get_people",
+   "get_people_by_uuid",
+   "get_public_config",
+   "get_search_explore",
+   "post_search_metadata",
+   "get_search_person",
+   "get_server_about",
+   "get_server_config",
+   "get_server_features",
+   "get_server_media_types",
+   "get_server_storage",
+   "get_server_version_history",
+   "get_shared_links",
+   "get_shared_links_by_uuid",
+   "get_system_config",
+   "get_system_config_defaults",
+   "get_tags",
+   "get_tags_by_uuid",
+   "get_timeline_bucket",
+   "get_timeline_buckets",
+   "get_users",
+   "get_users_me",
+   "get_users_me_preferences",
+   "get_users_by_uuid"
+  ]
+ },
+ "evidence": {
+  "capture_evidence_id": "ev_1a9cf44e9f31412cd6f46b77293c666f4bfa1f6f9afccc430ca3b8d83937590a",
+  "capture_confidence": "observed",
+  "capture_total_records": 120
+ },
+ "seeded_objects": "admin Rea Admin plus users Ada Finch and Rui Castellanos; 5 generated PNG photos with descriptions, ratings and favourites; 3 albums (Lighthouse Rota Night Shift, Granite Ledger Field Notes, Blue Heron Kitchen Menus), two shared with users; 4 tags (Saltmarsh Depot with nested Cart Inventory, Copperfield Annex, Tide Tables); 2 people (Mina Okafor, Tomas Vey) on manual faces; 2 shared links; 1 album comment; 1 partner share; 1 external library (Saltmarsh Depot Archive); 1 notification",
+ "seeded_detail": {
+  "admin": "Rea Admin <rea-admin@example.test> (admin-sign-up; onboarding marked done)",
+  "users": [
+   "Ada Finch <ada.finch@example.test> (storage label ada-finch)",
+   "Rui Castellanos <rui.castellanos@example.test> (storage label rui-castellanos)"
+  ],
+  "assets": {
+   "lighthouse-rota-lamp-room.png": "2026-01-11 22:05Z, rating 5, favourite, 'Lamp room of the Lighthouse Rota before the 22:00 hand-over; the brass lens was polished by Ada Finch.'",
+   "granite-ledger-north-quarry.png": "2026-02-14 10:30Z, rating 4, face of Mina Okafor, 'North quarry face for the Granite Ledger count: 412 blocks tallied, audit reference GL-2291.'",
+   "blue-heron-kitchen-pass.png": "2026-03-02 19:45Z, rating 3, 'Blue Heron Kitchen pass at the first sitting: smoked kelp broth for 36 covers.'",
+   "copperfield-annex-stairwell.png": "2026-03-20 08:15Z, rating 2, 'Copperfield Annex east stairwell after the repaint; banister colour Quarry Moss.'",
+   "saltmarsh-depot-cart-7.png": "2026-04-05 16:00Z, rating 4, favourite, face of Tomas Vey, 'Saltmarsh Depot loading bay with cart number 7, retired by Tomas Vey on the fifth of April.'"
+  },
+  "albums": {
+   "Lighthouse Rota Night Shift": "2 photos, shared with Ada Finch (editor), shared link slug lighthouse-night-shift, comment 'Lens polished and wicks trimmed before the 22:00 hand-over.'",
+   "Granite Ledger Field Notes": "2 photos, not shared",
+   "Blue Heron Kitchen Menus": "1 photo, shared with Rui Castellanos (viewer)"
+  },
+  "tags": [
+   "Saltmarsh Depot (#2e7d5b)",
+   "Saltmarsh Depot/Cart Inventory (#8a6d3b, nested)",
+   "Copperfield Annex (#b5562b)",
+   "Tide Tables (#2b5fb5)"
+  ],
+  "people": [
+   "Mina Okafor (born 1987-06-21, manual face on the north quarry photo)",
+   "Tomas Vey (born 1979-11-03, manual face on the cart 7 photo)"
+  ],
+  "shared_links": [
+   "album link 'Night shift photos for the relief crew at Granite Point' (slug lighthouse-night-shift, no download, metadata shown)",
+   "individual link 'Stairwell repaint proof for the Copperfield Annex committee' (slug copperfield-stairwell-repaint, download allowed)"
+  ],
+  "partner": "Rea Admin shares the library with Ada Finch",
+  "library": "external library 'Saltmarsh Depot Archive' (no import paths, exclusion pattern **/scratch-negatives/**)",
+  "notification": "'Granite Ledger audit due': 'Rui Castellanos closes the quarterly stone count on the fourteenth.' (info, Custom)",
+  "scratch_during_capture": "album 'Rea scratch album' created (201), renamed with PATCH, read, deleted (204), re-read (400)"
+ },
+ "ui_pages_visited": [
+  "/auth/login (login)",
+  "/photos",
+  "/albums",
+  "/albums/<night shift id>",
+  "/sharing",
+  "/explore",
+  "/people",
+  "/photos/<north quarry asset id>",
+  "/tags",
+  "/admin/users",
+  "/user-settings",
+  "/photos"
+ ]
+}

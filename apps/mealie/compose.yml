@@ -1,0 +1,25 @@
+# Mealie v3.28.0 (sqlite) for the rea showcase capture. Loopback only; one compose project: rea-mealie.
+# Mealie starts with its documented default admin (changeme@example.com / MyPassword); seed.py replaces that password with
+# one generated into .admin (mode 600) before anything else, and renames the account to rea-admin.
+services:
+  mealie:
+    image: ghcr.io/mealie-recipes/mealie:v3.28.0
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3212:9000"
+    environment:
+      BASE_URL: http://127.0.0.1:3212
+      ALLOW_SIGNUP: "false"
+      DB_ENGINE: sqlite
+      TZ: UTC
+      # No outbound calls: no OpenAI features, no recipe scraping (recipes are created from JSON by the seed).
+      OPENAI_API_KEY: ""
+    volumes:
+      - mealie-data:/app/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:9000/api/app/about', timeout=4)"]
+      interval: 5s
+      timeout: 5s
+      retries: 60
+volumes:
+  mealie-data: {}

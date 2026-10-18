@@ -1,0 +1,15 @@
+{
+  "app": "shlink",
+  "title": "Shlink",
+  "repo": "ShlinkEnv-REA",
+  "license": "MIT",
+  "authors": "Alejandro Celaya and the Shlink contributors",
+  "hf_license": "apache-2.0",
+  "version": "5.1.7",
+  "image": "shlinkio/shlink:5.1.7",
+  "image_digest": "sha256:844e1f2b6455331c5b49207bad3a2455ccd65e62bb9daa09a6c57afff26bd9c8",
+  "port": 3206,
+  "keep_regex": "^/rest/",
+  "domain": "URL shortening and visit analytics",
+  "exclude_tools": "health|mercure"
+}

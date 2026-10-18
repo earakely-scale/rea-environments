@@ -1,0 +1,1927 @@
+{
+ "evidence_id": "ev_1ca510bb7f5f8a7e2d424e9f69d110dd4d569368cdeabe28ea2f7594add08a0d",
+ "subject": {
+  "name": "sonarr.scoped.har",
+  "digest": {
+   "sha256": "25abe37ab890a22325bc85ae5852ba96517238117328fe8c818656386883654e"
+  },
+  "local_path": "/home/ubuntu/capture/sonarr/sonarr.scoped.har",
+  "format": "file",
+  "architecture": null
+ },
+ "provider": {
+  "id": "rea-analysis-view",
+  "name": "REA analysis view projection",
+  "version": "1"
+ },
+ "analysis_profile": null,
+ "predicate_type": "rea.analysis-view",
+ "operation": "inspect_analysis_view",
+ "parameters": {
+  "parent_evidence_id": "ev_c572a89136acc993cc0d84090da837a73206dc0d45291613dbd7a616120c4850",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "raw_result": null,
+ "normalized_result": {
+  "parent_evidence_id": "ev_c572a89136acc993cc0d84090da837a73206dc0d45291613dbd7a616120c4850",
+  "parent_operation": "inspect_web_network_capture",
+  "parent_digest": "c572a89136acc993cc0d84090da837a73206dc0d45291613dbd7a616120c4850",
+  "view_digest": "3fbe77f9ed1264e6e87c27c2785602cfb27237c27ee809e298ab5b1a1d8bb357",
+  "artifact": {
+   "path": "/home/ubuntu/capture/sonarr/sonarr.scoped.har",
+   "sha256": "25abe37ab890a22325bc85ae5852ba96517238117328fe8c818656386883654e"
+  },
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 48,
+   "total": 48,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "limitations": [
+   "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+   "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+   "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+   "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+   "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+   "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+   "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+   "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+   "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+  ],
+  "unknowns": [
+   {
+    "kind": "authorization-model",
+    "statement": "Authorization headers and cookies are structurally excluded from captures; the manifest states no authorization model."
+   },
+   {
+    "kind": "response-semantics",
+    "statement": "Recorded statuses and bodies are retained only as pointers to parent records; the manifest states no response semantics."
+   },
+   {
+    "kind": "state-transition",
+    "statement": "Recorded exchanges are independent observations; the manifest states no ordering, side effects or state transitions between tools."
+   }
+  ],
+  "origin": "http://127.0.0.1:3221",
+  "name": "127-0-0-1-3221",
+  "tools": [
+   {
+    "name": "get_autotagging",
+    "method": "GET",
+    "path_template": "/api/v3/autoTagging",
+    "api_surface_template": "/api/v3/autoTagging",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     29,
+     68
+    ]
+   },
+   {
+    "name": "get_autotagging_by_id",
+    "method": "GET",
+    "path_template": "/api/v3/autoTagging/{numeric}",
+    "api_surface_template": "/api/v3/autoTagging/{numeric}",
+    "params": [
+     {
+      "index": 3,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     69
+    ]
+   },
+   {
+    "name": "get_calendar",
+    "method": "GET",
+    "path_template": "/api/v3/calendar",
+    "api_surface_template": "/api/v3/calendar",
+    "params": [],
+    "query_parameter_names": [
+     "end",
+     "start"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     81
+    ]
+   },
+   {
+    "name": "get_config_mediamanagement",
+    "method": "GET",
+    "path_template": "/api/v3/config/mediamanagement",
+    "api_surface_template": "/api/v3/config/mediamanagement",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     76
+    ]
+   },
+   {
+    "name": "get_config_naming",
+    "method": "GET",
+    "path_template": "/api/v3/config/naming",
+    "api_surface_template": "/api/v3/config/naming",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     75
+    ]
+   },
+   {
+    "name": "get_config_ui",
+    "method": "GET",
+    "path_template": "/api/v3/config/ui",
+    "api_surface_template": "/api/v3/config/ui",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     8,
+     77
+    ]
+   },
+   {
+    "name": "get_customfilter",
+    "method": "GET",
+    "path_template": "/api/v3/customFilter",
+    "api_surface_template": "/api/v3/customFilter",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     2
+    ]
+   },
+   {
+    "name": "get_customformat",
+    "method": "GET",
+    "path_template": "/api/v3/customformat",
+    "api_surface_template": "/api/v3/customformat",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     20,
+     47
+    ]
+   },
+   {
+    "name": "get_customformat_by_id",
+    "method": "GET",
+    "path_template": "/api/v3/customformat/{numeric}",
+    "api_surface_template": "/api/v3/customformat/{numeric}",
+    "params": [
+     {
+      "index": 3,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1",
+       "2",
+       "3"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     48,
+     49,
+     50
+    ]
+   },
+   {
+    "name": "get_delayprofile",
+    "method": "GET",
+    "path_template": "/api/v3/delayprofile",
+    "api_surface_template": "/api/v3/delayprofile",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     17,
+     23,
+     57
+    ]
+   },
+   {
+    "name": "get_delayprofile_by_id",
+    "method": "GET",
+    "path_template": "/api/v3/delayprofile/{numeric}",
+    "api_surface_template": "/api/v3/delayprofile/{numeric}",
+    "params": [
+     {
+      "index": 3,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1",
+       "2"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     58,
+     59
+    ]
+   },
+   {
+    "name": "get_diskspace",
+    "method": "GET",
+    "path_template": "/api/v3/diskspace",
+    "api_surface_template": "/api/v3/diskspace",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     33,
+     79
+    ]
+   },
+   {
+    "name": "get_downloadclient",
+    "method": "GET",
+    "path_template": "/api/v3/downloadclient",
+    "api_surface_template": "/api/v3/downloadclient",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     28
+    ]
+   },
+   {
+    "name": "get_health",
+    "method": "GET",
+    "path_template": "/api/v3/health",
+    "api_surface_template": "/api/v3/health",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     11,
+     32,
+     78
+    ]
+   },
+   {
+    "name": "get_importlist",
+    "method": "GET",
+    "path_template": "/api/v3/importlist",
+    "api_surface_template": "/api/v3/importlist",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     6,
+     24
+    ]
+   },
+   {
+    "name": "get_importlistexclusion",
+    "method": "GET",
+    "path_template": "/api/v3/importlistexclusion",
+    "api_surface_template": "/api/v3/importlistexclusion",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     63
+    ]
+   },
+   {
+    "name": "get_importlistexclusion_paged",
+    "method": "GET",
+    "path_template": "/api/v3/importlistexclusion/paged",
+    "api_surface_template": "/api/v3/importlistexclusion/paged",
+    "params": [],
+    "query_parameter_names": [
+     "page",
+     "pageSize",
+     "sortDirection",
+     "sortKey"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     67
+    ]
+   },
+   {
+    "name": "get_importlistexclusion_by_id",
+    "method": "GET",
+    "path_template": "/api/v3/importlistexclusion/{numeric}",
+    "api_surface_template": "/api/v3/importlistexclusion/{numeric}",
+    "params": [
+     {
+      "index": 3,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1",
+       "2",
+       "3"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     64,
+     65,
+     66
+    ]
+   },
+   {
+    "name": "get_indexer",
+    "method": "GET",
+    "path_template": "/api/v3/indexer",
+    "api_surface_template": "/api/v3/indexer",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     19,
+     27
+    ]
+   },
+   {
+    "name": "get_indexerflag",
+    "method": "GET",
+    "path_template": "/api/v3/indexerFlag",
+    "api_surface_template": "/api/v3/indexerFlag",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     7
+    ]
+   },
+   {
+    "name": "get_language",
+    "method": "GET",
+    "path_template": "/api/v3/language",
+    "api_surface_template": "/api/v3/language",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     5,
+     73
+    ]
+   },
+   {
+    "name": "get_language_by_id",
+    "method": "GET",
+    "path_template": "/api/v3/language/{numeric}",
+    "api_surface_template": "/api/v3/language/{numeric}",
+    "params": [
+     {
+      "index": 3,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     74
+    ]
+   },
+   {
+    "name": "get_localization_language",
+    "method": "GET",
+    "path_template": "/api/v3/localization/language",
+    "api_surface_template": "/api/v3/localization/language",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     0
+    ]
+   },
+   {
+    "name": "get_notification",
+    "method": "GET",
+    "path_template": "/api/v3/notification",
+    "api_surface_template": "/api/v3/notification",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     25,
+     31,
+     60
+    ]
+   },
+   {
+    "name": "get_notification_by_id",
+    "method": "GET",
+    "path_template": "/api/v3/notification/{numeric}",
+    "api_surface_template": "/api/v3/notification/{numeric}",
+    "params": [
+     {
+      "index": 3,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1",
+       "2"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     61,
+     62
+    ]
+   },
+   {
+    "name": "get_qualitydefinition",
+    "method": "GET",
+    "path_template": "/api/v3/qualitydefinition",
+    "api_surface_template": "/api/v3/qualitydefinition",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     70
+    ]
+   },
+   {
+    "name": "get_qualitydefinition_by_id",
+    "method": "GET",
+    "path_template": "/api/v3/qualitydefinition/{numeric}",
+    "api_surface_template": "/api/v3/qualitydefinition/{numeric}",
+    "params": [
+     {
+      "index": 3,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "5",
+       "9"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     71,
+     72
+    ]
+   },
+   {
+    "name": "get_qualityprofile",
+    "method": "GET",
+    "path_template": "/api/v3/qualityprofile",
+    "api_surface_template": "/api/v3/qualityprofile",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     4,
+     16,
+     51
+    ]
+   },
+   {
+    "name": "get_qualityprofile_by_id",
+    "method": "GET",
+    "path_template": "/api/v3/qualityprofile/{numeric}",
+    "api_surface_template": "/api/v3/qualityprofile/{numeric}",
+    "params": [
+     {
+      "index": 3,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "7",
+       "8"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     52,
+     53
+    ]
+   },
+   {
+    "name": "get_queue",
+    "method": "GET",
+    "path_template": "/api/v3/queue",
+    "api_surface_template": "/api/v3/queue",
+    "params": [],
+    "query_parameter_names": [
+     "includeUnknownSeriesItems",
+     "page",
+     "pageSize",
+     "sortDirection",
+     "sortKey"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     14
+    ]
+   },
+   {
+    "name": "get_queue_details",
+    "method": "GET",
+    "path_template": "/api/v3/queue/details",
+    "api_surface_template": "/api/v3/queue/details",
+    "params": [],
+    "query_parameter_names": [
+     "all"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     13
+    ]
+   },
+   {
+    "name": "get_queue_status",
+    "method": "GET",
+    "path_template": "/api/v3/queue/status",
+    "api_surface_template": "/api/v3/queue/status",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     10
+    ]
+   },
+   {
+    "name": "get_releaseprofile",
+    "method": "GET",
+    "path_template": "/api/v3/releaseprofile",
+    "api_surface_template": "/api/v3/releaseprofile",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     18,
+     26,
+     54,
+     97
+    ]
+   },
+   {
+    "name": "post_releaseprofile",
+    "method": "POST",
+    "path_template": "/api/v3/releaseprofile",
+    "api_surface_template": "/api/v3/releaseprofile",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "name": "string",
+      "enabled": "boolean",
+      "required": "array",
+      "ignored": "array",
+      "indexerId": "number",
+      "tags": "array"
+     }
+    },
+    "statuses": [
+     201
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     94
+    ]
+   },
+   {
+    "name": "get_releaseprofile_by_id",
+    "method": "GET",
+    "path_template": "/api/v3/releaseprofile/{numeric}",
+    "api_surface_template": "/api/v3/releaseprofile/{numeric}",
+    "params": [
+     {
+      "index": 3,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1",
+       "2"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     55,
+     56
+    ]
+   },
+   {
+    "name": "put_releaseprofile_by_id",
+    "method": "PUT",
+    "path_template": "/api/v3/releaseprofile/{numeric}",
+    "api_surface_template": "/api/v3/releaseprofile/{numeric}",
+    "params": [
+     {
+      "index": 3,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "4"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "name": "string",
+      "enabled": "boolean",
+      "required": "array",
+      "ignored": "array",
+      "indexerId": "number",
+      "tags": "array",
+      "id": "number"
+     }
+    },
+    "statuses": [
+     202
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     95
+    ]
+   },
+   {
+    "name": "get_rootfolder",
+    "method": "GET",
+    "path_template": "/api/v3/rootFolder",
+    "api_surface_template": "/api/v3/rootFolder",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     30,
+     44
+    ]
+   },
+   {
+    "name": "get_rootfolder_by_id",
+    "method": "GET",
+    "path_template": "/api/v3/rootFolder/{numeric}",
+    "api_surface_template": "/api/v3/rootFolder/{numeric}",
+    "params": [
+     {
+      "index": 3,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1",
+       "2"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     45,
+     46
+    ]
+   },
+   {
+    "name": "get_series",
+    "method": "GET",
+    "path_template": "/api/v3/series",
+    "api_surface_template": "/api/v3/series",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     1,
+     12,
+     83
+    ]
+   },
+   {
+    "name": "get_system_status",
+    "method": "GET",
+    "path_template": "/api/v3/system/status",
+    "api_surface_template": "/api/v3/system/status",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     9,
+     34,
+     35
+    ]
+   },
+   {
+    "name": "get_system_task",
+    "method": "GET",
+    "path_template": "/api/v3/system/task",
+    "api_surface_template": "/api/v3/system/task",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     80
+    ]
+   },
+   {
+    "name": "get_tag",
+    "method": "GET",
+    "path_template": "/api/v3/tag",
+    "api_surface_template": "/api/v3/tag",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     3,
+     21,
+     36,
+     85,
+     88,
+     91,
+     96
+    ]
+   },
+   {
+    "name": "post_tag",
+    "method": "POST",
+    "path_template": "/api/v3/tag",
+    "api_surface_template": "/api/v3/tag",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "label": "string"
+     }
+    },
+    "statuses": [
+     201
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     84
+    ]
+   },
+   {
+    "name": "get_tag_detail",
+    "method": "GET",
+    "path_template": "/api/v3/tag/detail",
+    "api_surface_template": "/api/v3/tag/detail",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     22,
+     41,
+     86,
+     89,
+     92
+    ]
+   },
+   {
+    "name": "get_tag_detail_by_id",
+    "method": "GET",
+    "path_template": "/api/v3/tag/detail/{numeric}",
+    "api_surface_template": "/api/v3/tag/detail/{numeric}",
+    "params": [
+     {
+      "index": 4,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1",
+       "3"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     42,
+     43
+    ]
+   },
+   {
+    "name": "get_tag_by_id",
+    "method": "GET",
+    "path_template": "/api/v3/tag/{numeric}",
+    "api_surface_template": "/api/v3/tag/{numeric}",
+    "params": [
+     {
+      "index": 3,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1",
+       "2",
+       "3",
+       "4",
+       "6"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200,
+     404
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     37,
+     38,
+     39,
+     40,
+     90,
+     93
+    ]
+   },
+   {
+    "name": "put_tag_by_id",
+    "method": "PUT",
+    "path_template": "/api/v3/tag/{numeric}",
+    "api_surface_template": "/api/v3/tag/{numeric}",
+    "params": [
+     {
+      "index": 3,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "6"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "id": "number",
+      "label": "string"
+     }
+    },
+    "statuses": [
+     202
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     87
+    ]
+   },
+   {
+    "name": "get_wanted_missing",
+    "method": "GET",
+    "path_template": "/api/v3/wanted/missing",
+    "api_surface_template": "/api/v3/wanted/missing",
+    "params": [],
+    "query_parameter_names": [
+     "monitored",
+     "page",
+     "pageSize",
+     "sortDirection",
+     "sortKey"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     15,
+     82
+    ]
+   }
+  ],
+  "records": [
+   {
+    "ordinal": 0,
+    "method": "GET",
+    "path": "/api/v3/localization/language",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 1,
+    "method": "GET",
+    "path": "/api/v3/series",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 2,
+    "method": "GET",
+    "path": "/api/v3/customFilter",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 3,
+    "method": "GET",
+    "path": "/api/v3/tag",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 4,
+    "method": "GET",
+    "path": "/api/v3/qualityprofile",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 5,
+    "method": "GET",
+    "path": "/api/v3/language",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 6,
+    "method": "GET",
+    "path": "/api/v3/importlist",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 7,
+    "method": "GET",
+    "path": "/api/v3/indexerFlag",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 8,
+    "method": "GET",
+    "path": "/api/v3/config/ui",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 9,
+    "method": "GET",
+    "path": "/api/v3/system/status",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 10,
+    "method": "GET",
+    "path": "/api/v3/queue/status",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 11,
+    "method": "GET",
+    "path": "/api/v3/health",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 12,
+    "method": "GET",
+    "path": "/api/v3/series",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 13,
+    "method": "GET",
+    "path": "/api/v3/queue/details",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 14,
+    "method": "GET",
+    "path": "/api/v3/queue",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 15,
+    "method": "GET",
+    "path": "/api/v3/wanted/missing",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 16,
+    "method": "GET",
+    "path": "/api/v3/qualityprofile",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 17,
+    "method": "GET",
+    "path": "/api/v3/delayprofile",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 18,
+    "method": "GET",
+    "path": "/api/v3/releaseprofile",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 19,
+    "method": "GET",
+    "path": "/api/v3/indexer",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 20,
+    "method": "GET",
+    "path": "/api/v3/customformat",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 21,
+    "method": "GET",
+    "path": "/api/v3/tag",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 22,
+    "method": "GET",
+    "path": "/api/v3/tag/detail",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 23,
+    "method": "GET",
+    "path": "/api/v3/delayprofile",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 24,
+    "method": "GET",
+    "path": "/api/v3/importlist",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 25,
+    "method": "GET",
+    "path": "/api/v3/notification",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 26,
+    "method": "GET",
+    "path": "/api/v3/releaseprofile",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 27,
+    "method": "GET",
+    "path": "/api/v3/indexer",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 28,
+    "method": "GET",
+    "path": "/api/v3/downloadclient",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 29,
+    "method": "GET",
+    "path": "/api/v3/autoTagging",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 30,
+    "method": "GET",
+    "path": "/api/v3/rootFolder",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 31,
+    "method": "GET",
+    "path": "/api/v3/notification",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 32,
+    "method": "GET",
+    "path": "/api/v3/health",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 33,
+    "method": "GET",
+    "path": "/api/v3/diskspace",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 34,
+    "method": "GET",
+    "path": "/api/v3/system/status",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 35,
+    "method": "GET",
+    "path": "/api/v3/system/status",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 36,
+    "method": "GET",
+    "path": "/api/v3/tag",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 37,
+    "method": "GET",
+    "path": "/api/v3/tag/2",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 38,
+    "method": "GET",
+    "path": "/api/v3/tag/1",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 39,
+    "method": "GET",
+    "path": "/api/v3/tag/3",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 40,
+    "method": "GET",
+    "path": "/api/v3/tag/4",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 41,
+    "method": "GET",
+    "path": "/api/v3/tag/detail",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 42,
+    "method": "GET",
+    "path": "/api/v3/tag/detail/1",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 43,
+    "method": "GET",
+    "path": "/api/v3/tag/detail/3",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 44,
+    "method": "GET",
+    "path": "/api/v3/rootFolder",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 45,
+    "method": "GET",
+    "path": "/api/v3/rootFolder/1",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 46,
+    "method": "GET",
+    "path": "/api/v3/rootFolder/2",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 47,
+    "method": "GET",
+    "path": "/api/v3/customformat",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 48,
+    "method": "GET",
+    "path": "/api/v3/customformat/2",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 49,
+    "method": "GET",
+    "path": "/api/v3/customformat/1",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 50,
+    "method": "GET",
+    "path": "/api/v3/customformat/3",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 51,
+    "method": "GET",
+    "path": "/api/v3/qualityprofile",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 52,
+    "method": "GET",
+    "path": "/api/v3/qualityprofile/8",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 53,
+    "method": "GET",
+    "path": "/api/v3/qualityprofile/7",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 54,
+    "method": "GET",
+    "path": "/api/v3/releaseprofile",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 55,
+    "method": "GET",
+    "path": "/api/v3/releaseprofile/2",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 56,
+    "method": "GET",
+    "path": "/api/v3/releaseprofile/1",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 57,
+    "method": "GET",
+    "path": "/api/v3/delayprofile",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 58,
+    "method": "GET",
+    "path": "/api/v3/delayprofile/2",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 59,
+    "method": "GET",
+    "path": "/api/v3/delayprofile/1",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 60,
+    "method": "GET",
+    "path": "/api/v3/notification",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 61,
+    "method": "GET",
+    "path": "/api/v3/notification/2",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 62,
+    "method": "GET",
+    "path": "/api/v3/notification/1",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 63,
+    "method": "GET",
+    "path": "/api/v3/importlistexclusion",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 64,
+    "method": "GET",
+    "path": "/api/v3/importlistexclusion/2",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 65,
+    "method": "GET",
+    "path": "/api/v3/importlistexclusion/1",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 66,
+    "method": "GET",
+    "path": "/api/v3/importlistexclusion/3",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 67,
+    "method": "GET",
+    "path": "/api/v3/importlistexclusion/paged",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 68,
+    "method": "GET",
+    "path": "/api/v3/autoTagging",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 69,
+    "method": "GET",
+    "path": "/api/v3/autoTagging/1",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 70,
+    "method": "GET",
+    "path": "/api/v3/qualitydefinition",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 71,
+    "method": "GET",
+    "path": "/api/v3/qualitydefinition/5",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 72,
+    "method": "GET",
+    "path": "/api/v3/qualitydefinition/9",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 73,
+    "method": "GET",
+    "path": "/api/v3/language",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 74,
+    "method": "GET",
+    "path": "/api/v3/language/1",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 75,
+    "method": "GET",
+    "path": "/api/v3/config/naming",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 76,
+    "method": "GET",
+    "path": "/api/v3/config/mediamanagement",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 77,
+    "method": "GET",
+    "path": "/api/v3/config/ui",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 78,
+    "method": "GET",
+    "path": "/api/v3/health",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 79,
+    "method": "GET",
+    "path": "/api/v3/diskspace",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 80,
+    "method": "GET",
+    "path": "/api/v3/system/task",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 81,
+    "method": "GET",
+    "path": "/api/v3/calendar",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 82,
+    "method": "GET",
+    "path": "/api/v3/wanted/missing",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 83,
+    "method": "GET",
+    "path": "/api/v3/series",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 84,
+    "method": "POST",
+    "path": "/api/v3/tag",
+    "status": 201,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 85,
+    "method": "GET",
+    "path": "/api/v3/tag",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 86,
+    "method": "GET",
+    "path": "/api/v3/tag/detail",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 87,
+    "method": "PUT",
+    "path": "/api/v3/tag/6",
+    "status": 202,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 88,
+    "method": "GET",
+    "path": "/api/v3/tag",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 89,
+    "method": "GET",
+    "path": "/api/v3/tag/detail",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 90,
+    "method": "GET",
+    "path": "/api/v3/tag/6",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 91,
+    "method": "GET",
+    "path": "/api/v3/tag",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 92,
+    "method": "GET",
+    "path": "/api/v3/tag/detail",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 93,
+    "method": "GET",
+    "path": "/api/v3/tag/6",
+    "status": 404,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 94,
+    "method": "POST",
+    "path": "/api/v3/releaseprofile",
+    "status": 201,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 95,
+    "method": "PUT",
+    "path": "/api/v3/releaseprofile/4",
+    "status": 202,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 96,
+    "method": "GET",
+    "path": "/api/v3/tag",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 97,
+    "method": "GET",
+    "path": "/api/v3/releaseprofile",
+    "status": 200,
+    "content_type": "application/json"
+   }
+  ],
+  "excluded": [],
+  "templated_groups": 14,
+  "kind": "environment-manifest",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "confidence": "inferred",
+ "authority": "historical-reference",
+ "environment": null,
+ "limitations": [
+  "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+  "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+  "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+  "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+  "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+  "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+  "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+  "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+  "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+ ],
+ "relationship_coverage": null,
+ "locations": [
+  {
+   "kind": "artifact-path",
+   "path": "/home/ubuntu/capture/sonarr/sonarr.scoped.har"
+  }
+ ],
+ "evidence_links": [
+  "ev_c572a89136acc993cc0d84090da837a73206dc0d45291613dbd7a616120c4850"
+ ]
+}

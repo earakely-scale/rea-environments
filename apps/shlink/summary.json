@@ -1,0 +1,238 @@
+{
+ "app": "shlink",
+ "image": "shlinkio/shlink:5.1.7",
+ "image_digest": "shlinkio/shlink@sha256:844e1f2b6455331c5b49207bad3a2455ccd65e62bb9daa09a6c57afff26bd9c8",
+ "app_version": "5.1.7",
+ "app_version_full": "5.1.7 (GET /rest/health: status pass, version 5.1.7)",
+ "database": "sqlite (DB_DRIVER=sqlite, /etc/shlink/data/database.sqlite)",
+ "runtime": "RoadRunner with WEB_WORKER_NUM=1 and TASK_WORKER_NUM=1",
+ "default_domain": "127.0.0.1:3206",
+ "custom_domain": "links.saltmarsh.example.test",
+ "web_ui": "none bundled; the browser opens GET /rest/health on the app origin and runs fetch from that page",
+ "compose_project": "rea-shlink",
+ "origin": "http://127.0.0.1:3206",
+ "tooling": {
+  "rea": "6.6.0",
+  "playwright-core": "1.58.2",
+  "chromium": "Chromium 155.0.8059.79 snap",
+  "node": "v24.22.0",
+  "python": "3.12.3",
+  "docker": "29.9.1",
+  "compose": "5.6.0",
+  "vm": "Ubuntu 24.04 amd64"
+ },
+ "scoped_har": {
+  "file": "shlink.scoped.har",
+  "sha256": "97a0390d535b7d6f2555d14a7402f5785ac85825b7077236bcfcc8ccbbc1714c",
+  "bytes": 117350,
+  "records": 66,
+  "methods": {
+   "GET": 63,
+   "POST": 1,
+   "PATCH": 1,
+   "DELETE": 1
+  },
+  "statuses": {
+   "200": 62,
+   "404": 2,
+   "501": 1,
+   "204": 1
+  }
+ },
+ "scope_har": {
+  "origin": "http://127.0.0.1:3206",
+  "keep_regex": "^/rest/",
+  "drop_regex": "default (login|logout|signup|password|session|token|oauth|csrf)",
+  "max_body": 60000,
+  "max_records": 150,
+  "kept": 66,
+  "dropped": {
+   "other-origin": 0,
+   "path": 0,
+   "non-json": 0,
+   "auth": 0,
+   "big-body": 0,
+   "over-max": 0
+  },
+  "notes": [
+   "the raw HAR has only 66 entries because there is no UI: the /rest/health page load plus 65 scripted fetches",
+   "/rest/health answers application/health+json and mercure-info answers 501 application/problem+json; both are JSON-like and kept",
+   "DELETE /rest/v3/short-urls/rea-scratch answers 204 without a content type (HAR mimeType x-unknown): kept by scoping, excluded by REA as non-json, so there is no DELETE tool"
+  ]
+ },
+ "credential_grep": {
+  "api_key_literal_hits": 0,
+  "X-Api-Key_hits": 0,
+  "apiKey_hits": 0,
+  "Bearer_or_JWT_hits": 0,
+  "cookies": 0,
+  "result": "pass"
+ },
+ "manifest": {
+  "evidence_id": "ev_a3d72b74e5d37d9c974dd35a57591dbbe52e160452a2cc3b63a4d2576e852336",
+  "confidence": "inferred",
+  "view_digest": "deb77b6e506397a3cd09d9b58da72487d1da7a42933140c54036da10d868b34e",
+  "tools": 17,
+  "tools_by_method": {
+   "GET": 15,
+   "POST": 1,
+   "PATCH": 1
+  },
+  "templated_groups": 4,
+  "params_by_rule": {
+   "sibling-variance": 4
+  },
+  "params_total": 4,
+  "query_parameter_names_distinct": [
+   "domain",
+   "excludeBots",
+   "excludeMaxVisitsReached",
+   "excludePastValidUntil",
+   "itemsPerPage",
+   "orderBy",
+   "page",
+   "searchTerm",
+   "startDate",
+   "tagsMode",
+   "tags[]",
+   "type"
+  ],
+  "tools_with_body_shape": 2,
+  "excluded": 1,
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "tool_names": [
+   "get_rest_health",
+   "get_rest_domains",
+   "get_rest_domains_default_visits",
+   "get_rest_domains_links_visits",
+   "get_rest_mercure_info",
+   "get_rest_short_urls",
+   "post_rest_short_urls",
+   "patch_rest_short_urls_rea_scratch",
+   "get_rest_short_urls_by_short_url_id",
+   "get_rest_short_urls_redirect_rules_by_short_url_id",
+   "get_rest_short_urls_visits_by_short_url_id",
+   "get_rest_tags",
+   "get_rest_tags_stats",
+   "get_rest_tags_visits_by_tag_id",
+   "get_rest_visits",
+   "get_rest_visits_non_orphan",
+   "get_rest_visits_orphan"
+  ]
+ },
+ "manifest_norules": {
+  "evidence_id": "ev_2bb6ae3d85e4109d51fbed6349c7c371dfd2c38596412c83e649052b90f906b4",
+  "confidence": "derived",
+  "view_digest": "130f4bf2f38a0baea0e024ce16cb0464fc6606e568be8dba3e9c9a8e418cb15f",
+  "tools": 43,
+  "tools_by_method": {
+   "GET": 41,
+   "POST": 1,
+   "PATCH": 1
+  },
+  "templated_groups": 0,
+  "params_by_rule": {},
+  "params_total": 0,
+  "query_parameter_names_distinct": [
+   "domain",
+   "excludeBots",
+   "excludeMaxVisitsReached",
+   "excludePastValidUntil",
+   "itemsPerPage",
+   "orderBy",
+   "page",
+   "searchTerm",
+   "startDate",
+   "tagsMode",
+   "tags[]",
+   "type"
+  ],
+  "tools_with_body_shape": 2,
+  "excluded": 1,
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "tool_names": [
+   "get_rest_health",
+   "get_rest_domains",
+   "get_rest_domains_default_visits",
+   "get_rest_domains_links_visits",
+   "get_rest_mercure_info",
+   "get_rest_short_urls",
+   "post_rest_short_urls",
+   "get_rest_short_urls_4eceeu",
+   "get_rest_short_urls_4eceeu_redirect_rules",
+   "get_rest_short_urls_4eceeu_visits",
+   "get_rest_short_urls_annex_rebuild",
+   "get_rest_short_urls_annex_rebuild_redirect_rules",
+   "get_rest_short_urls_annex_rebuild_visits",
+   "get_rest_short_urls_blue_heron_menu",
+   "get_rest_short_urls_blue_heron_menu_redirect_rules",
+   "get_rest_short_urls_blue_heron_menu_visits",
+   "get_rest_short_urls_depot_manifest",
+   "get_rest_short_urls_depot_manifest_redirect_rules",
+   "get_rest_short_urls_depot_manifest_visits",
+   "get_rest_short_urls_granite_ledger",
+   "get_rest_short_urls_granite_ledger_redirect_rules",
+   "get_rest_short_urls_granite_ledger_visits",
+   "get_rest_short_urls_kelp_broth",
+   "get_rest_short_urls_kelp_broth_redirect_rules",
+   "get_rest_short_urls_kelp_broth_visits",
+   "get_rest_short_urls_rea_scratch",
+   "patch_rest_short_urls_rea_scratch",
+   "get_rest_short_urls_rota_binder",
+   "get_rest_short_urls_rota_binder_redirect_rules",
+   "get_rest_short_urls_rota_binder_visits",
+   "get_rest_short_urls_tide_tables",
+   "get_rest_short_urls_tide_tables_redirect_rules",
+   "get_rest_short_urls_tide_tables_visits",
+   "get_rest_tags",
+   "get_rest_tags_blue_heron_kitchen_visits",
+   "get_rest_tags_copperfield_annex_visits",
+   "get_rest_tags_granite_ledger_visits",
+   "get_rest_tags_lighthouse_rota_visits",
+   "get_rest_tags_saltmarsh_depot_visits",
+   "get_rest_tags_stats",
+   "get_rest_visits",
+   "get_rest_visits_non_orphan",
+   "get_rest_visits_orphan"
+  ]
+ },
+ "evidence": {
+  "capture_evidence_id": "ev_4779d529d62305de670c032f0cdd9188c95cf86f0b549b9a0fac8554db69142b",
+  "capture_total_records": 66,
+  "capture_confidence": "observed"
+ },
+ "seeded_objects": {
+  "api_key": "one key named rea-capture from `shlink api-key:generate` (value only in .admin, deleted at teardown)",
+  "short_urls": [
+   "granite-ledger: Granite Ledger quarterly stone count (tags granite-ledger, lighthouse-rota; maxVisits 500)",
+   "tide-tables: January tide tables for Granite Point (crawlable; redirect rules device=android and query shift=night)",
+   "blue-heron-menu: Blue Heron Kitchen spring-tide menu",
+   "depot-manifest on links.saltmarsh.example.test: Saltmarsh Depot lamp-oil manifest SO-4471",
+   "annex-rebuild: Copperfield Annex beacon rebuild notes (validUntil 2027-03-31)",
+   "rota-binder: Lighthouse Rota binder index (validSince 2026-01-01)",
+   "kelp-broth: Smoked kelp broth recipe card (forwardQuery false)",
+   "4eceeU (generated, 6 characters): Night shift handover checklist"
+  ],
+  "tags": [
+   "blue-heron-kitchen",
+   "copperfield-annex",
+   "granite-ledger",
+   "lighthouse-rota",
+   "saltmarsh-depot"
+  ],
+  "visits": "9 short-URL visits from synthetic user agents (one, TideTableReader/3.2, classified by Shlink as a potential bot) and 2 orphan visits (base URL, invalid short code)",
+  "long_urls": "all on the reserved .test domain (example.test subdomains)",
+  "scratch_during_capture": "short URL rea-scratch created (POST), edited (PATCH title and tags), read, deleted (204), re-read (404), list read again"
+ },
+ "ui_pages_visited": [
+  "/rest/health (the only page: Shlink ships no web UI)"
+ ]
+}

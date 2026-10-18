@@ -1,0 +1,3283 @@
+{
+ "evidence_id": "ev_318ff198f98931b6b5d15f468d8ba767e95abbeb05ed8eb65cd742f138117f34",
+ "subject": {
+  "name": "espocrm.scoped.har",
+  "digest": {
+   "sha256": "b5fdf1ec365990047149655278e9a74f26b4fbbad53d75113ddb65ed89357b26"
+  },
+  "local_path": "/home/ubuntu/capture/espocrm/espocrm.scoped.har",
+  "format": "file",
+  "architecture": null
+ },
+ "provider": {
+  "id": "rea-analysis-view",
+  "name": "REA analysis view projection",
+  "version": "1"
+ },
+ "analysis_profile": null,
+ "predicate_type": "rea.analysis-view",
+ "operation": "inspect_analysis_view",
+ "parameters": {
+  "parent_evidence_id": "ev_f3ad613cd68560f8796fa77cc136de88152b4ab1158158d7b74a873455ec3fe9",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "raw_result": null,
+ "normalized_result": {
+  "parent_evidence_id": "ev_f3ad613cd68560f8796fa77cc136de88152b4ab1158158d7b74a873455ec3fe9",
+  "parent_operation": "inspect_web_network_capture",
+  "parent_digest": "f3ad613cd68560f8796fa77cc136de88152b4ab1158158d7b74a873455ec3fe9",
+  "view_digest": "5248cf49d4edd4de1d8b7e0bbd0fa5ddae137c74b977c3657adf1c062122e1fb",
+  "artifact": {
+   "path": "/home/ubuntu/capture/espocrm/espocrm.scoped.har",
+   "sha256": "b5fdf1ec365990047149655278e9a74f26b4fbbad53d75113ddb65ed89357b26"
+  },
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 88,
+   "total": 88,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "limitations": [
+   "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+   "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+   "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+   "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+   "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+   "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+   "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+   "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+   "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+  ],
+  "unknowns": [
+   {
+    "kind": "authorization-model",
+    "statement": "Authorization headers and cookies are structurally excluded from captures; the manifest states no authorization model."
+   },
+   {
+    "kind": "response-semantics",
+    "statement": "Recorded statuses and bodies are retained only as pointers to parent records; the manifest states no response semantics."
+   },
+   {
+    "kind": "state-transition",
+    "statement": "Recorded exchanges are independent observations; the manifest states no ordering, side effects or state transitions between tools."
+   }
+  ],
+  "origin": "http://127.0.0.1:3216",
+  "name": "127-0-0-1-3216",
+  "tools": [
+   {
+    "name": "get",
+    "method": "GET",
+    "path_template": "/api/v1/",
+    "api_surface_template": "/api/v1/",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     1
+    ]
+   },
+   {
+    "name": "get_account",
+    "method": "GET",
+    "path_template": "/api/v1/Account",
+    "api_surface_template": "/api/v1/Account",
+    "params": [],
+    "query_parameter_names": [
+     "attributeSelect",
+     "maxSize",
+     "offset",
+     "order",
+     "orderBy",
+     "where[0][attribute]",
+     "where[0][type]",
+     "where[0][value]"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     8,
+     73,
+     121
+    ]
+   },
+   {
+    "name": "get_account_layout_bottompanelsdetail",
+    "method": "GET",
+    "path_template": "/api/v1/Account/layout/bottomPanelsDetail",
+    "api_surface_template": "/api/v1/Account/layout/bottomPanelsDetail",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     13
+    ]
+   },
+   {
+    "name": "get_account_layout_defaultsidepanel",
+    "method": "GET",
+    "path_template": "/api/v1/Account/layout/defaultSidePanel",
+    "api_surface_template": "/api/v1/Account/layout/defaultSidePanel",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     11
+    ]
+   },
+   {
+    "name": "get_account_layout_detail",
+    "method": "GET",
+    "path_template": "/api/v1/Account/layout/detail",
+    "api_surface_template": "/api/v1/Account/layout/detail",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     12
+    ]
+   },
+   {
+    "name": "get_account_layout_filters",
+    "method": "GET",
+    "path_template": "/api/v1/Account/layout/filters",
+    "api_surface_template": "/api/v1/Account/layout/filters",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     6
+    ]
+   },
+   {
+    "name": "get_account_layout_list",
+    "method": "GET",
+    "path_template": "/api/v1/Account/layout/list",
+    "api_surface_template": "/api/v1/Account/layout/list",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     7
+    ]
+   },
+   {
+    "name": "get_account_layout_sidepanelsdetail",
+    "method": "GET",
+    "path_template": "/api/v1/Account/layout/sidePanelsDetail",
+    "api_surface_template": "/api/v1/Account/layout/sidePanelsDetail",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     10
+    ]
+   },
+   {
+    "name": "get_account_by_uid",
+    "method": "GET",
+    "path_template": "/api/v1/Account/{uid}",
+    "api_surface_template": "/api/v1/Account/6ad52f2e4cd6dba37",
+    "params": [
+     {
+      "index": 3,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad52f2e4cd6dba37",
+       "6ad52f2ec8b2d9e15",
+       "6ad52f2f4e2aff8fd",
+       "6ad52f2fc7c1a0b33"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     9,
+     85,
+     86,
+     87,
+     88
+    ]
+   },
+   {
+    "name": "get_account_cases_by_uid",
+    "method": "GET",
+    "path_template": "/api/v1/Account/{uid}/cases",
+    "api_surface_template": "/api/v1/Account/6ad52f2e4cd6dba37/cases",
+    "params": [
+     {
+      "index": 3,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad52f2e4cd6dba37",
+       "6ad52f2fc7c1a0b33"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "attributeSelect",
+     "maxSize",
+     "offset",
+     "order",
+     "orderBy",
+     "primaryFilter",
+     "select"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     25,
+     119
+    ]
+   },
+   {
+    "name": "get_account_contacts_by_uid",
+    "method": "GET",
+    "path_template": "/api/v1/Account/{uid}/contacts",
+    "api_surface_template": "/api/v1/Account/6ad52f2e4cd6dba37/contacts",
+    "params": [
+     {
+      "index": 3,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad52f2e4cd6dba37"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "attributeSelect",
+     "maxSize",
+     "offset",
+     "order",
+     "orderBy",
+     "primaryFilter",
+     "select"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     22,
+     117
+    ]
+   },
+   {
+    "name": "get_account_documents_by_uid",
+    "method": "GET",
+    "path_template": "/api/v1/Account/{uid}/documents",
+    "api_surface_template": "/api/v1/Account/6ad52f2e4cd6dba37/documents",
+    "params": [
+     {
+      "index": 3,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad52f2e4cd6dba37"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "attributeSelect",
+     "maxSize",
+     "offset",
+     "order",
+     "orderBy",
+     "primaryFilter"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     24
+    ]
+   },
+   {
+    "name": "get_account_opportunities_by_uid",
+    "method": "GET",
+    "path_template": "/api/v1/Account/{uid}/opportunities",
+    "api_surface_template": "/api/v1/Account/6ad52f2e4cd6dba37/opportunities",
+    "params": [
+     {
+      "index": 3,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad52f2e4cd6dba37",
+       "6ad52f2ec8b2d9e15"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "attributeSelect",
+     "maxSize",
+     "offset",
+     "order",
+     "orderBy",
+     "primaryFilter",
+     "select"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     23,
+     118
+    ]
+   },
+   {
+    "name": "get_account_stream_by_uid",
+    "method": "GET",
+    "path_template": "/api/v1/Account/{uid}/stream",
+    "api_surface_template": "/api/v1/Account/6ad52f2e4cd6dba37/stream",
+    "params": [
+     {
+      "index": 3,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad52f2e4cd6dba37"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "filter",
+     "maxSize",
+     "offset",
+     "order",
+     "orderBy"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     14,
+     120
+    ]
+   },
+   {
+    "name": "get_account_tasksprimary_by_uid",
+    "method": "GET",
+    "path_template": "/api/v1/Account/{uid}/tasksPrimary",
+    "api_surface_template": "/api/v1/Account/6ad52f2e4cd6dba37/tasksPrimary",
+    "params": [
+     {
+      "index": 3,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad52f2e4cd6dba37"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "attributeSelect",
+     "maxSize",
+     "offset",
+     "order",
+     "orderBy",
+     "primaryFilter"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     17
+    ]
+   },
+   {
+    "name": "get_activities_account_activities_by_uid",
+    "method": "GET",
+    "path_template": "/api/v1/Activities/Account/{uid}/activities",
+    "api_surface_template": "/api/v1/Activities/Account/6ad52f2e4cd6dba37/activities",
+    "params": [
+     {
+      "index": 4,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad52f2e4cd6dba37"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "entityType",
+     "maxSize",
+     "offset",
+     "order",
+     "orderBy"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     15
+    ]
+   },
+   {
+    "name": "get_activities_account_history_by_uid",
+    "method": "GET",
+    "path_template": "/api/v1/Activities/Account/{uid}/history",
+    "api_surface_template": "/api/v1/Activities/Account/6ad52f2e4cd6dba37/history",
+    "params": [
+     {
+      "index": 4,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad52f2e4cd6dba37"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "entityType",
+     "maxSize",
+     "offset",
+     "order",
+     "orderBy"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     16
+    ]
+   },
+   {
+    "name": "get_activities_contact_activities_by_uid",
+    "method": "GET",
+    "path_template": "/api/v1/Activities/Contact/{uid}/activities",
+    "api_surface_template": "/api/v1/Activities/Contact/6ad52f304efe50022/activities",
+    "params": [
+     {
+      "index": 4,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad52f304efe50022"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "entityType",
+     "maxSize",
+     "offset",
+     "order",
+     "orderBy"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     35
+    ]
+   },
+   {
+    "name": "get_activities_contact_history_by_uid",
+    "method": "GET",
+    "path_template": "/api/v1/Activities/Contact/{uid}/history",
+    "api_surface_template": "/api/v1/Activities/Contact/6ad52f304efe50022/history",
+    "params": [
+     {
+      "index": 4,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad52f304efe50022"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "entityType",
+     "maxSize",
+     "offset",
+     "order",
+     "orderBy"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     36
+    ]
+   },
+   {
+    "name": "get_activities_opportunity_activities_by_uid",
+    "method": "GET",
+    "path_template": "/api/v1/Activities/Opportunity/{uid}/activities",
+    "api_surface_template": "/api/v1/Activities/Opportunity/6ad52f33cfe110684/activities",
+    "params": [
+     {
+      "index": 4,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad52f33cfe110684"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "entityType",
+     "maxSize",
+     "offset",
+     "order",
+     "orderBy"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     56
+    ]
+   },
+   {
+    "name": "get_activities_opportunity_history_by_uid",
+    "method": "GET",
+    "path_template": "/api/v1/Activities/Opportunity/{uid}/history",
+    "api_surface_template": "/api/v1/Activities/Opportunity/6ad52f33cfe110684/history",
+    "params": [
+     {
+      "index": 4,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad52f33cfe110684"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "entityType",
+     "maxSize",
+     "offset",
+     "order",
+     "orderBy"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     57
+    ]
+   },
+   {
+    "name": "get_activities_upcoming",
+    "method": "GET",
+    "path_template": "/api/v1/Activities/upcoming",
+    "api_surface_template": "/api/v1/Activities/upcoming",
+    "params": [],
+    "query_parameter_names": [
+     "entityTypeList[]",
+     "futureDays",
+     "maxSize",
+     "offset",
+     "order",
+     "orderBy"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     4
+    ]
+   },
+   {
+    "name": "get_call",
+    "method": "GET",
+    "path_template": "/api/v1/Call",
+    "api_surface_template": "/api/v1/Call",
+    "params": [],
+    "query_parameter_names": [
+     "maxSize",
+     "offset",
+     "order",
+     "orderBy"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     80
+    ]
+   },
+   {
+    "name": "get_call_by_uid",
+    "method": "GET",
+    "path_template": "/api/v1/Call/{uid}",
+    "api_surface_template": "/api/v1/Call/6ad52f4c782bd083a",
+    "params": [
+     {
+      "index": 3,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad52f4c782bd083a",
+       "6ad52f4cf32515eb2"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     108,
+     109
+    ]
+   },
+   {
+    "name": "get_campaign",
+    "method": "GET",
+    "path_template": "/api/v1/Campaign",
+    "api_surface_template": "/api/v1/Campaign",
+    "params": [],
+    "query_parameter_names": [
+     "maxSize",
+     "offset",
+     "order",
+     "orderBy"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     82
+    ]
+   },
+   {
+    "name": "get_campaign_by_uid",
+    "method": "GET",
+    "path_template": "/api/v1/Campaign/{uid}",
+    "api_surface_template": "/api/v1/Campaign/6ad52f4e732a28f09",
+    "params": [
+     {
+      "index": 3,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad52f4e732a28f09"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     112
+    ]
+   },
+   {
+    "name": "get_case",
+    "method": "GET",
+    "path_template": "/api/v1/Case",
+    "api_surface_template": "/api/v1/Case",
+    "params": [],
+    "query_parameter_names": [
+     "attributeSelect",
+     "maxSize",
+     "offset",
+     "order",
+     "orderBy",
+     "where[0][attribute]",
+     "where[0][type]",
+     "where[0][value]"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     64,
+     77,
+     124
+    ]
+   },
+   {
+    "name": "get_case_layout_filters",
+    "method": "GET",
+    "path_template": "/api/v1/Case/layout/filters",
+    "api_surface_template": "/api/v1/Case/layout/filters",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     62
+    ]
+   },
+   {
+    "name": "get_case_layout_list",
+    "method": "GET",
+    "path_template": "/api/v1/Case/layout/list",
+    "api_surface_template": "/api/v1/Case/layout/list",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     63
+    ]
+   },
+   {
+    "name": "get_case_layout_listforaccount",
+    "method": "GET",
+    "path_template": "/api/v1/Case/layout/listForAccount",
+    "api_surface_template": "/api/v1/Case/layout/listForAccount",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     21
+    ]
+   },
+   {
+    "name": "get_case_layout_listforcontact",
+    "method": "GET",
+    "path_template": "/api/v1/Case/layout/listForContact",
+    "api_surface_template": "/api/v1/Case/layout/listForContact",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     39
+    ]
+   },
+   {
+    "name": "get_case_by_uid",
+    "method": "GET",
+    "path_template": "/api/v1/Case/{uid}",
+    "api_surface_template": "/api/v1/Case/6ad52f35cbcb1802e",
+    "params": [
+     {
+      "index": 3,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad52f35cbcb1802e",
+       "6ad52f3650eed3f41",
+       "6ad52f36caae916a6"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     100,
+     101,
+     102
+    ]
+   },
+   {
+    "name": "get_contact",
+    "method": "GET",
+    "path_template": "/api/v1/Contact",
+    "api_surface_template": "/api/v1/Contact",
+    "params": [],
+    "query_parameter_names": [
+     "attributeSelect",
+     "maxSize",
+     "offset",
+     "order",
+     "orderBy",
+     "textFilter"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     28,
+     74,
+     122
+    ]
+   },
+   {
+    "name": "get_contact_layout_bottompanelsdetail",
+    "method": "GET",
+    "path_template": "/api/v1/Contact/layout/bottomPanelsDetail",
+    "api_surface_template": "/api/v1/Contact/layout/bottomPanelsDetail",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     33
+    ]
+   },
+   {
+    "name": "get_contact_layout_defaultsidepanel",
+    "method": "GET",
+    "path_template": "/api/v1/Contact/layout/defaultSidePanel",
+    "api_surface_template": "/api/v1/Contact/layout/defaultSidePanel",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     31
+    ]
+   },
+   {
+    "name": "get_contact_layout_detail",
+    "method": "GET",
+    "path_template": "/api/v1/Contact/layout/detail",
+    "api_surface_template": "/api/v1/Contact/layout/detail",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     32
+    ]
+   },
+   {
+    "name": "get_contact_layout_filters",
+    "method": "GET",
+    "path_template": "/api/v1/Contact/layout/filters",
+    "api_surface_template": "/api/v1/Contact/layout/filters",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     26
+    ]
+   },
+   {
+    "name": "get_contact_layout_list",
+    "method": "GET",
+    "path_template": "/api/v1/Contact/layout/list",
+    "api_surface_template": "/api/v1/Contact/layout/list",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     27
+    ]
+   },
+   {
+    "name": "get_contact_layout_listforaccount",
+    "method": "GET",
+    "path_template": "/api/v1/Contact/layout/listForAccount",
+    "api_surface_template": "/api/v1/Contact/layout/listForAccount",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     18
+    ]
+   },
+   {
+    "name": "get_contact_layout_sidepanelsdetail",
+    "method": "GET",
+    "path_template": "/api/v1/Contact/layout/sidePanelsDetail",
+    "api_surface_template": "/api/v1/Contact/layout/sidePanelsDetail",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     30
+    ]
+   },
+   {
+    "name": "get_contact_by_uid",
+    "method": "GET",
+    "path_template": "/api/v1/Contact/{uid}",
+    "api_surface_template": "/api/v1/Contact/6ad52f304efe50022",
+    "params": [
+     {
+      "index": 3,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad52f304efe50022",
+       "6ad52f30cb5fc8014",
+       "6ad52f3154248345c",
+       "6ad52f31cf9b8d499"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     29,
+     89,
+     90,
+     91,
+     92
+    ]
+   },
+   {
+    "name": "get_contact_cases_by_uid",
+    "method": "GET",
+    "path_template": "/api/v1/Contact/{uid}/cases",
+    "api_surface_template": "/api/v1/Contact/6ad52f304efe50022/cases",
+    "params": [
+     {
+      "index": 3,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad52f304efe50022"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "attributeSelect",
+     "maxSize",
+     "offset",
+     "order",
+     "orderBy",
+     "primaryFilter"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     42
+    ]
+   },
+   {
+    "name": "get_contact_opportunities_by_uid",
+    "method": "GET",
+    "path_template": "/api/v1/Contact/{uid}/opportunities",
+    "api_surface_template": "/api/v1/Contact/6ad52f304efe50022/opportunities",
+    "params": [
+     {
+      "index": 3,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad52f304efe50022"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "attributeSelect",
+     "maxSize",
+     "offset",
+     "order",
+     "orderBy",
+     "primaryFilter"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     41
+    ]
+   },
+   {
+    "name": "get_contact_stream_by_uid",
+    "method": "GET",
+    "path_template": "/api/v1/Contact/{uid}/stream",
+    "api_surface_template": "/api/v1/Contact/6ad52f304efe50022/stream",
+    "params": [
+     {
+      "index": 3,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad52f304efe50022"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "filter",
+     "maxSize",
+     "offset",
+     "order",
+     "orderBy"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     34
+    ]
+   },
+   {
+    "name": "get_contact_targetlists_by_uid",
+    "method": "GET",
+    "path_template": "/api/v1/Contact/{uid}/targetLists",
+    "api_surface_template": "/api/v1/Contact/6ad52f304efe50022/targetLists",
+    "params": [
+     {
+      "index": 3,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad52f304efe50022"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "attributeSelect",
+     "maxSize",
+     "offset",
+     "order",
+     "orderBy",
+     "primaryFilter"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     43
+    ]
+   },
+   {
+    "name": "get_contact_tasks_by_uid",
+    "method": "GET",
+    "path_template": "/api/v1/Contact/{uid}/tasks",
+    "api_surface_template": "/api/v1/Contact/6ad52f304efe50022/tasks",
+    "params": [
+     {
+      "index": 3,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad52f304efe50022"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "attributeSelect",
+     "maxSize",
+     "offset",
+     "order",
+     "orderBy",
+     "primaryFilter"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     37
+    ]
+   },
+   {
+    "name": "get_document_layout_listsmall",
+    "method": "GET",
+    "path_template": "/api/v1/Document/layout/listSmall",
+    "api_surface_template": "/api/v1/Document/layout/listSmall",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     20
+    ]
+   },
+   {
+    "name": "get_knowledgebasearticle",
+    "method": "GET",
+    "path_template": "/api/v1/KnowledgeBaseArticle",
+    "api_surface_template": "/api/v1/KnowledgeBaseArticle",
+    "params": [],
+    "query_parameter_names": [
+     "attributeSelect",
+     "maxSize",
+     "offset",
+     "order",
+     "orderBy",
+     "whereGroup[0][attribute]",
+     "whereGroup[0][type]"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     71,
+     81
+    ]
+   },
+   {
+    "name": "get_knowledgebasearticle_layout_filters",
+    "method": "GET",
+    "path_template": "/api/v1/KnowledgeBaseArticle/layout/filters",
+    "api_surface_template": "/api/v1/KnowledgeBaseArticle/layout/filters",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     68
+    ]
+   },
+   {
+    "name": "get_knowledgebasearticle_layout_list",
+    "method": "GET",
+    "path_template": "/api/v1/KnowledgeBaseArticle/layout/list",
+    "api_surface_template": "/api/v1/KnowledgeBaseArticle/layout/list",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     70
+    ]
+   },
+   {
+    "name": "get_knowledgebasearticle_by_uid",
+    "method": "GET",
+    "path_template": "/api/v1/KnowledgeBaseArticle/{uid}",
+    "api_surface_template": "/api/v1/KnowledgeBaseArticle/6ad52f4d776c4f431",
+    "params": [
+     {
+      "index": 3,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad52f4d776c4f431",
+       "6ad52f4defb706473"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     110,
+     111
+    ]
+   },
+   {
+    "name": "get_knowledgebasecategory_action_listtree",
+    "method": "GET",
+    "path_template": "/api/v1/KnowledgeBaseCategory/action/listTree",
+    "api_surface_template": "/api/v1/KnowledgeBaseCategory/action/listTree",
+    "params": [],
+    "query_parameter_names": [
+     "checkIfEmpty",
+     "maxSize",
+     "offset",
+     "order",
+     "orderBy"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     69
+    ]
+   },
+   {
+    "name": "get_lead",
+    "method": "GET",
+    "path_template": "/api/v1/Lead",
+    "api_surface_template": "/api/v1/Lead",
+    "params": [],
+    "query_parameter_names": [
+     "attributeSelect",
+     "maxSize",
+     "offset",
+     "order",
+     "orderBy"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     47,
+     75
+    ]
+   },
+   {
+    "name": "get_lead_layout_filters",
+    "method": "GET",
+    "path_template": "/api/v1/Lead/layout/filters",
+    "api_surface_template": "/api/v1/Lead/layout/filters",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     45
+    ]
+   },
+   {
+    "name": "get_lead_layout_list",
+    "method": "GET",
+    "path_template": "/api/v1/Lead/layout/list",
+    "api_surface_template": "/api/v1/Lead/layout/list",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     46
+    ]
+   },
+   {
+    "name": "get_lead_by_uid",
+    "method": "GET",
+    "path_template": "/api/v1/Lead/{uid}",
+    "api_surface_template": "/api/v1/Lead/6ad52f3256b40a5f7",
+    "params": [
+     {
+      "index": 3,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad52f3256b40a5f7",
+       "6ad52f32d0d3b1ec9",
+       "6ad52f3355fb52168"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     93,
+     94,
+     95
+    ]
+   },
+   {
+    "name": "get_meeting",
+    "method": "GET",
+    "path_template": "/api/v1/Meeting",
+    "api_surface_template": "/api/v1/Meeting",
+    "params": [],
+    "query_parameter_names": [
+     "maxSize",
+     "offset",
+     "order",
+     "orderBy"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     79
+    ]
+   },
+   {
+    "name": "get_meeting_by_uid",
+    "method": "GET",
+    "path_template": "/api/v1/Meeting/{uid}",
+    "api_surface_template": "/api/v1/Meeting/6ad52f4b7211751dd",
+    "params": [
+     {
+      "index": 3,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad52f4b7211751dd",
+       "6ad52f4bef4661054"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     106,
+     107
+    ]
+   },
+   {
+    "name": "get_notification_action_notreadcount",
+    "method": "GET",
+    "path_template": "/api/v1/Notification/action/notReadCount",
+    "api_surface_template": "/api/v1/Notification/action/notReadCount",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     2,
+     44,
+     72
+    ]
+   },
+   {
+    "name": "get_opportunity",
+    "method": "GET",
+    "path_template": "/api/v1/Opportunity",
+    "api_surface_template": "/api/v1/Opportunity",
+    "params": [],
+    "query_parameter_names": [
+     "attributeSelect",
+     "maxSize",
+     "offset",
+     "order",
+     "orderBy",
+     "where[0][attribute]",
+     "where[0][type]",
+     "where[0][value]"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     50,
+     76,
+     123
+    ]
+   },
+   {
+    "name": "get_opportunity_layout_bottompanelsdetail",
+    "method": "GET",
+    "path_template": "/api/v1/Opportunity/layout/bottomPanelsDetail",
+    "api_surface_template": "/api/v1/Opportunity/layout/bottomPanelsDetail",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     55
+    ]
+   },
+   {
+    "name": "get_opportunity_layout_defaultsidepanel",
+    "method": "GET",
+    "path_template": "/api/v1/Opportunity/layout/defaultSidePanel",
+    "api_surface_template": "/api/v1/Opportunity/layout/defaultSidePanel",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     53
+    ]
+   },
+   {
+    "name": "get_opportunity_layout_detail",
+    "method": "GET",
+    "path_template": "/api/v1/Opportunity/layout/detail",
+    "api_surface_template": "/api/v1/Opportunity/layout/detail",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     54
+    ]
+   },
+   {
+    "name": "get_opportunity_layout_filters",
+    "method": "GET",
+    "path_template": "/api/v1/Opportunity/layout/filters",
+    "api_surface_template": "/api/v1/Opportunity/layout/filters",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     48
+    ]
+   },
+   {
+    "name": "get_opportunity_layout_list",
+    "method": "GET",
+    "path_template": "/api/v1/Opportunity/layout/list",
+    "api_surface_template": "/api/v1/Opportunity/layout/list",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     49
+    ]
+   },
+   {
+    "name": "get_opportunity_layout_listforaccount",
+    "method": "GET",
+    "path_template": "/api/v1/Opportunity/layout/listForAccount",
+    "api_surface_template": "/api/v1/Opportunity/layout/listForAccount",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     19
+    ]
+   },
+   {
+    "name": "get_opportunity_layout_listforcontact",
+    "method": "GET",
+    "path_template": "/api/v1/Opportunity/layout/listForContact",
+    "api_surface_template": "/api/v1/Opportunity/layout/listForContact",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     38
+    ]
+   },
+   {
+    "name": "get_opportunity_layout_sidepanelsdetail",
+    "method": "GET",
+    "path_template": "/api/v1/Opportunity/layout/sidePanelsDetail",
+    "api_surface_template": "/api/v1/Opportunity/layout/sidePanelsDetail",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     52
+    ]
+   },
+   {
+    "name": "get_opportunity_by_uid",
+    "method": "GET",
+    "path_template": "/api/v1/Opportunity/{uid}",
+    "api_surface_template": "/api/v1/Opportunity/6ad52f33cfe110684",
+    "params": [
+     {
+      "index": 3,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad52f33cfe110684",
+       "6ad52f3454ee252c9",
+       "6ad52f34cdffaa50c",
+       "6ad52f35526d4e888"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     51,
+     96,
+     97,
+     98,
+     99
+    ]
+   },
+   {
+    "name": "get_opportunity_documents_by_uid",
+    "method": "GET",
+    "path_template": "/api/v1/Opportunity/{uid}/documents",
+    "api_surface_template": "/api/v1/Opportunity/6ad52f33cfe110684/documents",
+    "params": [
+     {
+      "index": 3,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad52f33cfe110684"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "attributeSelect",
+     "maxSize",
+     "offset",
+     "order",
+     "orderBy",
+     "primaryFilter"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     60
+    ]
+   },
+   {
+    "name": "get_opportunity_stream_by_uid",
+    "method": "GET",
+    "path_template": "/api/v1/Opportunity/{uid}/stream",
+    "api_surface_template": "/api/v1/Opportunity/6ad52f33cfe110684/stream",
+    "params": [
+     {
+      "index": 3,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad52f33cfe110684"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "filter",
+     "maxSize",
+     "offset",
+     "order",
+     "orderBy"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     58
+    ]
+   },
+   {
+    "name": "get_opportunity_tasks_by_uid",
+    "method": "GET",
+    "path_template": "/api/v1/Opportunity/{uid}/tasks",
+    "api_surface_template": "/api/v1/Opportunity/6ad52f33cfe110684/tasks",
+    "params": [
+     {
+      "index": 3,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad52f33cfe110684"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "attributeSelect",
+     "maxSize",
+     "offset",
+     "order",
+     "orderBy",
+     "primaryFilter"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     59
+    ]
+   },
+   {
+    "name": "get_popupnotification_action_grouped",
+    "method": "GET",
+    "path_template": "/api/v1/PopupNotification/action/grouped",
+    "api_surface_template": "/api/v1/PopupNotification/action/grouped",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     3,
+     61
+    ]
+   },
+   {
+    "name": "get_settings",
+    "method": "GET",
+    "path_template": "/api/v1/Settings",
+    "api_surface_template": "/api/v1/Settings",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     0
+    ]
+   },
+   {
+    "name": "get_stream",
+    "method": "GET",
+    "path_template": "/api/v1/Stream",
+    "api_surface_template": "/api/v1/Stream",
+    "params": [],
+    "query_parameter_names": [
+     "maxSize",
+     "offset",
+     "order",
+     "orderBy"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     5
+    ]
+   },
+   {
+    "name": "get_targetlist",
+    "method": "GET",
+    "path_template": "/api/v1/TargetList",
+    "api_surface_template": "/api/v1/TargetList",
+    "params": [],
+    "query_parameter_names": [
+     "maxSize",
+     "offset",
+     "order",
+     "orderBy"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     83
+    ]
+   },
+   {
+    "name": "get_targetlist_layout_listfortarget",
+    "method": "GET",
+    "path_template": "/api/v1/TargetList/layout/listForTarget",
+    "api_surface_template": "/api/v1/TargetList/layout/listForTarget",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     40
+    ]
+   },
+   {
+    "name": "get_targetlist_by_uid",
+    "method": "GET",
+    "path_template": "/api/v1/TargetList/{uid}",
+    "api_surface_template": "/api/v1/TargetList/6ad52f4eeb2668804",
+    "params": [
+     {
+      "index": 3,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad52f4eeb2668804"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     113
+    ]
+   },
+   {
+    "name": "get_task",
+    "method": "GET",
+    "path_template": "/api/v1/Task",
+    "api_surface_template": "/api/v1/Task",
+    "params": [],
+    "query_parameter_names": [
+     "attributeSelect",
+     "maxSize",
+     "offset",
+     "order",
+     "orderBy"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     67,
+     78,
+     130
+    ]
+   },
+   {
+    "name": "post_task",
+    "method": "POST",
+    "path_template": "/api/v1/Task",
+    "api_surface_template": "/api/v1/Task",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "name": "string",
+      "status": "string",
+      "priority": "string",
+      "dateEndDate": "string",
+      "assignedUserId": "string",
+      "parentType": "string",
+      "parentId": "string",
+      "description": "string"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     125
+    ]
+   },
+   {
+    "name": "get_task_layout_filters",
+    "method": "GET",
+    "path_template": "/api/v1/Task/layout/filters",
+    "api_surface_template": "/api/v1/Task/layout/filters",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     65
+    ]
+   },
+   {
+    "name": "get_task_layout_list",
+    "method": "GET",
+    "path_template": "/api/v1/Task/layout/list",
+    "api_surface_template": "/api/v1/Task/layout/list",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     66
+    ]
+   },
+   {
+    "name": "delete_task_by_uid",
+    "method": "DELETE",
+    "path_template": "/api/v1/Task/{uid}",
+    "api_surface_template": "/api/v1/Task/6ad530aa85bd86ed0",
+    "params": [
+     {
+      "index": 3,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad530aa85bd86ed0"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     128
+    ]
+   },
+   {
+    "name": "get_task_by_uid",
+    "method": "GET",
+    "path_template": "/api/v1/Task/{uid}",
+    "api_surface_template": "/api/v1/Task/6ad52f49e007ebd75",
+    "params": [
+     {
+      "index": 3,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad52f49e007ebd75",
+       "6ad52f4a698f88c32",
+       "6ad52f4ae99e88454",
+       "6ad530aa85bd86ed0"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     103,
+     104,
+     105,
+     127,
+     129
+    ]
+   },
+   {
+    "name": "put_task_by_uid",
+    "method": "PUT",
+    "path_template": "/api/v1/Task/{uid}",
+    "api_surface_template": "/api/v1/Task/6ad530aa85bd86ed0",
+    "params": [
+     {
+      "index": 3,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad530aa85bd86ed0"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "name": "string",
+      "status": "string",
+      "description": "string"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     126
+    ]
+   },
+   {
+    "name": "get_team",
+    "method": "GET",
+    "path_template": "/api/v1/Team",
+    "api_surface_template": "/api/v1/Team",
+    "params": [],
+    "query_parameter_names": [
+     "maxSize",
+     "offset",
+     "order",
+     "orderBy"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     84
+    ]
+   },
+   {
+    "name": "get_team_by_uid",
+    "method": "GET",
+    "path_template": "/api/v1/Team/{uid}",
+    "api_surface_template": "/api/v1/Team/6ad52f2d50f49ad52",
+    "params": [
+     {
+      "index": 3,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad52f2d50f49ad52",
+       "6ad52f2dc7dad5a88"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     114,
+     115
+    ]
+   },
+   {
+    "name": "get_user_by_uid",
+    "method": "GET",
+    "path_template": "/api/v1/User/{uid}",
+    "api_surface_template": "/api/v1/User/6ad52f250e831ce55",
+    "params": [
+     {
+      "index": 3,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad52f250e831ce55"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     116
+    ]
+   }
+  ],
+  "records": [
+   {
+    "ordinal": 0,
+    "method": "GET",
+    "path": "/api/v1/Settings",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 1,
+    "method": "GET",
+    "path": "/api/v1/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 2,
+    "method": "GET",
+    "path": "/api/v1/Notification/action/notReadCount",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 3,
+    "method": "GET",
+    "path": "/api/v1/PopupNotification/action/grouped",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 4,
+    "method": "GET",
+    "path": "/api/v1/Activities/upcoming",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 5,
+    "method": "GET",
+    "path": "/api/v1/Stream",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 6,
+    "method": "GET",
+    "path": "/api/v1/Account/layout/filters",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 7,
+    "method": "GET",
+    "path": "/api/v1/Account/layout/list",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 8,
+    "method": "GET",
+    "path": "/api/v1/Account",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 9,
+    "method": "GET",
+    "path": "/api/v1/Account/6ad52f2e4cd6dba37",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 10,
+    "method": "GET",
+    "path": "/api/v1/Account/layout/sidePanelsDetail",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 11,
+    "method": "GET",
+    "path": "/api/v1/Account/layout/defaultSidePanel",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 12,
+    "method": "GET",
+    "path": "/api/v1/Account/layout/detail",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 13,
+    "method": "GET",
+    "path": "/api/v1/Account/layout/bottomPanelsDetail",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 14,
+    "method": "GET",
+    "path": "/api/v1/Account/6ad52f2e4cd6dba37/stream",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 15,
+    "method": "GET",
+    "path": "/api/v1/Activities/Account/6ad52f2e4cd6dba37/activities",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 16,
+    "method": "GET",
+    "path": "/api/v1/Activities/Account/6ad52f2e4cd6dba37/history",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 17,
+    "method": "GET",
+    "path": "/api/v1/Account/6ad52f2e4cd6dba37/tasksPrimary",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 18,
+    "method": "GET",
+    "path": "/api/v1/Contact/layout/listForAccount",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 19,
+    "method": "GET",
+    "path": "/api/v1/Opportunity/layout/listForAccount",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 20,
+    "method": "GET",
+    "path": "/api/v1/Document/layout/listSmall",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 21,
+    "method": "GET",
+    "path": "/api/v1/Case/layout/listForAccount",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 22,
+    "method": "GET",
+    "path": "/api/v1/Account/6ad52f2e4cd6dba37/contacts",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 23,
+    "method": "GET",
+    "path": "/api/v1/Account/6ad52f2e4cd6dba37/opportunities",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 24,
+    "method": "GET",
+    "path": "/api/v1/Account/6ad52f2e4cd6dba37/documents",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 25,
+    "method": "GET",
+    "path": "/api/v1/Account/6ad52f2e4cd6dba37/cases",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 26,
+    "method": "GET",
+    "path": "/api/v1/Contact/layout/filters",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 27,
+    "method": "GET",
+    "path": "/api/v1/Contact/layout/list",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 28,
+    "method": "GET",
+    "path": "/api/v1/Contact",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 29,
+    "method": "GET",
+    "path": "/api/v1/Contact/6ad52f304efe50022",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 30,
+    "method": "GET",
+    "path": "/api/v1/Contact/layout/sidePanelsDetail",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 31,
+    "method": "GET",
+    "path": "/api/v1/Contact/layout/defaultSidePanel",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 32,
+    "method": "GET",
+    "path": "/api/v1/Contact/layout/detail",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 33,
+    "method": "GET",
+    "path": "/api/v1/Contact/layout/bottomPanelsDetail",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 34,
+    "method": "GET",
+    "path": "/api/v1/Contact/6ad52f304efe50022/stream",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 35,
+    "method": "GET",
+    "path": "/api/v1/Activities/Contact/6ad52f304efe50022/activities",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 36,
+    "method": "GET",
+    "path": "/api/v1/Activities/Contact/6ad52f304efe50022/history",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 37,
+    "method": "GET",
+    "path": "/api/v1/Contact/6ad52f304efe50022/tasks",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 38,
+    "method": "GET",
+    "path": "/api/v1/Opportunity/layout/listForContact",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 39,
+    "method": "GET",
+    "path": "/api/v1/Case/layout/listForContact",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 40,
+    "method": "GET",
+    "path": "/api/v1/TargetList/layout/listForTarget",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 41,
+    "method": "GET",
+    "path": "/api/v1/Contact/6ad52f304efe50022/opportunities",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 42,
+    "method": "GET",
+    "path": "/api/v1/Contact/6ad52f304efe50022/cases",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 43,
+    "method": "GET",
+    "path": "/api/v1/Contact/6ad52f304efe50022/targetLists",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 44,
+    "method": "GET",
+    "path": "/api/v1/Notification/action/notReadCount",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 45,
+    "method": "GET",
+    "path": "/api/v1/Lead/layout/filters",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 46,
+    "method": "GET",
+    "path": "/api/v1/Lead/layout/list",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 47,
+    "method": "GET",
+    "path": "/api/v1/Lead",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 48,
+    "method": "GET",
+    "path": "/api/v1/Opportunity/layout/filters",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 49,
+    "method": "GET",
+    "path": "/api/v1/Opportunity/layout/list",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 50,
+    "method": "GET",
+    "path": "/api/v1/Opportunity",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 51,
+    "method": "GET",
+    "path": "/api/v1/Opportunity/6ad52f33cfe110684",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 52,
+    "method": "GET",
+    "path": "/api/v1/Opportunity/layout/sidePanelsDetail",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 53,
+    "method": "GET",
+    "path": "/api/v1/Opportunity/layout/defaultSidePanel",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 54,
+    "method": "GET",
+    "path": "/api/v1/Opportunity/layout/detail",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 55,
+    "method": "GET",
+    "path": "/api/v1/Opportunity/layout/bottomPanelsDetail",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 56,
+    "method": "GET",
+    "path": "/api/v1/Activities/Opportunity/6ad52f33cfe110684/activities",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 57,
+    "method": "GET",
+    "path": "/api/v1/Activities/Opportunity/6ad52f33cfe110684/history",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 58,
+    "method": "GET",
+    "path": "/api/v1/Opportunity/6ad52f33cfe110684/stream",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 59,
+    "method": "GET",
+    "path": "/api/v1/Opportunity/6ad52f33cfe110684/tasks",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 60,
+    "method": "GET",
+    "path": "/api/v1/Opportunity/6ad52f33cfe110684/documents",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 61,
+    "method": "GET",
+    "path": "/api/v1/PopupNotification/action/grouped",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 62,
+    "method": "GET",
+    "path": "/api/v1/Case/layout/filters",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 63,
+    "method": "GET",
+    "path": "/api/v1/Case/layout/list",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 64,
+    "method": "GET",
+    "path": "/api/v1/Case",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 65,
+    "method": "GET",
+    "path": "/api/v1/Task/layout/filters",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 66,
+    "method": "GET",
+    "path": "/api/v1/Task/layout/list",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 67,
+    "method": "GET",
+    "path": "/api/v1/Task",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 68,
+    "method": "GET",
+    "path": "/api/v1/KnowledgeBaseArticle/layout/filters",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 69,
+    "method": "GET",
+    "path": "/api/v1/KnowledgeBaseCategory/action/listTree",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 70,
+    "method": "GET",
+    "path": "/api/v1/KnowledgeBaseArticle/layout/list",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 71,
+    "method": "GET",
+    "path": "/api/v1/KnowledgeBaseArticle",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 72,
+    "method": "GET",
+    "path": "/api/v1/Notification/action/notReadCount",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 73,
+    "method": "GET",
+    "path": "/api/v1/Account",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 74,
+    "method": "GET",
+    "path": "/api/v1/Contact",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 75,
+    "method": "GET",
+    "path": "/api/v1/Lead",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 76,
+    "method": "GET",
+    "path": "/api/v1/Opportunity",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 77,
+    "method": "GET",
+    "path": "/api/v1/Case",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 78,
+    "method": "GET",
+    "path": "/api/v1/Task",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 79,
+    "method": "GET",
+    "path": "/api/v1/Meeting",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 80,
+    "method": "GET",
+    "path": "/api/v1/Call",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 81,
+    "method": "GET",
+    "path": "/api/v1/KnowledgeBaseArticle",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 82,
+    "method": "GET",
+    "path": "/api/v1/Campaign",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 83,
+    "method": "GET",
+    "path": "/api/v1/TargetList",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 84,
+    "method": "GET",
+    "path": "/api/v1/Team",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 85,
+    "method": "GET",
+    "path": "/api/v1/Account/6ad52f2e4cd6dba37",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 86,
+    "method": "GET",
+    "path": "/api/v1/Account/6ad52f2ec8b2d9e15",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 87,
+    "method": "GET",
+    "path": "/api/v1/Account/6ad52f2f4e2aff8fd",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 88,
+    "method": "GET",
+    "path": "/api/v1/Account/6ad52f2fc7c1a0b33",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 89,
+    "method": "GET",
+    "path": "/api/v1/Contact/6ad52f304efe50022",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 90,
+    "method": "GET",
+    "path": "/api/v1/Contact/6ad52f30cb5fc8014",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 91,
+    "method": "GET",
+    "path": "/api/v1/Contact/6ad52f3154248345c",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 92,
+    "method": "GET",
+    "path": "/api/v1/Contact/6ad52f31cf9b8d499",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 93,
+    "method": "GET",
+    "path": "/api/v1/Lead/6ad52f3256b40a5f7",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 94,
+    "method": "GET",
+    "path": "/api/v1/Lead/6ad52f32d0d3b1ec9",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 95,
+    "method": "GET",
+    "path": "/api/v1/Lead/6ad52f3355fb52168",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 96,
+    "method": "GET",
+    "path": "/api/v1/Opportunity/6ad52f33cfe110684",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 97,
+    "method": "GET",
+    "path": "/api/v1/Opportunity/6ad52f3454ee252c9",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 98,
+    "method": "GET",
+    "path": "/api/v1/Opportunity/6ad52f34cdffaa50c",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 99,
+    "method": "GET",
+    "path": "/api/v1/Opportunity/6ad52f35526d4e888",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 100,
+    "method": "GET",
+    "path": "/api/v1/Case/6ad52f35cbcb1802e",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 101,
+    "method": "GET",
+    "path": "/api/v1/Case/6ad52f3650eed3f41",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 102,
+    "method": "GET",
+    "path": "/api/v1/Case/6ad52f36caae916a6",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 103,
+    "method": "GET",
+    "path": "/api/v1/Task/6ad52f49e007ebd75",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 104,
+    "method": "GET",
+    "path": "/api/v1/Task/6ad52f4a698f88c32",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 105,
+    "method": "GET",
+    "path": "/api/v1/Task/6ad52f4ae99e88454",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 106,
+    "method": "GET",
+    "path": "/api/v1/Meeting/6ad52f4b7211751dd",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 107,
+    "method": "GET",
+    "path": "/api/v1/Meeting/6ad52f4bef4661054",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 108,
+    "method": "GET",
+    "path": "/api/v1/Call/6ad52f4c782bd083a",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 109,
+    "method": "GET",
+    "path": "/api/v1/Call/6ad52f4cf32515eb2",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 110,
+    "method": "GET",
+    "path": "/api/v1/KnowledgeBaseArticle/6ad52f4d776c4f431",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 111,
+    "method": "GET",
+    "path": "/api/v1/KnowledgeBaseArticle/6ad52f4defb706473",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 112,
+    "method": "GET",
+    "path": "/api/v1/Campaign/6ad52f4e732a28f09",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 113,
+    "method": "GET",
+    "path": "/api/v1/TargetList/6ad52f4eeb2668804",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 114,
+    "method": "GET",
+    "path": "/api/v1/Team/6ad52f2d50f49ad52",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 115,
+    "method": "GET",
+    "path": "/api/v1/Team/6ad52f2dc7dad5a88",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 116,
+    "method": "GET",
+    "path": "/api/v1/User/6ad52f250e831ce55",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 117,
+    "method": "GET",
+    "path": "/api/v1/Account/6ad52f2e4cd6dba37/contacts",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 118,
+    "method": "GET",
+    "path": "/api/v1/Account/6ad52f2ec8b2d9e15/opportunities",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 119,
+    "method": "GET",
+    "path": "/api/v1/Account/6ad52f2fc7c1a0b33/cases",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 120,
+    "method": "GET",
+    "path": "/api/v1/Account/6ad52f2e4cd6dba37/stream",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 121,
+    "method": "GET",
+    "path": "/api/v1/Account",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 122,
+    "method": "GET",
+    "path": "/api/v1/Contact",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 123,
+    "method": "GET",
+    "path": "/api/v1/Opportunity",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 124,
+    "method": "GET",
+    "path": "/api/v1/Case",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 125,
+    "method": "POST",
+    "path": "/api/v1/Task",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 126,
+    "method": "PUT",
+    "path": "/api/v1/Task/6ad530aa85bd86ed0",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 127,
+    "method": "GET",
+    "path": "/api/v1/Task/6ad530aa85bd86ed0",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 128,
+    "method": "DELETE",
+    "path": "/api/v1/Task/6ad530aa85bd86ed0",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 129,
+    "method": "GET",
+    "path": "/api/v1/Task/6ad530aa85bd86ed0",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 130,
+    "method": "GET",
+    "path": "/api/v1/Task",
+    "status": 200,
+    "content_type": "application/json"
+   }
+  ],
+  "excluded": [],
+  "templated_groups": 35,
+  "kind": "environment-manifest",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "confidence": "inferred",
+ "authority": "historical-reference",
+ "environment": null,
+ "limitations": [
+  "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+  "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+  "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+  "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+  "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+  "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+  "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+  "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+  "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+ ],
+ "relationship_coverage": null,
+ "locations": [
+  {
+   "kind": "artifact-path",
+   "path": "/home/ubuntu/capture/espocrm/espocrm.scoped.har"
+  }
+ ],
+ "evidence_links": [
+  "ev_f3ad613cd68560f8796fa77cc136de88152b4ab1158158d7b74a873455ec3fe9"
+ ]
+}

@@ -1,0 +1,15 @@
+{
+  "app": "sonarr",
+  "title": "Sonarr",
+  "repo": "SonarrEnv-REA",
+  "license": "GPL-3.0",
+  "authors": "Team Sonarr",
+  "hf_license": "apache-2.0",
+  "version": "4.0.20.3014",
+  "image": "lscr.io/linuxserver/sonarr:4.0.20.3014-ls329",
+  "image_digest": "sha256:44b06045a98bc1f237b9ffefc4b28dab64cb29305e4a2a94875ae93b5224e4cc",
+  "port": 3221,
+  "keep_regex": "^/api/v3/",
+  "domain": "TV library management (profiles, custom formats, tags, connections)",
+  "exclude_tools": "localization|system_status|system_task|health|diskspace|config_ui|config_naming|config_mediamanagement|customfilter|queue|calendar|wanted"
+}

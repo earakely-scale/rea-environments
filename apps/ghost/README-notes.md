@@ -62,3 +62,15 @@ Draft: shift three 22:00-06:00, Ada Finch keeps the tide tables for January, lam
 Lighthouse Rota" (editor Rea Admin). Member Ada Finch, label "Rota Crew", note "Keeps the tide tables for the winter rota."
 Owner bio "Keeper of the Lighthouse Rota since the spring census; counts granite by lamplight.", location "Granite Point".
 Tag descriptions: "Stone counts and quarry audits for the rota." / "Menus that follow the tides."
+
+## Rebuild, 2026-10-18
+
+After review, the shared task generator was tightened: an answer must be a distinctive value that occurs in this app's seed and capture inputs, never the admin account's own identity, in at most 12 recorded responses, and unique across the tasks; each tool gets at most two tasks. Bundle, smoke, eval and card were re-run from the same capture. The bundle and eval numbers earlier in this file describe the first build; these are the published ones.
+
+The scoped HAR was re-scoped from itself with the scope tool's response-body scrub, which replaced the built-in integrations' API key secrets with `<scrubbed>` in one recorded response; the manifest step was re-run, so the Evidence ids in the published card supersede the ones above.
+
+- bundle: 12 retrieval tasks from 9 recorded reads with an eligible field (up to two tasks per tool); field values rejected: not distinctive 23, in too many responses 22, in the tool name or arguments 5, admin identity 14.
+- smoke: passed.
+- eval `openai/gpt-oss-120b:groq`: 12/12.
+- eval `zai-org/GLM-5.3-Flash:zai-org`: 12/12.
+- card and dry publish: 24 episodes, dataset 6.9 MB.

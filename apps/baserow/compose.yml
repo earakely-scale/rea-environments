@@ -1,0 +1,24 @@
+# Baserow 2.4.1 all-in-one (bundled PostgreSQL + Redis inside the container) for the rea showcase capture.
+# Loopback only; one compose project: rea-baserow.
+services:
+  baserow:
+    image: baserow/baserow:2.4.1
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3204:80"
+    environment:
+      BASEROW_PUBLIC_URL: http://127.0.0.1:3204
+      # No outbound mail in this sandbox; sign-up must not wait for an email confirmation.
+      BASEROW_ENABLE_EMAIL_VERIFICATION: "false"
+      BASEROW_AMOUNT_OF_WORKERS: "1"
+      DISABLE_ANONYMOUS_PUBLIC_VIEW_WS_CONNECTIONS: "true"
+    volumes:
+      - baserow-data:/baserow/data
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://127.0.0.1/api/_health/ >/dev/null || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 60
+      start_period: 60s
+volumes:
+  baserow-data: {}

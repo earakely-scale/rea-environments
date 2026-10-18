@@ -182,11 +182,11 @@
    "POST": 3,
    "PUT": 1
   },
-  "scoped_har_bytes": 356170,
-  "scoped_har_sha256": "cf7eb90b391c2b83b4863f7c61be70b78f7aaa398bc182b15acafaa423a497ad",
-  "capture_evidence_id": "ev_f2f21b681f5ab8a313f4bff3cd2d36d1b5e864451d881cc8052a76d4c892e69a",
-  "manifest_evidence_id": "ev_9f7b1b2e995efe7a7d513eb662d9f12d005183bbd5e464e6fa407b1e3a4aa320",
-  "manifest_norules_evidence_id": "ev_cbe80916a0b9871d6b92e80de3e064df23e7c5a6b2ad7e2f31b7dd8d41d48788",
+  "scoped_har_bytes": 356087,
+  "scoped_har_sha256": "e094258cb20cd36f7a877e0f19825fa0d12191c5aea91f33ad51a08a10ce15e3",
+  "capture_evidence_id": "ev_f03cc058b2bdb78972c98464162d3063dba21e2e154c3a2c6df6f7d5aa94a437",
+  "manifest_evidence_id": "ev_1eb4590fb23ad38e07ec1085a2320dc95d8763c98defeaacc5b929f9efc6fd0f",
+  "manifest_norules_evidence_id": "ev_bfe4944c99e579eeb7d80ae761e06cc45d44f6fb1fb44f944cb8d8e536a42561",
   "tools": 36,
   "tools_by_method": {
    "GET": 33,
@@ -199,6 +199,813 @@
    "opaque-token": 4
   },
   "params_total": 4,
+  "query_names": 54,
+  "tools_with_body_shape": 3,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "1593c73542aced54e92e91bf0714ae4bcce22b773ba2890a8c5bdee0deee9226",
+  "parent_digest": "f03cc058b2bdb78972c98464162d3063dba21e2e154c3a2c6df6f7d5aa94a437"
+ },
+ "metabase": {
+  "app_version": "0.64.2.8",
+  "origin": "http://127.0.0.1:3201",
+  "manifest_name": "127-0-0-1-3201",
+  "scoped_records": 120,
+  "methods": {
+   "GET": 112,
+   "POST": 6,
+   "PUT": 1,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 515053,
+  "scoped_har_sha256": "cd791130c103bf19299b14221ac2c27ae0bc9f8ae16e604c82ac4b34631a2d8a",
+  "capture_evidence_id": "ev_ae41d6f2a19b032ad77cd55df2547050605d49d7877db2e63b47c49647324924",
+  "manifest_evidence_id": "ev_97964117e7834ff3666205d78ca1a191235de72b54f4aa6bc0f96899674581a8",
+  "manifest_norules_evidence_id": "ev_84f096bec5f1ed85a460a85f07e3fd430869a4d65443c30f1b86c0e3f01e4cac",
+  "tools": 42,
+  "tools_by_method": {
+   "GET": 37,
+   "POST": 3,
+   "DELETE": 1,
+   "PUT": 1
+  },
+  "tools_norules": 42,
+  "templated_groups": 23,
+  "params_by_rule": {
+   "numeric": 25
+  },
+  "params_total": 25,
+  "query_names": 31,
+  "tools_with_body_shape": 4,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "437a73cfadda9494ecb912d01a8f2f5b07fde3beea46c09b3943e9a8c4d1338c",
+  "parent_digest": "ae41d6f2a19b032ad77cd55df2547050605d49d7877db2e63b47c49647324924"
+ },
+ "linkding": {
+  "app_version": "1.47.0",
+  "origin": "http://127.0.0.1:3203",
+  "manifest_name": "127-0-0-1-3203",
+  "scoped_records": 64,
+  "methods": {
+   "GET": 53,
+   "POST": 5,
+   "PATCH": 2,
+   "PUT": 1,
+   "DELETE": 3
+  },
+  "scoped_har_bytes": 97323,
+  "scoped_har_sha256": "255d191acf58773d0d7376a2d048dc6296f9c7baa6e7ae675053506734ff2b40",
+  "capture_evidence_id": "ev_07064b4e06c39fb3e0b3c5331f4786510cf63f2f2f798640f74bbec660a08b7e",
+  "manifest_evidence_id": "ev_90f90a6a50da524179de380eec1153fd19b59eccb38018c84f882897c1a52994",
+  "manifest_norules_evidence_id": "ev_9257023092e1dff3f6c0e2d683b29446de135189bcfcfab64bbe486cb260c282",
+  "tools": 23,
+  "tools_by_method": {
+   "GET": 12,
+   "POST": 5,
+   "DELETE": 3,
+   "PATCH": 2,
+   "PUT": 1
+  },
+  "tools_norules": 23,
+  "templated_groups": 13,
+  "params_by_rule": {
+   "numeric": 14
+  },
+  "params_total": 14,
+  "query_names": 10,
+  "tools_with_body_shape": 6,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "ec9cfed116ab7829c1e34bbef9494b41c0deb4c84d8a55479811d0a1f8fae24e",
+  "parent_digest": "07064b4e06c39fb3e0b3c5331f4786510cf63f2f2f798640f74bbec660a08b7e"
+ },
+ "komga": {
+  "app_version": "1.29.1",
+  "origin": "http://127.0.0.1:3231",
+  "manifest_name": "127-0-0-1-3231",
+  "scoped_records": 116,
+  "methods": {
+   "GET": 95,
+   "POST": 17,
+   "PATCH": 2,
+   "DELETE": 2
+  },
+  "scoped_har_bytes": 254388,
+  "scoped_har_sha256": "4486c491d956d4a28b83a739ed6dd788f6bbb8f3790f73186583a35075870d9e",
+  "capture_evidence_id": "ev_5d1edee16d3181a6cb765a258edf8a455e0f669980a1b3943b5a465d859db5a8",
+  "manifest_evidence_id": "ev_2400fc90acfee4c519b06085c63026c94599134757eb02bfa872af0b32bbdc10",
+  "manifest_norules_evidence_id": "ev_4ddd7bd03e09d9e76f523b38d91aad40acb6ed3b176dd95a1220c4efbc51b94e",
+  "tools": 42,
+  "tools_by_method": {
+   "GET": 33,
+   "POST": 5,
+   "DELETE": 2,
+   "PATCH": 2
+  },
+  "tools_norules": 64,
+  "templated_groups": 11,
+  "params_by_rule": {
+   "sibling-variance": 11
+  },
+  "params_total": 11,
+  "query_names": 42,
+  "tools_with_body_shape": 7,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "2d682f99f6602a604e0e48d221034e11d807f7ca23d384b0ff364259f5734cf0",
+  "parent_digest": "5d1edee16d3181a6cb765a258edf8a455e0f669980a1b3943b5a465d859db5a8"
+ },
+ "baserow": {
+  "app_version": "2.4.1",
+  "origin": "http://127.0.0.1:3204",
+  "manifest_name": "127-0-0-1-3204",
+  "scoped_records": 83,
+  "methods": {
+   "GET": 80,
+   "POST": 1,
+   "PATCH": 1,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 157373,
+  "scoped_har_sha256": "286207ccf9bec4e41170bbd802886c9bf3d11de51501e01faad00ffda415d93d",
+  "capture_evidence_id": "ev_85d6e0f7e7c20d307a860f6c35f7e696fa6baf0e1a54f19060d77989e82fadac",
+  "manifest_evidence_id": "ev_d41265c6d4379a907ba76eeebbfe708af1f9e04618bbab29c47d7ba9b1c2ac7c",
+  "manifest_norules_evidence_id": "ev_c6d455ba21c86b13bdf6da89c040de1cfaf37dcbdd511fc54edc494a075c247c",
+  "tools": 31,
+  "tools_by_method": {
+   "GET": 28,
+   "POST": 1,
+   "DELETE": 1,
+   "PATCH": 1
+  },
+  "tools_norules": 31,
+  "templated_groups": 23,
+  "params_by_rule": {
+   "numeric": 27
+  },
+  "params_total": 27,
+  "query_names": 26,
+  "tools_with_body_shape": 2,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "73d85eadcc80001f918310d2f48939ec00ef24e06fc49408d713cdaf45587cdd",
+  "parent_digest": "85d6e0f7e7c20d307a860f6c35f7e696fa6baf0e1a54f19060d77989e82fadac"
+ },
+ "memos": {
+  "app_version": "0.31.0",
+  "origin": "http://127.0.0.1:3205",
+  "manifest_name": "127-0-0-1-3205",
+  "scoped_records": 67,
+  "methods": {
+   "GET": 64,
+   "POST": 1,
+   "PATCH": 1,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 113900,
+  "scoped_har_sha256": "88d94da05d999e68d6b7b3692e0c3bab48b02390921bc66ea2352f39df4cf2de",
+  "capture_evidence_id": "ev_c312b72e2468894d9dfbe7bffe1b38ab8a60dfad82d049e36ffd9c199420c31e",
+  "manifest_evidence_id": "ev_9535f9c5f689cd44d904d5b6e3b3462b1bc522be7ae1397e1a2a0eca35296955",
+  "manifest_norules_evidence_id": "ev_d78af12ffd40cd37e54d3867dbfa97a6a8d6c7045ecbcd4c822862756519ab54",
+  "tools": 26,
+  "tools_by_method": {
+   "GET": 23,
+   "POST": 1,
+   "DELETE": 1,
+   "PATCH": 1
+  },
+  "tools_norules": 56,
+  "templated_groups": 12,
+  "params_by_rule": {
+   "sibling-variance": 5,
+   "uuid": 7
+  },
+  "params_total": 12,
+  "query_names": 6,
+  "tools_with_body_shape": 2,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "5b95f0996f4029b569c1413bc4e89d9c9864e1fa928f8082b9393bc2301208fb",
+  "parent_digest": "c312b72e2468894d9dfbe7bffe1b38ab8a60dfad82d049e36ffd9c199420c31e"
+ },
+ "shlink": {
+  "app_version": "5.1.7",
+  "origin": "http://127.0.0.1:3206",
+  "manifest_name": "127-0-0-1-3206",
+  "scoped_records": 66,
+  "methods": {
+   "GET": 63,
+   "POST": 1,
+   "PATCH": 1,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 117350,
+  "scoped_har_sha256": "97a0390d535b7d6f2555d14a7402f5785ac85825b7077236bcfcc8ccbbc1714c",
+  "capture_evidence_id": "ev_4779d529d62305de670c032f0cdd9188c95cf86f0b549b9a0fac8554db69142b",
+  "manifest_evidence_id": "ev_a3d72b74e5d37d9c974dd35a57591dbbe52e160452a2cc3b63a4d2576e852336",
+  "manifest_norules_evidence_id": "ev_2bb6ae3d85e4109d51fbed6349c7c371dfd2c38596412c83e649052b90f906b4",
+  "tools": 17,
+  "tools_by_method": {
+   "GET": 15,
+   "POST": 1,
+   "PATCH": 1
+  },
+  "tools_norules": 43,
+  "templated_groups": 4,
+  "params_by_rule": {
+   "sibling-variance": 4
+  },
+  "params_total": 4,
+  "query_names": 27,
+  "tools_with_body_shape": 2,
+  "excluded": {
+   "non-json": 1
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "deb77b6e506397a3cd09d9b58da72487d1da7a42933140c54036da10d868b34e",
+  "parent_digest": "4779d529d62305de670c032f0cdd9188c95cf86f0b549b9a0fac8554db69142b"
+ },
+ "immich": {
+  "app_version": "3.3.3",
+  "origin": "http://127.0.0.1:3207",
+  "manifest_name": "127-0-0-1-3207",
+  "scoped_records": 120,
+  "methods": {
+   "GET": 116,
+   "POST": 2,
+   "PATCH": 1,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 228076,
+  "scoped_har_sha256": "a525d5143fb73344d07d44ce129c5d9be7d83ef9a2d5dfc2f453bfa80b0647d0",
+  "capture_evidence_id": "ev_1a9cf44e9f31412cd6f46b77293c666f4bfa1f6f9afccc430ca3b8d83937590a",
+  "manifest_evidence_id": "ev_fda1218791c0c5ced99ef79739463e0a102755b2cdf71df008e93bd52e3ba617",
+  "manifest_norules_evidence_id": "ev_534b8b25b622007e06bda40b6a5c685a0fe74031d5103908cd8c9139c11e4948",
+  "tools": 45,
+  "tools_by_method": {
+   "GET": 41,
+   "POST": 2,
+   "DELETE": 1,
+   "PATCH": 1
+  },
+  "tools_norules": 45,
+  "templated_groups": 13,
+  "params_by_rule": {
+   "uuid": 13
+  },
+  "params_total": 13,
+  "query_names": 33,
+  "tools_with_body_shape": 3,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "b020aed8dcf38dce0be98bf4f188aaedd6edff1fb468619d4554591eff5796a1",
+  "parent_digest": "1a9cf44e9f31412cd6f46b77293c666f4bfa1f6f9afccc430ca3b8d83937590a"
+ },
+ "homebox": {
+  "app_version": "0.27.0",
+  "origin": "http://127.0.0.1:3208",
+  "manifest_name": "127-0-0-1-3208",
+  "scoped_records": 91,
+  "methods": {
+   "GET": 87,
+   "PUT": 2,
+   "POST": 1,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 256047,
+  "scoped_har_sha256": "249dbf323faaf79dc6a91d856dc6e7ebc494f2e8bfa3b15af85de7af0bcbf2cf",
+  "capture_evidence_id": "ev_cb9cef1bb6902484524658e34cfb3aa220e1f06dd807e8da93c2089899872e1c",
+  "manifest_evidence_id": "ev_12cd79fbad0e4c228684699815fdee9521ba2b9ede6c2b891c504603d1e4e457",
+  "manifest_norules_evidence_id": "ev_c3747d67e4a51ef2a5688ddc2829ae5649a7ac4234b61a555ad07d785b2e2e90",
+  "tools": 28,
+  "tools_by_method": {
+   "GET": 24,
+   "POST": 1,
+   "DELETE": 1,
+   "PUT": 2
+  },
+  "tools_norules": 28,
+  "templated_groups": 7,
+  "params_by_rule": {
+   "uuid": 7
+  },
+  "params_total": 7,
+  "query_names": 19,
+  "tools_with_body_shape": 3,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "da0c2a3473cd51ad682dbbaef9e634d163e3530b714c44bb7007eb09abaaeb8f",
+  "parent_digest": "cb9cef1bb6902484524658e34cfb3aa220e1f06dd807e8da93c2089899872e1c"
+ },
+ "navidrome": {
+  "app_version": "0.64.2",
+  "origin": "http://127.0.0.1:3233",
+  "manifest_name": "127-0-0-1-3233",
+  "scoped_records": 71,
+  "methods": {
+   "GET": 68,
+   "POST": 1,
+   "PUT": 1,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 222808,
+  "scoped_har_sha256": "b516aa95b4651db7489d229659785af72dc85c906793b52919cd759f191dedf5",
+  "capture_evidence_id": "ev_3995896845c068943afaf1c5bb032f2e6f303a279f4c24c26fae001311ec22b7",
+  "manifest_evidence_id": "ev_e37526a3edbe955837e258ccc596d67628ca77f09f9b2a6eb2b27a967ab57f67",
+  "manifest_norules_evidence_id": "ev_475574445675330cc4afb2c4bd7951e3438bad141740bcba49b1b89248329bf9",
+  "tools": 25,
+  "tools_by_method": {
+   "GET": 22,
+   "POST": 1,
+   "DELETE": 1,
+   "PUT": 1
+  },
+  "tools_norules": 46,
+  "templated_groups": 9,
+  "params_by_rule": {
+   "sibling-variance": 8,
+   "numeric": 1
+  },
+  "params_total": 9,
+  "query_names": 56,
+  "tools_with_body_shape": 2,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "dd415d840a0ac4cf28450f55951e10ad4fd7ddbe3cd5c0b259a27385a821e7aa",
+  "parent_digest": "3995896845c068943afaf1c5bb032f2e6f303a279f4c24c26fae001311ec22b7"
+ },
+ "keycloak": {
+  "app_version": "26.8.1",
+  "origin": "http://127.0.0.1:3210",
+  "manifest_name": "127-0-0-1-3210",
+  "scoped_records": 73,
+  "methods": {
+   "GET": 70,
+   "POST": 1,
+   "PUT": 1,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 197162,
+  "scoped_har_sha256": "7c78d99263c9fb922b3fbf714619a3d378f08781b2f677d6a473bd28d5b85b3b",
+  "capture_evidence_id": "ev_21d8808f42337b36a19f943f7bca1058d9f2c73b660d5bce1f10b05539ca525d",
+  "manifest_evidence_id": "ev_b1030270ddcec481e452055bb5db7711cf3539cb97b7d86b9733f1023452fafa",
+  "manifest_norules_evidence_id": "ev_6898940f9e4f1b716c00ced3346e4b1d5f7ba01aadd8269592edf408bf70ac1a",
+  "tools": 40,
+  "tools_by_method": {
+   "GET": 39,
+   "POST": 1
+  },
+  "tools_norules": 40,
+  "templated_groups": 19,
+  "params_by_rule": {
+   "uuid": 18
+  },
+  "params_total": 18,
+  "query_names": 25,
+  "tools_with_body_shape": 1,
+  "excluded": {
+   "non-json": 2
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "fe4d22680496c9af6776c662329fcd74cf38561f91904031d2a666881fc3a34d",
+  "parent_digest": "21d8808f42337b36a19f943f7bca1058d9f2c73b660d5bce1f10b05539ca525d"
+ },
+ "vikunja": {
+  "app_version": "2.7",
+  "origin": "http://127.0.0.1:3211",
+  "manifest_name": "127-0-0-1-3211",
+  "scoped_records": 102,
+  "methods": {
+   "GET": 98,
+   "PUT": 1,
+   "POST": 1,
+   "PATCH": 1,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 378047,
+  "scoped_har_sha256": "10843162cbd00ebf87245969fcda682fa750ff07d0640cae18c1f9985883b314",
+  "capture_evidence_id": "ev_6172766db5dacc12fa38511878e7a2db573f50122947cad181f09d52b850cceb",
+  "manifest_evidence_id": "ev_19917e26dc88ca87887cb83f10d96d4f922051f312fa420ffdcd27d57f25b7e4",
+  "manifest_norules_evidence_id": "ev_512a333bb058854675add5c92a5fb4299feb66a47526f5660a605e105aa31e4d",
+  "tools": 28,
+  "tools_by_method": {
+   "GET": 24,
+   "POST": 1,
+   "DELETE": 1,
+   "PATCH": 1,
+   "PUT": 1
+  },
+  "tools_norules": 28,
+  "templated_groups": 20,
+  "params_by_rule": {
+   "numeric": 25
+  },
+  "params_total": 25,
+  "query_names": 39,
+  "tools_with_body_shape": 2,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "9cc0d1da27fdaf1c20d32f66436a38355e6ae3a478eb8b656f7727d4d0e259ff",
+  "parent_digest": "6172766db5dacc12fa38511878e7a2db573f50122947cad181f09d52b850cceb"
+ },
+ "mealie": {
+  "app_version": "3.28",
+  "origin": "http://127.0.0.1:3212",
+  "manifest_name": "127-0-0-1-3212",
+  "scoped_records": 139,
+  "methods": {
+   "GET": 136,
+   "POST": 1,
+   "PATCH": 1,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 288867,
+  "scoped_har_sha256": "069d5a884bd4ab155e0e7b8c751891e08718d18a50b006f2a9a25f4d2f2350d6",
+  "capture_evidence_id": "ev_b23b02ad2cf3e1cf793dae77441e7867b7043564dbe0ed4d18d89776611239be",
+  "manifest_evidence_id": "ev_6976682a576ab89896833d0e89eb2f1fa4d48b9e3cef4c8449ee4f4a87979d5c",
+  "manifest_norules_evidence_id": "ev_7adf8020f1e1ec7f1876aa037463173f4bbe9cfbee6da9c890bda79b7bcebb77",
+  "tools": 39,
+  "tools_by_method": {
+   "GET": 36,
+   "POST": 1,
+   "DELETE": 1,
+   "PATCH": 1
+  },
+  "tools_norules": 44,
+  "templated_groups": 12,
+  "params_by_rule": {
+   "uuid": 10,
+   "numeric": 1,
+   "sibling-variance": 1
+  },
+  "params_total": 12,
+  "query_names": 60,
+  "tools_with_body_shape": 2,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "27c785e952a0439ca9bfa4d16c3ced7272d2113bfcba65efd807696ba16d0428",
+  "parent_digest": "b23b02ad2cf3e1cf793dae77441e7867b7043564dbe0ed4d18d89776611239be"
+ },
+ "paperless": {
+  "app_version": "2.20",
+  "origin": "http://127.0.0.1:3213",
+  "manifest_name": "127-0-0-1-3213",
+  "scoped_records": 108,
+  "methods": {
+   "GET": 102,
+   "POST": 3,
+   "PATCH": 1,
+   "DELETE": 2
+  },
+  "scoped_har_bytes": 203943,
+  "scoped_har_sha256": "ab61f99d59b8a29032dadcf0aa5f682e94509e9fad91fe38506c5f822438884b",
+  "capture_evidence_id": "ev_8d7f7da6eb5cdd44da2be33be1860bd2d2d5d881ea2fe57e8d366307b1e39f43",
+  "manifest_evidence_id": "ev_d0c5614ab04ff480bbf669423cee11d97bb4f5819c5e3fb30b37eda931ac4c27",
+  "manifest_norules_evidence_id": "ev_4ab1de7e46207fdacdc9e05af7cffdbe6572d321c239890e3bab4e4822bd2a63",
+  "tools": 41,
+  "tools_by_method": {
+   "GET": 35,
+   "POST": 3,
+   "DELETE": 2,
+   "PATCH": 1
+  },
+  "tools_norules": 41,
+  "templated_groups": 21,
+  "params_by_rule": {
+   "numeric": 21
+  },
+  "params_total": 21,
+  "query_names": 46,
+  "tools_with_body_shape": 4,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "95a8ddf5c811c279f531f68480eec7b996cd1543e37f9ad2d0cef7a44411fc6b",
+  "parent_digest": "8d7f7da6eb5cdd44da2be33be1860bd2d2d5d881ea2fe57e8d366307b1e39f43"
+ },
+ "listmonk": {
+  "app_version": "6.2",
+  "origin": "http://127.0.0.1:3214",
+  "manifest_name": "127-0-0-1-3214",
+  "scoped_records": 68,
+  "methods": {
+   "GET": 65,
+   "POST": 1,
+   "PUT": 1,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 134271,
+  "scoped_har_sha256": "db06948f2b2e2525759589dd9788f84edfa163926ae67c9c4e49c2f3b64962d0",
+  "capture_evidence_id": "ev_40b38ad41b4906c91a10812bd33a562c757b5bbf249f84f2f5b173e3fe59f0ba",
+  "manifest_evidence_id": "ev_2219c491a30c79107897a70884bbe76d8376ccb7f2c67943c7583baeea100cac",
+  "manifest_norules_evidence_id": "ev_ef5dbcf2430ac75898bfcf8fc69b9a8c55597f1e007704c3aebe78ceb38be6dc",
+  "tools": 29,
+  "tools_by_method": {
+   "GET": 26,
+   "POST": 1,
+   "DELETE": 1,
+   "PUT": 1
+  },
+  "tools_norules": 29,
+  "templated_groups": 11,
+  "params_by_rule": {
+   "numeric": 11
+  },
+  "params_total": 11,
+  "query_names": 24,
+  "tools_with_body_shape": 2,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "cda0194e39b9d594bb110d23953ef7243f038946af8d8164c777edddecb0244a",
+  "parent_digest": "40b38ad41b4906c91a10812bd33a562c757b5bbf249f84f2f5b173e3fe59f0ba"
+ },
+ "umami": {
+  "app_version": "3.4",
+  "origin": "http://127.0.0.1:3215",
+  "manifest_name": "127-0-0-1-3215",
+  "scoped_records": 100,
+  "methods": {
+   "GET": 97,
+   "POST": 2,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 151479,
+  "scoped_har_sha256": "f896fb119afe85ef513002099f9c2762402ec54cde9878bb58ee374824d67fc4",
+  "capture_evidence_id": "ev_12a4e7f97b75d77076ad5f7c072a7073a32f0c713f8488096e727a134cc78d35",
+  "manifest_evidence_id": "ev_6559a1b1ad3429225eecffeee0b3397adeb0a5cb9535d4de80544f3c9e175ead",
+  "manifest_norules_evidence_id": "ev_52c67b6be13a69bdc56d92c614042b647ccad346ccd7be6c6c237a770aba1f77",
+  "tools": 49,
+  "tools_by_method": {
+   "GET": 46,
+   "POST": 2,
+   "DELETE": 1
+  },
+  "tools_norules": 49,
+  "templated_groups": 37,
+  "params_by_rule": {
+   "uuid": 44
+  },
+  "params_total": 44,
+  "query_names": 70,
+  "tools_with_body_shape": 2,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "cad72ab20b3fd578d0a384f682232bc189db96cea86cf73f87fdd65b59304c6f",
+  "parent_digest": "12a4e7f97b75d77076ad5f7c072a7073a32f0c713f8488096e727a134cc78d35"
+ },
+ "espocrm": {
+  "app_version": "10.0.10",
+  "origin": "http://127.0.0.1:3216",
+  "manifest_name": "127-0-0-1-3216",
+  "scoped_records": 131,
+  "methods": {
+   "GET": 128,
+   "POST": 1,
+   "PUT": 1,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 260567,
+  "scoped_har_sha256": "b5fdf1ec365990047149655278e9a74f26b4fbbad53d75113ddb65ed89357b26",
+  "capture_evidence_id": "ev_f3ad613cd68560f8796fa77cc136de88152b4ab1158158d7b74a873455ec3fe9",
+  "manifest_evidence_id": "ev_318ff198f98931b6b5d15f468d8ba767e95abbeb05ed8eb65cd742f138117f34",
+  "manifest_norules_evidence_id": "ev_447a95c40dcdd9523cc24f7bc9c41ec47f387ab792deabbe55a3b62c91fc3556",
+  "tools": 88,
+  "tools_by_method": {
+   "GET": 85,
+   "POST": 1,
+   "DELETE": 1,
+   "PUT": 1
+  },
+  "tools_norules": 110,
+  "templated_groups": 35,
+  "params_by_rule": {
+   "opaque-token": 35
+  },
+  "params_total": 35,
+  "query_names": 196,
+  "tools_with_body_shape": 2,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "5248cf49d4edd4de1d8b7e0bbd0fa5ddae137c74b977c3657adf1c062122e1fb",
+  "parent_digest": "f3ad613cd68560f8796fa77cc136de88152b4ab1158158d7b74a873455ec3fe9"
+ },
+ "miniflux": {
+  "app_version": "2.3.3",
+  "origin": "http://127.0.0.1:3217",
+  "manifest_name": "127-0-0-1-3217",
+  "scoped_records": 86,
+  "methods": {
+   "GET": 76,
+   "PUT": 7,
+   "POST": 2,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 279002,
+  "scoped_har_sha256": "da65467c3008cfc9b99d9b69cadc9c63bf8b1d66d377e0ea4b65504982c42072",
+  "capture_evidence_id": "ev_d65576c62c9473341453db9efd48b5124980707e66c363e2c210dd404a877235",
+  "manifest_evidence_id": "ev_87cdbc359ae8ac5356656a9666026abc94623345fffe2f620f3a1c8eee2ff841",
+  "manifest_norules_evidence_id": "ev_88757ead75bfeaaba2ef67de37877306d98c7d7bf88531692023493ad8fd82a3",
+  "tools": 22,
+  "tools_by_method": {
+   "GET": 18,
+   "POST": 2,
+   "PUT": 2
+  },
+  "tools_norules": 22,
+  "templated_groups": 14,
+  "params_by_rule": {
+   "numeric": 13
+  },
+  "params_total": 13,
+  "query_names": 16,
+  "tools_with_body_shape": 4,
+  "excluded": {
+   "non-json": 4
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "c0e8757f6beec6a85ea7773d26c8210513165fab4144143cf616e6beddd3da13",
+  "parent_digest": "d65576c62c9473341453db9efd48b5124980707e66c363e2c210dd404a877235"
+ },
+ "n8n": {
+  "app_version": "1.123.85",
+  "origin": "http://127.0.0.1:3218",
+  "manifest_name": "127-0-0-1-3218",
+  "scoped_records": 72,
+  "methods": {
+   "GET": 65,
+   "POST": 3,
+   "PATCH": 2,
+   "DELETE": 2
+  },
+  "scoped_har_bytes": 189640,
+  "scoped_har_sha256": "ad32e5104208daeb3488f6feefce0f189fe6ade22e3857907a10213009a022a3",
+  "capture_evidence_id": "ev_2df554f077a7336e5d535fa9e49df0b2d984c88dfc06c774e0343f26f9176a3e",
+  "manifest_evidence_id": "ev_3141f2074cbb0bf27bbe9cedb95b7c69f2de89841d3fb0212660b7dfac094db8",
+  "manifest_norules_evidence_id": "ev_a6e30b54d36f0e81d484db6ab668ed1fd871269bae2ec56d11f39deabd198283",
+  "tools": 30,
+  "tools_by_method": {
+   "GET": 23,
+   "POST": 3,
+   "DELETE": 2,
+   "PATCH": 2
+  },
+  "tools_norules": 40,
+  "templated_groups": 6,
+  "params_by_rule": {
+   "numeric": 1,
+   "sibling-variance": 5
+  },
+  "params_total": 6,
+  "query_names": 24,
+  "tools_with_body_shape": 5,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "16b9e566b91c27ac57150c25b8c359fa4fbe7e9259493cf7e47361d41bba6dfd",
+  "parent_digest": "2df554f077a7336e5d535fa9e49df0b2d984c88dfc06c774e0343f26f9176a3e"
+ },
+ "bookstack": {
+  "app_version": "26.09.1",
+  "origin": "http://127.0.0.1:3219",
+  "manifest_name": "127-0-0-1-3219",
+  "scoped_records": 65,
+  "methods": {
+   "GET": 61,
+   "POST": 2,
+   "PUT": 1,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 127666,
+  "scoped_har_sha256": "1f807d4d2d2ef490cdc5cac50ffcbf573abfc967351038256b92e18f4ebe5366",
+  "capture_evidence_id": "ev_07a98c12a171833f8ca00f5f4769a165b358a5e2cca784718af469fc35ee5b77",
+  "manifest_evidence_id": "ev_47deffa8044f6f1c6835193c59746931187576db6b1c0cc367b7c4380714c322",
+  "manifest_norules_evidence_id": "ev_294a3fd78d221c90e5246cffd336196604377bca21248664f798c744606815ee",
+  "tools": 31,
+  "tools_by_method": {
+   "GET": 27,
+   "POST": 2,
+   "DELETE": 1,
+   "PUT": 1
+  },
+  "tools_norules": 31,
+  "templated_groups": 14,
+  "params_by_rule": {
+   "numeric": 14
+  },
+  "params_total": 14,
   "query_names": 11,
   "tools_with_body_shape": 3,
   "excluded": {},
@@ -209,7 +1016,217 @@
   ],
   "confidence": "inferred",
   "authority": "historical-reference",
-  "view_digest": "f523de458880f9d52c4bd4a724e76e0aa24325692444b59a159cfad0833ea8af",
-  "parent_digest": "f2f21b681f5ab8a313f4bff3cd2d36d1b5e864451d881cc8052a76d4c892e69a"
+  "view_digest": "9e25a0530da2302938a01675ca07fd7d373d8b750f864a0447aae0d20f6d6930",
+  "parent_digest": "07a98c12a171833f8ca00f5f4769a165b358a5e2cca784718af469fc35ee5b77"
+ },
+ "grist": {
+  "app_version": "1.7.21",
+  "origin": "http://127.0.0.1:3220",
+  "manifest_name": "127-0-0-1-3220",
+  "scoped_records": 65,
+  "methods": {
+   "GET": 59,
+   "POST": 3,
+   "PATCH": 2,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 111326,
+  "scoped_har_sha256": "0ba1ce8653bb74e217cf221c92cb213dddcfaf807aa2fc13687c03295532d2c9",
+  "capture_evidence_id": "ev_f74ce8e1b2435b5ff5ce9cf930d3ece7b866503615fbd15e54657be3a268d1a1",
+  "manifest_evidence_id": "ev_017809f63eed60ddfc1f97299fe7f7e58e3d111585cd49939499d18341fdbb99",
+  "manifest_norules_evidence_id": "ev_3bddad8c7f0f504e41de8fddb818530ad3c43e50f6df5cf84b0b168755dac4be",
+  "tools": 31,
+  "tools_by_method": {
+   "DELETE": 1,
+   "PATCH": 2,
+   "GET": 25,
+   "POST": 3
+  },
+  "tools_norules": 43,
+  "templated_groups": 11,
+  "params_by_rule": {
+   "sibling-variance": 4,
+   "numeric": 7
+  },
+  "params_total": 11,
+  "query_names": 11,
+  "tools_with_body_shape": 4,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "a9cd9321b0c3827510faf19bed8d8eab67027095814800c9a00547bf079ed431",
+  "parent_digest": "f74ce8e1b2435b5ff5ce9cf930d3ece7b866503615fbd15e54657be3a268d1a1"
+ },
+ "sonarr": {
+  "app_version": "4.0.20.3014",
+  "origin": "http://127.0.0.1:3221",
+  "manifest_name": "127-0-0-1-3221",
+  "scoped_records": 98,
+  "methods": {
+   "GET": 94,
+   "POST": 2,
+   "PUT": 2
+  },
+  "scoped_har_bytes": 333903,
+  "scoped_har_sha256": "25abe37ab890a22325bc85ae5852ba96517238117328fe8c818656386883654e",
+  "capture_evidence_id": "ev_c572a89136acc993cc0d84090da837a73206dc0d45291613dbd7a616120c4850",
+  "manifest_evidence_id": "ev_1ca510bb7f5f8a7e2d424e9f69d110dd4d569368cdeabe28ea2f7594add08a0d",
+  "manifest_norules_evidence_id": "ev_41d25acb3dd4817028221edb513c0f356fe773c16bdc43d1f96873bac0c574ae",
+  "tools": 48,
+  "tools_by_method": {
+   "GET": 44,
+   "POST": 2,
+   "PUT": 2
+  },
+  "tools_norules": 48,
+  "templated_groups": 14,
+  "params_by_rule": {
+   "numeric": 14
+  },
+  "params_total": 14,
+  "query_names": 17,
+  "tools_with_body_shape": 4,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "3fbe77f9ed1264e6e87c27c2785602cfb27237c27ee809e298ab5b1a1d8bb357",
+  "parent_digest": "c572a89136acc993cc0d84090da837a73206dc0d45291613dbd7a616120c4850"
+ },
+ "grocy": {
+  "app_version": "4.7.1",
+  "origin": "http://127.0.0.1:3222",
+  "manifest_name": "127-0-0-1-3222",
+  "scoped_records": 75,
+  "methods": {
+   "GET": 65,
+   "PUT": 8,
+   "POST": 1,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 144824,
+  "scoped_har_sha256": "4e673f0a954204d036082a7901bc0bdf4b116cea8b849a92ceaa88a87174662a",
+  "capture_evidence_id": "ev_853ed4f6409f2a62f73da27f0a83010aff0ba3f0365d71788c364cfade127838",
+  "manifest_evidence_id": "ev_cd77ac50b20a04df27506d51dc91c8e252065c659fbbde30e497181ddbd95b1a",
+  "manifest_norules_evidence_id": "ev_e138d49a40b50d7af0cee950fe93ff3ce350cd4d244c71c2f2a68f4d4d19ba99",
+  "tools": 45,
+  "tools_by_method": {
+   "GET": 40,
+   "POST": 1,
+   "DELETE": 1,
+   "PUT": 3
+  },
+  "tools_norules": 45,
+  "templated_groups": 22,
+  "params_by_rule": {
+   "numeric": 22
+  },
+  "params_total": 22,
+  "query_names": 9,
+  "tools_with_body_shape": 4,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "c9148cc638060df1ae7727f34a14bbb359a7f397eacfb8a818d338b7d2c7ae6a",
+  "parent_digest": "853ed4f6409f2a62f73da27f0a83010aff0ba3f0365d71788c364cfade127838"
+ },
+ "directus": {
+  "app_version": "11.17.4",
+  "origin": "http://127.0.0.1:3223",
+  "manifest_name": "127-0-0-1-3223",
+  "scoped_records": 90,
+  "methods": {
+   "GET": 77,
+   "PATCH": 11,
+   "POST": 1,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 219187,
+  "scoped_har_sha256": "1667a554741c257c7831f80302833dfff820050f35866ac9f0fd6bc1d6e5a8c9",
+  "capture_evidence_id": "ev_726c10bf55a915e584548f44ddfcacfabb7b72780f9ce24a1a1d18d093836af2",
+  "manifest_evidence_id": "ev_df3fc9049d7dd8e54cbefab23250d29be75af6e6ba7bbc9c3cc092e64c134c58",
+  "manifest_norules_evidence_id": "ev_2457c64e65ef78f193b7d85c778320f714e3e568b924b107e0b9a83bbcf227a2",
+  "tools": 43,
+  "tools_by_method": {
+   "GET": 41,
+   "POST": 1,
+   "PATCH": 1
+  },
+  "tools_norules": 43,
+  "templated_groups": 14,
+  "params_by_rule": {
+   "uuid": 9,
+   "numeric": 4
+  },
+  "params_total": 13,
+  "query_names": 73,
+  "tools_with_body_shape": 2,
+  "excluded": {
+   "non-json": 2
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "638e5bb97125c3ed5a50106b5d9cd6c484b0d0dd2b96ef232574da93ccb5a262",
+  "parent_digest": "726c10bf55a915e584548f44ddfcacfabb7b72780f9ce24a1a1d18d093836af2"
+ },
+ "jellyfin": {
+  "app_version": "10.10.7",
+  "origin": "http://127.0.0.1:3224",
+  "manifest_name": "127-0-0-1-3224",
+  "scoped_records": 72,
+  "methods": {
+   "GET": 66,
+   "POST": 5,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 196660,
+  "scoped_har_sha256": "eb1bf56ca3ad61fccf0c9aec11fc580ae2929cf9703d8de26ff40f7fa7f602cc",
+  "capture_evidence_id": "ev_e0e8efc19b07b4df61b2a5753a06282b27892bc8404746372201bfdd27662ba9",
+  "manifest_evidence_id": "ev_e0005f7fdf6adba22caf1ff60dd317660ec3e9e5fbf91991a6bfdfd803d9feea",
+  "manifest_norules_evidence_id": "ev_a90058b46ccbbaf0ad5ec5625ce1a90bc7f9fef1365336ab8b8ea8248f02a946",
+  "tools": 34,
+  "tools_by_method": {
+   "GET": 32,
+   "POST": 2
+  },
+  "tools_norules": 34,
+  "templated_groups": 16,
+  "params_by_rule": {
+   "hex": 15
+  },
+  "params_total": 15,
+  "query_names": 75,
+  "tools_with_body_shape": 1,
+  "excluded": {
+   "non-json": 4
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "7e72d58877f1dd3d1525e9f9ef4e7ab6f4e18a2193f16dcc85a37629e7e6f981",
+  "parent_digest": "e0e8efc19b07b4df61b2a5753a06282b27892bc8404746372201bfdd27662ba9"
  }
 }

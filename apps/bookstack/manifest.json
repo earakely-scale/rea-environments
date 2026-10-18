@@ -1,0 +1,1368 @@
+{
+ "evidence_id": "ev_47deffa8044f6f1c6835193c59746931187576db6b1c0cc367b7c4380714c322",
+ "subject": {
+  "name": "bookstack.scoped.har",
+  "digest": {
+   "sha256": "1f807d4d2d2ef490cdc5cac50ffcbf573abfc967351038256b92e18f4ebe5366"
+  },
+  "local_path": "/home/ubuntu/capture/bookstack/bookstack.scoped.har",
+  "format": "file",
+  "architecture": null
+ },
+ "provider": {
+  "id": "rea-analysis-view",
+  "name": "REA analysis view projection",
+  "version": "1"
+ },
+ "analysis_profile": null,
+ "predicate_type": "rea.analysis-view",
+ "operation": "inspect_analysis_view",
+ "parameters": {
+  "parent_evidence_id": "ev_07a98c12a171833f8ca00f5f4769a165b358a5e2cca784718af469fc35ee5b77",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "raw_result": null,
+ "normalized_result": {
+  "parent_evidence_id": "ev_07a98c12a171833f8ca00f5f4769a165b358a5e2cca784718af469fc35ee5b77",
+  "parent_operation": "inspect_web_network_capture",
+  "parent_digest": "07a98c12a171833f8ca00f5f4769a165b358a5e2cca784718af469fc35ee5b77",
+  "view_digest": "9e25a0530da2302938a01675ca07fd7d373d8b750f864a0447aae0d20f6d6930",
+  "artifact": {
+   "path": "/home/ubuntu/capture/bookstack/bookstack.scoped.har",
+   "sha256": "1f807d4d2d2ef490cdc5cac50ffcbf573abfc967351038256b92e18f4ebe5366"
+  },
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 31,
+   "total": 31,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "limitations": [
+   "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+   "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+   "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+   "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+   "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+   "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+   "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+   "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+   "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+  ],
+  "unknowns": [
+   {
+    "kind": "authorization-model",
+    "statement": "Authorization headers and cookies are structurally excluded from captures; the manifest states no authorization model."
+   },
+   {
+    "kind": "response-semantics",
+    "statement": "Recorded statuses and bodies are retained only as pointers to parent records; the manifest states no response semantics."
+   },
+   {
+    "kind": "state-transition",
+    "statement": "Recorded exchanges are independent observations; the manifest states no ordering, side effects or state transitions between tools."
+   }
+  ],
+  "origin": "http://127.0.0.1:3219",
+  "name": "127-0-0-1-3219",
+  "tools": [
+   {
+    "name": "get_attachments",
+    "method": "GET",
+    "path_template": "/api/attachments",
+    "api_surface_template": "/api/attachments",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     29
+    ]
+   },
+   {
+    "name": "get_attachments_by_id",
+    "method": "GET",
+    "path_template": "/api/attachments/{numeric}",
+    "api_surface_template": "/api/attachments/{numeric}",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1",
+       "2"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     30,
+     31
+    ]
+   },
+   {
+    "name": "get_audit_log",
+    "method": "GET",
+    "path_template": "/api/audit-log",
+    "api_surface_template": "/api/audit-log",
+    "params": [],
+    "query_parameter_names": [
+     "count",
+     "sort"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     53
+    ]
+   },
+   {
+    "name": "get_books",
+    "method": "GET",
+    "path_template": "/api/books",
+    "api_surface_template": "/api/books",
+    "params": [],
+    "query_parameter_names": [
+     "filter[name:like]"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     5,
+     11,
+     64
+    ]
+   },
+   {
+    "name": "post_books",
+    "method": "POST",
+    "path_template": "/api/books",
+    "api_surface_template": "/api/books",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "name": "string",
+      "description": "string",
+      "tags": "array"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     56
+    ]
+   },
+   {
+    "name": "delete_books_by_id",
+    "method": "DELETE",
+    "path_template": "/api/books/{numeric}",
+    "api_surface_template": "/api/books/{numeric}",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "24"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     204
+    ],
+    "content_types": [],
+    "record_ordinals": [
+     61
+    ]
+   },
+   {
+    "name": "get_books_by_id",
+    "method": "GET",
+    "path_template": "/api/books/{numeric}",
+    "api_surface_template": "/api/books/{numeric}",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1",
+       "2",
+       "24",
+       "3",
+       "4",
+       "5"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200,
+     404
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     6,
+     7,
+     8,
+     9,
+     10,
+     59,
+     62
+    ]
+   },
+   {
+    "name": "put_books_by_id",
+    "method": "PUT",
+    "path_template": "/api/books/{numeric}",
+    "api_surface_template": "/api/books/{numeric}",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "24"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "name": "string",
+      "description": "string"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     57
+    ]
+   },
+   {
+    "name": "get_chapters",
+    "method": "GET",
+    "path_template": "/api/chapters",
+    "api_surface_template": "/api/chapters",
+    "params": [],
+    "query_parameter_names": [
+     "filter[book_id]"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     12,
+     18
+    ]
+   },
+   {
+    "name": "get_chapters_by_id",
+    "method": "GET",
+    "path_template": "/api/chapters/{numeric}",
+    "api_surface_template": "/api/chapters/{numeric}",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "10",
+       "11",
+       "12",
+       "13",
+       "9"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     13,
+     14,
+     15,
+     16,
+     17
+    ]
+   },
+   {
+    "name": "get_comments",
+    "method": "GET",
+    "path_template": "/api/comments",
+    "api_surface_template": "/api/comments",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     32
+    ]
+   },
+   {
+    "name": "get_comments_by_id",
+    "method": "GET",
+    "path_template": "/api/comments/{numeric}",
+    "api_surface_template": "/api/comments/{numeric}",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1",
+       "2"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     33,
+     34
+    ]
+   },
+   {
+    "name": "get_content_permissions_book_by_id",
+    "method": "GET",
+    "path_template": "/api/content-permissions/book/{numeric}",
+    "api_surface_template": "/api/content-permissions/book/{numeric}",
+    "params": [
+     {
+      "index": 3,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "3"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     51
+    ]
+   },
+   {
+    "name": "get_content_permissions_page_by_id",
+    "method": "GET",
+    "path_template": "/api/content-permissions/page/{numeric}",
+    "api_surface_template": "/api/content-permissions/page/{numeric}",
+    "params": [
+     {
+      "index": 3,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "21"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     52
+    ]
+   },
+   {
+    "name": "get_image_gallery",
+    "method": "GET",
+    "path_template": "/api/image-gallery",
+    "api_surface_template": "/api/image-gallery",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     54
+    ]
+   },
+   {
+    "name": "get_pages",
+    "method": "GET",
+    "path_template": "/api/pages",
+    "api_surface_template": "/api/pages",
+    "params": [],
+    "query_parameter_names": [
+     "count",
+     "sort"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     19,
+     28
+    ]
+   },
+   {
+    "name": "post_pages",
+    "method": "POST",
+    "path_template": "/api/pages",
+    "api_surface_template": "/api/pages",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "book_id": "number",
+      "name": "string",
+      "markdown": "string"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     58
+    ]
+   },
+   {
+    "name": "get_pages_by_id",
+    "method": "GET",
+    "path_template": "/api/pages/{numeric}",
+    "api_surface_template": "/api/pages/{numeric}",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "14",
+       "15",
+       "16",
+       "17",
+       "18",
+       "19",
+       "20",
+       "21",
+       "25"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     60
+    ]
+   },
+   {
+    "name": "get_recycle_bin",
+    "method": "GET",
+    "path_template": "/api/recycle-bin",
+    "api_surface_template": "/api/recycle-bin",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     55,
+     63
+    ]
+   },
+   {
+    "name": "get_roles",
+    "method": "GET",
+    "path_template": "/api/roles",
+    "api_surface_template": "/api/roles",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     40
+    ]
+   },
+   {
+    "name": "get_roles_by_id",
+    "method": "GET",
+    "path_template": "/api/roles/{numeric}",
+    "api_surface_template": "/api/roles/{numeric}",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "2",
+       "5",
+       "6"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     41,
+     42,
+     43
+    ]
+   },
+   {
+    "name": "get_search",
+    "method": "GET",
+    "path_template": "/api/search",
+    "api_surface_template": "/api/search",
+    "params": [],
+    "query_parameter_names": [
+     "count",
+     "query"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     47,
+     48
+    ]
+   },
+   {
+    "name": "get_search_book_by_id",
+    "method": "GET",
+    "path_template": "/api/search/book/{numeric}",
+    "api_surface_template": "/api/search/book/{numeric}",
+    "params": [
+     {
+      "index": 3,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "query"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     49
+    ]
+   },
+   {
+    "name": "get_search_chapter_by_id",
+    "method": "GET",
+    "path_template": "/api/search/chapter/{numeric}",
+    "api_surface_template": "/api/search/chapter/{numeric}",
+    "params": [
+     {
+      "index": 3,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "12"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "query"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     50
+    ]
+   },
+   {
+    "name": "get_shelves",
+    "method": "GET",
+    "path_template": "/api/shelves",
+    "api_surface_template": "/api/shelves",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     1
+    ]
+   },
+   {
+    "name": "get_shelves_by_id",
+    "method": "GET",
+    "path_template": "/api/shelves/{numeric}",
+    "api_surface_template": "/api/shelves/{numeric}",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "6",
+       "7",
+       "8"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     2,
+     3,
+     4
+    ]
+   },
+   {
+    "name": "get_system",
+    "method": "GET",
+    "path_template": "/api/system",
+    "api_surface_template": "/api/system",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     0
+    ]
+   },
+   {
+    "name": "get_tags_names",
+    "method": "GET",
+    "path_template": "/api/tags/names",
+    "api_surface_template": "/api/tags/names",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     44
+    ]
+   },
+   {
+    "name": "get_tags_values_for_name",
+    "method": "GET",
+    "path_template": "/api/tags/values-for-name",
+    "api_surface_template": "/api/tags/values-for-name",
+    "params": [],
+    "query_parameter_names": [
+     "name"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     45,
+     46
+    ]
+   },
+   {
+    "name": "get_users",
+    "method": "GET",
+    "path_template": "/api/users",
+    "api_surface_template": "/api/users",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     35
+    ]
+   },
+   {
+    "name": "get_users_by_id",
+    "method": "GET",
+    "path_template": "/api/users/{numeric}",
+    "api_surface_template": "/api/users/{numeric}",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1",
+       "3",
+       "4",
+       "5"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     36,
+     37,
+     38,
+     39
+    ]
+   }
+  ],
+  "records": [
+   {
+    "ordinal": 0,
+    "method": "GET",
+    "path": "/api/system",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 1,
+    "method": "GET",
+    "path": "/api/shelves",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 2,
+    "method": "GET",
+    "path": "/api/shelves/7",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 3,
+    "method": "GET",
+    "path": "/api/shelves/6",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 4,
+    "method": "GET",
+    "path": "/api/shelves/8",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 5,
+    "method": "GET",
+    "path": "/api/books",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 6,
+    "method": "GET",
+    "path": "/api/books/2",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 7,
+    "method": "GET",
+    "path": "/api/books/1",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 8,
+    "method": "GET",
+    "path": "/api/books/3",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 9,
+    "method": "GET",
+    "path": "/api/books/4",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 10,
+    "method": "GET",
+    "path": "/api/books/5",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 11,
+    "method": "GET",
+    "path": "/api/books",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 12,
+    "method": "GET",
+    "path": "/api/chapters",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 13,
+    "method": "GET",
+    "path": "/api/chapters/11",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 14,
+    "method": "GET",
+    "path": "/api/chapters/9",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 15,
+    "method": "GET",
+    "path": "/api/chapters/10",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 16,
+    "method": "GET",
+    "path": "/api/chapters/12",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 17,
+    "method": "GET",
+    "path": "/api/chapters/13",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 18,
+    "method": "GET",
+    "path": "/api/chapters",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 19,
+    "method": "GET",
+    "path": "/api/pages",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 20,
+    "method": "GET",
+    "path": "/api/pages/17",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 21,
+    "method": "GET",
+    "path": "/api/pages/14",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 22,
+    "method": "GET",
+    "path": "/api/pages/15",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 23,
+    "method": "GET",
+    "path": "/api/pages/16",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 24,
+    "method": "GET",
+    "path": "/api/pages/18",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 25,
+    "method": "GET",
+    "path": "/api/pages/19",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 26,
+    "method": "GET",
+    "path": "/api/pages/20",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 27,
+    "method": "GET",
+    "path": "/api/pages/21",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 28,
+    "method": "GET",
+    "path": "/api/pages",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 29,
+    "method": "GET",
+    "path": "/api/attachments",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 30,
+    "method": "GET",
+    "path": "/api/attachments/2",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 31,
+    "method": "GET",
+    "path": "/api/attachments/1",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 32,
+    "method": "GET",
+    "path": "/api/comments",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 33,
+    "method": "GET",
+    "path": "/api/comments/2",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 34,
+    "method": "GET",
+    "path": "/api/comments/1",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 35,
+    "method": "GET",
+    "path": "/api/users",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 36,
+    "method": "GET",
+    "path": "/api/users/3",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 37,
+    "method": "GET",
+    "path": "/api/users/1",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 38,
+    "method": "GET",
+    "path": "/api/users/4",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 39,
+    "method": "GET",
+    "path": "/api/users/5",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 40,
+    "method": "GET",
+    "path": "/api/roles",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 41,
+    "method": "GET",
+    "path": "/api/roles/5",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 42,
+    "method": "GET",
+    "path": "/api/roles/6",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 43,
+    "method": "GET",
+    "path": "/api/roles/2",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 44,
+    "method": "GET",
+    "path": "/api/tags/names",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 45,
+    "method": "GET",
+    "path": "/api/tags/values-for-name",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 46,
+    "method": "GET",
+    "path": "/api/tags/values-for-name",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 47,
+    "method": "GET",
+    "path": "/api/search",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 48,
+    "method": "GET",
+    "path": "/api/search",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 49,
+    "method": "GET",
+    "path": "/api/search/book/1",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 50,
+    "method": "GET",
+    "path": "/api/search/chapter/12",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 51,
+    "method": "GET",
+    "path": "/api/content-permissions/book/3",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 52,
+    "method": "GET",
+    "path": "/api/content-permissions/page/21",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 53,
+    "method": "GET",
+    "path": "/api/audit-log",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 54,
+    "method": "GET",
+    "path": "/api/image-gallery",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 55,
+    "method": "GET",
+    "path": "/api/recycle-bin",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 56,
+    "method": "POST",
+    "path": "/api/books",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 57,
+    "method": "PUT",
+    "path": "/api/books/24",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 58,
+    "method": "POST",
+    "path": "/api/pages",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 59,
+    "method": "GET",
+    "path": "/api/books/24",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 60,
+    "method": "GET",
+    "path": "/api/pages/25",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 61,
+    "method": "DELETE",
+    "path": "/api/books/24",
+    "status": 204,
+    "content_type": null
+   },
+   {
+    "ordinal": 62,
+    "method": "GET",
+    "path": "/api/books/24",
+    "status": 404,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 63,
+    "method": "GET",
+    "path": "/api/recycle-bin",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 64,
+    "method": "GET",
+    "path": "/api/books",
+    "status": 200,
+    "content_type": "application/json"
+   }
+  ],
+  "excluded": [],
+  "templated_groups": 14,
+  "kind": "environment-manifest",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "confidence": "inferred",
+ "authority": "historical-reference",
+ "environment": null,
+ "limitations": [
+  "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+  "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+  "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+  "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+  "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+  "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+  "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+  "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+  "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+ ],
+ "relationship_coverage": null,
+ "locations": [
+  {
+   "kind": "artifact-path",
+   "path": "/home/ubuntu/capture/bookstack/bookstack.scoped.har"
+  }
+ ],
+ "evidence_links": [
+  "ev_07a98c12a171833f8ca00f5f4769a165b358a5e2cca784718af469fc35ee5b77"
+ ]
+}

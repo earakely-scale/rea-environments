@@ -1,0 +1,15 @@
+{
+  "app": "espocrm",
+  "title": "EspoCRM",
+  "repo": "EspoCRMEnv-REA",
+  "license": "AGPL-3.0",
+  "authors": "EspoCRM, Inc.",
+  "hf_license": "apache-2.0",
+  "version": "10.0.10",
+  "image": "espocrm/espocrm:10.0.10-apache",
+  "image_digest": "sha256:debf48652fed511424825839185fd67e773081ee0d665ab62cbce985acb32636",
+  "port": 3216,
+  "keep_regex": "^/api/v1/",
+  "domain": "customer relationship management (CRM)",
+  "exclude_tools": "layout|stream|activities|notification|settings|listtree|documents|targetlists|tasksprimary|_tasks_by_uid|^get$|popupnotification"
+}

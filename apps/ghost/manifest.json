@@ -1,1 +1,1467 @@
-{"evidence_id":"ev_9f7b1b2e995efe7a7d513eb662d9f12d005183bbd5e464e6fa407b1e3a4aa320","subject":{"name":"ghost.scoped.har","digest":{"sha256":"cf7eb90b391c2b83b4863f7c61be70b78f7aaa398bc182b15acafaa423a497ad"},"local_path":"/home/ubuntu/capture/ghost/ghost.scoped.har","format":"file","architecture":null},"provider":{"id":"rea-analysis-view","name":"REA analysis view projection","version":"1"},"analysis_profile":null,"predicate_type":"rea.analysis-view","operation":"inspect_analysis_view","parameters":{"parent_evidence_id":"ev_f2f21b681f5ab8a313f4bff3cd2d36d1b5e864451d881cc8052a76d4c892e69a","view":{"kind":"environment-manifest","template_rules":["after-uid-literal","opaque-token","sibling-variance"],"include_query_parameter_names":true}},"raw_result":null,"normalized_result":{"parent_evidence_id":"ev_f2f21b681f5ab8a313f4bff3cd2d36d1b5e864451d881cc8052a76d4c892e69a","parent_operation":"inspect_web_network_capture","parent_digest":"f2f21b681f5ab8a313f4bff3cd2d36d1b5e864451d881cc8052a76d4c892e69a","view_digest":"f523de458880f9d52c4bd4a724e76e0aa24325692444b59a159cfad0833ea8af","artifact":{"path":"/home/ubuntu/capture/ghost/ghost.scoped.har","sha256":"cf7eb90b391c2b83b4863f7c61be70b78f7aaa398bc182b15acafaa423a497ad"},"coverage":{"status":"complete-within-view","examined":36,"total":36,"next_offset":null,"exhausted":true},"limitations":["A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.","Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.","Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.","HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.","Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.","Observed query parameter names do not establish required parameters, value types or a complete API schema.","Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.","This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.","Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."],"unknowns":[{"kind":"authorization-model","statement":"Authorization headers and cookies are structurally excluded from captures; the manifest states no authorization model."},{"kind":"response-semantics","statement":"Recorded statuses and bodies are retained only as pointers to parent records; the manifest states no response semantics."},{"kind":"state-transition","statement":"Recorded exchanges are independent observations; the manifest states no ordering, side effects or state transitions between tools."}],"origin":"http://127.0.0.1:3105","name":"127-0-0-1-3105","tools":[{"name":"get_ghost_admin_authentication_setup","method":"GET","path_template":"/ghost/api/admin/authentication/setup/","api_surface_template":"/ghost/api/admin/authentication/setup/","params":[],"query_parameter_names":[],"body_shape":null,"statuses":[200],"content_types":["application/json"],"record_ordinals":[2]},{"name":"get_ghost_admin_config","method":"GET","path_template":"/ghost/api/admin/config/","api_surface_template":"/ghost/api/admin/config/","params":[],"query_parameter_names":[],"body_shape":null,"statuses":[200],"content_types":["application/json"],"record_ordinals":[4,46]},{"name":"get_ghost_admin_incoming_recommendations","method":"GET","path_template":"/ghost/api/admin/incoming_recommendations/","api_surface_template":"/ghost/api/admin/incoming_recommendations/","params":[],"query_parameter_names":["limit","order"],"body_shape":null,"statuses":[200],"content_types":["application/json"],"record_ordinals":[54]},{"name":"get_ghost_admin_integrations","method":"GET","path_template":"/ghost/api/admin/integrations/","api_surface_template":"/ghost/api/admin/integrations/","params":[],"query_parameter_names":["include","limit"],"body_shape":null,"statuses":[200],"content_types":["application/json"],"record_ordinals":[57]},{"name":"get_ghost_admin_invites","method":"GET","path_template":"/ghost/api/admin/invites/","api_surface_template":"/ghost/api/admin/invites/","params":[],"query_parameter_names":[],"body_shape":null,"statuses":[200],"content_types":["application/json"],"record_ordinals":[49]},{"name":"get_ghost_admin_labels","method":"GET","path_template":"/ghost/api/admin/labels/","api_surface_template":"/ghost/api/admin/labels/","params":[],"query_parameter_names":["limit","page"],"body_shape":null,"statuses":[200],"content_types":["application/json"],"record_ordinals":[40]},{"name":"get_ghost_admin_members","method":"GET","path_template":"/ghost/api/admin/members/","api_surface_template":"/ghost/api/admin/members/","params":[],"query_parameter_names":["filter","include","limit","order","page"],"body_shape":null,"statuses":[200],"content_types":["application/json"],"record_ordinals":[11,12,13,14,15,39,65]},{"name":"get_ghost_admin_members_by_uid","method":"GET","path_template":"/ghost/api/admin/members/{uid}/","api_surface_template":"/ghost/api/admin/members/6ad47b5d1023b500010873f8/","params":[{"index":4,"name":"uid","rule":"opaque-token","basis":"inferred","observed_values":["6ad47b5d1023b500010873f8"]}],"query_parameter_names":[],"body_shape":null,"statuses":[200],"content_types":["application/json"],"record_ordinals":[66]},{"name":"get_ghost_admin_newsletters","method":"GET","path_template":"/ghost/api/admin/newsletters/","api_surface_template":"/ghost/api/admin/newsletters/","params":[],"query_parameter_names":["filter","include","limit","page","status"],"body_shape":null,"statuses":[200],"content_types":["application/json"],"record_ordinals":[25,26,42,56]},{"name":"get_ghost_admin_notifications","method":"GET","path_template":"/ghost/api/admin/notifications/","api_surface_template":"/ghost/api/admin/notifications/","params":[],"query_parameter_names":[],"body_shape":null,"statuses":[200],"content_types":["application/json"],"record_ordinals":[8]},{"name":"get_ghost_admin_offers","method":"GET","path_template":"/ghost/api/admin/offers/","api_surface_template":"/ghost/api/admin/offers/","params":[],"query_parameter_names":[],"body_shape":null,"statuses":[200],"content_types":["application/json"],"record_ordinals":[43]},{"name":"get_ghost_admin_pages","method":"GET","path_template":"/ghost/api/admin/pages/","api_surface_template":"/ghost/api/admin/pages/","params":[],"query_parameter_names":["allFilter","filter","formats","limit","order","page"],"body_shape":null,"statuses":[200],"content_types":["application/json"],"record_ordinals":[33,34,35,62]},{"name":"get_ghost_admin_posts","method":"GET","path_template":"/ghost/api/admin/posts/","api_surface_template":"/ghost/api/admin/posts/","params":[],"query_parameter_names":["allFilter","fields","filter","formats","include","limit","order","page"],"body_shape":null,"statuses":[200],"content_types":["application/json"],"record_ordinals":[16,17,18,19,31,32,59,69,70,75]},{"name":"post_ghost_admin_posts","method":"POST","path_template":"/ghost/api/admin/posts/","api_surface_template":"/ghost/api/admin/posts/","params":[],"query_parameter_names":["source"],"body_shape":{"type":"object","properties":{"posts":"array"}},"statuses":[201],"content_types":["application/json"],"record_ordinals":[71]},{"name":"get_ghost_admin_posts_slug_blue_heron_kitchen_tide_table_men","method":"GET","path_template":"/ghost/api/admin/posts/slug/blue-heron-kitchen-tide-table-menu/","api_surface_template":"/ghost/api/admin/posts/slug/blue-heron-kitchen-tide-table-menu/","params":[],"query_parameter_names":[],"body_shape":null,"statuses":[200],"content_types":["application/json"],"record_ordinals":[61]},{"name":"get_ghost_admin_posts_by_uid","method":"GET","path_template":"/ghost/api/admin/posts/{uid}/","api_surface_template":"/ghost/api/admin/posts/6ad47b5c1023b500010873e3/","params":[{"index":4,"name":"uid","rule":"opaque-token","basis":"inferred","observed_values":["6ad47b5c1023b500010873e3","6ad47ba51023b5000108740b"]}],"query_parameter_names":["formats","include"],"body_shape":null,"statuses":[200,404],"content_types":["application/json"],"record_ordinals":[22,60,73,74]},{"name":"put_ghost_admin_posts_by_uid","method":"PUT","path_template":"/ghost/api/admin/posts/{uid}/","api_surface_template":"/ghost/api/admin/posts/6ad47ba51023b5000108740b/","params":[{"index":4,"name":"uid","rule":"opaque-token","basis":"inferred","observed_values":["6ad47ba51023b5000108740b"]}],"query_parameter_names":["source"],"body_shape":{"type":"object","properties":{"posts":"array"}},"statuses":[200],"content_types":["application/json"],"record_ordinals":[72]},{"name":"get_ghost_admin_recommendations","method":"GET","path_template":"/ghost/api/admin/recommendations/","api_surface_template":"/ghost/api/admin/recommendations/","params":[],"query_parameter_names":["include","limit","order"],"body_shape":null,"statuses":[200],"content_types":["application/json"],"record_ordinals":[53]},{"name":"get_ghost_admin_roles","method":"GET","path_template":"/ghost/api/admin/roles/","api_surface_template":"/ghost/api/admin/roles/","params":[],"query_parameter_names":["limit"],"body_shape":null,"statuses":[200],"content_types":["application/json"],"record_ordinals":[50]},{"name":"get_ghost_admin_search_index_pages","method":"GET","path_template":"/ghost/api/admin/search-index/pages/","api_surface_template":"/ghost/api/admin/search-index/pages/","params":[],"query_parameter_names":[],"body_shape":null,"statuses":[200],"content_types":["application/json"],"record_ordinals":[30]},{"name":"get_ghost_admin_search_index_posts","method":"GET","path_template":"/ghost/api/admin/search-index/posts/","api_surface_template":"/ghost/api/admin/search-index/posts/","params":[],"query_parameter_names":[],"body_shape":null,"statuses":[200],"content_types":["application/json"],"record_ordinals":[29]},{"name":"get_ghost_admin_search_index_tags","method":"GET","path_template":"/ghost/api/admin/search-index/tags/","api_surface_template":"/ghost/api/admin/search-index/tags/","params":[],"query_parameter_names":[],"body_shape":null,"statuses":[200],"content_types":["application/json"],"record_ordinals":[28]},{"name":"get_ghost_admin_search_index_users","method":"GET","path_template":"/ghost/api/admin/search-index/users/","api_surface_template":"/ghost/api/admin/search-index/users/","params":[],"query_parameter_names":[],"body_shape":null,"statuses":[200],"content_types":["application/json"],"record_ordinals":[27]},{"name":"get_ghost_admin_settings","method":"GET","path_template":"/ghost/api/admin/settings/","api_surface_template":"/ghost/api/admin/settings/","params":[],"query_parameter_names":["group"],"body_shape":null,"statuses":[200],"content_types":["application/json"],"record_ordinals":[5,24,44,68]},{"name":"get_ghost_admin_site","method":"GET","path_template":"/ghost/api/admin/site/","api_surface_template":"/ghost/api/admin/site/","params":[],"query_parameter_names":[],"body_shape":null,"statuses":[200],"content_types":["application/json"],"record_ordinals":[1,45,58]},{"name":"get_ghost_admin_snippets","method":"GET","path_template":"/ghost/api/admin/snippets/","api_surface_template":"/ghost/api/admin/snippets/","params":[],"query_parameter_names":["formats","limit","page"],"body_shape":null,"statuses":[200],"content_types":["application/json"],"record_ordinals":[23]},{"name":"get_ghost_admin_stats_member_count","method":"GET","path_template":"/ghost/api/admin/stats/member_count/","api_surface_template":"/ghost/api/admin/stats/member_count/","params":[],"query_parameter_names":[],"body_shape":null,"statuses":[200],"content_types":["application/json"],"record_ordinals":[9]},{"name":"post_ghost_admin_stats_posts_member_counts","method":"POST","path_template":"/ghost/api/admin/stats/posts-member-counts/","api_surface_template":"/ghost/api/admin/stats/posts-member-counts/","params":[],"query_parameter_names":[],"body_shape":{"type":"object","properties":{"postIds":"array"}},"statuses":[200],"content_types":["application/json"],"record_ordinals":[20,36]},{"name":"get_ghost_admin_stats_referrers","method":"GET","path_template":"/ghost/api/admin/stats/referrers/","api_surface_template":"/ghost/api/admin/stats/referrers/","params":[],"query_parameter_names":[],"body_shape":null,"statuses":[200],"content_types":["application/json"],"record_ordinals":[10,55]},{"name":"get_ghost_admin_tags","method":"GET","path_template":"/ghost/api/admin/tags/","api_surface_template":"/ghost/api/admin/tags/","params":[],"query_parameter_names":["filter","include","limit","order","page"],"body_shape":null,"statuses":[200],"content_types":["application/json"],"record_ordinals":[38,63]},{"name":"get_ghost_admin_tags_by_uid","method":"GET","path_template":"/ghost/api/admin/tags/{uid}/","api_surface_template":"/ghost/api/admin/tags/6ad47b5c1023b500010873df/","params":[{"index":4,"name":"uid","rule":"opaque-token","basis":"inferred","observed_values":["6ad47b5c1023b500010873df"]}],"query_parameter_names":[],"body_shape":null,"statuses":[200],"content_types":["application/json"],"record_ordinals":[64]},{"name":"get_ghost_admin_themes","method":"GET","path_template":"/ghost/api/admin/themes/","api_surface_template":"/ghost/api/admin/themes/","params":[],"query_parameter_names":[],"body_shape":null,"statuses":[200],"content_types":["application/json"],"record_ordinals":[51]},{"name":"get_ghost_admin_themes_active","method":"GET","path_template":"/ghost/api/admin/themes/active/","api_surface_template":"/ghost/api/admin/themes/active/","params":[],"query_parameter_names":[],"body_shape":null,"statuses":[200],"content_types":["application/json"],"record_ordinals":[7]},{"name":"get_ghost_admin_tiers","method":"GET","path_template":"/ghost/api/admin/tiers/","api_surface_template":"/ghost/api/admin/tiers/","params":[],"query_parameter_names":["filter","limit","page"],"body_shape":null,"statuses":[200],"content_types":["application/json"],"record_ordinals":[6,41,52]},{"name":"get_ghost_admin_users","method":"GET","path_template":"/ghost/api/admin/users/","api_surface_template":"/ghost/api/admin/users/","params":[],"query_parameter_names":["include","limit","page"],"body_shape":null,"statuses":[200],"content_types":["application/json"],"record_ordinals":[21,37,48,67]},{"name":"get_ghost_admin_users_me","method":"GET","path_template":"/ghost/api/admin/users/me/","api_surface_template":"/ghost/api/admin/users/me/","params":[],"query_parameter_names":["include"],"body_shape":null,"statuses":[200,403],"content_types":["application/json"],"record_ordinals":[0,3,47]}],"records":[{"ordinal":0,"method":"GET","path":"/ghost/api/admin/users/me/","status":403,"content_type":"application/json"},{"ordinal":1,"method":"GET","path":"/ghost/api/admin/site/","status":200,"content_type":"application/json"},{"ordinal":2,"method":"GET","path":"/ghost/api/admin/authentication/setup/","status":200,"content_type":"application/json"},{"ordinal":3,"method":"GET","path":"/ghost/api/admin/users/me/","status":200,"content_type":"application/json"},{"ordinal":4,"method":"GET","path":"/ghost/api/admin/config/","status":200,"content_type":"application/json"},{"ordinal":5,"method":"GET","path":"/ghost/api/admin/settings/","status":200,"content_type":"application/json"},{"ordinal":6,"method":"GET","path":"/ghost/api/admin/tiers/","status":200,"content_type":"application/json"},{"ordinal":7,"method":"GET","path":"/ghost/api/admin/themes/active/","status":200,"content_type":"application/json"},{"ordinal":8,"method":"GET","path":"/ghost/api/admin/notifications/","status":200,"content_type":"application/json"},{"ordinal":9,"method":"GET","path":"/ghost/api/admin/stats/member_count/","status":200,"content_type":"application/json"},{"ordinal":10,"method":"GET","path":"/ghost/api/admin/stats/referrers/","status":200,"content_type":"application/json"},{"ordinal":11,"method":"GET","path":"/ghost/api/admin/members/","status":200,"content_type":"application/json"},{"ordinal":12,"method":"GET","path":"/ghost/api/admin/members/","status":200,"content_type":"application/json"},{"ordinal":13,"method":"GET","path":"/ghost/api/admin/members/","status":200,"content_type":"application/json"},{"ordinal":14,"method":"GET","path":"/ghost/api/admin/members/","status":200,"content_type":"application/json"},{"ordinal":15,"method":"GET","path":"/ghost/api/admin/members/","status":200,"content_type":"application/json"},{"ordinal":16,"method":"GET","path":"/ghost/api/admin/posts/","status":200,"content_type":"application/json"},{"ordinal":17,"method":"GET","path":"/ghost/api/admin/posts/","status":200,"content_type":"application/json"},{"ordinal":18,"method":"GET","path":"/ghost/api/admin/posts/","status":200,"content_type":"application/json"},{"ordinal":19,"method":"GET","path":"/ghost/api/admin/posts/","status":200,"content_type":"application/json"},{"ordinal":20,"method":"POST","path":"/ghost/api/admin/stats/posts-member-counts/","status":200,"content_type":"application/json"},{"ordinal":21,"method":"GET","path":"/ghost/api/admin/users/","status":200,"content_type":"application/json"},{"ordinal":22,"method":"GET","path":"/ghost/api/admin/posts/6ad47b5c1023b500010873e3/","status":200,"content_type":"application/json"},{"ordinal":23,"method":"GET","path":"/ghost/api/admin/snippets/","status":200,"content_type":"application/json"},{"ordinal":24,"method":"GET","path":"/ghost/api/admin/settings/","status":200,"content_type":"application/json"},{"ordinal":25,"method":"GET","path":"/ghost/api/admin/newsletters/","status":200,"content_type":"application/json"},{"ordinal":26,"method":"GET","path":"/ghost/api/admin/newsletters/","status":200,"content_type":"application/json"},{"ordinal":27,"method":"GET","path":"/ghost/api/admin/search-index/users/","status":200,"content_type":"application/json"},{"ordinal":28,"method":"GET","path":"/ghost/api/admin/search-index/tags/","status":200,"content_type":"application/json"},{"ordinal":29,"method":"GET","path":"/ghost/api/admin/search-index/posts/","status":200,"content_type":"application/json"},{"ordinal":30,"method":"GET","path":"/ghost/api/admin/search-index/pages/","status":200,"content_type":"application/json"},{"ordinal":31,"method":"GET","path":"/ghost/api/admin/posts/","status":200,"content_type":"application/json"},{"ordinal":32,"method":"GET","path":"/ghost/api/admin/posts/","status":200,"content_type":"application/json"},{"ordinal":33,"method":"GET","path":"/ghost/api/admin/pages/","status":200,"content_type":"application/json"},{"ordinal":34,"method":"GET","path":"/ghost/api/admin/pages/","status":200,"content_type":"application/json"},{"ordinal":35,"method":"GET","path":"/ghost/api/admin/pages/","status":200,"content_type":"application/json"},{"ordinal":36,"method":"POST","path":"/ghost/api/admin/stats/posts-member-counts/","status":200,"content_type":"application/json"},{"ordinal":37,"method":"GET","path":"/ghost/api/admin/users/","status":200,"content_type":"application/json"},{"ordinal":38,"method":"GET","path":"/ghost/api/admin/tags/","status":200,"content_type":"application/json"},{"ordinal":39,"method":"GET","path":"/ghost/api/admin/members/","status":200,"content_type":"application/json"},{"ordinal":40,"method":"GET","path":"/ghost/api/admin/labels/","status":200,"content_type":"application/json"},{"ordinal":41,"method":"GET","path":"/ghost/api/admin/tiers/","status":200,"content_type":"application/json"},{"ordinal":42,"method":"GET","path":"/ghost/api/admin/newsletters/","status":200,"content_type":"application/json"},{"ordinal":43,"method":"GET","path":"/ghost/api/admin/offers/","status":200,"content_type":"application/json"},{"ordinal":44,"method":"GET","path":"/ghost/api/admin/settings/","status":200,"content_type":"application/json"},{"ordinal":45,"method":"GET","path":"/ghost/api/admin/site/","status":200,"content_type":"application/json"},{"ordinal":46,"method":"GET","path":"/ghost/api/admin/config/","status":200,"content_type":"application/json"},{"ordinal":47,"method":"GET","path":"/ghost/api/admin/users/me/","status":200,"content_type":"application/json"},{"ordinal":48,"method":"GET","path":"/ghost/api/admin/users/","status":200,"content_type":"application/json"},{"ordinal":49,"method":"GET","path":"/ghost/api/admin/invites/","status":200,"content_type":"application/json"},{"ordinal":50,"method":"GET","path":"/ghost/api/admin/roles/","status":200,"content_type":"application/json"},{"ordinal":51,"method":"GET","path":"/ghost/api/admin/themes/","status":200,"content_type":"application/json"},{"ordinal":52,"method":"GET","path":"/ghost/api/admin/tiers/","status":200,"content_type":"application/json"},{"ordinal":53,"method":"GET","path":"/ghost/api/admin/recommendations/","status":200,"content_type":"application/json"},{"ordinal":54,"method":"GET","path":"/ghost/api/admin/incoming_recommendations/","status":200,"content_type":"application/json"},{"ordinal":55,"method":"GET","path":"/ghost/api/admin/stats/referrers/","status":200,"content_type":"application/json"},{"ordinal":56,"method":"GET","path":"/ghost/api/admin/newsletters/","status":200,"content_type":"application/json"},{"ordinal":57,"method":"GET","path":"/ghost/api/admin/integrations/","status":200,"content_type":"application/json"},{"ordinal":58,"method":"GET","path":"/ghost/api/admin/site/","status":200,"content_type":"application/json"},{"ordinal":59,"method":"GET","path":"/ghost/api/admin/posts/","status":200,"content_type":"application/json"},{"ordinal":60,"method":"GET","path":"/ghost/api/admin/posts/6ad47b5c1023b500010873e3/","status":200,"content_type":"application/json"},{"ordinal":61,"method":"GET","path":"/ghost/api/admin/posts/slug/blue-heron-kitchen-tide-table-menu/","status":200,"content_type":"application/json"},{"ordinal":62,"method":"GET","path":"/ghost/api/admin/pages/","status":200,"content_type":"application/json"},{"ordinal":63,"method":"GET","path":"/ghost/api/admin/tags/","status":200,"content_type":"application/json"},{"ordinal":64,"method":"GET","path":"/ghost/api/admin/tags/6ad47b5c1023b500010873df/","status":200,"content_type":"application/json"},{"ordinal":65,"method":"GET","path":"/ghost/api/admin/members/","status":200,"content_type":"application/json"},{"ordinal":66,"method":"GET","path":"/ghost/api/admin/members/6ad47b5d1023b500010873f8/","status":200,"content_type":"application/json"},{"ordinal":67,"method":"GET","path":"/ghost/api/admin/users/","status":200,"content_type":"application/json"},{"ordinal":68,"method":"GET","path":"/ghost/api/admin/settings/","status":200,"content_type":"application/json"},{"ordinal":69,"method":"GET","path":"/ghost/api/admin/posts/","status":200,"content_type":"application/json"},{"ordinal":70,"method":"GET","path":"/ghost/api/admin/posts/","status":200,"content_type":"application/json"},{"ordinal":71,"method":"POST","path":"/ghost/api/admin/posts/","status":201,"content_type":"application/json"},{"ordinal":72,"method":"PUT","path":"/ghost/api/admin/posts/6ad47ba51023b5000108740b/","status":200,"content_type":"application/json"},{"ordinal":73,"method":"GET","path":"/ghost/api/admin/posts/6ad47ba51023b5000108740b/","status":200,"content_type":"application/json"},{"ordinal":74,"method":"GET","path":"/ghost/api/admin/posts/6ad47ba51023b5000108740b/","status":404,"content_type":"application/json"},{"ordinal":75,"method":"GET","path":"/ghost/api/admin/posts/","status":200,"content_type":"application/json"}],"excluded":[],"templated_groups":4,"kind":"environment-manifest","view":{"kind":"environment-manifest","template_rules":["after-uid-literal","opaque-token","sibling-variance"],"include_query_parameter_names":true}},"confidence":"inferred","authority":"historical-reference","environment":null,"limitations":["A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.","Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.","Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.","HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.","Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.","Observed query parameter names do not establish required parameters, value types or a complete API schema.","Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.","This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.","Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."],"relationship_coverage":null,"locations":[{"kind":"artifact-path","path":"/home/ubuntu/capture/ghost/ghost.scoped.har"}],"evidence_links":["ev_f2f21b681f5ab8a313f4bff3cd2d36d1b5e864451d881cc8052a76d4c892e69a"]}
+{
+ "evidence_id": "ev_1eb4590fb23ad38e07ec1085a2320dc95d8763c98defeaacc5b929f9efc6fd0f",
+ "subject": {
+  "name": "ghost.scoped.har",
+  "digest": {
+   "sha256": "e094258cb20cd36f7a877e0f19825fa0d12191c5aea91f33ad51a08a10ce15e3"
+  },
+  "local_path": "/home/ubuntu/capture/ghost/ghost.scoped.har",
+  "format": "file",
+  "architecture": null
+ },
+ "provider": {
+  "id": "rea-analysis-view",
+  "name": "REA analysis view projection",
+  "version": "1"
+ },
+ "analysis_profile": null,
+ "predicate_type": "rea.analysis-view",
+ "operation": "inspect_analysis_view",
+ "parameters": {
+  "parent_evidence_id": "ev_f03cc058b2bdb78972c98464162d3063dba21e2e154c3a2c6df6f7d5aa94a437",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "raw_result": null,
+ "normalized_result": {
+  "parent_evidence_id": "ev_f03cc058b2bdb78972c98464162d3063dba21e2e154c3a2c6df6f7d5aa94a437",
+  "parent_operation": "inspect_web_network_capture",
+  "parent_digest": "f03cc058b2bdb78972c98464162d3063dba21e2e154c3a2c6df6f7d5aa94a437",
+  "view_digest": "1593c73542aced54e92e91bf0714ae4bcce22b773ba2890a8c5bdee0deee9226",
+  "artifact": {
+   "path": "/home/ubuntu/capture/ghost/ghost.scoped.har",
+   "sha256": "e094258cb20cd36f7a877e0f19825fa0d12191c5aea91f33ad51a08a10ce15e3"
+  },
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 36,
+   "total": 36,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "limitations": [
+   "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+   "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+   "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+   "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+   "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+   "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+   "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+   "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+   "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+  ],
+  "unknowns": [
+   {
+    "kind": "authorization-model",
+    "statement": "Authorization headers and cookies are structurally excluded from captures; the manifest states no authorization model."
+   },
+   {
+    "kind": "response-semantics",
+    "statement": "Recorded statuses and bodies are retained only as pointers to parent records; the manifest states no response semantics."
+   },
+   {
+    "kind": "state-transition",
+    "statement": "Recorded exchanges are independent observations; the manifest states no ordering, side effects or state transitions between tools."
+   }
+  ],
+  "origin": "http://127.0.0.1:3105",
+  "name": "127-0-0-1-3105",
+  "tools": [
+   {
+    "name": "get_ghost_admin_authentication_setup",
+    "method": "GET",
+    "path_template": "/ghost/api/admin/authentication/setup/",
+    "api_surface_template": "/ghost/api/admin/authentication/setup/",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     2
+    ]
+   },
+   {
+    "name": "get_ghost_admin_config",
+    "method": "GET",
+    "path_template": "/ghost/api/admin/config/",
+    "api_surface_template": "/ghost/api/admin/config/",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     4,
+     46
+    ]
+   },
+   {
+    "name": "get_ghost_admin_incoming_recommendations",
+    "method": "GET",
+    "path_template": "/ghost/api/admin/incoming_recommendations/",
+    "api_surface_template": "/ghost/api/admin/incoming_recommendations/",
+    "params": [],
+    "query_parameter_names": [
+     "limit",
+     "order"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     54
+    ]
+   },
+   {
+    "name": "get_ghost_admin_integrations",
+    "method": "GET",
+    "path_template": "/ghost/api/admin/integrations/",
+    "api_surface_template": "/ghost/api/admin/integrations/",
+    "params": [],
+    "query_parameter_names": [
+     "include",
+     "limit"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     57
+    ]
+   },
+   {
+    "name": "get_ghost_admin_invites",
+    "method": "GET",
+    "path_template": "/ghost/api/admin/invites/",
+    "api_surface_template": "/ghost/api/admin/invites/",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     49
+    ]
+   },
+   {
+    "name": "get_ghost_admin_labels",
+    "method": "GET",
+    "path_template": "/ghost/api/admin/labels/",
+    "api_surface_template": "/ghost/api/admin/labels/",
+    "params": [],
+    "query_parameter_names": [
+     "limit",
+     "page"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     40
+    ]
+   },
+   {
+    "name": "get_ghost_admin_members",
+    "method": "GET",
+    "path_template": "/ghost/api/admin/members/",
+    "api_surface_template": "/ghost/api/admin/members/",
+    "params": [],
+    "query_parameter_names": [
+     "filter",
+     "include",
+     "limit",
+     "order",
+     "page"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     11,
+     12,
+     13,
+     14,
+     15,
+     39,
+     65
+    ]
+   },
+   {
+    "name": "get_ghost_admin_members_by_uid",
+    "method": "GET",
+    "path_template": "/ghost/api/admin/members/{uid}/",
+    "api_surface_template": "/ghost/api/admin/members/6ad47b5d1023b500010873f8/",
+    "params": [
+     {
+      "index": 4,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad47b5d1023b500010873f8"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     66
+    ]
+   },
+   {
+    "name": "get_ghost_admin_newsletters",
+    "method": "GET",
+    "path_template": "/ghost/api/admin/newsletters/",
+    "api_surface_template": "/ghost/api/admin/newsletters/",
+    "params": [],
+    "query_parameter_names": [
+     "filter",
+     "include",
+     "limit",
+     "page",
+     "status"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     25,
+     26,
+     42,
+     56
+    ]
+   },
+   {
+    "name": "get_ghost_admin_notifications",
+    "method": "GET",
+    "path_template": "/ghost/api/admin/notifications/",
+    "api_surface_template": "/ghost/api/admin/notifications/",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     8
+    ]
+   },
+   {
+    "name": "get_ghost_admin_offers",
+    "method": "GET",
+    "path_template": "/ghost/api/admin/offers/",
+    "api_surface_template": "/ghost/api/admin/offers/",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     43
+    ]
+   },
+   {
+    "name": "get_ghost_admin_pages",
+    "method": "GET",
+    "path_template": "/ghost/api/admin/pages/",
+    "api_surface_template": "/ghost/api/admin/pages/",
+    "params": [],
+    "query_parameter_names": [
+     "allFilter",
+     "filter",
+     "formats",
+     "limit",
+     "order",
+     "page"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     33,
+     34,
+     35,
+     62
+    ]
+   },
+   {
+    "name": "get_ghost_admin_posts",
+    "method": "GET",
+    "path_template": "/ghost/api/admin/posts/",
+    "api_surface_template": "/ghost/api/admin/posts/",
+    "params": [],
+    "query_parameter_names": [
+     "allFilter",
+     "fields",
+     "filter",
+     "formats",
+     "include",
+     "limit",
+     "order",
+     "page"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     16,
+     17,
+     18,
+     19,
+     31,
+     32,
+     59,
+     69,
+     70,
+     75
+    ]
+   },
+   {
+    "name": "post_ghost_admin_posts",
+    "method": "POST",
+    "path_template": "/ghost/api/admin/posts/",
+    "api_surface_template": "/ghost/api/admin/posts/",
+    "params": [],
+    "query_parameter_names": [
+     "source"
+    ],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "posts": "array"
+     }
+    },
+    "statuses": [
+     201
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     71
+    ]
+   },
+   {
+    "name": "get_ghost_admin_posts_slug_blue_heron_kitchen_tide_table_men",
+    "method": "GET",
+    "path_template": "/ghost/api/admin/posts/slug/blue-heron-kitchen-tide-table-menu/",
+    "api_surface_template": "/ghost/api/admin/posts/slug/blue-heron-kitchen-tide-table-menu/",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     61
+    ]
+   },
+   {
+    "name": "get_ghost_admin_posts_by_uid",
+    "method": "GET",
+    "path_template": "/ghost/api/admin/posts/{uid}/",
+    "api_surface_template": "/ghost/api/admin/posts/6ad47b5c1023b500010873e3/",
+    "params": [
+     {
+      "index": 4,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad47b5c1023b500010873e3",
+       "6ad47ba51023b5000108740b"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "formats",
+     "include"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200,
+     404
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     22,
+     60,
+     73,
+     74
+    ]
+   },
+   {
+    "name": "put_ghost_admin_posts_by_uid",
+    "method": "PUT",
+    "path_template": "/ghost/api/admin/posts/{uid}/",
+    "api_surface_template": "/ghost/api/admin/posts/6ad47ba51023b5000108740b/",
+    "params": [
+     {
+      "index": 4,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad47ba51023b5000108740b"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "source"
+    ],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "posts": "array"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     72
+    ]
+   },
+   {
+    "name": "get_ghost_admin_recommendations",
+    "method": "GET",
+    "path_template": "/ghost/api/admin/recommendations/",
+    "api_surface_template": "/ghost/api/admin/recommendations/",
+    "params": [],
+    "query_parameter_names": [
+     "include",
+     "limit",
+     "order"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     53
+    ]
+   },
+   {
+    "name": "get_ghost_admin_roles",
+    "method": "GET",
+    "path_template": "/ghost/api/admin/roles/",
+    "api_surface_template": "/ghost/api/admin/roles/",
+    "params": [],
+    "query_parameter_names": [
+     "limit"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     50
+    ]
+   },
+   {
+    "name": "get_ghost_admin_search_index_pages",
+    "method": "GET",
+    "path_template": "/ghost/api/admin/search-index/pages/",
+    "api_surface_template": "/ghost/api/admin/search-index/pages/",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     30
+    ]
+   },
+   {
+    "name": "get_ghost_admin_search_index_posts",
+    "method": "GET",
+    "path_template": "/ghost/api/admin/search-index/posts/",
+    "api_surface_template": "/ghost/api/admin/search-index/posts/",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     29
+    ]
+   },
+   {
+    "name": "get_ghost_admin_search_index_tags",
+    "method": "GET",
+    "path_template": "/ghost/api/admin/search-index/tags/",
+    "api_surface_template": "/ghost/api/admin/search-index/tags/",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     28
+    ]
+   },
+   {
+    "name": "get_ghost_admin_search_index_users",
+    "method": "GET",
+    "path_template": "/ghost/api/admin/search-index/users/",
+    "api_surface_template": "/ghost/api/admin/search-index/users/",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     27
+    ]
+   },
+   {
+    "name": "get_ghost_admin_settings",
+    "method": "GET",
+    "path_template": "/ghost/api/admin/settings/",
+    "api_surface_template": "/ghost/api/admin/settings/",
+    "params": [],
+    "query_parameter_names": [
+     "group"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     5,
+     24,
+     44,
+     68
+    ]
+   },
+   {
+    "name": "get_ghost_admin_site",
+    "method": "GET",
+    "path_template": "/ghost/api/admin/site/",
+    "api_surface_template": "/ghost/api/admin/site/",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     1,
+     45,
+     58
+    ]
+   },
+   {
+    "name": "get_ghost_admin_snippets",
+    "method": "GET",
+    "path_template": "/ghost/api/admin/snippets/",
+    "api_surface_template": "/ghost/api/admin/snippets/",
+    "params": [],
+    "query_parameter_names": [
+     "formats",
+     "limit",
+     "page"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     23
+    ]
+   },
+   {
+    "name": "get_ghost_admin_stats_member_count",
+    "method": "GET",
+    "path_template": "/ghost/api/admin/stats/member_count/",
+    "api_surface_template": "/ghost/api/admin/stats/member_count/",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     9
+    ]
+   },
+   {
+    "name": "post_ghost_admin_stats_posts_member_counts",
+    "method": "POST",
+    "path_template": "/ghost/api/admin/stats/posts-member-counts/",
+    "api_surface_template": "/ghost/api/admin/stats/posts-member-counts/",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "postIds": "array"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     20,
+     36
+    ]
+   },
+   {
+    "name": "get_ghost_admin_stats_referrers",
+    "method": "GET",
+    "path_template": "/ghost/api/admin/stats/referrers/",
+    "api_surface_template": "/ghost/api/admin/stats/referrers/",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     10,
+     55
+    ]
+   },
+   {
+    "name": "get_ghost_admin_tags",
+    "method": "GET",
+    "path_template": "/ghost/api/admin/tags/",
+    "api_surface_template": "/ghost/api/admin/tags/",
+    "params": [],
+    "query_parameter_names": [
+     "filter",
+     "include",
+     "limit",
+     "order",
+     "page"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     38,
+     63
+    ]
+   },
+   {
+    "name": "get_ghost_admin_tags_by_uid",
+    "method": "GET",
+    "path_template": "/ghost/api/admin/tags/{uid}/",
+    "api_surface_template": "/ghost/api/admin/tags/6ad47b5c1023b500010873df/",
+    "params": [
+     {
+      "index": 4,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "6ad47b5c1023b500010873df"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     64
+    ]
+   },
+   {
+    "name": "get_ghost_admin_themes",
+    "method": "GET",
+    "path_template": "/ghost/api/admin/themes/",
+    "api_surface_template": "/ghost/api/admin/themes/",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     51
+    ]
+   },
+   {
+    "name": "get_ghost_admin_themes_active",
+    "method": "GET",
+    "path_template": "/ghost/api/admin/themes/active/",
+    "api_surface_template": "/ghost/api/admin/themes/active/",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     7
+    ]
+   },
+   {
+    "name": "get_ghost_admin_tiers",
+    "method": "GET",
+    "path_template": "/ghost/api/admin/tiers/",
+    "api_surface_template": "/ghost/api/admin/tiers/",
+    "params": [],
+    "query_parameter_names": [
+     "filter",
+     "limit",
+     "page"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     6,
+     41,
+     52
+    ]
+   },
+   {
+    "name": "get_ghost_admin_users",
+    "method": "GET",
+    "path_template": "/ghost/api/admin/users/",
+    "api_surface_template": "/ghost/api/admin/users/",
+    "params": [],
+    "query_parameter_names": [
+     "include",
+     "limit",
+     "page"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     21,
+     37,
+     48,
+     67
+    ]
+   },
+   {
+    "name": "get_ghost_admin_users_me",
+    "method": "GET",
+    "path_template": "/ghost/api/admin/users/me/",
+    "api_surface_template": "/ghost/api/admin/users/me/",
+    "params": [],
+    "query_parameter_names": [
+     "include"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200,
+     403
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     0,
+     3,
+     47
+    ]
+   }
+  ],
+  "records": [
+   {
+    "ordinal": 0,
+    "method": "GET",
+    "path": "/ghost/api/admin/users/me/",
+    "status": 403,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 1,
+    "method": "GET",
+    "path": "/ghost/api/admin/site/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 2,
+    "method": "GET",
+    "path": "/ghost/api/admin/authentication/setup/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 3,
+    "method": "GET",
+    "path": "/ghost/api/admin/users/me/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 4,
+    "method": "GET",
+    "path": "/ghost/api/admin/config/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 5,
+    "method": "GET",
+    "path": "/ghost/api/admin/settings/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 6,
+    "method": "GET",
+    "path": "/ghost/api/admin/tiers/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 7,
+    "method": "GET",
+    "path": "/ghost/api/admin/themes/active/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 8,
+    "method": "GET",
+    "path": "/ghost/api/admin/notifications/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 9,
+    "method": "GET",
+    "path": "/ghost/api/admin/stats/member_count/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 10,
+    "method": "GET",
+    "path": "/ghost/api/admin/stats/referrers/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 11,
+    "method": "GET",
+    "path": "/ghost/api/admin/members/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 12,
+    "method": "GET",
+    "path": "/ghost/api/admin/members/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 13,
+    "method": "GET",
+    "path": "/ghost/api/admin/members/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 14,
+    "method": "GET",
+    "path": "/ghost/api/admin/members/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 15,
+    "method": "GET",
+    "path": "/ghost/api/admin/members/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 16,
+    "method": "GET",
+    "path": "/ghost/api/admin/posts/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 17,
+    "method": "GET",
+    "path": "/ghost/api/admin/posts/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 18,
+    "method": "GET",
+    "path": "/ghost/api/admin/posts/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 19,
+    "method": "GET",
+    "path": "/ghost/api/admin/posts/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 20,
+    "method": "POST",
+    "path": "/ghost/api/admin/stats/posts-member-counts/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 21,
+    "method": "GET",
+    "path": "/ghost/api/admin/users/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 22,
+    "method": "GET",
+    "path": "/ghost/api/admin/posts/6ad47b5c1023b500010873e3/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 23,
+    "method": "GET",
+    "path": "/ghost/api/admin/snippets/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 24,
+    "method": "GET",
+    "path": "/ghost/api/admin/settings/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 25,
+    "method": "GET",
+    "path": "/ghost/api/admin/newsletters/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 26,
+    "method": "GET",
+    "path": "/ghost/api/admin/newsletters/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 27,
+    "method": "GET",
+    "path": "/ghost/api/admin/search-index/users/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 28,
+    "method": "GET",
+    "path": "/ghost/api/admin/search-index/tags/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 29,
+    "method": "GET",
+    "path": "/ghost/api/admin/search-index/posts/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 30,
+    "method": "GET",
+    "path": "/ghost/api/admin/search-index/pages/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 31,
+    "method": "GET",
+    "path": "/ghost/api/admin/posts/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 32,
+    "method": "GET",
+    "path": "/ghost/api/admin/posts/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 33,
+    "method": "GET",
+    "path": "/ghost/api/admin/pages/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 34,
+    "method": "GET",
+    "path": "/ghost/api/admin/pages/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 35,
+    "method": "GET",
+    "path": "/ghost/api/admin/pages/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 36,
+    "method": "POST",
+    "path": "/ghost/api/admin/stats/posts-member-counts/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 37,
+    "method": "GET",
+    "path": "/ghost/api/admin/users/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 38,
+    "method": "GET",
+    "path": "/ghost/api/admin/tags/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 39,
+    "method": "GET",
+    "path": "/ghost/api/admin/members/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 40,
+    "method": "GET",
+    "path": "/ghost/api/admin/labels/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 41,
+    "method": "GET",
+    "path": "/ghost/api/admin/tiers/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 42,
+    "method": "GET",
+    "path": "/ghost/api/admin/newsletters/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 43,
+    "method": "GET",
+    "path": "/ghost/api/admin/offers/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 44,
+    "method": "GET",
+    "path": "/ghost/api/admin/settings/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 45,
+    "method": "GET",
+    "path": "/ghost/api/admin/site/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 46,
+    "method": "GET",
+    "path": "/ghost/api/admin/config/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 47,
+    "method": "GET",
+    "path": "/ghost/api/admin/users/me/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 48,
+    "method": "GET",
+    "path": "/ghost/api/admin/users/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 49,
+    "method": "GET",
+    "path": "/ghost/api/admin/invites/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 50,
+    "method": "GET",
+    "path": "/ghost/api/admin/roles/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 51,
+    "method": "GET",
+    "path": "/ghost/api/admin/themes/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 52,
+    "method": "GET",
+    "path": "/ghost/api/admin/tiers/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 53,
+    "method": "GET",
+    "path": "/ghost/api/admin/recommendations/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 54,
+    "method": "GET",
+    "path": "/ghost/api/admin/incoming_recommendations/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 55,
+    "method": "GET",
+    "path": "/ghost/api/admin/stats/referrers/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 56,
+    "method": "GET",
+    "path": "/ghost/api/admin/newsletters/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 57,
+    "method": "GET",
+    "path": "/ghost/api/admin/integrations/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 58,
+    "method": "GET",
+    "path": "/ghost/api/admin/site/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 59,
+    "method": "GET",
+    "path": "/ghost/api/admin/posts/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 60,
+    "method": "GET",
+    "path": "/ghost/api/admin/posts/6ad47b5c1023b500010873e3/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 61,
+    "method": "GET",
+    "path": "/ghost/api/admin/posts/slug/blue-heron-kitchen-tide-table-menu/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 62,
+    "method": "GET",
+    "path": "/ghost/api/admin/pages/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 63,
+    "method": "GET",
+    "path": "/ghost/api/admin/tags/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 64,
+    "method": "GET",
+    "path": "/ghost/api/admin/tags/6ad47b5c1023b500010873df/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 65,
+    "method": "GET",
+    "path": "/ghost/api/admin/members/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 66,
+    "method": "GET",
+    "path": "/ghost/api/admin/members/6ad47b5d1023b500010873f8/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 67,
+    "method": "GET",
+    "path": "/ghost/api/admin/users/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 68,
+    "method": "GET",
+    "path": "/ghost/api/admin/settings/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 69,
+    "method": "GET",
+    "path": "/ghost/api/admin/posts/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 70,
+    "method": "GET",
+    "path": "/ghost/api/admin/posts/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 71,
+    "method": "POST",
+    "path": "/ghost/api/admin/posts/",
+    "status": 201,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 72,
+    "method": "PUT",
+    "path": "/ghost/api/admin/posts/6ad47ba51023b5000108740b/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 73,
+    "method": "GET",
+    "path": "/ghost/api/admin/posts/6ad47ba51023b5000108740b/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 74,
+    "method": "GET",
+    "path": "/ghost/api/admin/posts/6ad47ba51023b5000108740b/",
+    "status": 404,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 75,
+    "method": "GET",
+    "path": "/ghost/api/admin/posts/",
+    "status": 200,
+    "content_type": "application/json"
+   }
+  ],
+  "excluded": [],
+  "templated_groups": 4,
+  "kind": "environment-manifest",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "confidence": "inferred",
+ "authority": "historical-reference",
+ "environment": null,
+ "limitations": [
+  "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+  "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+  "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+  "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+  "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+  "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+  "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+  "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+  "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+ ],
+ "relationship_coverage": null,
+ "locations": [
+  {
+   "kind": "artifact-path",
+   "path": "/home/ubuntu/capture/ghost/ghost.scoped.har"
+  }
+ ],
+ "evidence_links": [
+  "ev_f03cc058b2bdb78972c98464162d3063dba21e2e154c3a2c6df6f7d5aa94a437"
+ ]
+}

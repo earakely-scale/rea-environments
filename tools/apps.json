@@ -34,5 +34,173 @@
     "authors": "the Ghost Foundation",
     "repo": "GhostEnv-REA",
     "hf_license": "apache-2.0"
+  },
+  "baserow": {
+    "title": "Baserow",
+    "license": "MIT",
+    "authors": "Baserow B.V.",
+    "repo": "BaserowEnv-REA",
+    "hf_license": "apache-2.0"
+  },
+  "bookstack": {
+    "title": "BookStack",
+    "license": "MIT",
+    "authors": "Dan Brown and the BookStack project contributors",
+    "repo": "BookStackEnv-REA",
+    "hf_license": "apache-2.0"
+  },
+  "directus": {
+    "title": "Directus",
+    "license": "BSL-1.1",
+    "authors": "Monospace, Inc. and the Directus contributors",
+    "repo": "DirectusEnv-REA",
+    "hf_license": "apache-2.0"
+  },
+  "espocrm": {
+    "title": "EspoCRM",
+    "license": "AGPL-3.0",
+    "authors": "EspoCRM, Inc.",
+    "repo": "EspoCRMEnv-REA",
+    "hf_license": "apache-2.0"
+  },
+  "grist": {
+    "title": "Grist",
+    "license": "Apache-2.0",
+    "authors": "Grist Labs and the grist-core contributors",
+    "repo": "GristEnv-REA",
+    "hf_license": "apache-2.0"
+  },
+  "grocy": {
+    "title": "Grocy",
+    "license": "MIT",
+    "authors": "Bernd Bestel and the Grocy contributors",
+    "repo": "GrocyEnv-REA",
+    "hf_license": "apache-2.0"
+  },
+  "homebox": {
+    "title": "Homebox",
+    "license": "AGPL-3.0",
+    "authors": "the Homebox contributors (sysadminsmedia)",
+    "repo": "HomeboxEnv-REA",
+    "hf_license": "apache-2.0"
+  },
+  "immich": {
+    "title": "Immich",
+    "license": "AGPL-3.0",
+    "authors": "the Immich contributors",
+    "repo": "ImmichEnv-REA",
+    "hf_license": "apache-2.0"
+  },
+  "jellyfin": {
+    "title": "Jellyfin",
+    "license": "GPL-2.0",
+    "authors": "the Jellyfin contributors",
+    "repo": "JellyfinEnv-REA",
+    "hf_license": "apache-2.0"
+  },
+  "keycloak": {
+    "title": "Keycloak",
+    "license": "Apache-2.0",
+    "authors": "the Keycloak authors (a CNCF project)",
+    "repo": "KeycloakEnv-REA",
+    "hf_license": "apache-2.0"
+  },
+  "komga": {
+    "title": "Komga",
+    "license": "MIT",
+    "authors": "Gauthier Roebroeck and the Komga contributors",
+    "repo": "KomgaEnv-REA",
+    "hf_license": "apache-2.0"
+  },
+  "linkding": {
+    "title": "linkding",
+    "license": "MIT",
+    "authors": "Sascha I\u00dfbr\u00fccker and the linkding contributors",
+    "repo": "LinkdingEnv-REA",
+    "hf_license": "apache-2.0"
+  },
+  "listmonk": {
+    "title": "listmonk",
+    "license": "AGPL-3.0",
+    "authors": "Kailash Nadh and the listmonk contributors",
+    "repo": "ListmonkEnv-REA",
+    "hf_license": "apache-2.0"
+  },
+  "mealie": {
+    "title": "Mealie",
+    "license": "AGPL-3.0",
+    "authors": "the Mealie authors",
+    "repo": "MealieEnv-REA",
+    "hf_license": "apache-2.0"
+  },
+  "memos": {
+    "title": "Memos",
+    "license": "MIT",
+    "authors": "the Memos contributors",
+    "repo": "MemosEnv-REA",
+    "hf_license": "apache-2.0"
+  },
+  "metabase": {
+    "title": "Metabase",
+    "license": "AGPL-3.0",
+    "authors": "Metabase, Inc.",
+    "repo": "MetabaseEnv-REA",
+    "hf_license": "apache-2.0"
+  },
+  "miniflux": {
+    "title": "Miniflux",
+    "license": "Apache-2.0",
+    "authors": "Fr\u00e9d\u00e9ric Guillot and the Miniflux contributors",
+    "repo": "MinifluxEnv-REA",
+    "hf_license": "apache-2.0"
+  },
+  "n8n": {
+    "title": "n8n",
+    "license": "Sustainable Use License 1.0 (fair-code; .ee files under the n8n Enterprise License)",
+    "authors": "n8n GmbH",
+    "repo": "N8nEnv-REA",
+    "hf_license": "apache-2.0"
+  },
+  "navidrome": {
+    "title": "Navidrome",
+    "license": "GPL-3.0",
+    "authors": "Deluan Quintao and the Navidrome contributors",
+    "repo": "NavidromeEnv-REA",
+    "hf_license": "apache-2.0"
+  },
+  "paperless": {
+    "title": "Paperless-ngx",
+    "license": "GPL-3.0",
+    "authors": "the Paperless-ngx contributors",
+    "repo": "PaperlessNgxEnv-REA",
+    "hf_license": "apache-2.0"
+  },
+  "shlink": {
+    "title": "Shlink",
+    "license": "MIT",
+    "authors": "Alejandro Celaya and the Shlink contributors",
+    "repo": "ShlinkEnv-REA",
+    "hf_license": "apache-2.0"
+  },
+  "sonarr": {
+    "title": "Sonarr",
+    "license": "GPL-3.0",
+    "authors": "Team Sonarr",
+    "repo": "SonarrEnv-REA",
+    "hf_license": "apache-2.0"
+  },
+  "umami": {
+    "title": "Umami",
+    "license": "MIT",
+    "authors": "Umami Software, Inc.",
+    "repo": "UmamiEnv-REA",
+    "hf_license": "apache-2.0"
+  },
+  "vikunja": {
+    "title": "Vikunja",
+    "license": "AGPL-3.0-or-later",
+    "authors": "the Vikunja authors",
+    "repo": "VikunjaEnv-REA",
+    "hf_license": "apache-2.0"
   }
 }

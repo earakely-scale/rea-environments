@@ -30,18 +30,31 @@ notes = [f"`{m}` missed " + ", ".join(f"`{t}`" for t in sorted(ts)) + "." for m,
 app_notes = json.load(open(a.apps)).get(a.app, {}).get("episode_notes") if a.apps else None
 if app_notes: notes.append(app_notes)
 if ep["models"] and not notes: notes.append("Every recorded episode passed.")
+REASONS = {"other-origin": "other origins", "ui-page-or-asset": "UI pages or assets", "non-json": "non-JSON replies such as bodiless 204 writes"}
+excl = s.get("excluded") or {}
+excluded_text = ("no recorded group excluded" if not excl else
+                 f"{sum(excl.values())} recorded group{'s' if sum(excl.values()) != 1 else ''} excluded (" + ", ".join(f"{n} as {REASONS.get(k, k)}" for k, v in sorted(excl.items()) for n in [v]) + ")")
+def seeded_text(v):
+    """One readable line from summary.json's seeded_objects, which workers write as a sentence, a list or a mapping."""
+    if isinstance(v, str): return v
+    if isinstance(v, list): return ", ".join(seeded_text(x) for x in v)
+    if isinstance(v, dict): return "; ".join(f"{k.replace('_', ' ')}: {seeded_text(x)}" for k, x in v.items())
+    return str(v)
+summary_doc = json.load(open(Path(a.summary).parent / a.app / "summary.json"))
+seeded_line = seeded_text(summary_doc.get("seeded_objects") or "see the capture notes")
+if len(seeded_line) > 600: seeded_line = seeded_line[:597].rsplit(" ", 1)[0] + "..."
 fill = {
     "APP_TITLE": a.title, "APP_NAME": a.title, "APP_VERSION": s["app_version"], "APP_LICENSE": a.license, "APP_AUTHORS": a.authors,
     "TOOL_COUNT": str(s["tools"]), "TOOL_COUNT_NORULES": str(s["tools_norules"]),
     "TOOLS_BY_METHOD": ", ".join(f"{v} {k}" for k, v in sorted(s["tools_by_method"].items(), key=lambda kv: -kv[1])),
-    "SCOPED_RECORDS": str(s["scoped_records"]), "ORIGIN": s["origin"], "EXCLUDED_COUNT": str(sum(s["excluded"].values())),
+    "SCOPED_RECORDS": str(s["scoped_records"]), "ORIGIN": s["origin"], "EXCLUDED_TEXT": excluded_text,
     "PARAMS_BY_RULE": ", ".join(f"{v} `{k}`" for k, v in sorted(s["params_by_rule"].items(), key=lambda kv: -kv[1])) or "none",
     "TASK_COUNT": str(len(task_rows)), "ENV_ID": a.app, "EPISODE_COUNT": str(ep.get("count", 0)),
     "MODELS": ", ".join(f"`{m}`" for m in ep["models"]) or "no model yet",
     "CAPTURE_EVIDENCE_ID": s["capture_evidence_id"], "MANIFEST_EVIDENCE_ID": s["manifest_evidence_id"], "CONFIDENCE": s["confidence"],
     "HAR_SHA256": s["scoped_har_sha256"], "HAR_BYTES": f"{s['scoped_har_bytes']:,}", "EXPORT_PR": a.export_pr,
     "TASK_TABLE": task_table, "MODEL_BOARD": board, "EPISODE_NOTES": " ".join(notes), "REPO_NAME": a.repo,
-    "SEEDED_OBJECTS": json.load(open(Path(a.summary).parent / a.app / "summary.json")).get("seeded_objects", "see the capture notes"),
+    "SEEDED_OBJECTS": seeded_line,
 }
 out = tpl
 for k, v in fill.items(): out = out.replace("{{" + k + "}}", str(v))

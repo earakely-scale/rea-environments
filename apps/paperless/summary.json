@@ -1,0 +1,361 @@
+{
+ "app": "paperless",
+ "title": "Paperless-ngx",
+ "image": "ghcr.io/paperless-ngx/paperless-ngx:2.20.15",
+ "image_digest": "ghcr.io/paperless-ngx/paperless-ngx@sha256:6c86cad803970ea782683a8e80e7403444c5bf3cf70de63b4d3c8e87500db92f",
+ "app_version": "2.20",
+ "app_version_full": "2.20.15",
+ "site_title": "Saltmarsh Depot Archive (application title set through /api/config/)",
+ "database": "sqlite (PAPERLESS_DBHOST unset; /usr/src/paperless/data/db.sqlite3) + Redis broker",
+ "extra_images": {
+  "redis": "redis:8.6.7-alpine",
+  "redis_digest": "redis@sha256:ac2da09bc822f325a9f68f533120b86fa39c1b8db46b3aa7c1bbea7fdfd4fcba"
+ },
+ "compose_project": "rea-paperless",
+ "origin": "http://127.0.0.1:3213",
+ "licence": "GPL-3.0",
+ "tooling": {
+  "rea": "6.6.0",
+  "playwright-core": "1.58.2",
+  "chromium": "Chromium 155.0.8059.79 snap",
+  "node": "v24.22.0",
+  "python": "Python 3.12.3",
+  "docker": "Docker version 29.9.1, build dfc520d",
+  "compose": "5.6.0",
+  "vm": "Ubuntu 24.04 amd64"
+ },
+ "scoped_har": {
+  "file": "paperless.scoped.har",
+  "sha256": "ab61f99d59b8a29032dadcf0aa5f682e94509e9fad91fe38506c5f822438884b",
+  "bytes": 203943,
+  "records": 108,
+  "methods": {
+   "GET": 102,
+   "POST": 3,
+   "PATCH": 1,
+   "DELETE": 2
+  },
+  "statuses": {
+   "200": 105,
+   "201": 1,
+   "204": 1,
+   "404": 1
+  }
+ },
+ "scope_har": {
+  "origin": "http://127.0.0.1:3213",
+  "keep_regex": "^/api/",
+  "drop_regex": "default (login|logout|signup|password|session|token|oauth|csrf)",
+  "max_body": 60000,
+  "max_records": 150,
+  "kept": 108,
+  "dropped": {
+   "other-origin": 0,
+   "path": 12,
+   "non-json": 8,
+   "auth": 2,
+   "big-body": 0,
+   "over-max": 0
+  },
+  "notes": [
+   "auth=2 are GET and POST /accounts/login/ (the Django/allauth login form)",
+   "path=12 are the Angular app shell, /dashboard, /documents/1/details and static assets",
+   "non-json=8 are 6 document thumbnails (image/webp, one a 304) and 2 /api/mail_accounts/ requests the UI aborted when navigating on (status -1)",
+   "DELETE /api/tags/{id}/ answered 204 with no body and is kept as an empty API reply, so the manifest has a DELETE tool"
+  ]
+ },
+ "credential_grep": {
+  "admin_secret_literal_hits": 0,
+  "token_shape_hits": 0,
+  "session_cookie_name_hits": 0,
+  "result": "pass"
+ },
+ "evidence": {
+  "capture_evidence_id": "ev_8d7f7da6eb5cdd44da2be33be1860bd2d2d5d881ea2fe57e8d366307b1e39f43",
+  "capture_total_records": 108,
+  "capture_confidence": "observed"
+ },
+ "manifest": {
+  "evidence_id": "ev_d0c5614ab04ff480bbf669423cee11d97bb4f5819c5e3fb30b37eda931ac4c27",
+  "confidence": "inferred",
+  "view_digest": "95a8ddf5c811c279f531f68480eec7b996cd1543e37f9ad2d0cef7a44411fc6b",
+  "template_rules": [
+   "after-uid-literal",
+   "opaque-token",
+   "sibling-variance"
+  ],
+  "tools": 41,
+  "tools_by_method": {
+   "GET": 35,
+   "POST": 3,
+   "DELETE": 2,
+   "PATCH": 1
+  },
+  "templated_groups": 21,
+  "params_by_rule": {
+   "numeric": 21
+  },
+  "params_total": 21,
+  "query_parameter_names_total": 46,
+  "query_parameter_names_distinct": [
+   "acknowledged",
+   "correspondent__id",
+   "correspondent__id__in",
+   "fields",
+   "full_perms",
+   "id",
+   "is_root",
+   "last_correspondence",
+   "ordering",
+   "page",
+   "page_size",
+   "query",
+   "tags__id__all",
+   "task_name",
+   "title__icontains",
+   "truncate_content"
+  ],
+  "tools_with_body_shape": 4,
+  "statuses_seen": [
+   200,
+   201,
+   204,
+   404
+  ],
+  "records": 108,
+  "excluded": 0,
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 41,
+   "total": 41,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "limitations_count": 9,
+  "tool_names": [
+   "get_config",
+   "get_correspondents",
+   "get_correspondents_by_id",
+   "get_custom_fields",
+   "get_custom_fields_by_id",
+   "get_document_types",
+   "get_document_types_by_id",
+   "get_documents",
+   "post_documents_selection_data",
+   "get_documents_by_id",
+   "get_documents_history_by_id",
+   "get_documents_metadata_by_id",
+   "delete_documents_notes_by_id",
+   "get_documents_notes_by_id",
+   "post_documents_notes_by_id",
+   "get_documents_preview_by_id",
+   "get_documents_suggestions_by_id",
+   "get_groups",
+   "get_groups_by_id",
+   "get_mail_accounts",
+   "get_mail_accounts_by_id",
+   "get_mail_rules",
+   "get_mail_rules_by_id",
+   "get_profile",
+   "get_saved_views",
+   "get_saved_views_by_id",
+   "get_search",
+   "get_statistics",
+   "get_storage_paths",
+   "get_storage_paths_by_id",
+   "get_tags",
+   "post_tags",
+   "delete_tags_by_id",
+   "get_tags_by_id",
+   "patch_tags_by_id",
+   "get_tasks",
+   "get_ui_settings",
+   "get_users",
+   "get_users_by_id",
+   "get_workflows",
+   "get_workflows_by_id"
+  ]
+ },
+ "manifest_norules": {
+  "evidence_id": "ev_4ab1de7e46207fdacdc9e05af7cffdbe6572d321c239890e3bab4e4822bd2a63",
+  "confidence": "inferred",
+  "view_digest": "1fccd7fe2b573a8bb41a70a32b83b12921413d2e08a0d530f609ad6504910f87",
+  "template_rules": [],
+  "tools": 41,
+  "tools_by_method": {
+   "GET": 35,
+   "POST": 3,
+   "DELETE": 2,
+   "PATCH": 1
+  },
+  "templated_groups": 21,
+  "params_by_rule": {
+   "numeric": 21
+  },
+  "params_total": 21,
+  "query_parameter_names_total": 46,
+  "query_parameter_names_distinct": [
+   "acknowledged",
+   "correspondent__id",
+   "correspondent__id__in",
+   "fields",
+   "full_perms",
+   "id",
+   "is_root",
+   "last_correspondence",
+   "ordering",
+   "page",
+   "page_size",
+   "query",
+   "tags__id__all",
+   "task_name",
+   "title__icontains",
+   "truncate_content"
+  ],
+  "tools_with_body_shape": 4,
+  "statuses_seen": [
+   200,
+   201,
+   204,
+   404
+  ],
+  "records": 108,
+  "excluded": 0,
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 41,
+   "total": 41,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "limitations_count": 8,
+  "tool_names": [
+   "get_config",
+   "get_correspondents",
+   "get_correspondents_by_id",
+   "get_custom_fields",
+   "get_custom_fields_by_id",
+   "get_document_types",
+   "get_document_types_by_id",
+   "get_documents",
+   "post_documents_selection_data",
+   "get_documents_by_id",
+   "get_documents_history_by_id",
+   "get_documents_metadata_by_id",
+   "delete_documents_notes_by_id",
+   "get_documents_notes_by_id",
+   "post_documents_notes_by_id",
+   "get_documents_preview_by_id",
+   "get_documents_suggestions_by_id",
+   "get_groups",
+   "get_groups_by_id",
+   "get_mail_accounts",
+   "get_mail_accounts_by_id",
+   "get_mail_rules",
+   "get_mail_rules_by_id",
+   "get_profile",
+   "get_saved_views",
+   "get_saved_views_by_id",
+   "get_search",
+   "get_statistics",
+   "get_storage_paths",
+   "get_storage_paths_by_id",
+   "get_tags",
+   "post_tags",
+   "delete_tags_by_id",
+   "get_tags_by_id",
+   "patch_tags_by_id",
+   "get_tasks",
+   "get_ui_settings",
+   "get_users",
+   "get_users_by_id",
+   "get_workflows",
+   "get_workflows_by_id"
+  ]
+ },
+ "seeded_objects": "4 correspondents (Granite Ledger Quarry Office, Blue Heron Kitchen, Copperfield Annex Lettings, Saltmarsh Depot Stores), 5 tags (Inbox Triage, Tide Tables, Lamp Oil, Audit Seaward Stack, Winter Rota), 3 document types, 2 storage paths, 3 custom fields, 5 plain-text documents with custom-field values, 3 notes, 2 saved views, 2 groups, 2 users (ada.finch, tomas.vey), 1 IMAP mail account (never polled), 1 mail rule, 1 workflow and the application title Saltmarsh Depot Archive",
+ "seeded_detail": {
+  "correspondents": [
+   "Granite Ledger Quarry Office",
+   "Blue Heron Kitchen",
+   "Copperfield Annex Lettings",
+   "Saltmarsh Depot Stores"
+  ],
+  "tags": [
+   "Inbox Triage (inbox tag)",
+   "Tide Tables",
+   "Lamp Oil",
+   "Audit Seaward Stack",
+   "Winter Rota"
+  ],
+  "document_types": [
+   "Stone Count Report",
+   "Supplier Invoice",
+   "Shift Handover Note"
+  ],
+  "storage_paths": [
+   "Lighthouse Rota Archive (rota/{{ correspondent }}/{{ title }})",
+   "Granite Ledger Vault (ledger/{{ created_year }}/{{ title }})"
+  ],
+  "custom_fields": [
+   "Ledger Reference (string)",
+   "Shift Number (integer)",
+   "Invoice Total (monetary)"
+  ],
+  "documents": [
+   "Granite Ledger Quarterly Stone Count",
+   "Blue Heron Kitchen Kelp Broth Invoice",
+   "Lighthouse Rota Winter Handover",
+   "Copperfield Annex Lease Renewal",
+   "Saltmarsh Depot Lamp Oil Delivery"
+  ],
+  "notes": 3,
+  "saved_views": [
+   "Granite Ledger Audits",
+   "Blue Heron Kitchen Paperwork"
+  ],
+  "groups": [
+   "Quarry Auditors",
+   "Kitchen Crew"
+  ],
+  "users": [
+   "ada.finch (Ada Finch)",
+   "tomas.vey (Tomas Vey)"
+  ],
+  "mail_accounts": [
+   "Saltmarsh Depot Intake"
+  ],
+  "mail_rules": [
+   "Lamp Oil Delivery Notes"
+  ],
+  "workflows": [
+   "Route Granite Ledger Scans"
+  ],
+  "scratch_during_capture": "tag Rea scratch tag created (201), patched, read, deleted (204), re-read (404); a scratch note added to and deleted from Copperfield Annex Lease Renewal"
+ },
+ "ui_pages_visited": [
+  "/accounts/login/ (login form)",
+  "/dashboard",
+  "/documents",
+  "/documents/1/details",
+  "/tags",
+  "/correspondents",
+  "/documenttypes",
+  "/storagepaths",
+  "/customfields",
+  "/workflows",
+  "/mail",
+  "/usersgroups"
+ ],
+ "resource_constraint": false
+}

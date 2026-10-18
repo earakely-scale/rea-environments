@@ -1,0 +1,265 @@
+{
+ "app": "grist",
+ "title": "Grist",
+ "repo": "GristEnv-REA",
+ "image": "gristlabs/grist:1.7.21",
+ "image_digest": "gristlabs/grist@sha256:4ef5b69ab411de298d2f70571fdcb9a0b00af0d7135d61255e641c5eef70f991",
+ "images": {
+  "gristlabs/grist:1.7.21": {
+   "digest": "gristlabs/grist@sha256:4ef5b69ab411de298d2f70571fdcb9a0b00af0d7135d61255e641c5eef70f991"
+  }
+ },
+ "app_version": "1.7.21",
+ "licence": "Apache-2.0",
+ "compose_project": "rea-grist",
+ "origin": "http://127.0.0.1:3220",
+ "database": "SQLite (home database /persist/home.sqlite3 and one .grist SQLite file per document)",
+ "tooling": {
+  "rea": "6.6.0",
+  "playwright-core": "1.58.2",
+  "chromium": "Chromium 155.0.8059.79 snap",
+  "node": "v24.22.0",
+  "python": "3.12.3",
+  "docker": "29.9.1",
+  "compose": "5.6.0",
+  "vm": "Ubuntu 24.04 amd64"
+ },
+ "seeded_objects": "2 workspaces besides Home (Lighthouse Rota, Granite Ledger), 3 documents (Night Shift Planner, Blue Heron Kitchen Menu, Quarry Audit 2026), 6 tables with typed columns (one formula column, one reference column) and 17 records, two documents shared with three invented people, the default user renamed to Rea Admin",
+ "seeded_names": {
+  "user_id": 5,
+  "org_id": 2,
+  "org_domain": "docs-5",
+  "workspaces": [
+   "Granite Ledger",
+   "Home",
+   "Lighthouse Rota"
+  ],
+  "docs": [
+   "Blue Heron Kitchen Menu",
+   "Night Shift Planner",
+   "Quarry Audit 2026"
+  ],
+  "tables": [
+   "Blue Heron Kitchen Menu",
+   "Night Shift Planner",
+   "Quarry Audit 2026"
+  ]
+ },
+ "ui_pages_visited": [
+  "/",
+  "/o/docs/",
+  "/o/docs/ws/3/",
+  "/o/docs/ws/4/",
+  "/o/docs/uSqDsYEz5xornkGvKczKKC/",
+  "/o/docs/kmAXkKXtUieMMqmnQBzKeU/",
+  "/o/docs/x3dzESpgNxTe9r8dUJjwTo/"
+ ],
+ "scripted_calls": {
+  "total": 53,
+  "by_method": {
+   "GET": 47,
+   "POST": 3,
+   "PATCH": 2,
+   "DELETE": 1
+  },
+  "non_2xx": [
+   {
+    "method": "GET",
+    "path": "/o/docs/api/docs/jmjdNNWmXvrx9wdS41RT3s",
+    "status": 404
+   }
+  ]
+ },
+ "scoped_har": {
+  "file": "grist.scoped.har",
+  "sha256": "0ba1ce8653bb74e217cf221c92cb213dddcfaf807aa2fc13687c03295532d2c9",
+  "bytes": 111326,
+  "records": 65,
+  "methods": {
+   "GET": 59,
+   "POST": 3,
+   "PATCH": 2,
+   "DELETE": 1
+  },
+  "statuses": {
+   "200": 64,
+   "404": 1
+  }
+ },
+ "scope_har": {
+  "origin": "http://127.0.0.1:3220",
+  "keep_regex": "^/o/docs/api/",
+  "kept": 65,
+  "dropped": {
+   "other-origin": 0,
+   "path": 168,
+   "non-json": 0,
+   "auth": 17,
+   "big-body": 0,
+   "over-max": 0
+  },
+  "methods": {
+   "GET": 59,
+   "POST": 3,
+   "PATCH": 2,
+   "DELETE": 1
+  },
+  "bytes": 110836
+ },
+ "credential_grep": {
+  "admin_file_value_hits": 0,
+  "token_shape_hits": 0,
+  "session_cookie_name_hits": 0,
+  "result": "pass"
+ },
+ "notes": [
+  "Grist runs single-user with the built-in minimal login: the Sign in button signs the browser in as GRIST_DEFAULT_EMAIL, there is no password; the seed uses an API key kept in .admin.",
+  "The web UI addresses the REST API under the org prefix /o/docs/api/, so the scripted calls use it too and keep_regex is ^/o/docs/api/."
+ ],
+ "manifests": {
+  "rules": {
+   "evidence_id": "ev_017809f63eed60ddfc1f97299fe7f7e58e3d111585cd49939499d18341fdbb99",
+   "confidence": "inferred",
+   "tools": 31,
+   "tools_by_method": {
+    "DELETE": 1,
+    "PATCH": 2,
+    "GET": 25,
+    "POST": 3
+   },
+   "templated_groups": 11,
+   "params_by_rule": {
+    "sibling-variance": 4,
+    "numeric": 7
+   },
+   "query_parameter_names_distinct": [
+    "filter",
+    "hidden",
+    "includeSupport",
+    "limit",
+    "q",
+    "sort"
+   ],
+   "tools_with_body_shape": 4,
+   "excluded": 0,
+   "unknowns": [
+    "authorization-model",
+    "response-semantics",
+    "state-transition"
+   ],
+   "tool_names": [
+    "delete_o_docs_docs_jmjdnnwmxvrx9wds41rt3s",
+    "patch_o_docs_docs_jmjdnnwmxvrx9wds41rt3s",
+    "get_o_docs_docs_kmaxkkxtuiemmqmnqbzkeu_tables_dishes_columns",
+    "get_o_docs_docs_kmaxkkxtuiemmqmnqbzkeu_tables_dishes_records",
+    "get_o_docs_docs_usqdsyez5xornkgvkczkkc_attachments",
+    "get_o_docs_docs_usqdsyez5xornkgvkczkkc_tables_keepers_column",
+    "get_o_docs_docs_usqdsyez5xornkgvkczkkc_tables_keepers_record",
+    "get_o_docs_docs_usqdsyez5xornkgvkczkkc_tables_shifts_columns",
+    "get_o_docs_docs_usqdsyez5xornkgvkczkkc_tables_shifts_records",
+    "get_o_docs_docs_usqdsyez5xornkgvkczkkc_tables_supplies_colum",
+    "get_o_docs_docs_usqdsyez5xornkgvkczkkc_tables_supplies_recor",
+    "patch_o_docs_docs_usqdsyez5xornkgvkczkkc_tables_supplies_rec",
+    "post_o_docs_docs_usqdsyez5xornkgvkczkkc_tables_supplies_reco",
+    "post_o_docs_docs_usqdsyez5xornkgvkczkkc_tables_supplies_re_2",
+    "get_o_docs_docs_x3dzespgnxte9r8dujjwto_tables_carts_columns",
+    "get_o_docs_docs_x3dzespgnxte9r8dujjwto_tables_carts_records",
+    "get_o_docs_docs_x3dzespgnxte9r8dujjwto_tables_terraces_colum",
+    "get_o_docs_docs_x3dzespgnxte9r8dujjwto_tables_terraces_recor",
+    "get_o_docs_docs_by_doc_id",
+    "get_o_docs_docs_access_by_doc_id",
+    "get_o_docs_docs_sql_by_doc_id",
+    "get_o_docs_docs_tables_by_doc_id",
+    "get_o_docs_orgs",
+    "get_o_docs_orgs_by_id",
+    "get_o_docs_orgs_access_by_id",
+    "get_o_docs_orgs_usage_by_id",
+    "get_o_docs_orgs_workspaces_by_id",
+    "get_o_docs_profile_user",
+    "get_o_docs_workspaces_by_id",
+    "get_o_docs_workspaces_access_by_id",
+    "post_o_docs_workspaces_docs_by_id"
+   ]
+  },
+  "norules": {
+   "evidence_id": "ev_3bddad8c7f0f504e41de8fddb818530ad3c43e50f6df5cf84b0b168755dac4be",
+   "confidence": "inferred",
+   "tools": 43,
+   "tools_by_method": {
+    "DELETE": 1,
+    "GET": 37,
+    "PATCH": 2,
+    "POST": 3
+   },
+   "templated_groups": 7,
+   "params_by_rule": {
+    "numeric": 7
+   },
+   "query_parameter_names_distinct": [
+    "filter",
+    "hidden",
+    "includeSupport",
+    "limit",
+    "q",
+    "sort"
+   ],
+   "tools_with_body_shape": 4,
+   "excluded": 0,
+   "unknowns": [
+    "authorization-model",
+    "response-semantics",
+    "state-transition"
+   ],
+   "tool_names": [
+    "delete_o_docs_docs_jmjdnnwmxvrx9wds41rt3s",
+    "get_o_docs_docs_jmjdnnwmxvrx9wds41rt3s",
+    "patch_o_docs_docs_jmjdnnwmxvrx9wds41rt3s",
+    "get_o_docs_docs_kmaxkkxtuiem",
+    "get_o_docs_docs_kmaxkkxtuiemmqmnqbzkeu",
+    "get_o_docs_docs_kmaxkkxtuiemmqmnqbzkeu_access",
+    "get_o_docs_docs_kmaxkkxtuiemmqmnqbzkeu_sql",
+    "get_o_docs_docs_kmaxkkxtuiemmqmnqbzkeu_tables",
+    "get_o_docs_docs_kmaxkkxtuiemmqmnqbzkeu_tables_dishes_columns",
+    "get_o_docs_docs_kmaxkkxtuiemmqmnqbzkeu_tables_dishes_records",
+    "get_o_docs_docs_usqdsyez5xor",
+    "get_o_docs_docs_usqdsyez5xornkgvkczkkc",
+    "get_o_docs_docs_usqdsyez5xornkgvkczkkc_access",
+    "get_o_docs_docs_usqdsyez5xornkgvkczkkc_attachments",
+    "get_o_docs_docs_usqdsyez5xornkgvkczkkc_sql",
+    "get_o_docs_docs_usqdsyez5xornkgvkczkkc_tables",
+    "get_o_docs_docs_usqdsyez5xornkgvkczkkc_tables_keepers_column",
+    "get_o_docs_docs_usqdsyez5xornkgvkczkkc_tables_keepers_record",
+    "get_o_docs_docs_usqdsyez5xornkgvkczkkc_tables_shifts_columns",
+    "get_o_docs_docs_usqdsyez5xornkgvkczkkc_tables_shifts_records",
+    "get_o_docs_docs_usqdsyez5xornkgvkczkkc_tables_supplies_colum",
+    "get_o_docs_docs_usqdsyez5xornkgvkczkkc_tables_supplies_recor",
+    "patch_o_docs_docs_usqdsyez5xornkgvkczkkc_tables_supplies_rec",
+    "post_o_docs_docs_usqdsyez5xornkgvkczkkc_tables_supplies_reco",
+    "post_o_docs_docs_usqdsyez5xornkgvkczkkc_tables_supplies_re_2",
+    "get_o_docs_docs_x3dzespgnxte",
+    "get_o_docs_docs_x3dzespgnxte9r8dujjwto",
+    "get_o_docs_docs_x3dzespgnxte9r8dujjwto_access",
+    "get_o_docs_docs_x3dzespgnxte9r8dujjwto_sql",
+    "get_o_docs_docs_x3dzespgnxte9r8dujjwto_tables",
+    "get_o_docs_docs_x3dzespgnxte9r8dujjwto_tables_carts_columns",
+    "get_o_docs_docs_x3dzespgnxte9r8dujjwto_tables_carts_records",
+    "get_o_docs_docs_x3dzespgnxte9r8dujjwto_tables_terraces_colum",
+    "get_o_docs_docs_x3dzespgnxte9r8dujjwto_tables_terraces_recor",
+    "get_o_docs_orgs",
+    "get_o_docs_orgs_by_id",
+    "get_o_docs_orgs_access_by_id",
+    "get_o_docs_orgs_usage_by_id",
+    "get_o_docs_orgs_workspaces_by_id",
+    "get_o_docs_profile_user",
+    "get_o_docs_workspaces_by_id",
+    "get_o_docs_workspaces_access_by_id",
+    "post_o_docs_workspaces_docs_by_id"
+   ]
+  }
+ },
+ "capture_evidence": {
+  "evidence_id": "ev_f74ce8e1b2435b5ff5ce9cf930d3ece7b866503615fbd15e54657be3a268d1a1",
+  "records": 65,
+  "confidence": "observed"
+ }
+}

@@ -1,0 +1,301 @@
+{
+ "app": "miniflux",
+ "image": "miniflux/miniflux:2.3.3",
+ "image_digest": "miniflux/miniflux@sha256:49d7b60987616387c306a8023087b31f2c9b7b21288b523026cb04058e8b6dbb",
+ "app_version": "2.3.3",
+ "app_build": "commit c4d54f87, built 2026-07-23, go1.26.5 (from `miniflux -i`)",
+ "db_image": "postgres:17.11",
+ "db_image_digest": "postgres@sha256:2d2b8998d31037bf721cfdf764d76ba74171b4fab3431b7f72c27c56ddbdf9e3",
+ "feed_host_image": "nginx:1.30.6-alpine",
+ "feed_host_image_digest": "nginx@sha256:970364228b1e4f932abc22d321932816782cca8a20b85a77552a7cfe9acfb3b5",
+ "licence": "Apache-2.0 (image label org.opencontainers.image.licenses and the upstream LICENSE)",
+ "compose_project": "rea-miniflux",
+ "origin": "http://127.0.0.1:3217",
+ "database": "PostgreSQL 17.11 (second compose service, no host port); migrations run by RUN_MIGRATIONS=1 (schema version 132)",
+ "resource_constraint": false,
+ "tooling": {
+  "rea": "6.6.0",
+  "playwright-core": "1.58.2",
+  "chromium": "Chromium 155.0.8059.79 snap",
+  "node": "v24.22.0",
+  "python": "3.12.3",
+  "docker": "29.9.1",
+  "compose": "5.6.0",
+  "vm": "Ubuntu 24.04 amd64"
+ },
+ "scoped_har": {
+  "file": "miniflux.scoped.har",
+  "sha256": "da65467c3008cfc9b99d9b69cadc9c63bf8b1d66d377e0ea4b65504982c42072",
+  "bytes": 279002,
+  "records": 86,
+  "methods": {
+   "GET": 76,
+   "PUT": 7,
+   "POST": 2,
+   "DELETE": 1
+  },
+  "statuses": {
+   "200": 75,
+   "404": 2,
+   "201": 3,
+   "204": 6
+  }
+ },
+ "scope_har": {
+  "origin": "http://127.0.0.1:3217",
+  "keep_regex": "^/v1/",
+  "drop_regex": "default (login|logout|signup|password|session|token|oauth|csrf)",
+  "max_body": 60000,
+  "max_records": 150,
+  "kept": 86,
+  "dropped": {
+   "other-origin": 0,
+   "path": 67,
+   "non-json": 0,
+   "auth": 1,
+   "big-body": 0,
+   "over-max": 0
+  },
+  "notes": [
+   "path=67 is the server-rendered UI: 15 HTML pages (including the service worker's offline page), 13 stylesheets, 14 scripts, 26 SVG icons",
+   "auth=1 is POST /login (the UI sign-in form, a 302)",
+   "the 7 bodiless 204 writes (DELETE category, PUT /v1/entries x2, PUT bookmark x2, PUT feed refresh) are kept by scope_har.py but rea excludes them as non-json groups, so the manifest's write tools are POST/PUT categories, PUT feeds/{id} and POST discover"
+  ]
+ },
+ "credential_grep": {
+  "admin_and_db_password_literal_hits": 0,
+  "basic_auth_value_hits": 0,
+  "session_cookie_value_hits": 0,
+  "token_shape_hits_hf_ghp_Bearer": 0,
+  "result": "pass"
+ },
+ "evidence": {
+  "capture_evidence_id": "ev_d65576c62c9473341453db9efd48b5124980707e66c363e2c210dd404a877235",
+  "capture_total_records": 86,
+  "capture_confidence": "observed",
+  "manifest_evidence_id": "ev_87cdbc359ae8ac5356656a9666026abc94623345fffe2f620f3a1c8eee2ff841",
+  "manifest_norules_evidence_id": "ev_88757ead75bfeaaba2ef67de37877306d98c7d7bf88531692023493ad8fd82a3",
+  "manifest_view_digest": "c0e8757f6beec6a85ea7773d26c8210513165fab4144143cf616e6beddd3da13"
+ },
+ "manifest": {
+  "evidence_id": "ev_87cdbc359ae8ac5356656a9666026abc94623345fffe2f620f3a1c8eee2ff841",
+  "confidence": "inferred",
+  "view_digest": "c0e8757f6beec6a85ea7773d26c8210513165fab4144143cf616e6beddd3da13",
+  "template_rules": [
+   "after-uid-literal",
+   "opaque-token",
+   "sibling-variance"
+  ],
+  "tools": 22,
+  "tools_by_method": {
+   "GET": 18,
+   "POST": 2,
+   "PUT": 2
+  },
+  "templated_groups": 14,
+  "params_by_rule": {
+   "numeric": 13
+  },
+  "params_total": 13,
+  "query_parameter_names_total": 16,
+  "query_parameter_names_distinct": [
+   "before_entry_id",
+   "category_id",
+   "counts",
+   "direction",
+   "limit",
+   "order",
+   "published_after",
+   "search",
+   "starred",
+   "status"
+  ],
+  "tools_with_body_shape": 4,
+  "statuses_seen": [
+   200,
+   201,
+   404
+  ],
+  "records": 80,
+  "excluded": 4,
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 22,
+   "total": 22,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "limitations_count": 9,
+  "tool_names": [
+   "get_categories",
+   "post_categories",
+   "put_categories_by_id",
+   "get_categories_entries_by_id",
+   "get_categories_entries_by_id_id_2",
+   "get_categories_feeds_by_id",
+   "post_discover",
+   "get_entries",
+   "get_entries_by_id",
+   "get_feeds",
+   "get_feeds_counters",
+   "get_feeds_by_id",
+   "put_feeds_by_id",
+   "get_feeds_entries_by_id",
+   "get_feeds_entries_by_id_id_2",
+   "get_feeds_icon_by_id",
+   "get_integrations_status",
+   "get_me",
+   "get_users",
+   "get_users_mina_okafor",
+   "get_users_by_id",
+   "get_version"
+  ]
+ },
+ "manifest_norules": {
+  "evidence_id": "ev_88757ead75bfeaaba2ef67de37877306d98c7d7bf88531692023493ad8fd82a3",
+  "confidence": "inferred",
+  "view_digest": "fed59dabb0a27b2c22f419e7d7d450588659f8171ac0d942db096cb78c8d40d8",
+  "template_rules": [],
+  "tools": 22,
+  "tools_by_method": {
+   "GET": 18,
+   "POST": 2,
+   "PUT": 2
+  },
+  "templated_groups": 14,
+  "params_by_rule": {
+   "numeric": 13
+  },
+  "params_total": 13,
+  "query_parameter_names_total": 16,
+  "query_parameter_names_distinct": [
+   "before_entry_id",
+   "category_id",
+   "counts",
+   "direction",
+   "limit",
+   "order",
+   "published_after",
+   "search",
+   "starred",
+   "status"
+  ],
+  "tools_with_body_shape": 4,
+  "statuses_seen": [
+   200,
+   201,
+   404
+  ],
+  "records": 80,
+  "excluded": 4,
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 22,
+   "total": 22,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "limitations_count": 8,
+  "tool_names": [
+   "get_categories",
+   "post_categories",
+   "put_categories_by_id",
+   "get_categories_entries_by_id",
+   "get_categories_entries_by_id_id_2",
+   "get_categories_feeds_by_id",
+   "post_discover",
+   "get_entries",
+   "get_entries_by_id",
+   "get_feeds",
+   "get_feeds_counters",
+   "get_feeds_by_id",
+   "put_feeds_by_id",
+   "get_feeds_entries_by_id",
+   "get_feeds_entries_by_id_id_2",
+   "get_feeds_icon_by_id",
+   "get_integrations_status",
+   "get_me",
+   "get_users",
+   "get_users_mina_okafor",
+   "get_users_by_id",
+   "get_version"
+  ]
+ },
+ "manifest_vs_norules": {
+  "tools": [
+   22,
+   22
+  ],
+  "templated_groups": [
+   14,
+   14
+  ]
+ },
+ "seeded_objects": "admin rea-admin and a second reader mina-okafor; 3 categories (Coastal Operations, Quarry and Stone, Kitchens and Supplies; plus the default All); 4 feeds served by a local feed host (Lighthouse Rota Bulletin and Blue Heron Kitchen Specials as RSS 2.0, Granite Ledger Quarry Notes and Saltmarsh Depot Tide Log as Atom 1.0); 12 entries with invented authors (Ada Finch, Rui Castellanos, Mina Okafor, Tomas Vey, Marisol Okonkwo-Reyes); 2 entries read, 2 starred",
+ "seeded_objects_detail": {
+  "users": [
+   "rea-admin (admin, id 1)",
+   "mina-okafor (reader, id 2, random password discarded)"
+  ],
+  "categories": {
+   "Coastal Operations": [
+    "Lighthouse Rota Bulletin",
+    "Saltmarsh Depot Tide Log"
+   ],
+   "Quarry and Stone": [
+    "Granite Ledger Quarry Notes"
+   ],
+   "Kitchens and Supplies": [
+    "Blue Heron Kitchen Specials"
+   ]
+  },
+  "entries": {
+   "Lighthouse Rota Bulletin": [
+    "Winter rota published: shift three starts at 22:00",
+    "Lamp oil budget set at 180 litres (read)",
+    "Fog-horn compressor two back in service"
+   ],
+   "Granite Ledger Quarry Notes": [
+    "Quarterly stone count: 412 blocks (starred)",
+    "Cart number 7 retired (read)",
+    "Seaward stack re-measured at 31 metres"
+   ],
+   "Blue Heron Kitchen Specials": [
+    "Smoked kelp broth returns for the night shift (starred)",
+    "Tide-table menu: 36 covers per sitting",
+    "Saffron oat bread on spring tides"
+   ],
+   "Saltmarsh Depot Tide Log": [
+    "Barge Pale Meridian docked at berth B4",
+    "Rope delivery delayed by the neap tide",
+    "Copperfield Annex collects 12 drums"
+   ]
+  },
+  "feed_urls": "http://feeds/<file> on the compose network (nginx serving ./feeds read-only); item links and site links on *.example.test",
+  "scratch_during_capture": "category Rea scratch category created (POST 201), renamed (PUT 201), listed, deleted (DELETE 204), re-read (404); entry 'Seaward stack re-measured at 31 metres' marked read then unread; entry 'Copperfield Annex collects 12 drums' starred then unstarred; feed Saltmarsh Depot Tide Log updated (no-op PUT 201) and refreshed (204)"
+ },
+ "ui_pages_visited": [
+  "/ -> /login (sign-in form)",
+  "/unread",
+  "/starred",
+  "/history",
+  "/feeds",
+  "/feed/<Granite Ledger Quarry Notes>/entries",
+  "/feed/<Granite Ledger Quarry Notes>/entry/<Quarterly stone count>",
+  "/categories",
+  "/category/<Coastal Operations>/entries",
+  "/search?q=kelp",
+  "/settings",
+  "/users"
+ ]
+}

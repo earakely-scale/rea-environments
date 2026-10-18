@@ -1,0 +1,296 @@
+{
+ "app": "n8n",
+ "image": "n8nio/n8n:1.123.85",
+ "image_digest": "n8nio/n8n@sha256:8d4e5a2b73e5ac3bdbd1cc310f5bb0a12897851e700413cf8674b6bf0f374d5a",
+ "app_version": "1.123.85",
+ "app_release_line": "1.x (1.123.85 is the newest 1.x tag on Docker Hub; 2.x is current upstream)",
+ "base_image": "Docker Hardened Images node 24.13.1 alpine 3.22 (image labels)",
+ "licence": "Sustainable Use License 1.0, fair-code (upstream LICENSE.md); files with .ee in the name or directory are under the n8n Enterprise License and are not licensed for use without an enterprise key",
+ "compose_project": "rea-n8n",
+ "origin": "http://127.0.0.1:3218",
+ "database": "SQLite (the image default, volume n8n-data at /home/node/.n8n)",
+ "resource_constraint": false,
+ "tooling": {
+  "rea": "6.6.0",
+  "playwright-core": "1.58.2",
+  "chromium": "Chromium 155.0.8059.79 snap",
+  "node": "v24.22.0",
+  "python": "3.12.3",
+  "docker": "29.9.1",
+  "compose": "5.6.0",
+  "vm": "Ubuntu 24.04 amd64"
+ },
+ "scoped_har": {
+  "file": "n8n.scoped.har",
+  "sha256": "ad32e5104208daeb3488f6feefce0f189fe6ade22e3857907a10213009a022a3",
+  "bytes": 189640,
+  "records": 72,
+  "methods": {
+   "GET": 65,
+   "POST": 3,
+   "PATCH": 2,
+   "DELETE": 2
+  },
+  "statuses": {
+   "200": 71,
+   "404": 1
+  }
+ },
+ "scope_har": {
+  "origin": "http://127.0.0.1:3218",
+  "keep_regex": "^/rest/",
+  "drop_regex": "login|logout|signup|password|session|token|oauth|csrf|/rest/settings|/rest/push|/rest/owner|/rest/invitations",
+  "max_body": 60000,
+  "max_records": 150,
+  "kept": 72,
+  "dropped": {
+   "other-origin": 1,
+   "path": 249,
+   "non-json": 1,
+   "auth": 6,
+   "big-body": 0,
+   "over-max": 0
+  },
+  "notes": [
+   "path=249 is the editor bundle (243 /assets files, 3 /static files), /types/nodes.json and /types/credentials.json (600 KB), and the /signin HTML shell",
+   "auth=6 is /rest/settings x3 (the front-end settings document; it also carries the telemetry client configuration), /rest/login x2 (POST sign-in, GET current user) and POST /rest/ai/sessions/metadata (403; 'session' in the path)",
+   "other-origin=1 is the editor fetching dynamic banners from api.n8n.io/api/banners (N8N_DYNAMIC_BANNERS_ENABLED was not set to false)",
+   "non-json=1 is GET /rest/external-secrets/secrets (404 HTML; an enterprise feature probed by the credentials page)"
+  ]
+ },
+ "credential_grep": {
+  "owner_password_and_encryption_key_literal_hits": 0,
+  "auth_cookie_and_browser_id_values_hits": 0,
+  "jwt_prefix_eyJ_hits": 0,
+  "token_shape_hits_hf_ghp_Bearer_phc": 0,
+  "secret_or_token_keys_with_values": 0,
+  "result": "pass"
+ },
+ "evidence": {
+  "capture_evidence_id": "ev_2df554f077a7336e5d535fa9e49df0b2d984c88dfc06c774e0343f26f9176a3e",
+  "capture_total_records": 72,
+  "capture_confidence": "observed",
+  "manifest_evidence_id": "ev_3141f2074cbb0bf27bbe9cedb95b7c69f2de89841d3fb0212660b7dfac094db8",
+  "manifest_norules_evidence_id": "ev_a6e30b54d36f0e81d484db6ab668ed1fd871269bae2ec56d11f39deabd198283",
+  "manifest_view_digest": "16b9e566b91c27ac57150c25b8c359fa4fbe7e9259493cf7e47361d41bba6dfd"
+ },
+ "manifest": {
+  "evidence_id": "ev_3141f2074cbb0bf27bbe9cedb95b7c69f2de89841d3fb0212660b7dfac094db8",
+  "confidence": "inferred",
+  "view_digest": "16b9e566b91c27ac57150c25b8c359fa4fbe7e9259493cf7e47361d41bba6dfd",
+  "template_rules": [
+   "after-uid-literal",
+   "opaque-token",
+   "sibling-variance"
+  ],
+  "tools": 30,
+  "tools_by_method": {
+   "GET": 23,
+   "POST": 3,
+   "DELETE": 2,
+   "PATCH": 2
+  },
+  "templated_groups": 6,
+  "params_by_rule": {
+   "numeric": 1,
+   "sibling-variance": 5
+  },
+  "params_total": 6,
+  "query_parameter_names_total": 24,
+  "query_parameter_names_distinct": [
+   "filter",
+   "includeData",
+   "includeFolders",
+   "includeGlobal",
+   "includeScopes",
+   "limit",
+   "skip",
+   "sortBy",
+   "take",
+   "withUsageCount",
+   "workflowId"
+  ],
+  "tools_with_body_shape": 5,
+  "statuses_seen": [
+   200,
+   404
+  ],
+  "records": 72,
+  "excluded": 0,
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 30,
+   "total": 30,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "limitations_count": 9,
+  "tool_names": [
+   "get_rest_active_workflows",
+   "get_rest_community_node_types",
+   "get_rest_credentials",
+   "get_rest_credentials_for_workflow",
+   "get_rest_cta_become_creator",
+   "get_rest_data_tables_global",
+   "get_rest_data_tables_global_limits",
+   "get_rest_executions",
+   "get_rest_executions_by_id",
+   "get_rest_insights_summary",
+   "get_rest_license",
+   "get_rest_module_settings",
+   "get_rest_projects",
+   "get_rest_projects_pliwgg1jdk2kbkgs_data_tables",
+   "get_rest_projects_pliwgg1jdk2kbkgs_data_tables_columns_by_da",
+   "get_rest_projects_pliwgg1jdk2kbkgs_data_tables_rows_by_data",
+   "get_rest_projects_by_project_id",
+   "get_rest_roles",
+   "get_rest_tags",
+   "post_rest_tags",
+   "delete_rest_tags_lvqnhb0heimbid9r",
+   "patch_rest_tags_lvqnhb0heimbid9r",
+   "get_rest_users",
+   "get_rest_workflows",
+   "post_rest_workflows",
+   "delete_rest_workflows_qcjksrn0sgwge3ix",
+   "patch_rest_workflows_qcjksrn0sgwge3ix",
+   "post_rest_workflows_qcjksrn0sgwge3ix_archive",
+   "get_rest_workflows_by_workflow_id",
+   "get_rest_workflows_executions_last_successful_by_workflow_id"
+  ]
+ },
+ "manifest_norules": {
+  "evidence_id": "ev_a6e30b54d36f0e81d484db6ab668ed1fd871269bae2ec56d11f39deabd198283",
+  "confidence": "inferred",
+  "view_digest": "2184516528057166f597cb7416026d0cd12d09b0864513bb5e371003bb7ff4de",
+  "template_rules": [],
+  "tools": 40,
+  "tools_by_method": {
+   "GET": 33,
+   "POST": 3,
+   "DELETE": 2,
+   "PATCH": 2
+  },
+  "templated_groups": 1,
+  "params_by_rule": {
+   "numeric": 1
+  },
+  "params_total": 1,
+  "query_parameter_names_total": 26,
+  "query_parameter_names_distinct": [
+   "filter",
+   "includeData",
+   "includeFolders",
+   "includeGlobal",
+   "includeScopes",
+   "limit",
+   "skip",
+   "sortBy",
+   "take",
+   "withUsageCount",
+   "workflowId"
+  ],
+  "tools_with_body_shape": 5,
+  "statuses_seen": [
+   200,
+   404
+  ],
+  "records": 72,
+  "excluded": 0,
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 40,
+   "total": 40,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "limitations_count": 8,
+  "tool_names": [
+   "get_rest_active_workflows",
+   "get_rest_community_node_types",
+   "get_rest_credentials",
+   "get_rest_credentials_for_workflow",
+   "get_rest_cta_become_creator",
+   "get_rest_data_tables_global",
+   "get_rest_data_tables_global_limits",
+   "get_rest_executions",
+   "get_rest_executions_by_id",
+   "get_rest_insights_summary",
+   "get_rest_license",
+   "get_rest_module_settings",
+   "get_rest_projects",
+   "get_rest_projects_count",
+   "get_rest_projects_my_projects",
+   "get_rest_projects_personal",
+   "get_rest_projects_pliwgg1jdk2kbkgs",
+   "get_rest_projects_pliwgg1jdk2kbkgs_data_tables",
+   "get_rest_projects_pliwgg1jdk2kbkgs_data_tables_4jof9jbfodz8y",
+   "get_rest_projects_pliwgg1jdk2kbkgs_data_tables_4jof9jbfodz_2",
+   "get_rest_projects_pliwgg1jdk2kbkgs_data_tables_6s4t9bretistc",
+   "get_rest_projects_pliwgg1jdk2kbkgs_data_tables_6s4t9bretis_2",
+   "get_rest_roles",
+   "get_rest_tags",
+   "post_rest_tags",
+   "delete_rest_tags_lvqnhb0heimbid9r",
+   "patch_rest_tags_lvqnhb0heimbid9r",
+   "get_rest_users",
+   "get_rest_workflows",
+   "post_rest_workflows",
+   "get_rest_workflows_5lpa94ml1gybgaqx",
+   "get_rest_workflows_fkmwxmxngagvsxfg",
+   "get_rest_workflows_fkmwxmxngagvsxfg_executions_last_successf",
+   "get_rest_workflows_fvxqssip8wa8vqq2",
+   "delete_rest_workflows_qcjksrn0sgwge3ix",
+   "get_rest_workflows_qcjksrn0sgwge3ix",
+   "patch_rest_workflows_qcjksrn0sgwge3ix",
+   "post_rest_workflows_qcjksrn0sgwge3ix_archive",
+   "get_rest_workflows_ydr9n16753tzr7zc",
+   "get_rest_workflows_ydr9n16753tzr7zc_executions_last_successf"
+  ]
+ },
+ "manifest_vs_norules": {
+  "tools": [
+   30,
+   40
+  ],
+  "templated_groups": [
+   6,
+   1
+  ]
+ },
+ "seeded_objects": "owner Rea Admin (rea-admin@example.test); 5 tags (Granite Ledger, Blue Heron Kitchen, Lighthouse Rota, Saltmarsh Depot, Quarterly Audit); 4 workflows built from core nodes only, no credentials (Granite Ledger stone count digest, Blue Heron Kitchen sitting planner, Lighthouse Rota shift handover, Saltmarsh Depot barge drop log); 2 manual executions; 2 data tables (Lamp Oil Drops with 4 rows, Quarry Block Tally with 3 rows)",
+ "seeded_objects_detail": {
+  "owner": "Rea Admin <rea-admin@example.test>, created through POST /rest/owner/setup",
+  "workflows": {
+   "Granite Ledger stone count digest": "Manual Trigger 'Start stone count' -> Edit Fields 'Count north quarry blocks' (quarry north quarry, blocks 412, auditor Rui Castellanos, reference GL-2291) -> No Operation 'Ledger closed for the quarter', plus a sticky note; tags Granite Ledger, Quarterly Audit; executed once (success)",
+   "Blue Heron Kitchen sitting planner": "Manual Trigger 'Start sitting plan' -> Edit Fields 'Plan tide-table sitting' (covers 36, head_cook Marisol Okonkwo-Reyes, broth smoked kelp) -> If 'More than 30 covers?' -> 'Open the second dining room' / 'Single room is enough'; tag Blue Heron Kitchen; executed once (success)",
+   "Lighthouse Rota shift handover": "Schedule Trigger 'Every night at 22:00' (cron, inactive) -> Edit Fields 'Write handover note' (shift three, hands over 06:00, tide tables Ada Finch); tag Lighthouse Rota",
+   "Saltmarsh Depot barge drop log": "Manual Trigger 'Start drop log' -> Edit Fields 'Record barge drop' (barge Pale Meridian, berth B4, 6 drums, barge master Tomas Vey); tags Saltmarsh Depot, Quarterly Audit"
+  },
+  "data_tables": {
+   "Lamp Oil Drops": "columns lighthouse, litres, barge, signed_by; rows Granite Point Light 180 Pale Meridian Ada Finch / Tidewater Steps Light 165 Pale Meridian Rui Castellanos / Copperfield Beacon 140 Ember Compass Mina Okafor / Saltmarsh Bar Light 120 Ember Compass Tomas Vey",
+   "Quarry Block Tally": "columns quarry, blocks, auditor; rows North quarry 412 Rui Castellanos / Tidal yard 97 Rui Castellanos / Seaward stack 58 Ada Finch"
+  },
+  "no_second_user": "an invitation would add an inviteAcceptUrl (a sign-up link for that instance) to every /rest/users reply, so the instance has the owner only",
+  "scratch_during_capture": "tag Rea scratch tag created (POST), renamed (PATCH), listed, deleted (DELETE {data:true}), listed; workflow Rea scratch workflow created (POST), renamed (PATCH with versionId), read, archived (POST /archive), deleted (DELETE), re-read (404)"
+ },
+ "ui_pages_visited": [
+  "/signin?redirect=/settings/personal (sign-in form; lands on /settings/personal)",
+  "/workflow/<Granite Ledger stone count digest> (canvas)",
+  "/workflow/<Blue Heron Kitchen sitting planner>/executions",
+  "/home/executions",
+  "/projects/<personal>/datatables",
+  "/settings/personal",
+  "/home/credentials",
+  "/home/workflows"
+ ]
+}

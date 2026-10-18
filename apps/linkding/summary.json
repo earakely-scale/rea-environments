@@ -1,0 +1,235 @@
+{
+ "app": "linkding",
+ "image": "sissbruecker/linkding:1.47.0",
+ "image_digest": "sissbruecker/linkding@sha256:e35cb50e0581178f245125ffaa909c565416c94c9f22ace305a7d234a4345522",
+ "app_version": "1.47.0",
+ "app_version_full": "1.47.0 (GET /health)",
+ "compose_project": "rea-linkding",
+ "origin": "http://127.0.0.1:3203",
+ "database": "sqlite (/etc/linkding/data/db.sqlite3)",
+ "tooling": {
+  "rea": "6.6.0",
+  "playwright-core": "1.58.2",
+  "chromium": "Chromium 155.0.8059.79 snap",
+  "node": "v24.22.0",
+  "python": "3.12.3",
+  "docker": "29.9.1",
+  "compose": "v5.6.0",
+  "agent-env": "0.9.1334",
+  "vm": "Ubuntu 24.04 amd64"
+ },
+ "seeded_objects": "superuser rea-admin; 6 bookmarks on invented example.test URLs with titles, descriptions and notes (Granite Ledger quarterly stone count, Blue Heron Kitchen tide-table menu, Saltmarsh Depot gate log, Copperfield Annex cart register, Lighthouse Rota winter shift plan, Tide tables for January; 2 archived, 1 unread); 8 tags; bundles Quarry and depot audits and Blue Heron reading list; a text asset granite-ledger-gl-2291-tally.txt on the Granite Ledger bookmark",
+ "seeded_objects_detail": {
+  "superuser": "rea-admin (LD_SUPERUSER_NAME; password generated into .admin)",
+  "bookmarks": [
+   "Granite Ledger quarterly stone count (granite-ledger, audit)",
+   "Blue Heron Kitchen tide-table menu (blue-heron-kitchen, menus; unread)",
+   "Saltmarsh Depot gate log (saltmarsh-depot, audit)",
+   "Copperfield Annex cart register (copperfield-annex, granite-ledger; archived)",
+   "Lighthouse Rota winter shift plan (lighthouse-rota)",
+   "Tide tables for January (lighthouse-rota, blue-heron-kitchen; archived)"
+  ],
+  "tags": [
+   "audit",
+   "granite-ledger",
+   "blue-heron-kitchen",
+   "menus",
+   "saltmarsh-depot",
+   "copperfield-annex",
+   "lighthouse-rota",
+   "night-shift"
+  ],
+  "bundles": [
+   "Quarry and depot audits (any_tags granite-ledger saltmarsh-depot, excluded menus)",
+   "Blue Heron reading list (all_tags blue-heron-kitchen, search kelp)"
+  ],
+  "assets": [
+   "granite-ledger-gl-2291-tally.txt on bookmark 1 (multipart upload)"
+  ],
+  "scratch_during_capture": "bookmark Rea scratch bookmark created (POST 201), PATCHed, archived (204), read, unarchived (204), PUT, deleted (204), re-read (404); tag rea-scratch-tag created, read, deleted; bundle Rea scratch bundle created, PATCHed, deleted"
+ },
+ "ui_pages_visited": [
+  "/login/ (login form)",
+  "/bookmarks (landing after login)",
+  "/bookmarks?q=#granite-ledger",
+  "/bookmarks/archived",
+  "/tags",
+  "/bundles",
+  "/settings"
+ ],
+ "scoped_har": {
+  "file": "linkding.scoped.har",
+  "sha256": "255d191acf58773d0d7376a2d048dc6296f9c7baa6e7ae675053506734ff2b40",
+  "bytes": 97323,
+  "records": 64,
+  "methods": {
+   "GET": 53,
+   "POST": 5,
+   "PATCH": 2,
+   "PUT": 1,
+   "DELETE": 3
+  },
+  "statuses": {
+   "200": 55,
+   "201": 3,
+   "204": 5,
+   "404": 1
+  }
+ },
+ "scope_har": {
+  "origin": "http://127.0.0.1:3203",
+  "keep_regex": "^/api/",
+  "drop_regex": "default (login|logout|signup|password|session|token|oauth|csrf)",
+  "max_body": 60000,
+  "max_records": 150,
+  "kept": 64,
+  "dropped": {
+   "other-origin": 0,
+   "path": 50,
+   "non-json": 0,
+   "auth": 2,
+   "big-body": 0,
+   "over-max": 0
+  },
+  "notes": [
+   "linkding UI pages are server-rendered and call no /api/ route, so every kept record is from the scripted in-page fetch sequence",
+   "auth=2 are the login form POST and the GET of /login/; path=50 are HTML pages and static assets"
+  ]
+ },
+ "credential_grep": {
+  "admin_password_literal_hits": 0,
+  "token_shape_hits_hf_ghp_Bearer": 0,
+  "session_cookie_name_hits": 0,
+  "secret_like_response_keys": 0,
+  "result": "pass"
+ },
+ "resource_constraint": false,
+ "evidence": {
+  "capture_evidence_id": "ev_07064b4e06c39fb3e0b3c5331f4786510cf63f2f2f798640f74bbec660a08b7e",
+  "capture_total_records": 64,
+  "capture_confidence": "observed",
+  "manifest_evidence_id": "ev_90f90a6a50da524179de380eec1153fd19b59eccb38018c84f882897c1a52994",
+  "manifest_norules_evidence_id": "ev_9257023092e1dff3f6c0e2d683b29446de135189bcfcfab64bbe486cb260c282",
+  "manifest_view_digest": "ec9cfed116ab7829c1e34bbef9494b41c0deb4c84d8a55479811d0a1f8fae24e"
+ },
+ "manifest": {
+  "tools": 23,
+  "tools_by_method": {
+   "GET": 12,
+   "POST": 5,
+   "DELETE": 3,
+   "PATCH": 2,
+   "PUT": 1
+  },
+  "templated_groups": 13,
+  "params_by_rule": {
+   "numeric": 14
+  },
+  "params_total": 14,
+  "query_parameter_names_total": 10,
+  "query_parameter_names_distinct": [
+   "bundle",
+   "disable_html_snapshot",
+   "disable_scraping",
+   "limit",
+   "offset",
+   "q",
+   "url"
+  ],
+  "tools_with_body_shape": 6,
+  "excluded": {},
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 23,
+   "total": 23,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "limitations_count": 9,
+  "tool_names": [
+   "get_bookmarks",
+   "post_bookmarks",
+   "get_bookmarks_archived",
+   "get_bookmarks_check",
+   "get_bookmarks_shared",
+   "delete_bookmarks_by_id",
+   "get_bookmarks_by_id",
+   "patch_bookmarks_by_id",
+   "put_bookmarks_by_id",
+   "post_bookmarks_archive_by_id",
+   "get_bookmarks_assets_by_id",
+   "get_bookmarks_assets_by_id_id_2",
+   "post_bookmarks_unarchive_by_id",
+   "get_bundles",
+   "post_bundles",
+   "delete_bundles_by_id",
+   "get_bundles_by_id",
+   "patch_bundles_by_id",
+   "get_tags",
+   "post_tags",
+   "delete_tags_by_id",
+   "get_tags_by_id",
+   "get_user_profile"
+  ]
+ },
+ "manifest_norules": {
+  "tools": 23,
+  "templated_groups": 13,
+  "limitations_count": 8,
+  "tool_names": [
+   "get_bookmarks",
+   "post_bookmarks",
+   "get_bookmarks_archived",
+   "get_bookmarks_check",
+   "get_bookmarks_shared",
+   "delete_bookmarks_by_id",
+   "get_bookmarks_by_id",
+   "patch_bookmarks_by_id",
+   "put_bookmarks_by_id",
+   "post_bookmarks_archive_by_id",
+   "get_bookmarks_assets_by_id",
+   "get_bookmarks_assets_by_id_id_2",
+   "post_bookmarks_unarchive_by_id",
+   "get_bundles",
+   "post_bundles",
+   "delete_bundles_by_id",
+   "get_bundles_by_id",
+   "patch_bundles_by_id",
+   "get_tags",
+   "post_tags",
+   "delete_tags_by_id",
+   "get_tags_by_id",
+   "get_user_profile"
+  ]
+ },
+ "manifest_vs_norules": {
+  "tools": [
+   23,
+   23
+  ],
+  "templated_groups": [
+   13,
+   13
+  ],
+  "note": "all ids are integers, templated by the unconditional numeric rule; the opt-in rules matched nothing, so both views are identical"
+ },
+ "build": {
+  "retrieval_tasks": 11,
+  "task_candidates": 11,
+  "smoke": "passed",
+  "eval": {
+   "openai/gpt-oss-120b:groq": "10/11",
+   "zai-org/GLM-5.3-Flash:zai-org": "11/11"
+  },
+  "episodes": 22,
+  "dataset_bytes": 6483398,
+  "dataset_dry_run": "/home/ubuntu/showcase/datasets/linkding"
+ }
+}

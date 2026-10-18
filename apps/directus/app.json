@@ -1,0 +1,15 @@
+{
+  "app": "directus",
+  "title": "Directus",
+  "repo": "DirectusEnv-REA",
+  "license": "BSL-1.1",
+  "authors": "Monospace, Inc. and the Directus contributors",
+  "hf_license": "apache-2.0",
+  "version": "11.17.4",
+  "image": "directus/directus:11.17.4",
+  "image_digest": "sha256:eb326f679ae847c0a776f93b972761dc2ebe84980e0b9d274a6bc31cd62809f7",
+  "port": 3223,
+  "keep_regex": "^/(items|collections|fields|users|roles|policies|permissions|folders|files|presets|dashboards|panels|flows|operations|comments|activity|revisions|relations|settings|server|translations|notifications|shares|versions)(/|$)",
+  "domain": "headless CMS and data platform",
+  "exclude_tools": "server|settings|track|config$|version$"
+}

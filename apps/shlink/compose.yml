@@ -1,0 +1,29 @@
+# Shlink 5.1.7 (sqlite, no GeoLite download) for the rea showcase capture. Loopback only; one compose project: rea-shlink.
+services:
+  shlink:
+    image: shlinkio/shlink:5.1.7
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3206:8080"
+    environment:
+      DEFAULT_DOMAIN: 127.0.0.1:3206
+      IS_HTTPS_ENABLED: "false"
+      DB_DRIVER: sqlite
+      TIMEZONE: UTC
+      # No GeoLite licence key: visits are stored without geolocation and nothing is downloaded at start.
+      SKIP_INITIAL_GEOLITE_DOWNLOAD: "true"
+      # Count every visit of the seed's simulated clients, including the ones with a bot-like user agent.
+      DISABLE_TRACKING: "false"
+      # One RoadRunner web worker and one task worker: with sqlite, concurrent workers left the database locked
+      # ("General error: 5 database is locked") after a PATCH that also rewrote tags hung.
+      WEB_WORKER_NUM: "1"
+      TASK_WORKER_NUM: "1"
+    volumes:
+      - shlink-data:/etc/shlink/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:8080/rest/health >/dev/null || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 36
+volumes:
+  shlink-data: {}

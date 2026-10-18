@@ -1,0 +1,1052 @@
+{
+ "evidence_id": "ev_a3d72b74e5d37d9c974dd35a57591dbbe52e160452a2cc3b63a4d2576e852336",
+ "subject": {
+  "name": "shlink.scoped.har",
+  "digest": {
+   "sha256": "97a0390d535b7d6f2555d14a7402f5785ac85825b7077236bcfcc8ccbbc1714c"
+  },
+  "local_path": "/home/ubuntu/capture/shlink/shlink.scoped.har",
+  "format": "file",
+  "architecture": null
+ },
+ "provider": {
+  "id": "rea-analysis-view",
+  "name": "REA analysis view projection",
+  "version": "1"
+ },
+ "analysis_profile": null,
+ "predicate_type": "rea.analysis-view",
+ "operation": "inspect_analysis_view",
+ "parameters": {
+  "parent_evidence_id": "ev_4779d529d62305de670c032f0cdd9188c95cf86f0b549b9a0fac8554db69142b",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "raw_result": null,
+ "normalized_result": {
+  "parent_evidence_id": "ev_4779d529d62305de670c032f0cdd9188c95cf86f0b549b9a0fac8554db69142b",
+  "parent_operation": "inspect_web_network_capture",
+  "parent_digest": "4779d529d62305de670c032f0cdd9188c95cf86f0b549b9a0fac8554db69142b",
+  "view_digest": "deb77b6e506397a3cd09d9b58da72487d1da7a42933140c54036da10d868b34e",
+  "artifact": {
+   "path": "/home/ubuntu/capture/shlink/shlink.scoped.har",
+   "sha256": "97a0390d535b7d6f2555d14a7402f5785ac85825b7077236bcfcc8ccbbc1714c"
+  },
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 17,
+   "total": 17,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "limitations": [
+   "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+   "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+   "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+   "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+   "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+   "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+   "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+   "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+   "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+  ],
+  "unknowns": [
+   {
+    "kind": "authorization-model",
+    "statement": "Authorization headers and cookies are structurally excluded from captures; the manifest states no authorization model."
+   },
+   {
+    "kind": "response-semantics",
+    "statement": "Recorded statuses and bodies are retained only as pointers to parent records; the manifest states no response semantics."
+   },
+   {
+    "kind": "state-transition",
+    "statement": "Recorded exchanges are independent observations; the manifest states no ordering, side effects or state transitions between tools."
+   }
+  ],
+  "origin": "http://127.0.0.1:3206",
+  "name": "127-0-0-1-3206",
+  "tools": [
+   {
+    "name": "get_rest_health",
+    "method": "GET",
+    "path_template": "/rest/health",
+    "api_surface_template": "/rest/health",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/health+json"
+    ],
+    "record_ordinals": [
+     0,
+     1
+    ]
+   },
+   {
+    "name": "get_rest_domains",
+    "method": "GET",
+    "path_template": "/rest/v3/domains",
+    "api_surface_template": "/rest/v3/domains",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     49
+    ]
+   },
+   {
+    "name": "get_rest_domains_default_visits",
+    "method": "GET",
+    "path_template": "/rest/v3/domains/DEFAULT/visits",
+    "api_surface_template": "/rest/v3/domains/DEFAULT/visits",
+    "params": [],
+    "query_parameter_names": [
+     "excludeBots",
+     "itemsPerPage"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     51,
+     52
+    ]
+   },
+   {
+    "name": "get_rest_domains_links_visits",
+    "method": "GET",
+    "path_template": "/rest/v3/domains/links.saltmarsh.example.test/visits",
+    "api_surface_template": "/rest/v3/domains/links.saltmarsh.example.test/visits",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     50
+    ]
+   },
+   {
+    "name": "get_rest_mercure_info",
+    "method": "GET",
+    "path_template": "/rest/v3/mercure-info",
+    "api_surface_template": "/rest/v3/mercure-info",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     501
+    ],
+    "content_types": [
+     "application/problem+json"
+    ],
+    "record_ordinals": [
+     59
+    ]
+   },
+   {
+    "name": "get_rest_short_urls",
+    "method": "GET",
+    "path_template": "/rest/v3/short-urls",
+    "api_surface_template": "/rest/v3/short-urls",
+    "params": [],
+    "query_parameter_names": [
+     "domain",
+     "excludeMaxVisitsReached",
+     "excludePastValidUntil",
+     "itemsPerPage",
+     "orderBy",
+     "page",
+     "searchTerm",
+     "tagsMode",
+     "tags[]"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     19,
+     65
+    ]
+   },
+   {
+    "name": "post_rest_short_urls",
+    "method": "POST",
+    "path_template": "/rest/v3/short-urls",
+    "api_surface_template": "/rest/v3/short-urls",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "longUrl": "string",
+      "customSlug": "string",
+      "title": "string",
+      "tags": "array"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     60
+    ]
+   },
+   {
+    "name": "patch_rest_short_urls_rea_scratch",
+    "method": "PATCH",
+    "path_template": "/rest/v3/short-urls/rea-scratch",
+    "api_surface_template": "/rest/v3/short-urls/rea-scratch",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "title": "string",
+      "tags": "array"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     61
+    ]
+   },
+   {
+    "name": "get_rest_short_urls_by_short_url_id",
+    "method": "GET",
+    "path_template": "/rest/v3/short-urls/{short_url_id}",
+    "api_surface_template": "/rest/v3/short-urls/granite-ledger",
+    "params": [
+     {
+      "index": 3,
+      "name": "short_url_id",
+      "rule": "sibling-variance",
+      "basis": "inferred",
+      "observed_values": [
+       "4eceeU",
+       "annex-rebuild",
+       "blue-heron-menu",
+       "depot-manifest",
+       "granite-ledger",
+       "kelp-broth",
+       "rea-scratch",
+       "rota-binder",
+       "tide-tables"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "domain"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200,
+     404
+    ],
+    "content_types": [
+     "application/json",
+     "application/problem+json"
+    ],
+    "record_ordinals": [
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     62,
+     64
+    ]
+   },
+   {
+    "name": "get_rest_short_urls_redirect_rules_by_short_url_id",
+    "method": "GET",
+    "path_template": "/rest/v3/short-urls/{short_url_id}/redirect-rules",
+    "api_surface_template": "/rest/v3/short-urls/tide-tables/redirect-rules",
+    "params": [
+     {
+      "index": 3,
+      "name": "short_url_id",
+      "rule": "sibling-variance",
+      "basis": "inferred",
+      "observed_values": [
+       "4eceeU",
+       "annex-rebuild",
+       "blue-heron-menu",
+       "depot-manifest",
+       "granite-ledger",
+       "kelp-broth",
+       "rota-binder",
+       "tide-tables"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "domain"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     30,
+     31,
+     32,
+     33,
+     34,
+     35,
+     36,
+     37
+    ]
+   },
+   {
+    "name": "get_rest_short_urls_visits_by_short_url_id",
+    "method": "GET",
+    "path_template": "/rest/v3/short-urls/{short_url_id}/visits",
+    "api_surface_template": "/rest/v3/short-urls/granite-ledger/visits",
+    "params": [
+     {
+      "index": 3,
+      "name": "short_url_id",
+      "rule": "sibling-variance",
+      "basis": "inferred",
+      "observed_values": [
+       "4eceeU",
+       "annex-rebuild",
+       "blue-heron-menu",
+       "depot-manifest",
+       "granite-ledger",
+       "kelp-broth",
+       "rota-binder",
+       "tide-tables"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "domain",
+     "excludeBots",
+     "itemsPerPage",
+     "startDate"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29
+    ]
+   },
+   {
+    "name": "get_rest_tags",
+    "method": "GET",
+    "path_template": "/rest/v3/tags",
+    "api_surface_template": "/rest/v3/tags",
+    "params": [],
+    "query_parameter_names": [
+     "searchTerm"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     38,
+     41
+    ]
+   },
+   {
+    "name": "get_rest_tags_stats",
+    "method": "GET",
+    "path_template": "/rest/v3/tags/stats",
+    "api_surface_template": "/rest/v3/tags/stats",
+    "params": [],
+    "query_parameter_names": [
+     "orderBy",
+     "searchTerm"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     39,
+     40,
+     42
+    ]
+   },
+   {
+    "name": "get_rest_tags_visits_by_tag_id",
+    "method": "GET",
+    "path_template": "/rest/v3/tags/{tag_id}/visits",
+    "api_surface_template": "/rest/v3/tags/blue-heron-kitchen/visits",
+    "params": [
+     {
+      "index": 3,
+      "name": "tag_id",
+      "rule": "sibling-variance",
+      "basis": "inferred",
+      "observed_values": [
+       "blue-heron-kitchen",
+       "copperfield-annex",
+       "granite-ledger",
+       "lighthouse-rota",
+       "saltmarsh-depot"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "excludeBots",
+     "itemsPerPage"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     43,
+     44,
+     45,
+     46,
+     47,
+     48
+    ]
+   },
+   {
+    "name": "get_rest_visits",
+    "method": "GET",
+    "path_template": "/rest/v3/visits",
+    "api_surface_template": "/rest/v3/visits",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     53
+    ]
+   },
+   {
+    "name": "get_rest_visits_non_orphan",
+    "method": "GET",
+    "path_template": "/rest/v3/visits/non-orphan",
+    "api_surface_template": "/rest/v3/visits/non-orphan",
+    "params": [],
+    "query_parameter_names": [
+     "excludeBots",
+     "itemsPerPage",
+     "page",
+     "startDate"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     54,
+     55,
+     56
+    ]
+   },
+   {
+    "name": "get_rest_visits_orphan",
+    "method": "GET",
+    "path_template": "/rest/v3/visits/orphan",
+    "api_surface_template": "/rest/v3/visits/orphan",
+    "params": [],
+    "query_parameter_names": [
+     "type"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     57,
+     58
+    ]
+   }
+  ],
+  "records": [
+   {
+    "ordinal": 0,
+    "method": "GET",
+    "path": "/rest/health",
+    "status": 200,
+    "content_type": "application/health+json"
+   },
+   {
+    "ordinal": 1,
+    "method": "GET",
+    "path": "/rest/health",
+    "status": 200,
+    "content_type": "application/health+json"
+   },
+   {
+    "ordinal": 2,
+    "method": "GET",
+    "path": "/rest/v3/short-urls",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 3,
+    "method": "GET",
+    "path": "/rest/v3/short-urls",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 4,
+    "method": "GET",
+    "path": "/rest/v3/short-urls",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 5,
+    "method": "GET",
+    "path": "/rest/v3/short-urls",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 6,
+    "method": "GET",
+    "path": "/rest/v3/short-urls",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 7,
+    "method": "GET",
+    "path": "/rest/v3/short-urls",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 8,
+    "method": "GET",
+    "path": "/rest/v3/short-urls",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 9,
+    "method": "GET",
+    "path": "/rest/v3/short-urls",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 10,
+    "method": "GET",
+    "path": "/rest/v3/short-urls/granite-ledger",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 11,
+    "method": "GET",
+    "path": "/rest/v3/short-urls/tide-tables",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 12,
+    "method": "GET",
+    "path": "/rest/v3/short-urls/blue-heron-menu",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 13,
+    "method": "GET",
+    "path": "/rest/v3/short-urls/depot-manifest",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 14,
+    "method": "GET",
+    "path": "/rest/v3/short-urls/annex-rebuild",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 15,
+    "method": "GET",
+    "path": "/rest/v3/short-urls/rota-binder",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 16,
+    "method": "GET",
+    "path": "/rest/v3/short-urls/kelp-broth",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 17,
+    "method": "GET",
+    "path": "/rest/v3/short-urls/4eceeU",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 18,
+    "method": "GET",
+    "path": "/rest/v3/short-urls/depot-manifest",
+    "status": 404,
+    "content_type": "application/problem+json"
+   },
+   {
+    "ordinal": 19,
+    "method": "GET",
+    "path": "/rest/v3/short-urls",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 20,
+    "method": "GET",
+    "path": "/rest/v3/short-urls/granite-ledger/visits",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 21,
+    "method": "GET",
+    "path": "/rest/v3/short-urls/tide-tables/visits",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 22,
+    "method": "GET",
+    "path": "/rest/v3/short-urls/blue-heron-menu/visits",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 23,
+    "method": "GET",
+    "path": "/rest/v3/short-urls/depot-manifest/visits",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 24,
+    "method": "GET",
+    "path": "/rest/v3/short-urls/annex-rebuild/visits",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 25,
+    "method": "GET",
+    "path": "/rest/v3/short-urls/rota-binder/visits",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 26,
+    "method": "GET",
+    "path": "/rest/v3/short-urls/kelp-broth/visits",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 27,
+    "method": "GET",
+    "path": "/rest/v3/short-urls/4eceeU/visits",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 28,
+    "method": "GET",
+    "path": "/rest/v3/short-urls/granite-ledger/visits",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 29,
+    "method": "GET",
+    "path": "/rest/v3/short-urls/tide-tables/visits",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 30,
+    "method": "GET",
+    "path": "/rest/v3/short-urls/tide-tables/redirect-rules",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 31,
+    "method": "GET",
+    "path": "/rest/v3/short-urls/blue-heron-menu/redirect-rules",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 32,
+    "method": "GET",
+    "path": "/rest/v3/short-urls/depot-manifest/redirect-rules",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 33,
+    "method": "GET",
+    "path": "/rest/v3/short-urls/annex-rebuild/redirect-rules",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 34,
+    "method": "GET",
+    "path": "/rest/v3/short-urls/rota-binder/redirect-rules",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 35,
+    "method": "GET",
+    "path": "/rest/v3/short-urls/kelp-broth/redirect-rules",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 36,
+    "method": "GET",
+    "path": "/rest/v3/short-urls/4eceeU/redirect-rules",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 37,
+    "method": "GET",
+    "path": "/rest/v3/short-urls/granite-ledger/redirect-rules",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 38,
+    "method": "GET",
+    "path": "/rest/v3/tags",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 39,
+    "method": "GET",
+    "path": "/rest/v3/tags/stats",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 40,
+    "method": "GET",
+    "path": "/rest/v3/tags/stats",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 41,
+    "method": "GET",
+    "path": "/rest/v3/tags",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 42,
+    "method": "GET",
+    "path": "/rest/v3/tags/stats",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 43,
+    "method": "GET",
+    "path": "/rest/v3/tags/blue-heron-kitchen/visits",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 44,
+    "method": "GET",
+    "path": "/rest/v3/tags/granite-ledger/visits",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 45,
+    "method": "GET",
+    "path": "/rest/v3/tags/lighthouse-rota/visits",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 46,
+    "method": "GET",
+    "path": "/rest/v3/tags/saltmarsh-depot/visits",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 47,
+    "method": "GET",
+    "path": "/rest/v3/tags/copperfield-annex/visits",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 48,
+    "method": "GET",
+    "path": "/rest/v3/tags/lighthouse-rota/visits",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 49,
+    "method": "GET",
+    "path": "/rest/v3/domains",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 50,
+    "method": "GET",
+    "path": "/rest/v3/domains/links.saltmarsh.example.test/visits",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 51,
+    "method": "GET",
+    "path": "/rest/v3/domains/DEFAULT/visits",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 52,
+    "method": "GET",
+    "path": "/rest/v3/domains/DEFAULT/visits",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 53,
+    "method": "GET",
+    "path": "/rest/v3/visits",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 54,
+    "method": "GET",
+    "path": "/rest/v3/visits/non-orphan",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 55,
+    "method": "GET",
+    "path": "/rest/v3/visits/non-orphan",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 56,
+    "method": "GET",
+    "path": "/rest/v3/visits/non-orphan",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 57,
+    "method": "GET",
+    "path": "/rest/v3/visits/orphan",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 58,
+    "method": "GET",
+    "path": "/rest/v3/visits/orphan",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 59,
+    "method": "GET",
+    "path": "/rest/v3/mercure-info",
+    "status": 501,
+    "content_type": "application/problem+json"
+   },
+   {
+    "ordinal": 60,
+    "method": "POST",
+    "path": "/rest/v3/short-urls",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 61,
+    "method": "PATCH",
+    "path": "/rest/v3/short-urls/rea-scratch",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 62,
+    "method": "GET",
+    "path": "/rest/v3/short-urls/rea-scratch",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 64,
+    "method": "GET",
+    "path": "/rest/v3/short-urls/rea-scratch",
+    "status": 404,
+    "content_type": "application/problem+json"
+   },
+   {
+    "ordinal": 65,
+    "method": "GET",
+    "path": "/rest/v3/short-urls",
+    "status": 200,
+    "content_type": "application/json"
+   }
+  ],
+  "excluded": [
+   {
+    "method": "DELETE",
+    "origin": "http://127.0.0.1:3206",
+    "path_template": "/rest/v3/short-urls/rea-scratch",
+    "reason": "non-json"
+   }
+  ],
+  "templated_groups": 4,
+  "kind": "environment-manifest",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "confidence": "inferred",
+ "authority": "historical-reference",
+ "environment": null,
+ "limitations": [
+  "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+  "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+  "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+  "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+  "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+  "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+  "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+  "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+  "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+ ],
+ "relationship_coverage": null,
+ "locations": [
+  {
+   "kind": "artifact-path",
+   "path": "/home/ubuntu/capture/shlink/shlink.scoped.har"
+  }
+ ],
+ "evidence_links": [
+  "ev_4779d529d62305de670c032f0cdd9188c95cf86f0b549b9a0fac8554db69142b"
+ ]
+}

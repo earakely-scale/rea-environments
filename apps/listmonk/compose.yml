@@ -1,0 +1,49 @@
+# listmonk v6.2 + PostgreSQL 17 for the rea showcase capture. Loopback only; one compose project: rea-listmonk.
+# The admin password and the database password come from .admin (mode 600, written by `python3 seed.py init`).
+# No SMTP server is reachable from here and no campaign is ever started, so nothing is sent.
+services:
+  db:
+    image: postgres:17.9-alpine
+    restart: unless-stopped
+    env_file:
+      - .admin
+    environment:
+      POSTGRES_USER: listmonk
+      POSTGRES_DB: listmonk
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U listmonk -d listmonk"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+  app:
+    image: listmonk/listmonk:v6.2.0
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:3214:9000"
+    command: [sh, -c, "./listmonk --install --idempotent --yes --config '' && ./listmonk --upgrade --yes --config '' && ./listmonk --config ''"]
+    env_file:
+      - .admin
+    environment:
+      LISTMONK_app__address: 0.0.0.0:9000
+      LISTMONK_db__host: db
+      LISTMONK_db__port: "5432"
+      LISTMONK_db__user: listmonk
+      LISTMONK_db__database: listmonk
+      LISTMONK_db__ssl_mode: disable
+      LISTMONK_ADMIN_USER: rea-admin
+      TZ: Etc/UTC
+    volumes:
+      - uploads:/listmonk/uploads
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:9000/health || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 36
+volumes:
+  pgdata: {}
+  uploads: {}

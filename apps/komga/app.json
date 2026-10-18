@@ -1,0 +1,15 @@
+{
+  "app": "komga",
+  "title": "Komga",
+  "repo": "KomgaEnv-REA",
+  "license": "MIT",
+  "authors": "Gauthier Roebroeck and the Komga contributors",
+  "hf_license": "apache-2.0",
+  "version": "1.29.1",
+  "image": "gotson/komga:1.29.1",
+  "image_digest": "sha256:9fa656e8259bbd75c0f654bdfa91abf2b4813cbf4f40e80eb292495446ffdf1f",
+  "port": 3231,
+  "keep_regex": "^/api/",
+  "domain": "comics and ebook library server",
+  "exclude_tools": "announcements|client_settings|claim$|thumbnail|file$|raw$|release_dates|age_ratings|languages|sharing_labels|alphabetical_groups|pages$"
+}

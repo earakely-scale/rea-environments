@@ -1,0 +1,1337 @@
+{
+ "evidence_id": "ev_3141f2074cbb0bf27bbe9cedb95b7c69f2de89841d3fb0212660b7dfac094db8",
+ "subject": {
+  "name": "n8n.scoped.har",
+  "digest": {
+   "sha256": "ad32e5104208daeb3488f6feefce0f189fe6ade22e3857907a10213009a022a3"
+  },
+  "local_path": "/home/ubuntu/capture/n8n/n8n.scoped.har",
+  "format": "file",
+  "architecture": null
+ },
+ "provider": {
+  "id": "rea-analysis-view",
+  "name": "REA analysis view projection",
+  "version": "1"
+ },
+ "analysis_profile": null,
+ "predicate_type": "rea.analysis-view",
+ "operation": "inspect_analysis_view",
+ "parameters": {
+  "parent_evidence_id": "ev_2df554f077a7336e5d535fa9e49df0b2d984c88dfc06c774e0343f26f9176a3e",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "raw_result": null,
+ "normalized_result": {
+  "parent_evidence_id": "ev_2df554f077a7336e5d535fa9e49df0b2d984c88dfc06c774e0343f26f9176a3e",
+  "parent_operation": "inspect_web_network_capture",
+  "parent_digest": "2df554f077a7336e5d535fa9e49df0b2d984c88dfc06c774e0343f26f9176a3e",
+  "view_digest": "16b9e566b91c27ac57150c25b8c359fa4fbe7e9259493cf7e47361d41bba6dfd",
+  "artifact": {
+   "path": "/home/ubuntu/capture/n8n/n8n.scoped.har",
+   "sha256": "ad32e5104208daeb3488f6feefce0f189fe6ade22e3857907a10213009a022a3"
+  },
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 30,
+   "total": 30,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "limitations": [
+   "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+   "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+   "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+   "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+   "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+   "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+   "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+   "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+   "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+  ],
+  "unknowns": [
+   {
+    "kind": "authorization-model",
+    "statement": "Authorization headers and cookies are structurally excluded from captures; the manifest states no authorization model."
+   },
+   {
+    "kind": "response-semantics",
+    "statement": "Recorded statuses and bodies are retained only as pointers to parent records; the manifest states no response semantics."
+   },
+   {
+    "kind": "state-transition",
+    "statement": "Recorded exchanges are independent observations; the manifest states no ordering, side effects or state transitions between tools."
+   }
+  ],
+  "origin": "http://127.0.0.1:3218",
+  "name": "127-0-0-1-3218",
+  "tools": [
+   {
+    "name": "get_rest_active_workflows",
+    "method": "GET",
+    "path_template": "/rest/active-workflows",
+    "api_surface_template": "/rest/active-workflows",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     9,
+     29,
+     41
+    ]
+   },
+   {
+    "name": "get_rest_community_node_types",
+    "method": "GET",
+    "path_template": "/rest/community-node-types",
+    "api_surface_template": "/rest/community-node-types",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     11
+    ]
+   },
+   {
+    "name": "get_rest_credentials",
+    "method": "GET",
+    "path_template": "/rest/credentials",
+    "api_surface_template": "/rest/credentials",
+    "params": [],
+    "query_parameter_names": [
+     "includeData",
+     "includeGlobal",
+     "includeScopes"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     10,
+     23,
+     59
+    ]
+   },
+   {
+    "name": "get_rest_credentials_for_workflow",
+    "method": "GET",
+    "path_template": "/rest/credentials/for-workflow",
+    "api_surface_template": "/rest/credentials/for-workflow",
+    "params": [],
+    "query_parameter_names": [
+     "workflowId"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     12
+    ]
+   },
+   {
+    "name": "get_rest_cta_become_creator",
+    "method": "GET",
+    "path_template": "/rest/cta/become-creator",
+    "api_surface_template": "/rest/cta/become-creator",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     15,
+     24
+    ]
+   },
+   {
+    "name": "get_rest_data_tables_global",
+    "method": "GET",
+    "path_template": "/rest/data-tables-global",
+    "api_surface_template": "/rest/data-tables-global",
+    "params": [],
+    "query_parameter_names": [
+     "skip",
+     "take"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     53
+    ]
+   },
+   {
+    "name": "get_rest_data_tables_global_limits",
+    "method": "GET",
+    "path_template": "/rest/data-tables-global/limits",
+    "api_surface_template": "/rest/data-tables-global/limits",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     1
+    ]
+   },
+   {
+    "name": "get_rest_executions",
+    "method": "GET",
+    "path_template": "/rest/executions",
+    "api_surface_template": "/rest/executions",
+    "params": [],
+    "query_parameter_names": [
+     "filter",
+     "limit"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     7,
+     18,
+     42,
+     43,
+     46
+    ]
+   },
+   {
+    "name": "get_rest_executions_by_id",
+    "method": "GET",
+    "path_template": "/rest/executions/{numeric}",
+    "api_surface_template": "/rest/executions/{numeric}",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1",
+       "2"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     44,
+     47
+    ]
+   },
+   {
+    "name": "get_rest_insights_summary",
+    "method": "GET",
+    "path_template": "/rest/insights/summary",
+    "api_surface_template": "/rest/insights/summary",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     16,
+     21
+    ]
+   },
+   {
+    "name": "get_rest_license",
+    "method": "GET",
+    "path_template": "/rest/license",
+    "api_surface_template": "/rest/license",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     30
+    ]
+   },
+   {
+    "name": "get_rest_module_settings",
+    "method": "GET",
+    "path_template": "/rest/module-settings",
+    "api_surface_template": "/rest/module-settings",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     0
+    ]
+   },
+   {
+    "name": "get_rest_projects",
+    "method": "GET",
+    "path_template": "/rest/projects",
+    "api_surface_template": "/rest/projects",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     25
+    ]
+   },
+   {
+    "name": "get_rest_projects_pliwgg1jdk2kbkgs_data_tables",
+    "method": "GET",
+    "path_template": "/rest/projects/plIwGG1jDk2kbKGs/data-tables",
+    "api_surface_template": "/rest/projects/plIwGG1jDk2kbKGs/data-tables",
+    "params": [],
+    "query_parameter_names": [
+     "skip",
+     "sortBy",
+     "take"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     20,
+     52
+    ]
+   },
+   {
+    "name": "get_rest_projects_pliwgg1jdk2kbkgs_data_tables_columns_by_da",
+    "method": "GET",
+    "path_template": "/rest/projects/plIwGG1jDk2kbKGs/data-tables/{data_table_id}/columns",
+    "api_surface_template": "/rest/projects/plIwGG1jDk2kbKGs/data-tables/6s4t9bREtisTcoCX/columns",
+    "params": [
+     {
+      "index": 4,
+      "name": "data_table_id",
+      "rule": "sibling-variance",
+      "basis": "inferred",
+      "observed_values": [
+       "4Jof9jBFodz8yHiO",
+       "6s4t9bREtisTcoCX"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     54,
+     56
+    ]
+   },
+   {
+    "name": "get_rest_projects_pliwgg1jdk2kbkgs_data_tables_rows_by_data",
+    "method": "GET",
+    "path_template": "/rest/projects/plIwGG1jDk2kbKGs/data-tables/{data_table_id}/rows",
+    "api_surface_template": "/rest/projects/plIwGG1jDk2kbKGs/data-tables/6s4t9bREtisTcoCX/rows",
+    "params": [
+     {
+      "index": 4,
+      "name": "data_table_id",
+      "rule": "sibling-variance",
+      "basis": "inferred",
+      "observed_values": [
+       "4Jof9jBFodz8yHiO",
+       "6s4t9bREtisTcoCX"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "filter",
+     "skip",
+     "take"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     55,
+     57,
+     58
+    ]
+   },
+   {
+    "name": "get_rest_projects_by_project_id",
+    "method": "GET",
+    "path_template": "/rest/projects/{project_id}",
+    "api_surface_template": "/rest/projects/my-projects",
+    "params": [
+     {
+      "index": 2,
+      "name": "project_id",
+      "rule": "sibling-variance",
+      "basis": "inferred",
+      "observed_values": [
+       "count",
+       "my-projects",
+       "personal",
+       "plIwGG1jDk2kbKGs"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     2,
+     3,
+     4,
+     19,
+     49,
+     50,
+     51
+    ]
+   },
+   {
+    "name": "get_rest_roles",
+    "method": "GET",
+    "path_template": "/rest/roles",
+    "api_surface_template": "/rest/roles",
+    "params": [],
+    "query_parameter_names": [
+     "withUsageCount"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     5
+    ]
+   },
+   {
+    "name": "get_rest_tags",
+    "method": "GET",
+    "path_template": "/rest/tags",
+    "api_surface_template": "/rest/tags",
+    "params": [],
+    "query_parameter_names": [
+     "withUsageCount"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     26,
+     33,
+     62,
+     64
+    ]
+   },
+   {
+    "name": "post_rest_tags",
+    "method": "POST",
+    "path_template": "/rest/tags",
+    "api_surface_template": "/rest/tags",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "name": "string"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     60
+    ]
+   },
+   {
+    "name": "delete_rest_tags_lvqnhb0heimbid9r",
+    "method": "DELETE",
+    "path_template": "/rest/tags/lVqnHb0HEImBId9R",
+    "api_surface_template": "/rest/tags/lVqnHb0HEImBId9R",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     63
+    ]
+   },
+   {
+    "name": "patch_rest_tags_lvqnhb0heimbid9r",
+    "method": "PATCH",
+    "path_template": "/rest/tags/lVqnHb0HEImBId9R",
+    "api_surface_template": "/rest/tags/lVqnHb0HEImBId9R",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "name": "string"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     61
+    ]
+   },
+   {
+    "name": "get_rest_users",
+    "method": "GET",
+    "path_template": "/rest/users",
+    "api_surface_template": "/rest/users",
+    "params": [],
+    "query_parameter_names": [
+     "skip",
+     "take"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     8,
+     22,
+     27,
+     32
+    ]
+   },
+   {
+    "name": "get_rest_workflows",
+    "method": "GET",
+    "path_template": "/rest/workflows",
+    "api_surface_template": "/rest/workflows",
+    "params": [],
+    "query_parameter_names": [
+     "filter",
+     "includeFolders",
+     "includeScopes",
+     "skip",
+     "sortBy",
+     "take"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     6,
+     17,
+     28,
+     31,
+     34,
+     39,
+     40,
+     71
+    ]
+   },
+   {
+    "name": "post_rest_workflows",
+    "method": "POST",
+    "path_template": "/rest/workflows",
+    "api_surface_template": "/rest/workflows",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "name": "string",
+      "active": "boolean",
+      "connections": "object",
+      "settings": "object",
+      "nodes": "array"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     65
+    ]
+   },
+   {
+    "name": "delete_rest_workflows_qcjksrn0sgwge3ix",
+    "method": "DELETE",
+    "path_template": "/rest/workflows/qcjkSrN0sgWge3ix",
+    "api_surface_template": "/rest/workflows/qcjkSrN0sgWge3ix",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     69
+    ]
+   },
+   {
+    "name": "patch_rest_workflows_qcjksrn0sgwge3ix",
+    "method": "PATCH",
+    "path_template": "/rest/workflows/qcjkSrN0sgWge3ix",
+    "api_surface_template": "/rest/workflows/qcjkSrN0sgWge3ix",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "name": "string",
+      "versionId": "string"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     66
+    ]
+   },
+   {
+    "name": "post_rest_workflows_qcjksrn0sgwge3ix_archive",
+    "method": "POST",
+    "path_template": "/rest/workflows/qcjkSrN0sgWge3ix/archive",
+    "api_surface_template": "/rest/workflows/qcjkSrN0sgWge3ix/archive",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {}
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     68
+    ]
+   },
+   {
+    "name": "get_rest_workflows_by_workflow_id",
+    "method": "GET",
+    "path_template": "/rest/workflows/{workflow_id}",
+    "api_surface_template": "/rest/workflows/FkMwxmXNGaGVsXFG",
+    "params": [
+     {
+      "index": 2,
+      "name": "workflow_id",
+      "rule": "sibling-variance",
+      "basis": "inferred",
+      "observed_values": [
+       "5LPA94ML1gYbgAQx",
+       "FkMwxmXNGaGVsXFG",
+       "FvXqSSiP8WA8vQq2",
+       "qcjkSrN0sgWge3ix",
+       "yDr9n16753TZr7Zc"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200,
+     404
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     13,
+     35,
+     36,
+     37,
+     38,
+     67,
+     70
+    ]
+   },
+   {
+    "name": "get_rest_workflows_executions_last_successful_by_workflow_id",
+    "method": "GET",
+    "path_template": "/rest/workflows/{workflow_id}/executions/last-successful",
+    "api_surface_template": "/rest/workflows/FkMwxmXNGaGVsXFG/executions/last-successful",
+    "params": [
+     {
+      "index": 2,
+      "name": "workflow_id",
+      "rule": "sibling-variance",
+      "basis": "inferred",
+      "observed_values": [
+       "FkMwxmXNGaGVsXFG",
+       "yDr9n16753TZr7Zc"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     14,
+     45,
+     48
+    ]
+   }
+  ],
+  "records": [
+   {
+    "ordinal": 0,
+    "method": "GET",
+    "path": "/rest/module-settings",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 1,
+    "method": "GET",
+    "path": "/rest/data-tables-global/limits",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 2,
+    "method": "GET",
+    "path": "/rest/projects/my-projects",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 3,
+    "method": "GET",
+    "path": "/rest/projects/personal",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 4,
+    "method": "GET",
+    "path": "/rest/projects/count",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 5,
+    "method": "GET",
+    "path": "/rest/roles",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 6,
+    "method": "GET",
+    "path": "/rest/workflows",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 7,
+    "method": "GET",
+    "path": "/rest/executions",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 8,
+    "method": "GET",
+    "path": "/rest/users",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 9,
+    "method": "GET",
+    "path": "/rest/active-workflows",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 10,
+    "method": "GET",
+    "path": "/rest/credentials",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 11,
+    "method": "GET",
+    "path": "/rest/community-node-types",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 12,
+    "method": "GET",
+    "path": "/rest/credentials/for-workflow",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 13,
+    "method": "GET",
+    "path": "/rest/workflows/FkMwxmXNGaGVsXFG",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 14,
+    "method": "GET",
+    "path": "/rest/workflows/FkMwxmXNGaGVsXFG/executions/last-successful",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 15,
+    "method": "GET",
+    "path": "/rest/cta/become-creator",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 16,
+    "method": "GET",
+    "path": "/rest/insights/summary",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 17,
+    "method": "GET",
+    "path": "/rest/workflows",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 18,
+    "method": "GET",
+    "path": "/rest/executions",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 19,
+    "method": "GET",
+    "path": "/rest/projects/plIwGG1jDk2kbKGs",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 20,
+    "method": "GET",
+    "path": "/rest/projects/plIwGG1jDk2kbKGs/data-tables",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 21,
+    "method": "GET",
+    "path": "/rest/insights/summary",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 22,
+    "method": "GET",
+    "path": "/rest/users",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 23,
+    "method": "GET",
+    "path": "/rest/credentials",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 24,
+    "method": "GET",
+    "path": "/rest/cta/become-creator",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 25,
+    "method": "GET",
+    "path": "/rest/projects",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 26,
+    "method": "GET",
+    "path": "/rest/tags",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 27,
+    "method": "GET",
+    "path": "/rest/users",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 28,
+    "method": "GET",
+    "path": "/rest/workflows",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 29,
+    "method": "GET",
+    "path": "/rest/active-workflows",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 30,
+    "method": "GET",
+    "path": "/rest/license",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 31,
+    "method": "GET",
+    "path": "/rest/workflows",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 32,
+    "method": "GET",
+    "path": "/rest/users",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 33,
+    "method": "GET",
+    "path": "/rest/tags",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 34,
+    "method": "GET",
+    "path": "/rest/workflows",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 35,
+    "method": "GET",
+    "path": "/rest/workflows/FkMwxmXNGaGVsXFG",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 36,
+    "method": "GET",
+    "path": "/rest/workflows/yDr9n16753TZr7Zc",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 37,
+    "method": "GET",
+    "path": "/rest/workflows/FvXqSSiP8WA8vQq2",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 38,
+    "method": "GET",
+    "path": "/rest/workflows/5LPA94ML1gYbgAQx",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 39,
+    "method": "GET",
+    "path": "/rest/workflows",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 40,
+    "method": "GET",
+    "path": "/rest/workflows",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 41,
+    "method": "GET",
+    "path": "/rest/active-workflows",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 42,
+    "method": "GET",
+    "path": "/rest/executions",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 43,
+    "method": "GET",
+    "path": "/rest/executions",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 44,
+    "method": "GET",
+    "path": "/rest/executions/1",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 45,
+    "method": "GET",
+    "path": "/rest/workflows/FkMwxmXNGaGVsXFG/executions/last-successful",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 46,
+    "method": "GET",
+    "path": "/rest/executions",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 47,
+    "method": "GET",
+    "path": "/rest/executions/2",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 48,
+    "method": "GET",
+    "path": "/rest/workflows/yDr9n16753TZr7Zc/executions/last-successful",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 49,
+    "method": "GET",
+    "path": "/rest/projects/personal",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 50,
+    "method": "GET",
+    "path": "/rest/projects/my-projects",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 51,
+    "method": "GET",
+    "path": "/rest/projects/plIwGG1jDk2kbKGs",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 52,
+    "method": "GET",
+    "path": "/rest/projects/plIwGG1jDk2kbKGs/data-tables",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 53,
+    "method": "GET",
+    "path": "/rest/data-tables-global",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 54,
+    "method": "GET",
+    "path": "/rest/projects/plIwGG1jDk2kbKGs/data-tables/6s4t9bREtisTcoCX/columns",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 55,
+    "method": "GET",
+    "path": "/rest/projects/plIwGG1jDk2kbKGs/data-tables/6s4t9bREtisTcoCX/rows",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 56,
+    "method": "GET",
+    "path": "/rest/projects/plIwGG1jDk2kbKGs/data-tables/4Jof9jBFodz8yHiO/columns",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 57,
+    "method": "GET",
+    "path": "/rest/projects/plIwGG1jDk2kbKGs/data-tables/4Jof9jBFodz8yHiO/rows",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 58,
+    "method": "GET",
+    "path": "/rest/projects/plIwGG1jDk2kbKGs/data-tables/6s4t9bREtisTcoCX/rows",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 59,
+    "method": "GET",
+    "path": "/rest/credentials",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 60,
+    "method": "POST",
+    "path": "/rest/tags",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 61,
+    "method": "PATCH",
+    "path": "/rest/tags/lVqnHb0HEImBId9R",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 62,
+    "method": "GET",
+    "path": "/rest/tags",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 63,
+    "method": "DELETE",
+    "path": "/rest/tags/lVqnHb0HEImBId9R",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 64,
+    "method": "GET",
+    "path": "/rest/tags",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 65,
+    "method": "POST",
+    "path": "/rest/workflows",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 66,
+    "method": "PATCH",
+    "path": "/rest/workflows/qcjkSrN0sgWge3ix",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 67,
+    "method": "GET",
+    "path": "/rest/workflows/qcjkSrN0sgWge3ix",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 68,
+    "method": "POST",
+    "path": "/rest/workflows/qcjkSrN0sgWge3ix/archive",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 69,
+    "method": "DELETE",
+    "path": "/rest/workflows/qcjkSrN0sgWge3ix",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 70,
+    "method": "GET",
+    "path": "/rest/workflows/qcjkSrN0sgWge3ix",
+    "status": 404,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 71,
+    "method": "GET",
+    "path": "/rest/workflows",
+    "status": 200,
+    "content_type": "application/json"
+   }
+  ],
+  "excluded": [],
+  "templated_groups": 6,
+  "kind": "environment-manifest",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "confidence": "inferred",
+ "authority": "historical-reference",
+ "environment": null,
+ "limitations": [
+  "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+  "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+  "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+  "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+  "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+  "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+  "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+  "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+  "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+ ],
+ "relationship_coverage": null,
+ "locations": [
+  {
+   "kind": "artifact-path",
+   "path": "/home/ubuntu/capture/n8n/n8n.scoped.har"
+  }
+ ],
+ "evidence_links": [
+  "ev_2df554f077a7336e5d535fa9e49df0b2d984c88dfc06c774e0343f26f9176a3e"
+ ]
+}

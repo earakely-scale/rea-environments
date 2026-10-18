@@ -1,0 +1,26 @@
+# Homebox 0.27.0 (sqlite) for the rea showcase capture. Loopback only; one compose project: rea-homebox.
+# 0.27 refuses to start without HBOX_AUTH_API_KEY_PEPPER (>= 32 bytes); it is generated at run time into .hb.env
+# (mode 600, deleted at teardown).
+services:
+  homebox:
+    image: ghcr.io/sysadminsmedia/homebox:0.27.0
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3208:7745"
+    env_file: .hb.env
+    environment:
+      HBOX_LOG_LEVEL: info
+      HBOX_LOG_FORMAT: text
+      HBOX_WEB_MAX_UPLOAD_SIZE: "10"
+      HBOX_OPTIONS_ALLOW_REGISTRATION: "true"
+      HBOX_OPTIONS_ALLOW_ANALYTICS: "false"
+      HBOX_OPTIONS_CHECK_GITHUB_RELEASE: "false"
+    volumes:
+      - homebox-data:/data
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:7745/api/v1/status"]
+      interval: 5s
+      timeout: 5s
+      retries: 36
+volumes:
+  homebox-data: {}

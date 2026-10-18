@@ -1,0 +1,52 @@
+# Miniflux 2.3.3 + PostgreSQL 17.11 + an nginx feed host for the rea showcase capture. Loopback only; compose project rea-miniflux.
+# Only Miniflux has a host port. The `feeds` service serves the synthetic RSS/Atom files that `python3 seed.py init` writes
+# to ./feeds, so subscriptions and entries exist without the internet. Secrets come from the run-time env file
+# ~/capture/miniflux/.admin (mode 600):  docker compose -p rea-miniflux -f compose.yml --env-file .admin up -d
+services:
+  miniflux-db:
+    image: postgres:17.11
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: miniflux
+      POSTGRES_DB: miniflux
+      POSTGRES_PASSWORD: ${MINIFLUX_DB_PASSWORD:?run seed.py init first}
+    volumes:
+      - miniflux-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "miniflux", "-d", "miniflux"]
+      interval: 5s
+      timeout: 5s
+      retries: 36
+  feeds:
+    image: nginx:1.30.6-alpine
+    restart: unless-stopped
+    volumes:
+      - ./feeds:/usr/share/nginx/html:ro
+  miniflux:
+    image: miniflux/miniflux:2.3.3
+    restart: unless-stopped
+    depends_on:
+      miniflux-db:
+        condition: service_healthy
+      feeds:
+        condition: service_started
+    ports:
+      - "127.0.0.1:3217:8080"
+    environment:
+      DATABASE_URL: postgres://miniflux:${MINIFLUX_DB_PASSWORD:?run seed.py init first}@miniflux-db/miniflux?sslmode=disable
+      RUN_MIGRATIONS: "1"
+      CREATE_ADMIN: "1"
+      ADMIN_USERNAME: rea-admin
+      ADMIN_PASSWORD: ${MINIFLUX_ADMIN_PASSWORD:?run seed.py init first}
+      BASE_URL: http://127.0.0.1:3217
+      # The feed host is a private address on the compose network; Miniflux refuses private networks by default.
+      FETCHER_ALLOW_PRIVATE_NETWORKS: "1"
+      # No background polling: entries come only from the explicit refreshes in seed.py, so captures are repeatable.
+      DISABLE_SCHEDULER_SERVICES: "1"
+    healthcheck:
+      test: ["CMD", "/usr/bin/miniflux", "-healthcheck", "auto"]
+      interval: 5s
+      timeout: 5s
+      retries: 36
+volumes:
+  miniflux-db: {}

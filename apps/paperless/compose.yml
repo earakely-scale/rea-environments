@@ -1,0 +1,43 @@
+# Paperless-ngx 2.20 (sqlite) + Redis for the rea showcase capture. Loopback only; one compose project: rea-paperless.
+# The admin password and the Django secret key come from .admin (mode 600, written by `python3 seed.py init`).
+services:
+  redis:
+    image: redis:8.6.7-alpine
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+  webserver:
+    image: ghcr.io/paperless-ngx/paperless-ngx:2.20.15
+    restart: unless-stopped
+    depends_on:
+      redis:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:3213:8000"
+    env_file:
+      - .admin
+    environment:
+      PAPERLESS_REDIS: redis://redis:6379
+      PAPERLESS_URL: http://127.0.0.1:3213
+      PAPERLESS_ADMIN_USER: rea-admin
+      PAPERLESS_ADMIN_MAIL: rea-admin@example.test
+      PAPERLESS_TIME_ZONE: UTC
+      PAPERLESS_OCR_LANGUAGE: eng
+      PAPERLESS_TASK_WORKERS: "2"
+      PAPERLESS_THREADS_PER_WORKER: "1"
+      # The seeded IMAP account points at an .example.test host; never poll it.
+      PAPERLESS_EMAIL_TASK_CRON: disable
+    volumes:
+      - data:/usr/src/paperless/data
+      - media:/usr/src/paperless/media
+    healthcheck:
+      test: ["CMD", "curl", "-fs", "-o", "/dev/null", "http://localhost:8000/accounts/login/"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+volumes:
+  data: {}
+  media: {}

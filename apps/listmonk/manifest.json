@@ -1,0 +1,1330 @@
+{
+ "evidence_id": "ev_2219c491a30c79107897a70884bbe76d8376ccb7f2c67943c7583baeea100cac",
+ "subject": {
+  "name": "listmonk.scoped.har",
+  "digest": {
+   "sha256": "db06948f2b2e2525759589dd9788f84edfa163926ae67c9c4e49c2f3b64962d0"
+  },
+  "local_path": "/home/ubuntu/capture/listmonk/listmonk.scoped.har",
+  "format": "file",
+  "architecture": null
+ },
+ "provider": {
+  "id": "rea-analysis-view",
+  "name": "REA analysis view projection",
+  "version": "1"
+ },
+ "analysis_profile": null,
+ "predicate_type": "rea.analysis-view",
+ "operation": "inspect_analysis_view",
+ "parameters": {
+  "parent_evidence_id": "ev_40b38ad41b4906c91a10812bd33a562c757b5bbf249f84f2f5b173e3fe59f0ba",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "raw_result": null,
+ "normalized_result": {
+  "parent_evidence_id": "ev_40b38ad41b4906c91a10812bd33a562c757b5bbf249f84f2f5b173e3fe59f0ba",
+  "parent_operation": "inspect_web_network_capture",
+  "parent_digest": "40b38ad41b4906c91a10812bd33a562c757b5bbf249f84f2f5b173e3fe59f0ba",
+  "view_digest": "cda0194e39b9d594bb110d23953ef7243f038946af8d8164c777edddecb0244a",
+  "artifact": {
+   "path": "/home/ubuntu/capture/listmonk/listmonk.scoped.har",
+   "sha256": "db06948f2b2e2525759589dd9788f84edfa163926ae67c9c4e49c2f3b64962d0"
+  },
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 29,
+   "total": 29,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "limitations": [
+   "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+   "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+   "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+   "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+   "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+   "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+   "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+   "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+   "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+  ],
+  "unknowns": [
+   {
+    "kind": "authorization-model",
+    "statement": "Authorization headers and cookies are structurally excluded from captures; the manifest states no authorization model."
+   },
+   {
+    "kind": "response-semantics",
+    "statement": "Recorded statuses and bodies are retained only as pointers to parent records; the manifest states no response semantics."
+   },
+   {
+    "kind": "state-transition",
+    "statement": "Recorded exchanges are independent observations; the manifest states no ordering, side effects or state transitions between tools."
+   }
+  ],
+  "origin": "http://127.0.0.1:3214",
+  "name": "127-0-0-1-3214",
+  "tools": [
+   {
+    "name": "get_about",
+    "method": "GET",
+    "path_template": "/api/about",
+    "api_surface_template": "/api/about",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     55
+    ]
+   },
+   {
+    "name": "get_bounces",
+    "method": "GET",
+    "path_template": "/api/bounces",
+    "api_surface_template": "/api/bounces",
+    "params": [],
+    "query_parameter_names": [
+     "page",
+     "per_page"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     52
+    ]
+   },
+   {
+    "name": "get_campaigns",
+    "method": "GET",
+    "path_template": "/api/campaigns",
+    "api_surface_template": "/api/campaigns",
+    "params": [],
+    "query_parameter_names": [
+     "no_body",
+     "order",
+     "order_by",
+     "page",
+     "per_page",
+     "query"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     11,
+     37,
+     60
+    ]
+   },
+   {
+    "name": "get_campaigns_running_stats",
+    "method": "GET",
+    "path_template": "/api/campaigns/running/stats",
+    "api_surface_template": "/api/campaigns/running/stats",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     12
+    ]
+   },
+   {
+    "name": "get_campaigns_by_id",
+    "method": "GET",
+    "path_template": "/api/campaigns/{numeric}",
+    "api_surface_template": "/api/campaigns/{numeric}",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "2",
+       "3",
+       "4"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     14,
+     38,
+     39,
+     40
+    ]
+   },
+   {
+    "name": "get_config",
+    "method": "GET",
+    "path_template": "/api/config",
+    "api_surface_template": "/api/config",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     1
+    ]
+   },
+   {
+    "name": "get_dashboard_charts",
+    "method": "GET",
+    "path_template": "/api/dashboard/charts",
+    "api_surface_template": "/api/dashboard/charts",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     4
+    ]
+   },
+   {
+    "name": "get_dashboard_counts",
+    "method": "GET",
+    "path_template": "/api/dashboard/counts",
+    "api_surface_template": "/api/dashboard/counts",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     3,
+     54
+    ]
+   },
+   {
+    "name": "get_import_subscribers",
+    "method": "GET",
+    "path_template": "/api/import/subscribers",
+    "api_surface_template": "/api/import/subscribers",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     56
+    ]
+   },
+   {
+    "name": "get_lists",
+    "method": "GET",
+    "path_template": "/api/lists",
+    "api_surface_template": "/api/lists",
+    "params": [],
+    "query_parameter_names": [
+     "minimal",
+     "order",
+     "order_by",
+     "page",
+     "per_page",
+     "query",
+     "status"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     2,
+     5,
+     6,
+     20,
+     61,
+     67
+    ]
+   },
+   {
+    "name": "post_lists",
+    "method": "POST",
+    "path_template": "/api/lists",
+    "api_surface_template": "/api/lists",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "name": "string",
+      "type": "string",
+      "optin": "string",
+      "tags": "array",
+      "description": "string"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     62
+    ]
+   },
+   {
+    "name": "delete_lists_by_id",
+    "method": "DELETE",
+    "path_template": "/api/lists/{numeric}",
+    "api_surface_template": "/api/lists/{numeric}",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "11"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     65
+    ]
+   },
+   {
+    "name": "get_lists_by_id",
+    "method": "GET",
+    "path_template": "/api/lists/{numeric}",
+    "api_surface_template": "/api/lists/{numeric}",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "11",
+       "3",
+       "4",
+       "5",
+       "6"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200,
+     400
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     21,
+     22,
+     23,
+     24,
+     64,
+     66
+    ]
+   },
+   {
+    "name": "put_lists_by_id",
+    "method": "PUT",
+    "path_template": "/api/lists/{numeric}",
+    "api_surface_template": "/api/lists/{numeric}",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "11"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "name": "string",
+      "type": "string",
+      "optin": "string",
+      "tags": "array",
+      "description": "string"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     63
+    ]
+   },
+   {
+    "name": "get_media",
+    "method": "GET",
+    "path_template": "/api/media",
+    "api_surface_template": "/api/media",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     16,
+     50
+    ]
+   },
+   {
+    "name": "get_media_by_id",
+    "method": "GET",
+    "path_template": "/api/media/{numeric}",
+    "api_surface_template": "/api/media/{numeric}",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     51
+    ]
+   },
+   {
+    "name": "get_profile",
+    "method": "GET",
+    "path_template": "/api/profile",
+    "api_surface_template": "/api/profile",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     0
+    ]
+   },
+   {
+    "name": "get_public_lists",
+    "method": "GET",
+    "path_template": "/api/public/lists",
+    "api_surface_template": "/api/public/lists",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     53
+    ]
+   },
+   {
+    "name": "get_roles_lists",
+    "method": "GET",
+    "path_template": "/api/roles/lists",
+    "api_surface_template": "/api/roles/lists",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     19,
+     49
+    ]
+   },
+   {
+    "name": "get_roles_users",
+    "method": "GET",
+    "path_template": "/api/roles/users",
+    "api_surface_template": "/api/roles/users",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     18,
+     48
+    ]
+   },
+   {
+    "name": "get_subscribers",
+    "method": "GET",
+    "path_template": "/api/subscribers",
+    "api_surface_template": "/api/subscribers",
+    "params": [],
+    "query_parameter_names": [
+     "list_id",
+     "order",
+     "order_by",
+     "page",
+     "per_page",
+     "query",
+     "search",
+     "subscription_status"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     7,
+     25,
+     57,
+     58,
+     59
+    ]
+   },
+   {
+    "name": "get_subscribers_by_id",
+    "method": "GET",
+    "path_template": "/api/subscribers/{numeric}",
+    "api_surface_template": "/api/subscribers/{numeric}",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "3",
+       "4",
+       "5",
+       "6",
+       "7",
+       "8"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     8,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31
+    ]
+   },
+   {
+    "name": "get_subscribers_activity_by_id",
+    "method": "GET",
+    "path_template": "/api/subscribers/{numeric}/activity",
+    "api_surface_template": "/api/subscribers/{numeric}/activity",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "3",
+       "6",
+       "7"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     9,
+     34,
+     35
+    ]
+   },
+   {
+    "name": "get_subscribers_bounces_by_id",
+    "method": "GET",
+    "path_template": "/api/subscribers/{numeric}/bounces",
+    "api_surface_template": "/api/subscribers/{numeric}/bounces",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "3",
+       "5"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     10,
+     36
+    ]
+   },
+   {
+    "name": "get_subscribers_export_by_id",
+    "method": "GET",
+    "path_template": "/api/subscribers/{numeric}/export",
+    "api_surface_template": "/api/subscribers/{numeric}/export",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "3",
+       "4"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     32,
+     33
+    ]
+   },
+   {
+    "name": "get_templates",
+    "method": "GET",
+    "path_template": "/api/templates",
+    "api_surface_template": "/api/templates",
+    "params": [],
+    "query_parameter_names": [
+     "no_body"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     13,
+     15,
+     41
+    ]
+   },
+   {
+    "name": "get_templates_by_id",
+    "method": "GET",
+    "path_template": "/api/templates/{numeric}",
+    "api_surface_template": "/api/templates/{numeric}",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "5",
+       "6",
+       "7"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     42,
+     43,
+     44
+    ]
+   },
+   {
+    "name": "get_users",
+    "method": "GET",
+    "path_template": "/api/users",
+    "api_surface_template": "/api/users",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     17,
+     45
+    ]
+   },
+   {
+    "name": "get_users_by_id",
+    "method": "GET",
+    "path_template": "/api/users/{numeric}",
+    "api_surface_template": "/api/users/{numeric}",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1",
+       "2"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     46,
+     47
+    ]
+   }
+  ],
+  "records": [
+   {
+    "ordinal": 0,
+    "method": "GET",
+    "path": "/api/profile",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 1,
+    "method": "GET",
+    "path": "/api/config",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 2,
+    "method": "GET",
+    "path": "/api/lists",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 3,
+    "method": "GET",
+    "path": "/api/dashboard/counts",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 4,
+    "method": "GET",
+    "path": "/api/dashboard/charts",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 5,
+    "method": "GET",
+    "path": "/api/lists",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 6,
+    "method": "GET",
+    "path": "/api/lists",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 7,
+    "method": "GET",
+    "path": "/api/subscribers",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 8,
+    "method": "GET",
+    "path": "/api/subscribers/3",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 9,
+    "method": "GET",
+    "path": "/api/subscribers/3/activity",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 10,
+    "method": "GET",
+    "path": "/api/subscribers/3/bounces",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 11,
+    "method": "GET",
+    "path": "/api/campaigns",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 12,
+    "method": "GET",
+    "path": "/api/campaigns/running/stats",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 13,
+    "method": "GET",
+    "path": "/api/templates",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 14,
+    "method": "GET",
+    "path": "/api/campaigns/2",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 15,
+    "method": "GET",
+    "path": "/api/templates",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 16,
+    "method": "GET",
+    "path": "/api/media",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 17,
+    "method": "GET",
+    "path": "/api/users",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 18,
+    "method": "GET",
+    "path": "/api/roles/users",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 19,
+    "method": "GET",
+    "path": "/api/roles/lists",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 20,
+    "method": "GET",
+    "path": "/api/lists",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 21,
+    "method": "GET",
+    "path": "/api/lists/3",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 22,
+    "method": "GET",
+    "path": "/api/lists/4",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 23,
+    "method": "GET",
+    "path": "/api/lists/5",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 24,
+    "method": "GET",
+    "path": "/api/lists/6",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 25,
+    "method": "GET",
+    "path": "/api/subscribers",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 26,
+    "method": "GET",
+    "path": "/api/subscribers/3",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 27,
+    "method": "GET",
+    "path": "/api/subscribers/4",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 28,
+    "method": "GET",
+    "path": "/api/subscribers/5",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 29,
+    "method": "GET",
+    "path": "/api/subscribers/6",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 30,
+    "method": "GET",
+    "path": "/api/subscribers/7",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 31,
+    "method": "GET",
+    "path": "/api/subscribers/8",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 32,
+    "method": "GET",
+    "path": "/api/subscribers/3/export",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 33,
+    "method": "GET",
+    "path": "/api/subscribers/4/export",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 34,
+    "method": "GET",
+    "path": "/api/subscribers/6/activity",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 35,
+    "method": "GET",
+    "path": "/api/subscribers/7/activity",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 36,
+    "method": "GET",
+    "path": "/api/subscribers/5/bounces",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 37,
+    "method": "GET",
+    "path": "/api/campaigns",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 38,
+    "method": "GET",
+    "path": "/api/campaigns/2",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 39,
+    "method": "GET",
+    "path": "/api/campaigns/3",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 40,
+    "method": "GET",
+    "path": "/api/campaigns/4",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 41,
+    "method": "GET",
+    "path": "/api/templates",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 42,
+    "method": "GET",
+    "path": "/api/templates/5",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 43,
+    "method": "GET",
+    "path": "/api/templates/6",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 44,
+    "method": "GET",
+    "path": "/api/templates/7",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 45,
+    "method": "GET",
+    "path": "/api/users",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 46,
+    "method": "GET",
+    "path": "/api/users/2",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 47,
+    "method": "GET",
+    "path": "/api/users/1",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 48,
+    "method": "GET",
+    "path": "/api/roles/users",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 49,
+    "method": "GET",
+    "path": "/api/roles/lists",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 50,
+    "method": "GET",
+    "path": "/api/media",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 51,
+    "method": "GET",
+    "path": "/api/media/1",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 52,
+    "method": "GET",
+    "path": "/api/bounces",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 53,
+    "method": "GET",
+    "path": "/api/public/lists",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 54,
+    "method": "GET",
+    "path": "/api/dashboard/counts",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 55,
+    "method": "GET",
+    "path": "/api/about",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 56,
+    "method": "GET",
+    "path": "/api/import/subscribers",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 57,
+    "method": "GET",
+    "path": "/api/subscribers",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 58,
+    "method": "GET",
+    "path": "/api/subscribers",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 59,
+    "method": "GET",
+    "path": "/api/subscribers",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 60,
+    "method": "GET",
+    "path": "/api/campaigns",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 61,
+    "method": "GET",
+    "path": "/api/lists",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 62,
+    "method": "POST",
+    "path": "/api/lists",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 63,
+    "method": "PUT",
+    "path": "/api/lists/11",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 64,
+    "method": "GET",
+    "path": "/api/lists/11",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 65,
+    "method": "DELETE",
+    "path": "/api/lists/11",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 66,
+    "method": "GET",
+    "path": "/api/lists/11",
+    "status": 400,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 67,
+    "method": "GET",
+    "path": "/api/lists",
+    "status": 200,
+    "content_type": "application/json"
+   }
+  ],
+  "excluded": [],
+  "templated_groups": 11,
+  "kind": "environment-manifest",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "confidence": "inferred",
+ "authority": "historical-reference",
+ "environment": null,
+ "limitations": [
+  "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+  "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+  "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+  "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+  "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+  "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+  "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+  "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+  "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+ ],
+ "relationship_coverage": null,
+ "locations": [
+  {
+   "kind": "artifact-path",
+   "path": "/home/ubuntu/capture/listmonk/listmonk.scoped.har"
+  }
+ ],
+ "evidence_links": [
+  "ev_40b38ad41b4906c91a10812bd33a562c757b5bbf249f84f2f5b173e3fe59f0ba"
+ ]
+}

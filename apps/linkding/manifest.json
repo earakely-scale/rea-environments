@@ -1,0 +1,1226 @@
+{
+ "evidence_id": "ev_90f90a6a50da524179de380eec1153fd19b59eccb38018c84f882897c1a52994",
+ "subject": {
+  "name": "linkding.scoped.har",
+  "digest": {
+   "sha256": "255d191acf58773d0d7376a2d048dc6296f9c7baa6e7ae675053506734ff2b40"
+  },
+  "local_path": "/home/ubuntu/capture/linkding/linkding.scoped.har",
+  "format": "file",
+  "architecture": null
+ },
+ "provider": {
+  "id": "rea-analysis-view",
+  "name": "REA analysis view projection",
+  "version": "1"
+ },
+ "analysis_profile": null,
+ "predicate_type": "rea.analysis-view",
+ "operation": "inspect_analysis_view",
+ "parameters": {
+  "parent_evidence_id": "ev_07064b4e06c39fb3e0b3c5331f4786510cf63f2f2f798640f74bbec660a08b7e",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "raw_result": null,
+ "normalized_result": {
+  "parent_evidence_id": "ev_07064b4e06c39fb3e0b3c5331f4786510cf63f2f2f798640f74bbec660a08b7e",
+  "parent_operation": "inspect_web_network_capture",
+  "parent_digest": "07064b4e06c39fb3e0b3c5331f4786510cf63f2f2f798640f74bbec660a08b7e",
+  "view_digest": "ec9cfed116ab7829c1e34bbef9494b41c0deb4c84d8a55479811d0a1f8fae24e",
+  "artifact": {
+   "path": "/home/ubuntu/capture/linkding/linkding.scoped.har",
+   "sha256": "255d191acf58773d0d7376a2d048dc6296f9c7baa6e7ae675053506734ff2b40"
+  },
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 23,
+   "total": 23,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "limitations": [
+   "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+   "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+   "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+   "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+   "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+   "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+   "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+   "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+   "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+  ],
+  "unknowns": [
+   {
+    "kind": "authorization-model",
+    "statement": "Authorization headers and cookies are structurally excluded from captures; the manifest states no authorization model."
+   },
+   {
+    "kind": "response-semantics",
+    "statement": "Recorded statuses and bodies are retained only as pointers to parent records; the manifest states no response semantics."
+   },
+   {
+    "kind": "state-transition",
+    "statement": "Recorded exchanges are independent observations; the manifest states no ordering, side effects or state transitions between tools."
+   }
+  ],
+  "origin": "http://127.0.0.1:3203",
+  "name": "127-0-0-1-3203",
+  "tools": [
+   {
+    "name": "get_bookmarks",
+    "method": "GET",
+    "path_template": "/api/bookmarks/",
+    "api_surface_template": "/api/bookmarks/",
+    "params": [],
+    "query_parameter_names": [
+     "bundle",
+     "limit",
+     "offset",
+     "q"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     1,
+     8,
+     9,
+     10,
+     11,
+     12,
+     33,
+     34,
+     35,
+     36,
+     37,
+     38,
+     39,
+     40,
+     41,
+     42,
+     62
+    ]
+   },
+   {
+    "name": "post_bookmarks",
+    "method": "POST",
+    "path_template": "/api/bookmarks/",
+    "api_surface_template": "/api/bookmarks/",
+    "params": [],
+    "query_parameter_names": [
+     "disable_html_snapshot",
+     "disable_scraping"
+    ],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "url": "string",
+      "title": "string",
+      "description": "string",
+      "notes": "string",
+      "tag_names": "array",
+      "unread": "boolean",
+      "shared": "boolean"
+     }
+    },
+    "statuses": [
+     201
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     48
+    ]
+   },
+   {
+    "name": "get_bookmarks_archived",
+    "method": "GET",
+    "path_template": "/api/bookmarks/archived/",
+    "api_surface_template": "/api/bookmarks/archived/",
+    "params": [],
+    "query_parameter_names": [
+     "q"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     13,
+     14,
+     43
+    ]
+   },
+   {
+    "name": "get_bookmarks_check",
+    "method": "GET",
+    "path_template": "/api/bookmarks/check/",
+    "api_surface_template": "/api/bookmarks/check/",
+    "params": [],
+    "query_parameter_names": [
+     "url"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     16,
+     17,
+     44,
+     45
+    ]
+   },
+   {
+    "name": "get_bookmarks_shared",
+    "method": "GET",
+    "path_template": "/api/bookmarks/shared/",
+    "api_surface_template": "/api/bookmarks/shared/",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     15
+    ]
+   },
+   {
+    "name": "delete_bookmarks_by_id",
+    "method": "DELETE",
+    "path_template": "/api/bookmarks/{numeric}/",
+    "api_surface_template": "/api/bookmarks/{numeric}/",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "8"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     204
+    ],
+    "content_types": [],
+    "record_ordinals": [
+     54
+    ]
+   },
+   {
+    "name": "get_bookmarks_by_id",
+    "method": "GET",
+    "path_template": "/api/bookmarks/{numeric}/",
+    "api_surface_template": "/api/bookmarks/{numeric}/",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1",
+       "2",
+       "3",
+       "4",
+       "5",
+       "6",
+       "8"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200,
+     404
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     51,
+     55
+    ]
+   },
+   {
+    "name": "patch_bookmarks_by_id",
+    "method": "PATCH",
+    "path_template": "/api/bookmarks/{numeric}/",
+    "api_surface_template": "/api/bookmarks/{numeric}/",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "8"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "title": "string",
+      "unread": "boolean"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     49
+    ]
+   },
+   {
+    "name": "put_bookmarks_by_id",
+    "method": "PUT",
+    "path_template": "/api/bookmarks/{numeric}/",
+    "api_surface_template": "/api/bookmarks/{numeric}/",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "8"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "url": "string",
+      "title": "string",
+      "description": "string",
+      "notes": "string",
+      "tag_names": "array"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     53
+    ]
+   },
+   {
+    "name": "post_bookmarks_archive_by_id",
+    "method": "POST",
+    "path_template": "/api/bookmarks/{numeric}/archive/",
+    "api_surface_template": "/api/bookmarks/{numeric}/archive/",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "8"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     204
+    ],
+    "content_types": [],
+    "record_ordinals": [
+     50
+    ]
+   },
+   {
+    "name": "get_bookmarks_assets_by_id",
+    "method": "GET",
+    "path_template": "/api/bookmarks/{numeric}/assets/",
+    "api_surface_template": "/api/bookmarks/{numeric}/assets/",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1",
+       "2"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     18,
+     46
+    ]
+   },
+   {
+    "name": "get_bookmarks_assets_by_id_id_2",
+    "method": "GET",
+    "path_template": "/api/bookmarks/{numeric}/assets/{numeric}/",
+    "api_surface_template": "/api/bookmarks/{numeric}/assets/{numeric}/",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1"
+      ]
+     },
+     {
+      "index": 4,
+      "name": "id_2",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     19
+    ]
+   },
+   {
+    "name": "post_bookmarks_unarchive_by_id",
+    "method": "POST",
+    "path_template": "/api/bookmarks/{numeric}/unarchive/",
+    "api_surface_template": "/api/bookmarks/{numeric}/unarchive/",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "8"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     204
+    ],
+    "content_types": [],
+    "record_ordinals": [
+     52
+    ]
+   },
+   {
+    "name": "get_bundles",
+    "method": "GET",
+    "path_template": "/api/bundles/",
+    "api_surface_template": "/api/bundles/",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     30,
+     63
+    ]
+   },
+   {
+    "name": "post_bundles",
+    "method": "POST",
+    "path_template": "/api/bundles/",
+    "api_surface_template": "/api/bundles/",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "name": "string",
+      "search": "string",
+      "any_tags": "string",
+      "all_tags": "string",
+      "excluded_tags": "string"
+     }
+    },
+    "statuses": [
+     201
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     59
+    ]
+   },
+   {
+    "name": "delete_bundles_by_id",
+    "method": "DELETE",
+    "path_template": "/api/bundles/{numeric}/",
+    "api_surface_template": "/api/bundles/{numeric}/",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "4"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     204
+    ],
+    "content_types": [],
+    "record_ordinals": [
+     61
+    ]
+   },
+   {
+    "name": "get_bundles_by_id",
+    "method": "GET",
+    "path_template": "/api/bundles/{numeric}/",
+    "api_surface_template": "/api/bundles/{numeric}/",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1",
+       "2"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     31,
+     32
+    ]
+   },
+   {
+    "name": "patch_bundles_by_id",
+    "method": "PATCH",
+    "path_template": "/api/bundles/{numeric}/",
+    "api_surface_template": "/api/bundles/{numeric}/",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "4"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "name": "string"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     60
+    ]
+   },
+   {
+    "name": "get_tags",
+    "method": "GET",
+    "path_template": "/api/tags/",
+    "api_surface_template": "/api/tags/",
+    "params": [],
+    "query_parameter_names": [
+     "limit",
+     "offset"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     20,
+     21,
+     47
+    ]
+   },
+   {
+    "name": "post_tags",
+    "method": "POST",
+    "path_template": "/api/tags/",
+    "api_surface_template": "/api/tags/",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "name": "string"
+     }
+    },
+    "statuses": [
+     201
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     56
+    ]
+   },
+   {
+    "name": "delete_tags_by_id",
+    "method": "DELETE",
+    "path_template": "/api/tags/{numeric}/",
+    "api_surface_template": "/api/tags/{numeric}/",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "10"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     204
+    ],
+    "content_types": [],
+    "record_ordinals": [
+     58
+    ]
+   },
+   {
+    "name": "get_tags_by_id",
+    "method": "GET",
+    "path_template": "/api/tags/{numeric}/",
+    "api_surface_template": "/api/tags/{numeric}/",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1",
+       "10",
+       "2",
+       "3",
+       "4",
+       "5",
+       "6",
+       "7",
+       "8"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     57
+    ]
+   },
+   {
+    "name": "get_user_profile",
+    "method": "GET",
+    "path_template": "/api/user/profile/",
+    "api_surface_template": "/api/user/profile/",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     0
+    ]
+   }
+  ],
+  "records": [
+   {
+    "ordinal": 0,
+    "method": "GET",
+    "path": "/api/user/profile/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 1,
+    "method": "GET",
+    "path": "/api/bookmarks/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 2,
+    "method": "GET",
+    "path": "/api/bookmarks/1/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 3,
+    "method": "GET",
+    "path": "/api/bookmarks/2/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 4,
+    "method": "GET",
+    "path": "/api/bookmarks/3/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 5,
+    "method": "GET",
+    "path": "/api/bookmarks/4/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 6,
+    "method": "GET",
+    "path": "/api/bookmarks/5/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 7,
+    "method": "GET",
+    "path": "/api/bookmarks/6/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 8,
+    "method": "GET",
+    "path": "/api/bookmarks/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 9,
+    "method": "GET",
+    "path": "/api/bookmarks/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 10,
+    "method": "GET",
+    "path": "/api/bookmarks/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 11,
+    "method": "GET",
+    "path": "/api/bookmarks/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 12,
+    "method": "GET",
+    "path": "/api/bookmarks/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 13,
+    "method": "GET",
+    "path": "/api/bookmarks/archived/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 14,
+    "method": "GET",
+    "path": "/api/bookmarks/archived/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 15,
+    "method": "GET",
+    "path": "/api/bookmarks/shared/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 16,
+    "method": "GET",
+    "path": "/api/bookmarks/check/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 17,
+    "method": "GET",
+    "path": "/api/bookmarks/check/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 18,
+    "method": "GET",
+    "path": "/api/bookmarks/1/assets/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 19,
+    "method": "GET",
+    "path": "/api/bookmarks/1/assets/1/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 20,
+    "method": "GET",
+    "path": "/api/tags/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 21,
+    "method": "GET",
+    "path": "/api/tags/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 22,
+    "method": "GET",
+    "path": "/api/tags/5/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 23,
+    "method": "GET",
+    "path": "/api/tags/2/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 24,
+    "method": "GET",
+    "path": "/api/tags/3/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 25,
+    "method": "GET",
+    "path": "/api/tags/6/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 26,
+    "method": "GET",
+    "path": "/api/tags/7/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 27,
+    "method": "GET",
+    "path": "/api/tags/4/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 28,
+    "method": "GET",
+    "path": "/api/tags/1/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 29,
+    "method": "GET",
+    "path": "/api/tags/8/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 30,
+    "method": "GET",
+    "path": "/api/bundles/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 31,
+    "method": "GET",
+    "path": "/api/bundles/2/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 32,
+    "method": "GET",
+    "path": "/api/bundles/1/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 33,
+    "method": "GET",
+    "path": "/api/bookmarks/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 34,
+    "method": "GET",
+    "path": "/api/bookmarks/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 35,
+    "method": "GET",
+    "path": "/api/bookmarks/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 36,
+    "method": "GET",
+    "path": "/api/bookmarks/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 37,
+    "method": "GET",
+    "path": "/api/bookmarks/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 38,
+    "method": "GET",
+    "path": "/api/bookmarks/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 39,
+    "method": "GET",
+    "path": "/api/bookmarks/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 40,
+    "method": "GET",
+    "path": "/api/bookmarks/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 41,
+    "method": "GET",
+    "path": "/api/bookmarks/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 42,
+    "method": "GET",
+    "path": "/api/bookmarks/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 43,
+    "method": "GET",
+    "path": "/api/bookmarks/archived/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 44,
+    "method": "GET",
+    "path": "/api/bookmarks/check/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 45,
+    "method": "GET",
+    "path": "/api/bookmarks/check/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 46,
+    "method": "GET",
+    "path": "/api/bookmarks/2/assets/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 47,
+    "method": "GET",
+    "path": "/api/tags/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 48,
+    "method": "POST",
+    "path": "/api/bookmarks/",
+    "status": 201,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 49,
+    "method": "PATCH",
+    "path": "/api/bookmarks/8/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 50,
+    "method": "POST",
+    "path": "/api/bookmarks/8/archive/",
+    "status": 204,
+    "content_type": null
+   },
+   {
+    "ordinal": 51,
+    "method": "GET",
+    "path": "/api/bookmarks/8/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 52,
+    "method": "POST",
+    "path": "/api/bookmarks/8/unarchive/",
+    "status": 204,
+    "content_type": null
+   },
+   {
+    "ordinal": 53,
+    "method": "PUT",
+    "path": "/api/bookmarks/8/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 54,
+    "method": "DELETE",
+    "path": "/api/bookmarks/8/",
+    "status": 204,
+    "content_type": null
+   },
+   {
+    "ordinal": 55,
+    "method": "GET",
+    "path": "/api/bookmarks/8/",
+    "status": 404,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 56,
+    "method": "POST",
+    "path": "/api/tags/",
+    "status": 201,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 57,
+    "method": "GET",
+    "path": "/api/tags/10/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 58,
+    "method": "DELETE",
+    "path": "/api/tags/10/",
+    "status": 204,
+    "content_type": null
+   },
+   {
+    "ordinal": 59,
+    "method": "POST",
+    "path": "/api/bundles/",
+    "status": 201,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 60,
+    "method": "PATCH",
+    "path": "/api/bundles/4/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 61,
+    "method": "DELETE",
+    "path": "/api/bundles/4/",
+    "status": 204,
+    "content_type": null
+   },
+   {
+    "ordinal": 62,
+    "method": "GET",
+    "path": "/api/bookmarks/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 63,
+    "method": "GET",
+    "path": "/api/bundles/",
+    "status": 200,
+    "content_type": "application/json"
+   }
+  ],
+  "excluded": [],
+  "templated_groups": 13,
+  "kind": "environment-manifest",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "confidence": "inferred",
+ "authority": "historical-reference",
+ "environment": null,
+ "limitations": [
+  "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+  "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+  "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+  "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+  "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+  "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+  "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+  "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+  "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+ ],
+ "relationship_coverage": null,
+ "locations": [
+  {
+   "kind": "artifact-path",
+   "path": "/home/ubuntu/capture/linkding/linkding.scoped.har"
+  }
+ ],
+ "evidence_links": [
+  "ev_07064b4e06c39fb3e0b3c5331f4786510cf63f2f2f798640f74bbec660a08b7e"
+ ]
+}

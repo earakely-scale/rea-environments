@@ -1,0 +1,26 @@
+# Keycloak 26.8.1 (start-dev, embedded H2 file database) for the rea showcase capture.
+# Loopback only; one compose project: rea-keycloak. Start with ./up.sh, which generates the bootstrap credential into .admin
+# (mode 600) and exports it only to this compose invocation. seed.py replaces the temporary bootstrap admin with a permanent
+# "rea-admin" and deletes the bootstrap user.
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.8.1
+    command: ["start-dev"]
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3210:8080"
+    environment:
+      KC_BOOTSTRAP_ADMIN_USERNAME: rea-bootstrap
+      KC_BOOTSTRAP_ADMIN_PASSWORD: ${KC_BOOTSTRAP_PASSWORD:?run up.sh}
+      KC_HEALTH_ENABLED: "true"
+      KC_HTTP_ENABLED: "true"
+    volumes:
+      - kc-data:/opt/keycloak/data
+    healthcheck:
+      # The image has no curl or wget; bash /dev/tcp against the management port's readiness probe.
+      test: ["CMD-SHELL", "exec 3<>/dev/tcp/127.0.0.1/9000 && printf 'GET /health/ready HTTP/1.1\\r\\nHost: localhost\\r\\nConnection: close\\r\\n\\r\\n' >&3 && grep -q UP <&3"]
+      interval: 5s
+      timeout: 5s
+      retries: 60
+volumes:
+  kc-data: {}

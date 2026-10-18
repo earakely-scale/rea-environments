@@ -1,0 +1,269 @@
+{
+ "app": "navidrome",
+ "image": "deluan/navidrome:0.64.2",
+ "image_digest": "deluan/navidrome@sha256:38dc2727bfcfd5ede290f8ada114fc90368146f265ae4701ddddbcbe2a44ee52",
+ "app_version": "0.64.2",
+ "app_version_full": "0.64.2",
+ "database": "sqlite3 in /data (named volume nd-data); music library bind-mounted read-only from ./music",
+ "replacement_for": "healthchecks: its web UI is server-rendered HTML and its REST API has too few JSON reads with string fields; the capture kept 27 records and gen_tasks found 5 task candidates against a bar of 10",
+ "compose_project": "rea-navidrome",
+ "origin": "http://127.0.0.1:3233",
+ "tooling": {
+  "rea": "6.6.0",
+  "playwright-core": "1.58.2",
+  "chromium": "Chromium 155.0.8059.79 snap",
+  "node": "v24.22.0",
+  "python": "3.12.3",
+  "docker": "29.9.1",
+  "compose": "5.6.0",
+  "agent-env": "agent-env 0.9.1334",
+  "vm": "Ubuntu 24.04 amd64"
+ },
+ "scoped_har": {
+  "file": "navidrome.scoped.har",
+  "sha256": "b516aa95b4651db7489d229659785af72dc85c906793b52919cd759f191dedf5",
+  "bytes": 222808,
+  "records": 71,
+  "methods": {
+   "GET": 68,
+   "POST": 1,
+   "PUT": 1,
+   "DELETE": 1
+  },
+  "statuses": {
+   "200": 70,
+   "404": 1
+  }
+ },
+ "scope_har": {
+  "origin": "http://127.0.0.1:3233",
+  "keep_regex": "^/api/",
+  "kept": 71,
+  "dropped": {
+   "other-origin": 12,
+   "path": 60,
+   "non-json": 1,
+   "auth": 1,
+   "big-body": 0,
+   "over-max": 0
+  },
+  "methods": {
+   "GET": 68,
+   "POST": 1,
+   "PUT": 1,
+   "DELETE": 1
+  },
+  "bytes": 222326
+ },
+ "credential_grep": {
+  "admin_secret_literal_hits": 0,
+  "token_shape_hits_hf_ghp_Bearer": 0,
+  "result": "pass"
+ },
+ "manifest": {
+  "evidence_id": "ev_e37526a3edbe955837e258ccc596d67628ca77f09f9b2a6eb2b27a967ab57f67",
+  "confidence": "inferred",
+  "view_digest": "dd415d840a0ac4cf28450f55951e10ad4fd7ddbe3cd5c0b259a27385a821e7aa",
+  "tools": 25,
+  "tools_by_method": {
+   "GET": 22,
+   "POST": 1,
+   "DELETE": 1,
+   "PUT": 1
+  },
+  "templated_groups": 9,
+  "params_by_rule": {
+   "sibling-variance": 8,
+   "numeric": 1
+  },
+  "params_total": 9,
+  "query_parameter_names_distinct": [
+   "_end",
+   "_order",
+   "_sort",
+   "_start",
+   "album_id",
+   "artist_id",
+   "name",
+   "playlist_id",
+   "role",
+   "seed",
+   "tag_name",
+   "title"
+  ],
+  "tools_with_body_shape": 2,
+  "statuses_seen": [
+   200,
+   404
+  ],
+  "excluded": 0,
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "tool_names": [
+   "get_album",
+   "get_album_by_album_id",
+   "get_artist",
+   "get_artist_by_artist_id",
+   "get_genre",
+   "get_library",
+   "get_library_by_id",
+   "get_player",
+   "get_playlist",
+   "post_playlist",
+   "delete_playlist_5t7xnti2owmqvpny2o4bvf",
+   "put_playlist_5t7xnti2owmqvpny2o4bvf",
+   "get_playlist_by_playlist_id",
+   "get_playlist_tracks_by_playlist_id",
+   "get_radio",
+   "get_radio_by_radio_id",
+   "get_share",
+   "get_share_by_share_id",
+   "get_song",
+   "get_song_3jg2qwrewhi5gcrke3aeso_playlists",
+   "get_song_by_song_id",
+   "get_tag",
+   "get_transcoding",
+   "get_user",
+   "get_user_by_user_id"
+  ]
+ },
+ "manifest_norules": {
+  "evidence_id": "ev_475574445675330cc4afb2c4bd7951e3438bad141740bcba49b1b89248329bf9",
+  "confidence": "inferred",
+  "view_digest": "cd55c0764cad5981e32b15b6439a7b9aadf873dc2eb04dc2fa370b79c6a87570",
+  "tools": 46,
+  "tools_by_method": {
+   "GET": 43,
+   "POST": 1,
+   "DELETE": 1,
+   "PUT": 1
+  },
+  "templated_groups": 1,
+  "params_by_rule": {
+   "numeric": 1
+  },
+  "params_total": 1,
+  "query_parameter_names_distinct": [
+   "_end",
+   "_order",
+   "_sort",
+   "_start",
+   "album_id",
+   "artist_id",
+   "name",
+   "playlist_id",
+   "role",
+   "seed",
+   "tag_name",
+   "title"
+  ],
+  "tools_with_body_shape": 2,
+  "statuses_seen": [
+   200,
+   404
+  ],
+  "excluded": 0,
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "tool_names": [
+   "get_album",
+   "get_album_4yw1h3sdyk6pn79uj3smau",
+   "get_album_6onaua21frfkx2spahnjcl",
+   "get_album_6uv6c755ej9zrmdquk3vw2",
+   "get_artist",
+   "get_artist_22ahq005xktd48hfnbxfgn",
+   "get_artist_3uyicepjb2mxhqhgc0ff6k",
+   "get_artist_49hedjj2cnemznkseubggn",
+   "get_artist_4zfhdbn3qxzi849vgvgujz",
+   "get_artist_4hczvwmztwytonpj5yq15d",
+   "get_genre",
+   "get_library",
+   "get_library_by_id",
+   "get_player",
+   "get_playlist",
+   "post_playlist",
+   "get_playlist_3rx5tehdnc7jazojzk0g3t",
+   "get_playlist_3rx5tehdnc7jazojzk0g3t_tracks",
+   "delete_playlist_5t7xnti2owmqvpny2o4bvf",
+   "get_playlist_5t7xnti2owmqvpny2o4bvf",
+   "put_playlist_5t7xnti2owmqvpny2o4bvf",
+   "get_playlist_63eo9pcpwn1owlfmftb9or",
+   "get_playlist_63eo9pcpwn1owlfmftb9or_tracks",
+   "get_radio",
+   "get_radio_7cad5jd4csvg59z0ftg8cg",
+   "get_radio_7gbzdu3laalpstj3lbxbtv",
+   "get_share",
+   "get_share_g6lktgvjbd",
+   "get_share_mgpcywkgnc",
+   "get_song",
+   "get_song_0mymnexkls0yptdv73lfx8",
+   "get_song_0hzzxirc74dm3ubteurbcy",
+   "get_song_1kfmg5eqj0ywv6wvqlszbc",
+   "get_song_2cp7oo7xusr1jmo6okpw8h",
+   "get_song_3jg2qwrewhi5gcrke3aeso",
+   "get_song_3jg2qwrewhi5gcrke3aeso_playlists",
+   "get_song_5sdjsciux1krbnnretzvn1",
+   "get_song_7gyvvsoelpsmcwaen818m0",
+   "get_song_7najnesyvdpazbvp8ebtfx",
+   "get_song_7wuqlvvdlgtzo9cwm2hisl",
+   "get_song_7wdqqnepoelbyxaegmdcav",
+   "get_tag",
+   "get_transcoding",
+   "get_user",
+   "get_user_2bhm96olgivicyo0l7vch9",
+   "get_user_6k0wcvodee6w26zw1anboy"
+  ]
+ },
+ "evidence": {
+  "capture_evidence_id": "ev_3995896845c068943afaf1c5bb032f2e6f303a279f4c24c26fae001311ec22b7",
+  "capture_confidence": "observed",
+  "capture_total_records": 71
+ },
+ "seeded_objects": "a generated library of 10 silent MP3 tracks with ID3 tags on 3 albums (Tide Tables by The Saltmarsh Lanterns, Night Shift at the Lamp Room by Ada Finch Quartet, Quarry Hymns by Granite Ledger Choir), composers Mina Okafor, Ada Finch and Rui Castellanos; library renamed Saltmarsh Depot Archive; admin Rea Admin and user Mina Okafor; 2 playlists (Lighthouse Rota Night Mix, Blue Heron Kitchen Prep); 2 internet radio stations on example.test; 2 shares (album, playlist); stars and ratings",
+ "seeded_detail": {
+  "library": "Saltmarsh Depot Archive (/music, renamed with PUT /api/library/1): 10 tracks, 3 albums, 6 artists (3 album artists + 3 composers)",
+  "albums": {
+   "Tide Tables": "The Saltmarsh Lanterns, 2024, Coastal Folk, composer Mina Okafor, rated 4: Spring Tide at Granite Point (starred), Lamp Oil Waltz (rated 5), Saltmarsh Depot Blues, Cart Number Seven",
+   "Night Shift at the Lamp Room": "Ada Finch Quartet, 2025, Chamber Jazz, composer Ada Finch, starred: Twenty-Two Hundred Hours, Brass Lens Polka, Hand-over at Six",
+   "Quarry Hymns": "Granite Ledger Choir, 2023, Choral, composer Rui Castellanos: Four Hundred and Twelve Blocks, Audit on the Fourteenth (rated 3), Tidal Yard Lament"
+  },
+  "track_comments": "every track has an ID3 comment, e.g. 'Three-quarter time for the 180 litres of winter lamp oil.'",
+  "users": [
+   "rea-admin (Rea Admin, rea-admin@example.test, admin)",
+   "mina.okafor (Mina Okafor, mina.okafor@example.test)"
+  ],
+  "playlists": {
+   "Lighthouse Rota Night Mix": "public, 'For the 22:00 to 06:00 shift; keep the volume under the foghorn.', 4 tracks",
+   "Blue Heron Kitchen Prep": "private, 'Prep-list music for the first sitting of 36 covers.', 3 tracks"
+  },
+  "radios": [
+   "Copperfield Annex Radio (http://radio.example.test/copperfield-annex)",
+   "Granite Point Shipping Forecast (http://radio.example.test/granite-point-forecast)"
+  ],
+  "scratch_during_capture": "playlist 'Rea scratch playlist' created (200), updated with PUT, read, deleted (200), re-read (404)",
+  "shares": "album Quarry Hymns, 'Quarry Hymns for the Granite Ledger auditors', not downloadable; playlist Lighthouse Rota Night Mix, 'Night Mix for the relief crew at Granite Point', downloadable"
+ },
+ "ui_pages_visited": [
+  "/app/ (login)",
+  "#/album/recentlyAdded",
+  "#/album/all",
+  "#/album/<Tide Tables id>/show",
+  "#/artist",
+  "#/artist/<Ada Finch Quartet id>/show",
+  "#/song",
+  "#/playlist",
+  "#/playlist/<Night Mix id>/show",
+  "#/radio",
+  "#/share",
+  "#/user",
+  "#/player",
+  "#/library",
+  "#/album/all"
+ ]
+}

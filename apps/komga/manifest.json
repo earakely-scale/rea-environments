@@ -1,0 +1,1987 @@
+{
+ "evidence_id": "ev_2400fc90acfee4c519b06085c63026c94599134757eb02bfa872af0b32bbdc10",
+ "subject": {
+  "name": "komga.scoped.har",
+  "digest": {
+   "sha256": "4486c491d956d4a28b83a739ed6dd788f6bbb8f3790f73186583a35075870d9e"
+  },
+  "local_path": "/home/ubuntu/capture/komga/komga.scoped.har",
+  "format": "file",
+  "architecture": null
+ },
+ "provider": {
+  "id": "rea-analysis-view",
+  "name": "REA analysis view projection",
+  "version": "1"
+ },
+ "analysis_profile": null,
+ "predicate_type": "rea.analysis-view",
+ "operation": "inspect_analysis_view",
+ "parameters": {
+  "parent_evidence_id": "ev_5d1edee16d3181a6cb765a258edf8a455e0f669980a1b3943b5a465d859db5a8",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "raw_result": null,
+ "normalized_result": {
+  "parent_evidence_id": "ev_5d1edee16d3181a6cb765a258edf8a455e0f669980a1b3943b5a465d859db5a8",
+  "parent_operation": "inspect_web_network_capture",
+  "parent_digest": "5d1edee16d3181a6cb765a258edf8a455e0f669980a1b3943b5a465d859db5a8",
+  "view_digest": "2d682f99f6602a604e0e48d221034e11d807f7ca23d384b0ff364259f5734cf0",
+  "artifact": {
+   "path": "/home/ubuntu/capture/komga/komga.scoped.har",
+   "sha256": "4486c491d956d4a28b83a739ed6dd788f6bbb8f3790f73186583a35075870d9e"
+  },
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 42,
+   "total": 42,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "limitations": [
+   "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+   "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+   "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+   "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+   "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+   "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+   "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+   "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+   "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+  ],
+  "unknowns": [
+   {
+    "kind": "authorization-model",
+    "statement": "Authorization headers and cookies are structurally excluded from captures; the manifest states no authorization model."
+   },
+   {
+    "kind": "response-semantics",
+    "statement": "Recorded statuses and bodies are retained only as pointers to parent records; the manifest states no response semantics."
+   },
+   {
+    "kind": "state-transition",
+    "statement": "Recorded exchanges are independent observations; the manifest states no ordering, side effects or state transitions between tools."
+   }
+  ],
+  "origin": "http://127.0.0.1:3231",
+  "name": "127-0-0-1-3231",
+  "tools": [
+   {
+    "name": "get_age_ratings",
+    "method": "GET",
+    "path_template": "/api/v1/age-ratings",
+    "api_surface_template": "/api/v1/age-ratings",
+    "params": [],
+    "query_parameter_names": [
+     "collection_id",
+     "library_id"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     44,
+     70,
+     97
+    ]
+   },
+   {
+    "name": "get_books",
+    "method": "GET",
+    "path_template": "/api/v1/books",
+    "api_surface_template": "/api/v1/books",
+    "params": [],
+    "query_parameter_names": [
+     "search",
+     "size",
+     "tag"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     14,
+     47,
+     49
+    ]
+   },
+   {
+    "name": "get_books_0rz51k8gva36d_pages",
+    "method": "GET",
+    "path_template": "/api/v1/books/0RZ51K8GVA36D/pages",
+    "api_surface_template": "/api/v1/books/0RZ51K8GVA36D/pages",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     25
+    ]
+   },
+   {
+    "name": "post_books_list",
+    "method": "POST",
+    "path_template": "/api/v1/books/list",
+    "api_surface_template": "/api/v1/books/list",
+    "params": [],
+    "query_parameter_names": [
+     "page",
+     "size",
+     "sort",
+     "unpaged"
+    ],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "condition": "object"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     3,
+     53,
+     54,
+     56,
+     57,
+     60,
+     63,
+     77,
+     81,
+     84,
+     86,
+     92,
+     103
+    ]
+   },
+   {
+    "name": "get_books_by_book_id",
+    "method": "GET",
+    "path_template": "/api/v1/books/{book_id}",
+    "api_surface_template": "/api/v1/books/0RZ51K8GQACTF",
+    "params": [
+     {
+      "index": 3,
+      "name": "book_id",
+      "rule": "sibling-variance",
+      "basis": "inferred",
+      "observed_values": [
+       "0RZ51K8GFA1KB",
+       "0RZ51K8GQACTC",
+       "0RZ51K8GQACTD",
+       "0RZ51K8GQACTF",
+       "ondeck"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "library_id"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     15,
+     16,
+     17,
+     18,
+     50,
+     55,
+     85
+    ]
+   },
+   {
+    "name": "get_books_next_by_book_id",
+    "method": "GET",
+    "path_template": "/api/v1/books/{book_id}/next",
+    "api_surface_template": "/api/v1/books/0RZ51K8GQACTB/next",
+    "params": [
+     {
+      "index": 3,
+      "name": "book_id",
+      "rule": "sibling-variance",
+      "basis": "inferred",
+      "observed_values": [
+       "0RZ51K8GFA1KB",
+       "0RZ51K8GQACTB",
+       "0RZ51K8GVA36D"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     19,
+     20,
+     88
+    ]
+   },
+   {
+    "name": "get_books_previous_by_book_id",
+    "method": "GET",
+    "path_template": "/api/v1/books/{book_id}/previous",
+    "api_surface_template": "/api/v1/books/0RZ51K8GKA231/previous",
+    "params": [
+     {
+      "index": 3,
+      "name": "book_id",
+      "rule": "sibling-variance",
+      "basis": "inferred",
+      "observed_values": [
+       "0RZ51K8GFA1KB",
+       "0RZ51K8GKA231",
+       "0RZ51K8GQACTC"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200,
+     404
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     21,
+     22,
+     89
+    ]
+   },
+   {
+    "name": "get_books_readlists_by_book_id",
+    "method": "GET",
+    "path_template": "/api/v1/books/{book_id}/readlists",
+    "api_surface_template": "/api/v1/books/0RZ51K8GFA1KB/readlists",
+    "params": [
+     {
+      "index": 3,
+      "name": "book_id",
+      "rule": "sibling-variance",
+      "basis": "inferred",
+      "observed_values": [
+       "0RZ51K8GFA1KB",
+       "0RZ51K8GQACTC"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     23,
+     24,
+     87
+    ]
+   },
+   {
+    "name": "get_claim",
+    "method": "GET",
+    "path_template": "/api/v1/claim",
+    "api_surface_template": "/api/v1/claim",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     0
+    ]
+   },
+   {
+    "name": "get_collections",
+    "method": "GET",
+    "path_template": "/api/v1/collections",
+    "api_surface_template": "/api/v1/collections",
+    "params": [],
+    "query_parameter_names": [
+     "library_id",
+     "size"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     26,
+     65,
+     115
+    ]
+   },
+   {
+    "name": "post_collections",
+    "method": "POST",
+    "path_template": "/api/v1/collections",
+    "api_surface_template": "/api/v1/collections",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "name": "string",
+      "ordered": "boolean",
+      "seriesIds": "array"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     107
+    ]
+   },
+   {
+    "name": "delete_collections_0rz576qzqa5kg",
+    "method": "DELETE",
+    "path_template": "/api/v1/collections/0RZ576QZQA5KG",
+    "api_surface_template": "/api/v1/collections/0RZ576QZQA5KG",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     204
+    ],
+    "content_types": [],
+    "record_ordinals": [
+     110
+    ]
+   },
+   {
+    "name": "patch_collections_0rz576qzqa5kg",
+    "method": "PATCH",
+    "path_template": "/api/v1/collections/0RZ576QZQA5KG",
+    "api_surface_template": "/api/v1/collections/0RZ576QZQA5KG",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "name": "string",
+      "ordered": "boolean"
+     }
+    },
+    "statuses": [
+     204
+    ],
+    "content_types": [],
+    "record_ordinals": [
+     108
+    ]
+   },
+   {
+    "name": "get_collections_by_collection_id",
+    "method": "GET",
+    "path_template": "/api/v1/collections/{collection_id}",
+    "api_surface_template": "/api/v1/collections/0RZ51KS97A6Q5",
+    "params": [
+     {
+      "index": 3,
+      "name": "collection_id",
+      "rule": "sibling-variance",
+      "basis": "inferred",
+      "observed_values": [
+       "0RZ51KRY3A8P5",
+       "0RZ51KS97A6Q5",
+       "0RZ576QZQA5KG"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200,
+     404
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     27,
+     28,
+     99,
+     109,
+     111
+    ]
+   },
+   {
+    "name": "get_collections_series_by_collection_id",
+    "method": "GET",
+    "path_template": "/api/v1/collections/{collection_id}/series",
+    "api_surface_template": "/api/v1/collections/0RZ51KRY3A8P5/series",
+    "params": [
+     {
+      "index": 3,
+      "name": "collection_id",
+      "rule": "sibling-variance",
+      "basis": "inferred",
+      "observed_values": [
+       "0RZ51KRY3A8P5",
+       "0RZ51KS97A6Q5"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "page",
+     "size",
+     "unpaged"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     29,
+     30,
+     100
+    ]
+   },
+   {
+    "name": "get_genres",
+    "method": "GET",
+    "path_template": "/api/v1/genres",
+    "api_surface_template": "/api/v1/genres",
+    "params": [],
+    "query_parameter_names": [
+     "collection_id",
+     "library_id"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     41,
+     66,
+     93
+    ]
+   },
+   {
+    "name": "get_languages",
+    "method": "GET",
+    "path_template": "/api/v1/languages",
+    "api_surface_template": "/api/v1/languages",
+    "params": [],
+    "query_parameter_names": [
+     "collection_id",
+     "library_id"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     69,
+     96
+    ]
+   },
+   {
+    "name": "get_libraries",
+    "method": "GET",
+    "path_template": "/api/v1/libraries",
+    "api_surface_template": "/api/v1/libraries",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     2,
+     4,
+     52,
+     62,
+     76,
+     83,
+     91,
+     102
+    ]
+   },
+   {
+    "name": "get_libraries_0rz51k8bfa8nx",
+    "method": "GET",
+    "path_template": "/api/v1/libraries/0RZ51K8BFA8NX",
+    "api_surface_template": "/api/v1/libraries/0RZ51K8BFA8NX",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     5
+    ]
+   },
+   {
+    "name": "get_publishers",
+    "method": "GET",
+    "path_template": "/api/v1/publishers",
+    "api_surface_template": "/api/v1/publishers",
+    "params": [],
+    "query_parameter_names": [
+     "collection_id",
+     "library_id"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     43,
+     68,
+     95
+    ]
+   },
+   {
+    "name": "get_readlists",
+    "method": "GET",
+    "path_template": "/api/v1/readlists",
+    "api_surface_template": "/api/v1/readlists",
+    "params": [],
+    "query_parameter_names": [
+     "library_id",
+     "size"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     31,
+     64
+    ]
+   },
+   {
+    "name": "post_readlists",
+    "method": "POST",
+    "path_template": "/api/v1/readlists",
+    "api_surface_template": "/api/v1/readlists",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "name": "string",
+      "summary": "string",
+      "ordered": "boolean",
+      "bookIds": "array"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     112
+    ]
+   },
+   {
+    "name": "get_readlists_0rz51kszka53j_books_0rz51k8gka231_next",
+    "method": "GET",
+    "path_template": "/api/v1/readlists/0RZ51KSZKA53J/books/0RZ51K8GKA231/next",
+    "api_surface_template": "/api/v1/readlists/0RZ51KSZKA53J/books/0RZ51K8GKA231/next",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     36
+    ]
+   },
+   {
+    "name": "get_readlists_0rz56nr37ac1t_books_0rz51k8gva36d_next",
+    "method": "GET",
+    "path_template": "/api/v1/readlists/0RZ56NR37AC1T/books/0RZ51K8GVA36D/next",
+    "api_surface_template": "/api/v1/readlists/0RZ56NR37AC1T/books/0RZ51K8GVA36D/next",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     37
+    ]
+   },
+   {
+    "name": "delete_readlists_0rz576r5ka57b",
+    "method": "DELETE",
+    "path_template": "/api/v1/readlists/0RZ576R5KA57B",
+    "api_surface_template": "/api/v1/readlists/0RZ576R5KA57B",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     204
+    ],
+    "content_types": [],
+    "record_ordinals": [
+     114
+    ]
+   },
+   {
+    "name": "patch_readlists_0rz576r5ka57b",
+    "method": "PATCH",
+    "path_template": "/api/v1/readlists/0RZ576R5KA57B",
+    "api_surface_template": "/api/v1/readlists/0RZ576R5KA57B",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "summary": "string"
+     }
+    },
+    "statuses": [
+     204
+    ],
+    "content_types": [],
+    "record_ordinals": [
+     113
+    ]
+   },
+   {
+    "name": "get_readlists_by_readlist_id",
+    "method": "GET",
+    "path_template": "/api/v1/readlists/{readlist_id}",
+    "api_surface_template": "/api/v1/readlists/0RZ51KSZKA53J",
+    "params": [
+     {
+      "index": 3,
+      "name": "readlist_id",
+      "rule": "sibling-variance",
+      "basis": "inferred",
+      "observed_values": [
+       "0RZ51KSZKA53J",
+       "0RZ56NR37AC1T"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     32,
+     34,
+     105
+    ]
+   },
+   {
+    "name": "get_readlists_books_by_readlist_id",
+    "method": "GET",
+    "path_template": "/api/v1/readlists/{readlist_id}/books",
+    "api_surface_template": "/api/v1/readlists/0RZ51KSZKA53J/books",
+    "params": [
+     {
+      "index": 3,
+      "name": "readlist_id",
+      "rule": "sibling-variance",
+      "basis": "inferred",
+      "observed_values": [
+       "0RZ51KSZKA53J",
+       "0RZ56NR37AC1T"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "page",
+     "size",
+     "unpaged"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     33,
+     35,
+     106
+    ]
+   },
+   {
+    "name": "get_series",
+    "method": "GET",
+    "path_template": "/api/v1/series",
+    "api_surface_template": "/api/v1/series",
+    "params": [],
+    "query_parameter_names": [
+     "search",
+     "size",
+     "status"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     6,
+     46,
+     48
+    ]
+   },
+   {
+    "name": "post_series_list",
+    "method": "POST",
+    "path_template": "/api/v1/series/list",
+    "api_surface_template": "/api/v1/series/list",
+    "params": [],
+    "query_parameter_names": [
+     "page",
+     "size",
+     "sort"
+    ],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "condition": "object"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     73
+    ]
+   },
+   {
+    "name": "post_series_list_alphabetical_groups",
+    "method": "POST",
+    "path_template": "/api/v1/series/list/alphabetical-groups",
+    "api_surface_template": "/api/v1/series/list/alphabetical-groups",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "condition": "object"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     74
+    ]
+   },
+   {
+    "name": "get_series_by_sery_id",
+    "method": "GET",
+    "path_template": "/api/v1/series/{sery_id}",
+    "api_surface_template": "/api/v1/series/0RZ51K8GFA1KA",
+    "params": [
+     {
+      "index": 3,
+      "name": "sery_id",
+      "rule": "sibling-variance",
+      "basis": "inferred",
+      "observed_values": [
+       "0RZ51K8GFA1KA",
+       "0RZ51K8GQACTA",
+       "0RZ51K8GQACTE",
+       "new",
+       "release-dates",
+       "updated"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "collection_id",
+     "library_id",
+     "oneshot"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     7,
+     8,
+     9,
+     58,
+     59,
+     71,
+     79,
+     98
+    ]
+   },
+   {
+    "name": "get_series_books_by_sery_id",
+    "method": "GET",
+    "path_template": "/api/v1/series/{sery_id}/books",
+    "api_surface_template": "/api/v1/series/0RZ51K8GQACTA/books",
+    "params": [
+     {
+      "index": 3,
+      "name": "sery_id",
+      "rule": "sibling-variance",
+      "basis": "inferred",
+      "observed_values": [
+       "0RZ51K8GFA1KA",
+       "0RZ51K8GQACTA"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     10,
+     11
+    ]
+   },
+   {
+    "name": "get_series_collections_by_sery_id",
+    "method": "GET",
+    "path_template": "/api/v1/series/{sery_id}/collections",
+    "api_surface_template": "/api/v1/series/0RZ51K8GFA1KA/collections",
+    "params": [
+     {
+      "index": 3,
+      "name": "sery_id",
+      "rule": "sibling-variance",
+      "basis": "inferred",
+      "observed_values": [
+       "0RZ51K8GFA1KA",
+       "0RZ51K8GQACTA",
+       "0RZ51K8GQACTE"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     12,
+     13,
+     80
+    ]
+   },
+   {
+    "name": "get_sharing_labels",
+    "method": "GET",
+    "path_template": "/api/v1/sharing-labels",
+    "api_surface_template": "/api/v1/sharing-labels",
+    "params": [],
+    "query_parameter_names": [
+     "library_id"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     72
+    ]
+   },
+   {
+    "name": "get_tags",
+    "method": "GET",
+    "path_template": "/api/v1/tags",
+    "api_surface_template": "/api/v1/tags",
+    "params": [],
+    "query_parameter_names": [
+     "collection_id",
+     "library_id"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     67,
+     94
+    ]
+   },
+   {
+    "name": "get_tags_book",
+    "method": "GET",
+    "path_template": "/api/v1/tags/book",
+    "api_surface_template": "/api/v1/tags/book",
+    "params": [],
+    "query_parameter_names": [
+     "readlist_id",
+     "series_id"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     78,
+     104
+    ]
+   },
+   {
+    "name": "get_tags_series",
+    "method": "GET",
+    "path_template": "/api/v1/tags/series",
+    "api_surface_template": "/api/v1/tags/series",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     42
+    ]
+   },
+   {
+    "name": "get_authors",
+    "method": "GET",
+    "path_template": "/api/v2/authors",
+    "api_surface_template": "/api/v2/authors",
+    "params": [],
+    "query_parameter_names": [
+     "role"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     45
+    ]
+   },
+   {
+    "name": "get_users",
+    "method": "GET",
+    "path_template": "/api/v2/users",
+    "api_surface_template": "/api/v2/users",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     39
+    ]
+   },
+   {
+    "name": "get_users_0rz51k69fa5zh_authentication_activity_latest",
+    "method": "GET",
+    "path_template": "/api/v2/users/0RZ51K69FA5ZH/authentication-activity/latest",
+    "api_surface_template": "/api/v2/users/0RZ51K69FA5ZH/authentication-activity/latest",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     40
+    ]
+   },
+   {
+    "name": "get_users_me",
+    "method": "GET",
+    "path_template": "/api/v2/users/me",
+    "api_surface_template": "/api/v2/users/me",
+    "params": [],
+    "query_parameter_names": [
+     "remember-me"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     1,
+     38,
+     51,
+     61,
+     75,
+     82,
+     90,
+     101
+    ]
+   }
+  ],
+  "records": [
+   {
+    "ordinal": 0,
+    "method": "GET",
+    "path": "/api/v1/claim",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 1,
+    "method": "GET",
+    "path": "/api/v2/users/me",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 2,
+    "method": "GET",
+    "path": "/api/v1/libraries",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 3,
+    "method": "POST",
+    "path": "/api/v1/books/list",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 4,
+    "method": "GET",
+    "path": "/api/v1/libraries",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 5,
+    "method": "GET",
+    "path": "/api/v1/libraries/0RZ51K8BFA8NX",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 6,
+    "method": "GET",
+    "path": "/api/v1/series",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 7,
+    "method": "GET",
+    "path": "/api/v1/series/0RZ51K8GFA1KA",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 8,
+    "method": "GET",
+    "path": "/api/v1/series/0RZ51K8GQACTA",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 9,
+    "method": "GET",
+    "path": "/api/v1/series/0RZ51K8GQACTE",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 10,
+    "method": "GET",
+    "path": "/api/v1/series/0RZ51K8GQACTA/books",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 11,
+    "method": "GET",
+    "path": "/api/v1/series/0RZ51K8GFA1KA/books",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 12,
+    "method": "GET",
+    "path": "/api/v1/series/0RZ51K8GFA1KA/collections",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 13,
+    "method": "GET",
+    "path": "/api/v1/series/0RZ51K8GQACTE/collections",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 14,
+    "method": "GET",
+    "path": "/api/v1/books",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 15,
+    "method": "GET",
+    "path": "/api/v1/books/0RZ51K8GQACTF",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 16,
+    "method": "GET",
+    "path": "/api/v1/books/0RZ51K8GFA1KB",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 17,
+    "method": "GET",
+    "path": "/api/v1/books/0RZ51K8GQACTC",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 18,
+    "method": "GET",
+    "path": "/api/v1/books/0RZ51K8GQACTD",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 19,
+    "method": "GET",
+    "path": "/api/v1/books/0RZ51K8GQACTB/next",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 20,
+    "method": "GET",
+    "path": "/api/v1/books/0RZ51K8GVA36D/next",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 21,
+    "method": "GET",
+    "path": "/api/v1/books/0RZ51K8GKA231/previous",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 22,
+    "method": "GET",
+    "path": "/api/v1/books/0RZ51K8GQACTC/previous",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 23,
+    "method": "GET",
+    "path": "/api/v1/books/0RZ51K8GFA1KB/readlists",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 24,
+    "method": "GET",
+    "path": "/api/v1/books/0RZ51K8GQACTC/readlists",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 25,
+    "method": "GET",
+    "path": "/api/v1/books/0RZ51K8GVA36D/pages",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 26,
+    "method": "GET",
+    "path": "/api/v1/collections",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 27,
+    "method": "GET",
+    "path": "/api/v1/collections/0RZ51KS97A6Q5",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 28,
+    "method": "GET",
+    "path": "/api/v1/collections/0RZ51KRY3A8P5",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 29,
+    "method": "GET",
+    "path": "/api/v1/collections/0RZ51KRY3A8P5/series",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 30,
+    "method": "GET",
+    "path": "/api/v1/collections/0RZ51KS97A6Q5/series",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 31,
+    "method": "GET",
+    "path": "/api/v1/readlists",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 32,
+    "method": "GET",
+    "path": "/api/v1/readlists/0RZ51KSZKA53J",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 33,
+    "method": "GET",
+    "path": "/api/v1/readlists/0RZ51KSZKA53J/books",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 34,
+    "method": "GET",
+    "path": "/api/v1/readlists/0RZ56NR37AC1T",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 35,
+    "method": "GET",
+    "path": "/api/v1/readlists/0RZ56NR37AC1T/books",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 36,
+    "method": "GET",
+    "path": "/api/v1/readlists/0RZ51KSZKA53J/books/0RZ51K8GKA231/next",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 37,
+    "method": "GET",
+    "path": "/api/v1/readlists/0RZ56NR37AC1T/books/0RZ51K8GVA36D/next",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 38,
+    "method": "GET",
+    "path": "/api/v2/users/me",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 39,
+    "method": "GET",
+    "path": "/api/v2/users",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 40,
+    "method": "GET",
+    "path": "/api/v2/users/0RZ51K69FA5ZH/authentication-activity/latest",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 41,
+    "method": "GET",
+    "path": "/api/v1/genres",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 42,
+    "method": "GET",
+    "path": "/api/v1/tags/series",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 43,
+    "method": "GET",
+    "path": "/api/v1/publishers",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 44,
+    "method": "GET",
+    "path": "/api/v1/age-ratings",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 45,
+    "method": "GET",
+    "path": "/api/v2/authors",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 46,
+    "method": "GET",
+    "path": "/api/v1/series",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 47,
+    "method": "GET",
+    "path": "/api/v1/books",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 48,
+    "method": "GET",
+    "path": "/api/v1/series",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 49,
+    "method": "GET",
+    "path": "/api/v1/books",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 50,
+    "method": "GET",
+    "path": "/api/v1/books/ondeck",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 51,
+    "method": "GET",
+    "path": "/api/v2/users/me",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 52,
+    "method": "GET",
+    "path": "/api/v1/libraries",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 53,
+    "method": "POST",
+    "path": "/api/v1/books/list",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 54,
+    "method": "POST",
+    "path": "/api/v1/books/list",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 55,
+    "method": "GET",
+    "path": "/api/v1/books/ondeck",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 56,
+    "method": "POST",
+    "path": "/api/v1/books/list",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 57,
+    "method": "POST",
+    "path": "/api/v1/books/list",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 58,
+    "method": "GET",
+    "path": "/api/v1/series/new",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 59,
+    "method": "GET",
+    "path": "/api/v1/series/updated",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 60,
+    "method": "POST",
+    "path": "/api/v1/books/list",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 61,
+    "method": "GET",
+    "path": "/api/v2/users/me",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 62,
+    "method": "GET",
+    "path": "/api/v1/libraries",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 63,
+    "method": "POST",
+    "path": "/api/v1/books/list",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 64,
+    "method": "GET",
+    "path": "/api/v1/readlists",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 65,
+    "method": "GET",
+    "path": "/api/v1/collections",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 66,
+    "method": "GET",
+    "path": "/api/v1/genres",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 67,
+    "method": "GET",
+    "path": "/api/v1/tags",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 68,
+    "method": "GET",
+    "path": "/api/v1/publishers",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 69,
+    "method": "GET",
+    "path": "/api/v1/languages",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 70,
+    "method": "GET",
+    "path": "/api/v1/age-ratings",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 71,
+    "method": "GET",
+    "path": "/api/v1/series/release-dates",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 72,
+    "method": "GET",
+    "path": "/api/v1/sharing-labels",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 73,
+    "method": "POST",
+    "path": "/api/v1/series/list",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 74,
+    "method": "POST",
+    "path": "/api/v1/series/list/alphabetical-groups",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 75,
+    "method": "GET",
+    "path": "/api/v2/users/me",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 76,
+    "method": "GET",
+    "path": "/api/v1/libraries",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 77,
+    "method": "POST",
+    "path": "/api/v1/books/list",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 78,
+    "method": "GET",
+    "path": "/api/v1/tags/book",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 79,
+    "method": "GET",
+    "path": "/api/v1/series/0RZ51K8GQACTA",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 80,
+    "method": "GET",
+    "path": "/api/v1/series/0RZ51K8GQACTA/collections",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 81,
+    "method": "POST",
+    "path": "/api/v1/books/list",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 82,
+    "method": "GET",
+    "path": "/api/v2/users/me",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 83,
+    "method": "GET",
+    "path": "/api/v1/libraries",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 84,
+    "method": "POST",
+    "path": "/api/v1/books/list",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 85,
+    "method": "GET",
+    "path": "/api/v1/books/0RZ51K8GFA1KB",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 86,
+    "method": "POST",
+    "path": "/api/v1/books/list",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 87,
+    "method": "GET",
+    "path": "/api/v1/books/0RZ51K8GFA1KB/readlists",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 88,
+    "method": "GET",
+    "path": "/api/v1/books/0RZ51K8GFA1KB/next",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 89,
+    "method": "GET",
+    "path": "/api/v1/books/0RZ51K8GFA1KB/previous",
+    "status": 404,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 90,
+    "method": "GET",
+    "path": "/api/v2/users/me",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 91,
+    "method": "GET",
+    "path": "/api/v1/libraries",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 92,
+    "method": "POST",
+    "path": "/api/v1/books/list",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 93,
+    "method": "GET",
+    "path": "/api/v1/genres",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 94,
+    "method": "GET",
+    "path": "/api/v1/tags",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 95,
+    "method": "GET",
+    "path": "/api/v1/publishers",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 96,
+    "method": "GET",
+    "path": "/api/v1/languages",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 97,
+    "method": "GET",
+    "path": "/api/v1/age-ratings",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 98,
+    "method": "GET",
+    "path": "/api/v1/series/release-dates",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 99,
+    "method": "GET",
+    "path": "/api/v1/collections/0RZ51KRY3A8P5",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 100,
+    "method": "GET",
+    "path": "/api/v1/collections/0RZ51KRY3A8P5/series",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 101,
+    "method": "GET",
+    "path": "/api/v2/users/me",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 102,
+    "method": "GET",
+    "path": "/api/v1/libraries",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 103,
+    "method": "POST",
+    "path": "/api/v1/books/list",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 104,
+    "method": "GET",
+    "path": "/api/v1/tags/book",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 105,
+    "method": "GET",
+    "path": "/api/v1/readlists/0RZ51KSZKA53J",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 106,
+    "method": "GET",
+    "path": "/api/v1/readlists/0RZ51KSZKA53J/books",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 107,
+    "method": "POST",
+    "path": "/api/v1/collections",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 108,
+    "method": "PATCH",
+    "path": "/api/v1/collections/0RZ576QZQA5KG",
+    "status": 204,
+    "content_type": null
+   },
+   {
+    "ordinal": 109,
+    "method": "GET",
+    "path": "/api/v1/collections/0RZ576QZQA5KG",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 110,
+    "method": "DELETE",
+    "path": "/api/v1/collections/0RZ576QZQA5KG",
+    "status": 204,
+    "content_type": null
+   },
+   {
+    "ordinal": 111,
+    "method": "GET",
+    "path": "/api/v1/collections/0RZ576QZQA5KG",
+    "status": 404,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 112,
+    "method": "POST",
+    "path": "/api/v1/readlists",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 113,
+    "method": "PATCH",
+    "path": "/api/v1/readlists/0RZ576R5KA57B",
+    "status": 204,
+    "content_type": null
+   },
+   {
+    "ordinal": 114,
+    "method": "DELETE",
+    "path": "/api/v1/readlists/0RZ576R5KA57B",
+    "status": 204,
+    "content_type": null
+   },
+   {
+    "ordinal": 115,
+    "method": "GET",
+    "path": "/api/v1/collections",
+    "status": 200,
+    "content_type": "application/json"
+   }
+  ],
+  "excluded": [],
+  "templated_groups": 11,
+  "kind": "environment-manifest",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "confidence": "inferred",
+ "authority": "historical-reference",
+ "environment": null,
+ "limitations": [
+  "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+  "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+  "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+  "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+  "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+  "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+  "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+  "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+  "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+ ],
+ "relationship_coverage": null,
+ "locations": [
+  {
+   "kind": "artifact-path",
+   "path": "/home/ubuntu/capture/komga/komga.scoped.har"
+  }
+ ],
+ "evidence_links": [
+  "ev_5d1edee16d3181a6cb765a258edf8a455e0f669980a1b3943b5a465d859db5a8"
+ ]
+}

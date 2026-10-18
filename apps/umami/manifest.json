@@ -1,0 +1,2307 @@
+{
+ "evidence_id": "ev_6559a1b1ad3429225eecffeee0b3397adeb0a5cb9535d4de80544f3c9e175ead",
+ "subject": {
+  "name": "umami.scoped.har",
+  "digest": {
+   "sha256": "f896fb119afe85ef513002099f9c2762402ec54cde9878bb58ee374824d67fc4"
+  },
+  "local_path": "/home/ubuntu/capture/umami/umami.scoped.har",
+  "format": "file",
+  "architecture": null
+ },
+ "provider": {
+  "id": "rea-analysis-view",
+  "name": "REA analysis view projection",
+  "version": "1"
+ },
+ "analysis_profile": null,
+ "predicate_type": "rea.analysis-view",
+ "operation": "inspect_analysis_view",
+ "parameters": {
+  "parent_evidence_id": "ev_12a4e7f97b75d77076ad5f7c072a7073a32f0c713f8488096e727a134cc78d35",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "raw_result": null,
+ "normalized_result": {
+  "parent_evidence_id": "ev_12a4e7f97b75d77076ad5f7c072a7073a32f0c713f8488096e727a134cc78d35",
+  "parent_operation": "inspect_web_network_capture",
+  "parent_digest": "12a4e7f97b75d77076ad5f7c072a7073a32f0c713f8488096e727a134cc78d35",
+  "view_digest": "cad72ab20b3fd578d0a384f682232bc189db96cea86cf73f87fdd65b59304c6f",
+  "artifact": {
+   "path": "/home/ubuntu/capture/umami/umami.scoped.har",
+   "sha256": "f896fb119afe85ef513002099f9c2762402ec54cde9878bb58ee374824d67fc4"
+  },
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 49,
+   "total": 49,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "limitations": [
+   "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+   "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+   "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+   "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+   "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+   "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+   "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+   "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+   "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+  ],
+  "unknowns": [
+   {
+    "kind": "authorization-model",
+    "statement": "Authorization headers and cookies are structurally excluded from captures; the manifest states no authorization model."
+   },
+   {
+    "kind": "response-semantics",
+    "statement": "Recorded statuses and bodies are retained only as pointers to parent records; the manifest states no response semantics."
+   },
+   {
+    "kind": "state-transition",
+    "statement": "Recorded exchanges are independent observations; the manifest states no ordering, side effects or state transitions between tools."
+   }
+  ],
+  "origin": "http://127.0.0.1:3215",
+  "name": "127-0-0-1-3215",
+  "tools": [
+   {
+    "name": "get_2fa_status",
+    "method": "GET",
+    "path_template": "/api/2fa/status",
+    "api_surface_template": "/api/2fa/status",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     1,
+     3,
+     20,
+     29,
+     36,
+     43,
+     46
+    ]
+   },
+   {
+    "name": "get_admin_users",
+    "method": "GET",
+    "path_template": "/api/admin/users",
+    "api_surface_template": "/api/admin/users",
+    "params": [],
+    "query_parameter_names": [
+     "page",
+     "pageSize"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     47,
+     58
+    ]
+   },
+   {
+    "name": "get_boards",
+    "method": "GET",
+    "path_template": "/api/boards",
+    "api_surface_template": "/api/boards",
+    "params": [],
+    "query_parameter_names": [
+     "page",
+     "pageSize"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     41,
+     67
+    ]
+   },
+   {
+    "name": "get_boards_by_uuid",
+    "method": "GET",
+    "path_template": "/api/boards/{uuid}",
+    "api_surface_template": "/api/boards/{uuid}",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "6d3ee457-7e82-4b75-9146-ffbbe5028759"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     68
+    ]
+   },
+   {
+    "name": "get_config",
+    "method": "GET",
+    "path_template": "/api/config",
+    "api_surface_template": "/api/config",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     0,
+     2,
+     19,
+     28,
+     35,
+     42,
+     45
+    ]
+   },
+   {
+    "name": "get_links",
+    "method": "GET",
+    "path_template": "/api/links",
+    "api_surface_template": "/api/links",
+    "params": [],
+    "query_parameter_names": [
+     "page",
+     "pageSize"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     37,
+     63
+    ]
+   },
+   {
+    "name": "get_links_charts",
+    "method": "GET",
+    "path_template": "/api/links/charts",
+    "api_surface_template": "/api/links/charts",
+    "params": [],
+    "query_parameter_names": [
+     "ids",
+     "timezone"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     38
+    ]
+   },
+   {
+    "name": "get_links_by_uuid",
+    "method": "GET",
+    "path_template": "/api/links/{uuid}",
+    "api_surface_template": "/api/links/{uuid}",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "51be9879-712b-4d24-b47c-f7dff6fbaa67"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     64
+    ]
+   },
+   {
+    "name": "get_pixels",
+    "method": "GET",
+    "path_template": "/api/pixels",
+    "api_surface_template": "/api/pixels",
+    "params": [],
+    "query_parameter_names": [
+     "page",
+     "pageSize"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     39,
+     65
+    ]
+   },
+   {
+    "name": "get_pixels_charts",
+    "method": "GET",
+    "path_template": "/api/pixels/charts",
+    "api_surface_template": "/api/pixels/charts",
+    "params": [],
+    "query_parameter_names": [
+     "ids",
+     "timezone"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     40
+    ]
+   },
+   {
+    "name": "get_pixels_by_uuid",
+    "method": "GET",
+    "path_template": "/api/pixels/{uuid}",
+    "api_surface_template": "/api/pixels/{uuid}",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "386b57c4-c620-44e2-aff3-445d3df0746a"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     66
+    ]
+   },
+   {
+    "name": "get_teams",
+    "method": "GET",
+    "path_template": "/api/teams",
+    "api_surface_template": "/api/teams",
+    "params": [],
+    "query_parameter_names": [
+     "page",
+     "pageSize"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     52
+    ]
+   },
+   {
+    "name": "get_teams_by_uuid",
+    "method": "GET",
+    "path_template": "/api/teams/{uuid}",
+    "api_surface_template": "/api/teams/{uuid}",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "14230b65-bafc-4474-9548-d6b5d0b8f066",
+       "6f00b2df-f472-4657-ae3d-fdf884436965"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     53,
+     55
+    ]
+   },
+   {
+    "name": "get_teams_users_by_uuid",
+    "method": "GET",
+    "path_template": "/api/teams/{uuid}/users",
+    "api_surface_template": "/api/teams/{uuid}/users",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "14230b65-bafc-4474-9548-d6b5d0b8f066",
+       "6f00b2df-f472-4657-ae3d-fdf884436965"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     54,
+     56
+    ]
+   },
+   {
+    "name": "get_teams_websites_by_uuid",
+    "method": "GET",
+    "path_template": "/api/teams/{uuid}/websites",
+    "api_surface_template": "/api/teams/{uuid}/websites",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "14230b65-bafc-4474-9548-d6b5d0b8f066"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     57
+    ]
+   },
+   {
+    "name": "get_users_by_uuid",
+    "method": "GET",
+    "path_template": "/api/users/{uuid}",
+    "api_surface_template": "/api/users/{uuid}",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "41e2b680-648e-4b09-bcd7-3e2b10c06264",
+       "c74f63f5-263e-45f8-bcfd-47076ad77f29",
+       "e6d0754e-807f-45c0-9ae9-aaf64f12fc92"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     59,
+     60,
+     61
+    ]
+   },
+   {
+    "name": "get_users_teams_by_uuid",
+    "method": "GET",
+    "path_template": "/api/users/{uuid}/teams",
+    "api_surface_template": "/api/users/{uuid}/teams",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "41e2b680-648e-4b09-bcd7-3e2b10c06264",
+       "e6d0754e-807f-45c0-9ae9-aaf64f12fc92"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     44,
+     62
+    ]
+   },
+   {
+    "name": "get_users_websites_by_uuid",
+    "method": "GET",
+    "path_template": "/api/users/{uuid}/websites",
+    "api_surface_template": "/api/users/{uuid}/websites",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "41e2b680-648e-4b09-bcd7-3e2b10c06264"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "pageSize",
+     "search"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     4,
+     7,
+     22,
+     31
+    ]
+   },
+   {
+    "name": "get_websites",
+    "method": "GET",
+    "path_template": "/api/websites",
+    "api_surface_template": "/api/websites",
+    "params": [],
+    "query_parameter_names": [
+     "includeTeams",
+     "page",
+     "pageSize",
+     "search"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     48,
+     93,
+     99
+    ]
+   },
+   {
+    "name": "post_websites",
+    "method": "POST",
+    "path_template": "/api/websites",
+    "api_surface_template": "/api/websites",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "name": "string",
+      "domain": "string"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     94
+    ]
+   },
+   {
+    "name": "get_websites_charts",
+    "method": "GET",
+    "path_template": "/api/websites/charts",
+    "api_surface_template": "/api/websites/charts",
+    "params": [],
+    "query_parameter_names": [
+     "ids",
+     "timezone"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     5
+    ]
+   },
+   {
+    "name": "delete_websites_by_uuid",
+    "method": "DELETE",
+    "path_template": "/api/websites/{uuid}",
+    "api_surface_template": "/api/websites/{uuid}",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "132d2a07-0d4c-4bab-9f97-45e69b0d0678"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     97
+    ]
+   },
+   {
+    "name": "get_websites_by_uuid",
+    "method": "GET",
+    "path_template": "/api/websites/{uuid}",
+    "api_surface_template": "/api/websites/{uuid}",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "132d2a07-0d4c-4bab-9f97-45e69b0d0678",
+       "3c2d6c7b-7911-42ee-9826-3290f29fd2f6",
+       "629e163c-338b-4fc7-ab93-dccad214ae8d",
+       "8a5e3955-ffbd-4271-80d9-50cb2644b7cd"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     6,
+     21,
+     30,
+     49,
+     50,
+     51,
+     96,
+     98
+    ]
+   },
+   {
+    "name": "post_websites_by_uuid",
+    "method": "POST",
+    "path_template": "/api/websites/{uuid}",
+    "api_surface_template": "/api/websites/{uuid}",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "132d2a07-0d4c-4bab-9f97-45e69b0d0678"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "name": "string",
+      "domain": "string"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     95
+    ]
+   },
+   {
+    "name": "get_websites_active_by_uuid",
+    "method": "GET",
+    "path_template": "/api/websites/{uuid}/active",
+    "api_surface_template": "/api/websites/{uuid}/active",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "3c2d6c7b-7911-42ee-9826-3290f29fd2f6",
+       "629e163c-338b-4fc7-ab93-dccad214ae8d",
+       "8a5e3955-ffbd-4271-80d9-50cb2644b7cd"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     8,
+     23,
+     32
+    ]
+   },
+   {
+    "name": "get_websites_annotations_by_uuid",
+    "method": "GET",
+    "path_template": "/api/websites/{uuid}/annotations",
+    "api_surface_template": "/api/websites/{uuid}/annotations",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "629e163c-338b-4fc7-ab93-dccad214ae8d"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "endAt",
+     "pageSize",
+     "startAt"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     11,
+     69
+    ]
+   },
+   {
+    "name": "get_websites_annotations_by_uuid_uuid_2",
+    "method": "GET",
+    "path_template": "/api/websites/{uuid}/annotations/{uuid}",
+    "api_surface_template": "/api/websites/{uuid}/annotations/{uuid}",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "629e163c-338b-4fc7-ab93-dccad214ae8d"
+      ]
+     },
+     {
+      "index": 4,
+      "name": "uuid_2",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "19ba1a3e-5981-4d52-872c-1c6fd5c11a2a"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     70
+    ]
+   },
+   {
+    "name": "get_websites_daterange_by_uuid",
+    "method": "GET",
+    "path_template": "/api/websites/{uuid}/daterange",
+    "api_surface_template": "/api/websites/{uuid}/daterange",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "3c2d6c7b-7911-42ee-9826-3290f29fd2f6",
+       "629e163c-338b-4fc7-ab93-dccad214ae8d",
+       "8a5e3955-ffbd-4271-80d9-50cb2644b7cd"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     9,
+     24,
+     33,
+     92
+    ]
+   },
+   {
+    "name": "get_websites_event_data_properties_by_uuid",
+    "method": "GET",
+    "path_template": "/api/websites/{uuid}/event-data/properties",
+    "api_surface_template": "/api/websites/{uuid}/event-data/properties",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "8a5e3955-ffbd-4271-80d9-50cb2644b7cd"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "endAt",
+     "startAt"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     83
+    ]
+   },
+   {
+    "name": "get_websites_event_data_values_by_uuid",
+    "method": "GET",
+    "path_template": "/api/websites/{uuid}/event-data/values",
+    "api_surface_template": "/api/websites/{uuid}/event-data/values",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "629e163c-338b-4fc7-ab93-dccad214ae8d"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "endAt",
+     "event",
+     "propertyName",
+     "startAt"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     84
+    ]
+   },
+   {
+    "name": "get_websites_events_by_uuid",
+    "method": "GET",
+    "path_template": "/api/websites/{uuid}/events",
+    "api_surface_template": "/api/websites/{uuid}/events",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "629e163c-338b-4fc7-ab93-dccad214ae8d"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "endAt",
+     "page",
+     "pageSize",
+     "startAt"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     91
+    ]
+   },
+   {
+    "name": "get_websites_events_series_by_uuid",
+    "method": "GET",
+    "path_template": "/api/websites/{uuid}/events/series",
+    "api_surface_template": "/api/websites/{uuid}/events/series",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "8a5e3955-ffbd-4271-80d9-50cb2644b7cd"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "endAt",
+     "limit",
+     "startAt",
+     "timezone",
+     "unit"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     26
+    ]
+   },
+   {
+    "name": "get_websites_events_stats_by_uuid",
+    "method": "GET",
+    "path_template": "/api/websites/{uuid}/events/stats",
+    "api_surface_template": "/api/websites/{uuid}/events/stats",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "8a5e3955-ffbd-4271-80d9-50cb2644b7cd"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "endAt",
+     "startAt"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     25
+    ]
+   },
+   {
+    "name": "get_websites_funnels_by_uuid",
+    "method": "GET",
+    "path_template": "/api/websites/{uuid}/funnels",
+    "api_surface_template": "/api/websites/{uuid}/funnels",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "8a5e3955-ffbd-4271-80d9-50cb2644b7cd"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     75
+    ]
+   },
+   {
+    "name": "get_websites_funnels_by_uuid_uuid_2",
+    "method": "GET",
+    "path_template": "/api/websites/{uuid}/funnels/{uuid}",
+    "api_surface_template": "/api/websites/{uuid}/funnels/{uuid}",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "8a5e3955-ffbd-4271-80d9-50cb2644b7cd"
+      ]
+     },
+     {
+      "index": 4,
+      "name": "uuid_2",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "5d3809f4-d55e-4daa-904b-d991cb9bdf70"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     76
+    ]
+   },
+   {
+    "name": "get_websites_goals_by_uuid",
+    "method": "GET",
+    "path_template": "/api/websites/{uuid}/goals",
+    "api_surface_template": "/api/websites/{uuid}/goals",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "629e163c-338b-4fc7-ab93-dccad214ae8d"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     73
+    ]
+   },
+   {
+    "name": "get_websites_goals_by_uuid_uuid_2",
+    "method": "GET",
+    "path_template": "/api/websites/{uuid}/goals/{uuid}",
+    "api_surface_template": "/api/websites/{uuid}/goals/{uuid}",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "629e163c-338b-4fc7-ab93-dccad214ae8d"
+      ]
+     },
+     {
+      "index": 4,
+      "name": "uuid_2",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "59d11a64-f552-482e-a850-21482144c18e"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     74
+    ]
+   },
+   {
+    "name": "get_websites_metrics_by_uuid",
+    "method": "GET",
+    "path_template": "/api/websites/{uuid}/metrics",
+    "api_surface_template": "/api/websites/{uuid}/metrics",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "3c2d6c7b-7911-42ee-9826-3290f29fd2f6",
+       "629e163c-338b-4fc7-ab93-dccad214ae8d",
+       "8a5e3955-ffbd-4271-80d9-50cb2644b7cd"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "endAt",
+     "limit",
+     "startAt",
+     "type"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     13,
+     15,
+     16,
+     17,
+     18,
+     27,
+     78,
+     79,
+     80,
+     81
+    ]
+   },
+   {
+    "name": "get_websites_pageviews_by_uuid",
+    "method": "GET",
+    "path_template": "/api/websites/{uuid}/pageviews",
+    "api_surface_template": "/api/websites/{uuid}/pageviews",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "3c2d6c7b-7911-42ee-9826-3290f29fd2f6",
+       "629e163c-338b-4fc7-ab93-dccad214ae8d"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "endAt",
+     "startAt",
+     "timezone",
+     "unit"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     12,
+     82
+    ]
+   },
+   {
+    "name": "get_websites_segments_by_uuid",
+    "method": "GET",
+    "path_template": "/api/websites/{uuid}/segments",
+    "api_surface_template": "/api/websites/{uuid}/segments",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "3c2d6c7b-7911-42ee-9826-3290f29fd2f6"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "type"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     71
+    ]
+   },
+   {
+    "name": "get_websites_segments_by_uuid_uuid_2",
+    "method": "GET",
+    "path_template": "/api/websites/{uuid}/segments/{uuid}",
+    "api_surface_template": "/api/websites/{uuid}/segments/{uuid}",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "3c2d6c7b-7911-42ee-9826-3290f29fd2f6"
+      ]
+     },
+     {
+      "index": 4,
+      "name": "uuid_2",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "7c3cce30-3fc4-47fa-8841-d35ded4e11b7"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     72
+    ]
+   },
+   {
+    "name": "get_websites_session_data_properties_by_uuid",
+    "method": "GET",
+    "path_template": "/api/websites/{uuid}/session-data/properties",
+    "api_surface_template": "/api/websites/{uuid}/session-data/properties",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "8a5e3955-ffbd-4271-80d9-50cb2644b7cd"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "endAt",
+     "startAt"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     85
+    ]
+   },
+   {
+    "name": "get_websites_session_data_values_by_uuid",
+    "method": "GET",
+    "path_template": "/api/websites/{uuid}/session-data/values",
+    "api_surface_template": "/api/websites/{uuid}/session-data/values",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "8a5e3955-ffbd-4271-80d9-50cb2644b7cd"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "endAt",
+     "propertyName",
+     "startAt"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     86
+    ]
+   },
+   {
+    "name": "get_websites_sessions_by_uuid",
+    "method": "GET",
+    "path_template": "/api/websites/{uuid}/sessions",
+    "api_surface_template": "/api/websites/{uuid}/sessions",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "3c2d6c7b-7911-42ee-9826-3290f29fd2f6",
+       "8a5e3955-ffbd-4271-80d9-50cb2644b7cd"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "endAt",
+     "maxResults",
+     "page",
+     "pageSize",
+     "startAt",
+     "timezone",
+     "unit"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     34,
+     87
+    ]
+   },
+   {
+    "name": "get_websites_sessions_weekly_by_uuid",
+    "method": "GET",
+    "path_template": "/api/websites/{uuid}/sessions/weekly",
+    "api_surface_template": "/api/websites/{uuid}/sessions/weekly",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "629e163c-338b-4fc7-ab93-dccad214ae8d"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "endAt",
+     "startAt",
+     "timezone"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     14
+    ]
+   },
+   {
+    "name": "get_websites_sessions_by_uuid_uuid_2",
+    "method": "GET",
+    "path_template": "/api/websites/{uuid}/sessions/{uuid}",
+    "api_surface_template": "/api/websites/{uuid}/sessions/{uuid}",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "8a5e3955-ffbd-4271-80d9-50cb2644b7cd"
+      ]
+     },
+     {
+      "index": 4,
+      "name": "uuid_2",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "62926ca2-4236-5bf4-a9ac-3c4eeb79e6e3"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     88
+    ]
+   },
+   {
+    "name": "get_websites_sessions_activity_by_uuid_uuid_2",
+    "method": "GET",
+    "path_template": "/api/websites/{uuid}/sessions/{uuid}/activity",
+    "api_surface_template": "/api/websites/{uuid}/sessions/{uuid}/activity",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "8a5e3955-ffbd-4271-80d9-50cb2644b7cd"
+      ]
+     },
+     {
+      "index": 4,
+      "name": "uuid_2",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "62926ca2-4236-5bf4-a9ac-3c4eeb79e6e3"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "endAt",
+     "startAt"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     89
+    ]
+   },
+   {
+    "name": "get_websites_sessions_properties_by_uuid_uuid_2",
+    "method": "GET",
+    "path_template": "/api/websites/{uuid}/sessions/{uuid}/properties",
+    "api_surface_template": "/api/websites/{uuid}/sessions/{uuid}/properties",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "8a5e3955-ffbd-4271-80d9-50cb2644b7cd"
+      ]
+     },
+     {
+      "index": 4,
+      "name": "uuid_2",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "62926ca2-4236-5bf4-a9ac-3c4eeb79e6e3"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     90
+    ]
+   },
+   {
+    "name": "get_websites_stats_by_uuid",
+    "method": "GET",
+    "path_template": "/api/websites/{uuid}/stats",
+    "api_surface_template": "/api/websites/{uuid}/stats",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "629e163c-338b-4fc7-ab93-dccad214ae8d",
+       "8a5e3955-ffbd-4271-80d9-50cb2644b7cd"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "endAt",
+     "startAt"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     10,
+     77
+    ]
+   }
+  ],
+  "records": [
+   {
+    "ordinal": 0,
+    "method": "GET",
+    "path": "/api/config",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 1,
+    "method": "GET",
+    "path": "/api/2fa/status",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 2,
+    "method": "GET",
+    "path": "/api/config",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 3,
+    "method": "GET",
+    "path": "/api/2fa/status",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 4,
+    "method": "GET",
+    "path": "/api/users/41e2b680-648e-4b09-bcd7-3e2b10c06264/websites",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 5,
+    "method": "GET",
+    "path": "/api/websites/charts",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 6,
+    "method": "GET",
+    "path": "/api/websites/629e163c-338b-4fc7-ab93-dccad214ae8d",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 7,
+    "method": "GET",
+    "path": "/api/users/41e2b680-648e-4b09-bcd7-3e2b10c06264/websites",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 8,
+    "method": "GET",
+    "path": "/api/websites/629e163c-338b-4fc7-ab93-dccad214ae8d/active",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 9,
+    "method": "GET",
+    "path": "/api/websites/629e163c-338b-4fc7-ab93-dccad214ae8d/daterange",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 10,
+    "method": "GET",
+    "path": "/api/websites/629e163c-338b-4fc7-ab93-dccad214ae8d/stats",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 11,
+    "method": "GET",
+    "path": "/api/websites/629e163c-338b-4fc7-ab93-dccad214ae8d/annotations",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 12,
+    "method": "GET",
+    "path": "/api/websites/629e163c-338b-4fc7-ab93-dccad214ae8d/pageviews",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 13,
+    "method": "GET",
+    "path": "/api/websites/629e163c-338b-4fc7-ab93-dccad214ae8d/metrics",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 14,
+    "method": "GET",
+    "path": "/api/websites/629e163c-338b-4fc7-ab93-dccad214ae8d/sessions/weekly",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 15,
+    "method": "GET",
+    "path": "/api/websites/629e163c-338b-4fc7-ab93-dccad214ae8d/metrics",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 16,
+    "method": "GET",
+    "path": "/api/websites/629e163c-338b-4fc7-ab93-dccad214ae8d/metrics",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 17,
+    "method": "GET",
+    "path": "/api/websites/629e163c-338b-4fc7-ab93-dccad214ae8d/metrics",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 18,
+    "method": "GET",
+    "path": "/api/websites/629e163c-338b-4fc7-ab93-dccad214ae8d/metrics",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 19,
+    "method": "GET",
+    "path": "/api/config",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 20,
+    "method": "GET",
+    "path": "/api/2fa/status",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 21,
+    "method": "GET",
+    "path": "/api/websites/8a5e3955-ffbd-4271-80d9-50cb2644b7cd",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 22,
+    "method": "GET",
+    "path": "/api/users/41e2b680-648e-4b09-bcd7-3e2b10c06264/websites",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 23,
+    "method": "GET",
+    "path": "/api/websites/8a5e3955-ffbd-4271-80d9-50cb2644b7cd/active",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 24,
+    "method": "GET",
+    "path": "/api/websites/8a5e3955-ffbd-4271-80d9-50cb2644b7cd/daterange",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 25,
+    "method": "GET",
+    "path": "/api/websites/8a5e3955-ffbd-4271-80d9-50cb2644b7cd/events/stats",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 26,
+    "method": "GET",
+    "path": "/api/websites/8a5e3955-ffbd-4271-80d9-50cb2644b7cd/events/series",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 27,
+    "method": "GET",
+    "path": "/api/websites/8a5e3955-ffbd-4271-80d9-50cb2644b7cd/metrics",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 28,
+    "method": "GET",
+    "path": "/api/config",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 29,
+    "method": "GET",
+    "path": "/api/2fa/status",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 30,
+    "method": "GET",
+    "path": "/api/websites/3c2d6c7b-7911-42ee-9826-3290f29fd2f6",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 31,
+    "method": "GET",
+    "path": "/api/users/41e2b680-648e-4b09-bcd7-3e2b10c06264/websites",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 32,
+    "method": "GET",
+    "path": "/api/websites/3c2d6c7b-7911-42ee-9826-3290f29fd2f6/active",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 33,
+    "method": "GET",
+    "path": "/api/websites/3c2d6c7b-7911-42ee-9826-3290f29fd2f6/daterange",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 34,
+    "method": "GET",
+    "path": "/api/websites/3c2d6c7b-7911-42ee-9826-3290f29fd2f6/sessions",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 35,
+    "method": "GET",
+    "path": "/api/config",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 36,
+    "method": "GET",
+    "path": "/api/2fa/status",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 37,
+    "method": "GET",
+    "path": "/api/links",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 38,
+    "method": "GET",
+    "path": "/api/links/charts",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 39,
+    "method": "GET",
+    "path": "/api/pixels",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 40,
+    "method": "GET",
+    "path": "/api/pixels/charts",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 41,
+    "method": "GET",
+    "path": "/api/boards",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 42,
+    "method": "GET",
+    "path": "/api/config",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 43,
+    "method": "GET",
+    "path": "/api/2fa/status",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 44,
+    "method": "GET",
+    "path": "/api/users/41e2b680-648e-4b09-bcd7-3e2b10c06264/teams",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 45,
+    "method": "GET",
+    "path": "/api/config",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 46,
+    "method": "GET",
+    "path": "/api/2fa/status",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 47,
+    "method": "GET",
+    "path": "/api/admin/users",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 48,
+    "method": "GET",
+    "path": "/api/websites",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 49,
+    "method": "GET",
+    "path": "/api/websites/8a5e3955-ffbd-4271-80d9-50cb2644b7cd",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 50,
+    "method": "GET",
+    "path": "/api/websites/629e163c-338b-4fc7-ab93-dccad214ae8d",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 51,
+    "method": "GET",
+    "path": "/api/websites/3c2d6c7b-7911-42ee-9826-3290f29fd2f6",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 52,
+    "method": "GET",
+    "path": "/api/teams",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 53,
+    "method": "GET",
+    "path": "/api/teams/14230b65-bafc-4474-9548-d6b5d0b8f066",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 54,
+    "method": "GET",
+    "path": "/api/teams/14230b65-bafc-4474-9548-d6b5d0b8f066/users",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 55,
+    "method": "GET",
+    "path": "/api/teams/6f00b2df-f472-4657-ae3d-fdf884436965",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 56,
+    "method": "GET",
+    "path": "/api/teams/6f00b2df-f472-4657-ae3d-fdf884436965/users",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 57,
+    "method": "GET",
+    "path": "/api/teams/14230b65-bafc-4474-9548-d6b5d0b8f066/websites",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 58,
+    "method": "GET",
+    "path": "/api/admin/users",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 59,
+    "method": "GET",
+    "path": "/api/users/e6d0754e-807f-45c0-9ae9-aaf64f12fc92",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 60,
+    "method": "GET",
+    "path": "/api/users/c74f63f5-263e-45f8-bcfd-47076ad77f29",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 61,
+    "method": "GET",
+    "path": "/api/users/41e2b680-648e-4b09-bcd7-3e2b10c06264",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 62,
+    "method": "GET",
+    "path": "/api/users/e6d0754e-807f-45c0-9ae9-aaf64f12fc92/teams",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 63,
+    "method": "GET",
+    "path": "/api/links",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 64,
+    "method": "GET",
+    "path": "/api/links/51be9879-712b-4d24-b47c-f7dff6fbaa67",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 65,
+    "method": "GET",
+    "path": "/api/pixels",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 66,
+    "method": "GET",
+    "path": "/api/pixels/386b57c4-c620-44e2-aff3-445d3df0746a",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 67,
+    "method": "GET",
+    "path": "/api/boards",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 68,
+    "method": "GET",
+    "path": "/api/boards/6d3ee457-7e82-4b75-9146-ffbbe5028759",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 69,
+    "method": "GET",
+    "path": "/api/websites/629e163c-338b-4fc7-ab93-dccad214ae8d/annotations",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 70,
+    "method": "GET",
+    "path": "/api/websites/629e163c-338b-4fc7-ab93-dccad214ae8d/annotations/19ba1a3e-5981-4d52-872c-1c6fd5c11a2a",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 71,
+    "method": "GET",
+    "path": "/api/websites/3c2d6c7b-7911-42ee-9826-3290f29fd2f6/segments",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 72,
+    "method": "GET",
+    "path": "/api/websites/3c2d6c7b-7911-42ee-9826-3290f29fd2f6/segments/7c3cce30-3fc4-47fa-8841-d35ded4e11b7",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 73,
+    "method": "GET",
+    "path": "/api/websites/629e163c-338b-4fc7-ab93-dccad214ae8d/goals",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 74,
+    "method": "GET",
+    "path": "/api/websites/629e163c-338b-4fc7-ab93-dccad214ae8d/goals/59d11a64-f552-482e-a850-21482144c18e",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 75,
+    "method": "GET",
+    "path": "/api/websites/8a5e3955-ffbd-4271-80d9-50cb2644b7cd/funnels",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 76,
+    "method": "GET",
+    "path": "/api/websites/8a5e3955-ffbd-4271-80d9-50cb2644b7cd/funnels/5d3809f4-d55e-4daa-904b-d991cb9bdf70",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 77,
+    "method": "GET",
+    "path": "/api/websites/8a5e3955-ffbd-4271-80d9-50cb2644b7cd/stats",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 78,
+    "method": "GET",
+    "path": "/api/websites/8a5e3955-ffbd-4271-80d9-50cb2644b7cd/metrics",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 79,
+    "method": "GET",
+    "path": "/api/websites/629e163c-338b-4fc7-ab93-dccad214ae8d/metrics",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 80,
+    "method": "GET",
+    "path": "/api/websites/3c2d6c7b-7911-42ee-9826-3290f29fd2f6/metrics",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 81,
+    "method": "GET",
+    "path": "/api/websites/8a5e3955-ffbd-4271-80d9-50cb2644b7cd/metrics",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 82,
+    "method": "GET",
+    "path": "/api/websites/3c2d6c7b-7911-42ee-9826-3290f29fd2f6/pageviews",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 83,
+    "method": "GET",
+    "path": "/api/websites/8a5e3955-ffbd-4271-80d9-50cb2644b7cd/event-data/properties",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 84,
+    "method": "GET",
+    "path": "/api/websites/629e163c-338b-4fc7-ab93-dccad214ae8d/event-data/values",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 85,
+    "method": "GET",
+    "path": "/api/websites/8a5e3955-ffbd-4271-80d9-50cb2644b7cd/session-data/properties",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 86,
+    "method": "GET",
+    "path": "/api/websites/8a5e3955-ffbd-4271-80d9-50cb2644b7cd/session-data/values",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 87,
+    "method": "GET",
+    "path": "/api/websites/8a5e3955-ffbd-4271-80d9-50cb2644b7cd/sessions",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 88,
+    "method": "GET",
+    "path": "/api/websites/8a5e3955-ffbd-4271-80d9-50cb2644b7cd/sessions/62926ca2-4236-5bf4-a9ac-3c4eeb79e6e3",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 89,
+    "method": "GET",
+    "path": "/api/websites/8a5e3955-ffbd-4271-80d9-50cb2644b7cd/sessions/62926ca2-4236-5bf4-a9ac-3c4eeb79e6e3/activity",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 90,
+    "method": "GET",
+    "path": "/api/websites/8a5e3955-ffbd-4271-80d9-50cb2644b7cd/sessions/62926ca2-4236-5bf4-a9ac-3c4eeb79e6e3/properties",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 91,
+    "method": "GET",
+    "path": "/api/websites/629e163c-338b-4fc7-ab93-dccad214ae8d/events",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 92,
+    "method": "GET",
+    "path": "/api/websites/629e163c-338b-4fc7-ab93-dccad214ae8d/daterange",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 93,
+    "method": "GET",
+    "path": "/api/websites",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 94,
+    "method": "POST",
+    "path": "/api/websites",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 95,
+    "method": "POST",
+    "path": "/api/websites/132d2a07-0d4c-4bab-9f97-45e69b0d0678",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 96,
+    "method": "GET",
+    "path": "/api/websites/132d2a07-0d4c-4bab-9f97-45e69b0d0678",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 97,
+    "method": "DELETE",
+    "path": "/api/websites/132d2a07-0d4c-4bab-9f97-45e69b0d0678",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 98,
+    "method": "GET",
+    "path": "/api/websites/132d2a07-0d4c-4bab-9f97-45e69b0d0678",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 99,
+    "method": "GET",
+    "path": "/api/websites",
+    "status": 200,
+    "content_type": "application/json"
+   }
+  ],
+  "excluded": [],
+  "templated_groups": 37,
+  "kind": "environment-manifest",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "confidence": "inferred",
+ "authority": "historical-reference",
+ "environment": null,
+ "limitations": [
+  "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+  "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+  "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+  "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+  "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+  "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+  "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+  "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+  "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+ ],
+ "relationship_coverage": null,
+ "locations": [
+  {
+   "kind": "artifact-path",
+   "path": "/home/ubuntu/capture/umami/umami.scoped.har"
+  }
+ ],
+ "evidence_links": [
+  "ev_12a4e7f97b75d77076ad5f7c072a7073a32f0c713f8488096e727a134cc78d35"
+ ]
+}

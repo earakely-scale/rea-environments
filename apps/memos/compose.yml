@@ -1,0 +1,21 @@
+# Memos 0.31.0 (sqlite) for the rea showcase capture. Loopback only; one compose project: rea-memos.
+services:
+  memos:
+    image: neosmemo/memos:0.31.0
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3205:5230"
+    environment:
+      MEMOS_MODE: prod
+      MEMOS_PORT: "5230"
+      MEMOS_DRIVER: sqlite
+      MEMOS_INSTANCE_URL: http://127.0.0.1:3205
+    volumes:
+      - memos-data:/var/opt/memos
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:5230/api/v1/instance/profile >/dev/null || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 36
+volumes:
+  memos-data: {}

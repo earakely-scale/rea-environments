@@ -1,0 +1,320 @@
+{
+ "app": "keycloak",
+ "title": "Keycloak",
+ "image": "quay.io/keycloak/keycloak:26.8.1",
+ "image_digest": "quay.io/keycloak/keycloak@sha256:79c623a22abacf3fe6c00a5fb30f5b7843d717b234033b80995891c06116d244",
+ "app_version": "26.8.1",
+ "app_version_full": "26.8.1",
+ "licence": "Apache-2.0",
+ "compose_project": "rea-keycloak",
+ "origin": "http://127.0.0.1:3210",
+ "database": "embedded H2 file database (start-dev default, /opt/keycloak/data/h2 in the kc-data volume)",
+ "tooling": {
+  "rea": "6.6.0",
+  "playwright-core": "1.58.2",
+  "chromium": "Chromium 155.0.8059.79 snap",
+  "node": "v24.22.0",
+  "python": "3.12.3",
+  "docker": "29.9.1",
+  "compose": "5.6.0",
+  "vm": "Ubuntu 24.04 amd64"
+ },
+ "scoped_har": {
+  "file": "keycloak.scoped.har",
+  "sha256": "7c78d99263c9fb922b3fbf714619a3d378f08781b2f677d6a473bd28d5b85b3b",
+  "bytes": 197162,
+  "records": 73,
+  "methods": {
+   "GET": 70,
+   "POST": 1,
+   "PUT": 1,
+   "DELETE": 1
+  },
+  "statuses": {
+   "200": 70,
+   "204": 2,
+   "404": 1
+  }
+ },
+ "scope_har": {
+  "origin": "http://127.0.0.1:3210",
+  "keep_regex": "^/admin/realms/lighthouse-rota(/|$)",
+  "drop_regex": "default (login|logout|signup|password|session|token|oauth|csrf)",
+  "max_body": 60000,
+  "max_records": 150,
+  "kept": 73,
+  "dropped": {
+   "other-origin": 0,
+   "path": 843,
+   "non-json": 0,
+   "auth": 44,
+   "big-body": 0,
+   "over-max": 0
+  },
+  "notes": [
+   "keep_regex is limited to the seeded realm, so the console's master-realm bootstrap traffic (serverinfo 306 KB, whoami, master users/profile, ui-ext on master) is dropped as path",
+   "auth=44 are paths containing session/token/password, e.g. /realms/master/protocol/openid-connect/token and client-session-stats",
+   "non-json=0: Keycloak's 204 replies (PUT and DELETE of the scratch user) have no content type and are kept by the scoper as empty API replies, but rea's manifest view excludes both as non-json"
+  ]
+ },
+ "credential_grep": {
+  "admin_value_literal_hits": 0,
+  "token_shape_hits_hf_ghp_Bearer": 0,
+  "session_cookie_name_hits": 0,
+  "result": "pass"
+ },
+ "evidence": {
+  "capture_evidence_id": "ev_21d8808f42337b36a19f943f7bca1058d9f2c73b660d5bce1f10b05539ca525d",
+  "capture_total_records": 73,
+  "capture_confidence": "observed",
+  "manifest_evidence_id": "ev_b1030270ddcec481e452055bb5db7711cf3539cb97b7d86b9733f1023452fafa",
+  "manifest_norules_evidence_id": "ev_6898940f9e4f1b716c00ced3346e4b1d5f7ba01aadd8269592edf408bf70ac1a",
+  "manifest_view_digest": "fe4d22680496c9af6776c662329fcd74cf38561f91904031d2a666881fc3a34d"
+ },
+ "manifest": {
+  "evidence_id": "ev_b1030270ddcec481e452055bb5db7711cf3539cb97b7d86b9733f1023452fafa",
+  "confidence": "inferred",
+  "view_digest": "fe4d22680496c9af6776c662329fcd74cf38561f91904031d2a666881fc3a34d",
+  "tools": 40,
+  "tools_by_method": {
+   "GET": 39,
+   "POST": 1
+  },
+  "templated_groups": 19,
+  "params_by_rule": {
+   "uuid": 18
+  },
+  "params_total": 18,
+  "query_parameter_names_total": 25,
+  "query_parameter_names_distinct": [
+   "briefRepresentation",
+   "clientId",
+   "exact",
+   "first",
+   "global",
+   "max",
+   "q",
+   "search",
+   "userProfileMetadata"
+  ],
+  "tools_with_body_shape": 1,
+  "statuses_seen": [
+   200,
+   404
+  ],
+  "records": 73,
+  "excluded": 2,
+  "excluded_by_reason": {
+   "non-json": 2
+  },
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 40,
+   "total": 40,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "limitations_count": 9,
+  "tool_names": [
+   "get_admin_realms_lighthouse_rota",
+   "get_admin_realms_lighthouse_rota_attack_detection_brute_forc",
+   "get_admin_realms_lighthouse_rota_authentication_flows_by_uui",
+   "get_admin_realms_lighthouse_rota_authentication_required_act",
+   "get_admin_realms_lighthouse_rota_client_scopes",
+   "get_admin_realms_lighthouse_rota_client_scopes_by_uuid",
+   "get_admin_realms_lighthouse_rota_clients",
+   "get_admin_realms_lighthouse_rota_clients_2",
+   "get_admin_realms_lighthouse_rota_clients_by_uuid",
+   "get_admin_realms_lighthouse_rota_clients_roles_by_uuid",
+   "get_admin_realms_lighthouse_rota_clients_roles_till_operator",
+   "get_admin_realms_lighthouse_rota_default_default_client_scop",
+   "get_admin_realms_lighthouse_rota_default_optional_client_sco",
+   "get_admin_realms_lighthouse_rota_groups",
+   "get_admin_realms_lighthouse_rota_groups_2",
+   "get_admin_realms_lighthouse_rota_groups_by_uuid",
+   "get_admin_realms_lighthouse_rota_groups_children_by_uuid",
+   "get_admin_realms_lighthouse_rota_groups_members_by_uuid",
+   "get_admin_realms_lighthouse_rota_localization_en",
+   "get_admin_realms_lighthouse_rota_organizations",
+   "get_admin_realms_lighthouse_rota_organizations_2",
+   "get_admin_realms_lighthouse_rota_organizations_by_uuid",
+   "get_admin_realms_lighthouse_rota_organizations_members_by_uu",
+   "post_admin_realms_lighthouse_rota_partialimport",
+   "get_admin_realms_lighthouse_rota_roles",
+   "get_admin_realms_lighthouse_rota_roles_by_id_by_uuid",
+   "get_admin_realms_lighthouse_rota_roles_galley_steward_groups",
+   "get_admin_realms_lighthouse_rota_roles_tide_keeper",
+   "get_admin_realms_lighthouse_rota_ui_ext_authentication_manag",
+   "get_admin_realms_lighthouse_rota_ui_ext_brute_force_user",
+   "get_admin_realms_lighthouse_rota_ui_ext_info",
+   "get_admin_realms_lighthouse_rota_ui_ext_realms_names",
+   "get_admin_realms_lighthouse_rota_users",
+   "get_admin_realms_lighthouse_rota_users_count",
+   "get_admin_realms_lighthouse_rota_users_profile",
+   "get_admin_realms_lighthouse_rota_users_by_uuid",
+   "get_admin_realms_lighthouse_rota_users_groups_by_uuid",
+   "get_admin_realms_lighthouse_rota_users_role_mappings_clients",
+   "get_admin_realms_lighthouse_rota_users_role_mappings_realm_b",
+   "get_admin_realms_lighthouse_rota_users_unmanagedattributes_b"
+  ]
+ },
+ "manifest_norules": {
+  "evidence_id": "ev_6898940f9e4f1b716c00ced3346e4b1d5f7ba01aadd8269592edf408bf70ac1a",
+  "confidence": "inferred",
+  "view_digest": "d25da73b8558b5c2acf9dec200401014a68e50cd928f6be506664e0be29cb4a3",
+  "tools": 40,
+  "tools_by_method": {
+   "GET": 39,
+   "POST": 1
+  },
+  "templated_groups": 19,
+  "params_by_rule": {
+   "uuid": 18
+  },
+  "params_total": 18,
+  "query_parameter_names_total": 25,
+  "query_parameter_names_distinct": [
+   "briefRepresentation",
+   "clientId",
+   "exact",
+   "first",
+   "global",
+   "max",
+   "q",
+   "search",
+   "userProfileMetadata"
+  ],
+  "tools_with_body_shape": 1,
+  "statuses_seen": [
+   200,
+   404
+  ],
+  "records": 73,
+  "excluded": 2,
+  "excluded_by_reason": {
+   "non-json": 2
+  },
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 40,
+   "total": 40,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "limitations_count": 8,
+  "tool_names": [
+   "get_admin_realms_lighthouse_rota",
+   "get_admin_realms_lighthouse_rota_attack_detection_brute_forc",
+   "get_admin_realms_lighthouse_rota_authentication_flows_by_uui",
+   "get_admin_realms_lighthouse_rota_authentication_required_act",
+   "get_admin_realms_lighthouse_rota_client_scopes",
+   "get_admin_realms_lighthouse_rota_client_scopes_by_uuid",
+   "get_admin_realms_lighthouse_rota_clients",
+   "get_admin_realms_lighthouse_rota_clients_2",
+   "get_admin_realms_lighthouse_rota_clients_by_uuid",
+   "get_admin_realms_lighthouse_rota_clients_roles_by_uuid",
+   "get_admin_realms_lighthouse_rota_clients_roles_till_operator",
+   "get_admin_realms_lighthouse_rota_default_default_client_scop",
+   "get_admin_realms_lighthouse_rota_default_optional_client_sco",
+   "get_admin_realms_lighthouse_rota_groups",
+   "get_admin_realms_lighthouse_rota_groups_2",
+   "get_admin_realms_lighthouse_rota_groups_by_uuid",
+   "get_admin_realms_lighthouse_rota_groups_children_by_uuid",
+   "get_admin_realms_lighthouse_rota_groups_members_by_uuid",
+   "get_admin_realms_lighthouse_rota_localization_en",
+   "get_admin_realms_lighthouse_rota_organizations",
+   "get_admin_realms_lighthouse_rota_organizations_2",
+   "get_admin_realms_lighthouse_rota_organizations_by_uuid",
+   "get_admin_realms_lighthouse_rota_organizations_members_by_uu",
+   "post_admin_realms_lighthouse_rota_partialimport",
+   "get_admin_realms_lighthouse_rota_roles",
+   "get_admin_realms_lighthouse_rota_roles_by_id_by_uuid",
+   "get_admin_realms_lighthouse_rota_roles_galley_steward_groups",
+   "get_admin_realms_lighthouse_rota_roles_tide_keeper",
+   "get_admin_realms_lighthouse_rota_ui_ext_authentication_manag",
+   "get_admin_realms_lighthouse_rota_ui_ext_brute_force_user",
+   "get_admin_realms_lighthouse_rota_ui_ext_info",
+   "get_admin_realms_lighthouse_rota_ui_ext_realms_names",
+   "get_admin_realms_lighthouse_rota_users",
+   "get_admin_realms_lighthouse_rota_users_count",
+   "get_admin_realms_lighthouse_rota_users_profile",
+   "get_admin_realms_lighthouse_rota_users_by_uuid",
+   "get_admin_realms_lighthouse_rota_users_groups_by_uuid",
+   "get_admin_realms_lighthouse_rota_users_role_mappings_clients",
+   "get_admin_realms_lighthouse_rota_users_role_mappings_realm_b",
+   "get_admin_realms_lighthouse_rota_users_unmanagedattributes_b"
+  ]
+ },
+ "manifest_vs_norules": {
+  "tools": [
+   40,
+   40
+  ],
+  "templated_groups": [
+   19,
+   19
+  ],
+  "note": "Every by-id path in Keycloak uses a UUID, which rea templates with its built-in uuid rule in both views, so the opt-in rules change nothing here (40 tools either way; 19 templated groups, 18 uuid params). Role names (tide-keeper, galley-steward, till-operator) follow fixed segments and stay literal tools."
+ },
+ "seeded_objects": "a realm lighthouse-rota with 4 users, 4 groups (one nested), 3 realm roles, 2 public clients with 3 client roles, 1 client scope, 2 organizations and 1 copied browser login flow",
+ "seeded_objects_detail": {
+  "master_admin": "rea-admin (permanent, realm role admin in master); the temporary bootstrap admin rea-bootstrap is deleted by the seed",
+  "realm": "lighthouse-rota, displayName \"Lighthouse Rota Identity\", organizations enabled",
+  "realm_roles": {
+   "tide-keeper": "Keeps the tide tables and signs the night log at the lamp gallery.",
+   "quarry-auditor": "Audits the Granite Ledger stone counts every quarter.",
+   "galley-steward": "Runs the Blue Heron Kitchen galley rota and orders kelp."
+  },
+  "groups": {
+   "Night Shift": "role tide-keeper; subgroup Lamp Room Crew",
+   "Quarry Crew": "role quarry-auditor",
+   "Galley Team": "role galley-steward",
+   "Lamp Room Crew": "child of Night Shift"
+  },
+  "users": [
+   "ada.finch (Night Shift, Lamp Room Crew)",
+   "rui.castellanos (Quarry Crew, client role ledger-editor)",
+   "mina.okafor (Galley Team, client role till-operator, member of organization Saltmarsh Depot)",
+   "tomas.vey (Night Shift, disabled)"
+  ],
+  "clients": {
+   "granite-ledger-portal": "public client \"Granite Ledger Portal\", roles ledger-viewer and ledger-editor, optional client scope tide-tables",
+   "blue-heron-kitchen-till": "public client \"Blue Heron Kitchen Till\", role till-operator"
+  },
+  "client_scopes": [
+   "tide-tables (Grants read access to the published tide tables.)"
+  ],
+  "organizations": [
+   "Copperfield Annex (copperfield-annex.example.test)",
+   "Saltmarsh Depot (saltmarsh-depot.example.test, member mina.okafor)"
+  ],
+  "authentication_flows": [
+   "granite gate browser (copy of browser, \"Browser login used by the Granite Ledger kiosks in the quarry office.\")"
+  ],
+  "scratch_during_capture": "user rea-scratch-user created through POST partialImport (200 JSON), edited (PUT 204), read, deleted (DELETE 204), re-read (404)"
+ },
+ "ui_pages_visited": [
+  "/admin/master/console/ (login through /realms/master/protocol/openid-connect/auth)",
+  "#/lighthouse-rota/users",
+  "#/lighthouse-rota/users/<ada.finch>/settings",
+  "#/lighthouse-rota/groups",
+  "#/lighthouse-rota/clients",
+  "#/lighthouse-rota/clients/<granite-ledger-portal>/settings",
+  "#/lighthouse-rota/roles",
+  "#/lighthouse-rota/client-scopes",
+  "#/lighthouse-rota/organizations",
+  "#/lighthouse-rota/authentication",
+  "#/lighthouse-rota/realm-settings"
+ ],
+ "auth_note": "The admin console signs in through the master realm login page (authorization code + PKCE for client security-admin-console) and keeps its bearer token in memory. The scripted fetch calls take a bearer token from the admin-cli password grant inside the page; the token request is outside the kept paths and all request headers except content-type/accept are stripped by scope_har.py."
+}

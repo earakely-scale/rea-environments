@@ -1,0 +1,15 @@
+{
+  "app": "mealie",
+  "title": "Mealie",
+  "repo": "MealieEnv-REA",
+  "license": "AGPL-3.0",
+  "authors": "the Mealie authors",
+  "hf_license": "apache-2.0",
+  "version": "3.28",
+  "image": "ghcr.io/mealie-recipes/mealie:v3.28.0",
+  "image_digest": "sha256:8b02290f4d1806f02acac6f25f6d48a3c965612fda1f8e914d5af533276f8688",
+  "port": 3212,
+  "keep_regex": "^/api/",
+  "domain": "recipe management and meal planning",
+  "exclude_tools": "app_about|startup|theme|ratings|groups_members|groups_households|households_self_recipes|users_self$|groups_self$|households_self$"
+}

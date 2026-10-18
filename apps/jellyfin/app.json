@@ -1,0 +1,15 @@
+{
+  "app": "jellyfin",
+  "title": "Jellyfin",
+  "repo": "JellyfinEnv-REA",
+  "license": "GPL-2.0",
+  "authors": "the Jellyfin contributors",
+  "hf_license": "apache-2.0",
+  "version": "10.10.7",
+  "image": "jellyfin/jellyfin:10.10.7",
+  "image_digest": "sha256:7ae36aab93ef9b6aaff02b37f8bb23df84bb2d7a3f6054ec8fc466072a648ce2",
+  "port": 3224,
+  "keep_regex": "^/(Users|Items|UserItems|UserViews|UserFavoriteItems|Library|Playlists|Artists|MusicGenres|Genres|Albums|Search|Shows|DisplayPreferences|Branding/Configuration|System/Info)(/|$)",
+  "domain": "media server and personal media library",
+  "exclude_tools": "system|branding|displaypreferences|userdata|settings|config$|version$"
+}

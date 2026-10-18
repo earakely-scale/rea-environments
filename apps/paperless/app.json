@@ -1,0 +1,15 @@
+{
+  "app": "paperless",
+  "title": "Paperless-ngx",
+  "repo": "PaperlessNgxEnv-REA",
+  "license": "GPL-3.0",
+  "authors": "the Paperless-ngx contributors",
+  "hf_license": "apache-2.0",
+  "version": "2.20",
+  "image": "ghcr.io/paperless-ngx/paperless-ngx:2.20.15",
+  "image_digest": "sha256:6c86cad803970ea782683a8e80e7403444c5bf3cf70de63b4d3c8e87500db92f",
+  "port": 3213,
+  "keep_regex": "^/api/",
+  "domain": "document management and archiving",
+  "exclude_tools": "ui_settings|statistics|tasks|preview|thumb|suggestions|selection_data|search$|profile$"
+}

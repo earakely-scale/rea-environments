@@ -1,0 +1,15 @@
+{
+  "app": "bookstack",
+  "title": "BookStack",
+  "repo": "BookStackEnv-REA",
+  "license": "MIT",
+  "authors": "Dan Brown and the BookStack project contributors",
+  "hf_license": "apache-2.0",
+  "version": "26.09.1",
+  "image": "lscr.io/linuxserver/bookstack:v26.09.1-ls288",
+  "image_digest": "sha256:0d66f65417fa667085849bf9b32b412ec9a90420773c4f47a95138c4711876b7",
+  "port": 3219,
+  "keep_regex": "^/api/",
+  "domain": "team wiki and documentation (shelves, books, chapters, pages)",
+  "exclude_tools": "system|image_gallery|recycle_bin|audit_log"
+}

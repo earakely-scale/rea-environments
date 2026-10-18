@@ -1,0 +1,16 @@
+{
+  "app": "homebox",
+  "title": "Homebox",
+  "repo": "HomeboxEnv-REA",
+  "license": "AGPL-3.0",
+  "authors": "the Homebox contributors (sysadminsmedia)",
+  "hf_license": "apache-2.0",
+  "version": "0.27.0",
+  "image": "ghcr.io/sysadminsmedia/homebox:0.27.0",
+  "image_digest": "sha256:d49f12caf25ce3fa7f44102bb74953f3dff2dfdad38d87bd9057f3f611e797bb",
+  "port": 3208,
+  "keep_regex": "^/api/v1/",
+  "domain": "home inventory and asset tracking",
+  "exclude_tools": "status|currencies|settings|api_keys|members|groups_all|fields$|fields_values",
+  "max_occurrences": 16
+}

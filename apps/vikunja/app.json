@@ -1,0 +1,15 @@
+{
+  "app": "vikunja",
+  "title": "Vikunja",
+  "repo": "VikunjaEnv-REA",
+  "license": "AGPL-3.0-or-later",
+  "authors": "the Vikunja authors",
+  "hf_license": "apache-2.0",
+  "version": "2.7",
+  "image": "vikunja/vikunja:2.7.0",
+  "image_digest": "sha256:e2204a1c1c6a81e833c2b3a5442be182ca2335b54c2e7e37578cc3fe12a27cfc",
+  "port": 3211,
+  "keep_regex": "^/api/v2/",
+  "domain": "task and project management (to-do lists, kanban)",
+  "exclude_tools": "info$|^get_user$|notifications|avatar|routes$|^get_projects_views_by_id$|^get_projects_views_buckets_by_id_id_2$"
+}

@@ -1,0 +1,15 @@
+{
+  "app": "navidrome",
+  "title": "Navidrome",
+  "repo": "NavidromeEnv-REA",
+  "license": "GPL-3.0",
+  "authors": "Deluan Quintao and the Navidrome contributors",
+  "hf_license": "apache-2.0",
+  "version": "0.64.2",
+  "image": "deluan/navidrome:0.64.2",
+  "image_digest": "sha256:38dc2727bfcfd5ede290f8ada114fc90368146f265ae4701ddddbcbe2a44ee52",
+  "port": 3233,
+  "keep_regex": "^/api/",
+  "domain": "self-hosted music streaming server",
+  "exclude_tools": "transcoding|player|keepalive|translation|insights|config"
+}

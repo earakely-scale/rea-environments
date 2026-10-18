@@ -1,0 +1,32 @@
+# Directus 11.17.4 (sqlite) for the rea showcase capture. Loopback only; compose project rea-directus.
+# KEY, SECRET and ADMIN_PASSWORD come from .admin (mode 600, written by seed.py before it starts this project);
+# the admin email is a fixed, non-secret value. Directus validates emails against the IANA TLD list, so the reserved
+# example.com domain is used instead of example.test (which /auth/login and /users reject as invalid).
+services:
+  directus:
+    image: directus/directus:11.17.4
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3223:8055"
+    env_file:
+      - path: .admin
+        required: true
+    environment:
+      PUBLIC_URL: http://127.0.0.1:3223
+      ADMIN_EMAIL: rea-admin@example.com
+      DB_CLIENT: sqlite3
+      DB_FILENAME: /directus/database/data.db
+      TELEMETRY: "false"
+      MARKETPLACE_TRUST: sandbox
+      WEBSOCKETS_ENABLED: "false"
+    volumes:
+      - directus-db:/directus/database
+      - directus-uploads:/directus/uploads
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:8055/server/health || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 48
+volumes:
+  directus-db: {}
+  directus-uploads: {}

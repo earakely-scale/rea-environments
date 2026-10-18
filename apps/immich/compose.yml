@@ -1,0 +1,48 @@
+# Immich v3.3.3 for the rea showcase capture. Loopback only; one compose project: rea-immich.
+# No machine-learning service: the seed turns machine learning off in the system config.
+# The internal database password is generated at run time into .db.env (mode 600, deleted at teardown); the database has no host port.
+services:
+  immich-server:
+    image: ghcr.io/immich-app/immich-server:v3.3.3
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3207:2283"
+    env_file: .db.env
+    environment:
+      DB_HOSTNAME: database
+      DB_USERNAME: postgres
+      DB_DATABASE_NAME: immich
+      REDIS_HOSTNAME: redis
+      TZ: Etc/UTC
+    volumes:
+      - immich-data:/data
+    depends_on:
+      redis:
+        condition: service_healthy
+      database:
+        condition: service_healthy
+    healthcheck:
+      disable: false
+  redis:
+    image: docker.io/valkey/valkey:9.1.2-alpine
+    restart: unless-stopped
+    healthcheck:
+      test: redis-cli ping | grep -q PONG || exit 1
+      interval: 5s
+      retries: 20
+  database:
+    image: ghcr.io/immich-app/postgres:14-vectorchord0.4.3-pgvectors0.2.0
+    restart: unless-stopped
+    env_file: .db.env
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: immich
+      POSTGRES_INITDB_ARGS: "--data-checksums"
+    volumes:
+      - immich-pg:/var/lib/postgresql/data
+    shm_size: 128mb
+    healthcheck:
+      disable: false
+volumes:
+  immich-data: {}
+  immich-pg: {}

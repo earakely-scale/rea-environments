@@ -1,0 +1,15 @@
+{
+  "app": "grist",
+  "title": "Grist",
+  "repo": "GristEnv-REA",
+  "license": "Apache-2.0",
+  "authors": "Grist Labs and the grist-core contributors",
+  "hf_license": "apache-2.0",
+  "version": "1.7.21",
+  "image": "gristlabs/grist:1.7.21",
+  "image_digest": "sha256:4ef5b69ab411de298d2f70571fdcb9a0b00af0d7135d61255e641c5eef70f991",
+  "port": 3220,
+  "keep_regex": "^/o/docs/api/",
+  "domain": "spreadsheet-database (workspaces, documents, tables, records)",
+  "exclude_tools": "usage|attachments|access|profile_user|get_o_docs_orgs$|orgs_by_id$"
+}

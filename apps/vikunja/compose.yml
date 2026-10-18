@@ -1,0 +1,31 @@
+# Vikunja 2.7.0 (API + bundled web UI in one image, sqlite) for the rea showcase capture.
+# Loopback only; one compose project: rea-vikunja. Start with ./up.sh, which generates the service secret and the admin
+# password into .admin (mode 600) and exports only the secret to this compose invocation.
+# The image runs as uid 1000 from a scratch base whose only uid-1000-writable directory is /tmp, so the named volume is
+# mounted there (a fresh named volume inherits the image directory's ownership) and holds the sqlite file and uploads.
+services:
+  vikunja:
+    image: vikunja/vikunja:2.7.0
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3211:3456"
+    environment:
+      VIKUNJA_SERVICE_PUBLICURL: http://127.0.0.1:3211/
+      VIKUNJA_SERVICE_SECRET: ${VIKUNJA_SERVICE_SECRET:?run up.sh}
+      VIKUNJA_SERVICE_ENABLEREGISTRATION: "true"
+      VIKUNJA_SERVICE_TIMEZONE: UTC
+      VIKUNJA_DATABASE_TYPE: sqlite
+      VIKUNJA_DATABASE_PATH: /tmp/vikunja.db
+      VIKUNJA_FILES_BASEPATH: /tmp/files
+      VIKUNJA_MAILER_ENABLED: "false"
+      # register/login are rate-limited per IP (10 a minute by default); seed reruns and the capture log in several times.
+      VIKUNJA_RATELIMIT_NOAUTHLIMIT: "200"
+    volumes:
+      - vikunja-data:/tmp
+    healthcheck:
+      test: ["CMD", "/app/vikunja/vikunja", "healthcheck"]
+      interval: 5s
+      timeout: 5s
+      retries: 36
+volumes:
+  vikunja-data: {}

@@ -1,0 +1,1331 @@
+{
+ "evidence_id": "ev_017809f63eed60ddfc1f97299fe7f7e58e3d111585cd49939499d18341fdbb99",
+ "subject": {
+  "name": "grist.scoped.har",
+  "digest": {
+   "sha256": "0ba1ce8653bb74e217cf221c92cb213dddcfaf807aa2fc13687c03295532d2c9"
+  },
+  "local_path": "/home/ubuntu/capture/grist/grist.scoped.har",
+  "format": "file",
+  "architecture": null
+ },
+ "provider": {
+  "id": "rea-analysis-view",
+  "name": "REA analysis view projection",
+  "version": "1"
+ },
+ "analysis_profile": null,
+ "predicate_type": "rea.analysis-view",
+ "operation": "inspect_analysis_view",
+ "parameters": {
+  "parent_evidence_id": "ev_f74ce8e1b2435b5ff5ce9cf930d3ece7b866503615fbd15e54657be3a268d1a1",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "raw_result": null,
+ "normalized_result": {
+  "parent_evidence_id": "ev_f74ce8e1b2435b5ff5ce9cf930d3ece7b866503615fbd15e54657be3a268d1a1",
+  "parent_operation": "inspect_web_network_capture",
+  "parent_digest": "f74ce8e1b2435b5ff5ce9cf930d3ece7b866503615fbd15e54657be3a268d1a1",
+  "view_digest": "a9cd9321b0c3827510faf19bed8d8eab67027095814800c9a00547bf079ed431",
+  "artifact": {
+   "path": "/home/ubuntu/capture/grist/grist.scoped.har",
+   "sha256": "0ba1ce8653bb74e217cf221c92cb213dddcfaf807aa2fc13687c03295532d2c9"
+  },
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 31,
+   "total": 31,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "limitations": [
+   "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+   "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+   "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+   "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+   "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+   "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+   "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+   "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+   "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+  ],
+  "unknowns": [
+   {
+    "kind": "authorization-model",
+    "statement": "Authorization headers and cookies are structurally excluded from captures; the manifest states no authorization model."
+   },
+   {
+    "kind": "response-semantics",
+    "statement": "Recorded statuses and bodies are retained only as pointers to parent records; the manifest states no response semantics."
+   },
+   {
+    "kind": "state-transition",
+    "statement": "Recorded exchanges are independent observations; the manifest states no ordering, side effects or state transitions between tools."
+   }
+  ],
+  "origin": "http://127.0.0.1:3220",
+  "name": "127-0-0-1-3220",
+  "tools": [
+   {
+    "name": "delete_o_docs_docs_jmjdnnwmxvrx9wds41rt3s",
+    "method": "DELETE",
+    "path_template": "/o/docs/api/docs/jmjdNNWmXvrx9wdS41RT3s",
+    "api_surface_template": "/o/docs/api/docs/jmjdNNWmXvrx9wdS41RT3s",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     62
+    ]
+   },
+   {
+    "name": "patch_o_docs_docs_jmjdnnwmxvrx9wds41rt3s",
+    "method": "PATCH",
+    "path_template": "/o/docs/api/docs/jmjdNNWmXvrx9wdS41RT3s",
+    "api_surface_template": "/o/docs/api/docs/jmjdNNWmXvrx9wdS41RT3s",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "name": "string"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     60
+    ]
+   },
+   {
+    "name": "get_o_docs_docs_kmaxkkxtuiemmqmnqbzkeu_tables_dishes_columns",
+    "method": "GET",
+    "path_template": "/o/docs/api/docs/kmAXkKXtUieMMqmnQBzKeU/tables/Dishes/columns",
+    "api_surface_template": "/o/docs/api/docs/kmAXkKXtUieMMqmnQBzKeU/tables/Dishes/columns",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     31
+    ]
+   },
+   {
+    "name": "get_o_docs_docs_kmaxkkxtuiemmqmnqbzkeu_tables_dishes_records",
+    "method": "GET",
+    "path_template": "/o/docs/api/docs/kmAXkKXtUieMMqmnQBzKeU/tables/Dishes/records",
+    "api_surface_template": "/o/docs/api/docs/kmAXkKXtUieMMqmnQBzKeU/tables/Dishes/records",
+    "params": [],
+    "query_parameter_names": [
+     "filter"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     37,
+     46
+    ]
+   },
+   {
+    "name": "get_o_docs_docs_usqdsyez5xornkgvkczkkc_attachments",
+    "method": "GET",
+    "path_template": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/attachments",
+    "api_surface_template": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/attachments",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     53
+    ]
+   },
+   {
+    "name": "get_o_docs_docs_usqdsyez5xornkgvkczkkc_tables_keepers_column",
+    "method": "GET",
+    "path_template": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/tables/Keepers/columns",
+    "api_surface_template": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/tables/Keepers/columns",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     32
+    ]
+   },
+   {
+    "name": "get_o_docs_docs_usqdsyez5xornkgvkczkkc_tables_keepers_record",
+    "method": "GET",
+    "path_template": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/tables/Keepers/records",
+    "api_surface_template": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/tables/Keepers/records",
+    "params": [],
+    "query_parameter_names": [
+     "filter"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     38,
+     43
+    ]
+   },
+   {
+    "name": "get_o_docs_docs_usqdsyez5xornkgvkczkkc_tables_shifts_columns",
+    "method": "GET",
+    "path_template": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/tables/Shifts/columns",
+    "api_surface_template": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/tables/Shifts/columns",
+    "params": [],
+    "query_parameter_names": [
+     "hidden"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     33,
+     50
+    ]
+   },
+   {
+    "name": "get_o_docs_docs_usqdsyez5xornkgvkczkkc_tables_shifts_records",
+    "method": "GET",
+    "path_template": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/tables/Shifts/records",
+    "api_surface_template": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/tables/Shifts/records",
+    "params": [],
+    "query_parameter_names": [
+     "limit"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     39,
+     51
+    ]
+   },
+   {
+    "name": "get_o_docs_docs_usqdsyez5xornkgvkczkkc_tables_supplies_colum",
+    "method": "GET",
+    "path_template": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/tables/Supplies/columns",
+    "api_surface_template": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/tables/Supplies/columns",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     34
+    ]
+   },
+   {
+    "name": "get_o_docs_docs_usqdsyez5xornkgvkczkkc_tables_supplies_recor",
+    "method": "GET",
+    "path_template": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/tables/Supplies/records",
+    "api_surface_template": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/tables/Supplies/records",
+    "params": [],
+    "query_parameter_names": [
+     "filter",
+     "sort"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     40,
+     44,
+     56,
+     58
+    ]
+   },
+   {
+    "name": "patch_o_docs_docs_usqdsyez5xornkgvkczkkc_tables_supplies_rec",
+    "method": "PATCH",
+    "path_template": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/tables/Supplies/records",
+    "api_surface_template": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/tables/Supplies/records",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "records": "array"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     55
+    ]
+   },
+   {
+    "name": "post_o_docs_docs_usqdsyez5xornkgvkczkkc_tables_supplies_reco",
+    "method": "POST",
+    "path_template": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/tables/Supplies/records",
+    "api_surface_template": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/tables/Supplies/records",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "records": "array"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     54
+    ]
+   },
+   {
+    "name": "post_o_docs_docs_usqdsyez5xornkgvkczkkc_tables_supplies_re_2",
+    "method": "POST",
+    "path_template": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/tables/Supplies/records/delete",
+    "api_surface_template": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/tables/Supplies/records/delete",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     57
+    ]
+   },
+   {
+    "name": "get_o_docs_docs_x3dzespgnxte9r8dujjwto_tables_carts_columns",
+    "method": "GET",
+    "path_template": "/o/docs/api/docs/x3dzESpgNxTe9r8dUJjwTo/tables/Carts/columns",
+    "api_surface_template": "/o/docs/api/docs/x3dzESpgNxTe9r8dUJjwTo/tables/Carts/columns",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     36
+    ]
+   },
+   {
+    "name": "get_o_docs_docs_x3dzespgnxte9r8dujjwto_tables_carts_records",
+    "method": "GET",
+    "path_template": "/o/docs/api/docs/x3dzESpgNxTe9r8dUJjwTo/tables/Carts/records",
+    "api_surface_template": "/o/docs/api/docs/x3dzESpgNxTe9r8dUJjwTo/tables/Carts/records",
+    "params": [],
+    "query_parameter_names": [
+     "filter"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     42,
+     52
+    ]
+   },
+   {
+    "name": "get_o_docs_docs_x3dzespgnxte9r8dujjwto_tables_terraces_colum",
+    "method": "GET",
+    "path_template": "/o/docs/api/docs/x3dzESpgNxTe9r8dUJjwTo/tables/Terraces/columns",
+    "api_surface_template": "/o/docs/api/docs/x3dzESpgNxTe9r8dUJjwTo/tables/Terraces/columns",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     35
+    ]
+   },
+   {
+    "name": "get_o_docs_docs_x3dzespgnxte9r8dujjwto_tables_terraces_recor",
+    "method": "GET",
+    "path_template": "/o/docs/api/docs/x3dzESpgNxTe9r8dUJjwTo/tables/Terraces/records",
+    "api_surface_template": "/o/docs/api/docs/x3dzESpgNxTe9r8dUJjwTo/tables/Terraces/records",
+    "params": [],
+    "query_parameter_names": [
+     "limit",
+     "sort"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     41,
+     45
+    ]
+   },
+   {
+    "name": "get_o_docs_docs_by_doc_id",
+    "method": "GET",
+    "path_template": "/o/docs/api/docs/{doc_id}",
+    "api_surface_template": "/o/docs/api/docs/uSqDsYEz5xor",
+    "params": [
+     {
+      "index": 4,
+      "name": "doc_id",
+      "rule": "sibling-variance",
+      "basis": "inferred",
+      "observed_values": [
+       "jmjdNNWmXvrx9wdS41RT3s",
+       "kmAXkKXtUieM",
+       "kmAXkKXtUieMMqmnQBzKeU",
+       "uSqDsYEz5xor",
+       "uSqDsYEz5xornkGvKczKKC",
+       "x3dzESpgNxTe",
+       "x3dzESpgNxTe9r8dUJjwTo"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200,
+     404
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     10,
+     11,
+     12,
+     21,
+     22,
+     23,
+     61,
+     63
+    ]
+   },
+   {
+    "name": "get_o_docs_docs_access_by_doc_id",
+    "method": "GET",
+    "path_template": "/o/docs/api/docs/{doc_id}/access",
+    "api_surface_template": "/o/docs/api/docs/x3dzESpgNxTe9r8dUJjwTo/access",
+    "params": [
+     {
+      "index": 4,
+      "name": "doc_id",
+      "rule": "sibling-variance",
+      "basis": "inferred",
+      "observed_values": [
+       "kmAXkKXtUieMMqmnQBzKeU",
+       "uSqDsYEz5xornkGvKczKKC",
+       "x3dzESpgNxTe9r8dUJjwTo"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     24,
+     25,
+     26
+    ]
+   },
+   {
+    "name": "get_o_docs_docs_sql_by_doc_id",
+    "method": "GET",
+    "path_template": "/o/docs/api/docs/{doc_id}/sql",
+    "api_surface_template": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/sql",
+    "params": [
+     {
+      "index": 4,
+      "name": "doc_id",
+      "rule": "sibling-variance",
+      "basis": "inferred",
+      "observed_values": [
+       "kmAXkKXtUieMMqmnQBzKeU",
+       "uSqDsYEz5xornkGvKczKKC",
+       "x3dzESpgNxTe9r8dUJjwTo"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "q"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     47,
+     48,
+     49
+    ]
+   },
+   {
+    "name": "get_o_docs_docs_tables_by_doc_id",
+    "method": "GET",
+    "path_template": "/o/docs/api/docs/{doc_id}/tables",
+    "api_surface_template": "/o/docs/api/docs/kmAXkKXtUieMMqmnQBzKeU/tables",
+    "params": [
+     {
+      "index": 4,
+      "name": "doc_id",
+      "rule": "sibling-variance",
+      "basis": "inferred",
+      "observed_values": [
+       "kmAXkKXtUieMMqmnQBzKeU",
+       "uSqDsYEz5xornkGvKczKKC",
+       "x3dzESpgNxTe9r8dUJjwTo"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     28,
+     29,
+     30
+    ]
+   },
+   {
+    "name": "get_o_docs_orgs",
+    "method": "GET",
+    "path_template": "/o/docs/api/orgs",
+    "api_surface_template": "/o/docs/api/orgs",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     13
+    ]
+   },
+   {
+    "name": "get_o_docs_orgs_by_id",
+    "method": "GET",
+    "path_template": "/o/docs/api/orgs/{numeric}",
+    "api_surface_template": "/o/docs/api/orgs/{numeric}",
+    "params": [
+     {
+      "index": 4,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "2"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     14
+    ]
+   },
+   {
+    "name": "get_o_docs_orgs_access_by_id",
+    "method": "GET",
+    "path_template": "/o/docs/api/orgs/{numeric}/access",
+    "api_surface_template": "/o/docs/api/orgs/{numeric}/access",
+    "params": [
+     {
+      "index": 4,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "2"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     16
+    ]
+   },
+   {
+    "name": "get_o_docs_orgs_usage_by_id",
+    "method": "GET",
+    "path_template": "/o/docs/api/orgs/{numeric}/usage",
+    "api_surface_template": "/o/docs/api/orgs/{numeric}/usage",
+    "params": [
+     {
+      "index": 4,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "0"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     2,
+     5,
+     7,
+     9
+    ]
+   },
+   {
+    "name": "get_o_docs_orgs_workspaces_by_id",
+    "method": "GET",
+    "path_template": "/o/docs/api/orgs/{numeric}/workspaces",
+    "api_surface_template": "/o/docs/api/orgs/{numeric}/workspaces",
+    "params": [
+     {
+      "index": 4,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "0",
+       "2"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "includeSupport"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     0,
+     1,
+     4,
+     6,
+     8,
+     15
+    ]
+   },
+   {
+    "name": "get_o_docs_profile_user",
+    "method": "GET",
+    "path_template": "/o/docs/api/profile/user",
+    "api_surface_template": "/o/docs/api/profile/user",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     3
+    ]
+   },
+   {
+    "name": "get_o_docs_workspaces_by_id",
+    "method": "GET",
+    "path_template": "/o/docs/api/workspaces/{numeric}",
+    "api_surface_template": "/o/docs/api/workspaces/{numeric}",
+    "params": [
+     {
+      "index": 4,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "2",
+       "3",
+       "4"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     17,
+     18,
+     19,
+     64
+    ]
+   },
+   {
+    "name": "get_o_docs_workspaces_access_by_id",
+    "method": "GET",
+    "path_template": "/o/docs/api/workspaces/{numeric}/access",
+    "api_surface_template": "/o/docs/api/workspaces/{numeric}/access",
+    "params": [
+     {
+      "index": 4,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "3",
+       "4"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     20,
+     27
+    ]
+   },
+   {
+    "name": "post_o_docs_workspaces_docs_by_id",
+    "method": "POST",
+    "path_template": "/o/docs/api/workspaces/{numeric}/docs",
+    "api_surface_template": "/o/docs/api/workspaces/{numeric}/docs",
+    "params": [
+     {
+      "index": 4,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "4"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "name": "string"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     59
+    ]
+   }
+  ],
+  "records": [
+   {
+    "ordinal": 0,
+    "method": "GET",
+    "path": "/o/docs/api/orgs/0/workspaces",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 1,
+    "method": "GET",
+    "path": "/o/docs/api/orgs/0/workspaces",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 2,
+    "method": "GET",
+    "path": "/o/docs/api/orgs/0/usage",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 3,
+    "method": "GET",
+    "path": "/o/docs/api/profile/user",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 4,
+    "method": "GET",
+    "path": "/o/docs/api/orgs/0/workspaces",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 5,
+    "method": "GET",
+    "path": "/o/docs/api/orgs/0/usage",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 6,
+    "method": "GET",
+    "path": "/o/docs/api/orgs/0/workspaces",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 7,
+    "method": "GET",
+    "path": "/o/docs/api/orgs/0/usage",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 8,
+    "method": "GET",
+    "path": "/o/docs/api/orgs/0/workspaces",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 9,
+    "method": "GET",
+    "path": "/o/docs/api/orgs/0/usage",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 10,
+    "method": "GET",
+    "path": "/o/docs/api/docs/uSqDsYEz5xor",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 11,
+    "method": "GET",
+    "path": "/o/docs/api/docs/kmAXkKXtUieM",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 12,
+    "method": "GET",
+    "path": "/o/docs/api/docs/x3dzESpgNxTe",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 13,
+    "method": "GET",
+    "path": "/o/docs/api/orgs",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 14,
+    "method": "GET",
+    "path": "/o/docs/api/orgs/2",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 15,
+    "method": "GET",
+    "path": "/o/docs/api/orgs/2/workspaces",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 16,
+    "method": "GET",
+    "path": "/o/docs/api/orgs/2/access",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 17,
+    "method": "GET",
+    "path": "/o/docs/api/workspaces/4",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 18,
+    "method": "GET",
+    "path": "/o/docs/api/workspaces/3",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 19,
+    "method": "GET",
+    "path": "/o/docs/api/workspaces/2",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 20,
+    "method": "GET",
+    "path": "/o/docs/api/workspaces/3/access",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 21,
+    "method": "GET",
+    "path": "/o/docs/api/docs/x3dzESpgNxTe9r8dUJjwTo",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 22,
+    "method": "GET",
+    "path": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 23,
+    "method": "GET",
+    "path": "/o/docs/api/docs/kmAXkKXtUieMMqmnQBzKeU",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 24,
+    "method": "GET",
+    "path": "/o/docs/api/docs/x3dzESpgNxTe9r8dUJjwTo/access",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 25,
+    "method": "GET",
+    "path": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/access",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 26,
+    "method": "GET",
+    "path": "/o/docs/api/docs/kmAXkKXtUieMMqmnQBzKeU/access",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 27,
+    "method": "GET",
+    "path": "/o/docs/api/workspaces/4/access",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 28,
+    "method": "GET",
+    "path": "/o/docs/api/docs/kmAXkKXtUieMMqmnQBzKeU/tables",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 29,
+    "method": "GET",
+    "path": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/tables",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 30,
+    "method": "GET",
+    "path": "/o/docs/api/docs/x3dzESpgNxTe9r8dUJjwTo/tables",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 31,
+    "method": "GET",
+    "path": "/o/docs/api/docs/kmAXkKXtUieMMqmnQBzKeU/tables/Dishes/columns",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 32,
+    "method": "GET",
+    "path": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/tables/Keepers/columns",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 33,
+    "method": "GET",
+    "path": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/tables/Shifts/columns",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 34,
+    "method": "GET",
+    "path": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/tables/Supplies/columns",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 35,
+    "method": "GET",
+    "path": "/o/docs/api/docs/x3dzESpgNxTe9r8dUJjwTo/tables/Terraces/columns",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 36,
+    "method": "GET",
+    "path": "/o/docs/api/docs/x3dzESpgNxTe9r8dUJjwTo/tables/Carts/columns",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 37,
+    "method": "GET",
+    "path": "/o/docs/api/docs/kmAXkKXtUieMMqmnQBzKeU/tables/Dishes/records",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 38,
+    "method": "GET",
+    "path": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/tables/Keepers/records",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 39,
+    "method": "GET",
+    "path": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/tables/Shifts/records",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 40,
+    "method": "GET",
+    "path": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/tables/Supplies/records",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 41,
+    "method": "GET",
+    "path": "/o/docs/api/docs/x3dzESpgNxTe9r8dUJjwTo/tables/Terraces/records",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 42,
+    "method": "GET",
+    "path": "/o/docs/api/docs/x3dzESpgNxTe9r8dUJjwTo/tables/Carts/records",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 43,
+    "method": "GET",
+    "path": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/tables/Keepers/records",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 44,
+    "method": "GET",
+    "path": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/tables/Supplies/records",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 45,
+    "method": "GET",
+    "path": "/o/docs/api/docs/x3dzESpgNxTe9r8dUJjwTo/tables/Terraces/records",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 46,
+    "method": "GET",
+    "path": "/o/docs/api/docs/kmAXkKXtUieMMqmnQBzKeU/tables/Dishes/records",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 47,
+    "method": "GET",
+    "path": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/sql",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 48,
+    "method": "GET",
+    "path": "/o/docs/api/docs/x3dzESpgNxTe9r8dUJjwTo/sql",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 49,
+    "method": "GET",
+    "path": "/o/docs/api/docs/kmAXkKXtUieMMqmnQBzKeU/sql",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 50,
+    "method": "GET",
+    "path": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/tables/Shifts/columns",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 51,
+    "method": "GET",
+    "path": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/tables/Shifts/records",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 52,
+    "method": "GET",
+    "path": "/o/docs/api/docs/x3dzESpgNxTe9r8dUJjwTo/tables/Carts/records",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 53,
+    "method": "GET",
+    "path": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/attachments",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 54,
+    "method": "POST",
+    "path": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/tables/Supplies/records",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 55,
+    "method": "PATCH",
+    "path": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/tables/Supplies/records",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 56,
+    "method": "GET",
+    "path": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/tables/Supplies/records",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 57,
+    "method": "POST",
+    "path": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/tables/Supplies/records/delete",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 58,
+    "method": "GET",
+    "path": "/o/docs/api/docs/uSqDsYEz5xornkGvKczKKC/tables/Supplies/records",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 59,
+    "method": "POST",
+    "path": "/o/docs/api/workspaces/4/docs",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 60,
+    "method": "PATCH",
+    "path": "/o/docs/api/docs/jmjdNNWmXvrx9wdS41RT3s",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 61,
+    "method": "GET",
+    "path": "/o/docs/api/docs/jmjdNNWmXvrx9wdS41RT3s",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 62,
+    "method": "DELETE",
+    "path": "/o/docs/api/docs/jmjdNNWmXvrx9wdS41RT3s",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 63,
+    "method": "GET",
+    "path": "/o/docs/api/docs/jmjdNNWmXvrx9wdS41RT3s",
+    "status": 404,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 64,
+    "method": "GET",
+    "path": "/o/docs/api/workspaces/4",
+    "status": 200,
+    "content_type": "application/json"
+   }
+  ],
+  "excluded": [],
+  "templated_groups": 11,
+  "kind": "environment-manifest",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "confidence": "inferred",
+ "authority": "historical-reference",
+ "environment": null,
+ "limitations": [
+  "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+  "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+  "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+  "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+  "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+  "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+  "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+  "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+  "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+ ],
+ "relationship_coverage": null,
+ "locations": [
+  {
+   "kind": "artifact-path",
+   "path": "/home/ubuntu/capture/grist/grist.scoped.har"
+  }
+ ],
+ "evidence_links": [
+  "ev_f74ce8e1b2435b5ff5ce9cf930d3ece7b866503615fbd15e54657be3a268d1a1"
+ ]
+}

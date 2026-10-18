@@ -1,0 +1,16 @@
+{
+  "app": "miniflux",
+  "title": "Miniflux",
+  "repo": "MinifluxEnv-REA",
+  "license": "Apache-2.0",
+  "authors": "Fr\u00e9d\u00e9ric Guillot and the Miniflux contributors",
+  "hf_license": "apache-2.0",
+  "version": "2.3.3",
+  "image": "miniflux/miniflux:2.3.3",
+  "image_digest": "sha256:49d7b60987616387c306a8023087b31f2c9b7b21288b523026cb04058e8b6dbb",
+  "port": 3217,
+  "keep_regex": "^/v1/",
+  "domain": "feed reader (RSS and Atom)",
+  "exclude_tools": "version$|_me$|integrations|counters|icon|discover|mina_okafor",
+  "max_occurrences": 16
+}

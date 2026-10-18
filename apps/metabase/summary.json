@@ -1,0 +1,302 @@
+{
+ "app": "metabase",
+ "image": "metabase/metabase:v0.64.2.8",
+ "image_digest": "metabase/metabase@sha256:3b968d64944840ec0ed452a94fb58301a0a8d8e4fe6d632a5956014a91a2b635",
+ "app_version": "0.64.2.8",
+ "app_version_full": "v0.64.2.8 (build hash 0f5961a, 2026-10-16)",
+ "site_title": "Lighthouse Rota Analytics",
+ "compose_project": "rea-metabase",
+ "origin": "http://127.0.0.1:3201",
+ "database": "embedded H2 application database (/metabase-data/metabase.db); bundled Sample Database (H2) added through POST /api/database/sample_database",
+ "tooling": {
+  "rea": "6.6.0",
+  "playwright-core": "1.58.2",
+  "chromium": "Chromium 155.0.8059.79 snap",
+  "node": "v24.22.0",
+  "python": "3.12.3",
+  "docker": "29.9.1",
+  "compose": "v5.6.0",
+  "agent-env": "0.9.1334",
+  "vm": "Ubuntu 24.04 amd64"
+ },
+ "seeded_objects": "site Lighthouse Rota Analytics with admin Rea Admin; users Ada Finch, Rui Castellanos and Mina Okafor; group Night Shift Analysts; collections Granite Ledger, Blue Heron Kitchen and Saltmarsh Depot; 5 saved questions on the bundled Sample Database (MBQL, native SQL and a model); dashboards Granite Ledger Overview and Blue Heron Kitchen Service Board; timeline Granite Ledger milestones with 2 events; native-query snippet Saltmarsh Depot gizmo filter; segment Granite Ledger large orders; synthetic descriptions on 1 table and 2 fields",
+ "ui_pages_visited": [
+  "/auth/login (login)",
+  "/ (home, after login)",
+  "/collection/6 (Granite Ledger)",
+  "/dashboard/1 (Granite Ledger Overview)",
+  "/question/1 (Copperfield Annex orders by shelf family)",
+  "/collection/8 (Saltmarsh Depot)",
+  "/admin/people"
+ ],
+ "scoped_har": {
+  "file": "metabase.scoped.har",
+  "sha256": "cd791130c103bf19299b14221ac2c27ae0bc9f8ae16e604c82ac4b34631a2d8a",
+  "bytes": 515053,
+  "records": 120,
+  "methods": {
+   "GET": 112,
+   "POST": 6,
+   "PUT": 1,
+   "DELETE": 1
+  },
+  "statuses": {
+   "200": 112,
+   "202": 5,
+   "204": 1,
+   "401": 1,
+   "404": 1
+  }
+ },
+ "scope_har": {
+  "origin": "http://127.0.0.1:3201",
+  "keep_regex": "^/api/",
+  "drop_regex": "login|logout|signup|password|session|token|oauth|csrf|^/api/metabot/|^/api/setting/|^/api/user-key-value/|^/api/collection/trash",
+  "max_body": 60000,
+  "max_records": 150,
+  "kept": 120,
+  "dropped": {
+   "other-origin": 0,
+   "path": 201,
+   "non-json": 0,
+   "auth": 29,
+   "big-body": 0,
+   "over-max": 0
+  },
+  "notes": [
+   "auth=29 includes 8 GET /api/session/properties (119-126 KB each, also over max-body) plus the noise added to the drop regex: metabot permissions, setting/version-info polls, user-key-value, collection/trash",
+   "401 is the UI probing /api/user/current before sign-in (text/plain); 404 is the re-read of the deleted scratch card (text/plain)"
+  ]
+ },
+ "credential_grep": {
+  "admin_password_literal_hits": 0,
+  "token_shape_hits_hf_ghp_Bearer": 0,
+  "session_cookie_name_hits": 0,
+  "result": "pass"
+ },
+ "resource_constraint": false,
+ "seeded_objects_detail": {
+  "admin": "Rea Admin <rea-admin@example.test> (superuser, created through POST /api/setup)",
+  "site_name": "Lighthouse Rota Analytics",
+  "users": [
+   "Ada Finch <ada.finch@example.test>",
+   "Rui Castellanos <rui.castellanos@example.test>",
+   "Mina Okafor <mina.okafor@example.test>"
+  ],
+  "groups": [
+   "Night Shift Analysts (members Ada Finch, Mina Okafor)"
+  ],
+  "collections": [
+   "Granite Ledger",
+   "Blue Heron Kitchen",
+   "Saltmarsh Depot (inside Granite Ledger)"
+  ],
+  "cards": [
+   "Copperfield Annex orders by shelf family (MBQL, bar)",
+   "Blue Heron Kitchen average rating per category (MBQL)",
+   "Lighthouse Rota sign-ups by source (native SQL)",
+   "Saltmarsh Depot five-star review count (MBQL, scalar)",
+   "Granite Ledger order book (model)"
+  ],
+  "dashboards": [
+   "Granite Ledger Overview (2 cards + text card)",
+   "Blue Heron Kitchen Service Board (2 cards + text card)"
+  ],
+  "timelines": [
+   "Granite Ledger milestones (events: Quarry audit signed off by Rui Castellanos; Cart number 7 retired)"
+  ],
+  "native_query_snippets": [
+   "Saltmarsh Depot gizmo filter"
+  ],
+  "segments": [
+   "Granite Ledger large orders (ORDERS.TOTAL > 120)"
+  ],
+  "metadata_descriptions": [
+   "table PRODUCTS",
+   "field PRODUCTS.CATEGORY",
+   "field ORDERS.TOTAL"
+  ],
+  "bookmarks": [
+   "card Copperfield Annex orders by shelf family",
+   "dashboard Granite Ledger Overview"
+  ],
+  "scratch_during_capture": "saved question Rea scratch tally created (POST), renamed (PUT), read, deleted (DELETE 204), re-read (404)"
+ },
+ "evidence": {
+  "capture_evidence_id": "ev_ae41d6f2a19b032ad77cd55df2547050605d49d7877db2e63b47c49647324924",
+  "capture_total_records": 120,
+  "capture_confidence": "observed",
+  "manifest_evidence_id": "ev_97964117e7834ff3666205d78ca1a191235de72b54f4aa6bc0f96899674581a8",
+  "manifest_norules_evidence_id": "ev_84f096bec5f1ed85a460a85f07e3fd430869a4d65443c30f1b86c0e3f01e4cac",
+  "manifest_view_digest": "437a73cfadda9494ecb912d01a8f2f5b07fde3beea46c09b3943e9a8c4d1338c"
+ },
+ "manifest": {
+  "tools": 42,
+  "tools_by_method": {
+   "GET": 37,
+   "POST": 3,
+   "DELETE": 1,
+   "PUT": 1
+  },
+  "templated_groups": 23,
+  "params_by_rule": {
+   "numeric": 25
+  },
+  "params_total": 25,
+  "query_parameter_names_total": 31,
+  "query_parameter_names_distinct": [
+   "can-query",
+   "context",
+   "dashboard_load_id",
+   "exclude-archived",
+   "exclude-other-user-collections",
+   "f",
+   "include",
+   "include-library",
+   "limit",
+   "models",
+   "offset",
+   "pinned-state",
+   "q",
+   "query",
+   "show-dashboard-questions",
+   "sort-column",
+   "sort-direction",
+   "status",
+   "tenancy"
+  ],
+  "tools_with_body_shape": 4,
+  "excluded": {},
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 42,
+   "total": 42,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "limitations_count": 9,
+  "tool_names": [
+   "get_activity_popular_items",
+   "get_activity_recents",
+   "get_automagic_dashboards_database_candidates_by_id",
+   "get_bookmark",
+   "get_card",
+   "post_card",
+   "delete_card_by_id",
+   "get_card_by_id",
+   "put_card_by_id",
+   "post_card_query_by_id",
+   "get_card_query_metadata_by_id",
+   "get_collection",
+   "get_collection_root",
+   "get_collection_tree",
+   "get_collection_by_id",
+   "get_collection_dashboard_question_candidates_by_id",
+   "get_collection_items_by_id",
+   "get_collection_items_metadata_by_id",
+   "get_dashboard",
+   "get_dashboard_by_id",
+   "post_dashboard_dashcard_card_query_by_id_id_2_id_3",
+   "get_dashboard_query_metadata_by_id",
+   "get_database",
+   "get_database_by_id",
+   "get_database_schemas_by_id",
+   "get_field_by_id",
+   "get_native_query_snippet",
+   "get_native_query_snippet_by_id",
+   "get_permissions_group",
+   "get_permissions_group_by_id",
+   "get_permissions_membership",
+   "get_pulse_form_input",
+   "get_search",
+   "get_segment",
+   "get_segment_by_id",
+   "get_table_by_id",
+   "get_timeline",
+   "get_timeline_event_by_id",
+   "get_timeline_by_id",
+   "get_user",
+   "get_user_current",
+   "get_user_by_id"
+  ]
+ },
+ "manifest_norules": {
+  "tools": 42,
+  "templated_groups": 23,
+  "limitations_count": 8,
+  "tool_names": [
+   "get_activity_popular_items",
+   "get_activity_recents",
+   "get_automagic_dashboards_database_candidates_by_id",
+   "get_bookmark",
+   "get_card",
+   "post_card",
+   "delete_card_by_id",
+   "get_card_by_id",
+   "put_card_by_id",
+   "post_card_query_by_id",
+   "get_card_query_metadata_by_id",
+   "get_collection",
+   "get_collection_root",
+   "get_collection_tree",
+   "get_collection_by_id",
+   "get_collection_dashboard_question_candidates_by_id",
+   "get_collection_items_by_id",
+   "get_collection_items_metadata_by_id",
+   "get_dashboard",
+   "get_dashboard_by_id",
+   "post_dashboard_dashcard_card_query_by_id_id_2_id_3",
+   "get_dashboard_query_metadata_by_id",
+   "get_database",
+   "get_database_by_id",
+   "get_database_schemas_by_id",
+   "get_field_by_id",
+   "get_native_query_snippet",
+   "get_native_query_snippet_by_id",
+   "get_permissions_group",
+   "get_permissions_group_by_id",
+   "get_permissions_membership",
+   "get_pulse_form_input",
+   "get_search",
+   "get_segment",
+   "get_segment_by_id",
+   "get_table_by_id",
+   "get_timeline",
+   "get_timeline_event_by_id",
+   "get_timeline_by_id",
+   "get_user",
+   "get_user_current",
+   "get_user_by_id"
+  ]
+ },
+ "manifest_vs_norules": {
+  "tools": [
+   42,
+   42
+  ],
+  "templated_groups": [
+   23,
+   23
+  ],
+  "note": "every path parameter is a numeric id, templated by the unconditional numeric rule; the three opt-in rules matched nothing (no opaque tokens, no uid-literal pairs, no literal siblings), so both views have the same 42 tools"
+ },
+ "build": {
+  "retrieval_tasks": 12,
+  "task_candidates": 25,
+  "smoke": "passed",
+  "eval": {
+   "openai/gpt-oss-120b:groq": "12/12",
+   "zai-org/GLM-5.3-Flash:zai-org": "12/12"
+  },
+  "episodes": 24,
+  "dataset_bytes": 7096062,
+  "dataset_dry_run": "/home/ubuntu/showcase/datasets/metabase"
+ }
+}

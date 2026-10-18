@@ -1,0 +1,15 @@
+{
+  "app": "metabase",
+  "title": "Metabase",
+  "repo": "MetabaseEnv-REA",
+  "license": "AGPL-3.0",
+  "authors": "Metabase, Inc.",
+  "hf_license": "apache-2.0",
+  "version": "0.64.2.8",
+  "image": "metabase/metabase:v0.64.2.8",
+  "image_digest": "sha256:3b968d64944840ec0ed452a94fb58301a0a8d8e4fe6d632a5956014a91a2b635",
+  "port": 3201,
+  "keep_regex": "^/api/",
+  "domain": "business intelligence and dashboards",
+  "exclude_tools": "query_metadata|settings?|session|notifications|version|health|metabot|bookmark|activity|automagic|candidates|form_input|schemas|items_metadata|user_key_value|_trash"
+}

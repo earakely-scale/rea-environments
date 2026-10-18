@@ -1,0 +1,15 @@
+{
+  "app": "listmonk",
+  "title": "listmonk",
+  "repo": "ListmonkEnv-REA",
+  "license": "AGPL-3.0",
+  "authors": "Kailash Nadh and the listmonk contributors",
+  "hf_license": "apache-2.0",
+  "version": "6.2",
+  "image": "listmonk/listmonk:v6.2.0",
+  "image_digest": "sha256:f535d59e14991337a9f2d570273685378ae86b0d7698c3e00da444e3bc205286",
+  "port": 3214,
+  "keep_regex": "^/api/(?!lang/|events)",
+  "domain": "newsletters and mailing lists",
+  "exclude_tools": "settings|config$|about$|profile$|dashboard|running_stats|import|public_lists|subscribers$"
+}

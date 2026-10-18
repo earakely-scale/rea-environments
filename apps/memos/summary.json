@@ -1,0 +1,276 @@
+{
+ "app": "memos",
+ "image": "neosmemo/memos:0.31.0",
+ "image_digest": "neosmemo/memos@sha256:24c2707ddd8fbd2ceaa7a61ecab86a53cdcde640b24ce572b73da14b00b5785f",
+ "app_version": "0.31.0",
+ "app_version_full": "0.31.0 (GET /api/v1/instance/profile: version 0.31.0, commit 2b2192d4e153bd04f1d325b60fd880cf00d68b01; sqlite schemaVersion 0.31.8)",
+ "database": "sqlite (MEMOS_DRIVER=sqlite, /var/opt/memos)",
+ "instance_url": "http://127.0.0.1:3205",
+ "compose_project": "rea-memos",
+ "origin": "http://127.0.0.1:3205",
+ "tooling": {
+  "rea": "6.6.0",
+  "playwright-core": "1.58.2",
+  "chromium": "Chromium 155.0.8059.79 snap",
+  "node": "v24.22.0",
+  "python": "3.12.3",
+  "docker": "29.9.1",
+  "compose": "5.6.0",
+  "vm": "Ubuntu 24.04 amd64"
+ },
+ "scoped_har": {
+  "file": "memos.scoped.har",
+  "sha256": "88d94da05d999e68d6b7b3692e0c3bab48b02390921bc66ea2352f39df4cf2de",
+  "bytes": 113900,
+  "records": 67,
+  "methods": {
+   "GET": 64,
+   "POST": 1,
+   "PATCH": 1,
+   "DELETE": 1
+  },
+  "statuses": {
+   "200": 66,
+   "404": 1
+  }
+ },
+ "scope_har": {
+  "origin": "http://127.0.0.1:3205",
+  "keep_regex": "^/api/v1/",
+  "drop_regex": "login|logout|signin|signup|password|session|token|oauth|csrf|/auth/|/sse",
+  "max_body": 60000,
+  "max_records": 150,
+  "kept": 67,
+  "dropped": {
+   "other-origin": 0,
+   "path": 405,
+   "non-json": 0,
+   "auth": 12,
+   "big-body": 0,
+   "over-max": 0
+  },
+  "notes": [
+   "the web UI talks Connect RPC with binary protobuf (POST /memos.api.v1.<Service>/<Method>, application/proto): 103 such calls (102 protobuf, 1 pre-login RefreshToken 401 as JSON), all outside the keep regex (counted under path)",
+   "auth=12 is POST /memos.api.v1.AuthService/SignIn and RefreshToken, the two sign-in JS chunks, and 8 GET /api/v1/sse event streams",
+   "/auth/ and /sse were added to the drop regex: /api/v1/auth/* answers carry the access token, /api/v1/sse is a text/event-stream"
+  ]
+ },
+ "credential_grep": {
+  "admin_file_value_hits": 0,
+  "jwt_prefix_eyJ_hits": 0,
+  "Bearer_hits": 0,
+  "accessToken_hits": 0,
+  "memos_refresh_or_memos_access_token_hits": 0,
+  "cookies": 0,
+  "result": "pass"
+ },
+ "manifest": {
+  "evidence_id": "ev_9535f9c5f689cd44d904d5b6e3b3462b1bc522be7ae1397e1a2a0eca35296955",
+  "confidence": "inferred",
+  "view_digest": "5b95f0996f4029b569c1413bc4e89d9c9864e1fa928f8082b9393bc2301208fb",
+  "tools": 26,
+  "tools_by_method": {
+   "GET": 23,
+   "POST": 1,
+   "DELETE": 1,
+   "PATCH": 1
+  },
+  "templated_groups": 12,
+  "params_by_rule": {
+   "sibling-variance": 5,
+   "uuid": 7
+  },
+  "params_total": 12,
+  "query_parameter_names_distinct": [
+   "filter",
+   "orderBy",
+   "pageSize",
+   "state",
+   "updateMask"
+  ],
+  "tools_with_body_shape": 2,
+  "excluded": 0,
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "tool_names": [
+   "get_instance_profile",
+   "get_instance_stats",
+   "get_memos",
+   "post_memos",
+   "get_memos_fs83cegx4ahaulnv9zhy2c_attachments",
+   "delete_memos_fdsic6f6xuhk3yamkb5ohn",
+   "patch_memos_fdsic6f6xuhk3yamkb5ohn",
+   "get_memos_by_memo_id",
+   "get_memos_comments_by_memo_id",
+   "get_memos_reactions_by_memo_id",
+   "get_memos_relations_by_memo_id",
+   "get_spaces",
+   "get_spaces_by_uuid",
+   "get_spaces_invitations_by_uuid",
+   "get_spaces_invitations_mina_okafor_by_uuid",
+   "get_spaces_invitations_rea_admin_by_uuid",
+   "get_spaces_members_by_uuid",
+   "get_spaces_members_ada_finch_by_uuid",
+   "get_users",
+   "get_users_rea_admin_notifications",
+   "get_users_rea_admin_settings",
+   "get_users_rea_admin_settings_general",
+   "get_users_rea_admin_spaceinvitations",
+   "get_users_rea_admin_views",
+   "get_users_rea_admin_views_by_uuid",
+   "get_users_by_user_id"
+  ]
+ },
+ "manifest_norules": {
+  "evidence_id": "ev_d78af12ffd40cd37e54d3867dbfa97a6a8d6c7045ecbcd4c822862756519ab54",
+  "confidence": "inferred",
+  "view_digest": "3c233467c0699fc28060b74c7fbb131dfbcb49e6fa680bfc1d63f06c9fb1fe9d",
+  "tools": 56,
+  "tools_by_method": {
+   "GET": 53,
+   "POST": 1,
+   "DELETE": 1,
+   "PATCH": 1
+  },
+  "templated_groups": 7,
+  "params_by_rule": {
+   "uuid": 7
+  },
+  "params_total": 7,
+  "query_parameter_names_distinct": [
+   "filter",
+   "orderBy",
+   "pageSize",
+   "state",
+   "updateMask"
+  ],
+  "tools_with_body_shape": 2,
+  "excluded": 0,
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "tool_names": [
+   "get_instance_profile",
+   "get_instance_stats",
+   "get_memos",
+   "post_memos",
+   "get_memos_7rrywhnjer2yi9cbcwywoh",
+   "get_memos_7zwx62ge6j8j4wujxj7r37",
+   "get_memos_7zwx62ge6j8j4wujxj7r37_comments",
+   "get_memos_93xazaeypmvcwsr9tyvhrf",
+   "get_memos_ervhckcjsfnblvbqafahvb",
+   "get_memos_ervhckcjsfnblvbqafahvb_comments",
+   "get_memos_ervhckcjsfnblvbqafahvb_reactions",
+   "get_memos_ervhckcjsfnblvbqafahvb_relations",
+   "get_memos_fs83cegx4ahaulnv9zhy2c",
+   "get_memos_fs83cegx4ahaulnv9zhy2c_attachments",
+   "get_memos_fs83cegx4ahaulnv9zhy2c_comments",
+   "get_memos_fs83cegx4ahaulnv9zhy2c_reactions",
+   "get_memos_hb5sauwaqoc98mshgxcjfr",
+   "get_memos_kxed3knureawvvkuglmcld",
+   "get_memos_kxed3knureawvvkuglmcld_comments",
+   "get_memos_kxed3knureawvvkuglmcld_reactions",
+   "get_memos_kxed3knureawvvkuglmcld_relations",
+   "get_memos_lfzgzuatfcrl9tnathz37z",
+   "get_memos_lfzgzuatfcrl9tnathz37z_comments",
+   "get_memos_lfzgzuatfcrl9tnathz37z_reactions",
+   "get_memos_lfzgzuatfcrl9tnathz37z_relations",
+   "get_memos_qheau7rjdh65fzkassdxfc",
+   "get_memos_rpywwkdbwe6g3s3zrwjlpj",
+   "get_memos_rpywwkdbwe6g3s3zrwjlpj_comments",
+   "get_memos_ymscufozxtucwteafyjwqw",
+   "get_memos_ymscufozxtucwteafyjwqw_comments",
+   "get_memos_ymscufozxtucwteafyjwqw_reactions",
+   "get_memos_ymscufozxtucwteafyjwqw_relations",
+   "delete_memos_fdsic6f6xuhk3yamkb5ohn",
+   "get_memos_fdsic6f6xuhk3yamkb5ohn",
+   "patch_memos_fdsic6f6xuhk3yamkb5ohn",
+   "get_memos_ickccaxvifnkcjmwxpq83f",
+   "get_memos_ickccaxvifnkcjmwxpq83f_comments",
+   "get_memos_ickccaxvifnkcjmwxpq83f_reactions",
+   "get_spaces",
+   "get_spaces_by_uuid",
+   "get_spaces_invitations_by_uuid",
+   "get_spaces_invitations_mina_okafor_by_uuid",
+   "get_spaces_invitations_rea_admin_by_uuid",
+   "get_spaces_members_by_uuid",
+   "get_spaces_members_ada_finch_by_uuid",
+   "get_users",
+   "get_users_ada_finch",
+   "get_users_mina_okafor",
+   "get_users_rea_admin",
+   "get_users_rea_admin_notifications",
+   "get_users_rea_admin_settings",
+   "get_users_rea_admin_settings_general",
+   "get_users_rea_admin_spaceinvitations",
+   "get_users_rea_admin_views",
+   "get_users_rea_admin_views_by_uuid",
+   "get_users_rui_castellanos"
+  ]
+ },
+ "evidence": {
+  "capture_evidence_id": "ev_c312b72e2468894d9dfbe7bffe1b38ab8a60dfad82d049e36ffd9c199420c31e",
+  "capture_total_records": 67,
+  "capture_confidence": "observed"
+ },
+ "seeded_objects": {
+  "users": [
+   "rea-admin (Rea Admin, ADMIN, first account)",
+   "ada-finch (Ada Finch)",
+   "rui-castellanos (Rui Castellanos)",
+   "mina-okafor (Mina Okafor)"
+  ],
+  "memos": {
+   "rea-admin": [
+    "winter rota (PROTECTED, pinned, #lighthouse-rota)",
+    "stone count GL-2291 (PUBLIC, #granite-ledger)",
+    "Blue Heron Kitchen 36 covers (PUBLIC, location 'Blue Heron Spit boathouse')",
+    "lamp-oil order SO-4471 (PRIVATE, #saltmarsh-depot)",
+    "Granite Ledger checklist (task list, references the stone count)",
+    "Copperfield Annex beacon (ARCHIVED)",
+    "crew meeting (SPACE visibility, in space Saltmarsh Depot Crew)"
+   ],
+   "ada-finch": [
+    "January low water 04:12 (PROTECTED)"
+   ],
+   "rui-castellanos": [
+    "cart number 7 retired (PUBLIC)"
+   ]
+  },
+  "comments": [
+   "Ada Finch on the winter rota",
+   "Rui Castellanos on the stone count",
+   "Rea Admin on Ada's tide table"
+  ],
+  "reactions": [
+   "mina-okafor thumbs-up on the stone count",
+   "ada-finch party on the winter rota",
+   "rui-castellanos heart on the kitchen memo"
+  ],
+  "spaces": [
+   "Saltmarsh Depot Crew (rea-admin, member ada-finch, pending invitation mina-okafor)",
+   "Blue Heron Kitchen Rota (owned by mina-okafor, pending invitation for rea-admin)"
+  ],
+  "memo_views": [
+   "Granite Ledger notes (filter \"granite-ledger\" in tags)"
+  ],
+  "settings": "rea-admin GENERAL: locale en, default visibility PROTECTED; user bios on all four users",
+  "not_seeded": "webhooks: Memos 0.31 refuses targets that resolve to private or reserved addresses and the brief forbids real URLs, so none was created",
+  "scratch_during_capture": "memo '#scratch Rea scratch memo ...' created (POST), edited (PATCH updateMask=content), read, deleted, re-read (404), memos listed again"
+ },
+ "ui_pages_visited": [
+  "/auth (login)",
+  "/",
+  "/explore",
+  "/archived",
+  "/memos/{stone count id}",
+  "/u/ada-finch",
+  "/inbox",
+  "/setting"
+ ]
+}

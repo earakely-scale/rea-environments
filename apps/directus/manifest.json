@@ -1,0 +1,1736 @@
+{
+ "evidence_id": "ev_df3fc9049d7dd8e54cbefab23250d29be75af6e6ba7bbc9c3cc092e64c134c58",
+ "subject": {
+  "name": "directus.scoped.har",
+  "digest": {
+   "sha256": "1667a554741c257c7831f80302833dfff820050f35866ac9f0fd6bc1d6e5a8c9"
+  },
+  "local_path": "/home/ubuntu/capture/directus/directus.scoped.har",
+  "format": "file",
+  "architecture": null
+ },
+ "provider": {
+  "id": "rea-analysis-view",
+  "name": "REA analysis view projection",
+  "version": "1"
+ },
+ "analysis_profile": null,
+ "predicate_type": "rea.analysis-view",
+ "operation": "inspect_analysis_view",
+ "parameters": {
+  "parent_evidence_id": "ev_726c10bf55a915e584548f44ddfcacfabb7b72780f9ce24a1a1d18d093836af2",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "raw_result": null,
+ "normalized_result": {
+  "parent_evidence_id": "ev_726c10bf55a915e584548f44ddfcacfabb7b72780f9ce24a1a1d18d093836af2",
+  "parent_operation": "inspect_web_network_capture",
+  "parent_digest": "726c10bf55a915e584548f44ddfcacfabb7b72780f9ce24a1a1d18d093836af2",
+  "view_digest": "638e5bb97125c3ed5a50106b5d9cd6c484b0d0dd2b96ef232574da93ccb5a262",
+  "artifact": {
+   "path": "/home/ubuntu/capture/directus/directus.scoped.har",
+   "sha256": "1667a554741c257c7831f80302833dfff820050f35866ac9f0fd6bc1d6e5a8c9"
+  },
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 43,
+   "total": 43,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "limitations": [
+   "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+   "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+   "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+   "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+   "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+   "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+   "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+   "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+   "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+  ],
+  "unknowns": [
+   {
+    "kind": "authorization-model",
+    "statement": "Authorization headers and cookies are structurally excluded from captures; the manifest states no authorization model."
+   },
+   {
+    "kind": "response-semantics",
+    "statement": "Recorded statuses and bodies are retained only as pointers to parent records; the manifest states no response semantics."
+   },
+   {
+    "kind": "state-transition",
+    "statement": "Recorded exchanges are independent observations; the manifest states no ordering, side effects or state transitions between tools."
+   }
+  ],
+  "origin": "http://127.0.0.1:3223",
+  "name": "127-0-0-1-3223",
+  "tools": [
+   {
+    "name": "get_collections",
+    "method": "GET",
+    "path_template": "/collections",
+    "api_surface_template": "/collections",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     6,
+     49
+    ]
+   },
+   {
+    "name": "get_collections_crew_rota",
+    "method": "GET",
+    "path_template": "/collections/crew_rota",
+    "api_surface_template": "/collections/crew_rota",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     57
+    ]
+   },
+   {
+    "name": "get_collections_provisions",
+    "method": "GET",
+    "path_template": "/collections/provisions",
+    "api_surface_template": "/collections/provisions",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     58
+    ]
+   },
+   {
+    "name": "get_comments",
+    "method": "GET",
+    "path_template": "/comments",
+    "api_surface_template": "/comments",
+    "params": [],
+    "query_parameter_names": [
+     "aggregate[count]",
+     "filter[_and][0][collection][_eq]",
+     "filter[_and][1][item][_eq]"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     30,
+     47
+    ]
+   },
+   {
+    "name": "get_comments_by_uuid",
+    "method": "GET",
+    "path_template": "/comments/{uuid}",
+    "api_surface_template": "/comments/{uuid}",
+    "params": [
+     {
+      "index": 1,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "b093107c-baf2-4360-8fe9-682384626d09"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     83
+    ]
+   },
+   {
+    "name": "get_dashboards",
+    "method": "GET",
+    "path_template": "/dashboards",
+    "api_surface_template": "/dashboards",
+    "params": [],
+    "query_parameter_names": [
+     "fields[]",
+     "limit",
+     "sort[]"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     12
+    ]
+   },
+   {
+    "name": "get_dashboards_by_uuid",
+    "method": "GET",
+    "path_template": "/dashboards/{uuid}",
+    "api_surface_template": "/dashboards/{uuid}",
+    "params": [
+     {
+      "index": 1,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "cdeb9180-bf6a-449c-949e-3ff680c7671e"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     80
+    ]
+   },
+   {
+    "name": "get_fields_crew_rota",
+    "method": "GET",
+    "path_template": "/fields/crew_rota",
+    "api_surface_template": "/fields/crew_rota",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     59
+    ]
+   },
+   {
+    "name": "get_fields_provisions_storage_bay",
+    "method": "GET",
+    "path_template": "/fields/provisions/storage_bay",
+    "api_surface_template": "/fields/provisions/storage_bay",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     60
+    ]
+   },
+   {
+    "name": "get_files",
+    "method": "GET",
+    "path_template": "/files",
+    "api_surface_template": "/files",
+    "params": [],
+    "query_parameter_names": [
+     "aggregate[countDistinct]",
+     "aggregate[countDistinct][0]",
+     "fields",
+     "filter[_and][0][type][_nnull]",
+     "filter[_and][1][folder][_null]",
+     "limit",
+     "page",
+     "sort[]"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     39,
+     40,
+     42
+    ]
+   },
+   {
+    "name": "get_files_by_uuid",
+    "method": "GET",
+    "path_template": "/files/{uuid}",
+    "api_surface_template": "/files/{uuid}",
+    "params": [
+     {
+      "index": 1,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "4361c27c-a326-498a-9efc-7ca24be30c45"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     72
+    ]
+   },
+   {
+    "name": "get_flows",
+    "method": "GET",
+    "path_template": "/flows",
+    "api_surface_template": "/flows",
+    "params": [],
+    "query_parameter_names": [
+     "fields[]",
+     "limit"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     14
+    ]
+   },
+   {
+    "name": "get_flows_by_uuid",
+    "method": "GET",
+    "path_template": "/flows/{uuid}",
+    "api_surface_template": "/flows/{uuid}",
+    "params": [
+     {
+      "index": 1,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "5252bcd1-9b0d-41ae-ae7f-0c38e076ce61"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     82
+    ]
+   },
+   {
+    "name": "get_folders",
+    "method": "GET",
+    "path_template": "/folders",
+    "api_surface_template": "/folders",
+    "params": [],
+    "query_parameter_names": [
+     "limit",
+     "sort"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     38,
+     70
+    ]
+   },
+   {
+    "name": "get_folders_by_uuid",
+    "method": "GET",
+    "path_template": "/folders/{uuid}",
+    "api_surface_template": "/folders/{uuid}",
+    "params": [
+     {
+      "index": 1,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "ed349e7c-28e2-4418-afac-abf5c08b575a"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     71
+    ]
+   },
+   {
+    "name": "get_items_crew_rota",
+    "method": "GET",
+    "path_template": "/items/crew_rota",
+    "api_surface_template": "/items/crew_rota",
+    "params": [],
+    "query_parameter_names": [
+     "aggregate[countDistinct]",
+     "fields",
+     "limit",
+     "page",
+     "search",
+     "sort",
+     "sort[]"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     18,
+     19,
+     61,
+     68
+    ]
+   },
+   {
+    "name": "get_items_crew_rota_by_id",
+    "method": "GET",
+    "path_template": "/items/crew_rota/{numeric}",
+    "api_surface_template": "/items/crew_rota/{numeric}",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1",
+       "5"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     62,
+     63
+    ]
+   },
+   {
+    "name": "get_items_provisions",
+    "method": "GET",
+    "path_template": "/items/provisions",
+    "api_surface_template": "/items/provisions",
+    "params": [],
+    "query_parameter_names": [
+     "aggregate",
+     "aggregate[countDistinct]",
+     "fields",
+     "filter",
+     "limit",
+     "page",
+     "sort",
+     "sort[]"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     22,
+     23,
+     64,
+     67,
+     69,
+     89
+    ]
+   },
+   {
+    "name": "post_items_provisions",
+    "method": "POST",
+    "path_template": "/items/provisions",
+    "api_surface_template": "/items/provisions",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "title": "string",
+      "category": "string",
+      "quantity": "number",
+      "unit": "string",
+      "storage_bay": "string",
+      "supplier_note": "string"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     84
+    ]
+   },
+   {
+    "name": "get_items_provisions_by_id",
+    "method": "GET",
+    "path_template": "/items/provisions/{numeric}",
+    "api_surface_template": "/items/provisions/{numeric}",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "2",
+       "5",
+       "7"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "fields"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200,
+     403
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     25,
+     26,
+     65,
+     66,
+     86,
+     88
+    ]
+   },
+   {
+    "name": "patch_items_provisions_by_id",
+    "method": "PATCH",
+    "path_template": "/items/provisions/{numeric}",
+    "api_surface_template": "/items/provisions/{numeric}",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "7"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "quantity": "number",
+      "supplier_note": "string"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     85
+    ]
+   },
+   {
+    "name": "get_notifications",
+    "method": "GET",
+    "path_template": "/notifications",
+    "api_surface_template": "/notifications",
+    "params": [],
+    "query_parameter_names": [
+     "aggregate[count]",
+     "filter[_and][0][recipient][_eq]",
+     "filter[_and][1][status][_eq]"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     15
+    ]
+   },
+   {
+    "name": "get_panels",
+    "method": "GET",
+    "path_template": "/panels",
+    "api_surface_template": "/panels",
+    "params": [],
+    "query_parameter_names": [
+     "fields[]",
+     "limit",
+     "sort[]"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     13
+    ]
+   },
+   {
+    "name": "get_panels_by_uuid",
+    "method": "GET",
+    "path_template": "/panels/{uuid}",
+    "api_surface_template": "/panels/{uuid}",
+    "params": [
+     {
+      "index": 1,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "457bea94-3099-497a-a804-4a9dd779414a"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     81
+    ]
+   },
+   {
+    "name": "get_permissions",
+    "method": "GET",
+    "path_template": "/permissions",
+    "api_surface_template": "/permissions",
+    "params": [],
+    "query_parameter_names": [
+     "fields",
+     "filter"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     76
+    ]
+   },
+   {
+    "name": "get_permissions_me",
+    "method": "GET",
+    "path_template": "/permissions/me",
+    "api_surface_template": "/permissions/me",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     5
+    ]
+   },
+   {
+    "name": "get_policies_me_globals",
+    "method": "GET",
+    "path_template": "/policies/me/globals",
+    "api_surface_template": "/policies/me/globals",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     3
+    ]
+   },
+   {
+    "name": "get_policies_by_uuid",
+    "method": "GET",
+    "path_template": "/policies/{uuid}",
+    "api_surface_template": "/policies/{uuid}",
+    "params": [
+     {
+      "index": 1,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "17175c8d-62f4-4ccd-b166-944a386a4648"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     75
+    ]
+   },
+   {
+    "name": "get_presets",
+    "method": "GET",
+    "path_template": "/presets",
+    "api_surface_template": "/presets",
+    "params": [],
+    "query_parameter_names": [
+     "filter[role][_eq]",
+     "filter[role][_null]",
+     "filter[user][_eq]",
+     "filter[user][_null]",
+     "limit"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     7,
+     8,
+     9
+    ]
+   },
+   {
+    "name": "get_presets_by_id",
+    "method": "GET",
+    "path_template": "/presets/{numeric}",
+    "api_surface_template": "/presets/{numeric}",
+    "params": [
+     {
+      "index": 1,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     79
+    ]
+   },
+   {
+    "name": "get_relations",
+    "method": "GET",
+    "path_template": "/relations",
+    "api_surface_template": "/relations",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     11
+    ]
+   },
+   {
+    "name": "get_revisions",
+    "method": "GET",
+    "path_template": "/revisions",
+    "api_surface_template": "/revisions",
+    "params": [],
+    "query_parameter_names": [
+     "aggregate[count]",
+     "filter[_and][0][collection][_eq]",
+     "filter[_and][1][item][_eq]",
+     "filter[_and][2][version][_null]"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     29
+    ]
+   },
+   {
+    "name": "get_roles",
+    "method": "GET",
+    "path_template": "/roles",
+    "api_surface_template": "/roles",
+    "params": [],
+    "query_parameter_names": [
+     "fields",
+     "fields[]",
+     "sort"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     33,
+     73
+    ]
+   },
+   {
+    "name": "get_roles_me",
+    "method": "GET",
+    "path_template": "/roles/me",
+    "api_surface_template": "/roles/me",
+    "params": [],
+    "query_parameter_names": [
+     "fields[]"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     4
+    ]
+   },
+   {
+    "name": "get_roles_by_uuid",
+    "method": "GET",
+    "path_template": "/roles/{uuid}",
+    "api_surface_template": "/roles/{uuid}",
+    "params": [
+     {
+      "index": 1,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "767e203a-01d9-464e-a0d8-99d0a40e7243"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     74
+    ]
+   },
+   {
+    "name": "get_server_info",
+    "method": "GET",
+    "path_template": "/server/info",
+    "api_surface_template": "/server/info",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     0,
+     1,
+     55
+    ]
+   },
+   {
+    "name": "get_settings",
+    "method": "GET",
+    "path_template": "/settings",
+    "api_surface_template": "/settings",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     10
+    ]
+   },
+   {
+    "name": "get_shares",
+    "method": "GET",
+    "path_template": "/shares",
+    "api_surface_template": "/shares",
+    "params": [],
+    "query_parameter_names": [
+     "aggregate[count]",
+     "filter[_and][0][collection][_eq]",
+     "filter[_and][1][item][_eq]"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     31
+    ]
+   },
+   {
+    "name": "get_translations",
+    "method": "GET",
+    "path_template": "/translations",
+    "api_surface_template": "/translations",
+    "params": [],
+    "query_parameter_names": [
+     "fields[]",
+     "filter[language][_eq]",
+     "limit"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     16
+    ]
+   },
+   {
+    "name": "get_users",
+    "method": "GET",
+    "path_template": "/users",
+    "api_surface_template": "/users",
+    "params": [],
+    "query_parameter_names": [
+     "aggregate[countDistinct]",
+     "fields",
+     "filter[_and][0][status][_eq]",
+     "limit",
+     "page",
+     "sort[]"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     34,
+     35,
+     77
+    ]
+   },
+   {
+    "name": "get_users_me",
+    "method": "GET",
+    "path_template": "/users/me",
+    "api_surface_template": "/users/me",
+    "params": [],
+    "query_parameter_names": [
+     "fields",
+     "fields[]"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     2,
+     17,
+     20,
+     28,
+     36,
+     41,
+     44,
+     46,
+     50,
+     53,
+     56
+    ]
+   },
+   {
+    "name": "get_users_by_uuid",
+    "method": "GET",
+    "path_template": "/users/{uuid}",
+    "api_surface_template": "/users/{uuid}",
+    "params": [
+     {
+      "index": 1,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "d59a4f7e-7dfd-49dd-ba21-e1e93722ec2f"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     78
+    ]
+   },
+   {
+    "name": "get_versions",
+    "method": "GET",
+    "path_template": "/versions",
+    "api_surface_template": "/versions",
+    "params": [],
+    "query_parameter_names": [
+     "fields[]",
+     "filter[_and][0][collection][_eq]",
+     "filter[_and][1][item][_eq]",
+     "sort"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     27
+    ]
+   }
+  ],
+  "records": [
+   {
+    "ordinal": 0,
+    "method": "GET",
+    "path": "/server/info",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 1,
+    "method": "GET",
+    "path": "/server/info",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 2,
+    "method": "GET",
+    "path": "/users/me",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 3,
+    "method": "GET",
+    "path": "/policies/me/globals",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 4,
+    "method": "GET",
+    "path": "/roles/me",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 5,
+    "method": "GET",
+    "path": "/permissions/me",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 6,
+    "method": "GET",
+    "path": "/collections",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 7,
+    "method": "GET",
+    "path": "/presets",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 8,
+    "method": "GET",
+    "path": "/presets",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 9,
+    "method": "GET",
+    "path": "/presets",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 10,
+    "method": "GET",
+    "path": "/settings",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 11,
+    "method": "GET",
+    "path": "/relations",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 12,
+    "method": "GET",
+    "path": "/dashboards",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 13,
+    "method": "GET",
+    "path": "/panels",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 14,
+    "method": "GET",
+    "path": "/flows",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 15,
+    "method": "GET",
+    "path": "/notifications",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 16,
+    "method": "GET",
+    "path": "/translations",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 17,
+    "method": "GET",
+    "path": "/users/me",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 18,
+    "method": "GET",
+    "path": "/items/crew_rota",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 19,
+    "method": "GET",
+    "path": "/items/crew_rota",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 20,
+    "method": "GET",
+    "path": "/users/me",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 22,
+    "method": "GET",
+    "path": "/items/provisions",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 23,
+    "method": "GET",
+    "path": "/items/provisions",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 25,
+    "method": "GET",
+    "path": "/items/provisions/2",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 26,
+    "method": "GET",
+    "path": "/items/provisions/2",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 27,
+    "method": "GET",
+    "path": "/versions",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 28,
+    "method": "GET",
+    "path": "/users/me",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 29,
+    "method": "GET",
+    "path": "/revisions",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 30,
+    "method": "GET",
+    "path": "/comments",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 31,
+    "method": "GET",
+    "path": "/shares",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 33,
+    "method": "GET",
+    "path": "/roles",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 34,
+    "method": "GET",
+    "path": "/users",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 35,
+    "method": "GET",
+    "path": "/users",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 36,
+    "method": "GET",
+    "path": "/users/me",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 38,
+    "method": "GET",
+    "path": "/folders",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 39,
+    "method": "GET",
+    "path": "/files",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 40,
+    "method": "GET",
+    "path": "/files",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 41,
+    "method": "GET",
+    "path": "/users/me",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 42,
+    "method": "GET",
+    "path": "/files",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 44,
+    "method": "GET",
+    "path": "/users/me",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 46,
+    "method": "GET",
+    "path": "/users/me",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 47,
+    "method": "GET",
+    "path": "/comments",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 49,
+    "method": "GET",
+    "path": "/collections",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 50,
+    "method": "GET",
+    "path": "/users/me",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 53,
+    "method": "GET",
+    "path": "/users/me",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 55,
+    "method": "GET",
+    "path": "/server/info",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 56,
+    "method": "GET",
+    "path": "/users/me",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 57,
+    "method": "GET",
+    "path": "/collections/crew_rota",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 58,
+    "method": "GET",
+    "path": "/collections/provisions",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 59,
+    "method": "GET",
+    "path": "/fields/crew_rota",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 60,
+    "method": "GET",
+    "path": "/fields/provisions/storage_bay",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 61,
+    "method": "GET",
+    "path": "/items/crew_rota",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 62,
+    "method": "GET",
+    "path": "/items/crew_rota/1",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 63,
+    "method": "GET",
+    "path": "/items/crew_rota/5",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 64,
+    "method": "GET",
+    "path": "/items/provisions",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 65,
+    "method": "GET",
+    "path": "/items/provisions/2",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 66,
+    "method": "GET",
+    "path": "/items/provisions/5",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 67,
+    "method": "GET",
+    "path": "/items/provisions",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 68,
+    "method": "GET",
+    "path": "/items/crew_rota",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 69,
+    "method": "GET",
+    "path": "/items/provisions",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 70,
+    "method": "GET",
+    "path": "/folders",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 71,
+    "method": "GET",
+    "path": "/folders/ed349e7c-28e2-4418-afac-abf5c08b575a",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 72,
+    "method": "GET",
+    "path": "/files/4361c27c-a326-498a-9efc-7ca24be30c45",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 73,
+    "method": "GET",
+    "path": "/roles",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 74,
+    "method": "GET",
+    "path": "/roles/767e203a-01d9-464e-a0d8-99d0a40e7243",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 75,
+    "method": "GET",
+    "path": "/policies/17175c8d-62f4-4ccd-b166-944a386a4648",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 76,
+    "method": "GET",
+    "path": "/permissions",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 77,
+    "method": "GET",
+    "path": "/users",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 78,
+    "method": "GET",
+    "path": "/users/d59a4f7e-7dfd-49dd-ba21-e1e93722ec2f",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 79,
+    "method": "GET",
+    "path": "/presets/1",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 80,
+    "method": "GET",
+    "path": "/dashboards/cdeb9180-bf6a-449c-949e-3ff680c7671e",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 81,
+    "method": "GET",
+    "path": "/panels/457bea94-3099-497a-a804-4a9dd779414a",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 82,
+    "method": "GET",
+    "path": "/flows/5252bcd1-9b0d-41ae-ae7f-0c38e076ce61",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 83,
+    "method": "GET",
+    "path": "/comments/b093107c-baf2-4360-8fe9-682384626d09",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 84,
+    "method": "POST",
+    "path": "/items/provisions",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 85,
+    "method": "PATCH",
+    "path": "/items/provisions/7",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 86,
+    "method": "GET",
+    "path": "/items/provisions/7",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 88,
+    "method": "GET",
+    "path": "/items/provisions/7",
+    "status": 403,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 89,
+    "method": "GET",
+    "path": "/items/provisions",
+    "status": 200,
+    "content_type": "application/json"
+   }
+  ],
+  "excluded": [
+   {
+    "method": "DELETE",
+    "origin": "http://127.0.0.1:3223",
+    "path_template": "/items/provisions/{numeric}",
+    "reason": "non-json"
+   },
+   {
+    "method": "PATCH",
+    "origin": "http://127.0.0.1:3223",
+    "path_template": "/users/me/track/page",
+    "reason": "non-json"
+   }
+  ],
+  "templated_groups": 14,
+  "kind": "environment-manifest",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "confidence": "inferred",
+ "authority": "historical-reference",
+ "environment": null,
+ "limitations": [
+  "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+  "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+  "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+  "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+  "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+  "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+  "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+  "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+  "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+ ],
+ "relationship_coverage": null,
+ "locations": [
+  {
+   "kind": "artifact-path",
+   "path": "/home/ubuntu/capture/directus/directus.scoped.har"
+  }
+ ],
+ "evidence_links": [
+  "ev_726c10bf55a915e584548f44ddfcacfabb7b72780f9ce24a1a1d18d093836af2"
+ ]
+}

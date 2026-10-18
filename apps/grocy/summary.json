@@ -1,0 +1,358 @@
+{
+ "app": "grocy",
+ "image": "lscr.io/linuxserver/grocy:v4.7.1-ls345",
+ "image_digest": "lscr.io/linuxserver/grocy@sha256:cae63f6c731f6ad8a3596eef097c136934a3a076e6ae533f933182187fe85a12",
+ "app_version": "4.7.1",
+ "app_version_full": "4.7.1 (release date 2026-09-04, db_version 257)",
+ "image_packaging": "linuxserver.io v4.7.1-ls345 (nginx + php-fpm 8.5.6)",
+ "database": "sqlite3 3.53.4 (/config/data/grocy.db in the grocy-config volume)",
+ "currency": "EUR (GROCY_CURRENCY)",
+ "compose_project": "rea-grocy",
+ "origin": "http://127.0.0.1:3222",
+ "tooling": {
+  "rea": "6.6.0",
+  "playwright-core": "1.58.2",
+  "chromium": "Chromium 155.0.8059.79 snap",
+  "node": "v24.22.0",
+  "python": "3.12.3",
+  "docker": "29.9.1",
+  "compose": "5.6.0",
+  "vm": "Ubuntu 24.04 amd64"
+ },
+ "scoped_har": {
+  "file": "grocy.scoped.har",
+  "sha256": "4e673f0a954204d036082a7901bc0bdf4b116cea8b849a92ceaa88a87174662a",
+  "bytes": 144824,
+  "records": 75,
+  "methods": {
+   "GET": 65,
+   "PUT": 8,
+   "POST": 1,
+   "DELETE": 1
+  },
+  "statuses": {
+   "200": 65,
+   "204": 9,
+   "404": 1
+  }
+ },
+ "scope_har": {
+  "origin": "http://127.0.0.1:3222",
+  "keep_regex": "^/api/",
+  "drop_regex": "login|logout|signup|password|session|token|oauth|csrf|uihelper",
+  "max_body": 60000,
+  "max_records": 150,
+  "kept": 75,
+  "dropped": {
+   "other-origin": 0,
+   "path": 723,
+   "non-json": 0,
+   "auth": 4,
+   "big-body": 0,
+   "over-max": 0
+  },
+  "notes": [
+   "auth=4: GET /login, GET /viewjs/login.js, POST /login (form sign-in) and GET /api/objects/uihelper_shopping_list??query[]=... (dropped on purpose: the shopping-list page builds that URL with a doubled '?' and raw brackets, which the HAR URI format rejects)",
+   "path=723: the server-rendered pages, scripts, styles and fonts outside /api/",
+   "the 204 replies (PUT/DELETE of the scratch product, PUT /api/user/settings/datatables_state_*) are kept as empty API replies"
+  ]
+ },
+ "credential_grep": {
+  "admin_password_literal_hits": 0,
+  "admin_password_base64_hits": 0,
+  "token_shape_hits_hf_ghp_Bearer": 0,
+  "session_cookie_name_hits": 0,
+  "api_key_header_hits": 0,
+  "result": "pass"
+ },
+ "evidence": {
+  "capture_evidence_id": "ev_853ed4f6409f2a62f73da27f0a83010aff0ba3f0365d71788c364cfade127838",
+  "capture_total_records": 75,
+  "capture_confidence": "observed",
+  "manifest_evidence_id": "ev_cd77ac50b20a04df27506d51dc91c8e252065c659fbbde30e497181ddbd95b1a",
+  "manifest_norules_evidence_id": "ev_e138d49a40b50d7af0cee950fe93ff3ce350cd4d244c71c2f2a68f4d4d19ba99",
+  "manifest_view_digest": "c9148cc638060df1ae7727f34a14bbb359a7f397eacfb8a818d338b7d2c7ae6a"
+ },
+ "manifest": {
+  "evidence_id": "ev_cd77ac50b20a04df27506d51dc91c8e252065c659fbbde30e497181ddbd95b1a",
+  "confidence": "inferred",
+  "view_digest": "c9148cc638060df1ae7727f34a14bbb359a7f397eacfb8a818d338b7d2c7ae6a",
+  "template_rules": [
+   "after-uid-literal",
+   "opaque-token",
+   "sibling-variance"
+  ],
+  "tools": 45,
+  "tools_by_method": {
+   "GET": 40,
+   "POST": 1,
+   "DELETE": 1,
+   "PUT": 3
+  },
+  "templated_groups": 22,
+  "params_by_rule": {
+   "numeric": 22
+  },
+  "params_total": 22,
+  "query_parameter_names_total": 9,
+  "query_parameter_names_distinct": [
+   "due_soon_days",
+   "limit",
+   "order",
+   "query[]"
+  ],
+  "tools_with_body_shape": 4,
+  "statuses_seen": [
+   200,
+   204,
+   404
+  ],
+  "records": 75,
+  "excluded": 0,
+  "excluded_by_reason": {},
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 45,
+   "total": 45,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "limitations_count": 9,
+  "tool_names": [
+   "get_batteries",
+   "get_batteries_by_id",
+   "get_chores",
+   "get_chores_by_id",
+   "get_objects_batteries_by_id",
+   "get_objects_chores",
+   "get_objects_chores_by_id",
+   "get_objects_equipment",
+   "get_objects_equipment_by_id",
+   "get_objects_locations",
+   "get_objects_locations_by_id",
+   "get_objects_product_groups",
+   "get_objects_product_groups_by_id",
+   "get_objects_products",
+   "post_objects_products",
+   "delete_objects_products_by_id",
+   "get_objects_products_by_id",
+   "put_objects_products_by_id",
+   "get_objects_quantity_units",
+   "get_objects_quantity_units_by_id",
+   "get_objects_recipes_by_id",
+   "get_objects_recipes_pos",
+   "get_objects_shopping_list",
+   "get_objects_shopping_list_by_id",
+   "get_objects_shopping_lists",
+   "get_objects_shopping_lists_by_id",
+   "get_objects_shopping_locations",
+   "get_objects_shopping_locations_by_id",
+   "get_objects_task_categories_by_id",
+   "get_objects_tasks",
+   "get_objects_tasks_by_id",
+   "get_recipes_fulfillment_by_id",
+   "get_stock",
+   "get_stock_locations_entries_by_id",
+   "get_stock_products_by_id",
+   "get_stock_products_entries_by_id",
+   "get_stock_products_locations_by_id",
+   "get_stock_volatile",
+   "get_system_db_changed_time",
+   "get_system_info",
+   "get_tasks",
+   "get_user",
+   "put_user_settings_datatables_state_equipment_table",
+   "put_user_settings_datatables_state_recipes_table",
+   "get_users"
+  ]
+ },
+ "manifest_norules": {
+  "evidence_id": "ev_e138d49a40b50d7af0cee950fe93ff3ce350cd4d244c71c2f2a68f4d4d19ba99",
+  "confidence": "inferred",
+  "view_digest": "a557badf025938494a13a2b5b784c748ca9b7434799a34f0a2fe55f043874be5",
+  "template_rules": [],
+  "tools": 45,
+  "tools_by_method": {
+   "GET": 40,
+   "POST": 1,
+   "DELETE": 1,
+   "PUT": 3
+  },
+  "templated_groups": 22,
+  "params_by_rule": {
+   "numeric": 22
+  },
+  "params_total": 22,
+  "query_parameter_names_total": 9,
+  "query_parameter_names_distinct": [
+   "due_soon_days",
+   "limit",
+   "order",
+   "query[]"
+  ],
+  "tools_with_body_shape": 4,
+  "statuses_seen": [
+   200,
+   204,
+   404
+  ],
+  "records": 75,
+  "excluded": 0,
+  "excluded_by_reason": {},
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 45,
+   "total": 45,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "limitations_count": 8,
+  "tool_names": [
+   "get_batteries",
+   "get_batteries_by_id",
+   "get_chores",
+   "get_chores_by_id",
+   "get_objects_batteries_by_id",
+   "get_objects_chores",
+   "get_objects_chores_by_id",
+   "get_objects_equipment",
+   "get_objects_equipment_by_id",
+   "get_objects_locations",
+   "get_objects_locations_by_id",
+   "get_objects_product_groups",
+   "get_objects_product_groups_by_id",
+   "get_objects_products",
+   "post_objects_products",
+   "delete_objects_products_by_id",
+   "get_objects_products_by_id",
+   "put_objects_products_by_id",
+   "get_objects_quantity_units",
+   "get_objects_quantity_units_by_id",
+   "get_objects_recipes_by_id",
+   "get_objects_recipes_pos",
+   "get_objects_shopping_list",
+   "get_objects_shopping_list_by_id",
+   "get_objects_shopping_lists",
+   "get_objects_shopping_lists_by_id",
+   "get_objects_shopping_locations",
+   "get_objects_shopping_locations_by_id",
+   "get_objects_task_categories_by_id",
+   "get_objects_tasks",
+   "get_objects_tasks_by_id",
+   "get_recipes_fulfillment_by_id",
+   "get_stock",
+   "get_stock_locations_entries_by_id",
+   "get_stock_products_by_id",
+   "get_stock_products_entries_by_id",
+   "get_stock_products_locations_by_id",
+   "get_stock_volatile",
+   "get_system_db_changed_time",
+   "get_system_info",
+   "get_tasks",
+   "get_user",
+   "put_user_settings_datatables_state_equipment_table",
+   "put_user_settings_datatables_state_recipes_table",
+   "get_users"
+  ]
+ },
+ "manifest_vs_norules": {
+  "tools": [
+   45,
+   45
+  ],
+  "templated_groups": [
+   22,
+   22
+  ],
+  "note": "Grocy ids are small integers, so the built-in numeric rule does all the templating (22 by-id groups) and the three opt-in rules match nothing: 45 tools with and without them. Entity names under /api/objects/ are words without digits or hyphens, so sibling-variance leaves products, locations, chores and the rest as separate tools."
+ },
+ "seeded_objects": "the default admin renamed to rea-admin plus two members (Ada Finch, Rui Castellanos); 3 locations such as Saltmarsh Depot Cold Room; Crate and Tin quantity units; product groups Tide Rations and Lamp Supplies; stores Blue Heron Kitchen Market and Lighthouse Rota Co-op; 5 products with stock (Smoked Kelp Broth, Granite Salt Flakes, Heron Rye Crackers, Lamp Wick Bundle, Copperfield Lamp Oil); 2 shopping lists with 4 items; 3 chores; 2 batteries; 2 task categories and 2 tasks; 2 pieces of equipment; the recipe Tide-Table Kelp Stew",
+ "seeded_objects_detail": {
+  "admin": "default admin/admin renamed to rea-admin (Rea Admin) with a generated password",
+  "users": [
+   "afinch (Ada Finch)",
+   "rcastellanos (Rui Castellanos)"
+  ],
+  "locations": [
+   "Saltmarsh Depot Cold Room (renamed default Fridge)",
+   "Copperfield Annex Larder",
+   "Granite Ledger Lockers"
+  ],
+  "quantity_units": [
+   "Crate/Crates",
+   "Tin/Tins",
+   "Piece and Pack (defaults)"
+  ],
+  "product_groups": [
+   "Tide Rations",
+   "Lamp Supplies"
+  ],
+  "shopping_locations": [
+   "Blue Heron Kitchen Market",
+   "Lighthouse Rota Co-op"
+  ],
+  "products": [
+   "Smoked Kelp Broth",
+   "Granite Salt Flakes",
+   "Heron Rye Crackers",
+   "Lamp Wick Bundle",
+   "Copperfield Lamp Oil"
+  ],
+  "stock": "one purchase per product with price, due date, store and a note",
+  "shopping_lists": [
+   "Saltmarsh Depot Restock (renamed default) with 2 items",
+   "Lighthouse Rota Night Shift with 2 items"
+  ],
+  "chores": [
+   "Polish the Lighthouse Lens (done 2026-10-14 by Ada Finch)",
+   "Rotate the Kelp Barrels",
+   "Sweep the Copperfield Annex"
+  ],
+  "batteries": [
+   "Foghorn Remote Cell (charged 2026-10-09)",
+   "Tide Gauge Pack"
+  ],
+  "task_categories": [
+   "Depot Rounds",
+   "Lamp Watch"
+  ],
+  "tasks": [
+   "Recount the Granite Ledger crates (Ada Finch, due 2026-11-02)",
+   "Order winter lamp mantles (Rui Castellanos, due 2026-11-15)"
+  ],
+  "equipment": [
+   "Copperfield Annex Dehydrator",
+   "Saltmarsh Depot Chest Scale"
+  ],
+  "recipes": [
+   "Tide-Table Kelp Stew (2 ingredients)"
+  ],
+  "scratch_during_capture": "product Rea Scratch Product created (POST 200 created_object_id), edited (PUT 204), read, deleted (DELETE 204), re-read (404)"
+ },
+ "ui_pages_visited": [
+  "/login (form sign-in)",
+  "/stockoverview",
+  "/products",
+  "/product/<id> (edit form)",
+  "/locations",
+  "/quantityunits",
+  "/shoppinglist",
+  "/choresoverview",
+  "/batteriesoverview",
+  "/tasks",
+  "/recipes",
+  "/equipment",
+  "/stockjournal"
+ ],
+ "resource_constraint": false
+}

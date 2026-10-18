@@ -1,0 +1,32 @@
+# Grist (grist-core, single-user, sqlite home DB) for the rea showcase capture. Loopback only; one compose project: rea-grist.
+# The session secret comes from ~/capture/grist/.admin (mode 600) via `--env-file .admin`; see up.sh.
+services:
+  grist:
+    image: gristlabs/grist:1.7.21
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3220:3220"
+    environment:
+      # Listen on the same port inside the container: Grist calls APP_HOME_URL from inside the container (doc
+      # deletion, workspace deletion), so host and container ports must match.
+      PORT: "3220"
+      APP_HOME_URL: http://127.0.0.1:3220
+      GRIST_DEFAULT_EMAIL: rea-admin@example.test
+      GRIST_ADMIN_EMAIL: rea-admin@example.test
+      GRIST_SESSION_SECRET: ${GRIST_SESSION_SECRET:?run up.sh}
+      # Skip the interactive first-run /boot setup gate (1.7 answers 503 "not yet configured" on /api until then).
+      GRIST_IN_SERVICE: "true"
+      # The image's default when gVisor is not set up; stated explicitly. Formulas run in plain Python in the container.
+      GRIST_SANDBOX_FLAVOR: unsandboxed
+      # No outbound calls from the throwaway instance.
+      GRIST_ALLOW_AUTOMATIC_VERSION_CHECKING: "false"
+      GRIST_TELEMETRY_LEVEL: "off"
+    volumes:
+      - grist-persist:/persist
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3220/status').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 5s
+      timeout: 5s
+      retries: 60
+volumes:
+  grist-persist: {}

@@ -1,0 +1,15 @@
+{
+  "app": "umami",
+  "title": "Umami",
+  "repo": "UmamiEnv-REA",
+  "license": "MIT",
+  "authors": "Umami Software, Inc.",
+  "hf_license": "apache-2.0",
+  "version": "3.4",
+  "image": "ghcr.io/umami-software/umami:3.4.0",
+  "image_digest": "sha256:85909afc45bdcda1917394594a087421fdbb05610fded0fa9f6fb861abb2f367",
+  "port": 3215,
+  "keep_regex": "^/api/",
+  "domain": "privacy-focused web analytics",
+  "exclude_tools": "config$|2fa|charts$|daterange|active$|me$"
+}

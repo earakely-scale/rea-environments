@@ -1,0 +1,1651 @@
+{
+ "evidence_id": "ev_d41265c6d4379a907ba76eeebbfe708af1f9e04618bbab29c47d7ba9b1c2ac7c",
+ "subject": {
+  "name": "baserow.scoped.har",
+  "digest": {
+   "sha256": "286207ccf9bec4e41170bbd802886c9bf3d11de51501e01faad00ffda415d93d"
+  },
+  "local_path": "/home/ubuntu/capture/baserow/baserow.scoped.har",
+  "format": "file",
+  "architecture": null
+ },
+ "provider": {
+  "id": "rea-analysis-view",
+  "name": "REA analysis view projection",
+  "version": "1"
+ },
+ "analysis_profile": null,
+ "predicate_type": "rea.analysis-view",
+ "operation": "inspect_analysis_view",
+ "parameters": {
+  "parent_evidence_id": "ev_85d6e0f7e7c20d307a860f6c35f7e696fa6baf0e1a54f19060d77989e82fadac",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "raw_result": null,
+ "normalized_result": {
+  "parent_evidence_id": "ev_85d6e0f7e7c20d307a860f6c35f7e696fa6baf0e1a54f19060d77989e82fadac",
+  "parent_operation": "inspect_web_network_capture",
+  "parent_digest": "85d6e0f7e7c20d307a860f6c35f7e696fa6baf0e1a54f19060d77989e82fadac",
+  "view_digest": "73d85eadcc80001f918310d2f48939ec00ef24e06fc49408d713cdaf45587cdd",
+  "artifact": {
+   "path": "/home/ubuntu/capture/baserow/baserow.scoped.har",
+   "sha256": "286207ccf9bec4e41170bbd802886c9bf3d11de51501e01faad00ffda415d93d"
+  },
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 31,
+   "total": 31,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "limitations": [
+   "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+   "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+   "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+   "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+   "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+   "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+   "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+   "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+   "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+  ],
+  "unknowns": [
+   {
+    "kind": "authorization-model",
+    "statement": "Authorization headers and cookies are structurally excluded from captures; the manifest states no authorization model."
+   },
+   {
+    "kind": "response-semantics",
+    "statement": "Recorded statuses and bodies are retained only as pointers to parent records; the manifest states no response semantics."
+   },
+   {
+    "kind": "state-transition",
+    "statement": "Recorded exchanges are independent observations; the manifest states no ordering, side effects or state transitions between tools."
+   }
+  ],
+  "origin": "http://127.0.0.1:3204",
+  "name": "127-0-0-1-3204",
+  "tools": [
+   {
+    "name": "get_admin_users",
+    "method": "GET",
+    "path_template": "/api/admin/users/",
+    "api_surface_template": "/api/admin/users/",
+    "params": [],
+    "query_parameter_names": [
+     "page"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     25,
+     68
+    ]
+   },
+   {
+    "name": "get_applications",
+    "method": "GET",
+    "path_template": "/api/applications/",
+    "api_surface_template": "/api/applications/",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     1,
+     27
+    ]
+   },
+   {
+    "name": "get_applications_workspace_by_id",
+    "method": "GET",
+    "path_template": "/api/applications/workspace/{numeric}/",
+    "api_surface_template": "/api/applications/workspace/{numeric}/",
+    "params": [
+     {
+      "index": 3,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "76"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     30
+    ]
+   },
+   {
+    "name": "get_applications_by_id",
+    "method": "GET",
+    "path_template": "/api/applications/{numeric}/",
+    "api_surface_template": "/api/applications/{numeric}/",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "114",
+       "115"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     28,
+     29
+    ]
+   },
+   {
+    "name": "get_database_field_rules_by_id",
+    "method": "GET",
+    "path_template": "/api/database/field-rules/{numeric}/",
+    "api_surface_template": "/api/database/field-rules/{numeric}/",
+    "params": [
+     {
+      "index": 3,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "361",
+       "362",
+       "371"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     8,
+     12,
+     16,
+     20,
+     24,
+     75
+    ]
+   },
+   {
+    "name": "get_database_fields_table_by_id",
+    "method": "GET",
+    "path_template": "/api/database/fields/table/{numeric}/",
+    "api_surface_template": "/api/database/fields/table/{numeric}/",
+    "params": [
+     {
+      "index": 4,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "361",
+       "362",
+       "371"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     6,
+     10,
+     14,
+     18,
+     22,
+     36,
+     73
+    ]
+   },
+   {
+    "name": "get_database_fields_by_id",
+    "method": "GET",
+    "path_template": "/api/database/fields/{numeric}/",
+    "api_surface_template": "/api/database/fields/{numeric}/",
+    "params": [
+     {
+      "index": 3,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "3438",
+       "3447",
+       "3540"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     37,
+     38,
+     39
+    ]
+   },
+   {
+    "name": "get_database_fields_unique_row_values_by_id",
+    "method": "GET",
+    "path_template": "/api/database/fields/{numeric}/unique_row_values/",
+    "api_surface_template": "/api/database/fields/{numeric}/unique_row_values/",
+    "params": [
+     {
+      "index": 3,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "3540"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     40
+    ]
+   },
+   {
+    "name": "get_database_rows_names",
+    "method": "GET",
+    "path_template": "/api/database/rows/names/",
+    "api_surface_template": "/api/database/rows/names/",
+    "params": [],
+    "query_parameter_names": [
+     "table__361"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     59
+    ]
+   },
+   {
+    "name": "get_database_rows_table_by_id",
+    "method": "GET",
+    "path_template": "/api/database/rows/table/{numeric}/",
+    "api_surface_template": "/api/database/rows/table/{numeric}/",
+    "params": [
+     {
+      "index": 4,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "362",
+       "371"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "filter__field_3539__single_select_equal",
+     "order_by",
+     "search",
+     "size",
+     "user_field_names"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     41,
+     56,
+     57,
+     58,
+     82
+    ]
+   },
+   {
+    "name": "post_database_rows_table_by_id",
+    "method": "POST",
+    "path_template": "/api/database/rows/table/{numeric}/",
+    "api_surface_template": "/api/database/rows/table/{numeric}/",
+    "params": [
+     {
+      "index": 4,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "371"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "user_field_names"
+    ],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "Order code": "string",
+      "Item": "string",
+      "Quantity": "string",
+      "Supplier": "string"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     77
+    ]
+   },
+   {
+    "name": "delete_database_rows_table_by_id_id_2",
+    "method": "DELETE",
+    "path_template": "/api/database/rows/table/{numeric}/{numeric}/",
+    "api_surface_template": "/api/database/rows/table/{numeric}/{numeric}/",
+    "params": [
+     {
+      "index": 4,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "371"
+      ]
+     },
+     {
+      "index": 5,
+      "name": "id_2",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "9"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     204
+    ],
+    "content_types": [],
+    "record_ordinals": [
+     80
+    ]
+   },
+   {
+    "name": "get_database_rows_table_by_id_id_2",
+    "method": "GET",
+    "path_template": "/api/database/rows/table/{numeric}/{numeric}/",
+    "api_surface_template": "/api/database/rows/table/{numeric}/{numeric}/",
+    "params": [
+     {
+      "index": 4,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "361",
+       "362",
+       "371"
+      ]
+     },
+     {
+      "index": 5,
+      "name": "id_2",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "3",
+       "4",
+       "5",
+       "6",
+       "7",
+       "9"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "include",
+     "user_field_names",
+     "view"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200,
+     404
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     42,
+     43,
+     44,
+     45,
+     46,
+     47,
+     48,
+     49,
+     50,
+     51,
+     52,
+     53,
+     54,
+     71,
+     79,
+     81
+    ]
+   },
+   {
+    "name": "patch_database_rows_table_by_id_id_2",
+    "method": "PATCH",
+    "path_template": "/api/database/rows/table/{numeric}/{numeric}/",
+    "api_surface_template": "/api/database/rows/table/{numeric}/{numeric}/",
+    "params": [
+     {
+      "index": 4,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "371"
+      ]
+     },
+     {
+      "index": 5,
+      "name": "id_2",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "9"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "user_field_names"
+    ],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "Item": "string",
+      "Quantity": "string"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     78
+    ]
+   },
+   {
+    "name": "get_database_rows_table_history_by_id_id_2",
+    "method": "GET",
+    "path_template": "/api/database/rows/table/{numeric}/{numeric}/history/",
+    "api_surface_template": "/api/database/rows/table/{numeric}/{numeric}/history/",
+    "params": [
+     {
+      "index": 4,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "362"
+      ]
+     },
+     {
+      "index": 5,
+      "name": "id_2",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "3",
+       "5"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "limit"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     55,
+     76
+    ]
+   },
+   {
+    "name": "get_database_tables_database_by_id",
+    "method": "GET",
+    "path_template": "/api/database/tables/database/{numeric}/",
+    "api_surface_template": "/api/database/tables/database/{numeric}/",
+    "params": [
+     {
+      "index": 4,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "114"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     32
+    ]
+   },
+   {
+    "name": "get_database_tables_by_id",
+    "method": "GET",
+    "path_template": "/api/database/tables/{numeric}/",
+    "api_surface_template": "/api/database/tables/{numeric}/",
+    "params": [
+     {
+      "index": 3,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "361",
+       "362",
+       "371"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     33,
+     34,
+     35
+    ]
+   },
+   {
+    "name": "get_database_views_filter_by_id",
+    "method": "GET",
+    "path_template": "/api/database/views/filter/{numeric}/",
+    "api_surface_template": "/api/database/views/filter/{numeric}/",
+    "params": [
+     {
+      "index": 4,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "849"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     65
+    ]
+   },
+   {
+    "name": "get_database_views_gallery_by_id",
+    "method": "GET",
+    "path_template": "/api/database/views/gallery/{numeric}/",
+    "api_surface_template": "/api/database/views/gallery/{numeric}/",
+    "params": [
+     {
+      "index": 4,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1614"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "include",
+     "limit",
+     "limit_linked_items",
+     "offset"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     23,
+     67
+    ]
+   },
+   {
+    "name": "get_database_views_grid_by_id",
+    "method": "GET",
+    "path_template": "/api/database/views/grid/{numeric}/",
+    "api_surface_template": "/api/database/views/grid/{numeric}/",
+    "params": [
+     {
+      "index": 4,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1569",
+       "1570",
+       "1571",
+       "1606",
+       "1613"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "include",
+     "limit",
+     "limit_linked_items",
+     "offset"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     7,
+     11,
+     15,
+     19,
+     66,
+     74
+    ]
+   },
+   {
+    "name": "get_database_views_table_by_id",
+    "method": "GET",
+    "path_template": "/api/database/views/table/{numeric}/",
+    "api_surface_template": "/api/database/views/table/{numeric}/",
+    "params": [
+     {
+      "index": 4,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "361",
+       "362",
+       "371"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "include"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     5,
+     9,
+     13,
+     17,
+     21,
+     60,
+     72
+    ]
+   },
+   {
+    "name": "get_database_views_by_id",
+    "method": "GET",
+    "path_template": "/api/database/views/{numeric}/",
+    "api_surface_template": "/api/database/views/{numeric}/",
+    "params": [
+     {
+      "index": 3,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1606",
+       "1615"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     61,
+     62
+    ]
+   },
+   {
+    "name": "get_database_views_filters_by_id",
+    "method": "GET",
+    "path_template": "/api/database/views/{numeric}/filters/",
+    "api_surface_template": "/api/database/views/{numeric}/filters/",
+    "params": [
+     {
+      "index": 3,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1606"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     63
+    ]
+   },
+   {
+    "name": "get_database_views_sortings_by_id",
+    "method": "GET",
+    "path_template": "/api/database/views/{numeric}/sortings/",
+    "api_surface_template": "/api/database/views/{numeric}/sortings/",
+    "params": [
+     {
+      "index": 3,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1606"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     64
+    ]
+   },
+   {
+    "name": "get_jobs",
+    "method": "GET",
+    "path_template": "/api/jobs/",
+    "api_surface_template": "/api/jobs/",
+    "params": [],
+    "query_parameter_names": [
+     "states"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     2
+    ]
+   },
+   {
+    "name": "get_last_viewed_items",
+    "method": "GET",
+    "path_template": "/api/last-viewed/items/",
+    "api_surface_template": "/api/last-viewed/items/",
+    "params": [],
+    "query_parameter_names": [
+     "limit",
+     "workspace_ids"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     4
+    ]
+   },
+   {
+    "name": "get_search_workspace_by_id",
+    "method": "GET",
+    "path_template": "/api/search/workspace/{numeric}/",
+    "api_surface_template": "/api/search/workspace/{numeric}/",
+    "params": [
+     {
+      "index": 3,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "76"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "query"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     69
+    ]
+   },
+   {
+    "name": "get_trash",
+    "method": "GET",
+    "path_template": "/api/trash/",
+    "api_surface_template": "/api/trash/",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     70
+    ]
+   },
+   {
+    "name": "get_user_dashboard",
+    "method": "GET",
+    "path_template": "/api/user/dashboard/",
+    "api_surface_template": "/api/user/dashboard/",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     3
+    ]
+   },
+   {
+    "name": "get_workspaces",
+    "method": "GET",
+    "path_template": "/api/workspaces/",
+    "api_surface_template": "/api/workspaces/",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     0,
+     26
+    ]
+   },
+   {
+    "name": "get_workspaces_users_workspace_by_id",
+    "method": "GET",
+    "path_template": "/api/workspaces/users/workspace/{numeric}/",
+    "api_surface_template": "/api/workspaces/users/workspace/{numeric}/",
+    "params": [
+     {
+      "index": 4,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "76"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     31
+    ]
+   }
+  ],
+  "records": [
+   {
+    "ordinal": 0,
+    "method": "GET",
+    "path": "/api/workspaces/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 1,
+    "method": "GET",
+    "path": "/api/applications/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 2,
+    "method": "GET",
+    "path": "/api/jobs/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 3,
+    "method": "GET",
+    "path": "/api/user/dashboard/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 4,
+    "method": "GET",
+    "path": "/api/last-viewed/items/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 5,
+    "method": "GET",
+    "path": "/api/database/views/table/362/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 6,
+    "method": "GET",
+    "path": "/api/database/fields/table/362/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 7,
+    "method": "GET",
+    "path": "/api/database/views/grid/1570/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 8,
+    "method": "GET",
+    "path": "/api/database/field-rules/362/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 9,
+    "method": "GET",
+    "path": "/api/database/views/table/362/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 10,
+    "method": "GET",
+    "path": "/api/database/fields/table/362/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 11,
+    "method": "GET",
+    "path": "/api/database/views/grid/1606/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 12,
+    "method": "GET",
+    "path": "/api/database/field-rules/362/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 13,
+    "method": "GET",
+    "path": "/api/database/views/table/371/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 14,
+    "method": "GET",
+    "path": "/api/database/fields/table/371/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 15,
+    "method": "GET",
+    "path": "/api/database/views/grid/1571/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 16,
+    "method": "GET",
+    "path": "/api/database/field-rules/371/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 17,
+    "method": "GET",
+    "path": "/api/database/views/table/361/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 18,
+    "method": "GET",
+    "path": "/api/database/fields/table/361/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 19,
+    "method": "GET",
+    "path": "/api/database/views/grid/1569/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 20,
+    "method": "GET",
+    "path": "/api/database/field-rules/361/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 21,
+    "method": "GET",
+    "path": "/api/database/views/table/361/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 22,
+    "method": "GET",
+    "path": "/api/database/fields/table/361/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 23,
+    "method": "GET",
+    "path": "/api/database/views/gallery/1614/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 24,
+    "method": "GET",
+    "path": "/api/database/field-rules/361/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 25,
+    "method": "GET",
+    "path": "/api/admin/users/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 26,
+    "method": "GET",
+    "path": "/api/workspaces/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 27,
+    "method": "GET",
+    "path": "/api/applications/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 28,
+    "method": "GET",
+    "path": "/api/applications/114/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 29,
+    "method": "GET",
+    "path": "/api/applications/115/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 30,
+    "method": "GET",
+    "path": "/api/applications/workspace/76/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 31,
+    "method": "GET",
+    "path": "/api/workspaces/users/workspace/76/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 32,
+    "method": "GET",
+    "path": "/api/database/tables/database/114/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 33,
+    "method": "GET",
+    "path": "/api/database/tables/371/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 34,
+    "method": "GET",
+    "path": "/api/database/tables/362/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 35,
+    "method": "GET",
+    "path": "/api/database/tables/361/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 36,
+    "method": "GET",
+    "path": "/api/database/fields/table/362/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 37,
+    "method": "GET",
+    "path": "/api/database/fields/3438/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 38,
+    "method": "GET",
+    "path": "/api/database/fields/3447/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 39,
+    "method": "GET",
+    "path": "/api/database/fields/3540/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 40,
+    "method": "GET",
+    "path": "/api/database/fields/3540/unique_row_values/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 41,
+    "method": "GET",
+    "path": "/api/database/rows/table/362/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 42,
+    "method": "GET",
+    "path": "/api/database/rows/table/371/3/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 43,
+    "method": "GET",
+    "path": "/api/database/rows/table/371/4/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 44,
+    "method": "GET",
+    "path": "/api/database/rows/table/371/5/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 45,
+    "method": "GET",
+    "path": "/api/database/rows/table/371/6/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 46,
+    "method": "GET",
+    "path": "/api/database/rows/table/362/3/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 47,
+    "method": "GET",
+    "path": "/api/database/rows/table/362/4/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 48,
+    "method": "GET",
+    "path": "/api/database/rows/table/362/5/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 49,
+    "method": "GET",
+    "path": "/api/database/rows/table/362/6/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 50,
+    "method": "GET",
+    "path": "/api/database/rows/table/362/7/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 51,
+    "method": "GET",
+    "path": "/api/database/rows/table/361/3/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 52,
+    "method": "GET",
+    "path": "/api/database/rows/table/361/4/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 53,
+    "method": "GET",
+    "path": "/api/database/rows/table/361/5/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 54,
+    "method": "GET",
+    "path": "/api/database/rows/table/361/6/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 55,
+    "method": "GET",
+    "path": "/api/database/rows/table/362/3/history/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 56,
+    "method": "GET",
+    "path": "/api/database/rows/table/362/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 57,
+    "method": "GET",
+    "path": "/api/database/rows/table/371/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 58,
+    "method": "GET",
+    "path": "/api/database/rows/table/362/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 59,
+    "method": "GET",
+    "path": "/api/database/rows/names/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 60,
+    "method": "GET",
+    "path": "/api/database/views/table/362/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 61,
+    "method": "GET",
+    "path": "/api/database/views/1615/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 62,
+    "method": "GET",
+    "path": "/api/database/views/1606/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 63,
+    "method": "GET",
+    "path": "/api/database/views/1606/filters/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 64,
+    "method": "GET",
+    "path": "/api/database/views/1606/sortings/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 65,
+    "method": "GET",
+    "path": "/api/database/views/filter/849/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 66,
+    "method": "GET",
+    "path": "/api/database/views/grid/1613/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 67,
+    "method": "GET",
+    "path": "/api/database/views/gallery/1614/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 68,
+    "method": "GET",
+    "path": "/api/admin/users/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 69,
+    "method": "GET",
+    "path": "/api/search/workspace/76/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 70,
+    "method": "GET",
+    "path": "/api/trash/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 71,
+    "method": "GET",
+    "path": "/api/database/rows/table/362/5/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 72,
+    "method": "GET",
+    "path": "/api/database/views/table/362/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 73,
+    "method": "GET",
+    "path": "/api/database/fields/table/362/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 74,
+    "method": "GET",
+    "path": "/api/database/views/grid/1570/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 75,
+    "method": "GET",
+    "path": "/api/database/field-rules/362/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 76,
+    "method": "GET",
+    "path": "/api/database/rows/table/362/5/history/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 77,
+    "method": "POST",
+    "path": "/api/database/rows/table/371/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 78,
+    "method": "PATCH",
+    "path": "/api/database/rows/table/371/9/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 79,
+    "method": "GET",
+    "path": "/api/database/rows/table/371/9/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 80,
+    "method": "DELETE",
+    "path": "/api/database/rows/table/371/9/",
+    "status": 204,
+    "content_type": null
+   },
+   {
+    "ordinal": 81,
+    "method": "GET",
+    "path": "/api/database/rows/table/371/9/",
+    "status": 404,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 82,
+    "method": "GET",
+    "path": "/api/database/rows/table/371/",
+    "status": 200,
+    "content_type": "application/json"
+   }
+  ],
+  "excluded": [],
+  "templated_groups": 23,
+  "kind": "environment-manifest",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "confidence": "inferred",
+ "authority": "historical-reference",
+ "environment": null,
+ "limitations": [
+  "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+  "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+  "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+  "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+  "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+  "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+  "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+  "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+  "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+ ],
+ "relationship_coverage": null,
+ "locations": [
+  {
+   "kind": "artifact-path",
+   "path": "/home/ubuntu/capture/baserow/baserow.scoped.har"
+  }
+ ],
+ "evidence_links": [
+  "ev_85d6e0f7e7c20d307a860f6c35f7e696fa6baf0e1a54f19060d77989e82fadac"
+ ]
+}

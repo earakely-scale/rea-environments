@@ -1,0 +1,292 @@
+{
+ "app": "bookstack",
+ "title": "BookStack",
+ "repo": "BookStackEnv-REA",
+ "image": "lscr.io/linuxserver/bookstack:v26.09.1-ls288",
+ "image_digest": "lscr.io/linuxserver/bookstack@sha256:0d66f65417fa667085849bf9b32b412ec9a90420773c4f47a95138c4711876b7",
+ "images": {
+  "mariadb:11.8.9": {
+   "digest": "mariadb@sha256:f16d7a344413e519dff518f27bdb221388f84b0d274c97c4fb5f2cb0dc1b34fa"
+  },
+  "lscr.io/linuxserver/bookstack:v26.09.1-ls288": {
+   "digest": "lscr.io/linuxserver/bookstack@sha256:0d66f65417fa667085849bf9b32b412ec9a90420773c4f47a95138c4711876b7"
+  }
+ },
+ "app_version": "26.09.1",
+ "app_version_full": "v26.09.1 (linuxserver build ls288)",
+ "licence": "MIT",
+ "compose_project": "rea-bookstack",
+ "origin": "http://127.0.0.1:3219",
+ "database": "MariaDB 11.8.9 (second compose service, no host port)",
+ "tooling": {
+  "rea": "6.6.0",
+  "playwright-core": "1.58.2",
+  "chromium": "Chromium 155.0.8059.79 snap",
+  "node": "v24.22.0",
+  "python": "3.12.3",
+  "docker": "29.9.1",
+  "compose": "5.6.0",
+  "vm": "Ubuntu 24.04 amd64"
+ },
+ "seeded_objects": "2 roles (Tide Clerks, Quarry Auditors), 3 users besides the renamed admin (Ada Finch, Rui Castellanos, Mina Okafor), 3 shelves, 5 books, 5 chapters and 8 pages with tags, 2 link attachments, 2 page comments, and 9 items handed to other owners",
+ "seeded_names": {
+  "roles": [
+   "Quarry Auditors",
+   "Tide Clerks"
+  ],
+  "users": [
+   "ada.finch",
+   "mina.okafor",
+   "rea-admin",
+   "rui.castellanos"
+  ],
+  "books": [
+   "Blue Heron Kitchen Recipes",
+   "Lamp Room Procedures",
+   "Quarry Audit Manual",
+   "Saltmarsh Depot Inventory",
+   "Tide Table Almanac"
+  ],
+  "shelves": [
+   "Copperfield Annex Stores",
+   "Granite Ledger Archive",
+   "Lighthouse Rota Handbooks"
+  ],
+  "chapters": [
+   "Lamp Oil Ledger",
+   "Night Watch Handover",
+   "North Quarry Counts",
+   "Wick and Lens Care",
+   "Winter Spring Tides"
+  ],
+  "pages": [
+   "January Tide Readings",
+   "Lamp Room Safety Notice",
+   "October Oil Issues",
+   "Rope Store Layout",
+   "Shift Three Handover Checklist",
+   "Smoked Kelp Broth",
+   "Terrace Seven Tally",
+   "Trimming the Wick"
+  ],
+  "attachments": [
+   "Terrace Seven Survey Sheet",
+   "Wick Gauge Diagram"
+  ],
+  "comments": [
+   "Shift Three Handover Checklist",
+   "Smoked Kelp Broth"
+  ]
+ },
+ "ui_pages_visited": [
+  "/login",
+  "/",
+  "/shelves",
+  "/shelves/lighthouse-rota-handbooks",
+  "/books",
+  "/books/lamp-room-procedures",
+  "/books/lamp-room-procedures/chapter/wick-and-lens-care",
+  "/books/lamp-room-procedures/page/trimming-the-wick",
+  "/search?term=granite",
+  "/tags",
+  "/settings/users",
+  "/settings/roles",
+  "/settings/audit"
+ ],
+ "scripted_calls": {
+  "total": 65,
+  "by_method": {
+   "GET": 61,
+   "POST": 2,
+   "PUT": 1,
+   "DELETE": 1
+  },
+  "non_2xx": [
+   {
+    "method": "GET",
+    "path": "/api/books/24",
+    "status": 404
+   }
+  ]
+ },
+ "scoped_har": {
+  "file": "bookstack.scoped.har",
+  "sha256": "1f807d4d2d2ef490cdc5cac50ffcbf573abfc967351038256b92e18f4ebe5366",
+  "bytes": 127666,
+  "records": 65,
+  "methods": {
+   "GET": 61,
+   "POST": 2,
+   "PUT": 1,
+   "DELETE": 1
+  },
+  "statuses": {
+   "200": 63,
+   "204": 1,
+   "404": 1
+  }
+ },
+ "scope_har": {
+  "origin": "http://127.0.0.1:3219",
+  "keep_regex": "^/api/",
+  "kept": 65,
+  "dropped": {
+   "other-origin": 0,
+   "path": 86,
+   "non-json": 0,
+   "auth": 2,
+   "big-body": 0,
+   "over-max": 0
+  },
+  "methods": {
+   "GET": 61,
+   "POST": 2,
+   "PUT": 1,
+   "DELETE": 1
+  },
+  "bytes": 127180
+ },
+ "credential_grep": {
+  "admin_file_value_hits": 0,
+  "token_shape_hits": 0,
+  "session_cookie_name_hits": 0,
+  "result": "pass"
+ },
+ "notes": [
+  "BookStack UI is server-rendered and never calls /api itself; every kept record is a scripted fetch from inside the logged-in page.",
+  "Cookie-session API access is GET-only in BookStack, so the three writes carry the API token header with credentials omitted."
+ ],
+ "manifests": {
+  "rules": {
+   "evidence_id": "ev_47deffa8044f6f1c6835193c59746931187576db6b1c0cc367b7c4380714c322",
+   "confidence": "inferred",
+   "tools": 31,
+   "tools_by_method": {
+    "GET": 27,
+    "POST": 2,
+    "DELETE": 1,
+    "PUT": 1
+   },
+   "templated_groups": 14,
+   "params_by_rule": {
+    "numeric": 14
+   },
+   "query_parameter_names_distinct": [
+    "count",
+    "filter[book_id]",
+    "filter[name:like]",
+    "name",
+    "query",
+    "sort"
+   ],
+   "tools_with_body_shape": 3,
+   "excluded": 0,
+   "unknowns": [
+    "authorization-model",
+    "response-semantics",
+    "state-transition"
+   ],
+   "tool_names": [
+    "get_attachments",
+    "get_attachments_by_id",
+    "get_audit_log",
+    "get_books",
+    "post_books",
+    "delete_books_by_id",
+    "get_books_by_id",
+    "put_books_by_id",
+    "get_chapters",
+    "get_chapters_by_id",
+    "get_comments",
+    "get_comments_by_id",
+    "get_content_permissions_book_by_id",
+    "get_content_permissions_page_by_id",
+    "get_image_gallery",
+    "get_pages",
+    "post_pages",
+    "get_pages_by_id",
+    "get_recycle_bin",
+    "get_roles",
+    "get_roles_by_id",
+    "get_search",
+    "get_search_book_by_id",
+    "get_search_chapter_by_id",
+    "get_shelves",
+    "get_shelves_by_id",
+    "get_system",
+    "get_tags_names",
+    "get_tags_values_for_name",
+    "get_users",
+    "get_users_by_id"
+   ]
+  },
+  "norules": {
+   "evidence_id": "ev_294a3fd78d221c90e5246cffd336196604377bca21248664f798c744606815ee",
+   "confidence": "inferred",
+   "tools": 31,
+   "tools_by_method": {
+    "GET": 27,
+    "POST": 2,
+    "DELETE": 1,
+    "PUT": 1
+   },
+   "templated_groups": 14,
+   "params_by_rule": {
+    "numeric": 14
+   },
+   "query_parameter_names_distinct": [
+    "count",
+    "filter[book_id]",
+    "filter[name:like]",
+    "name",
+    "query",
+    "sort"
+   ],
+   "tools_with_body_shape": 3,
+   "excluded": 0,
+   "unknowns": [
+    "authorization-model",
+    "response-semantics",
+    "state-transition"
+   ],
+   "tool_names": [
+    "get_attachments",
+    "get_attachments_by_id",
+    "get_audit_log",
+    "get_books",
+    "post_books",
+    "delete_books_by_id",
+    "get_books_by_id",
+    "put_books_by_id",
+    "get_chapters",
+    "get_chapters_by_id",
+    "get_comments",
+    "get_comments_by_id",
+    "get_content_permissions_book_by_id",
+    "get_content_permissions_page_by_id",
+    "get_image_gallery",
+    "get_pages",
+    "post_pages",
+    "get_pages_by_id",
+    "get_recycle_bin",
+    "get_roles",
+    "get_roles_by_id",
+    "get_search",
+    "get_search_book_by_id",
+    "get_search_chapter_by_id",
+    "get_shelves",
+    "get_shelves_by_id",
+    "get_system",
+    "get_tags_names",
+    "get_tags_values_for_name",
+    "get_users",
+    "get_users_by_id"
+   ]
+  }
+ },
+ "capture_evidence": {
+  "evidence_id": "ev_07a98c12a171833f8ca00f5f4769a165b358a5e2cca784718af469fc35ee5b77",
+  "records": 65,
+  "confidence": "observed"
+ }
+}

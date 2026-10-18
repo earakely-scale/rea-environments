@@ -1,0 +1,317 @@
+{
+ "app": "listmonk",
+ "title": "listmonk",
+ "image": "listmonk/listmonk:v6.2.0",
+ "image_digest": "listmonk/listmonk@sha256:f535d59e14991337a9f2d570273685378ae86b0d7698c3e00da444e3bc205286",
+ "app_version": "6.2",
+ "app_version_full": "v6.2.0 (ef0a7587 2026-06-26T10:21:29Z, linux/amd64)",
+ "site_title": "Lighthouse Rota Dispatch (app.site_name set through PUT /api/settings/app.site_name)",
+ "database": "PostgreSQL 17.9 (postgres:17.9-alpine, second service, no host port)",
+ "extra_images": {
+  "postgres": "postgres:17.9-alpine",
+  "postgres_digest": "postgres@sha256:c7526c0f6c3f30260a563d7bcf8ad778effac59a44f8ffa86678c35418338609"
+ },
+ "compose_project": "rea-listmonk",
+ "origin": "http://127.0.0.1:3214",
+ "licence": "AGPL-3.0",
+ "tooling": {
+  "rea": "6.6.0",
+  "playwright-core": "1.58.2",
+  "chromium": "Chromium 155.0.8059.79 snap",
+  "node": "v24.22.0",
+  "python": "Python 3.12.3",
+  "docker": "Docker version 29.9.1, build dfc520d",
+  "compose": "5.6.0",
+  "vm": "Ubuntu 24.04 amd64"
+ },
+ "scoped_har": {
+  "file": "listmonk.scoped.har",
+  "sha256": "db06948f2b2e2525759589dd9788f84edfa163926ae67c9c4e49c2f3b64962d0",
+  "bytes": 134271,
+  "records": 68,
+  "methods": {
+   "GET": 65,
+   "POST": 1,
+   "PUT": 1,
+   "DELETE": 1
+  },
+  "statuses": {
+   "200": 67,
+   "400": 1
+  }
+ },
+ "scope_har": {
+  "origin": "http://127.0.0.1:3214",
+  "keep_regex": "^/api/(?!lang/|events)",
+  "drop_regex": "default (login|logout|signup|password|session|token|oauth|csrf)",
+  "max_body": 60000,
+  "max_records": 150,
+  "kept": 68,
+  "dropped": {
+   "other-origin": 0,
+   "path": 45,
+   "non-json": 0,
+   "auth": 2,
+   "big-body": 0,
+   "over-max": 0
+  },
+  "notes": [
+   "keep_regex ^/api/(?!lang/|events) leaves out /api/lang/en (41 KB of UI translation strings, whose help texts carry example URLs) and /api/events (server-sent events stream)",
+   "auth=2 are GET and POST /admin/login (the login form)",
+   "path=45 are the admin app shell and static assets, /api/lang/en, /api/events, the public assets and the uploaded media file",
+   "GET /api/lists/{id} after the delete answers 400 (not 404) with a JSON message; it is in the manifest as a recorded 400",
+   "/api/settings was read in an early capture and then removed from the sequence: its defaults hold placeholder SMTP hosts and an S3 URL"
+  ]
+ },
+ "credential_grep": {
+  "admin_secret_literal_hits": 0,
+  "token_shape_hits": 0,
+  "session_cookie_name_hits": 0,
+  "result": "pass"
+ },
+ "evidence": {
+  "capture_evidence_id": "ev_40b38ad41b4906c91a10812bd33a562c757b5bbf249f84f2f5b173e3fe59f0ba",
+  "capture_total_records": 68,
+  "capture_confidence": "observed"
+ },
+ "manifest": {
+  "evidence_id": "ev_2219c491a30c79107897a70884bbe76d8376ccb7f2c67943c7583baeea100cac",
+  "confidence": "inferred",
+  "view_digest": "cda0194e39b9d594bb110d23953ef7243f038946af8d8164c777edddecb0244a",
+  "template_rules": [
+   "after-uid-literal",
+   "opaque-token",
+   "sibling-variance"
+  ],
+  "tools": 29,
+  "tools_by_method": {
+   "GET": 26,
+   "POST": 1,
+   "DELETE": 1,
+   "PUT": 1
+  },
+  "templated_groups": 11,
+  "params_by_rule": {
+   "numeric": 11
+  },
+  "params_total": 11,
+  "query_parameter_names_total": 24,
+  "query_parameter_names_distinct": [
+   "list_id",
+   "minimal",
+   "no_body",
+   "order",
+   "order_by",
+   "page",
+   "per_page",
+   "query",
+   "search",
+   "status",
+   "subscription_status"
+  ],
+  "tools_with_body_shape": 2,
+  "statuses_seen": [
+   200,
+   400
+  ],
+  "records": 68,
+  "excluded": 0,
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 29,
+   "total": 29,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "limitations_count": 9,
+  "tool_names": [
+   "get_about",
+   "get_bounces",
+   "get_campaigns",
+   "get_campaigns_running_stats",
+   "get_campaigns_by_id",
+   "get_config",
+   "get_dashboard_charts",
+   "get_dashboard_counts",
+   "get_import_subscribers",
+   "get_lists",
+   "post_lists",
+   "delete_lists_by_id",
+   "get_lists_by_id",
+   "put_lists_by_id",
+   "get_media",
+   "get_media_by_id",
+   "get_profile",
+   "get_public_lists",
+   "get_roles_lists",
+   "get_roles_users",
+   "get_subscribers",
+   "get_subscribers_by_id",
+   "get_subscribers_activity_by_id",
+   "get_subscribers_bounces_by_id",
+   "get_subscribers_export_by_id",
+   "get_templates",
+   "get_templates_by_id",
+   "get_users",
+   "get_users_by_id"
+  ]
+ },
+ "manifest_norules": {
+  "evidence_id": "ev_ef5dbcf2430ac75898bfcf8fc69b9a8c55597f1e007704c3aebe78ceb38be6dc",
+  "confidence": "inferred",
+  "view_digest": "378f7901a01c7d225647a6e350706d6380e2ac1b3445ef43af7e2d339f33e304",
+  "template_rules": [],
+  "tools": 29,
+  "tools_by_method": {
+   "GET": 26,
+   "POST": 1,
+   "DELETE": 1,
+   "PUT": 1
+  },
+  "templated_groups": 11,
+  "params_by_rule": {
+   "numeric": 11
+  },
+  "params_total": 11,
+  "query_parameter_names_total": 24,
+  "query_parameter_names_distinct": [
+   "list_id",
+   "minimal",
+   "no_body",
+   "order",
+   "order_by",
+   "page",
+   "per_page",
+   "query",
+   "search",
+   "status",
+   "subscription_status"
+  ],
+  "tools_with_body_shape": 2,
+  "statuses_seen": [
+   200,
+   400
+  ],
+  "records": 68,
+  "excluded": 0,
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 29,
+   "total": 29,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "limitations_count": 8,
+  "tool_names": [
+   "get_about",
+   "get_bounces",
+   "get_campaigns",
+   "get_campaigns_running_stats",
+   "get_campaigns_by_id",
+   "get_config",
+   "get_dashboard_charts",
+   "get_dashboard_counts",
+   "get_import_subscribers",
+   "get_lists",
+   "post_lists",
+   "delete_lists_by_id",
+   "get_lists_by_id",
+   "put_lists_by_id",
+   "get_media",
+   "get_media_by_id",
+   "get_profile",
+   "get_public_lists",
+   "get_roles_lists",
+   "get_roles_users",
+   "get_subscribers",
+   "get_subscribers_by_id",
+   "get_subscribers_activity_by_id",
+   "get_subscribers_bounces_by_id",
+   "get_subscribers_export_by_id",
+   "get_templates",
+   "get_templates_by_id",
+   "get_users",
+   "get_users_by_id"
+  ]
+ },
+ "seeded_objects": "4 lists (Lighthouse Rota Dispatch, Granite Ledger Members, Blue Heron Kitchen Regulars, Saltmarsh Depot Notices), 6 subscribers with attributes (one blocklisted), 3 templates (2 campaign, 1 transactional), 3 draft campaigns, 1 user role, 1 list role, 1 extra user (ada.finch), 1 uploaded PNG, site name Lighthouse Rota Dispatch; install-time samples removed; nothing sent",
+ "seeded_detail": {
+  "lists": [
+   "Lighthouse Rota Dispatch (public, single opt-in)",
+   "Granite Ledger Members (private)",
+   "Blue Heron Kitchen Regulars (public, double opt-in)",
+   "Saltmarsh Depot Notices (private)"
+  ],
+  "subscribers": [
+   "Ada Finch",
+   "Rui Castellanos",
+   "Mina Okafor",
+   "Tomas Vey",
+   "Marisol Okonkwo-Reyes",
+   "Bram Ostergaard (blocklisted)"
+  ],
+  "templates": [
+   "Tide Table Letter (campaign, default)",
+   "Granite Ledger Digest (campaign)",
+   "Depot Delivery Receipt (tx)"
+  ],
+  "campaigns": [
+   "Winter Rota Briefing",
+   "Granite Ledger Quarterly Count",
+   "Blue Heron Kitchen Spring Menu"
+  ],
+  "user_roles": [
+   "Ledger Auditor"
+  ],
+  "list_roles": [
+   "Kitchen List Editors"
+  ],
+  "users": [
+   "rea-admin (Rea Admin)",
+   "ada.finch (Ada Finch)"
+  ],
+  "media": [
+   "granite-ledger-banner.png (64x16 generated PNG)"
+  ],
+  "settings": {
+   "app.root_url": "http://127.0.0.1:3214",
+   "app.site_name": "Lighthouse Rota Dispatch",
+   "app.from_email": "Lighthouse Rota <rota@example.test>",
+   "app.check_updates": false
+  },
+  "removed_install_samples": [
+   "Default list",
+   "Opt-in list",
+   "john@example.com",
+   "anon@example.com",
+   "Test campaign",
+   "4 sample templates"
+  ],
+  "scratch_during_capture": "list Rea scratch list created, edited (PUT), read, deleted, re-read (400)"
+ },
+ "ui_pages_visited": [
+  "/admin/login (login form)",
+  "/admin (dashboard)",
+  "/admin/lists",
+  "/admin/subscribers",
+  "/admin/subscribers/3",
+  "/admin/campaigns",
+  "/admin/campaigns/2",
+  "/admin/campaigns/templates",
+  "/admin/campaigns/media",
+  "/admin/users",
+  "/admin/users/roles/users",
+  "/admin/users/roles/lists"
+ ],
+ "resource_constraint": false
+}

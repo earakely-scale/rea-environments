@@ -1,0 +1,40 @@
+# n8n 1.123.85 (sqlite) for the rea showcase capture. Loopback only; one compose project: rea-n8n.
+# The encryption key comes from the run-time env file written by `python3 seed.py init` (~/capture/n8n/.admin, mode 600):
+#   docker compose -p rea-n8n -f compose.yml --env-file .admin up -d
+services:
+  n8n:
+    image: n8nio/n8n:1.123.85
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3218:5678"
+    environment:
+      DB_TYPE: sqlite
+      N8N_ENCRYPTION_KEY: ${N8N_ENCRYPTION_KEY:?run seed.py init first}
+      N8N_HOST: 127.0.0.1
+      N8N_PORT: "5678"
+      N8N_PROTOCOL: http
+      N8N_EDITOR_BASE_URL: http://127.0.0.1:3218/
+      WEBHOOK_URL: http://127.0.0.1:3218/
+      # Plain http on loopback: the auth cookie cannot be Secure.
+      N8N_SECURE_COOKIE: "false"
+      GENERIC_TIMEZONE: UTC
+      TZ: UTC
+      # Offline and quiet: no telemetry, version checks, template gallery or personalisation survey.
+      N8N_DIAGNOSTICS_ENABLED: "false"
+      N8N_VERSION_NOTIFICATIONS_ENABLED: "false"
+      N8N_TEMPLATES_ENABLED: "false"
+      N8N_PERSONALIZATION_ENABLED: "false"
+      N8N_HIRING_BANNER_ENABLED: "false"
+      N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS: "true"
+      N8N_RUNNERS_ENABLED: "true"
+      EXECUTIONS_DATA_SAVE_MANUAL_EXECUTIONS: "true"
+    volumes:
+      - n8n-data:/home/node/.n8n
+    healthcheck:
+      # /healthz/readiness turns ok before /rest is mounted, so probe the editor's settings endpoint.
+      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:5678/rest/settings >/dev/null 2>&1 || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 48
+volumes:
+  n8n-data: {}

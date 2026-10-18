@@ -1,0 +1,53 @@
+# EspoCRM 10.0.10 (apache) + MariaDB 11.8.9 for the rea showcase capture. Loopback only; one compose project: rea-espocrm.
+# Secrets come from the run-time env file written by `python3 seed.py init` (~/capture/espocrm/.admin, mode 600):
+#   docker compose -p rea-espocrm -f compose.yml --env-file .admin up -d
+services:
+  espocrm-db:
+    image: mariadb:11.8.9
+    restart: unless-stopped
+    environment:
+      MARIADB_DATABASE: espocrm
+      MARIADB_USER: espocrm
+      MARIADB_PASSWORD: ${ESPO_DB_PASSWORD:?run seed.py init first}
+      MARIADB_RANDOM_ROOT_PASSWORD: "1"
+    volumes:
+      - espocrm-db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 36
+  espocrm:
+    image: espocrm/espocrm:10.0.10-apache
+    restart: unless-stopped
+    depends_on:
+      espocrm-db:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:3216:80"
+    environment:
+      ESPOCRM_DATABASE_PLATFORM: Mysql
+      ESPOCRM_DATABASE_HOST: espocrm-db
+      ESPOCRM_DATABASE_USER: espocrm
+      ESPOCRM_DATABASE_PASSWORD: ${ESPO_DB_PASSWORD:?run seed.py init first}
+      # The 10.0.10 entrypoint runs `set-password admin` whatever ESPOCRM_ADMIN_USERNAME says (and exits silently under
+      # set -e when that user does not exist), so the image creates `admin` and seed.py renames it to `rea-admin`.
+      ESPOCRM_ADMIN_USERNAME: admin
+      ESPOCRM_ADMIN_PASSWORD: ${ESPO_ADMIN_PASSWORD:?run seed.py init first}
+      ESPOCRM_SITE_URL: http://127.0.0.1:3216
+      ESPOCRM_TIME_ZONE: UTC
+    volumes:
+      # EspoCRM 10 images expect these three mounts (mounting /var/www/html whole is the legacy layout and skips the install).
+      - espocrm-data:/var/www/html/data
+      - espocrm-custom:/var/www/html/custom
+      - espocrm-client-custom:/var/www/html/client/custom
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS -o /dev/null http://127.0.0.1/ || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 60
+volumes:
+  espocrm-db: {}
+  espocrm-data: {}
+  espocrm-custom: {}
+  espocrm-client-custom: {}

@@ -1,0 +1,311 @@
+{
+ "app": "vikunja",
+ "title": "Vikunja",
+ "image": "vikunja/vikunja:2.7.0",
+ "image_digest": "vikunja/vikunja@sha256:e2204a1c1c6a81e833c2b3a5442be182ca2335b54c2e7e37578cc3fe12a27cfc",
+ "app_version": "2.7",
+ "app_version_full": "v2.7.0",
+ "licence": "AGPL-3.0-or-later",
+ "compose_project": "rea-vikunja",
+ "origin": "http://127.0.0.1:3211",
+ "database": "sqlite3 (/tmp/vikunja.db inside the vikunja-data named volume)",
+ "tooling": {
+  "rea": "6.6.0",
+  "playwright-core": "1.58.2",
+  "chromium": "Chromium 155.0.8059.79 snap",
+  "node": "v24.22.0",
+  "python": "3.12.3",
+  "docker": "29.9.1",
+  "compose": "5.6.0",
+  "vm": "Ubuntu 24.04 amd64"
+ },
+ "scoped_har": {
+  "file": "vikunja.scoped.har",
+  "sha256": "10843162cbd00ebf87245969fcda682fa750ff07d0640cae18c1f9985883b314",
+  "bytes": 378047,
+  "records": 102,
+  "methods": {
+   "GET": 98,
+   "PUT": 1,
+   "POST": 1,
+   "PATCH": 1,
+   "DELETE": 1
+  },
+  "statuses": {
+   "200": 99,
+   "201": 1,
+   "204": 1,
+   "404": 1
+  }
+ },
+ "scope_har": {
+  "origin": "http://127.0.0.1:3211",
+  "keep_regex": "^/api/v2/",
+  "drop_regex": "default (login|logout|signup|password|session|token|oauth|csrf)",
+  "max_body": 60000,
+  "max_records": 150,
+  "kept": 102,
+  "dropped": {
+   "other-origin": 0,
+   "path": 621,
+   "non-json": 23,
+   "auth": 29,
+   "big-body": 0,
+   "over-max": 0
+  },
+  "notes": [
+   "keep_regex ^/api/v2/ is the API the 2.x web UI calls; the legacy /api/v1 (PUT creates, POST updates) still answers but the UI never uses it (the seed does)",
+   "non-json=23 are /api/v2/avatar/<user> SVG images",
+   "auth=29 are the login and the UI's token refreshes (POST /api/v2/user/token/refresh) on every page load",
+   "service workers were blocked in the browser context: Vikunja's PWA worker otherwise records each page fetch twice"
+  ]
+ },
+ "credential_grep": {
+  "admin_value_literal_hits": 0,
+  "token_shape_hits_hf_ghp_Bearer": 0,
+  "session_cookie_name_hits": 0,
+  "result": "pass"
+ },
+ "evidence": {
+  "capture_evidence_id": "ev_6172766db5dacc12fa38511878e7a2db573f50122947cad181f09d52b850cceb",
+  "capture_total_records": 102,
+  "capture_confidence": "observed",
+  "manifest_evidence_id": "ev_19917e26dc88ca87887cb83f10d96d4f922051f312fa420ffdcd27d57f25b7e4",
+  "manifest_norules_evidence_id": "ev_512a333bb058854675add5c92a5fb4299feb66a47526f5660a605e105aa31e4d",
+  "manifest_view_digest": "9cc0d1da27fdaf1c20d32f66436a38355e6ae3a478eb8b656f7727d4d0e259ff"
+ },
+ "manifest": {
+  "evidence_id": "ev_19917e26dc88ca87887cb83f10d96d4f922051f312fa420ffdcd27d57f25b7e4",
+  "confidence": "inferred",
+  "view_digest": "9cc0d1da27fdaf1c20d32f66436a38355e6ae3a478eb8b656f7727d4d0e259ff",
+  "tools": 28,
+  "tools_by_method": {
+   "GET": 24,
+   "POST": 1,
+   "DELETE": 1,
+   "PATCH": 1,
+   "PUT": 1
+  },
+  "templated_groups": 20,
+  "params_by_rule": {
+   "numeric": 25
+  },
+  "params_total": 25,
+  "query_parameter_names_total": 39,
+  "query_parameter_names_distinct": [
+   "expand",
+   "filter",
+   "filter_include_nulls",
+   "filter_timezone",
+   "is_archived",
+   "order_by",
+   "page",
+   "per_page",
+   "q",
+   "s",
+   "sort_by"
+  ],
+  "tools_with_body_shape": 2,
+  "statuses_seen": [
+   200,
+   201,
+   204,
+   404
+  ],
+  "records": 102,
+  "excluded": 0,
+  "excluded_by_reason": {},
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 28,
+   "total": 28,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "limitations_count": 9,
+  "tool_names": [
+   "get_filters_by_id",
+   "get_info",
+   "get_labels",
+   "get_labels_by_id",
+   "get_notifications",
+   "get_projects",
+   "get_projects_by_id",
+   "post_projects_tasks_by_id",
+   "get_projects_tasks_by_index_by_id_id_2",
+   "get_projects_teams_by_id",
+   "get_projects_users_by_id",
+   "get_projects_views_by_id",
+   "get_projects_views_buckets_by_id_id_2",
+   "get_projects_views_buckets_tasks_by_id_id_2",
+   "get_projects_views_tasks_by_id_id_2",
+   "get_tasks",
+   "delete_tasks_by_id",
+   "get_tasks_by_id",
+   "patch_tasks_by_id",
+   "get_tasks_assignees_by_id",
+   "get_tasks_comments_by_id",
+   "get_tasks_comments_by_id_id_2",
+   "get_tasks_labels_by_id",
+   "put_tasks_read_by_id",
+   "get_teams",
+   "get_teams_by_id",
+   "get_user",
+   "get_users"
+  ]
+ },
+ "manifest_norules": {
+  "evidence_id": "ev_512a333bb058854675add5c92a5fb4299feb66a47526f5660a605e105aa31e4d",
+  "confidence": "inferred",
+  "view_digest": "a05324d437a57dfd0cee608594cb3c782b5f362219ea6f0e3f2f3e5e27dfe8a3",
+  "tools": 28,
+  "tools_by_method": {
+   "GET": 24,
+   "POST": 1,
+   "DELETE": 1,
+   "PATCH": 1,
+   "PUT": 1
+  },
+  "templated_groups": 20,
+  "params_by_rule": {
+   "numeric": 25
+  },
+  "params_total": 25,
+  "query_parameter_names_total": 39,
+  "query_parameter_names_distinct": [
+   "expand",
+   "filter",
+   "filter_include_nulls",
+   "filter_timezone",
+   "is_archived",
+   "order_by",
+   "page",
+   "per_page",
+   "q",
+   "s",
+   "sort_by"
+  ],
+  "tools_with_body_shape": 2,
+  "statuses_seen": [
+   200,
+   201,
+   204,
+   404
+  ],
+  "records": 102,
+  "excluded": 0,
+  "excluded_by_reason": {},
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 28,
+   "total": 28,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "limitations_count": 8,
+  "tool_names": [
+   "get_filters_by_id",
+   "get_info",
+   "get_labels",
+   "get_labels_by_id",
+   "get_notifications",
+   "get_projects",
+   "get_projects_by_id",
+   "post_projects_tasks_by_id",
+   "get_projects_tasks_by_index_by_id_id_2",
+   "get_projects_teams_by_id",
+   "get_projects_users_by_id",
+   "get_projects_views_by_id",
+   "get_projects_views_buckets_by_id_id_2",
+   "get_projects_views_buckets_tasks_by_id_id_2",
+   "get_projects_views_tasks_by_id_id_2",
+   "get_tasks",
+   "delete_tasks_by_id",
+   "get_tasks_by_id",
+   "patch_tasks_by_id",
+   "get_tasks_assignees_by_id",
+   "get_tasks_comments_by_id",
+   "get_tasks_comments_by_id_id_2",
+   "get_tasks_labels_by_id",
+   "put_tasks_read_by_id",
+   "get_teams",
+   "get_teams_by_id",
+   "get_user",
+   "get_users"
+  ]
+ },
+ "manifest_vs_norules": {
+  "tools": [
+   28,
+   28
+  ],
+  "templated_groups": [
+   20,
+   20
+  ],
+  "note": "Vikunja ids are integers, which rea templates with its built-in numeric rule in both views, so the opt-in rules change nothing (28 tools either way). Two-id routes get `id` and `id_2` parameters."
+ },
+ "seeded_objects": "4 users (rea-admin and three crew members), 5 projects (one child, one archived), 3 labels, 7 tasks with priorities, due dates, labels, assignees and a relation, 2 comments, 2 teams, project shares to the teams and one user, and 1 saved filter",
+ "seeded_objects_detail": {
+  "users": {
+   "rea-admin": "Rea Admin",
+   "ada-finch": "Ada Finch",
+   "rui-castellanos": "Rui Castellanos",
+   "mina-okafor": "Mina Okafor (emails first.last@example.test)"
+  },
+  "projects": {
+   "Lighthouse Rota": "Night-watch planning for the lamp gallery and the tide tables.",
+   "Lamp Room Upkeep": "child of Lighthouse Rota",
+   "Granite Ledger": "Quarterly stone counts for the north quarry and the tidal yard.",
+   "Blue Heron Kitchen": "Menu planning that follows the spring tides, 36 covers a sitting.",
+   "Copperfield Annex Repaint": "archived"
+  },
+  "labels": {
+   "tide-critical": "Must be finished before the next spring tide.",
+   "quarry-audit": "Part of the quarterly Granite Ledger audit.",
+   "kelp-order": "Needs a supply order from the Saltmarsh Depot."
+  },
+  "tasks": [
+   "Draft the January night-shift rota (Ada, priority 3, due 2027-01-05, tide-critical)",
+   "Log the lamp oil budget (Ada)",
+   "Trim the wicks before dusk (Rea Admin, done, Lamp Room Upkeep)",
+   "Count the blocks in the tidal yard (Rui, priority 4, quarry-audit, related to cart 7)",
+   "Retire cart number 7 (Rui, done)",
+   "Order smoked kelp from the Saltmarsh Depot (Mina, kelp-order + tide-critical)",
+   "Print the tide-table menu cards (Mina, 50 percent)"
+  ],
+  "comments": [
+   "Rui on the tidal-yard count: Counted 97 blocks on the fourteenth; two are cracked.",
+   "Mina on the kelp order: The depot confirmed it can deliver on Thursday."
+  ],
+  "teams": {
+   "Night Watch": "created by Ada, shared on Lighthouse Rota (read/write)",
+   "Quarry Auditors": "created by Rui, shared on Granite Ledger (read/write)"
+  },
+  "user_share": "Blue Heron Kitchen shared with mina-okafor (read/write)",
+  "saved_filter": "Tide-critical open work: done = false && labels in tide-critical",
+  "scratch_during_capture": "task Rea scratch task created (POST 201), edited (PATCH 200), read, deleted (DELETE 204), re-read (404)"
+ },
+ "ui_pages_visited": [
+  "/login",
+  "/",
+  "/projects",
+  "/projects/<Lighthouse Rota>/<List view>",
+  "/projects/<Blue Heron Kitchen>/<Kanban view>",
+  "/tasks/<tidal-yard count>",
+  "/labels",
+  "/teams",
+  "/teams/<Night Watch>/edit"
+ ],
+ "auth_note": "The 2.x web UI signs in with POST /api/v2/login, keeps the JWT in localStorage (\"token\"), sends it as a bearer header and refreshes it through POST /api/v2/user/token/refresh. The scripted fetch calls read the token from localStorage inside the page. Login and refresh are dropped by the scope's auth filter; request headers are stripped."
+}

@@ -1,0 +1,16 @@
+{
+  "app": "n8n",
+  "title": "n8n",
+  "repo": "N8nEnv-REA",
+  "license": "Sustainable Use License 1.0 (fair-code; .ee files under the n8n Enterprise License)",
+  "authors": "n8n GmbH",
+  "hf_license": "apache-2.0",
+  "version": "1.123.85",
+  "image": "n8nio/n8n:1.123.85",
+  "image_digest": "sha256:8d4e5a2b73e5ac3bdbd1cc310f5bb0a12897851e700413cf8674b6bf0f374d5a",
+  "port": 3218,
+  "keep_regex": "^/rest/",
+  "domain": "workflow automation",
+  "exclude_tools": "settings|module_settings|license|cta|roles|count$|limits|insights|active_workflows|credentials|ai_|community|projects_by_project_id",
+  "max_occurrences": 16
+}

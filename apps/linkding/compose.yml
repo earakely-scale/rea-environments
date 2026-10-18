@@ -1,0 +1,25 @@
+# linkding 1.47.0 (sqlite) for the rea showcase capture. Loopback only; one compose project: rea-linkding.
+# The superuser password comes from ~/capture/linkding/.admin (mode 600, created by `python3 seed.py init`, deleted at teardown).
+services:
+  linkding:
+    image: sissbruecker/linkding:1.47.0
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3203:9090"
+    env_file:
+      - path: .admin
+        required: true
+    environment:
+      LD_SUPERUSER_NAME: rea-admin
+      # No favicon, preview-image or snapshot jobs: nothing reaches out to the (invented) example.test hosts.
+      LD_DISABLE_BACKGROUND_TASKS: "True"
+      LD_CSRF_TRUSTED_ORIGINS: http://127.0.0.1:3203
+    volumes:
+      - linkding-data:/etc/linkding/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:9090/health', timeout=4)"]
+      interval: 5s
+      timeout: 5s
+      retries: 36
+volumes:
+  linkding-data: {}

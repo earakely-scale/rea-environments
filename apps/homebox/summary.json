@@ -1,0 +1,285 @@
+{
+ "app": "homebox",
+ "image": "ghcr.io/sysadminsmedia/homebox:0.27.0",
+ "image_digest": "ghcr.io/sysadminsmedia/homebox@sha256:d49f12caf25ce3fa7f44102bb74953f3dff2dfdad38d87bd9057f3f611e797bb",
+ "app_version": "0.27.0",
+ "app_version_full": "v0.27.0 (GET /api/v1/status build.version, commit bae3fb4e9b84672e4e64da15e57a14217aea7c13)",
+ "database": "sqlite3 at /data/homebox.db (default driver); named volume homebox-data",
+ "pepper": "HBOX_AUTH_API_KEY_PEPPER is mandatory from 0.27.0; generated at run time into .hb.env (mode 600), deleted at teardown",
+ "compose_project": "rea-homebox",
+ "origin": "http://127.0.0.1:3208",
+ "tooling": {
+  "rea": "6.6.0",
+  "playwright-core": "1.58.2",
+  "chromium": "Chromium 155.0.8059.79 snap",
+  "node": "v24.22.0",
+  "python": "3.12.3",
+  "docker": "29.9.1",
+  "compose": "5.6.0",
+  "agent-env": "agent-env 0.9.1334",
+  "vm": "Ubuntu 24.04 amd64"
+ },
+ "scoped_har": {
+  "file": "homebox.scoped.har",
+  "sha256": "249dbf323faaf79dc6a91d856dc6e7ebc494f2e8bfa3b15af85de7af0bcbf2cf",
+  "bytes": 256047,
+  "records": 91,
+  "methods": {
+   "GET": 87,
+   "PUT": 2,
+   "POST": 1,
+   "DELETE": 1
+  },
+  "statuses": {
+   "200": 88,
+   "201": 1,
+   "204": 1,
+   "404": 1
+  }
+ },
+ "scope_har": {
+  "origin": "http://127.0.0.1:3208",
+  "keep_regex": "^/api/v1/",
+  "kept": 91,
+  "dropped": {
+   "other-origin": 0,
+   "path": 209,
+   "non-json": 0,
+   "auth": 1,
+   "big-body": 0,
+   "over-max": 0
+  },
+  "methods": {
+   "GET": 87,
+   "PUT": 2,
+   "POST": 1,
+   "DELETE": 1
+  },
+  "bytes": 255534
+ },
+ "credential_grep": {
+  "admin_secret_literal_hits": 0,
+  "token_shape_hits_hf_ghp_Bearer": 0,
+  "result": "pass"
+ },
+ "manifest": {
+  "evidence_id": "ev_12cd79fbad0e4c228684699815fdee9521ba2b9ede6c2b891c504603d1e4e457",
+  "confidence": "inferred",
+  "view_digest": "da0c2a3473cd51ad682dbbaef9e634d163e3530b714c44bb7007eb09abaaeb8f",
+  "tools": 28,
+  "tools_by_method": {
+   "GET": 24,
+   "POST": 1,
+   "DELETE": 1,
+   "PUT": 2
+  },
+  "templated_groups": 7,
+  "params_by_rule": {
+   "uuid": 7
+  },
+  "params_total": 7,
+  "query_parameter_names_distinct": [
+   "entityTypeIds",
+   "field",
+   "filterChildren",
+   "includeArchived",
+   "isLocation",
+   "matchAllTags",
+   "negateTags",
+   "onlyWithPhoto",
+   "onlyWithoutPhoto",
+   "orderBy",
+   "orderDirection",
+   "page",
+   "pageSize",
+   "parentIds",
+   "q",
+   "status",
+   "tags",
+   "withItems"
+  ],
+  "tools_with_body_shape": 3,
+  "statuses_seen": [
+   200,
+   201,
+   204,
+   404
+  ],
+  "excluded": 0,
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "tool_names": [
+   "get_currencies",
+   "get_entities",
+   "post_entities",
+   "get_entities_fields",
+   "get_entities_fields_values",
+   "get_entities_tree",
+   "delete_entities_by_uuid",
+   "get_entities_by_uuid",
+   "put_entities_by_uuid",
+   "get_entities_maintenance_by_uuid",
+   "get_entities_path_by_uuid",
+   "get_entity_types",
+   "get_groups",
+   "get_groups_all",
+   "get_groups_members",
+   "get_groups_statistics",
+   "get_groups_statistics_locations",
+   "get_groups_statistics_tags",
+   "get_maintenance",
+   "get_status",
+   "get_tags",
+   "get_tags_by_uuid",
+   "get_templates",
+   "get_templates_by_uuid",
+   "get_users_self",
+   "get_users_self_api_keys",
+   "get_users_self_settings",
+   "put_users_self_settings"
+  ]
+ },
+ "manifest_norules": {
+  "evidence_id": "ev_c3747d67e4a51ef2a5688ddc2829ae5649a7ac4234b61a555ad07d785b2e2e90",
+  "confidence": "inferred",
+  "view_digest": "e35b9d3e0f60abfc45de25bab88bb9c6fffd23c20958f15f0fa4bcd7d9ef67c7",
+  "tools": 28,
+  "tools_by_method": {
+   "GET": 24,
+   "POST": 1,
+   "DELETE": 1,
+   "PUT": 2
+  },
+  "templated_groups": 7,
+  "params_by_rule": {
+   "uuid": 7
+  },
+  "params_total": 7,
+  "query_parameter_names_distinct": [
+   "entityTypeIds",
+   "field",
+   "filterChildren",
+   "includeArchived",
+   "isLocation",
+   "matchAllTags",
+   "negateTags",
+   "onlyWithPhoto",
+   "onlyWithoutPhoto",
+   "orderBy",
+   "orderDirection",
+   "page",
+   "pageSize",
+   "parentIds",
+   "q",
+   "status",
+   "tags",
+   "withItems"
+  ],
+  "tools_with_body_shape": 3,
+  "statuses_seen": [
+   200,
+   201,
+   204,
+   404
+  ],
+  "excluded": 0,
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "tool_names": [
+   "get_currencies",
+   "get_entities",
+   "post_entities",
+   "get_entities_fields",
+   "get_entities_fields_values",
+   "get_entities_tree",
+   "delete_entities_by_uuid",
+   "get_entities_by_uuid",
+   "put_entities_by_uuid",
+   "get_entities_maintenance_by_uuid",
+   "get_entities_path_by_uuid",
+   "get_entity_types",
+   "get_groups",
+   "get_groups_all",
+   "get_groups_members",
+   "get_groups_statistics",
+   "get_groups_statistics_locations",
+   "get_groups_statistics_tags",
+   "get_maintenance",
+   "get_status",
+   "get_tags",
+   "get_tags_by_uuid",
+   "get_templates",
+   "get_templates_by_uuid",
+   "get_users_self",
+   "get_users_self_api_keys",
+   "get_users_self_settings",
+   "put_users_self_settings"
+  ]
+ },
+ "evidence": {
+  "capture_evidence_id": "ev_cb9cef1bb6902484524658e34cfb3aa220e1f06dd807e8da93c2089899872e1c",
+  "capture_confidence": "observed",
+  "capture_total_records": 91
+ },
+ "seeded_objects": "user Rea Admin in the collection Copperfield Annex Stores (EUR); default tags and locations removed; 2 custom entity types (Storage Room, Spare Part); 5 tags (Lighthouse Rota, Calibration Due, Kitchen Brass, Spare Parts with nested Lens Spares); 4 locations (Saltmarsh Depot with nested Granite Ledger Vault, Copperfield Annex Workshop, Blue Heron Kitchen Pantry); 6 items with manufacturer, model, serial, price, notes and custom fields; 3 maintenance entries; 1 item template",
+ "seeded_detail": {
+  "user": "Rea Admin <rea-admin@example.test> (registered through POST /api/v1/users/register)",
+  "collection": "Copperfield Annex Stores, currency EUR (renamed with PUT /api/v1/groups)",
+  "entity_types": [
+   "Item (default)",
+   "Location (default)",
+   "Storage Room (location type, mdi-warehouse)",
+   "Spare Part (item type, mdi-cog)"
+  ],
+  "tags": {
+   "Lighthouse Rota": "#d4a017, 'Gear signed out for the lighthouse night shift.'",
+   "Calibration Due": "#c0392b, 'Needs recalibration before the spring census.'",
+   "Kitchen Brass": "#b8860b, 'Brassware and copper from the Blue Heron Kitchen.'",
+   "Spare Parts": "#5d6d7e, 'Replacement parts kept in reserve at the depot.'",
+   "Lens Spares": "#2e86c1, child of Spare Parts, 'Spare optics for the Fresnel lens.'"
+  },
+  "locations": {
+   "Saltmarsh Depot": "'Tin-roofed depot behind the dunes; the key is held by Tomas Vey.'",
+   "Granite Ledger Vault": "Storage Room inside Saltmarsh Depot, 'Locked stone room under the depot where the audit ledgers are kept.'",
+   "Copperfield Annex Workshop": "'Bench room on the annex ground floor, run by Mina Okafor.'",
+   "Blue Heron Kitchen Pantry": "Storage Room, 'Cold pantry next to the pass; brassware lives on the top shelf.'"
+  },
+  "items": {
+   "Fresnel Lens Polishing Kit": "Saltmarsh Depot; Finch and Vey Optics FLK-412, serial LR-0097-SD, 184.50 from Granite Point Chandlery (2025-11-03), insured; fields Lens Grade=Second-order, Cloth Count=12; tags Lighthouse Rota, Lens Spares",
+   "Tide Gauge Logger": "Granite Ledger Vault; Saltmarsh Instrument Works TGL-7, serial TG-2291-GL, 312.00 from Copperfield Annex Surplus, warranty 'Two years, seals excluded'; fields Datum=Granite Point Chart Datum, Waterproofed=true; tags Calibration Due, Lighthouse Rota",
+   "Copper Stockpot 40 L": "Blue Heron Kitchen Pantry; Heron Forge CSP-40, serial BH-0036-KP, quantity 2, 96.75; fields Lining=Tin, Capacity Litres=40; tag Kitchen Brass",
+   "Quarry Tally Counter": "Copperfield Annex Workshop; Ledgerline Tools QTC-412, serial GL-0412-QT, quantity 3, 22.40; field Assigned To=Rui Castellanos; tag Calibration Due",
+   "Brass Lamp Wick Trimmer": "Copperfield Annex Workshop; Heron Forge WT-22, serial CA-0022-WT, 41.00; field Blade Steel=Carbon; tags Lighthouse Rota, Kitchen Brass",
+   "Spare Lamp Mantle Pack": "Spare Part type in Saltmarsh Depot; Finch and Vey Optics MNT-24, serial SD-0024-MP, quantity 24, 58.00; field Mantle Size=Number 3 silk; tag Spare Parts"
+  },
+  "maintenance": [
+   "Recalibrate tide gauge (Tide Gauge Logger, scheduled 2026-11-14, cost 60)",
+   "Re-tin the lining (Copper Stockpot 40 L, completed 2026-08-20, cost 38)",
+   "Replace chamois cloths (Fresnel Lens Polishing Kit, scheduled 2026-12-01, cost 15.5)"
+  ],
+  "template": "Lighthouse Spare Part: default name 'Lamp room spare', manufacturer Finch and Vey Optics, location Saltmarsh Depot, tag Spare Parts, field Shelf=Depot shelf B",
+  "scratch_during_capture": "item 'Rea scratch item' created (201), replaced with PUT, read, deleted (204), re-read (404)"
+ },
+ "ui_pages_visited": [
+  "/ (login)",
+  "/home",
+  "/locations",
+  "/location/<Saltmarsh Depot id>",
+  "/items",
+  "/item/<Fresnel kit id>",
+  "/item/<Tide Gauge id>/maintenance",
+  "/tags",
+  "/tag/<Calibration Due id>",
+  "/maintenance",
+  "/templates",
+  "/collection",
+  "/profile",
+  "/home"
+ ]
+}

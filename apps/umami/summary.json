@@ -1,0 +1,343 @@
+{
+ "app": "umami",
+ "title": "Umami",
+ "image": "ghcr.io/umami-software/umami:3.4.0",
+ "image_digest": "ghcr.io/umami-software/umami@sha256:85909afc45bdcda1917394594a087421fdbb05610fded0fa9f6fb861abb2f367",
+ "app_version": "3.4",
+ "app_version_full": "3.4.0 (package.json; Next.js 16.3.4)",
+ "site_title": "Umami (no site title; 3 tracked websites: Lighthouse Rota Portal, Granite Ledger Docs, Blue Heron Kitchen)",
+ "database": "PostgreSQL 17.9 (postgres:17.9-alpine, second service, no host port); Prisma migrations applied at start",
+ "extra_images": {
+  "postgres": "postgres:17.9-alpine",
+  "postgres_digest": "postgres@sha256:c7526c0f6c3f30260a563d7bcf8ad778effac59a44f8ffa86678c35418338609"
+ },
+ "compose_project": "rea-umami",
+ "origin": "http://127.0.0.1:3215",
+ "licence": "MIT",
+ "tooling": {
+  "rea": "6.6.0",
+  "playwright-core": "1.58.2",
+  "chromium": "Chromium 155.0.8059.79 snap",
+  "node": "v24.22.0",
+  "python": "Python 3.12.3",
+  "docker": "Docker version 29.9.1, build dfc520d",
+  "compose": "5.6.0",
+  "vm": "Ubuntu 24.04 amd64"
+ },
+ "scoped_har": {
+  "file": "umami.scoped.har",
+  "sha256": "85400fd70ec0df831f86c350417c4aef021dd3e9faf5581aa00e58df379cd35a",
+  "bytes": 153212,
+  "records": 101,
+  "methods": {
+   "GET": 98,
+   "POST": 2,
+   "DELETE": 1
+  },
+  "statuses": {
+   "200": 101
+  }
+ },
+ "scope_har": {
+  "origin": "http://127.0.0.1:3215",
+  "keep_regex": "^/api/",
+  "drop_regex": "login|logout|signup|password|token|oauth|csrf|^/api/auth/ (narrowed, see scope_command_note)",
+  "max_body": 60000,
+  "max_records": 150,
+  "kept": 101,
+  "dropped": {
+   "other-origin": 5,
+   "path": 342,
+   "non-json": 0,
+   "auth": 11,
+   "big-body": 0,
+   "over-max": 0
+  },
+  "notes": [
+   "auth=11 are 3 GET /login page loads, POST /api/auth/login and 7 POST /api/auth/verify (one per page load)",
+   "other-origin=5 are favicon requests the UI makes to a third-party icon service for each website/referrer domain; capture.mjs aborts them in the browser (status -1, net::ERR_FAILED), so nothing left the VM",
+   "path=342 are the Next.js app shell, chunks, fonts and page routes",
+   "DELETE /api/websites/{id} answers 200 {\"ok\":true}; a re-read of the deleted website still answers 200 (soft delete), so the capture has no 404"
+  ]
+ },
+ "credential_grep": {
+  "admin_secret_literal_hits": 0,
+  "token_shape_hits": 0,
+  "session_cookie_name_hits": 0,
+  "result": "pass"
+ },
+ "evidence": {
+  "capture_evidence_id": "ev_dcfbfac54f2924c001dbf7cb902251fae953a583a02b6d119bcf091066fac078",
+  "capture_total_records": 101,
+  "capture_confidence": "observed"
+ },
+ "manifest": {
+  "evidence_id": "ev_4d0998b2ac5275c8de0fbf914694d19f4032770678f30df45c7dc53587db65e1",
+  "confidence": "inferred",
+  "view_digest": "489706631c3b16225e3793643784aedb3c9cefb71cee9142b644b019f5776e98",
+  "template_rules": [
+   "after-uid-literal",
+   "opaque-token",
+   "sibling-variance"
+  ],
+  "tools": 50,
+  "tools_by_method": {
+   "GET": 47,
+   "POST": 2,
+   "DELETE": 1
+  },
+  "templated_groups": 37,
+  "params_by_rule": {
+   "uuid": 44
+  },
+  "params_total": 44,
+  "query_parameter_names_total": 70,
+  "query_parameter_names_distinct": [
+   "endAt",
+   "event",
+   "ids",
+   "includeTeams",
+   "limit",
+   "maxResults",
+   "page",
+   "pageSize",
+   "propertyName",
+   "search",
+   "startAt",
+   "timezone",
+   "type",
+   "unit"
+  ],
+  "tools_with_body_shape": 2,
+  "statuses_seen": [
+   200
+  ],
+  "records": 101,
+  "excluded": 0,
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 50,
+   "total": 50,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "limitations_count": 9,
+  "tool_names": [
+   "get_2fa_status",
+   "get_admin_users",
+   "get_boards",
+   "get_boards_by_uuid",
+   "get_config",
+   "get_links",
+   "get_links_charts",
+   "get_links_by_uuid",
+   "get_me",
+   "get_pixels",
+   "get_pixels_charts",
+   "get_pixels_by_uuid",
+   "get_teams",
+   "get_teams_by_uuid",
+   "get_teams_users_by_uuid",
+   "get_teams_websites_by_uuid",
+   "get_users_by_uuid",
+   "get_users_teams_by_uuid",
+   "get_users_websites_by_uuid",
+   "get_websites",
+   "post_websites",
+   "get_websites_charts",
+   "delete_websites_by_uuid",
+   "get_websites_by_uuid",
+   "post_websites_by_uuid",
+   "get_websites_active_by_uuid",
+   "get_websites_annotations_by_uuid",
+   "get_websites_annotations_by_uuid_uuid_2",
+   "get_websites_daterange_by_uuid",
+   "get_websites_event_data_properties_by_uuid",
+   "get_websites_event_data_values_by_uuid",
+   "get_websites_events_by_uuid",
+   "get_websites_events_series_by_uuid",
+   "get_websites_events_stats_by_uuid",
+   "get_websites_funnels_by_uuid",
+   "get_websites_funnels_by_uuid_uuid_2",
+   "get_websites_goals_by_uuid",
+   "get_websites_goals_by_uuid_uuid_2",
+   "get_websites_metrics_by_uuid",
+   "get_websites_pageviews_by_uuid",
+   "get_websites_segments_by_uuid",
+   "get_websites_segments_by_uuid_uuid_2",
+   "get_websites_session_data_properties_by_uuid",
+   "get_websites_session_data_values_by_uuid",
+   "get_websites_sessions_by_uuid",
+   "get_websites_sessions_weekly_by_uuid",
+   "get_websites_sessions_by_uuid_uuid_2",
+   "get_websites_sessions_activity_by_uuid_uuid_2",
+   "get_websites_sessions_properties_by_uuid_uuid_2",
+   "get_websites_stats_by_uuid"
+  ]
+ },
+ "manifest_norules": {
+  "evidence_id": "ev_04ea8c05b0869fc17efb024d29babe8b623cc1837d72faa44d47ce5720d8142e",
+  "confidence": "inferred",
+  "view_digest": "bc4b8da36cce287521e1787197edeaea94db2c4ab99447dd7f18309ec4d3ed60",
+  "template_rules": [],
+  "tools": 50,
+  "tools_by_method": {
+   "GET": 47,
+   "POST": 2,
+   "DELETE": 1
+  },
+  "templated_groups": 37,
+  "params_by_rule": {
+   "uuid": 44
+  },
+  "params_total": 44,
+  "query_parameter_names_total": 70,
+  "query_parameter_names_distinct": [
+   "endAt",
+   "event",
+   "ids",
+   "includeTeams",
+   "limit",
+   "maxResults",
+   "page",
+   "pageSize",
+   "propertyName",
+   "search",
+   "startAt",
+   "timezone",
+   "type",
+   "unit"
+  ],
+  "tools_with_body_shape": 2,
+  "statuses_seen": [
+   200
+  ],
+  "records": 101,
+  "excluded": 0,
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 50,
+   "total": 50,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "limitations_count": 8,
+  "tool_names": [
+   "get_2fa_status",
+   "get_admin_users",
+   "get_boards",
+   "get_boards_by_uuid",
+   "get_config",
+   "get_links",
+   "get_links_charts",
+   "get_links_by_uuid",
+   "get_me",
+   "get_pixels",
+   "get_pixels_charts",
+   "get_pixels_by_uuid",
+   "get_teams",
+   "get_teams_by_uuid",
+   "get_teams_users_by_uuid",
+   "get_teams_websites_by_uuid",
+   "get_users_by_uuid",
+   "get_users_teams_by_uuid",
+   "get_users_websites_by_uuid",
+   "get_websites",
+   "post_websites",
+   "get_websites_charts",
+   "delete_websites_by_uuid",
+   "get_websites_by_uuid",
+   "post_websites_by_uuid",
+   "get_websites_active_by_uuid",
+   "get_websites_annotations_by_uuid",
+   "get_websites_annotations_by_uuid_uuid_2",
+   "get_websites_daterange_by_uuid",
+   "get_websites_event_data_properties_by_uuid",
+   "get_websites_event_data_values_by_uuid",
+   "get_websites_events_by_uuid",
+   "get_websites_events_series_by_uuid",
+   "get_websites_events_stats_by_uuid",
+   "get_websites_funnels_by_uuid",
+   "get_websites_funnels_by_uuid_uuid_2",
+   "get_websites_goals_by_uuid",
+   "get_websites_goals_by_uuid_uuid_2",
+   "get_websites_metrics_by_uuid",
+   "get_websites_pageviews_by_uuid",
+   "get_websites_segments_by_uuid",
+   "get_websites_segments_by_uuid_uuid_2",
+   "get_websites_session_data_properties_by_uuid",
+   "get_websites_session_data_values_by_uuid",
+   "get_websites_sessions_by_uuid",
+   "get_websites_sessions_weekly_by_uuid",
+   "get_websites_sessions_by_uuid_uuid_2",
+   "get_websites_sessions_activity_by_uuid_uuid_2",
+   "get_websites_sessions_properties_by_uuid_uuid_2",
+   "get_websites_stats_by_uuid"
+  ]
+ },
+ "scope_command_note": "drop regex narrowed to 'login|logout|signup|password|token|oauth|csrf|^/api/auth/': the default pattern contains 'session', which drops Umami's analytics endpoints /api/websites/{id}/sessions*, /session-data/* (visitor sessions, not auth sessions). The narrowed pattern still drops POST /api/auth/login (the token reply) and every POST /api/auth/verify.",
+ "seeded_objects": "2 teams (Saltmarsh Depot Analytics, Copperfield Annex Web), 3 websites (Lighthouse Rota Portal, Granite Ledger Docs, Blue Heron Kitchen), 2 users with team roles, 1 short link, 1 pixel, 1 board, 2 annotations, 1 segment, 1 goal, 1 funnel, and 86 synthetic collector calls (68 pageviews, 12 custom events with data, 6 identify calls) over 24 visitors in the last six days",
+ "seeded_detail": {
+  "admin": "the image's default admin account renamed to rea-admin with a generated password (the default credential no longer works)",
+  "teams": [
+   "Saltmarsh Depot Analytics (ada.finch team-member)",
+   "Copperfield Annex Web (tomas.vey team-view-only)"
+  ],
+  "websites": [
+   "Lighthouse Rota Portal (lighthouse-rota.example.test, team Saltmarsh Depot Analytics)",
+   "Granite Ledger Docs (granite-ledger.example.test, owned by rea-admin)",
+   "Blue Heron Kitchen (blue-heron-kitchen.example.test, team Copperfield Annex Web)"
+  ],
+  "users": [
+   "ada.finch (user)",
+   "tomas.vey (view-only)"
+  ],
+  "links": [
+   "Tide Table Signup (slug tide-table-signup)"
+  ],
+  "pixels": [
+   "Granite Ledger Newsletter Pixel (slug granite-ledger-pixel)"
+  ],
+  "boards": [
+   "Night Shift Overview (website board on Lighthouse Rota Portal)"
+  ],
+  "annotations": [
+   "Granite Ledger Docs: Quarterly stone count published; audited by Rui Castellanos.",
+   "Blue Heron Kitchen: Spring tide menu launched with smoked kelp broth."
+  ],
+  "segments": [
+   "Kelp Broth Readers (path contains kelp)"
+  ],
+  "goals": [
+   "Ledger PDF Downloads (event download-ledger-pdf)"
+  ],
+  "funnels": [
+   "Rota Signup Funnel (/rota -> /rota/signup -> event rota-signup, 60 min window)"
+  ],
+  "traffic": "POST /api/send with explicit userAgent (Chrome/Linux, Firefox/Windows, Safari/macOS, Safari/iOS), ip in 198.51.100.0/24, timestamps from six days ago; referrers saltmarsh-depot.example.test and copperfield-annex.example.test; events rota-signup, tide-table-download, download-ledger-pdf, book-sitting with data; identify data crew=night shift/day shift, home_station=Saltmarsh Depot",
+  "scratch_during_capture": "website Rea scratch website created, renamed (POST), read, deleted (200), re-read (200, soft-deleted)"
+ },
+ "ui_pages_visited": [
+  "/login (login form)",
+  "/websites",
+  "/websites/<Granite Ledger Docs> (overview)",
+  "/websites/<Lighthouse Rota Portal>/events",
+  "/websites/<Blue Heron Kitchen>/sessions",
+  "/links",
+  "/pixels",
+  "/boards",
+  "/teams",
+  "/admin/users"
+ ],
+ "resource_constraint": false
+}
