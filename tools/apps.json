@@ -1,0 +1,38 @@
+{
+  "grafana": {
+    "title": "Grafana",
+    "license": "AGPL-3.0",
+    "authors": "Grafana Labs",
+    "repo": "GrafanaEnv-REA",
+    "hf_license": "apache-2.0"
+  },
+  "gitea": {
+    "title": "Gitea",
+    "license": "MIT",
+    "authors": "the Gitea contributors",
+    "repo": "GiteaEnv-REA",
+    "hf_license": "apache-2.0"
+  },
+  "nocodb": {
+    "title": "NocoDB",
+    "license": "AGPL-3.0",
+    "authors": "NocoDB Inc.",
+    "repo": "NocoDBEnv-REA",
+    "hf_license": "apache-2.0"
+  },
+  "mattermost": {
+    "title": "Mattermost",
+    "license": "Team Edition, MIT-licensed server core",
+    "authors": "Mattermost, Inc.",
+    "repo": "MattermostEnv-REA",
+    "hf_license": "apache-2.0",
+    "episode_notes": "The miss is a model error, not a replay error: on `qa-01` the model called a tool named `get_users_teams_threads_by_uid_uid_3`, which does not exist (the three-parameter route is `get_users_teams_threads_by_uid_uid_2_uid`), the provider rejected the call with a 400 and the episode ended without an answer. Generated names for routes with several same-rule parameters are the hard part of this environment."
+  },
+  "ghost": {
+    "title": "Ghost",
+    "license": "MIT",
+    "authors": "the Ghost Foundation",
+    "repo": "GhostEnv-REA",
+    "hf_license": "apache-2.0"
+  }
+}

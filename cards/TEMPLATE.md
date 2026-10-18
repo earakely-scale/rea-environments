@@ -42,6 +42,8 @@ write tasks weak; the manifest's `unknowns` say so.
 
 {{MODEL_BOARD}}
 
+{{EPISODE_NOTES}}
+
 ## Run it yourself
 
 ```bash

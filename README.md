@@ -15,6 +15,9 @@ deterministically against the recorded values. Everything here is synthetic data
 | mattermost | Mattermost Team Edition 12.0.0 | 37 | 129 | [earakely-scale/MattermostEnv-REA](https://huggingface.co/datasets/earakely-scale/MattermostEnv-REA) |
 | ghost | Ghost 5.130 | 36 | 76 | [earakely-scale/GhostEnv-REA](https://huggingface.co/datasets/earakely-scale/GhostEnv-REA) |
 
+All five are in the Hub collection
+[REA Environments on AgentEnv](https://huggingface.co/collections/earakely-scale/rea-environments-on-agentenv-6ad48fc54339527205162f82).
+
 Each dataset holds the bundle, its tasks, the recorded episodes with chat transcripts, and a card that documents the
 capture, the manifest, what replay means and does not, the grading, and a comparison with
 [PortSimEnv on AgentEnv](https://huggingface.co/datasets/earakely-scale/PortSimEnv-AgentEnv), a hand-built simulation
@@ -23,7 +26,33 @@ environment on the same framework. Run one with the [agentenv-hf](https://github
 ```bash
 uv tool install agentenv-framework --with 'agentenv-hf @ git+https://github.com/earakely-scale/agentenv-hf-plugin@v0.3.0'
 agent-env hf run earakely-scale/GhostEnv-REA --bundle ghost --task smoke
+agent-env hf run earakely-scale/GhostEnv-REA --bundle ghost --eval ghost-retrieval --model openai/gpt-oss-120b:groq
 ```
+
+The eval needs a model endpoint: set `[model] base_url` and `api_key` in `.agentenv/config.toml` (the Hugging Face
+router at `https://router.huggingface.co/v1` works with any `hf_` token; `tools/probe_models.py` checks which
+model:provider pairs accept tool calls with yours).
+
+## Results
+
+Each environment has 12 retrieval tasks; every task was run once per model through the Hugging Face router, with the
+bundle's `replay-qa` agent (one tool call per question is the expected shape). Reward is 1 when the response contains
+the recorded value, else 0; there is no judge.
+
+| environment | `openai/gpt-oss-120b:groq` | `zai-org/GLM-5.3-Flash:zai-org` |
+|---|---|---|
+| grafana | 12 / 12 | 12 / 12 |
+| gitea | 12 / 12 | 11 / 12 |
+| nocodb | 12 / 12 | 12 / 12 |
+| mattermost | 11 / 12 | 12 / 12 |
+| ghost | 12 / 12 | 12 / 12 |
+| **total** | **59 / 60** | **59 / 60** |
+
+Both misses are model errors, not replay errors, and each card says which: on Mattermost, gpt-oss called a tool
+named `get_users_teams_threads_by_uid_uid_3` that does not exist (the three-parameter route is
+`get_users_teams_threads_by_uid_uid_2_uid`) and the provider rejected the call; on Gitea, GLM answered a commit
+question with a value other than the recorded one. Generated names for routes with several same-rule parameters are
+the hard part of these environments. Every episode, including the misses, is in the dataset with its transcript.
 
 ## How an environment is made
 

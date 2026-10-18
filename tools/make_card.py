@@ -9,7 +9,7 @@ from pathlib import Path
 
 ap = argparse.ArgumentParser()
 for k in ("app", "title", "license", "authors", "repo", "bundle", "summary", "out"): ap.add_argument(f"--{k}", required=True)
-ap.add_argument("--episodes"); ap.add_argument("--export-pr", default="4976"); ap.add_argument("--template", default=str(Path(__file__).resolve().parent.parent / "cards" / "TEMPLATE.md"))
+ap.add_argument("--episodes"); ap.add_argument("--apps"); ap.add_argument("--export-pr", default="4976"); ap.add_argument("--template", default=str(Path(__file__).resolve().parent.parent / "cards" / "TEMPLATE.md"))
 a = ap.parse_args()
 s = json.load(open(a.summary))[a.app]; tpl = open(a.template).read()
 index = (Path(a.bundle) / "tasks" / "INDEX.md").read_text().splitlines()
@@ -23,6 +23,13 @@ if ep["models"]:
     board = "\n".join(board) + "\n\nEvery episode is in the `episodes` config with its transcript; rewards are the deterministic verifier scores."
 else:
     board = "No episodes recorded yet."
+failed = {}
+for e in ep.get("episodes", []):
+    if e.get("score") != 1.0: failed.setdefault(e["model"], []).append(e["task"])
+notes = [f"`{m}` missed " + ", ".join(f"`{t}`" for t in sorted(ts)) + "." for m, ts in failed.items()]
+app_notes = json.load(open(a.apps)).get(a.app, {}).get("episode_notes") if a.apps else None
+if app_notes: notes.append(app_notes)
+if ep["models"] and not notes: notes.append("Every recorded episode passed.")
 fill = {
     "APP_TITLE": a.title, "APP_NAME": a.title, "APP_VERSION": s["app_version"], "APP_LICENSE": a.license, "APP_AUTHORS": a.authors,
     "TOOL_COUNT": str(s["tools"]), "TOOL_COUNT_NORULES": str(s["tools_norules"]),
@@ -33,7 +40,7 @@ fill = {
     "MODELS": ", ".join(f"`{m}`" for m in ep["models"]) or "no model yet",
     "CAPTURE_EVIDENCE_ID": s["capture_evidence_id"], "MANIFEST_EVIDENCE_ID": s["manifest_evidence_id"], "CONFIDENCE": s["confidence"],
     "HAR_SHA256": s["scoped_har_sha256"], "HAR_BYTES": f"{s['scoped_har_bytes']:,}", "EXPORT_PR": a.export_pr,
-    "TASK_TABLE": task_table, "MODEL_BOARD": board, "REPO_NAME": a.repo,
+    "TASK_TABLE": task_table, "MODEL_BOARD": board, "EPISODE_NOTES": " ".join(notes), "REPO_NAME": a.repo,
     "SEEDED_OBJECTS": json.load(open(Path(a.summary).parent / a.app / "summary.json")).get("seeded_objects", "see the capture notes"),
 }
 out = tpl
