@@ -140,6 +140,8 @@ Task counts differ (6 to 12) because the generator keeps only distinctive values
    manifest view does).
 
 `apps/<app>/README-notes.md` records each application's versions, digests, seed or endpoints, capture and numbers.
+Every application has its inputs under `apps/` except Sentry; its row in `apps/SUMMARY.json` and its
+[dataset](https://huggingface.co/datasets/earakely-scale/SentryEnv-REA) carry its numbers, manifest, bundle and card.
 
 The REA environment commands are proposed upstream in morluto/rea#4954 (merged), #4955, #4975, #4999 and #5182
 (scenario captures as manifest parents; design discussion morluto/rea#4933); until they ship in a release, each bundle installs the prerelease build from the tarball it
