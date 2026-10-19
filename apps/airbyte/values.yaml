@@ -1,0 +1,3 @@
+# Airbyte helm chart V2 values for the rea showcase (abctl local install --values values.yaml).
+global:
+  airbyteUrl: http://127.0.0.1:3302

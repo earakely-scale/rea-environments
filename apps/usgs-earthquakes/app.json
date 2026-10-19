@@ -1,0 +1,13 @@
+{
+  "app": "usgs-earthquakes",
+  "title": "USGS Earthquake Catalog",
+  "repo": "UsgsEarthquakesEnv-REA",
+  "kind": "public-api",
+  "license": "U.S. public domain",
+  "authors": "the U.S. Geological Survey",
+  "hf_license": "apache-2.0",
+  "version": "2.8.1",
+  "origin": "https://earthquake.usgs.gov",
+  "domain": "earthquake catalog and real-time seismic event feeds (geoscience)",
+  "keep_regex": "^/(fdsnws/event/1/|earthquakes/feed/v1\\.0/|product/|ws/geoserve/)"
+}

@@ -1,0 +1,30 @@
+# Lychee 6 (sqlite) for the rea showcase capture. Loopback only; one compose project: rea-lychee.
+services:
+  lychee:
+    image: lycheeorg/lychee:v6.10.4
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3402:80"
+    environment:
+      APP_URL: http://127.0.0.1:3402
+      APP_ENV: production
+      DB_CONNECTION: sqlite
+      TIMEZONE: UTC
+      PHP_TZ: UTC
+      LOG_VIEWER_ENABLED: "false"
+      LEGACY_API_ENABLED: "false"
+    volumes:
+      - lychee-conf:/conf
+      - lychee-uploads:/uploads
+      - lychee-sym:/sym
+      - lychee-logs:/logs
+    healthcheck:
+      test: ["CMD-SHELL", "curl --fail http://localhost:80/ || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 48
+volumes:
+  lychee-conf: {}
+  lychee-uploads: {}
+  lychee-sym: {}
+  lychee-logs: {}

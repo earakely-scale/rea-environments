@@ -1,0 +1,272 @@
+{
+ "app": "usgs-earthquakes",
+ "kind": "public-api",
+ "captured_on": "2026-10-19",
+ "fair_access": "a declared User-Agent, one request at a time at least 600 ms apart, 118 requests in the whole session",
+ "seeded_objects": "eighteen 2024 earthquakes read by event id (twelve M5.3-5.8 from 1-15 February, six M4.6-4.9 from 4-6 March) plus event lists and counts for fixed 2024 windows, PAGER alerts and comments, ShakeMap run info and Did You Feel It? response counts for a few of those events, three Flinn-Engdahl region lookups and five small real-time summary feeds",
+ "app_version": "2.8.1",
+ "app_version_note": "service version from /fdsnws/event/1/version (FDSN event web service, API version 1)",
+ "origin": "https://earthquake.usgs.gov",
+ "licence": "U.S. public domain (USGS-authored data)",
+ "authors": "the U.S. Geological Survey",
+ "user_agent": "rea-environments showcase (https://github.com/earakely-scale/rea-environments)",
+ "endpoints": [
+  "/fdsnws/event/1/version (text)",
+  "/fdsnws/event/1/application.json",
+  "/fdsnws/event/1/count?format=geojson&starttime&endtime&minmagnitude[&minlatitude&maxlatitude&minlongitude&maxlongitude]",
+  "/fdsnws/event/1/query?format=geojson&starttime&endtime&minmagnitude&maxmagnitude&orderby&limit (lists; box, radius, PAGER alertlevel and depth filters)",
+  "/fdsnws/event/1/query?eventid=<id>&format=geojson (single events)",
+  "/product/losspager/<id>/us/<update>/json/alerts.json and json/comments.json",
+  "/product/shakemap/<id>/us/<update>/download/info.json",
+  "/product/dyfi/<id>/us/<update>/dyfi_plot_numresp.json",
+  "/ws/geoserve/regions.json?latitude&longitude&type=fe",
+  "/earthquakes/feed/v1.0/summary/{significant_month,significant_week,4.5_day,all_hour,1.0_hour}.geojson"
+ ],
+ "fixed_windows": [
+  "2024-02-01..2024-02-15 M5.3+",
+  "2024-02-01..2024-02-29 M4.5+ (Philippines box, depth >= 300 km)",
+  "2024-03-04..2024-03-06 M4.5-4.9",
+  "2024-03 M6+",
+  "2024-05-01..2024-05-08 M5.5+",
+  "2024-01..2024-03 within 300 km of Vallenar, Chile",
+  "2024-01..2024-06 PAGER yellow, M6.5+ count"
+ ],
+ "live_parts": "the five summary feeds are a snapshot of the capture day (2026-10-19 UTC); everything else is a fixed past window or a fixed event id",
+ "event_ids": [
+  "us7000lx12",
+  "us7000lx33",
+  "us7000ly7s",
+  "us7000lx2q",
+  "us7000lyjh",
+  "us7000lyiz",
+  "us7000lyi6",
+  "us7000lxgr",
+  "us7000lz2v",
+  "us7000lz8a",
+  "us7000lwwh",
+  "us7000ly6w",
+  "us7000m45n",
+  "us7000m45u",
+  "us6000mglf",
+  "us6000mgln",
+  "us7000m462",
+  "us6000mglu"
+ ],
+ "tooling": {
+  "rea": "6.6.0",
+  "playwright-core": "1.58.2",
+  "chromium": "Chromium 155.0.8059.79 snap",
+  "node": "v24.22.0",
+  "python": "3.12.3",
+  "vm": "Ubuntu 24.04 amd64"
+ },
+ "scoped_har": {
+  "file": "usgs-earthquakes.scoped.har",
+  "sha256": "581298ceb2d346e1217781c3fe4bd84f841e0a7bf16bd60a5ea967ed6a57632e",
+  "bytes": 707036,
+  "records": 53,
+  "methods": {
+   "GET": 53
+  },
+  "statuses": {
+   "200": 53
+  }
+ },
+ "scope_har": {
+  "origin": "https://earthquake.usgs.gov",
+  "keep_regex": "^/(fdsnws/event/1/|earthquakes/feed/v1\\.0/|product/|ws/geoserve/)",
+  "drop_regex": "default (login|logout|signup|password|session|token|oauth|csrf)",
+  "max_body": 60000,
+  "max_records": 150,
+  "kept": 53,
+  "dropped": {
+   "other-origin": 0,
+   "path": 0,
+   "non-json": 0,
+   "auth": 0,
+   "big-body": 0,
+   "over-max": 0
+  },
+  "notes": [
+   "the opening document /fdsnws/event/1/version is text/plain and is kept as a record",
+   "largest single body 46 KB (us7000lwwh event detail)"
+  ]
+ },
+ "credential_grep": {
+  "token_shape_hits_hf_sk_ghp_Bearer": 0,
+  "email_addresses": 0,
+  "forbidden_word_hits_full_har": 0,
+  "result": "pass"
+ },
+ "evidence": {
+  "capture_evidence_id": "ev_7058fa0affe6d87c4cbd13c21c24f8ff44df7188dae0fbaefcbbebf025d02f81",
+  "capture_total_records": 53,
+  "capture_confidence": "observed"
+ },
+ "manifest": {
+  "evidence_id": "ev_5ee5d9ec0205f46279b730995d6b4f5f8eea7f2e948837a67f91868491ccbce4",
+  "confidence": "inferred",
+  "view_digest": "25d848913abbbe25990725bf0e4c7b1ce30dceef21ab2e01426a69b94d4eecee",
+  "template_rules": [
+   "after-uid-literal",
+   "opaque-token",
+   "sibling-variance"
+  ],
+  "tools": 10,
+  "tools_by_method": {
+   "GET": 10
+  },
+  "templated_groups": 9,
+  "params_by_rule": {
+   "sibling-variance": 5,
+   "numeric": 8
+  },
+  "params_total": 13,
+  "query_parameter_names_total": 28,
+  "query_parameter_names_distinct": [
+   "alertlevel",
+   "endtime",
+   "eventid",
+   "format",
+   "latitude",
+   "limit",
+   "longitude",
+   "maxlatitude",
+   "maxlongitude",
+   "maxmagnitude",
+   "maxradiuskm",
+   "mindepth",
+   "minlatitude",
+   "minlongitude",
+   "minmagnitude",
+   "orderby",
+   "starttime",
+   "type"
+  ],
+  "tools_with_body_shape": 0,
+  "statuses_seen": [
+   200
+  ],
+  "records": 53,
+  "excluded": 0,
+  "excluded_by_reason": {},
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 10,
+   "total": 10,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "limitations_count": 8,
+  "tool_names": [
+   "get_earthquakes_feed_summary_by_summary_id",
+   "get_fdsnws_event_application_by_id",
+   "get_fdsnws_event_count_by_id",
+   "get_fdsnws_event_query_by_id",
+   "get_fdsnws_event_version_by_id",
+   "get_product_dyfi_us_dyfi_plot_numresp_by_dyfi_id_id",
+   "get_product_losspager_us_json_alerts_by_losspager_id_id",
+   "get_product_losspager_us_json_comments_by_losspager_id_id",
+   "get_product_shakemap_us_download_info_by_shakemap_id_id",
+   "get_ws_geoserve_regions"
+  ]
+ },
+ "manifest_norules": {
+  "evidence_id": "ev_d4fca0b8484a0b2d111f12f9cc0a3008a6e4026841b5e89bb06d6b0e4c8751bf",
+  "confidence": "inferred",
+  "view_digest": "ae90571e2b5bf7daaba34ff4704c23afe3cc25e2c25990c64fbe5f1b648e065e",
+  "template_rules": [],
+  "tools": 23,
+  "tools_by_method": {
+   "GET": 23
+  },
+  "templated_groups": 17,
+  "params_by_rule": {
+   "numeric": 17
+  },
+  "params_total": 17,
+  "query_parameter_names_total": 28,
+  "query_parameter_names_distinct": [
+   "alertlevel",
+   "endtime",
+   "eventid",
+   "format",
+   "latitude",
+   "limit",
+   "longitude",
+   "maxlatitude",
+   "maxlongitude",
+   "maxmagnitude",
+   "maxradiuskm",
+   "mindepth",
+   "minlatitude",
+   "minlongitude",
+   "minmagnitude",
+   "orderby",
+   "starttime",
+   "type"
+  ],
+  "tools_with_body_shape": 0,
+  "statuses_seen": [
+   200
+  ],
+  "records": 53,
+  "excluded": 0,
+  "excluded_by_reason": {},
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 23,
+   "total": 23,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "limitations_count": 7,
+  "tool_names": [
+   "get_earthquakes_feed_summary_1",
+   "get_earthquakes_feed_summary_4",
+   "get_earthquakes_feed_summary_all_hour",
+   "get_earthquakes_feed_summary_significant_month",
+   "get_earthquakes_feed_summary_significant_week",
+   "get_fdsnws_event_application_by_id",
+   "get_fdsnws_event_count_by_id",
+   "get_fdsnws_event_query_by_id",
+   "get_fdsnws_event_version_by_id",
+   "get_product_dyfi_us7000ly7s_us_dyfi_plot_numresp_by_id",
+   "get_product_dyfi_us7000lyi6_us_dyfi_plot_numresp_by_id",
+   "get_product_dyfi_us7000lyiz_us_dyfi_plot_numresp_by_id",
+   "get_product_losspager_us7000lx2q_us_json_alerts_by_id",
+   "get_product_losspager_us7000lx2q_us_json_comments_by_id",
+   "get_product_losspager_us7000lx33_us_json_alerts_by_id",
+   "get_product_losspager_us7000lx33_us_json_comments_by_id",
+   "get_product_losspager_us7000ly7s_us_json_alerts_by_id",
+   "get_product_losspager_us7000ly7s_us_json_comments_by_id",
+   "get_product_shakemap_us7000lx2q_us_download_info_by_id",
+   "get_product_shakemap_us7000lx33_us_download_info_by_id",
+   "get_product_shakemap_us7000ly7s_us_download_info_by_id",
+   "get_product_shakemap_us7000lyjh_us_download_info_by_id",
+   "get_ws_geoserve_regions"
+  ]
+ },
+ "resource_constraint": false,
+ "manifest_vs_norules": {
+  "tools": [
+   10,
+   23
+  ],
+  "templated_groups": [
+   9,
+   17
+  ],
+  "note": "the numeric rule (always on) templates the API version segment /fdsnws/event/{numeric}/ and the product update times in both variants; with the opt-in rules sibling-variance folds the five summary feeds into one {summary_id} tool and the per-event product paths into one tool per product file, 23 -> 10"
+ }
+}

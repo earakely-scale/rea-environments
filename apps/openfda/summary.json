@@ -1,0 +1,196 @@
+{
+ "kind": "public-api",
+ "app": "openfda",
+ "title": "openFDA",
+ "app_version": "v1",
+ "captured_on": "2026-10-19",
+ "fair_access": "a declared User-Agent, no API key, one request at a time and at most 2 requests per second",
+ "seeded_objects": "drug recalls, food recalls in four inland states, device recalls and Class I device enforcement reports, NDC listings for Kenvue and ibuprofen tablets, two drug applications, drug shortages, NDC SPL data elements for Advil and stethoscope device classes, each re-read by its public key",
+ "origin": "https://api.fda.gov",
+ "user_agent": "rea-environments showcase (https://github.com/earakely-scale/rea-environments)",
+ "requests": {
+  "final_capture": 53,
+  "api_fda_gov_whole_session": 138,
+  "note": "138 = 11 curl probes (endpoint syntax, sizes, response headers) + a first attempt that sent 1 request (in-page fetch blocked by the API's CSP) + a second that sent 20 (a transient fetch failure ended it) + a third complete 53-request capture whose HAR rea rejected (unencoded [ ] in range queries) + the final 53"
+ },
+ "endpoints": [
+  "/drug/ndc.json",
+  "/drug/enforcement.json",
+  "/drug/drugsfda.json",
+  "/drug/shortages.json",
+  "/other/nsde.json",
+  "/food/enforcement.json",
+  "/device/classification.json",
+  "/device/recall.json",
+  "/device/enforcement.json"
+ ],
+ "dataset_last_updated": {
+  "device/classification": "2026-10-05",
+  "device/enforcement": "2026-10-07",
+  "device/recall": "2026-10-15",
+  "drug/drugsfda": "2026-10-16",
+  "drug/enforcement": "2026-10-07",
+  "drug/ndc": "2026-10-16",
+  "drug/shortages": "2026-10-16",
+  "food/enforcement": "2026-10-07",
+  "other/nsde": "2026-10-16"
+ },
+ "capture_notes": [
+  "openFDA serves every response with Content-Security-Policy: default-src 'none', which blocks in-page fetch even to the same origin; the Playwright context uses bypassCSP: true (requests and responses unchanged)",
+  "range queries send the brackets percent-encoded (%5B, %5D) because rea's HAR validation requires strict URIs",
+  "every response is application/json; the largest body is 44,826 bytes (the LIPITOR application record, read twice)",
+  "endpoints with person-level records (adverse events, 510(k) contacts, tobacco problem reports) were not used"
+ ],
+ "tooling": {
+  "rea": "6.6.0",
+  "playwright-core": "1.58.2",
+  "chromium": "Chromium 155.0.8059.79 snap",
+  "node": "v24.22.0",
+  "python": "3.12.3",
+  "agent-env": "0.9.1334",
+  "vm": "Ubuntu 24.04.5 LTS amd64"
+ },
+ "credential_grep": {
+  "token_shapes": 0,
+  "credential_named_fields": 0,
+  "forbidden_words": 0,
+  "result": "pass (envbuild manifest gate)"
+ },
+ "scoped_har": {
+  "file": "openfda.scoped.har",
+  "sha256": "2d19831b1c27073e37639eb593dceb429dc8190cdd612c767e07fc0262671568",
+  "bytes": 347854,
+  "records": 53,
+  "methods": {
+   "GET": 53
+  },
+  "statuses": {
+   "200": 53
+  }
+ },
+ "scope_har": {
+  "origin": "https://api.fda.gov",
+  "keep_regex": "^/(drug|device|food|other)/[a-z0-9]+\\.json$",
+  "drop_regex": "default (login|logout|signup|password|session|token|oauth|csrf)",
+  "max_body": 60000,
+  "max_records": 150,
+  "kept": 53,
+  "dropped": {
+   "other-origin": 0,
+   "path": 0,
+   "non-json": 0,
+   "auth": 0,
+   "big-body": 0,
+   "over-max": 0
+  }
+ },
+ "evidence": {
+  "capture_evidence_id": "ev_831755436c6fab21a1196cc47650cc102eb756bc8286b8c8528cda928dcfaf90",
+  "capture_total_records": 53,
+  "capture_confidence": "observed"
+ },
+ "manifest": {
+  "evidence_id": "ev_4acb8641e2a8042c00762d967a519ccba688eff4255b13a44cc01ce5c6efa924",
+  "confidence": "derived",
+  "view_digest": "6924f07d7711efa2987c72fc2cfa37ea24cca60baa2198af23033ad4acac7607",
+  "template_rules": [
+   "after-uid-literal",
+   "opaque-token",
+   "sibling-variance"
+  ],
+  "tools": 9,
+  "tools_by_method": {
+   "GET": 9
+  },
+  "templated_groups": 0,
+  "params_by_rule": {},
+  "params_total": 0,
+  "query_parameter_names_total": 23,
+  "query_parameter_names_distinct": [
+   "count",
+   "limit",
+   "search",
+   "sort"
+  ],
+  "tools_with_body_shape": 0,
+  "statuses_seen": [
+   200
+  ],
+  "records": 53,
+  "excluded": 0,
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 9,
+   "total": 9,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "limitations_count": 8,
+  "tool_names": [
+   "get_device_classification",
+   "get_device_enforcement",
+   "get_device_recall",
+   "get_drug_drugsfda",
+   "get_drug_enforcement",
+   "get_drug_ndc",
+   "get_drug_shortages",
+   "get_food_enforcement",
+   "get_other_nsde"
+  ]
+ },
+ "manifest_norules": {
+  "evidence_id": "ev_4a38afdce6788df7b8aa53c1b2146458f7575a476f2fdf149517c96e17423c02",
+  "confidence": "derived",
+  "view_digest": "50e1bf8c50dff592927e980987592021f123e7374d7e163da004da7e8ae54740",
+  "template_rules": [],
+  "tools": 9,
+  "tools_by_method": {
+   "GET": 9
+  },
+  "templated_groups": 0,
+  "params_by_rule": {},
+  "params_total": 0,
+  "query_parameter_names_total": 23,
+  "query_parameter_names_distinct": [
+   "count",
+   "limit",
+   "search",
+   "sort"
+  ],
+  "tools_with_body_shape": 0,
+  "statuses_seen": [
+   200
+  ],
+  "records": 53,
+  "excluded": 0,
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 9,
+   "total": 9,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "limitations_count": 7,
+  "tool_names": [
+   "get_device_classification",
+   "get_device_enforcement",
+   "get_device_recall",
+   "get_drug_drugsfda",
+   "get_drug_enforcement",
+   "get_drug_ndc",
+   "get_drug_shortages",
+   "get_food_enforcement",
+   "get_other_nsde"
+  ]
+ }
+}

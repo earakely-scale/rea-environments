@@ -1,0 +1,16 @@
+{
+  "app": "pinry",
+  "title": "Pinry",
+  "repo": "PinryEnv-REA",
+  "kind": "self-hosted",
+  "capture": "scenario",
+  "license": "BSD-2-Clause",
+  "authors": "the Pinry contributors",
+  "hf_license": "apache-2.0",
+  "version": "2.1.13",
+  "image": "getpinry/pinry:2.1.13",
+  "image_digest": "sha256:9a619749ec5246e04694adc479a135e654a7ac5f34c15d6d134d917a62b4889b",
+  "port": 3403,
+  "domain": "visual pin boards (tiling image bookmarks with boards and tags)",
+  "exclude_tools": "manifest$"
+}

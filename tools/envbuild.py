@@ -10,10 +10,14 @@ Steps, in order (`all` runs manifest..card):
   card       episode stats, the dataset card note, a dry `agent-env hf publish --out`, forbidden-token and placeholder scans
   publish    real publish to the Hub (orchestrator only; needs HF_TOKEN in the environment)
   status     print the step results recorded so far
-Inputs live in ~/capture/APP/: app.json, compose.yml, seed.*, capture.mjs, APP.scoped.har, summary.json, README-notes.md.
+Inputs live in ~/capture/APP/: app.json, capture.mjs, APP.scoped.har, summary.json, README-notes.md, plus compose.yml and
+seed.* for a self-hosted app (app.json "kind": "self-hosted", the default) but not for a public API ("kind": "public-api").
 Every step writes ~/showcase/status/APP.json and exits non-zero with a reason on failure."""
 import argparse, hashlib, json, os, re, shutil, sqlite3, subprocess, sys, tempfile, time
 from pathlib import Path
+
+sys.path.insert(0, str(Path.home() / "showcase" / "work" / "tools"))
+from scenario_records import scenario_records  # noqa: E402  (shared with gen_tasks.py)
 
 HOME = Path.home(); CAP = HOME / "capture"; SC = HOME / "showcase"; WORK = SC / "work"
 AE = str(SC / ".venv/bin/agent-env"); PY = str(SC / ".venv/bin/python")
@@ -26,23 +30,24 @@ SECRET_SHAPES = re.compile(r"hf_[A-Za-z0-9]{20,}|sk-[A-Za-z0-9_-]{16,}|ghp_[A-Za
 FORBIDDEN = re.compile(os.environ.get("ENVBUILD_FORBID_REGEX") or r"(?!)", re.I)  # words that must not reach a dataset
 CRED_KEY = re.compile(r"(^|[_-])(access_?token|refresh_?token|id_?token|auth_?token|token|api_?key|apikey|secret|client_?secret|password|passwd|session_?token|jwt|private_?key)$", re.I)
 JWT = re.compile(r"eyJ[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{4,}")
-REQUIRED_META = ["app", "title", "repo", "license", "authors", "hf_license", "version", "image", "port", "domain"]
+REQUIRED_META = ["app", "title", "repo", "license", "authors", "hf_license", "version", "domain"]
+REQUIRED_BY_KIND = {"self-hosted": ["image", "port"], "public-api": ["origin"]}
 
 
 def credential_paths(entries):
-    """Key paths in request or response JSON bodies holding credential-like values (not masks or scrubbed markers)."""
+    """Key paths in request or response JSON bodies holding credential-like values (not masks, scrubbed or REA redaction markers)."""
     hits = set()
     def walk(o, path):
         if isinstance(o, dict):
             for k, v in o.items():
-                if CRED_KEY.search(str(k)) and isinstance(v, str) and len(v) >= 6 and not set(v) <= {"*"} and not v.startswith("<"):
+                if CRED_KEY.search(str(k)) and isinstance(v, str) and len(v) >= 6 and not set(v) <= {"*"} and not v.startswith(("<", "[REDACTED")):
                     hits.add(f"{path}.{k}")
                 walk(v, f"{path}.{k}")
         elif isinstance(o, list):
             for x in o[:200]: walk(x, path + "[]")
         elif isinstance(o, str) and JWT.search(o): hits.add(path + " (jwt-shaped)")
     for e in entries:
-        where = e["request"]["method"] + " " + re.sub(r"^https?://[^/]+", "", e["request"]["url"]).split("?")[0]
+        where = e["request"]["method"] + " " + re.sub(r"^https?://[^/]+", "", e["request"].get("url") or "<redacted>").split("?")[0]
         for side, text in (("req", (e["request"].get("postData") or {}).get("text")), ("res", ((e.get("response") or {}).get("content") or {}).get("text"))):
             if not text: continue
             try: walk(json.loads(text), f"{where} {side}")
@@ -80,7 +85,9 @@ def run(cmd, log=None, timeout=3600, cwd=SC):
 def meta_of(app):
     p = CAP / app / "app.json"
     if not p.exists(): fail(app, "meta", f"missing {p}")
-    m = json.loads(p.read_text()); missing = [k for k in REQUIRED_META if k not in m]
+    m = json.loads(p.read_text()); m.setdefault("kind", "self-hosted")
+    if m["kind"] not in REQUIRED_BY_KIND: fail(app, "meta", f"app.json kind must be one of {sorted(REQUIRED_BY_KIND)}")
+    missing = [k for k in REQUIRED_META + REQUIRED_BY_KIND[m["kind"]] if k not in m]
     if missing: fail(app, "meta", f"app.json lacks {missing}")
     if m["app"] != app: fail(app, "meta", "app.json app does not match the step argument")
     return m
@@ -91,10 +98,25 @@ def load_json_output(text):
     return json.loads(text[i:]) if i >= 0 else None
 
 
+def scenario_capture(app, d):
+    """The worker's capture_browser_scenario Evidence and its transactions as HAR-like entries with decoded bodies."""
+    capfile = d / f"{app}.capture.json"
+    if not capfile.exists(): fail(app, "manifest", f"missing {capfile}; run rea capture-browser-scenario first")
+    raw_ev = capfile.read_text(errors="ignore"); ev = json.loads(raw_ev)
+    if ev.get("operation") != "capture_browser_scenario": fail(app, "manifest", "the capture file is not capture_browser_scenario Evidence")
+    entries = [r["reported"] for r in scenario_records(ev) if "request" in r["reported"]]
+    return ev, raw_ev, entries
+
+
 def step_manifest(app):
     m = meta_of(app); d = CAP / app; har = d / f"{app}.scoped.har"
-    if not har.exists(): fail(app, "manifest", f"missing {har}; run scope_har.py first")
-    raw = har.read_text(errors="ignore")
+    scenario = m.get("capture") == "scenario"
+    if scenario:
+        cap, raw_ev, scenario_entries = scenario_capture(app, d)
+        raw = json.dumps(scenario_entries)   # decoded bodies, so the scans below see real text
+    else:
+        if not har.exists(): fail(app, "manifest", f"missing {har}; run scope_har.py first")
+        raw = har.read_text(errors="ignore")
     secrets = []
     adm = d / ".admin"
     if adm.exists():
@@ -105,15 +127,19 @@ def step_manifest(app):
     shapes = sorted(set(x[:6] for x in SECRET_SHAPES.findall(raw)))
     if secrets or shapes: fail(app, "manifest", "credential material in the scoped HAR", admin_values=secrets, token_shapes=shapes)
     if FORBIDDEN.search(raw): fail(app, "manifest", "forbidden word in the scoped HAR (rename the seed data)")
-    entries = json.loads(raw)["log"]["entries"]; methods = {}
+    entries = scenario_entries if scenario else json.loads(raw)["log"]["entries"]; methods = {}
     creds = credential_paths(entries)
     if creds: fail(app, "manifest", "credential-like values in request or response bodies; drop or scrub those exchanges", paths=creds[:20])
     for e in entries: methods[e["request"]["method"]] = methods.get(e["request"]["method"], 0) + 1
-    if not (40 <= len(entries) <= 160): fail(app, "manifest", f"scoped HAR has {len(entries)} records; aim for 60-140", methods=methods)
-    rc, out = run(["rea", "inspect-web-network-capture", str(har), "har", "--format", "json"], timeout=600)
-    cap = load_json_output(out)
-    if rc != 0 or not cap or "evidence_id" not in cap: fail(app, "manifest", "inspect-web-network-capture failed", tail=out[-1500:])
-    (d / f"{app}.capture.json").write_text(json.dumps(cap))
+    low, high = (20, 1024) if scenario else (40, 160)
+    if not (low <= len(entries) <= high): fail(app, "manifest", f"capture has {len(entries)} records; aim for {low}-{high}", methods=methods)
+    if scenario:
+        raw = raw_ev   # size and digest below describe the capture file itself
+    else:
+        rc, out = run(["rea", "inspect-web-network-capture", str(har), "har", "--format", "json"], timeout=600)
+        cap = load_json_output(out)
+        if rc != 0 or not cap or "evidence_id" not in cap: fail(app, "manifest", "inspect-web-network-capture failed", tail=out[-1500:])
+        (d / f"{app}.capture.json").write_text(json.dumps(cap))
     views = {}
     for label, rules in (("rules", RULES), ("norules", [])):
         req = d / f"req.{label}.json"
@@ -145,7 +171,7 @@ def step_manifest(app):
         "authority": views["rules"]["authority"], "view_digest": nr["view_digest"], "parent_digest": nr["parent_digest"],
     }
     if entry["tools"] < 8: fail(app, "manifest", f"only {entry['tools']} tools; capture more distinct API reads", entry=entry)
-    if not any(k != "GET" for k in by_method): fail(app, "manifest", "no write tools; the capture needs at least one POST/PUT/PATCH/DELETE", entry=entry)
+    if m["kind"] == "self-hosted" and not any(k != "GET" for k in by_method): fail(app, "manifest", "no write tools; the capture needs at least one POST/PUT/PATCH/DELETE", entry=entry)
     summary = d / "summary.json"
     if not summary.exists(): fail(app, "manifest", "write ~/capture/APP/summary.json first (seeded_objects at least)")
     if "seeded_objects" not in json.loads(summary.read_text()): fail(app, "manifest", "summary.json lacks seeded_objects")
@@ -169,7 +195,7 @@ def step_bundle(app):
     shutil.copytree(WORK / "agent" / "replay-qa", b / "agents" / "replay-qa")
     gen = [PY, str(WORK / "tools" / "gen_tasks.py"), "--manifest", str(d / f"{app}.manifest.json"), "--capture", str(d / f"{app}.capture.json"),
            "--bundle", str(b), "--env", app, "--agent", "replay-qa", "--app", m["title"], "--max", "12",
-           "--seed-dir", str(d), "--max-occurrences", str(m.get("max_occurrences", 12))]
+           "--max-occurrences", str(m.get("max_occurrences", 12))] + (["--seed-dir", str(d)] if m["kind"] == "self-hosted" else [])
     if m.get("exclude_tools"): gen += ["--exclude-tools", m["exclude_tools"]]
     rc, out = run(gen, timeout=300); g = load_json_output(out)
     if rc != 0 or not g: fail(app, "bundle", "gen_tasks failed", tail=out[-1500:])
@@ -261,7 +287,7 @@ def step_card(app):
     if len(ep.get("models", {})) < 2: fail(app, "card", f"episodes recorded for {list(ep.get('models', {}))}; run the eval for both models")
     rc, out = run([PY, str(WORK / "tools" / "make_card.py"), "--app", app, "--title", m["title"], "--license", m["license"], "--authors", m["authors"],
                    "--repo", m["repo"], "--bundle", str(SC / "bundles" / app), "--summary", str(WORK / "apps" / "SUMMARY.json"),
-                   "--episodes", str(SC / "episodes" / f"{app}.json"), "--apps", str(WORK / "tools" / "apps.json"), "--export-pr", "4999",
+                   "--episodes", str(SC / "episodes" / f"{app}.json"), "--apps", str(WORK / "tools" / "apps.json"), "--export-pr", "4999", "--scenario-pr", "5182",
                    "--out", str(SC / "cards" / f"{app}.md"), "--template", str(WORK / "cards" / "TEMPLATE.md")])
     if rc != 0: fail(app, "card", "make_card failed", tail=out[-1200:])
     out_dir = SC / "datasets" / app; shutil.rmtree(out_dir, ignore_errors=True)

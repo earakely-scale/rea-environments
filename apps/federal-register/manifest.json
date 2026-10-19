@@ -1,0 +1,797 @@
+{
+ "evidence_id": "ev_23d1066c3bc138a90ac041fe3012494bc348237ced0daac373a9dc2845357f19",
+ "subject": {
+  "name": "federal-register.scoped.har",
+  "digest": {
+   "sha256": "92b61ba4a50cd9beeb3af0913704c5a80536a2198a62c86f5e99d2eb56d7f5bf"
+  },
+  "local_path": "/home/ubuntu/capture/federal-register/federal-register.scoped.har",
+  "format": "file",
+  "architecture": null
+ },
+ "provider": {
+  "id": "rea-analysis-view",
+  "name": "REA analysis view projection",
+  "version": "1"
+ },
+ "analysis_profile": null,
+ "predicate_type": "rea.analysis-view",
+ "operation": "inspect_analysis_view",
+ "parameters": {
+  "parent_evidence_id": "ev_e824e8d53e2ce40fe1173e27f7002aa1e3e7f80707e999d864745bac26d86575",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "raw_result": null,
+ "normalized_result": {
+  "parent_evidence_id": "ev_e824e8d53e2ce40fe1173e27f7002aa1e3e7f80707e999d864745bac26d86575",
+  "parent_operation": "inspect_web_network_capture",
+  "parent_digest": "e824e8d53e2ce40fe1173e27f7002aa1e3e7f80707e999d864745bac26d86575",
+  "view_digest": "f4d4bda1458d8e0c9c8ebec6d4d530566e5a2f06d4361386aeb6f0c1df8158fa",
+  "artifact": {
+   "path": "/home/ubuntu/capture/federal-register/federal-register.scoped.har",
+   "sha256": "92b61ba4a50cd9beeb3af0913704c5a80536a2198a62c86f5e99d2eb56d7f5bf"
+  },
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 10,
+   "total": 10,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "limitations": [
+   "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+   "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+   "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+   "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+   "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+   "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+   "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+   "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+  ],
+  "unknowns": [
+   {
+    "kind": "authorization-model",
+    "statement": "Authorization headers and cookies are structurally excluded from captures; the manifest states no authorization model."
+   },
+   {
+    "kind": "response-semantics",
+    "statement": "Recorded statuses and bodies are retained only as pointers to parent records; the manifest states no response semantics."
+   },
+   {
+    "kind": "state-transition",
+    "statement": "Recorded exchanges are independent observations; the manifest states no ordering, side effects or state transitions between tools."
+   }
+  ],
+  "origin": "https://www.federalregister.gov",
+  "name": "www-federalregister-gov",
+  "tools": [
+   {
+    "name": "get_agencies_by_agency_id",
+    "method": "GET",
+    "path_template": "/api/v1/agencies/{agency_id}",
+    "api_surface_template": "/api/v1/agencies/federal-aviation-administration.json",
+    "params": [
+     {
+      "index": 3,
+      "name": "agency_id",
+      "rule": "sibling-variance",
+      "basis": "inferred",
+      "observed_values": [
+       "energy-department.json",
+       "executive-office-of-the-president.json",
+       "federal-aviation-administration.json",
+       "federal-emergency-management-agency.json",
+       "federal-energy-regulatory-commission.json",
+       "homeland-security-department.json",
+       "transportation-department.json"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ]
+   },
+   {
+    "name": "get_documents",
+    "method": "GET",
+    "path_template": "/api/v1/documents.json",
+    "api_surface_template": "/api/v1/documents.json",
+    "params": [],
+    "query_parameter_names": [
+     "conditions[agencies][]",
+     "conditions[docket_id]",
+     "conditions[presidential_document_type][]",
+     "conditions[publication_date][gte]",
+     "conditions[publication_date][lte]",
+     "conditions[publication_date][year]",
+     "conditions[regulation_id_number]",
+     "conditions[signing_date][gte]",
+     "conditions[signing_date][lte]",
+     "conditions[term]",
+     "conditions[type][]",
+     "fields[]",
+     "order",
+     "page",
+     "per_page"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13
+    ]
+   },
+   {
+    "name": "get_documents_facets_agency",
+    "method": "GET",
+    "path_template": "/api/v1/documents/facets/agency",
+    "api_surface_template": "/api/v1/documents/facets/agency",
+    "params": [],
+    "query_parameter_names": [
+     "conditions[publication_date][gte]",
+     "conditions[publication_date][lte]",
+     "conditions[type][]"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     16
+    ]
+   },
+   {
+    "name": "get_documents_facets_monthly",
+    "method": "GET",
+    "path_template": "/api/v1/documents/facets/monthly",
+    "api_surface_template": "/api/v1/documents/facets/monthly",
+    "params": [],
+    "query_parameter_names": [
+     "conditions[agencies][]",
+     "conditions[publication_date][year]"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     15
+    ]
+   },
+   {
+    "name": "get_documents_facets_type",
+    "method": "GET",
+    "path_template": "/api/v1/documents/facets/type",
+    "api_surface_template": "/api/v1/documents/facets/type",
+    "params": [],
+    "query_parameter_names": [
+     "conditions[agencies][]",
+     "conditions[publication_date][gte]",
+     "conditions[publication_date][lte]"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     14
+    ]
+   },
+   {
+    "name": "get_documents_by_document_id",
+    "method": "GET",
+    "path_template": "/api/v1/documents/{document_id}",
+    "api_surface_template": "/api/v1/documents/2026-18019.json",
+    "params": [
+     {
+      "index": 3,
+      "name": "document_id",
+      "rule": "sibling-variance",
+      "basis": "inferred",
+      "observed_values": [
+       "2026-01061.json",
+       "2026-01066.json",
+       "2026-01872.json",
+       "2026-02292.json",
+       "2026-03159.json",
+       "2026-03628.json",
+       "2026-05382.json",
+       "2026-06177.json",
+       "2026-10498.json",
+       "2026-11971.json",
+       "2026-13673.json",
+       "2026-17108.json",
+       "2026-18019.json",
+       "2026-18032.json",
+       "2026-18126,2026-18902.json",
+       "2026-18126.json",
+       "2026-18437.json",
+       "2026-18559.json",
+       "2026-18601.json",
+       "2026-18776.json",
+       "2026-18848.json",
+       "2026-18902.json",
+       "2026-19082.json",
+       "2026-19332.json"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "fields[]"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31,
+     32,
+     33,
+     34,
+     35,
+     36,
+     37,
+     38,
+     39,
+     40,
+     41
+    ]
+   },
+   {
+    "name": "get_public_inspection_documents_by_public_inspection_documen",
+    "method": "GET",
+    "path_template": "/api/v1/public-inspection-documents/{public_inspection_document_id}",
+    "api_surface_template": "/api/v1/public-inspection-documents/2026-18126.json",
+    "params": [
+     {
+      "index": 3,
+      "name": "public_inspection_document_id",
+      "rule": "sibling-variance",
+      "basis": "inferred",
+      "observed_values": [
+       "2026-02292.json",
+       "2026-11971.json",
+       "2026-18126,2026-19332.json",
+       "2026-18126.json",
+       "2026-18776.json",
+       "2026-18902.json",
+       "2026-19332.json"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     42,
+     43,
+     44,
+     45,
+     46,
+     47,
+     48
+    ]
+   },
+   {
+    "name": "get_suggested_searches",
+    "method": "GET",
+    "path_template": "/api/v1/suggested_searches.json",
+    "api_surface_template": "/api/v1/suggested_searches.json",
+    "params": [],
+    "query_parameter_names": [
+     "conditions[sections]"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     49
+    ]
+   },
+   {
+    "name": "get_suggested_searches_air_travel",
+    "method": "GET",
+    "path_template": "/api/v1/suggested_searches/air-travel.json",
+    "api_surface_template": "/api/v1/suggested_searches/air-travel.json",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     51
+    ]
+   },
+   {
+    "name": "get_suggested_searches_pipeline_safety",
+    "method": "GET",
+    "path_template": "/api/v1/suggested_searches/pipeline-safety.json",
+    "api_surface_template": "/api/v1/suggested_searches/pipeline-safety.json",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     50
+    ]
+   }
+  ],
+  "records": [
+   {
+    "ordinal": 0,
+    "method": "GET",
+    "path": "/api/v1/agencies/federal-aviation-administration.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 1,
+    "method": "GET",
+    "path": "/api/v1/agencies/transportation-department.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 2,
+    "method": "GET",
+    "path": "/api/v1/agencies/energy-department.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 3,
+    "method": "GET",
+    "path": "/api/v1/agencies/federal-energy-regulatory-commission.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 4,
+    "method": "GET",
+    "path": "/api/v1/agencies/homeland-security-department.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 5,
+    "method": "GET",
+    "path": "/api/v1/agencies/federal-emergency-management-agency.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 6,
+    "method": "GET",
+    "path": "/api/v1/agencies/executive-office-of-the-president.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 7,
+    "method": "GET",
+    "path": "/api/v1/documents.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 8,
+    "method": "GET",
+    "path": "/api/v1/documents.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 9,
+    "method": "GET",
+    "path": "/api/v1/documents.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 10,
+    "method": "GET",
+    "path": "/api/v1/documents.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 11,
+    "method": "GET",
+    "path": "/api/v1/documents.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 12,
+    "method": "GET",
+    "path": "/api/v1/documents.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 13,
+    "method": "GET",
+    "path": "/api/v1/documents.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 14,
+    "method": "GET",
+    "path": "/api/v1/documents/facets/type",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 15,
+    "method": "GET",
+    "path": "/api/v1/documents/facets/monthly",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 16,
+    "method": "GET",
+    "path": "/api/v1/documents/facets/agency",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 17,
+    "method": "GET",
+    "path": "/api/v1/documents/2026-18019.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 18,
+    "method": "GET",
+    "path": "/api/v1/documents/2026-18032.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 19,
+    "method": "GET",
+    "path": "/api/v1/documents/2026-18126.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 20,
+    "method": "GET",
+    "path": "/api/v1/documents/2026-18437.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 21,
+    "method": "GET",
+    "path": "/api/v1/documents/2026-18559.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 22,
+    "method": "GET",
+    "path": "/api/v1/documents/2026-18601.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 23,
+    "method": "GET",
+    "path": "/api/v1/documents/2026-18776.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 24,
+    "method": "GET",
+    "path": "/api/v1/documents/2026-18848.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 25,
+    "method": "GET",
+    "path": "/api/v1/documents/2026-18902.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 26,
+    "method": "GET",
+    "path": "/api/v1/documents/2026-19082.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 27,
+    "method": "GET",
+    "path": "/api/v1/documents/2026-01066.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 28,
+    "method": "GET",
+    "path": "/api/v1/documents/2026-03159.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 29,
+    "method": "GET",
+    "path": "/api/v1/documents/2026-06177.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 30,
+    "method": "GET",
+    "path": "/api/v1/documents/2026-10498.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 31,
+    "method": "GET",
+    "path": "/api/v1/documents/2026-11971.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 32,
+    "method": "GET",
+    "path": "/api/v1/documents/2026-13673.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 33,
+    "method": "GET",
+    "path": "/api/v1/documents/2026-17108.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 34,
+    "method": "GET",
+    "path": "/api/v1/documents/2026-19332.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 35,
+    "method": "GET",
+    "path": "/api/v1/documents/2026-01061.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 36,
+    "method": "GET",
+    "path": "/api/v1/documents/2026-01872.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 37,
+    "method": "GET",
+    "path": "/api/v1/documents/2026-02292.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 38,
+    "method": "GET",
+    "path": "/api/v1/documents/2026-03628.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 39,
+    "method": "GET",
+    "path": "/api/v1/documents/2026-05382.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 40,
+    "method": "GET",
+    "path": "/api/v1/documents/2026-18126,2026-18902.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 41,
+    "method": "GET",
+    "path": "/api/v1/documents/2026-18776.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 42,
+    "method": "GET",
+    "path": "/api/v1/public-inspection-documents/2026-18126.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 43,
+    "method": "GET",
+    "path": "/api/v1/public-inspection-documents/2026-18902.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 44,
+    "method": "GET",
+    "path": "/api/v1/public-inspection-documents/2026-18776.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 45,
+    "method": "GET",
+    "path": "/api/v1/public-inspection-documents/2026-19332.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 46,
+    "method": "GET",
+    "path": "/api/v1/public-inspection-documents/2026-11971.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 47,
+    "method": "GET",
+    "path": "/api/v1/public-inspection-documents/2026-02292.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 48,
+    "method": "GET",
+    "path": "/api/v1/public-inspection-documents/2026-18126,2026-19332.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 49,
+    "method": "GET",
+    "path": "/api/v1/suggested_searches.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 50,
+    "method": "GET",
+    "path": "/api/v1/suggested_searches/pipeline-safety.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 51,
+    "method": "GET",
+    "path": "/api/v1/suggested_searches/air-travel.json",
+    "status": 200,
+    "content_type": "application/json"
+   }
+  ],
+  "excluded": [],
+  "templated_groups": 3,
+  "kind": "environment-manifest",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "confidence": "inferred",
+ "authority": "historical-reference",
+ "environment": null,
+ "limitations": [
+  "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+  "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+  "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+  "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+  "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+  "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+  "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+  "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+ ],
+ "relationship_coverage": null,
+ "locations": [
+  {
+   "kind": "artifact-path",
+   "path": "/home/ubuntu/capture/federal-register/federal-register.scoped.har"
+  }
+ ],
+ "evidence_links": [
+  "ev_e824e8d53e2ce40fe1173e27f7002aa1e3e7f80707e999d864745bac26d86575"
+ ]
+}

@@ -1,0 +1,327 @@
+{
+ "app": "vault",
+ "kind": "self-hosted",
+ "image": "hashicorp/vault:1.21.4",
+ "image_digest": "hashicorp/vault@sha256:4e33b126a59c0c333b76fb4e894722462659a6bec7c48c9ee8cea56fccfd2569",
+ "app_version": "1.21.4",
+ "app_version_full": "Vault v1.21.4 (ffe7023c481dc1ea2d8550bbaca8d85f8e611e0b), built 2026-03-04T17:40:05Z",
+ "licence": "BUSL-1.1 (Business Source License 1.1, Licensor HashiCorp, Inc.; read from /usr/share/doc/vault/LICENSE.txt in the image)",
+ "compose_project": "rea-vault",
+ "origin": "http://127.0.0.1:3303",
+ "storage": "file backend (/vault/file, named volume), shamir seal with one key share, plain HTTP inside the container",
+ "tooling": {
+  "rea": "6.6.0",
+  "playwright-core": "1.58.2",
+  "chromium": "Chromium 155.0.8059.79 snap",
+  "node": "v24.22.0",
+  "python": "3.12.3",
+  "docker": "29.9.1",
+  "compose": "v5.6.0",
+  "vm": "Ubuntu 24.04 amd64"
+ },
+ "seeded_objects": {
+  "kv_v2_mounts": {
+   "rota-config": "Shift and station settings for the Lighthouse Rota",
+   "ledger-config": "Quarry audit settings kept by the Granite Ledger crew"
+  },
+  "kv_entries": [
+   "rota-config/lighthouse-rota/shift-plan",
+   "rota-config/lighthouse-rota/tide-tables",
+   "rota-config/blue-heron-kitchen/menu-cycle",
+   "rota-config/saltmarsh-depot/inventory",
+   "rota-config/copperfield-annex/archive",
+   "ledger-config/granite-ledger/quarry-audit"
+  ],
+  "kv_entry_keys": "owner, region, rotation_days, tier plus one or two configuration fields each (handover_desk, covers_per_sitting, bay_count, shelf_code, block_count, ...); four entries carry custom_metadata steward/review_board",
+  "acl_policies": [
+   "lighthouse-rota-read",
+   "granite-ledger-ops",
+   "blue-heron-kitchen-menu",
+   "saltmarsh-depot-audit",
+   "rea-admin (UI admin, not read in the scripted sequence)"
+  ],
+  "auth_methods": {
+   "userpass": "Crew sign-in for the Lighthouse Rota console (only user: rea-admin)",
+   "approle": "Machine sign-in reserved for the Saltmarsh Depot scanners (no roles)"
+  },
+  "identity_entities": [
+   "ada-finch",
+   "rui-castellanos",
+   "mina-okafor",
+   "tomas-vey"
+  ],
+  "entity_metadata": "display_name, team, desk, email (@example.test) on each entity; one ACL policy each",
+  "entity_aliases": [
+   "ada.finch",
+   "rui.castellanos",
+   "mina.okafor",
+   "tomas.vey"
+  ],
+  "identity_groups": [
+   "granite-ledger-crew",
+   "blue-heron-kitchen-staff",
+   "copperfield-annex-reviewers"
+  ],
+  "scratch_during_capture": "KV entry rota-config/scratch/rea-scratch-note written twice (v1, v2), read, metadata deleted (204), re-read (404); ACL policy rea-scratch-policy put (204), read, deleted (204), re-read (404); identity entity rea-scratch-entity created (200), updated (204), read, deleted (204), re-read (404)"
+ },
+ "ui_pages_visited": [
+  "/ui/vault/auth?with=userpass (sign-in)",
+  "/ui/vault/dashboard",
+  "/ui/vault/secrets",
+  "/ui/vault/secrets/rota-config/kv/list",
+  "/ui/vault/secrets/rota-config/kv/lighthouse-rota%2Fshift-plan",
+  "/ui/vault/secrets/ledger-config/kv/list",
+  "/ui/vault/policies/acl",
+  "/ui/vault/policy/acl/granite-ledger-ops",
+  "/ui/vault/access",
+  "/ui/vault/access/identity/entities",
+  "/ui/vault/access/identity/groups"
+ ],
+ "scoped_har": {
+  "file": "vault.scoped.har",
+  "sha256": "02038b8412236a14ef63eaa9155a49ab89c2ad927d2c2d9fb2ab73b39430e6ea",
+  "bytes": 176735,
+  "records": 85,
+  "methods": {
+   "GET": 77,
+   "POST": 4,
+   "DELETE": 3,
+   "PUT": 1
+  },
+  "statuses": {
+   "200": 77,
+   "204": 5,
+   "404": 3
+  }
+ },
+ "scope_har": {
+  "origin": "http://127.0.0.1:3303",
+  "keep_regex": "^/v1/(?!sys/(health|seal-status|capabilities-self|internal/ui/feature-flags)$)",
+  "drop_regex": "default (login|logout|signup|password|session|token|oauth|csrf)",
+  "max_body": 60000,
+  "max_records": 150,
+  "kept": 85,
+  "dropped": {
+   "other-origin": 0,
+   "path": 196,
+   "non-json": 0,
+   "auth": 1,
+   "big-body": 0,
+   "over-max": 0
+  },
+  "notes": [
+   "auth=1 is POST /v1/auth/userpass/login/rea-admin (the UI sign-in)",
+   "the keep regex leaves out the UI's polling of sys/health (24), sys/seal-status (23), sys/capabilities-self (26 POSTs) and sys/internal/ui/feature-flags (11); with them the 150-record cap dropped the largest scripted reads (sys/mounts, sys/auth)",
+   "9 response bodies had token_type (sys/auth, sys/internal/ui/mounts mount config) scrubbed to <scrubbed> by the scope tool's key filter"
+  ]
+ },
+ "credential_grep": {
+  "admin_values_literal_hits": 0,
+  "token_shape_hits_hvs_hf_ghp_Bearer": 0,
+  "x_vault_token_header_hits": 0,
+  "result": "pass"
+ },
+ "evidence": {
+  "capture_evidence_id": "ev_0f0dc760f8613dc5c13f30aa0c5199dd83579261e8233758d9beb3e2c0ea8c87",
+  "capture_total_records": 85,
+  "capture_confidence": "observed"
+ },
+ "manifest": {
+  "evidence_id": "ev_f813cf623fb7f6c6698adbe68d07fd4ce70f881b4802af308d4a62eac949826d",
+  "confidence": "inferred",
+  "view_digest": "0c6e377d564d1881395f7c5ff6397cffbaf54b0c329d19f4aeb5dfa8884ed162",
+  "template_rules": [
+   "after-uid-literal",
+   "opaque-token",
+   "sibling-variance"
+  ],
+  "tools": 43,
+  "tools_by_method": {
+   "GET": 36,
+   "POST": 3,
+   "DELETE": 3,
+   "PUT": 1
+  },
+  "templated_groups": 6,
+  "params_by_rule": {
+   "uuid": 5,
+   "sibling-variance": 1
+  },
+  "params_total": 6,
+  "query_parameter_names_total": 9,
+  "query_parameter_names_distinct": [
+   "list",
+   "version"
+  ],
+  "tools_with_body_shape": 4,
+  "statuses_seen": [
+   200,
+   204,
+   404
+  ],
+  "records": 85,
+  "excluded": 0,
+  "excluded_by_reason": {},
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 43,
+   "total": 43,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "limitations_count": 9,
+  "tool_names": [
+   "get_auth_userpass_users",
+   "post_identity_entity",
+   "get_identity_entity_alias_id",
+   "get_identity_entity_alias_id_by_uuid",
+   "get_identity_entity_id",
+   "delete_identity_entity_id_by_uuid",
+   "get_identity_entity_id_by_uuid",
+   "post_identity_entity_id_by_uuid",
+   "get_identity_entity_name_rui_castellanos",
+   "get_identity_group_id",
+   "get_identity_group_id_by_uuid",
+   "get_identity_group_name_blue_heron_kitchen_staff",
+   "get_ledger_config_data_granite_ledger_quarry_audit",
+   "get_ledger_config_metadata",
+   "get_ledger_config_metadata_granite_ledger_quarry_audit",
+   "get_rota_config_data_blue_heron_kitchen_menu_cycle",
+   "get_rota_config_data_copperfield_annex_archive",
+   "get_rota_config_data_lighthouse_rota_shift_plan",
+   "get_rota_config_data_lighthouse_rota_tide_tables",
+   "get_rota_config_data_saltmarsh_depot_inventory",
+   "get_rota_config_data_scratch_rea_scratch_note",
+   "post_rota_config_data_scratch_rea_scratch_note",
+   "get_rota_config_metadata_blue_heron_kitchen_menu_cycle",
+   "get_rota_config_metadata_lighthouse_rota",
+   "get_rota_config_metadata_saltmarsh_depot_inventory",
+   "delete_rota_config_metadata_scratch_rea_scratch_note",
+   "get_rota_config_metadata_by_metadata_id",
+   "get_sys_auth",
+   "get_sys_config_state_sanitized",
+   "get_sys_internal_ui_mounts",
+   "get_sys_internal_ui_mounts_ledger_config",
+   "get_sys_internal_ui_mounts_rota_config",
+   "get_sys_internal_ui_resultant_acl",
+   "get_sys_mounts",
+   "get_sys_mounts_rota_config_tune",
+   "get_sys_policies_acl",
+   "get_sys_policies_acl_blue_heron_kitchen_menu",
+   "get_sys_policies_acl_granite_ledger_ops",
+   "get_sys_policies_acl_lighthouse_rota_read",
+   "delete_sys_policies_acl_rea_scratch_policy",
+   "get_sys_policies_acl_rea_scratch_policy",
+   "put_sys_policies_acl_rea_scratch_policy",
+   "get_sys_policies_acl_saltmarsh_depot_audit"
+  ]
+ },
+ "manifest_norules": {
+  "evidence_id": "ev_8711a09c2b22c7423699ec6a8f3ba8c2876638db58faa7a20b59d88ac6976613",
+  "confidence": "inferred",
+  "view_digest": "5b4253af69dadd8160322208c6183aad94c1d26d5b819754d6e6a71f3d320e04",
+  "template_rules": [],
+  "tools": 44,
+  "tools_by_method": {
+   "GET": 37,
+   "POST": 3,
+   "DELETE": 3,
+   "PUT": 1
+  },
+  "templated_groups": 5,
+  "params_by_rule": {
+   "uuid": 5
+  },
+  "params_total": 5,
+  "query_parameter_names_total": 9,
+  "query_parameter_names_distinct": [
+   "list",
+   "version"
+  ],
+  "tools_with_body_shape": 4,
+  "statuses_seen": [
+   200,
+   204,
+   404
+  ],
+  "records": 85,
+  "excluded": 0,
+  "excluded_by_reason": {},
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 44,
+   "total": 44,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "limitations_count": 8,
+  "tool_names": [
+   "get_auth_userpass_users",
+   "post_identity_entity",
+   "get_identity_entity_alias_id",
+   "get_identity_entity_alias_id_by_uuid",
+   "get_identity_entity_id",
+   "delete_identity_entity_id_by_uuid",
+   "get_identity_entity_id_by_uuid",
+   "post_identity_entity_id_by_uuid",
+   "get_identity_entity_name_rui_castellanos",
+   "get_identity_group_id",
+   "get_identity_group_id_by_uuid",
+   "get_identity_group_name_blue_heron_kitchen_staff",
+   "get_ledger_config_data_granite_ledger_quarry_audit",
+   "get_ledger_config_metadata",
+   "get_ledger_config_metadata_granite_ledger_quarry_audit",
+   "get_rota_config_data_blue_heron_kitchen_menu_cycle",
+   "get_rota_config_data_copperfield_annex_archive",
+   "get_rota_config_data_lighthouse_rota_shift_plan",
+   "get_rota_config_data_lighthouse_rota_tide_tables",
+   "get_rota_config_data_saltmarsh_depot_inventory",
+   "get_rota_config_data_scratch_rea_scratch_note",
+   "post_rota_config_data_scratch_rea_scratch_note",
+   "get_rota_config_metadata",
+   "get_rota_config_metadata_blue_heron_kitchen_menu_cycle",
+   "get_rota_config_metadata_lighthouse_rota_2fshift_plan",
+   "get_rota_config_metadata_lighthouse_rota",
+   "get_rota_config_metadata_saltmarsh_depot_inventory",
+   "delete_rota_config_metadata_scratch_rea_scratch_note",
+   "get_sys_auth",
+   "get_sys_config_state_sanitized",
+   "get_sys_internal_ui_mounts",
+   "get_sys_internal_ui_mounts_ledger_config",
+   "get_sys_internal_ui_mounts_rota_config",
+   "get_sys_internal_ui_resultant_acl",
+   "get_sys_mounts",
+   "get_sys_mounts_rota_config_tune",
+   "get_sys_policies_acl",
+   "get_sys_policies_acl_blue_heron_kitchen_menu",
+   "get_sys_policies_acl_granite_ledger_ops",
+   "get_sys_policies_acl_lighthouse_rota_read",
+   "delete_sys_policies_acl_rea_scratch_policy",
+   "get_sys_policies_acl_rea_scratch_policy",
+   "put_sys_policies_acl_rea_scratch_policy",
+   "get_sys_policies_acl_saltmarsh_depot_audit"
+  ]
+ },
+ "resource_constraint": false,
+ "manifest_vs_norules": {
+  "tools": [
+   43,
+   44
+  ],
+  "templated_groups": [
+   6,
+   5
+  ],
+  "note": "the uuid rule templates entity, entity-alias and group ids in both variants; with the opt-in rules sibling-variance also folds the rota-config metadata reads (list root, the UI's lighthouse-rota%2Fshift-plan read) into one {metadata_id} tool, 44 -> 43"
+ }
+}

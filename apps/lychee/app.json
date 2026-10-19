@@ -1,0 +1,15 @@
+{
+  "app": "lychee",
+  "title": "Lychee",
+  "repo": "LycheeEnv-REA",
+  "kind": "self-hosted",
+  "capture": "scenario",
+  "license": "MIT",
+  "authors": "LycheeOrg",
+  "hf_license": "apache-2.0",
+  "version": "6.10.4",
+  "image": "lycheeorg/lychee:v6.10.4",
+  "image_digest": "sha256:4a695e81c0751b1a024cb87384a6cf4cd7c84c96c528d92bcc7effc8ce075a1e",
+  "port": 3402,
+  "domain": "photo management (self-hosted photo gallery)"
+}

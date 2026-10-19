@@ -1,0 +1,1385 @@
+{
+ "evidence_id": "ev_9b22b236f85033d95ac596940e36b339f2c0283a934e6fb1c604743c0ead1a86",
+ "subject": null,
+ "provider": {
+  "id": "rea-analysis-view",
+  "name": "REA analysis view projection",
+  "version": "1"
+ },
+ "analysis_profile": null,
+ "predicate_type": "rea.analysis-view",
+ "operation": "inspect_analysis_view",
+ "parameters": {
+  "parent_evidence_id": "ev_4c93356ec80d86dddda8881ba10b66ea5bb7bb3dc22787cff2d986fe12319669",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "raw_result": null,
+ "normalized_result": {
+  "parent_evidence_id": "ev_4c93356ec80d86dddda8881ba10b66ea5bb7bb3dc22787cff2d986fe12319669",
+  "parent_operation": "capture_browser_scenario",
+  "parent_digest": "4c93356ec80d86dddda8881ba10b66ea5bb7bb3dc22787cff2d986fe12319669",
+  "view_digest": "8e76024b259e3c3392cbeb26152dd029e2faca814036baaf256ef0e212e1ad2e",
+  "artifact": {
+   "path": "",
+   "sha256": null
+  },
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 15,
+   "total": 15,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "limitations": [
+   "3 of 134 scenario transactions retained no response body; their tools replay status and content type only.",
+   "Artifact identity is unavailable for this observation.",
+   "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+   "Browser host platform and architecture were not observed.",
+   "Captured response-body bytes are the result of Playwright's Response.body() API. Playwright may satisfy that API with a credentialed follow-up load of the request URL when CDP has no body, so transaction and event links do not verify that retained bytes came from the original network transaction.",
+   "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+   "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+   "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+   "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+   "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+   "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+   "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+   "Scenario records are the capture's network transactions in request order; each record ordinal is the transaction's zero-based position.",
+   "Some selected network content was unavailable; per-transaction content states retain the reason.",
+   "Storage values are hashed only after declared-secret redaction.",
+   "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+  ],
+  "unknowns": [
+   {
+    "kind": "authorization-model",
+    "statement": "Authorization headers and cookies are structurally excluded from captures; the manifest states no authorization model."
+   },
+   {
+    "kind": "response-semantics",
+    "statement": "Recorded statuses and bodies are retained only as pointers to parent records; the manifest states no response semantics."
+   },
+   {
+    "kind": "state-transition",
+    "statement": "Recorded exchanges are independent observations; the manifest states no ordering, side effects or state transitions between tools."
+   }
+  ],
+  "origin": "http://127.0.0.1:3402",
+  "name": "127-0-0-1-3402",
+  "tools": [
+   {
+    "name": "delete_album",
+    "method": "DELETE",
+    "path_template": "/api/v2/Album",
+    "api_surface_template": "/api/v2/Album",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     204
+    ],
+    "content_types": [
+     "text/html"
+    ],
+    "record_ordinals": [
+     128
+    ]
+   },
+   {
+    "name": "get_album",
+    "method": "GET",
+    "path_template": "/api/v2/Album",
+    "api_surface_template": "/api/v2/Album",
+    "params": [],
+    "query_parameter_names": [
+     "album_id",
+     "page"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     50,
+     55,
+     61,
+     65,
+     72,
+     76,
+     123
+    ]
+   },
+   {
+    "name": "patch_album",
+    "method": "PATCH",
+    "path_template": "/api/v2/Album",
+    "api_surface_template": "/api/v2/Album",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "album_id": "string",
+      "title": "string",
+      "license": "string",
+      "description": "string",
+      "photo_sorting_column": "null",
+      "photo_sorting_order": "null",
+      "album_sorting_column": "null",
+      "album_sorting_order": "null",
+      "album_aspect_ratio": "string",
+      "copyright": "null",
+      "header_id": "null",
+      "is_compact": "boolean",
+      "photo_layout": "null",
+      "album_timeline": "null",
+      "photo_timeline": "null",
+      "is_pinned": "boolean"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     127
+    ]
+   },
+   {
+    "name": "post_album",
+    "method": "POST",
+    "path_template": "/api/v2/Album",
+    "api_surface_template": "/api/v2/Album",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "title": "string",
+      "parent_id": "null"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "text/html"
+    ],
+    "record_ordinals": [
+     122
+    ]
+   },
+   {
+    "name": "get_albums",
+    "method": "GET",
+    "path_template": "/api/v2/Albums",
+    "api_surface_template": "/api/v2/Albums",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     39,
+     131
+    ]
+   },
+   {
+    "name": "get_flow",
+    "method": "GET",
+    "path_template": "/api/v2/Flow",
+    "api_surface_template": "/api/v2/Flow",
+    "params": [],
+    "query_parameter_names": [
+     "page"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     104
+    ]
+   },
+   {
+    "name": "get_import",
+    "method": "GET",
+    "path_template": "/api/v2/Import",
+    "api_surface_template": "/api/v2/Import",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     43
+    ]
+   },
+   {
+    "name": "post_metrics_photo",
+    "method": "POST",
+    "path_template": "/api/v2/Metrics::photo",
+    "api_surface_template": "/api/v2/Metrics::photo",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "photo_ids": "array",
+      "from_id": "string"
+     }
+    },
+    "statuses": [
+     204
+    ],
+    "content_types": [
+     "text/html"
+    ],
+    "record_ordinals": [
+     58,
+     69
+    ]
+   },
+   {
+    "name": "get_search",
+    "method": "GET",
+    "path_template": "/api/v2/Search",
+    "api_surface_template": "/api/v2/Search",
+    "params": [],
+    "query_parameter_names": [
+     "album_id",
+     "page",
+     "terms"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     118,
+     119
+    ]
+   },
+   {
+    "name": "get_tag",
+    "method": "GET",
+    "path_template": "/api/v2/Tag",
+    "api_surface_template": "/api/v2/Tag",
+    "params": [],
+    "query_parameter_names": [
+     "tag_id"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     86,
+     87,
+     88,
+     89,
+     90,
+     91,
+     92,
+     93
+    ]
+   },
+   {
+    "name": "get_tags",
+    "method": "GET",
+    "path_template": "/api/v2/Tags",
+    "api_surface_template": "/api/v2/Tags",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     83
+    ]
+   },
+   {
+    "name": "get_timeline",
+    "method": "GET",
+    "path_template": "/api/v2/Timeline",
+    "api_surface_template": "/api/v2/Timeline",
+    "params": [],
+    "query_parameter_names": [
+     "date"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     99
+    ]
+   },
+   {
+    "name": "get_users",
+    "method": "GET",
+    "path_template": "/api/v2/Users",
+    "api_surface_template": "/api/v2/Users",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     111
+    ]
+   },
+   {
+    "name": "get_version",
+    "method": "GET",
+    "path_template": "/api/v2/Version",
+    "api_surface_template": "/api/v2/Version",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     80,
+     94,
+     100,
+     108,
+     113
+    ]
+   },
+   {
+    "name": "get_by_v2_id",
+    "method": "GET",
+    "path_template": "/api/v2/{v2_id}",
+    "api_surface_template": "/api/v2/Gallery::Init",
+    "params": [
+     {
+      "index": 2,
+      "name": "v2_id",
+      "rule": "sibling-variance",
+      "basis": "inferred",
+      "observed_values": [
+       "Auth::rights",
+       "Auth::user",
+       "Flow::init",
+       "Gallery::Footer",
+       "Gallery::Init",
+       "Gallery::getLayout",
+       "Gallery::getUploadLimits",
+       "Search::init",
+       "Sharing::albums",
+       "Sharing::all",
+       "Timeline::dates",
+       "Timeline::init",
+       "Users::count"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "album_id"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json",
+     "text/html"
+    ],
+    "record_ordinals": [
+     33,
+     34,
+     35,
+     37,
+     38,
+     41,
+     42,
+     49,
+     53,
+     59,
+     60,
+     70,
+     71,
+     74,
+     75,
+     78,
+     79,
+     97,
+     98,
+     103,
+     110,
+     112,
+     114,
+     115,
+     117,
+     120,
+     121,
+     124,
+     125,
+     126,
+     129,
+     130,
+     132,
+     133
+    ]
+   }
+  ],
+  "records": [
+   {
+    "ordinal": 33,
+    "method": "GET",
+    "path": "/api/v2/Gallery::Init",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 34,
+    "method": "GET",
+    "path": "/api/v2/Auth::user",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 35,
+    "method": "GET",
+    "path": "/api/v2/Auth::rights",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 37,
+    "method": "GET",
+    "path": "/api/v2/Auth::user",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 38,
+    "method": "GET",
+    "path": "/api/v2/Auth::rights",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 39,
+    "method": "GET",
+    "path": "/api/v2/Albums",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 41,
+    "method": "GET",
+    "path": "/api/v2/Gallery::Footer",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 42,
+    "method": "GET",
+    "path": "/api/v2/Gallery::getUploadLimits",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 43,
+    "method": "GET",
+    "path": "/api/v2/Import",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 49,
+    "method": "GET",
+    "path": "/api/v2/Gallery::getLayout",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 50,
+    "method": "GET",
+    "path": "/api/v2/Album",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 53,
+    "method": "GET",
+    "path": "/api/v2/Users::count",
+    "status": 200,
+    "content_type": "text/html"
+   },
+   {
+    "ordinal": 55,
+    "method": "GET",
+    "path": "/api/v2/Album",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 58,
+    "method": "POST",
+    "path": "/api/v2/Metrics::photo",
+    "status": 204,
+    "content_type": "text/html"
+   },
+   {
+    "ordinal": 59,
+    "method": "GET",
+    "path": "/api/v2/Auth::user",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 60,
+    "method": "GET",
+    "path": "/api/v2/Auth::rights",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 61,
+    "method": "GET",
+    "path": "/api/v2/Album",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 65,
+    "method": "GET",
+    "path": "/api/v2/Album",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 69,
+    "method": "POST",
+    "path": "/api/v2/Metrics::photo",
+    "status": 204,
+    "content_type": "text/html"
+   },
+   {
+    "ordinal": 70,
+    "method": "GET",
+    "path": "/api/v2/Auth::user",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 71,
+    "method": "GET",
+    "path": "/api/v2/Auth::rights",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 72,
+    "method": "GET",
+    "path": "/api/v2/Album",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 74,
+    "method": "GET",
+    "path": "/api/v2/Auth::user",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 75,
+    "method": "GET",
+    "path": "/api/v2/Auth::rights",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 76,
+    "method": "GET",
+    "path": "/api/v2/Album",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 78,
+    "method": "GET",
+    "path": "/api/v2/Auth::user",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 79,
+    "method": "GET",
+    "path": "/api/v2/Auth::rights",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 80,
+    "method": "GET",
+    "path": "/api/v2/Version",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 83,
+    "method": "GET",
+    "path": "/api/v2/Tags",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 86,
+    "method": "GET",
+    "path": "/api/v2/Tag",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 87,
+    "method": "GET",
+    "path": "/api/v2/Tag",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 88,
+    "method": "GET",
+    "path": "/api/v2/Tag",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 89,
+    "method": "GET",
+    "path": "/api/v2/Tag",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 90,
+    "method": "GET",
+    "path": "/api/v2/Tag",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 91,
+    "method": "GET",
+    "path": "/api/v2/Tag",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 92,
+    "method": "GET",
+    "path": "/api/v2/Tag",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 93,
+    "method": "GET",
+    "path": "/api/v2/Tag",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 94,
+    "method": "GET",
+    "path": "/api/v2/Version",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 97,
+    "method": "GET",
+    "path": "/api/v2/Timeline::init",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 98,
+    "method": "GET",
+    "path": "/api/v2/Timeline::dates",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 99,
+    "method": "GET",
+    "path": "/api/v2/Timeline",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 100,
+    "method": "GET",
+    "path": "/api/v2/Version",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 103,
+    "method": "GET",
+    "path": "/api/v2/Flow::init",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 104,
+    "method": "GET",
+    "path": "/api/v2/Flow",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 108,
+    "method": "GET",
+    "path": "/api/v2/Version",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 110,
+    "method": "GET",
+    "path": "/api/v2/Sharing::all",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 111,
+    "method": "GET",
+    "path": "/api/v2/Users",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 112,
+    "method": "GET",
+    "path": "/api/v2/Sharing::albums",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 113,
+    "method": "GET",
+    "path": "/api/v2/Version",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 114,
+    "method": "GET",
+    "path": "/api/v2/Auth::user",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 115,
+    "method": "GET",
+    "path": "/api/v2/Auth::rights",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 117,
+    "method": "GET",
+    "path": "/api/v2/Search::init",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 118,
+    "method": "GET",
+    "path": "/api/v2/Search",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 119,
+    "method": "GET",
+    "path": "/api/v2/Search",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 120,
+    "method": "GET",
+    "path": "/api/v2/Auth::user",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 121,
+    "method": "GET",
+    "path": "/api/v2/Auth::rights",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 122,
+    "method": "POST",
+    "path": "/api/v2/Album",
+    "status": 200,
+    "content_type": "text/html"
+   },
+   {
+    "ordinal": 123,
+    "method": "GET",
+    "path": "/api/v2/Album",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 124,
+    "method": "GET",
+    "path": "/api/v2/Users::count",
+    "status": 200,
+    "content_type": "text/html"
+   },
+   {
+    "ordinal": 125,
+    "method": "GET",
+    "path": "/api/v2/Gallery::Footer",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 126,
+    "method": "GET",
+    "path": "/api/v2/Gallery::getUploadLimits",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 127,
+    "method": "PATCH",
+    "path": "/api/v2/Album",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 128,
+    "method": "DELETE",
+    "path": "/api/v2/Album",
+    "status": 204,
+    "content_type": "text/html"
+   },
+   {
+    "ordinal": 129,
+    "method": "GET",
+    "path": "/api/v2/Auth::user",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 130,
+    "method": "GET",
+    "path": "/api/v2/Auth::rights",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 131,
+    "method": "GET",
+    "path": "/api/v2/Albums",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 132,
+    "method": "GET",
+    "path": "/api/v2/Gallery::Footer",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 133,
+    "method": "GET",
+    "path": "/api/v2/Gallery::getUploadLimits",
+    "status": 200,
+    "content_type": "application/json"
+   }
+  ],
+  "excluded": [
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/@lychee-org-CcYfPfz8.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/@lychee-org-D63ESn99.css",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/@primeuix-Bq_aPFvL.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/@primevue-Dkxbqcec.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/@sidsbrmnn-BrMVzLs0.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/@vue-CIwLC8In.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/@vueuse-BkzJ6PMy.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/FixTree-BTxkxasm.css",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/Flow-BDUO-R1v.css",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/Flow-CH6sMSoC.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/Search-2aKLGxgv.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/Sharing-DpPy5llS.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/Tag--akAoV84.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/TagsManagement-B48l10Ku.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/TagsManagement-BGG4_tzi.css",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/Timeline-BBjQ4LDk.css",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/Timeline-nS1inu-h.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/app-D0yj4LCi.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/app-DOGo_CzT.css",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/app-DcD2DVCe.css",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/axios-B9ygI19o.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/axios-cache-interceptor-DNjJ2GZc.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/cache-parser-vi4-Jlp1.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/dijkstrajs-COg3n3zL.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/fast-defer-9MI9za_P.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/justified-layout-DVbLAIN-.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/laravel-vue-i18n-CKDzGXwv.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/leaflet-BOBg41eE.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/leaflet-CqzSHIH7.css",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/leaflet-rotatedmarker-roe_HPmI.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/leaflet.markercluster-Bf27Z4aC.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/object-code-SBtdq8jY.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/php_en-mdl3kXpN.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/pinia-B6BXnpJJ.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/pinia-plugin-persistedstate-fFNy23FG.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/primeicons-C6QP2o4f.woff2",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/primevue-CtZNLqKI.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/qrcode-CzrY3cjU.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/sprintf-js-DpPCfzXw.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/vue-BYMYDUYH.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/vue-collapsed-DpuGV-rn.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/build/assets/vue-router-BylDwrsj.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/dist/custom.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/dist/user.css",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/gallery",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/img/no_images.svg",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/undefined",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/uploads/original/cb/{numeric}/03f0f746584f77c6f1f07f333cab.png",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/uploads/original/{numeric}/c5/bfea9ab682b02d5e06a2be68717a.png",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/uploads/small/8b/6e/022c392bbaedc2355721f531741d.png",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/uploads/small/b4/6f/6a9fc491fef3c333e3b618cbee2a.png",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/uploads/small/ba/{numeric}/a177447772c6740be1dec8ac403d.png",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/uploads/small/cb/{numeric}/03f0f746584f77c6f1f07f333cab.png",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/uploads/small/{numeric}/{numeric}/ba764253e4277d7eed4ca4c377c4.png",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/uploads/thumb/6d/e2/44a39a8f5f30368f037e83e99800.jpeg",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/uploads/thumb/8b/6e/022c392bbaedc2355721f531741d.jpeg",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/uploads/thumb/a4/{numeric}/a2c363ce0c34d1ffac5a014aa8b1.jpeg",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/uploads/thumb/b4/6f/6a9fc491fef3c333e3b618cbee2a.jpeg",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/uploads/thumb/b9/ad/1770646c598023724604b541fb74.jpeg",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/uploads/thumb/d8/f3/c64102e7e94dfcfe4ea01ffed943.jpeg",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/uploads/thumb/e5/fb/49ea9ce220a470cb6c03a64fc728.jpeg",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/uploads/thumb/fc/6e/e080c4171350da38670cb4f924f3.jpeg",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/uploads/thumb/{numeric}/5b/f059573970e037440b6f332b5a3f.jpeg",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/uploads/thumb/{numeric}/b0/377b2ced208e429fdd3540764787.jpeg",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/uploads/thumb/{numeric}/c5/bfea9ab682b02d5e06a2be68717a.jpeg",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3402",
+    "path_template": "/uploads/thumb/{numeric}/{numeric}/ba764253e4277d7eed4ca4c377c4.jpeg",
+    "reason": "ui-page-or-asset"
+   }
+  ],
+  "templated_groups": 11,
+  "kind": "environment-manifest",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "confidence": "inferred",
+ "authority": "controlled-replay",
+ "environment": null,
+ "limitations": [
+  "Artifact identity is unavailable for this observation.",
+  "3 of 134 scenario transactions retained no response body; their tools replay status and content type only.",
+  "Artifact identity is unavailable for this observation.",
+  "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+  "Browser host platform and architecture were not observed.",
+  "Captured response-body bytes are the result of Playwright's Response.body() API. Playwright may satisfy that API with a credentialed follow-up load of the request URL when CDP has no body, so transaction and event links do not verify that retained bytes came from the original network transaction.",
+  "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+  "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+  "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+  "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+  "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+  "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+  "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+  "Scenario records are the capture's network transactions in request order; each record ordinal is the transaction's zero-based position.",
+  "Some selected network content was unavailable; per-transaction content states retain the reason.",
+  "Storage values are hashed only after declared-secret redaction.",
+  "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+ ],
+ "relationship_coverage": null,
+ "locations": [],
+ "evidence_links": [
+  "ev_4c93356ec80d86dddda8881ba10b66ea5bb7bb3dc22787cff2d986fe12319669"
+ ]
+}

@@ -1,0 +1,1539 @@
+{
+ "evidence_id": "ev_3953f182d0e7f30e5531f5d130571e19971d958e79ae1655db5a82879e766c44",
+ "subject": null,
+ "provider": {
+  "id": "rea-analysis-view",
+  "name": "REA analysis view projection",
+  "version": "1"
+ },
+ "analysis_profile": null,
+ "predicate_type": "rea.analysis-view",
+ "operation": "inspect_analysis_view",
+ "parameters": {
+  "parent_evidence_id": "ev_0878c47a60e7fec405c266932194cb3b41b645d635c765b4593c2c6e5d382ac5",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "raw_result": null,
+ "normalized_result": {
+  "parent_evidence_id": "ev_0878c47a60e7fec405c266932194cb3b41b645d635c765b4593c2c6e5d382ac5",
+  "parent_operation": "capture_browser_scenario",
+  "parent_digest": "0878c47a60e7fec405c266932194cb3b41b645d635c765b4593c2c6e5d382ac5",
+  "view_digest": "52d73d0b044f4f01bb6387fdfb74a880822edf141d6dbaa44e89fc351132a284",
+  "artifact": {
+   "path": "",
+   "sha256": null
+  },
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 12,
+   "total": 12,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "limitations": [
+   "251 of 568 scenario transactions retained no response body; their tools replay status and content type only.",
+   "Artifact identity is unavailable for this observation.",
+   "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+   "Browser host platform and architecture were not observed.",
+   "Captured response-body bytes are the result of Playwright's Response.body() API. Playwright may satisfy that API with a credentialed follow-up load of the request URL when CDP has no body, so transaction and event links do not verify that retained bytes came from the original network transaction.",
+   "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+   "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+   "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+   "Non-cookie storage seeds use CDP pre-script instrumentation; only pauses in the scenario's private seed script are resumed by this observer.",
+   "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+   "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+   "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+   "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+   "Scenario records are the capture's network transactions in request order; each record ordinal is the transaction's zero-based position.",
+   "Some selected network content was unavailable; per-transaction content states retain the reason.",
+   "Storage values are hashed only after declared-secret redaction.",
+   "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+  ],
+  "unknowns": [
+   {
+    "kind": "authorization-model",
+    "statement": "Authorization headers and cookies are structurally excluded from captures; the manifest states no authorization model."
+   },
+   {
+    "kind": "response-semantics",
+    "statement": "Recorded statuses and bodies are retained only as pointers to parent records; the manifest states no response semantics."
+   },
+   {
+    "kind": "state-transition",
+    "statement": "Recorded exchanges are independent observations; the manifest states no ordering, side effects or state transitions between tools."
+   }
+  ],
+  "origin": "http://127.0.0.1:3403",
+  "name": "127-0-0-1-3403",
+  "tools": [
+   {
+    "name": "get_boards_auto_complete",
+    "method": "GET",
+    "path_template": "/api/v2/boards-auto-complete/",
+    "api_surface_template": "/api/v2/boards-auto-complete/",
+    "params": [],
+    "query_parameter_names": [
+     "submitter__username"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     466
+    ]
+   },
+   {
+    "name": "get_boards",
+    "method": "GET",
+    "path_template": "/api/v2/boards/",
+    "api_surface_template": "/api/v2/boards/",
+    "params": [],
+    "query_parameter_names": [
+     "limit",
+     "offset",
+     "search",
+     "submitter__username"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     343,
+     359,
+     374,
+     389,
+     481,
+     525,
+     532,
+     534
+    ]
+   },
+   {
+    "name": "post_boards",
+    "method": "POST",
+    "path_template": "/api/v2/boards/",
+    "api_surface_template": "/api/v2/boards/",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "name": "string",
+      "private": "boolean"
+     }
+    },
+    "statuses": [
+     201
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     516
+    ]
+   },
+   {
+    "name": "delete_boards_by_id",
+    "method": "DELETE",
+    "path_template": "/api/v2/boards/{numeric}/",
+    "api_surface_template": "/api/v2/boards/{numeric}/",
+    "params": [
+     {
+      "index": 3,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "9"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     204
+    ],
+    "content_types": [],
+    "record_ordinals": [
+     533
+    ]
+   },
+   {
+    "name": "get_boards_by_id",
+    "method": "GET",
+    "path_template": "/api/v2/boards/{numeric}/",
+    "api_surface_template": "/api/v2/boards/{numeric}/",
+    "params": [
+     {
+      "index": 3,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1",
+       "2",
+       "3",
+       "4",
+       "5"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     252,
+     262,
+     270,
+     280,
+     288,
+     298,
+     306,
+     316,
+     324,
+     334
+    ]
+   },
+   {
+    "name": "patch_boards_by_id",
+    "method": "PATCH",
+    "path_template": "/api/v2/boards/{numeric}/",
+    "api_surface_template": "/api/v2/boards/{numeric}/",
+    "params": [
+     {
+      "index": 3,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "9"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "name": "string",
+      "private": "boolean"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     531
+    ]
+   },
+   {
+    "name": "get_pins",
+    "method": "GET",
+    "path_template": "/api/v2/pins/",
+    "api_surface_template": "/api/v2/pins/",
+    "params": [],
+    "query_parameter_names": [
+     "format",
+     "limit",
+     "offset",
+     "ordering",
+     "pins__id",
+     "submitter__username",
+     "tags__name"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     8,
+     256,
+     274,
+     292,
+     309,
+     328,
+     404,
+     420,
+     436,
+     452,
+     468,
+     469,
+     490,
+     542
+    ]
+   },
+   {
+    "name": "get_pins_by_id",
+    "method": "GET",
+    "path_template": "/api/v2/pins/{numeric}",
+    "api_surface_template": "/api/v2/pins/{numeric}",
+    "params": [
+     {
+      "index": 3,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1",
+       "10",
+       "11",
+       "12",
+       "13",
+       "14",
+       "2",
+       "3",
+       "4",
+       "5",
+       "6",
+       "7",
+       "8",
+       "9"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     301
+    ],
+    "content_types": [],
+    "record_ordinals": [
+     42,
+     57,
+     72,
+     87,
+     102,
+     117,
+     132,
+     147,
+     162,
+     177,
+     192,
+     207,
+     222,
+     237
+    ]
+   },
+   {
+    "name": "get_pins_by_id_2",
+    "method": "GET",
+    "path_template": "/api/v2/pins/{numeric}/",
+    "api_surface_template": "/api/v2/pins/{numeric}/",
+    "params": [
+     {
+      "index": 3,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1",
+       "10",
+       "11",
+       "12",
+       "13",
+       "14",
+       "2",
+       "3",
+       "4",
+       "5",
+       "6",
+       "7",
+       "8",
+       "9"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     45,
+     59,
+     75,
+     90,
+     105,
+     120,
+     135,
+     150,
+     165,
+     180,
+     195,
+     210,
+     225,
+     240,
+     460,
+     461,
+     462,
+     463,
+     464
+    ]
+   },
+   {
+    "name": "get_profile_public_users",
+    "method": "GET",
+    "path_template": "/api/v2/profile/public-users/",
+    "api_surface_template": "/api/v2/profile/public-users/",
+    "params": [],
+    "query_parameter_names": [
+     "username"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     342,
+     358,
+     373,
+     388,
+     403,
+     467,
+     524
+    ]
+   },
+   {
+    "name": "get_tags_auto_complete",
+    "method": "GET",
+    "path_template": "/api/v2/tags-auto-complete/",
+    "api_surface_template": "/api/v2/tags-auto-complete/",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     465,
+     476
+    ]
+   },
+   {
+    "name": "get_manifest",
+    "method": "GET",
+    "path_template": "/manifest.json",
+    "api_surface_template": "/manifest.json",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     5,
+     43,
+     60,
+     74,
+     89,
+     104,
+     119,
+     134,
+     149,
+     164,
+     179,
+     194,
+     209,
+     224,
+     239,
+     254,
+     272,
+     290,
+     308,
+     326,
+     345,
+     361,
+     376,
+     391,
+     406,
+     422,
+     438,
+     454,
+     479,
+     492,
+     527,
+     544
+    ]
+   }
+  ],
+  "records": [
+   {
+    "ordinal": 5,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 8,
+    "method": "GET",
+    "path": "/api/v2/pins/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 42,
+    "method": "GET",
+    "path": "/api/v2/pins/1",
+    "status": 301,
+    "content_type": null
+   },
+   {
+    "ordinal": 43,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 45,
+    "method": "GET",
+    "path": "/api/v2/pins/1/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 57,
+    "method": "GET",
+    "path": "/api/v2/pins/2",
+    "status": 301,
+    "content_type": null
+   },
+   {
+    "ordinal": 59,
+    "method": "GET",
+    "path": "/api/v2/pins/2/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 60,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 72,
+    "method": "GET",
+    "path": "/api/v2/pins/3",
+    "status": 301,
+    "content_type": null
+   },
+   {
+    "ordinal": 74,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 75,
+    "method": "GET",
+    "path": "/api/v2/pins/3/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 87,
+    "method": "GET",
+    "path": "/api/v2/pins/4",
+    "status": 301,
+    "content_type": null
+   },
+   {
+    "ordinal": 89,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 90,
+    "method": "GET",
+    "path": "/api/v2/pins/4/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 102,
+    "method": "GET",
+    "path": "/api/v2/pins/5",
+    "status": 301,
+    "content_type": null
+   },
+   {
+    "ordinal": 104,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 105,
+    "method": "GET",
+    "path": "/api/v2/pins/5/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 117,
+    "method": "GET",
+    "path": "/api/v2/pins/6",
+    "status": 301,
+    "content_type": null
+   },
+   {
+    "ordinal": 119,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 120,
+    "method": "GET",
+    "path": "/api/v2/pins/6/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 132,
+    "method": "GET",
+    "path": "/api/v2/pins/7",
+    "status": 301,
+    "content_type": null
+   },
+   {
+    "ordinal": 134,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 135,
+    "method": "GET",
+    "path": "/api/v2/pins/7/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 147,
+    "method": "GET",
+    "path": "/api/v2/pins/8",
+    "status": 301,
+    "content_type": null
+   },
+   {
+    "ordinal": 149,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 150,
+    "method": "GET",
+    "path": "/api/v2/pins/8/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 162,
+    "method": "GET",
+    "path": "/api/v2/pins/9",
+    "status": 301,
+    "content_type": null
+   },
+   {
+    "ordinal": 164,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 165,
+    "method": "GET",
+    "path": "/api/v2/pins/9/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 177,
+    "method": "GET",
+    "path": "/api/v2/pins/10",
+    "status": 301,
+    "content_type": null
+   },
+   {
+    "ordinal": 179,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 180,
+    "method": "GET",
+    "path": "/api/v2/pins/10/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 192,
+    "method": "GET",
+    "path": "/api/v2/pins/11",
+    "status": 301,
+    "content_type": null
+   },
+   {
+    "ordinal": 194,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 195,
+    "method": "GET",
+    "path": "/api/v2/pins/11/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 207,
+    "method": "GET",
+    "path": "/api/v2/pins/12",
+    "status": 301,
+    "content_type": null
+   },
+   {
+    "ordinal": 209,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 210,
+    "method": "GET",
+    "path": "/api/v2/pins/12/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 222,
+    "method": "GET",
+    "path": "/api/v2/pins/13",
+    "status": 301,
+    "content_type": null
+   },
+   {
+    "ordinal": 224,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 225,
+    "method": "GET",
+    "path": "/api/v2/pins/13/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 237,
+    "method": "GET",
+    "path": "/api/v2/pins/14",
+    "status": 301,
+    "content_type": null
+   },
+   {
+    "ordinal": 239,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 240,
+    "method": "GET",
+    "path": "/api/v2/pins/14/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 252,
+    "method": "GET",
+    "path": "/api/v2/boards/1/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 254,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 256,
+    "method": "GET",
+    "path": "/api/v2/pins/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 262,
+    "method": "GET",
+    "path": "/api/v2/boards/1/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 270,
+    "method": "GET",
+    "path": "/api/v2/boards/2/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 272,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 274,
+    "method": "GET",
+    "path": "/api/v2/pins/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 280,
+    "method": "GET",
+    "path": "/api/v2/boards/2/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 288,
+    "method": "GET",
+    "path": "/api/v2/boards/3/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 290,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 292,
+    "method": "GET",
+    "path": "/api/v2/pins/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 298,
+    "method": "GET",
+    "path": "/api/v2/boards/3/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 306,
+    "method": "GET",
+    "path": "/api/v2/boards/4/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 308,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 309,
+    "method": "GET",
+    "path": "/api/v2/pins/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 316,
+    "method": "GET",
+    "path": "/api/v2/boards/4/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 324,
+    "method": "GET",
+    "path": "/api/v2/boards/5/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 326,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 328,
+    "method": "GET",
+    "path": "/api/v2/pins/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 334,
+    "method": "GET",
+    "path": "/api/v2/boards/5/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 342,
+    "method": "GET",
+    "path": "/api/v2/profile/public-users/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 343,
+    "method": "GET",
+    "path": "/api/v2/boards/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 345,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 358,
+    "method": "GET",
+    "path": "/api/v2/profile/public-users/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 359,
+    "method": "GET",
+    "path": "/api/v2/boards/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 361,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 373,
+    "method": "GET",
+    "path": "/api/v2/profile/public-users/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 374,
+    "method": "GET",
+    "path": "/api/v2/boards/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 376,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 388,
+    "method": "GET",
+    "path": "/api/v2/profile/public-users/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 389,
+    "method": "GET",
+    "path": "/api/v2/boards/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 391,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 403,
+    "method": "GET",
+    "path": "/api/v2/profile/public-users/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 404,
+    "method": "GET",
+    "path": "/api/v2/pins/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 406,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 420,
+    "method": "GET",
+    "path": "/api/v2/pins/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 422,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 436,
+    "method": "GET",
+    "path": "/api/v2/pins/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 438,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 452,
+    "method": "GET",
+    "path": "/api/v2/pins/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 454,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 460,
+    "method": "GET",
+    "path": "/api/v2/pins/1/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 461,
+    "method": "GET",
+    "path": "/api/v2/pins/5/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 462,
+    "method": "GET",
+    "path": "/api/v2/pins/9/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 463,
+    "method": "GET",
+    "path": "/api/v2/pins/11/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 464,
+    "method": "GET",
+    "path": "/api/v2/pins/14/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 465,
+    "method": "GET",
+    "path": "/api/v2/tags-auto-complete/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 466,
+    "method": "GET",
+    "path": "/api/v2/boards-auto-complete/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 467,
+    "method": "GET",
+    "path": "/api/v2/profile/public-users/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 468,
+    "method": "GET",
+    "path": "/api/v2/pins/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 469,
+    "method": "GET",
+    "path": "/api/v2/pins/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 476,
+    "method": "GET",
+    "path": "/api/v2/tags-auto-complete/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 479,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 481,
+    "method": "GET",
+    "path": "/api/v2/boards/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 490,
+    "method": "GET",
+    "path": "/api/v2/pins/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 492,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 516,
+    "method": "POST",
+    "path": "/api/v2/boards/",
+    "status": 201,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 524,
+    "method": "GET",
+    "path": "/api/v2/profile/public-users/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 525,
+    "method": "GET",
+    "path": "/api/v2/boards/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 527,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 531,
+    "method": "PATCH",
+    "path": "/api/v2/boards/9/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 532,
+    "method": "GET",
+    "path": "/api/v2/boards/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 533,
+    "method": "DELETE",
+    "path": "/api/v2/boards/9/",
+    "status": 204,
+    "content_type": null
+   },
+   {
+    "ordinal": 534,
+    "method": "GET",
+    "path": "/api/v2/boards/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 542,
+    "method": "GET",
+    "path": "/api/v2/pins/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 544,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/json"
+   }
+  ],
+  "excluded": [
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3403",
+    "path_template": "/",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3403",
+    "path_template": "/boards/users/ada-finch",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3403",
+    "path_template": "/boards/users/mina-okafor",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3403",
+    "path_template": "/boards/users/rea-admin",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3403",
+    "path_template": "/boards/users/rui-castellanos",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3403",
+    "path_template": "/boards/users/tomas-vey",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3403",
+    "path_template": "/css/app.1a62f620.css",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3403",
+    "path_template": "/favicon.png",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3403",
+    "path_template": "/img/icons/android-chrome-192x192.png",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3403",
+    "path_template": "/img/logo-dark.3d119b09.png",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3403",
+    "path_template": "/js/app.0ee82cef.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3403",
+    "path_template": "/js/chunk-vendors.49c1bee2.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3403",
+    "path_template": "/media/a/{numeric}/{hex}/ca-03.png",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3403",
+    "path_template": "/media/b/{numeric}/{hex}/sd-12.png",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3403",
+    "path_template": "/media/c/{numeric}/{hex}/bh-124.png",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3403",
+    "path_template": "/media/e/{numeric}/{hex}/gl-2307.png",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3403",
+    "path_template": "/media/f/{numeric}/{hex}/lr-0422.png",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3403",
+    "path_template": "/media/f/{numeric}/{hex}/sd-07.png",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3403",
+    "path_template": "/media/{numeric}/c/{hex}/gl-2291.png",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3403",
+    "path_template": "/media/{numeric}/d/{hex}/bh-131.png",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3403",
+    "path_template": "/media/{numeric}/e/{hex}/lr-0431.png",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3403",
+    "path_template": "/media/{numeric}/{numeric}/{hex}/bh-118.png",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3403",
+    "path_template": "/media/{numeric}/{numeric}/{hex}/ca-09.png",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3403",
+    "path_template": "/media/{numeric}/{numeric}/{hex}/gl-2315.png",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3403",
+    "path_template": "/media/{numeric}/{numeric}/{hex}/lr-0417.png",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3403",
+    "path_template": "/media/{numeric}/{numeric}/{hex}/sd-19.png",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3403",
+    "path_template": "/pins/boards/{numeric}",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3403",
+    "path_template": "/pins/tags/core-sample",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3403",
+    "path_template": "/pins/tags/tile-glaze",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3403",
+    "path_template": "/pins/tags/window-study",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3403",
+    "path_template": "/pins/users/mina-okafor",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3403",
+    "path_template": "/pins/{numeric}",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3403",
+    "path_template": "/search",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3403",
+    "path_template": "/service-worker.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://gravatar.com",
+    "path_template": "/avatar/{hex}",
+    "reason": "other-origin"
+   },
+   {
+    "method": "GET",
+    "origin": "https://cdn.jsdelivr.net",
+    "path_template": "/npm/@mdi/font@2.5.94/css/materialdesignicons.min.css",
+    "reason": "other-origin"
+   },
+   {
+    "method": "GET",
+    "origin": "https://cdn.jsdelivr.net",
+    "path_template": "/npm/@mdi/font@2.5.94/fonts/materialdesignicons-webfont.woff2",
+    "reason": "other-origin"
+   },
+   {
+    "method": "GET",
+    "origin": "https://gravatar.com",
+    "path_template": "/avatar/{hex}",
+    "reason": "other-origin"
+   }
+  ],
+  "templated_groups": 23,
+  "kind": "environment-manifest",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "confidence": "inferred",
+ "authority": "controlled-replay",
+ "environment": null,
+ "limitations": [
+  "Artifact identity is unavailable for this observation.",
+  "251 of 568 scenario transactions retained no response body; their tools replay status and content type only.",
+  "Artifact identity is unavailable for this observation.",
+  "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+  "Browser host platform and architecture were not observed.",
+  "Captured response-body bytes are the result of Playwright's Response.body() API. Playwright may satisfy that API with a credentialed follow-up load of the request URL when CDP has no body, so transaction and event links do not verify that retained bytes came from the original network transaction.",
+  "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+  "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+  "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+  "Non-cookie storage seeds use CDP pre-script instrumentation; only pauses in the scenario's private seed script are resumed by this observer.",
+  "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+  "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+  "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+  "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+  "Scenario records are the capture's network transactions in request order; each record ordinal is the transaction's zero-based position.",
+  "Some selected network content was unavailable; per-transaction content states retain the reason.",
+  "Storage values are hashed only after declared-secret redaction.",
+  "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+ ],
+ "relationship_coverage": null,
+ "locations": [],
+ "evidence_links": [
+  "ev_0878c47a60e7fec405c266932194cb3b41b645d635c765b4593c2c6e5d382ac5"
+ ]
+}

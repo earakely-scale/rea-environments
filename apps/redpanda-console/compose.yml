@@ -1,0 +1,55 @@
+# Redpanda Console + one Redpanda broker for the rea showcase capture. Loopback only; one compose project: rea-redpanda-console.
+# Console (free edition, no login) on 127.0.0.1:3305. The broker publishes only its HTTP Proxy and Schema Registry on
+# loopback (seeding through stdlib HTTP); the Kafka and Admin APIs stay inside the compose network.
+services:
+  redpanda:
+    image: redpandadata/redpanda:v26.2.5@sha256:badca2d958f81da675c3055a9ecb6ebb590325582bcf16936148ffd65e96e920
+    command:
+      - redpanda
+      - start
+      - --kafka-addr=internal://0.0.0.0:9092
+      - --advertise-kafka-addr=internal://redpanda:9092
+      - --pandaproxy-addr=internal://0.0.0.0:8082
+      - --advertise-pandaproxy-addr=internal://127.0.0.1:18082
+      - --schema-registry-addr=internal://0.0.0.0:8081
+      - --rpc-addr=redpanda:33145
+      - --advertise-rpc-addr=redpanda:33145
+      - --mode=dev-container
+      - --smp=1
+      - --memory=1G
+      - --default-log-level=warn
+    ports:
+      - "127.0.0.1:18082:8082"
+      - "127.0.0.1:18081:8081"
+    volumes:
+      - redpanda-data:/var/lib/redpanda/data
+    healthcheck:
+      test: ["CMD-SHELL", "rpk cluster health | grep -E \"Healthy:.+true\""]
+      interval: 5s
+      timeout: 5s
+      retries: 36
+  console:
+    image: redpandadata/console:v3.12.0@sha256:9dc0cd55db172c6be9c2ff8a51f33a14395f7675fa7fbc002c277f3b96115c27
+    entrypoint: /bin/sh
+    command: -c "echo \"$$CONSOLE_CONFIG_FILE\" > /tmp/config.yml; /app/console"
+    environment:
+      CONFIG_FILEPATH: /tmp/config.yml
+      CONSOLE_CONFIG_FILE: |
+        kafka:
+          brokers: ["redpanda:9092"]
+        schemaRegistry:
+          enabled: true
+          urls: ["http://redpanda:8081"]
+        redpanda:
+          adminApi:
+            enabled: true
+            urls: ["http://redpanda:9644"]
+        server:
+          listenPort: 8080
+    ports:
+      - "127.0.0.1:3305:8080"
+    depends_on:
+      redpanda:
+        condition: service_healthy
+volumes:
+  redpanda-data: {}

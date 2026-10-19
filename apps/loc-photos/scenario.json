@@ -1,0 +1,440 @@
+{
+ "browser": {
+  "mode": "launch",
+  "executable_path": "/snap/bin/chromium"
+ },
+ "start_url": {
+  "url": "https://www.loc.gov/photos/?q=lighthouse&fo=json&c=5&at=results,pagination",
+  "query": []
+ },
+ "storage": {
+  "cookies": [],
+  "local_storage": [],
+  "session_storage": []
+ },
+ "actions": [
+  {
+   "step_id": "read-01",
+   "action": "goto",
+   "destination": {
+    "url": "https://www.loc.gov/search/?q=covered%20bridge&fa=original-format:photo,+print,+drawing&fo=json&c=5&at=results",
+    "query": []
+   },
+   "wait_until": "load",
+   "timeout_ms": 30000
+  },
+  {
+   "step_id": "pause-01",
+   "action": "wait_for_timeout",
+   "duration_ms": 900
+  },
+  {
+   "step_id": "read-02",
+   "action": "goto",
+   "destination": {
+    "url": "https://www.loc.gov/collections/photochrom-prints/?q=castle&fo=json&c=6&at=results",
+    "query": []
+   },
+   "wait_until": "load",
+   "timeout_ms": 30000
+  },
+  {
+   "step_id": "pause-02",
+   "action": "wait_for_timeout",
+   "duration_ms": 900
+  },
+  {
+   "step_id": "read-03",
+   "action": "goto",
+   "destination": {
+    "url": "https://www.loc.gov/collections/photochrom-prints/?q=glacier&fo=json&c=6&at=results",
+    "query": []
+   },
+   "wait_until": "load",
+   "timeout_ms": 30000
+  },
+  {
+   "step_id": "pause-03",
+   "action": "wait_for_timeout",
+   "duration_ms": 900
+  },
+  {
+   "step_id": "read-04",
+   "action": "goto",
+   "destination": {
+    "url": "https://www.loc.gov/collections/detroit-publishing-company/?q=bridge&fo=json&c=6&at=results",
+    "query": []
+   },
+   "wait_until": "load",
+   "timeout_ms": 30000
+  },
+  {
+   "step_id": "pause-04",
+   "action": "wait_for_timeout",
+   "duration_ms": 900
+  },
+  {
+   "step_id": "read-05",
+   "action": "goto",
+   "destination": {
+    "url": "https://www.loc.gov/collections/panoramic-photographs/?q=canyon&fo=json&c=5&at=results",
+    "query": []
+   },
+   "wait_until": "load",
+   "timeout_ms": 30000
+  },
+  {
+   "step_id": "pause-05",
+   "action": "wait_for_timeout",
+   "duration_ms": 900
+  },
+  {
+   "step_id": "read-06",
+   "action": "goto",
+   "destination": {
+    "url": "https://www.loc.gov/maps/?q=grand%20canyon&fo=json&c=3&at=results",
+    "query": []
+   },
+   "wait_until": "load",
+   "timeout_ms": 30000
+  },
+  {
+   "step_id": "pause-06",
+   "action": "wait_for_timeout",
+   "duration_ms": 900
+  },
+  {
+   "step_id": "read-07",
+   "action": "goto",
+   "destination": {
+    "url": "https://www.loc.gov/search/?q=glacier%20point&fo=json&c=3&at=results",
+    "query": []
+   },
+   "wait_until": "load",
+   "timeout_ms": 30000
+  },
+  {
+   "step_id": "pause-07",
+   "action": "wait_for_timeout",
+   "duration_ms": 900
+  },
+  {
+   "step_id": "read-08",
+   "action": "goto",
+   "destination": {
+    "url": "https://www.loc.gov/collections/stereograph-cards/?q=bridge&fo=json&c=3&at=results",
+    "query": []
+   },
+   "wait_until": "load",
+   "timeout_ms": 30000
+  },
+  {
+   "step_id": "pause-08",
+   "action": "wait_for_timeout",
+   "duration_ms": 900
+  },
+  {
+   "step_id": "read-09",
+   "action": "goto",
+   "destination": {
+    "url": "https://www.loc.gov/collections/historic-american-buildings-landscapes-and-engineering-records/?q=covered%20bridge&fo=json&c=3&at=results",
+    "query": []
+   },
+   "wait_until": "load",
+   "timeout_ms": 30000
+  },
+  {
+   "step_id": "pause-09",
+   "action": "wait_for_timeout",
+   "duration_ms": 900
+  },
+  {
+   "step_id": "read-10",
+   "action": "goto",
+   "destination": {
+    "url": "https://www.loc.gov/item/2002696569/?fo=json&at=item",
+    "query": []
+   },
+   "wait_until": "load",
+   "timeout_ms": 30000
+  },
+  {
+   "step_id": "pause-10",
+   "action": "wait_for_timeout",
+   "duration_ms": 900
+  },
+  {
+   "step_id": "read-11",
+   "action": "goto",
+   "destination": {
+    "url": "https://www.loc.gov/item/2017659189/?fo=json&at=item",
+    "query": []
+   },
+   "wait_until": "load",
+   "timeout_ms": 30000
+  },
+  {
+   "step_id": "pause-11",
+   "action": "wait_for_timeout",
+   "duration_ms": 900
+  },
+  {
+   "step_id": "read-12",
+   "action": "goto",
+   "destination": {
+    "url": "https://www.loc.gov/item/2001705953/?fo=json&at=item",
+    "query": []
+   },
+   "wait_until": "load",
+   "timeout_ms": 30000
+  },
+  {
+   "step_id": "pause-12",
+   "action": "wait_for_timeout",
+   "duration_ms": 900
+  },
+  {
+   "step_id": "read-13",
+   "action": "goto",
+   "destination": {
+    "url": "https://www.loc.gov/item/2001703310/?fo=json&at=item",
+    "query": []
+   },
+   "wait_until": "load",
+   "timeout_ms": 30000
+  },
+  {
+   "step_id": "pause-13",
+   "action": "wait_for_timeout",
+   "duration_ms": 900
+  },
+  {
+   "step_id": "read-14",
+   "action": "goto",
+   "destination": {
+    "url": "https://www.loc.gov/item/2008679647/?fo=json&at=item",
+    "query": []
+   },
+   "wait_until": "load",
+   "timeout_ms": 30000
+  },
+  {
+   "step_id": "pause-14",
+   "action": "wait_for_timeout",
+   "duration_ms": 900
+  },
+  {
+   "step_id": "read-15",
+   "action": "goto",
+   "destination": {
+    "url": "https://www.loc.gov/item/2008678175/?fo=json&at=item",
+    "query": []
+   },
+   "wait_until": "load",
+   "timeout_ms": 30000
+  },
+  {
+   "step_id": "pause-15",
+   "action": "wait_for_timeout",
+   "duration_ms": 900
+  },
+  {
+   "step_id": "read-16",
+   "action": "goto",
+   "destination": {
+    "url": "https://www.loc.gov/item/2017650153/?fo=json&at=item",
+    "query": []
+   },
+   "wait_until": "load",
+   "timeout_ms": 30000
+  },
+  {
+   "step_id": "pause-16",
+   "action": "wait_for_timeout",
+   "duration_ms": 900
+  },
+  {
+   "step_id": "read-17",
+   "action": "goto",
+   "destination": {
+    "url": "https://www.loc.gov/item/2002717351/?fo=json&at=item",
+    "query": []
+   },
+   "wait_until": "load",
+   "timeout_ms": 30000
+  },
+  {
+   "step_id": "pause-17",
+   "action": "wait_for_timeout",
+   "duration_ms": 900
+  },
+  {
+   "step_id": "read-18",
+   "action": "goto",
+   "destination": {
+    "url": "https://www.loc.gov/item/2016812477/?fo=json&at=item",
+    "query": []
+   },
+   "wait_until": "load",
+   "timeout_ms": 30000
+  },
+  {
+   "step_id": "pause-18",
+   "action": "wait_for_timeout",
+   "duration_ms": 900
+  },
+  {
+   "step_id": "read-19",
+   "action": "goto",
+   "destination": {
+    "url": "https://www.loc.gov/item/2016796148/?fo=json&at=item",
+    "query": []
+   },
+   "wait_until": "load",
+   "timeout_ms": 30000
+  },
+  {
+   "step_id": "pause-19",
+   "action": "wait_for_timeout",
+   "duration_ms": 900
+  },
+  {
+   "step_id": "read-20",
+   "action": "goto",
+   "destination": {
+    "url": "https://www.loc.gov/item/2016818886/?fo=json&at=item",
+    "query": []
+   },
+   "wait_until": "load",
+   "timeout_ms": 30000
+  },
+  {
+   "step_id": "pause-20",
+   "action": "wait_for_timeout",
+   "duration_ms": 900
+  },
+  {
+   "step_id": "read-21",
+   "action": "goto",
+   "destination": {
+    "url": "https://www.loc.gov/item/2007661407/?fo=json&at=item",
+    "query": []
+   },
+   "wait_until": "load",
+   "timeout_ms": 30000
+  },
+  {
+   "step_id": "pause-21",
+   "action": "wait_for_timeout",
+   "duration_ms": 900
+  },
+  {
+   "step_id": "read-22",
+   "action": "goto",
+   "destination": {
+    "url": "https://www.loc.gov/item/2007661434/?fo=json&at=item",
+    "query": []
+   },
+   "wait_until": "load",
+   "timeout_ms": 30000
+  },
+  {
+   "step_id": "pause-22",
+   "action": "wait_for_timeout",
+   "duration_ms": 900
+  },
+  {
+   "step_id": "read-23",
+   "action": "goto",
+   "destination": {
+    "url": "https://www.loc.gov/item/2007661383/?fo=json&at=item",
+    "query": []
+   },
+   "wait_until": "load",
+   "timeout_ms": 30000
+  },
+  {
+   "step_id": "pause-23",
+   "action": "wait_for_timeout",
+   "duration_ms": 900
+  },
+  {
+   "step_id": "read-24",
+   "action": "goto",
+   "destination": {
+    "url": "https://www.loc.gov/item/in0214/?fo=json&at=item",
+    "query": []
+   },
+   "wait_until": "load",
+   "timeout_ms": 30000
+  },
+  {
+   "step_id": "pause-24",
+   "action": "wait_for_timeout",
+   "duration_ms": 900
+  },
+  {
+   "step_id": "read-25",
+   "action": "goto",
+   "destination": {
+    "url": "https://www.loc.gov/item/2002696569/?fo=json&at=resources",
+    "query": []
+   },
+   "wait_until": "load",
+   "timeout_ms": 30000
+  },
+  {
+   "step_id": "pause-25",
+   "action": "wait_for_timeout",
+   "duration_ms": 900
+  },
+  {
+   "step_id": "read-26",
+   "action": "goto",
+   "destination": {
+    "url": "https://www.loc.gov/item/2007661407/?fo=json&at=resources",
+    "query": []
+   },
+   "wait_until": "load",
+   "timeout_ms": 30000
+  },
+  {
+   "step_id": "pause-26",
+   "action": "wait_for_timeout",
+   "duration_ms": 900
+  },
+  {
+   "step_id": "read-27",
+   "action": "goto",
+   "destination": {
+    "url": "https://www.loc.gov/resource/ppmsc.08198/?fo=json&at=resource",
+    "query": []
+   },
+   "wait_until": "load",
+   "timeout_ms": 30000
+  },
+  {
+   "step_id": "pause-27",
+   "action": "wait_for_timeout",
+   "duration_ms": 900
+  },
+  {
+   "step_id": "settle",
+   "action": "wait_for_timeout",
+   "duration_ms": 1500
+  }
+ ],
+ "capture": {
+  "events": [
+   "network"
+  ],
+  "network": {
+   "request_body": true,
+   "response_body": true,
+   "header_values": false
+  },
+  "limits": {
+   "max_network_body_bytes": 262144
+  }
+ }
+}

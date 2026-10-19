@@ -1,0 +1,1266 @@
+{
+ "browser": {
+  "mode": "launch",
+  "executable_path": "/snap/bin/chromium"
+ },
+ "start_url": {
+  "url": "http://127.0.0.1:3403/",
+  "query": []
+ },
+ "secrets": [
+  {
+   "secret_id": "session_cookie",
+   "environment_variable": "APP_SESSION"
+  },
+  {
+   "secret_id": "csrf_cookie",
+   "environment_variable": "APP_CSRF"
+  },
+  {
+   "secret_id": "api_token",
+   "environment_variable": "APP_API_TOKEN"
+  },
+  {
+   "secret_id": "marker_guard",
+   "environment_variable": "APP_MARKER_GUARD"
+  }
+ ],
+ "storage": {
+  "cookies": [
+   {
+    "name": "sessionid",
+    "value": {
+     "source": "secret",
+     "secret_id": "session_cookie"
+    },
+    "destination": {
+     "url": "http://127.0.0.1:3403/",
+     "query": []
+    },
+    "http_only": true,
+    "secure": false,
+    "same_site": "Lax"
+   },
+   {
+    "name": "csrftoken",
+    "value": {
+     "source": "secret",
+     "secret_id": "csrf_cookie"
+    },
+    "destination": {
+     "url": "http://127.0.0.1:3403/",
+     "query": []
+    },
+    "http_only": false,
+    "secure": false,
+    "same_site": "Lax"
+   }
+  ],
+  "local_storage": [
+   {
+    "origin": "http://127.0.0.1:3403",
+    "entries": [
+     {
+      "name": "pinry.user",
+      "value": {
+       "source": "literal",
+       "value": "{\"value\": {\"username\": \"rea-admin\", \"email\": \"rea-admin@example.test\", \"gravatar\": \"d2333f13e6fe6971d6f8b2a723cbb94e\", \"resource_link\": \"http://127.0.0.1:3403/api/v2/profile/users/5/\"}, \"expires_at\": 4102444800000}"
+      }
+     },
+     {
+      "name": "localeCode",
+      "value": {
+       "source": "literal",
+       "value": "en"
+      }
+     }
+    ]
+   }
+  ],
+  "session_storage": []
+ },
+ "actions": [
+  {
+   "step_id": "ready-home",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": ".pin-card >> nth=0"
+   },
+   "state": "attached",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "pause-home",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "open-pin-lr-0417",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/pins/1",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "ready-pin-lr-0417",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": ".pin-card >> nth=0"
+   },
+   "state": "attached",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "pause-pin-lr-0417",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "open-pin-lr-0422",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/pins/2",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "ready-pin-lr-0422",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": ".pin-card >> nth=0"
+   },
+   "state": "attached",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "pause-pin-lr-0422",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "open-pin-lr-0431",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/pins/3",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "ready-pin-lr-0431",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": ".pin-card >> nth=0"
+   },
+   "state": "attached",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "pause-pin-lr-0431",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "open-pin-gl-2291",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/pins/4",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "ready-pin-gl-2291",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": ".pin-card >> nth=0"
+   },
+   "state": "attached",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "pause-pin-gl-2291",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "open-pin-gl-2307",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/pins/5",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "ready-pin-gl-2307",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": ".pin-card >> nth=0"
+   },
+   "state": "attached",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "pause-pin-gl-2307",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "open-pin-gl-2315",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/pins/6",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "ready-pin-gl-2315",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": ".pin-card >> nth=0"
+   },
+   "state": "attached",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "pause-pin-gl-2315",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "open-pin-bh-118",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/pins/7",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "ready-pin-bh-118",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": ".pin-card >> nth=0"
+   },
+   "state": "attached",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "pause-pin-bh-118",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "open-pin-bh-124",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/pins/8",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "ready-pin-bh-124",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": ".pin-card >> nth=0"
+   },
+   "state": "attached",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "pause-pin-bh-124",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "open-pin-bh-131",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/pins/9",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "ready-pin-bh-131",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": ".pin-card >> nth=0"
+   },
+   "state": "attached",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "pause-pin-bh-131",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "open-pin-sd-07",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/pins/10",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "ready-pin-sd-07",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": ".pin-card >> nth=0"
+   },
+   "state": "attached",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "pause-pin-sd-07",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "open-pin-sd-12",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/pins/11",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "ready-pin-sd-12",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": ".pin-card >> nth=0"
+   },
+   "state": "attached",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "pause-pin-sd-12",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "open-pin-sd-19",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/pins/12",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "ready-pin-sd-19",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": ".pin-card >> nth=0"
+   },
+   "state": "attached",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "pause-pin-sd-19",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "open-pin-ca-03",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/pins/13",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "ready-pin-ca-03",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": ".pin-card >> nth=0"
+   },
+   "state": "attached",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "pause-pin-ca-03",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "open-pin-ca-09",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/pins/14",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "ready-pin-ca-09",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": ".pin-card >> nth=0"
+   },
+   "state": "attached",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "pause-pin-ca-09",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "open-board-lighthouse",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/pins/boards/1",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "ready-board-lighthouse",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": ".pin-card >> nth=0"
+   },
+   "state": "attached",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "pause-board-lighthouse",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "json-board-lighthouse",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/api/v2/boards/1/",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "pause-json-board-lighthouse",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "open-board-granite",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/pins/boards/2",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "ready-board-granite",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": ".pin-card >> nth=0"
+   },
+   "state": "attached",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "pause-board-granite",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "json-board-granite",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/api/v2/boards/2/",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "pause-json-board-granite",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "open-board-blue",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/pins/boards/3",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "ready-board-blue",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": ".pin-card >> nth=0"
+   },
+   "state": "attached",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "pause-board-blue",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "json-board-blue",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/api/v2/boards/3/",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "pause-json-board-blue",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "open-board-saltmarsh",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/pins/boards/4",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "ready-board-saltmarsh",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": ".pin-card >> nth=0"
+   },
+   "state": "attached",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "pause-board-saltmarsh",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "json-board-saltmarsh",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/api/v2/boards/4/",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "pause-json-board-saltmarsh",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "open-board-copperfield",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/pins/boards/5",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "ready-board-copperfield",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": ".pin-card >> nth=0"
+   },
+   "state": "attached",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "pause-board-copperfield",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "json-board-copperfield",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/api/v2/boards/5/",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "pause-json-board-copperfield",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "open-boards-of-ada-finch",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/boards/users/ada-finch",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "ready-boards-of-ada-finch",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": ".board-card >> nth=0"
+   },
+   "state": "attached",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "pause-boards-of-ada-finch",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "open-boards-of-rui-castellanos",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/boards/users/rui-castellanos",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "ready-boards-of-rui-castellanos",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": ".board-card >> nth=0"
+   },
+   "state": "attached",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "pause-boards-of-rui-castellanos",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "open-boards-of-mina-okafor",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/boards/users/mina-okafor",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "ready-boards-of-mina-okafor",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": ".board-card >> nth=0"
+   },
+   "state": "attached",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "pause-boards-of-mina-okafor",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "open-boards-of-tomas-vey",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/boards/users/tomas-vey",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "ready-boards-of-tomas-vey",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": ".board-card >> nth=0"
+   },
+   "state": "attached",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "pause-boards-of-tomas-vey",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "open-pins-of-mina-okafor",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/pins/users/mina-okafor",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "ready-pins-of-mina-okafor",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": ".pin-card >> nth=0"
+   },
+   "state": "attached",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "pause-pins-of-mina-okafor",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "open-tag-tile-glaze",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/pins/tags/tile-glaze",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "ready-tag-tile-glaze",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": ".pin-card >> nth=0"
+   },
+   "state": "attached",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "pause-tag-tile-glaze",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "open-tag-core-sample",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/pins/tags/core-sample",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "ready-tag-core-sample",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": ".pin-card >> nth=0"
+   },
+   "state": "attached",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "pause-tag-core-sample",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "open-tag-window-study",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/pins/tags/window-study",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "ready-tag-window-study",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": ".pin-card >> nth=0"
+   },
+   "state": "attached",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "pause-tag-window-study",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "json-pin-lr-0417",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/api/v2/pins/1/",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "pause-json-pin-lr-0417",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "json-pin-gl-2307",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/api/v2/pins/5/",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "pause-json-pin-gl-2307",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "json-pin-bh-131",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/api/v2/pins/9/",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "pause-json-pin-bh-131",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "json-pin-sd-12",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/api/v2/pins/11/",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "pause-json-pin-sd-12",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "json-pin-ca-09",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/api/v2/pins/14/",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "pause-json-pin-ca-09",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "json-tags",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/api/v2/tags-auto-complete/",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "pause-json-tags",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "json-boards-of-ada",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/api/v2/boards-auto-complete/?submitter__username=ada-finch",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "pause-json-boards-of-ada",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "json-public-user-tomas",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/api/v2/profile/public-users/?username=tomas-vey",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "pause-json-public-user-tomas",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "json-pins-tide-gauge",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/api/v2/pins/?tags__name=tide-gauge&limit=5",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "pause-json-pins-tide-gauge",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "json-pins-by-rui",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/api/v2/pins/?submitter__username=rui-castellanos&limit=5",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "pause-json-pins-by-rui",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "open-search",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/search",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "ready-search",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": ".search-panel select >> nth=0"
+   },
+   "state": "attached",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "pause-search",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "search-filter",
+   "action": "select_option",
+   "locator": {
+    "kind": "css",
+    "selector": ".search-panel select"
+   },
+   "value": {
+    "source": "literal",
+    "value": "Board"
+   }
+  },
+  {
+   "step_id": "search-text",
+   "action": "fill",
+   "locator": {
+    "kind": "css",
+    "selector": ".search-panel input[type=search]"
+   },
+   "value": {
+    "source": "literal",
+    "value": "Granite"
+   }
+  },
+  {
+   "step_id": "search-go",
+   "action": "click",
+   "locator": {
+    "kind": "role",
+    "role": "button",
+    "name": "Search"
+   }
+  },
+  {
+   "step_id": "search-results",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": ".board-card >> nth=0"
+   },
+   "state": "attached",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "pause-search-results",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "open-scratch-home",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "ready-scratch-home",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": ".pin-card >> nth=0"
+   },
+   "state": "attached",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "pause-scratch-home",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "menu-create",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "a.navbar-link:text-is('Create')"
+   }
+  },
+  {
+   "step_id": "menu-create-board",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": ".navbar-dropdown a.navbar-item:text-is('Board')"
+   }
+  },
+  {
+   "step_id": "board-name",
+   "action": "fill",
+   "locator": {
+    "kind": "css",
+    "selector": ".board-modal input[type=text]"
+   },
+   "value": {
+    "source": "literal",
+    "value": "Copperfield Annex scratch board"
+   }
+  },
+  {
+   "step_id": "board-create",
+   "action": "click",
+   "locator": {
+    "kind": "role",
+    "role": "button",
+    "name": "Create Board"
+   }
+  },
+  {
+   "step_id": "board-created",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": ".board-modal"
+   },
+   "state": "detached",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "pause-board-created",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "open-my-boards",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/boards/users/rea-admin",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "ready-my-boards",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": ".board-card >> nth=0"
+   },
+   "state": "attached",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "pause-my-boards",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "hover-board",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": ".board-card p.board-info"
+   }
+  },
+  {
+   "step_id": "edit-board",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": ".board-card .editor-buttons .icon-container:nth-child(2)"
+   }
+  },
+  {
+   "step_id": "rename-board",
+   "action": "fill",
+   "locator": {
+    "kind": "css",
+    "selector": ".board-modal input[type=text]"
+   },
+   "value": {
+    "source": "literal",
+    "value": "Copperfield Annex scratch board (renamed)"
+   }
+  },
+  {
+   "step_id": "save-board",
+   "action": "click",
+   "locator": {
+    "kind": "role",
+    "role": "button",
+    "name": "Save Changes"
+   }
+  },
+  {
+   "step_id": "board-saved",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": ".board-card p.board-info:has-text('(renamed)')"
+   },
+   "state": "attached",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "pause-board-saved",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "hover-board-again",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": ".board-card p.board-info"
+   }
+  },
+  {
+   "step_id": "delete-board",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": ".board-card .editor-buttons .icon-container:nth-child(1)"
+   }
+  },
+  {
+   "step_id": "confirm-delete",
+   "action": "click",
+   "locator": {
+    "kind": "role",
+    "role": "button",
+    "name": "OK"
+   }
+  },
+  {
+   "step_id": "board-deleted",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": ".board-card"
+   },
+   "state": "detached",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "pause-board-deleted",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "open-home-again",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3403/",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "ready-home-again",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": ".pin-card >> nth=0"
+   },
+   "state": "attached",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "pause-home-again",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "settle",
+   "action": "wait_for_timeout",
+   "duration_ms": 1500
+  }
+ ],
+ "capture": {
+  "events": [
+   "network"
+  ],
+  "network": {
+   "request_body": true,
+   "response_body": true,
+   "header_values": false
+  },
+  "limits": {
+   "max_network_body_bytes": 20000,
+   "max_network_body_allocation_bytes": 16777216,
+   "max_total_event_allocation_bytes": 100663296,
+   "max_event_allocation_bytes": 16777216
+  }
+ }
+}

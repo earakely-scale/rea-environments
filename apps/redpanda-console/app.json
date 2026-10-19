@@ -1,0 +1,15 @@
+{
+  "app": "redpanda-console",
+  "title": "Redpanda Console",
+  "repo": "RedpandaConsoleEnv-REA",
+  "kind": "self-hosted",
+  "license": "BSL-1.1",
+  "authors": "Redpanda Data, Inc.",
+  "hf_license": "apache-2.0",
+  "version": "3.12.0",
+  "image": "redpandadata/console:v3.12.0",
+  "image_digest": "sha256:9dc0cd55db172c6be9c2ff8a51f33a14395f7675fa7fbc002c277f3b96115c27",
+  "port": 3305,
+  "keep_regex": "^/api/",
+  "domain": "event streaming (Kafka-compatible topics, consumer groups and schema registry)"
+}

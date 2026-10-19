@@ -1,0 +1,1299 @@
+{
+ "browser": {
+  "mode": "launch",
+  "executable_path": "/snap/bin/chromium"
+ },
+ "start_url": {
+  "url": "http://127.0.0.1:3402/gallery",
+  "query": []
+ },
+ "secrets": [
+  {
+   "secret_id": "admin_password",
+   "environment_variable": "APP_PASSWORD"
+  },
+  {
+   "secret_id": "session_cookie",
+   "environment_variable": "APP_SESSION"
+  }
+ ],
+ "storage": {
+  "cookies": [
+   {
+    "name": "lychee_session",
+    "value": {
+     "source": "secret",
+     "secret_id": "session_cookie"
+    },
+    "destination": {
+     "url": "http://127.0.0.1:3402/",
+     "query": []
+    },
+    "http_only": true,
+    "secure": false,
+    "same_site": "Lax"
+   }
+  ],
+  "local_storage": [],
+  "session_storage": []
+ },
+ "actions": [
+  {
+   "step_id": "gallery-ready",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "a[href=\"/gallery/7essfu5uxVTOtu3jvbCzG-we\"] >> nth=0"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 700
+  },
+  {
+   "step_id": "album-saltmarsh",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "a[href=\"/gallery/7essfu5uxVTOtu3jvbCzG-we\"] >> nth=0"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "album-saltmarsh-photos",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "a.photo[data-photo-id=\"kAvRrZddPxe59yl0S2zU6oty\"]"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "album-saltmarsh-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 700
+  },
+  {
+   "step_id": "album-signalbox",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "a[href=\"/gallery/vU8OBIksganBbURDs15_TA1z\"] >> nth=0"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "album-signalbox-photos",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "a.photo[data-photo-id=\"mHvyu5MNGffx_Ukk3Gv8ME1o\"]"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "album-signalbox-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 700
+  },
+  {
+   "step_id": "photo-signal-lamp",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "a.photo[data-photo-id=\"mHvyu5MNGffx_Ukk3Gv8ME1o\"]"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "photo-signal-lamp-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 900
+  },
+  {
+   "step_id": "photo-signal-lamp-close",
+   "action": "press",
+   "locator": {
+    "kind": "css",
+    "selector": "body"
+   },
+   "key": "Escape",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "photo-signal-lamp-closed",
+   "action": "wait_for_timeout",
+   "duration_ms": 700
+  },
+  {
+   "step_id": "back-from-signalbox",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "button:has(.pi-angle-left):visible >> nth=0"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "back-in-saltmarsh",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "a.photo[data-photo-id=\"kAvRrZddPxe59yl0S2zU6oty\"]"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "back-in-saltmarsh-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 700
+  },
+  {
+   "step_id": "back-from-saltmarsh",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "button:has(.pi-angle-left):visible >> nth=0"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "gallery-after-saltmarsh",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "a[href=\"/gallery/7essfu5uxVTOtu3jvbCzG-we\"] >> nth=0"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "gallery-after-saltmarsh-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 700
+  },
+  {
+   "step_id": "album-lighthouse",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "a[href=\"/gallery/TtKTunTy5x-20atBfrpoh08E\"] >> nth=0"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "album-lighthouse-photos",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "a.photo[data-photo-id=\"zf08OXi-uR0jb9AU1wu0Pl13\"]"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "album-lighthouse-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 700
+  },
+  {
+   "step_id": "album-lantern",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "a[href=\"/gallery/iExiFGA49_9A-20Iy0I77NSj\"] >> nth=0"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "album-lantern-photos",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "a.photo[data-photo-id=\"TBKMLpJOPHLZHZYLATuZGyvK\"]"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "album-lantern-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 700
+  },
+  {
+   "step_id": "photo-gallery-after",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "a.photo[data-photo-id=\"TBKMLpJOPHLZHZYLATuZGyvK\"]"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "photo-gallery-after-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 900
+  },
+  {
+   "step_id": "photo-gallery-after-close",
+   "action": "press",
+   "locator": {
+    "kind": "css",
+    "selector": "body"
+   },
+   "key": "Escape",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "photo-gallery-after-closed",
+   "action": "wait_for_timeout",
+   "duration_ms": 700
+  },
+  {
+   "step_id": "back-from-lantern",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "button:has(.pi-angle-left):visible >> nth=0"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "back-in-lighthouse",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "a.photo[data-photo-id=\"zf08OXi-uR0jb9AU1wu0Pl13\"]"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "back-in-lighthouse-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 700
+  },
+  {
+   "step_id": "back-from-lighthouse",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "button:has(.pi-angle-left):visible >> nth=0"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "gallery-after-lighthouse",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "a[href=\"/gallery/7essfu5uxVTOtu3jvbCzG-we\"] >> nth=0"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "gallery-after-lighthouse-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 700
+  },
+  {
+   "step_id": "album-heron",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "a[href=\"/gallery/RvBmF-F6g8rE0ZKwtsxwFKBe\"] >> nth=0"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "album-heron-photos",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "a.photo[data-photo-id=\"Jw1JSXWq0mnwxODi4tH-t9ne\"]"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "album-heron-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 700
+  },
+  {
+   "step_id": "back-from-heron",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "button:has(.pi-angle-left):visible >> nth=0"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "gallery-after-heron",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "a[href=\"/gallery/7essfu5uxVTOtu3jvbCzG-we\"] >> nth=0"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "gallery-after-heron-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 700
+  },
+  {
+   "step_id": "album-copperfield",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "a[href=\"/gallery/Py9hpqTLlIlne3YBQZcu8gBn\"] >> nth=0"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "album-copperfield-photos",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "a.photo[data-photo-id=\"x5NFH9guQZjmhfADhpaquUH8\"]"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "album-copperfield-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 700
+  },
+  {
+   "step_id": "back-from-copperfield",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "button:has(.pi-angle-left):visible >> nth=0"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "gallery-after-copperfield",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "a[href=\"/gallery/7essfu5uxVTOtu3jvbCzG-we\"] >> nth=0"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "gallery-after-copperfield-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 700
+  },
+  {
+   "step_id": "menu-tags",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "button:has(.pi-bars):visible >> nth=0"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "menu-open-tags",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "a[href=\"/tags\"]"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "open-tags",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "a[href=\"/tags\"]"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "after-tags",
+   "action": "wait_for_timeout",
+   "duration_ms": 1200
+  },
+  {
+   "step_id": "close-menu-tags",
+   "action": "press",
+   "locator": {
+    "kind": "css",
+    "selector": "body"
+   },
+   "key": "Escape",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "menu-closed-tags",
+   "action": "wait_for_timeout",
+   "duration_ms": 500
+  },
+  {
+   "step_id": "tag-lamp-room",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "span.p-tag-label:text-is('lamp room')"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "tag-lamp-room-photos",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "a.photo >> nth=0"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "tag-lamp-room-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 700
+  },
+  {
+   "step_id": "tag-lamp-room-back",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "button:has(.pi-angle-left):visible >> nth=0"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "tags-again-lamp-room",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "span.p-tag-label >> nth=0"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "tags-again-lamp-room-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "tag-tide-gauge",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "span.p-tag-label:text-is('tide gauge')"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "tag-tide-gauge-photos",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "a.photo >> nth=0"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "tag-tide-gauge-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 700
+  },
+  {
+   "step_id": "tag-tide-gauge-back",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "button:has(.pi-angle-left):visible >> nth=0"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "tags-again-tide-gauge",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "span.p-tag-label >> nth=0"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "tags-again-tide-gauge-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "tag-heron-blue",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "span.p-tag-label:text-is('heron blue')"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "tag-heron-blue-photos",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "a.photo >> nth=0"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "tag-heron-blue-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 700
+  },
+  {
+   "step_id": "tag-heron-blue-back",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "button:has(.pi-angle-left):visible >> nth=0"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "tags-again-heron-blue",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "span.p-tag-label >> nth=0"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "tags-again-heron-blue-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "tag-facade-swatch",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "span.p-tag-label:text-is('facade swatch')"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "tag-facade-swatch-photos",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "a.photo >> nth=0"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "tag-facade-swatch-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 700
+  },
+  {
+   "step_id": "tag-facade-swatch-back",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "button:has(.pi-angle-left):visible >> nth=0"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "tags-again-facade-swatch",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "span.p-tag-label >> nth=0"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "tags-again-facade-swatch-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "tag-brass-rail",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "span.p-tag-label:text-is('brass rail')"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "tag-brass-rail-photos",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "a.photo >> nth=0"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "tag-brass-rail-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 700
+  },
+  {
+   "step_id": "tag-brass-rail-back",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "button:has(.pi-angle-left):visible >> nth=0"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "tags-again-brass-rail",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "span.p-tag-label >> nth=0"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "tags-again-brass-rail-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "tag-night-shift",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "span.p-tag-label:text-is('night shift')"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "tag-night-shift-photos",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "a.photo >> nth=0"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "tag-night-shift-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 700
+  },
+  {
+   "step_id": "tag-night-shift-back",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "button:has(.pi-angle-left):visible >> nth=0"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "tags-again-night-shift",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "span.p-tag-label >> nth=0"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "tags-again-night-shift-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "tag-rolling-stock",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "span.p-tag-label:text-is('rolling stock')"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "tag-rolling-stock-photos",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "a.photo >> nth=0"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "tag-rolling-stock-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 700
+  },
+  {
+   "step_id": "tag-rolling-stock-back",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "button:has(.pi-angle-left):visible >> nth=0"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "tags-again-rolling-stock",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "span.p-tag-label >> nth=0"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "tags-again-rolling-stock-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "tag-tide-table-menu",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "span.p-tag-label:text-is('tide-table menu')"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "tag-tide-table-menu-photos",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "a.photo >> nth=0"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "tag-tide-table-menu-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 700
+  },
+  {
+   "step_id": "tag-tide-table-menu-back",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "button:has(.pi-angle-left):visible >> nth=0"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "tags-again-tide-table-menu",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "span.p-tag-label >> nth=0"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "tags-again-tide-table-menu-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "menu-timeline",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "button:has(.pi-bars):visible >> nth=0"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "menu-open-timeline",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "a[href=\"/timeline\"]"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "open-timeline",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "a[href=\"/timeline\"]"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "after-timeline",
+   "action": "wait_for_timeout",
+   "duration_ms": 1200
+  },
+  {
+   "step_id": "close-menu-timeline",
+   "action": "press",
+   "locator": {
+    "kind": "css",
+    "selector": "body"
+   },
+   "key": "Escape",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "menu-closed-timeline",
+   "action": "wait_for_timeout",
+   "duration_ms": 500
+  },
+  {
+   "step_id": "menu-flow",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "button:has(.pi-bars):visible >> nth=0"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "menu-open-flow",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "a[href=\"/flow\"]"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "open-flow",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "a[href=\"/flow\"]"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "after-flow",
+   "action": "wait_for_timeout",
+   "duration_ms": 1200
+  },
+  {
+   "step_id": "close-menu-flow",
+   "action": "press",
+   "locator": {
+    "kind": "css",
+    "selector": "body"
+   },
+   "key": "Escape",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "menu-closed-flow",
+   "action": "wait_for_timeout",
+   "duration_ms": 500
+  },
+  {
+   "step_id": "menu-sharing",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "button:has(.pi-bars):visible >> nth=0"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "menu-open-sharing",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "a[href=\"/sharing\"]"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "open-sharing",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "a[href=\"/sharing\"]"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "after-sharing",
+   "action": "wait_for_timeout",
+   "duration_ms": 1200
+  },
+  {
+   "step_id": "close-menu-sharing",
+   "action": "press",
+   "locator": {
+    "kind": "css",
+    "selector": "body"
+   },
+   "key": "Escape",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "menu-closed-sharing",
+   "action": "wait_for_timeout",
+   "duration_ms": 500
+  },
+  {
+   "step_id": "menu-gallery",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "button:has(.pi-bars):visible >> nth=0"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "menu-open-gallery",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "a[href=\"/gallery\"]"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "open-gallery",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "a[href=\"/gallery\"]"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "after-gallery",
+   "action": "wait_for_timeout",
+   "duration_ms": 1200
+  },
+  {
+   "step_id": "close-menu-gallery",
+   "action": "press",
+   "locator": {
+    "kind": "css",
+    "selector": "body"
+   },
+   "key": "Escape",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "menu-closed-gallery",
+   "action": "wait_for_timeout",
+   "duration_ms": 500
+  },
+  {
+   "step_id": "gallery-for-search",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "a[href=\"/gallery/7essfu5uxVTOtu3jvbCzG-we\"] >> nth=0"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "open-search",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "button:has(.pi-search):visible >> nth=0"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "search-box",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "#searchQuery"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "search-lamp",
+   "action": "fill",
+   "locator": {
+    "kind": "css",
+    "selector": "#searchQuery"
+   },
+   "value": {
+    "source": "literal",
+    "value": "lamp"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "search-lamp-results",
+   "action": "wait_for_timeout",
+   "duration_ms": 1800
+  },
+  {
+   "step_id": "search-copper",
+   "action": "fill",
+   "locator": {
+    "kind": "css",
+    "selector": "#searchQuery"
+   },
+   "value": {
+    "source": "literal",
+    "value": "copper"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "search-copper-results",
+   "action": "wait_for_timeout",
+   "duration_ms": 1800
+  },
+  {
+   "step_id": "leave-search",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "button:has(.pi-angle-left):visible >> nth=0"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "gallery-for-write",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "a[href=\"/gallery/7essfu5uxVTOtu3jvbCzG-we\"] >> nth=0"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "pause-2",
+   "action": "wait_for_timeout",
+   "duration_ms": 700
+  },
+  {
+   "step_id": "new-menu",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "button:has(.pi-plus):visible >> nth=0"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "new-album",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "[role=menuitem][aria-label=\"gallery.menus.new_album\"]"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "new-album-dialog",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "[role=dialog] #title"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "new-album-title",
+   "action": "fill",
+   "locator": {
+    "kind": "css",
+    "selector": "[role=dialog] #title"
+   },
+   "value": {
+    "source": "literal",
+    "value": "Rea scratch album"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "create-album",
+   "action": "click",
+   "locator": {
+    "kind": "role",
+    "role": "button",
+    "name": "Create Album"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "scratch-open",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "button:has(.pi-angle-down):visible >> nth=0"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "scratch-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 1000
+  },
+  {
+   "step_id": "scratch-details",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "button:has(.pi-angle-down):visible >> nth=0"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "scratch-form",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "#description"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "scratch-description",
+   "action": "fill",
+   "locator": {
+    "kind": "css",
+    "selector": "#description"
+   },
+   "value": {
+    "source": "literal",
+    "value": "Scratch notes for the Saltmarsh Depot rota, edited once by the capture."
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "scratch-title",
+   "action": "fill",
+   "locator": {
+    "kind": "css",
+    "selector": "#title"
+   },
+   "value": {
+    "source": "literal",
+    "value": "Rea scratch album, Copperfield Annex notes"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "scratch-save",
+   "action": "click",
+   "locator": {
+    "kind": "role",
+    "role": "button",
+    "name": "Save"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "scratch-saved",
+   "action": "wait_for_timeout",
+   "duration_ms": 1500
+  },
+  {
+   "step_id": "scratch-danger",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "li:has-text(\"DANGER ZONE\")"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "scratch-delete",
+   "action": "click",
+   "locator": {
+    "kind": "role",
+    "role": "button",
+    "name": "Delete Album and Photos"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "gallery-after-delete",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "a[href=\"/gallery/7essfu5uxVTOtu3jvbCzG-we\"] >> nth=0"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "gallery-after-delete-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 1000
+  },
+  {
+   "step_id": "settle",
+   "action": "wait_for_timeout",
+   "duration_ms": 1500
+  }
+ ],
+ "capture": {
+  "events": [
+   "network"
+  ],
+  "network": {
+   "request_body": true,
+   "response_body": true,
+   "header_values": false
+  },
+  "limits": {
+   "max_network_body_bytes": 262144,
+   "max_event_allocation_bytes": 16777216,
+   "max_network_body_allocation_bytes": 33554432,
+   "max_total_event_allocation_bytes": 67108864,
+   "max_network_header_allocation_bytes": 4194304,
+   "max_network_metadata_allocation_bytes": 4194304
+  }
+ }
+}

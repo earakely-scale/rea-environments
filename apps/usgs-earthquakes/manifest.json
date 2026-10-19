@@ -1,0 +1,888 @@
+{
+ "evidence_id": "ev_5ee5d9ec0205f46279b730995d6b4f5f8eea7f2e948837a67f91868491ccbce4",
+ "subject": {
+  "name": "usgs-earthquakes.scoped.har",
+  "digest": {
+   "sha256": "581298ceb2d346e1217781c3fe4bd84f841e0a7bf16bd60a5ea967ed6a57632e"
+  },
+  "local_path": "/home/ubuntu/capture/usgs-earthquakes/usgs-earthquakes.scoped.har",
+  "format": "file",
+  "architecture": null
+ },
+ "provider": {
+  "id": "rea-analysis-view",
+  "name": "REA analysis view projection",
+  "version": "1"
+ },
+ "analysis_profile": null,
+ "predicate_type": "rea.analysis-view",
+ "operation": "inspect_analysis_view",
+ "parameters": {
+  "parent_evidence_id": "ev_7058fa0affe6d87c4cbd13c21c24f8ff44df7188dae0fbaefcbbebf025d02f81",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "raw_result": null,
+ "normalized_result": {
+  "parent_evidence_id": "ev_7058fa0affe6d87c4cbd13c21c24f8ff44df7188dae0fbaefcbbebf025d02f81",
+  "parent_operation": "inspect_web_network_capture",
+  "parent_digest": "7058fa0affe6d87c4cbd13c21c24f8ff44df7188dae0fbaefcbbebf025d02f81",
+  "view_digest": "25d848913abbbe25990725bf0e4c7b1ce30dceef21ab2e01426a69b94d4eecee",
+  "artifact": {
+   "path": "/home/ubuntu/capture/usgs-earthquakes/usgs-earthquakes.scoped.har",
+   "sha256": "581298ceb2d346e1217781c3fe4bd84f841e0a7bf16bd60a5ea967ed6a57632e"
+  },
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 10,
+   "total": 10,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "limitations": [
+   "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+   "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+   "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+   "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+   "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+   "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+   "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+   "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+  ],
+  "unknowns": [
+   {
+    "kind": "authorization-model",
+    "statement": "Authorization headers and cookies are structurally excluded from captures; the manifest states no authorization model."
+   },
+   {
+    "kind": "response-semantics",
+    "statement": "Recorded statuses and bodies are retained only as pointers to parent records; the manifest states no response semantics."
+   },
+   {
+    "kind": "state-transition",
+    "statement": "Recorded exchanges are independent observations; the manifest states no ordering, side effects or state transitions between tools."
+   }
+  ],
+  "origin": "https://earthquake.usgs.gov",
+  "name": "earthquake-usgs-gov",
+  "tools": [
+   {
+    "name": "get_earthquakes_feed_summary_by_summary_id",
+    "method": "GET",
+    "path_template": "/earthquakes/feed/v1.0/summary/{summary_id}",
+    "api_surface_template": "/earthquakes/feed/v1.0/summary/significant_month.geojson",
+    "params": [
+     {
+      "index": 4,
+      "name": "summary_id",
+      "rule": "sibling-variance",
+      "basis": "inferred",
+      "observed_values": [
+       "1.0_hour.geojson",
+       "4.5_day.geojson",
+       "all_hour.geojson",
+       "significant_month.geojson",
+       "significant_week.geojson"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     48,
+     49,
+     50,
+     51,
+     52
+    ]
+   },
+   {
+    "name": "get_fdsnws_event_application_by_id",
+    "method": "GET",
+    "path_template": "/fdsnws/event/{numeric}/application.json",
+    "api_surface_template": "/fdsnws/event/{numeric}/application.json",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     1
+    ]
+   },
+   {
+    "name": "get_fdsnws_event_count_by_id",
+    "method": "GET",
+    "path_template": "/fdsnws/event/{numeric}/count",
+    "api_surface_template": "/fdsnws/event/{numeric}/count",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "endtime",
+     "format",
+     "maxlatitude",
+     "maxlongitude",
+     "minlatitude",
+     "minlongitude",
+     "minmagnitude",
+     "starttime"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     2,
+     3,
+     4,
+     5
+    ]
+   },
+   {
+    "name": "get_fdsnws_event_query_by_id",
+    "method": "GET",
+    "path_template": "/fdsnws/event/{numeric}/query",
+    "api_surface_template": "/fdsnws/event/{numeric}/query",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "alertlevel",
+     "endtime",
+     "eventid",
+     "format",
+     "latitude",
+     "limit",
+     "longitude",
+     "maxlatitude",
+     "maxlongitude",
+     "maxmagnitude",
+     "maxradiuskm",
+     "mindepth",
+     "minlatitude",
+     "minlongitude",
+     "minmagnitude",
+     "orderby",
+     "starttime"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31
+    ]
+   },
+   {
+    "name": "get_fdsnws_event_version_by_id",
+    "method": "GET",
+    "path_template": "/fdsnws/event/{numeric}/version",
+    "api_surface_template": "/fdsnws/event/{numeric}/version",
+    "params": [
+     {
+      "index": 2,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "text/plain"
+    ],
+    "record_ordinals": [
+     0
+    ]
+   },
+   {
+    "name": "get_product_dyfi_us_dyfi_plot_numresp_by_dyfi_id_id",
+    "method": "GET",
+    "path_template": "/product/dyfi/{dyfi_id}/us/{numeric}/dyfi_plot_numresp.json",
+    "api_surface_template": "/product/dyfi/us7000ly7s/us/{numeric}/dyfi_plot_numresp.json",
+    "params": [
+     {
+      "index": 2,
+      "name": "dyfi_id",
+      "rule": "sibling-variance",
+      "basis": "inferred",
+      "observed_values": [
+       "us7000ly7s",
+       "us7000lyi6",
+       "us7000lyiz"
+      ]
+     },
+     {
+      "index": 4,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1708609787136",
+       "1709179799946",
+       "1709610781536"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     42,
+     43,
+     44
+    ]
+   },
+   {
+    "name": "get_product_losspager_us_json_alerts_by_losspager_id_id",
+    "method": "GET",
+    "path_template": "/product/losspager/{losspager_id}/us/{numeric}/json/alerts.json",
+    "api_surface_template": "/product/losspager/us7000lx33/us/{numeric}/json/alerts.json",
+    "params": [
+     {
+      "index": 2,
+      "name": "losspager_id",
+      "rule": "sibling-variance",
+      "basis": "inferred",
+      "observed_values": [
+       "us7000lx2q",
+       "us7000lx33",
+       "us7000ly7s"
+      ]
+     },
+     {
+      "index": 4,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1708609997305",
+       "1710443418363",
+       "1710443678469"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     32,
+     33,
+     34
+    ]
+   },
+   {
+    "name": "get_product_losspager_us_json_comments_by_losspager_id_id",
+    "method": "GET",
+    "path_template": "/product/losspager/{losspager_id}/us/{numeric}/json/comments.json",
+    "api_surface_template": "/product/losspager/us7000lx33/us/{numeric}/json/comments.json",
+    "params": [
+     {
+      "index": 2,
+      "name": "losspager_id",
+      "rule": "sibling-variance",
+      "basis": "inferred",
+      "observed_values": [
+       "us7000lx2q",
+       "us7000lx33",
+       "us7000ly7s"
+      ]
+     },
+     {
+      "index": 4,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1708609997305",
+       "1710443418363",
+       "1710443678469"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     35,
+     36,
+     37
+    ]
+   },
+   {
+    "name": "get_product_shakemap_us_download_info_by_shakemap_id_id",
+    "method": "GET",
+    "path_template": "/product/shakemap/{shakemap_id}/us/{numeric}/download/info.json",
+    "api_surface_template": "/product/shakemap/us7000lx33/us/{numeric}/download/info.json",
+    "params": [
+     {
+      "index": 2,
+      "name": "shakemap_id",
+      "rule": "sibling-variance",
+      "basis": "inferred",
+      "observed_values": [
+       "us7000lx2q",
+       "us7000lx33",
+       "us7000ly7s",
+       "us7000lyjh"
+      ]
+     },
+     {
+      "index": 4,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1708609912572",
+       "1710443281646",
+       "1710443566507",
+       "1710456992232"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     38,
+     39,
+     40,
+     41
+    ]
+   },
+   {
+    "name": "get_ws_geoserve_regions",
+    "method": "GET",
+    "path_template": "/ws/geoserve/regions.json",
+    "api_surface_template": "/ws/geoserve/regions.json",
+    "params": [],
+    "query_parameter_names": [
+     "latitude",
+     "longitude",
+     "type"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     45,
+     46,
+     47
+    ]
+   }
+  ],
+  "records": [
+   {
+    "ordinal": 0,
+    "method": "GET",
+    "path": "/fdsnws/event/1/version",
+    "status": 200,
+    "content_type": "text/plain"
+   },
+   {
+    "ordinal": 1,
+    "method": "GET",
+    "path": "/fdsnws/event/1/application.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 2,
+    "method": "GET",
+    "path": "/fdsnws/event/1/count",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 3,
+    "method": "GET",
+    "path": "/fdsnws/event/1/count",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 4,
+    "method": "GET",
+    "path": "/fdsnws/event/1/count",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 5,
+    "method": "GET",
+    "path": "/fdsnws/event/1/count",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 6,
+    "method": "GET",
+    "path": "/fdsnws/event/1/query",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 7,
+    "method": "GET",
+    "path": "/fdsnws/event/1/query",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 8,
+    "method": "GET",
+    "path": "/fdsnws/event/1/query",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 9,
+    "method": "GET",
+    "path": "/fdsnws/event/1/query",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 10,
+    "method": "GET",
+    "path": "/fdsnws/event/1/query",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 11,
+    "method": "GET",
+    "path": "/fdsnws/event/1/query",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 12,
+    "method": "GET",
+    "path": "/fdsnws/event/1/query",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 13,
+    "method": "GET",
+    "path": "/fdsnws/event/1/query",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 14,
+    "method": "GET",
+    "path": "/fdsnws/event/1/query",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 15,
+    "method": "GET",
+    "path": "/fdsnws/event/1/query",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 16,
+    "method": "GET",
+    "path": "/fdsnws/event/1/query",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 17,
+    "method": "GET",
+    "path": "/fdsnws/event/1/query",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 18,
+    "method": "GET",
+    "path": "/fdsnws/event/1/query",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 19,
+    "method": "GET",
+    "path": "/fdsnws/event/1/query",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 20,
+    "method": "GET",
+    "path": "/fdsnws/event/1/query",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 21,
+    "method": "GET",
+    "path": "/fdsnws/event/1/query",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 22,
+    "method": "GET",
+    "path": "/fdsnws/event/1/query",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 23,
+    "method": "GET",
+    "path": "/fdsnws/event/1/query",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 24,
+    "method": "GET",
+    "path": "/fdsnws/event/1/query",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 25,
+    "method": "GET",
+    "path": "/fdsnws/event/1/query",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 26,
+    "method": "GET",
+    "path": "/fdsnws/event/1/query",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 27,
+    "method": "GET",
+    "path": "/fdsnws/event/1/query",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 28,
+    "method": "GET",
+    "path": "/fdsnws/event/1/query",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 29,
+    "method": "GET",
+    "path": "/fdsnws/event/1/query",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 30,
+    "method": "GET",
+    "path": "/fdsnws/event/1/query",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 31,
+    "method": "GET",
+    "path": "/fdsnws/event/1/query",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 32,
+    "method": "GET",
+    "path": "/product/losspager/us7000lx33/us/1710443678469/json/alerts.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 33,
+    "method": "GET",
+    "path": "/product/losspager/us7000ly7s/us/1708609997305/json/alerts.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 34,
+    "method": "GET",
+    "path": "/product/losspager/us7000lx2q/us/1710443418363/json/alerts.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 35,
+    "method": "GET",
+    "path": "/product/losspager/us7000lx33/us/1710443678469/json/comments.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 36,
+    "method": "GET",
+    "path": "/product/losspager/us7000ly7s/us/1708609997305/json/comments.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 37,
+    "method": "GET",
+    "path": "/product/losspager/us7000lx2q/us/1710443418363/json/comments.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 38,
+    "method": "GET",
+    "path": "/product/shakemap/us7000lx33/us/1710443566507/download/info.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 39,
+    "method": "GET",
+    "path": "/product/shakemap/us7000ly7s/us/1708609912572/download/info.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 40,
+    "method": "GET",
+    "path": "/product/shakemap/us7000lx2q/us/1710443281646/download/info.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 41,
+    "method": "GET",
+    "path": "/product/shakemap/us7000lyjh/us/1710456992232/download/info.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 42,
+    "method": "GET",
+    "path": "/product/dyfi/us7000ly7s/us/1708609787136/dyfi_plot_numresp.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 43,
+    "method": "GET",
+    "path": "/product/dyfi/us7000lyiz/us/1709610781536/dyfi_plot_numresp.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 44,
+    "method": "GET",
+    "path": "/product/dyfi/us7000lyi6/us/1709179799946/dyfi_plot_numresp.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 45,
+    "method": "GET",
+    "path": "/ws/geoserve/regions.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 46,
+    "method": "GET",
+    "path": "/ws/geoserve/regions.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 47,
+    "method": "GET",
+    "path": "/ws/geoserve/regions.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 48,
+    "method": "GET",
+    "path": "/earthquakes/feed/v1.0/summary/significant_month.geojson",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 49,
+    "method": "GET",
+    "path": "/earthquakes/feed/v1.0/summary/significant_week.geojson",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 50,
+    "method": "GET",
+    "path": "/earthquakes/feed/v1.0/summary/4.5_day.geojson",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 51,
+    "method": "GET",
+    "path": "/earthquakes/feed/v1.0/summary/all_hour.geojson",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 52,
+    "method": "GET",
+    "path": "/earthquakes/feed/v1.0/summary/1.0_hour.geojson",
+    "status": 200,
+    "content_type": "application/json"
+   }
+  ],
+  "excluded": [],
+  "templated_groups": 9,
+  "kind": "environment-manifest",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "confidence": "inferred",
+ "authority": "historical-reference",
+ "environment": null,
+ "limitations": [
+  "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+  "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+  "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+  "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+  "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+  "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+  "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+  "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+ ],
+ "relationship_coverage": null,
+ "locations": [
+  {
+   "kind": "artifact-path",
+   "path": "/home/ubuntu/capture/usgs-earthquakes/usgs-earthquakes.scoped.har"
+  }
+ ],
+ "evidence_links": [
+  "ev_7058fa0affe6d87c4cbd13c21c24f8ff44df7188dae0fbaefcbbebf025d02f81"
+ ]
+}

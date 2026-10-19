@@ -1,0 +1,261 @@
+{
+ "kind": "self-hosted",
+ "app": "airbyte",
+ "title": "Airbyte",
+ "app_version": "2.4.0",
+ "image": "airbyte/server:2.4.0",
+ "image_digest": "airbyte/server@sha256:f3577020d4f3835be66d19da24a78baa9869f55d1a60f492325432b7d238df76",
+ "other_images": {
+  "airbyte/worker:2.4.0": "sha256:044022ebec4554c27101377643110772fdd3659ad67a6f7c8c8dc71d96c4d441",
+  "airbyte/source-faker:7.2.1": "sha256:358625056eac2fa89f0ae92272e153e598b67c5515536b535f244df20b2ff8eb",
+  "airbyte/destination-dev-null:0.9.7": "sha256:d55727244cc00c1c4eccf3b35ce851a2ceb24c272c8e01dc7ee3237531bd39ed",
+  "kindest/node:v1.32.2": "sha256:f226345927d7e348497136874b6d207e0b32cc52154ad8323129352923a3142f"
+ },
+ "app_version_full": "2.4.0 (community edition, helm chart V2 airbyte 2.4.0)",
+ "installer": "abctl v0.30.4 (checksum-verified release tarball): abctl local install --chart-version 2.4.0 --port 3302 --insecure-cookies --no-browser --values values.yaml (global.airbyteUrl http://127.0.0.1:3302); DO_NOT_TRACK=1",
+ "cluster": "kind cluster airbyte-abctl (Kubernetes v1.32.2), namespace airbyte-abctl, ingress-nginx 4.15.1",
+ "binding": "kind publishes 0.0.0.0:3302 -> 80 (abctl has no bind-address option); an iptables DOCKER-USER rule dropped port 3302 arriving on ens5 for the whole session, and the security group allows only 22",
+ "origin": "http://127.0.0.1:3302",
+ "auth": "simple auth (instance admin rea-admin@example.test, generated password); public API calls carried a bearer token exchanged outside the browser from the default application's client credentials",
+ "tooling": {
+  "rea": "6.6.0",
+  "playwright-core": "1.58.2",
+  "chromium": "Chromium 155.0.8059.79 snap",
+  "node": "v24.22.0",
+  "python": "3.12.3",
+  "docker": "29.9.1",
+  "compose": "v5.6.0",
+  "agent-env": "0.9.1334",
+  "vm": "Ubuntu 24.04.5 LTS amd64, 8 vCPU, 30 GiB"
+ },
+ "seeded_objects": "two workspaces (Lighthouse Rota Pipelines, Saltmarsh Depot Sandbox), four Sample Data sources (Blue Heron Kitchen Orders, Granite Ledger Stone Census, Copperfield Annex Visitor Log, Saltmarsh Depot Tide Readings), three End-to-End Testing (/dev/null) destinations (Copperfield Annex Null Sink, Lighthouse Rota Quiet Drain, Saltmarsh Depot Dev Null), three connections, three tags (Quarry Audit, Kitchen Night Shift, Tide Table Crew) and one finished sync job (900 rows)",
+ "seeded_detail": {
+  "organization": "Lighthouse Rota (set by the first-run setup call)",
+  "connections": [
+   "Blue Heron Kitchen nightly orders feed (cron 0 30 2 * * ?, tag Kitchen Night Shift)",
+   "Granite Ledger census to Quiet Drain (manual, tag Quarry Audit, job 1 succeeded, 900 rows)",
+   "Saltmarsh Depot tide readings relay (manual)"
+  ],
+  "scratch_during_capture": "source Rea scratch source created (POST), renamed (PATCH), read, deleted (DELETE 204), re-read (soft-deleted record); tag Rea scratch tag created, renamed, read, deleted; one manual sync job triggered on the Saltmarsh Depot relay (POST /jobs) and read while running"
+ },
+ "ui_pages_visited": [
+  "/login (sign-in)",
+  "/workspaces/<id>/connections",
+  "/workspaces/<id>/connections/<id>/status",
+  "/workspaces/<id>/connections/<id>/timeline",
+  "/workspaces/<id>/source",
+  "/workspaces/<id>/source/<id>",
+  "/workspaces/<id>/destination",
+  "/workspaces/<id>/settings"
+ ],
+ "credential_grep": {
+  "admin_password_literal_hits": 0,
+  "client_secret_literal_hits": 0,
+  "token_shape_hits_hf_ghp_Bearer_jwt": 0,
+  "result": "pass (envbuild manifest gate)"
+ },
+ "resource_constraint": false,
+ "scoped_har": {
+  "file": "airbyte.scoped.har",
+  "sha256": "1d67ea816437d694c369791740572fbab7d10aa6826ee568c5f98c7608e32016",
+  "bytes": 124694,
+  "records": 64,
+  "methods": {
+   "GET": 57,
+   "POST": 3,
+   "PATCH": 2,
+   "DELETE": 2
+  },
+  "statuses": {
+   "200": 62,
+   "204": 2
+  }
+ },
+ "scope_har": {
+  "origin": "http://127.0.0.1:3302",
+  "keep_regex": "^/api/public/v1/",
+  "drop_regex": "default (login|logout|signup|password|session|token|oauth|csrf)",
+  "max_body": 60000,
+  "max_records": 150,
+  "full_har_entries": 2856,
+  "kept": 64,
+  "dropped": {
+   "other-origin": 57,
+   "path": 2679,
+   "non-json": 0,
+   "auth": 56,
+   "big-body": 0,
+   "over-max": 0
+  },
+  "notes": [
+   "path=2679 is the web UI's own /api/v1 RPC traffic and static assets, outside the public-API scope",
+   "other-origin=57 are analytics and font requests the capture aborted in the browser",
+   "PATCH and DELETE went through the browser context's request API because the server's CORS filter answers 403 to those methods when a browser Origin header is present; they are in the same HAR"
+  ]
+ },
+ "evidence": {
+  "capture_evidence_id": "ev_8e00dfaee9452108d545ea793346d937d5407358ab2ea30d6d614fcfac225307",
+  "capture_total_records": 64,
+  "capture_confidence": "observed"
+ },
+ "manifest": {
+  "evidence_id": "ev_99db62d7bd04e3b25915a76aca88c17ebc8db08578ae869454ebe6babb9cbc5f",
+  "confidence": "inferred",
+  "view_digest": "1f636f3f48c5db0777e3ec0e584b82fa259fe9da0115be602f6d82a736d5f723",
+  "template_rules": [
+   "after-uid-literal",
+   "opaque-token",
+   "sibling-variance"
+  ],
+  "tools": 25,
+  "tools_by_method": {
+   "GET": 18,
+   "POST": 3,
+   "DELETE": 2,
+   "PATCH": 2
+  },
+  "templated_groups": 13,
+  "params_by_rule": {
+   "uuid": 14,
+   "numeric": 1
+  },
+  "params_total": 15,
+  "query_parameter_names_total": 16,
+  "query_parameter_names_distinct": [
+   "connectionId",
+   "destinationId",
+   "includeDeleted",
+   "jobType",
+   "limit",
+   "offset",
+   "sourceId",
+   "status",
+   "workspaceIds"
+  ],
+  "tools_with_body_shape": 5,
+  "statuses_seen": [
+   200,
+   204
+  ],
+  "records": 64,
+  "excluded": 0,
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 25,
+   "total": 25,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "limitations_count": 9,
+  "tool_names": [
+   "get_public_connections",
+   "get_public_connections_by_uuid",
+   "get_public_destinations",
+   "get_public_destinations_by_uuid",
+   "get_public_jobs",
+   "post_public_jobs",
+   "get_public_jobs_by_id",
+   "get_public_organizations",
+   "get_public_permissions",
+   "get_public_sources",
+   "post_public_sources",
+   "delete_public_sources_by_uuid",
+   "get_public_sources_by_uuid",
+   "patch_public_sources_by_uuid",
+   "get_public_streams",
+   "get_public_tags",
+   "post_public_tags",
+   "delete_public_tags_by_uuid",
+   "get_public_tags_by_uuid",
+   "patch_public_tags_by_uuid",
+   "get_public_workspaces",
+   "get_public_workspaces_by_uuid",
+   "get_public_workspaces_definitions_destinations_by_uuid",
+   "get_public_workspaces_definitions_destinations_by_uuid_uuid",
+   "get_public_workspaces_definitions_sources_by_uuid_uuid_2"
+  ]
+ },
+ "manifest_norules": {
+  "evidence_id": "ev_3c5133ad68cdd567d8e87593cb13a78fb8296f8a8cbe623eac1cb160926a23c3",
+  "confidence": "inferred",
+  "view_digest": "a468fba0127f3cfa0d3bd362ae0a5652e2653196e4e7c057ff2519c585aec94d",
+  "template_rules": [],
+  "tools": 25,
+  "tools_by_method": {
+   "GET": 18,
+   "POST": 3,
+   "DELETE": 2,
+   "PATCH": 2
+  },
+  "templated_groups": 13,
+  "params_by_rule": {
+   "uuid": 14,
+   "numeric": 1
+  },
+  "params_total": 15,
+  "query_parameter_names_total": 16,
+  "query_parameter_names_distinct": [
+   "connectionId",
+   "destinationId",
+   "includeDeleted",
+   "jobType",
+   "limit",
+   "offset",
+   "sourceId",
+   "status",
+   "workspaceIds"
+  ],
+  "tools_with_body_shape": 5,
+  "statuses_seen": [
+   200,
+   204
+  ],
+  "records": 64,
+  "excluded": 0,
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 25,
+   "total": 25,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "limitations_count": 8,
+  "tool_names": [
+   "get_public_connections",
+   "get_public_connections_by_uuid",
+   "get_public_destinations",
+   "get_public_destinations_by_uuid",
+   "get_public_jobs",
+   "post_public_jobs",
+   "get_public_jobs_by_id",
+   "get_public_organizations",
+   "get_public_permissions",
+   "get_public_sources",
+   "post_public_sources",
+   "delete_public_sources_by_uuid",
+   "get_public_sources_by_uuid",
+   "patch_public_sources_by_uuid",
+   "get_public_streams",
+   "get_public_tags",
+   "post_public_tags",
+   "delete_public_tags_by_uuid",
+   "get_public_tags_by_uuid",
+   "patch_public_tags_by_uuid",
+   "get_public_workspaces",
+   "get_public_workspaces_by_uuid",
+   "get_public_workspaces_definitions_destinations_by_uuid",
+   "get_public_workspaces_definitions_destinations_by_uuid_uuid",
+   "get_public_workspaces_definitions_sources_by_uuid_uuid_2"
+  ]
+ }
+}

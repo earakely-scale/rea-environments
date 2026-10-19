@@ -14,8 +14,8 @@ with agentenv-hf, documented to the standard of earakely-scale/PortSimEnv-AgentE
 | ghost | Ghost 5 | publishing / CMS | ghost:5-alpine (multi-arch) | /ghost/api/admin/* |
 
 ## Infrastructure
-- One EC2 VM in us-west-2, Ubuntu 24.04 amd64 (ami-07f3a2cfd03d8ee81), m6i.xlarge or larger,
-  a public subnet, temporary key pair + SG (22 from the operator's address only),
+- One EC2 VM in us-west-2, Ubuntu 24.04 amd64, m6i.xlarge or larger, in a public subnet with a temporary key pair and
+  a security group that admits ssh from the operator's address only,
   Docker + Node 24 + Chromium + playwright-core, agentenv-framework 0.9.1334 in a venv, the rea stack tarball from
   `npm pack` of feat/environment-export. Everything torn down at the end; secrets only as 600 files, removed before teardown.
 - The laptop orchestrates (ssh/scp/aws) and holds the agentenv stores the publish reads from, or the VM holds them and the

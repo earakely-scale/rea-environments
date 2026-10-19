@@ -14,13 +14,17 @@ with digits, or a long hyphenated/dotted identifier), it is not the capture admi
 is not a resource name that repeats the path, every word of it occurs in the seed inputs under --seed-dir (so it was
 seeded, not shipped by the app), and no two tasks share an answer."""
 import argparse, collections, json, random, re
+import sys
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from scenario_records import scenario_records
 from urllib.parse import urlparse
 
 SKIP_KEYS = re.compile(r"id$|uid|url|href|hash|sha|token|password|secret|created|updated|timestamp|time$|date|At$|version|etag|avatar|color|icon|type$|kind$|status|state$|environment|locale|timezone|theme|error|code$|mode$|role$|visibility|format$|encoding|mime|path$|ref$|sort$|order$|roles?$|mark_unread|^Platform$|location$|package|props|Node|Arch|Docker", re.I)
 PREFER_KEYS = re.compile(r"(^|_)(name|title|display_name|displayname|username|login|email|slug|subject|message|text|description|summary|label|caption|headline|full_name|first_name|last_name|nickname|body|content|purpose|header|bio|location|website|company)$", re.I)
 URLISH = re.compile(r"^(https?:|/|[a-f0-9]{16,}$|\d{4}-\d{2}-\d{2}T|[a-z][A-Za-z]*s/\S+$)")
 BORING = {"online", "offline", "production", "development", "true", "false", "null", "none", "default", "en", "en-us", "admin", "member", "public", "private"}
+JSON_LIKE = re.compile(r"\s*application/(json|[a-z.+-]*\+json)\b", re.I)   # geo+json and ld+json answer like JSON
 ADMIN = re.compile(r"rea[-_ .]?admin", re.I)   # the capture's own admin identity answers almost every ownership field
 SEED_SKIP = re.compile(r"\.(har|md)$|\.capture\.json$|\.manifest(\.norules)?\.json$|^summary\.json$|^app\.json$|^seed-ids\.json$|^req\..*\.json$")
 
@@ -73,7 +77,8 @@ def main():
     ap.add_argument("--exclude-tools", default=r"themes|settings|_info_by|notifications|newsletters|search_index|frontend|config$|version$|ping$|site$")
     ap.add_argument("--seed-dir", default=None); ap.add_argument("--max-occurrences", type=int, default=12); ap.add_argument("--per-tool", type=int, default=2)
     a = ap.parse_args(); rnd = random.Random(a.seed)
-    m = json.load(open(a.manifest)); nr = m.get("normalized_result", m); cap = json.load(open(a.capture)); records = cap["normalized_result"]["records"]
+    m = json.load(open(a.manifest)); nr = m.get("normalized_result", m); cap = json.load(open(a.capture))
+    records = scenario_records(cap) if cap.get("operation") == "capture_browser_scenario" else cap["normalized_result"]["records"]
     by_ord = {r["ordinal"]: r for r in records}
     texts = [((r["reported"].get("response") or {}).get("content") or {}).get("text") or "" for r in records]
     stext = seed_text(a.seed_dir)
@@ -90,7 +95,7 @@ def main():
         if rec is None: continue
         rep = rec["reported"]; content = (rep.get("response") or {}).get("content") or {}
         if (rep.get("response") or {}).get("status", 0) >= 400: continue
-        if not str(content.get("mimeType", "")).startswith("application/json"): continue
+        if not JSON_LIKE.match(str(content.get("mimeType", ""))): continue
         try: body = json.loads(content.get("text") or "")
         except ValueError: continue
         path = urlparse(rep["request"]["url"]).path; segs = path.strip("/").split("/")
@@ -124,7 +129,7 @@ def main():
             used_values.add(field[1].lower()); per_tool[tool["name"]] += 1
             chosen.append((tool, rec, field, args, query))
     bundle = Path(a.bundle); (bundle / "tasks").mkdir(parents=True, exist_ok=True); (bundle / "evals").mkdir(exist_ok=True)
-    names, index = [], ["# Retrieval tasks", "", f"Generated from the environment manifest ({nr.get('tool_count', len(nr['tools']))} tools) and its capture Evidence. Each task asks one factual question about a seeded object, answerable through one recorded exchange, and is graded deterministically: the response must contain the recorded value. Answers are distinct, seeded, and appear in at most {a.max_occurrences} recorded responses.", "", "| task | tool | arguments | field | answer |", "|---|---|---|---|---|"]
+    names, index = [], ["# Retrieval tasks", "", f"Generated from the environment manifest ({nr.get('tool_count', len(nr['tools']))} tools) and its capture Evidence. Each task asks one factual question about a {'seeded object' if stext is not None else 'recorded record'}, answerable through one recorded exchange, and is graded deterministically: the response must contain the recorded value. Answers are distinct{', seeded,' if stext is not None else ''} and appear in at most {a.max_occurrences} recorded responses.", "", "| task | tool | arguments | field | answer |", "|---|---|---|---|---|"]
     for i, (tool, rec, (field, value, _p), args, query) in enumerate(chosen, 1):
         argtxt = ", ".join(f"{k}={v}" for k, v in {**args, **query}.items()) or "no arguments"
         name = f"qa-{i:02d}-{tool['name'][:40]}"; names.append(name)

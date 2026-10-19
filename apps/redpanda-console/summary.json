@@ -1,0 +1,119 @@
+{
+ "app": "redpanda-console",
+ "kind": "self-hosted",
+ "image": "redpandadata/console:v3.12.0",
+ "image_digest": "redpandadata/console@sha256:9dc0cd55db172c6be9c2ff8a51f33a14395f7675fa7fbc002c277f3b96115c27",
+ "app_version": "3.12.0",
+ "broker_image": "redpandadata/redpanda:v26.2.5",
+ "broker_image_digest": "redpandadata/redpanda@sha256:badca2d958f81da675c3055a9ecb6ebb590325582bcf16936148ffd65e96e920",
+ "licence": "Business Source License 1.1 (Redpanda Data, Inc.; Console source headers point to the Redpanda BSL; Additional Use Grant forbids only offering it as a streaming or queuing service; converts to Apache-2.0 four years after each release)",
+ "compose_project": "rea-redpanda-console",
+ "origin": "http://127.0.0.1:3305",
+ "auth": "none (the free edition of Redpanda Console has no login; no admin account was created)",
+ "tooling": {
+  "rea": "6.6.0",
+  "playwright-core": "1.58.2",
+  "chromium": "Chromium 155.0.8059.79 snap",
+  "node": "v24.22.0",
+  "python": "3.12.3",
+  "docker": "29.9.1",
+  "compose": "v5.6.0",
+  "vm": "Ubuntu 24.04 amd64"
+ },
+ "ui_pages_visited": [
+  "/overview",
+  "/topics",
+  "/topics/granite-ledger.stone-counts",
+  "/groups",
+  "/groups/blue-heron-kitchen-pass",
+  "/schema-registry",
+  "/schema-registry/subjects/lighthouse-rota.shift-handover-value?version=latest"
+ ],
+ "scoped_har": {
+  "file": "redpanda-console.scoped.har",
+  "sha256": "5bc50a249c91ea871c1f1cf5d93990674c4436ebde14eca474ae01454715a5b2",
+  "bytes": 197451,
+  "records": 87,
+  "methods": {
+   "GET": 80,
+   "POST": 3,
+   "PATCH": 1,
+   "DELETE": 3
+  },
+  "statuses": {
+   "200": 87
+  }
+ },
+ "scope_har": {
+  "origin": "http://127.0.0.1:3305",
+  "keep_regex": "^/api/",
+  "drop_regex": "default (login|logout|signup|password|session|token|oauth|csrf)",
+  "max_body": 60000,
+  "max_records": 150,
+  "kept": 87,
+  "dropped": {
+   "other-origin": 170,
+   "path": 461,
+   "non-json": 0,
+   "auth": 0,
+   "big-body": 0,
+   "over-max": 0
+  },
+  "notes": [
+   "path=461 are the SPA bundle, assets and Connect RPC calls (/redpanda.api.*), which are outside ^/api/",
+   "message bodies are only readable through the streaming ListMessages Connect RPC, so no recorded JSON read returns message contents"
+  ]
+ },
+ "seeded_objects": "five topics (granite-ledger.stone-counts, blue-heron-kitchen.tide-orders, lighthouse-rota.shift-handover, copperfield-annex.lamp-oil-deliveries, saltmarsh-depot.crate-manifests) holding 22 invented JSON messages, four consumer groups with committed offsets (two with lag), and five schema-registry subjects (Avro with a cross-subject reference, JSON Schema, Protobuf)",
+ "seeded_detail": {
+  "topics": [
+   "granite-ledger.stone-counts (3 partitions)",
+   "blue-heron-kitchen.tide-orders (2)",
+   "lighthouse-rota.shift-handover (1, compacted)",
+   "copperfield-annex.lamp-oil-deliveries (2)",
+   "saltmarsh-depot.crate-manifests (1, compact,delete)"
+  ],
+  "messages": "22 invented JSON messages (stone counts, kitchen orders, keeper handovers, lamp-oil deliveries, crate manifests) produced through POST /api/topics-records",
+  "consumer_groups": [
+   "granite-ledger-auditors (no lag)",
+   "blue-heron-kitchen-pass (lag 2)",
+   "lighthouse-rota-keepers (two topics, lag on lamp-oil deliveries)",
+   "saltmarsh-depot-tally (lag 2)"
+  ],
+  "schema_subjects": [
+   "lighthouse-rota.keeper (Avro)",
+   "lighthouse-rota.shift-handover-value (Avro, references com.example.rota.Keeper, compatibility FULL)",
+   "granite-ledger.stone-counts-value (Avro, 2 versions)",
+   "blue-heron-kitchen.tide-orders-value (JSON Schema, compatibility FORWARD)",
+   "saltmarsh-depot.crate-manifests-value (Protobuf)"
+  ],
+  "people_in_messages": [
+   "Ada Finch",
+   "Rui Castellanos",
+   "Mina Okafor",
+   "Tomas Vey",
+   "Marisol Okonkwo-Reyes"
+  ],
+  "scratch_during_capture": "topic rea-scratch.lamp-trials created, retention.ms patched, one record published, re-read, deleted; subject rea-scratch.lamp-trials-value registered, read, soft- then hard-deleted; lists re-read"
+ },
+ "manifest": {
+  "tools": 37,
+  "tools_by_method": {
+   "GET": 31,
+   "POST": 3,
+   "DELETE": 2,
+   "PATCH": 1
+  },
+  "tools_norules": 54,
+  "templated_groups": 11,
+  "params_by_rule": {
+   "numeric": 6,
+   "sibling-variance": 5
+  },
+  "capture_evidence_id": "ev_54e03e32f9f70689e0cde3c4a220fa8f93b4b0948cd7f4cc4db8f59c40324382",
+  "manifest_evidence_id": "ev_60042ee4b8db9701a8b70151626c426c9bb659811a29fc3c6d596f76d1582874",
+  "manifest_norules_evidence_id": "ev_e38570c82cc915d07328913d77fdf0f07fa259c26274cf5f32993b9a40b1cd00",
+  "confidence": "inferred",
+  "excluded": 0
+ }
+}

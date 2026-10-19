@@ -1,0 +1,305 @@
+{
+ "kind": "public-api",
+ "app": "federal-register",
+ "captured_on": "2026-10-19",
+ "origin": "https://www.federalregister.gov",
+ "api_base": "https://www.federalregister.gov/api/v1",
+ "app_version": "v1",
+ "publisher": "the Office of the Federal Register (National Archives and Records Administration) and the U.S. Government Publishing Office",
+ "licence": "U.S. public domain (works of the U.S. government)",
+ "fair_access": "a declared User-Agent, one request at a time at under 2 per second, and 69 requests in the whole session",
+ "user_agent": "rea-environments showcase (https://github.com/earakely-scale/rea-environments)",
+ "request_budget": {
+  "research_with_curl": 11,
+  "aborted_capture_and_diagnosis": 6,
+  "capture": 52,
+  "total": 69,
+  "limit": 150
+ },
+ "seeded_objects": "seven agency records, 25 document reads by number covering FAA final rules, Energy, FERC and CBP proposed rules and executive orders, seven document searches, three facet counts, seven public-inspection records and three suggested searches",
+ "records_read": {
+  "agencies": [
+   "federal-aviation-administration",
+   "transportation-department",
+   "energy-department",
+   "federal-energy-regulatory-commission",
+   "homeland-security-department",
+   "federal-emergency-management-agency",
+   "executive-office-of-the-president"
+  ],
+  "documents_faa_final_rules": [
+   "2026-18019",
+   "2026-18032",
+   "2026-18126",
+   "2026-18437",
+   "2026-18559",
+   "2026-18601",
+   "2026-18776",
+   "2026-18848",
+   "2026-18902",
+   "2026-19082"
+  ],
+  "documents_proposed_rules": [
+   "2026-01066",
+   "2026-03159",
+   "2026-06177",
+   "2026-10498",
+   "2026-11971",
+   "2026-13673",
+   "2026-17108",
+   "2026-19332"
+  ],
+  "documents_executive_orders": {
+   "2026-01061": "EO 14374",
+   "2026-01872": "EO 14378",
+   "2026-02292": "EO 14381",
+   "2026-03628": "EO 14387",
+   "2026-05382": "EO 14391"
+  },
+  "public_inspection": [
+   "2026-18126",
+   "2026-18902",
+   "2026-18776",
+   "2026-19332",
+   "2026-11971",
+   "2026-02292",
+   "2026-18126,2026-19332"
+  ],
+  "searches": [
+   "FAA final rules published 2026-09-01..30 (pages 1 and 2)",
+   "Energy Department proposed rules 2026-01-01..09-30",
+   "executive orders signed 2026-01-01..03-31",
+   "term 'distribution transformers' in 2026",
+   "docket EERE-2026-BT-STD-0133",
+   "RIN 1904-AF51"
+  ],
+  "facets": [
+   "type (FAA, September 2026)",
+   "monthly (Energy Department, 2026)",
+   "agency (presidential documents, September 2026)"
+  ],
+  "suggested_searches": [
+   "list for section business-and-industry",
+   "pipeline-safety",
+   "air-travel"
+  ]
+ },
+ "endpoints": [
+  "/api/v1/agencies/{slug}.json",
+  "/api/v1/documents.json",
+  "/api/v1/documents/{document_number}.json",
+  "/api/v1/documents/{n1},{n2}.json",
+  "/api/v1/documents/facets/{facet}",
+  "/api/v1/public-inspection-documents/{document_number}.json",
+  "/api/v1/public-inspection-documents/{n1},{n2}.json",
+  "/api/v1/suggested_searches.json",
+  "/api/v1/suggested_searches/{slug}.json"
+ ],
+ "avoided": [
+  "/api/v1/agencies.json (695 KB)",
+  "/api/v1/public-inspection-documents.json for a date (234 KB; the agency condition did not narrow it)",
+  "topics facet and topics field (the CFR indexing vocabulary contains the forbidden word)",
+  "agencies whose descriptions contain the forbidden word (2 of 473)"
+ ],
+ "tooling": {
+  "rea": "6.6.0",
+  "playwright-core": "1.58.2",
+  "chromium": "Chromium 155.0.8059.79 snap",
+  "node": "v24.22.0",
+  "python": "3.12.3",
+  "vm": "Ubuntu 24.04 amd64"
+ },
+ "scoped_har": {
+  "file": "federal-register.scoped.har",
+  "sha256": "92b61ba4a50cd9beeb3af0913704c5a80536a2198a62c86f5e99d2eb56d7f5bf",
+  "bytes": 198774,
+  "records": 52,
+  "methods": {
+   "GET": 52
+  },
+  "statuses": {
+   "200": 52
+  },
+  "largest_body_bytes": 13449
+ },
+ "scope_har": {
+  "origin": "https://www.federalregister.gov",
+  "keep_regex": "^/api/v1/",
+  "drop_regex": "default",
+  "max_body": 60000,
+  "max_records": 150,
+  "kept": 52,
+  "scrubbed_bodies": 0,
+  "dropped": {
+   "other-origin": 0,
+   "path": 0,
+   "non-json": 0,
+   "auth": 0,
+   "big-body": 0,
+   "over-max": 0
+  }
+ },
+ "evidence": {
+  "capture_evidence_id": "ev_e824e8d53e2ce40fe1173e27f7002aa1e3e7f80707e999d864745bac26d86575",
+  "capture_records": 52,
+  "capture_confidence": "observed"
+ },
+ "manifest": {
+  "evidence_id": "ev_23d1066c3bc138a90ac041fe3012494bc348237ced0daac373a9dc2845357f19",
+  "confidence": "inferred",
+  "view_digest": "f4d4bda1458d8e0c9c8ebec6d4d530566e5a2f06d4361386aeb6f0c1df8158fa",
+  "template_rules": [
+   "after-uid-literal",
+   "opaque-token",
+   "sibling-variance"
+  ],
+  "tools": 10,
+  "tools_by_method": {
+   "GET": 10
+  },
+  "templated_groups": 3,
+  "params_by_rule": {
+   "sibling-variance": 3
+  },
+  "query_parameter_names_distinct": [
+   "conditions[agencies][]",
+   "conditions[docket_id]",
+   "conditions[presidential_document_type][]",
+   "conditions[publication_date][gte]",
+   "conditions[publication_date][lte]",
+   "conditions[publication_date][year]",
+   "conditions[regulation_id_number]",
+   "conditions[sections]",
+   "conditions[signing_date][gte]",
+   "conditions[signing_date][lte]",
+   "conditions[term]",
+   "conditions[type][]",
+   "fields[]",
+   "order",
+   "page",
+   "per_page"
+  ],
+  "statuses_seen": [
+   200
+  ],
+  "excluded": 0,
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 10,
+   "total": 10,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "tool_names": [
+   "get_agencies_by_agency_id",
+   "get_documents",
+   "get_documents_facets_agency",
+   "get_documents_facets_monthly",
+   "get_documents_facets_type",
+   "get_documents_by_document_id",
+   "get_public_inspection_documents_by_public_inspection_documen",
+   "get_suggested_searches",
+   "get_suggested_searches_air_travel",
+   "get_suggested_searches_pipeline_safety"
+  ]
+ },
+ "manifest_norules": {
+  "evidence_id": "ev_48bd2582653a2e2e8d30501448986264e01c2c4eeccc9cbb9a8e722aa6af3803",
+  "confidence": "derived",
+  "view_digest": "6b141416f268029079640cd1d56245bd4cb0ec83bcb714cfe0a2c61c5db6feb9",
+  "template_rules": [],
+  "tools": 45,
+  "tools_by_method": {
+   "GET": 45
+  },
+  "templated_groups": 0,
+  "params_by_rule": {},
+  "query_parameter_names_distinct": [
+   "conditions[agencies][]",
+   "conditions[docket_id]",
+   "conditions[presidential_document_type][]",
+   "conditions[publication_date][gte]",
+   "conditions[publication_date][lte]",
+   "conditions[publication_date][year]",
+   "conditions[regulation_id_number]",
+   "conditions[sections]",
+   "conditions[signing_date][gte]",
+   "conditions[signing_date][lte]",
+   "conditions[term]",
+   "conditions[type][]",
+   "fields[]",
+   "order",
+   "page",
+   "per_page"
+  ],
+  "statuses_seen": [
+   200
+  ],
+  "excluded": 0,
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 45,
+   "total": 45,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "tool_names": [
+   "get_agencies_energy_department",
+   "get_agencies_executive_office_of_the_president",
+   "get_agencies_federal_aviation_administration",
+   "get_agencies_federal_emergency_management_agency",
+   "get_agencies_federal_energy_regulatory_commission",
+   "get_agencies_homeland_security_department",
+   "get_agencies_transportation_department",
+   "get_documents",
+   "get_documents_2026_01061",
+   "get_documents_2026_01066",
+   "get_documents_2026_01872",
+   "get_documents_2026_02292",
+   "get_documents_2026_03159",
+   "get_documents_2026_03628",
+   "get_documents_2026_05382",
+   "get_documents_2026_06177",
+   "get_documents_2026_10498",
+   "get_documents_2026_11971",
+   "get_documents_2026_13673",
+   "get_documents_2026_17108",
+   "get_documents_2026_18019",
+   "get_documents_2026_18032",
+   "get_documents_2026_18126_2026_18902",
+   "get_documents_2026_18126",
+   "get_documents_2026_18437",
+   "get_documents_2026_18559",
+   "get_documents_2026_18601",
+   "get_documents_2026_18776",
+   "get_documents_2026_18848",
+   "get_documents_2026_18902",
+   "get_documents_2026_19082",
+   "get_documents_2026_19332",
+   "get_documents_facets_agency",
+   "get_documents_facets_monthly",
+   "get_documents_facets_type",
+   "get_public_inspection_documents_2026_02292",
+   "get_public_inspection_documents_2026_11971",
+   "get_public_inspection_documents_2026_18126_2026_19332",
+   "get_public_inspection_documents_2026_18126",
+   "get_public_inspection_documents_2026_18776",
+   "get_public_inspection_documents_2026_18902",
+   "get_public_inspection_documents_2026_19332",
+   "get_suggested_searches",
+   "get_suggested_searches_air_travel",
+   "get_suggested_searches_pipeline_safety"
+  ]
+ },
+ "resource_constraint": false
+}

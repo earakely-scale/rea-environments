@@ -1,0 +1,292 @@
+{
+ "kind": "self-hosted",
+ "app": "nomad",
+ "image": "hashicorp/nomad:1.11.3",
+ "image_digest": "hashicorp/nomad@sha256:996069720c5dbb48c644bf5ac61f14593fb362408921b7d4c6086fb2cfc9f2c4",
+ "app_version": "1.11.3",
+ "app_revision": "173ab08a0210789da531847c4ce3c3518f7fb34b",
+ "licence": "BUSL-1.1 (Additional Use Grant: production use allowed except competitive hosted/embedded offerings); /usr/share/doc/nomad/LICENSE.txt in the image",
+ "compose_project": "rea-nomad",
+ "origin": "http://127.0.0.1:3304",
+ "agent_mode": "dev agent (server + client in one process, in-memory state, ACLs off), region saltmarsh, datacenter granite-point, node copperfield-annex-01",
+ "tooling": {
+  "rea": "6.6.0",
+  "playwright-core": "1.58.2",
+  "chromium": "Chromium 155.0.8059.79 snap",
+  "node": "v24.22.0",
+  "python": "3.12.3",
+  "docker": "29.9.1",
+  "compose": "v5.6.0",
+  "vm": "Ubuntu 24.04 amd64"
+ },
+ "seeded_objects": "two namespaces, one node pool with no nodes, metadata on the dev node, six jobs across three namespaces (two running service jobs, a service job pending on the empty pool, a finished batch job, a periodic batch job, a parameterized batch job with one dispatched child) and a second version of one service job",
+ "ui_pages_visited": [
+  "/ui/jobs",
+  "/ui/jobs/blue-heron-kitchen-orders@lighthouse-rota",
+  ".../versions",
+  ".../deployments",
+  "/ui/jobs/granite-ledger-stone-count@granite-ledger/allocations",
+  "/ui/allocations/<id>",
+  "/ui/clients",
+  "/ui/clients/<node id>",
+  "/ui/topology",
+  "/ui/evaluations",
+  "/ui/servers"
+ ],
+ "ui_login": "none: ACLs are off on the dev agent, so the UI and API are anonymous",
+ "scoped_har": {
+  "file": "nomad.scoped.har",
+  "sha256": "61df40951c6ee1872176416df0d5b0a6c2f8eaea91230c7f01b16ea47343df83",
+  "bytes": 615790,
+  "records": 131,
+  "methods": {
+   "GET": 115,
+   "POST": 15,
+   "DELETE": 1
+  },
+  "statuses": {
+   "200": 130,
+   "404": 1
+  }
+ },
+ "scope_har": {
+  "origin": "http://127.0.0.1:3304",
+  "keep_regex": "^/v1/(?!agent/|acl/|vars?(/|$)|operator/)",
+  "drop_regex": "default (login|logout|signup|password|session|token|oauth|csrf)",
+  "max_body": 60000,
+  "max_records": 150,
+  "kept": 131,
+  "scrubbed_bodies": 48,
+  "dropped": {
+   "other-origin": 0,
+   "path": 134,
+   "non-json": 0,
+   "auth": 11,
+   "big-body": 2,
+   "over-max": 0
+  },
+  "notes": [
+   "recordHar.urlFilter left the UI's blocking watch queries (index=N long polls) out of the full HAR",
+   "big-body=2 are GET /v1/node/<id>/allocations (88 KB each, UI client page)",
+   "auth=11 are UI probes of /v1/acl/token/self (path contains token)",
+   "scrubbed bodies: Nomad payloads carry credential-named fields that were all empty in the raw capture (NomadTokenID, DispatchIdempotencyToken, NextToken, node SecretID), plus the numeric task resource SecretsMB (secrets-dir size in MB); scope_har.py replaced all of them with <scrubbed>"
+  ]
+ },
+ "evidence": {
+  "capture_evidence_id": "ev_09880f9a941052d3335d98097843a3ad3774778266aabd85fbe9093de61b6ad1",
+  "capture_records": 131,
+  "capture_confidence": "observed"
+ },
+ "manifest": {
+  "evidence_id": "ev_12982eae5eeb6c118ce31026d3377f17232a0b872b74ef36620d7c418752688d",
+  "confidence": "inferred",
+  "view_digest": "3c59407080b71952530f7de37e65234d114bc0708151668356a5a1f20ac95f89",
+  "template_rules": [
+   "after-uid-literal",
+   "opaque-token",
+   "sibling-variance"
+  ],
+  "tools": 39,
+  "tools_by_method": {
+   "GET": 34,
+   "DELETE": 1,
+   "POST": 4
+  },
+  "templated_groups": 6,
+  "params_by_rule": {
+   "uuid": 5,
+   "sibling-variance": 1
+  },
+  "query_parameter_names_distinct": [
+   "diffs",
+   "filter",
+   "namespace",
+   "next_token",
+   "node_id",
+   "per_page",
+   "prefix",
+   "purge",
+   "region",
+   "resources",
+   "reverse",
+   "task_states"
+  ],
+  "tools_with_body_shape": 3,
+  "statuses_seen": [
+   200,
+   404
+  ],
+  "excluded": 0,
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 39,
+   "total": 39,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "tool_names": [
+   "get_allocation_by_uuid",
+   "get_allocations",
+   "get_client_allocation_stats_by_uuid",
+   "get_client_stats",
+   "get_deployment_by_uuid",
+   "get_deployments",
+   "get_evaluation_by_uuid",
+   "get_evaluations",
+   "get_job_blue_heron_kitchen_orders_allocations",
+   "get_job_blue_heron_kitchen_orders_deployment",
+   "get_job_blue_heron_kitchen_orders_deployments",
+   "get_job_blue_heron_kitchen_orders_evaluations",
+   "get_job_blue_heron_kitchen_orders_summary",
+   "get_job_blue_heron_kitchen_orders_versions",
+   "get_job_copperfield_annex_ledger_sync_allocations",
+   "get_job_granite_ledger_seaward_remeasure_allocations",
+   "get_job_granite_ledger_stone_count_allocations",
+   "get_job_granite_ledger_stone_count_evaluations",
+   "delete_job_rea_scratch_tide_probe",
+   "post_job_rea_scratch_tide_probe",
+   "get_job_rea_scratch_tide_probe_versions",
+   "get_job_saltmarsh_depot_cold_store_allocations",
+   "get_job_saltmarsh_depot_cold_store_evaluations",
+   "get_job_by_job_id",
+   "get_jobs",
+   "post_jobs",
+   "get_jobs_statuses",
+   "post_jobs_statuses",
+   "get_namespace_granite_ledger",
+   "get_namespace_lighthouse_rota",
+   "get",
+   "get_node_pool_saltmarsh_depot",
+   "get_node_pool_saltmarsh_depot_jobs",
+   "get_node_pools",
+   "get_node_by_uuid",
+   "get_nodes",
+   "get_regions",
+   "post_search_fuzzy",
+   "get_status_leader"
+  ]
+ },
+ "manifest_norules": {
+  "evidence_id": "ev_5300af8f30144a61e33ba661313b6f3267682d5abe3a80838ec0b091b73eca5c",
+  "confidence": "inferred",
+  "view_digest": "c7d3def189da511007624f8b7d5031fe90ea984c7c68306b457348b026cffbaf",
+  "template_rules": [],
+  "tools": 46,
+  "tools_by_method": {
+   "GET": 41,
+   "DELETE": 1,
+   "POST": 4
+  },
+  "templated_groups": 5,
+  "params_by_rule": {
+   "uuid": 5
+  },
+  "query_parameter_names_distinct": [
+   "diffs",
+   "filter",
+   "namespace",
+   "next_token",
+   "node_id",
+   "per_page",
+   "prefix",
+   "purge",
+   "region",
+   "resources",
+   "reverse",
+   "task_states"
+  ],
+  "tools_with_body_shape": 3,
+  "statuses_seen": [
+   200,
+   404
+  ],
+  "excluded": 0,
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 46,
+   "total": 46,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "tool_names": [
+   "get_allocation_by_uuid",
+   "get_allocations",
+   "get_client_allocation_stats_by_uuid",
+   "get_client_stats",
+   "get_deployment_by_uuid",
+   "get_deployments",
+   "get_evaluation_by_uuid",
+   "get_evaluations",
+   "get_job_blue_heron_kitchen_orders",
+   "get_job_blue_heron_kitchen_orders_allocations",
+   "get_job_blue_heron_kitchen_orders_deployment",
+   "get_job_blue_heron_kitchen_orders_deployments",
+   "get_job_blue_heron_kitchen_orders_evaluations",
+   "get_job_blue_heron_kitchen_orders_summary",
+   "get_job_blue_heron_kitchen_orders_versions",
+   "get_job_copperfield_annex_ledger_sync",
+   "get_job_copperfield_annex_ledger_sync_2fdispatch_1792369765",
+   "get_job_copperfield_annex_ledger_sync_allocations",
+   "get_job_granite_ledger_seaward_remeasure",
+   "get_job_granite_ledger_seaward_remeasure_allocations",
+   "get_job_granite_ledger_stone_count",
+   "get_job_granite_ledger_stone_count_allocations",
+   "get_job_granite_ledger_stone_count_evaluations",
+   "get_job_lighthouse_rota_night_watch",
+   "delete_job_rea_scratch_tide_probe",
+   "get_job_rea_scratch_tide_probe",
+   "post_job_rea_scratch_tide_probe",
+   "get_job_rea_scratch_tide_probe_versions",
+   "get_job_saltmarsh_depot_cold_store",
+   "get_job_saltmarsh_depot_cold_store_allocations",
+   "get_job_saltmarsh_depot_cold_store_evaluations",
+   "get_jobs",
+   "post_jobs",
+   "get_jobs_statuses",
+   "post_jobs_statuses",
+   "get_namespace_granite_ledger",
+   "get_namespace_lighthouse_rota",
+   "get",
+   "get_node_pool_saltmarsh_depot",
+   "get_node_pool_saltmarsh_depot_jobs",
+   "get_node_pools",
+   "get_node_by_uuid",
+   "get_nodes",
+   "get_regions",
+   "post_search_fuzzy",
+   "get_status_leader"
+  ]
+ },
+ "resource_constraint": false,
+ "seeded_detail": {
+  "summary": "2 namespaces, 1 node pool, dynamic metadata on the dev node, 6 jobs (2 running service jobs, 1 service job pending on an empty node pool, 1 finished batch job, 1 periodic batch job, 1 parameterized batch job with one dispatched child) and a second version of one service job",
+  "namespaces": [
+   "lighthouse-rota (steward Ada Finch)",
+   "granite-ledger (steward Rui Castellanos)"
+  ],
+  "node_pool": "saltmarsh-depot (steward Tomas Vey; no nodes, so its job stays pending with a blocked evaluation)",
+  "node_meta": {
+   "cabinet": "Copperfield Annex cabinet 7",
+   "caretaker": "Mina Okafor"
+  },
+  "jobs": {
+   "lighthouse-rota/blue-heron-kitchen-orders": "service, groups tide-table-counter x2 and kelp-smoker (2 tasks), version 0 and version 1 (menu meta change)",
+   "lighthouse-rota/lighthouse-rota-night-watch": "service, group lamp-room",
+   "granite-ledger/granite-ledger-stone-count": "batch, finished (echo)",
+   "granite-ledger/granite-ledger-seaward-remeasure": "periodic batch, cron 0 6 * * 1 UTC",
+   "granite-ledger/copperfield-annex-ledger-sync": "parameterized batch, one dispatched child (meta ledger_ref GL-2291)",
+   "default/saltmarsh-depot-cold-store": "service on node pool saltmarsh-depot, pending"
+  },
+  "scratch_during_capture": "batch job rea-scratch-tide-probe registered, read, re-registered (version 1), versions read, purged, re-read (404 text)"
+ }
+}

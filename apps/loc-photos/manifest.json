@@ -1,0 +1,610 @@
+{
+ "evidence_id": "ev_63d6f1ccb521b43d066ba25cf8d51f2bc63d3c570ef44e3d2fd69d598caa1f03",
+ "subject": null,
+ "provider": {
+  "id": "rea-analysis-view",
+  "name": "REA analysis view projection",
+  "version": "1"
+ },
+ "analysis_profile": null,
+ "predicate_type": "rea.analysis-view",
+ "operation": "inspect_analysis_view",
+ "parameters": {
+  "parent_evidence_id": "ev_2395092c17034b218c3faa02d0d1a781661b12c9dcb93654e756a6de5074a1a6",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "raw_result": null,
+ "normalized_result": {
+  "parent_evidence_id": "ev_2395092c17034b218c3faa02d0d1a781661b12c9dcb93654e756a6de5074a1a6",
+  "parent_operation": "capture_browser_scenario",
+  "parent_digest": "2395092c17034b218c3faa02d0d1a781661b12c9dcb93654e756a6de5074a1a6",
+  "view_digest": "2850d4617772c29749e1fcab31a115fd31cdc34f835f518ccefa7301a96b201e",
+  "artifact": {
+   "path": "",
+   "sha256": null
+  },
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 11,
+   "total": 11,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "limitations": [
+   "1 of 29 scenario transactions retained no response body; their tools replay status and content type only.",
+   "Artifact identity is unavailable for this observation.",
+   "Browser host platform and architecture were not observed.",
+   "Captured response-body bytes are the result of Playwright's Response.body() API. Playwright may satisfy that API with a credentialed follow-up load of the request URL when CDP has no body, so transaction and event links do not verify that retained bytes came from the original network transaction.",
+   "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+   "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+   "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+   "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+   "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+   "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+   "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+   "Scenario records are the capture's network transactions in request order; each record ordinal is the transaction's zero-based position.",
+   "Some selected network content was unavailable; per-transaction content states retain the reason.",
+   "Storage values are hashed only after declared-secret redaction.",
+   "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+  ],
+  "unknowns": [
+   {
+    "kind": "authorization-model",
+    "statement": "Authorization headers and cookies are structurally excluded from captures; the manifest states no authorization model."
+   },
+   {
+    "kind": "response-semantics",
+    "statement": "Recorded statuses and bodies are retained only as pointers to parent records; the manifest states no response semantics."
+   },
+   {
+    "kind": "state-transition",
+    "statement": "Recorded exchanges are independent observations; the manifest states no ordering, side effects or state transitions between tools."
+   }
+  ],
+  "origin": "https://www.loc.gov",
+  "name": "www-loc-gov",
+  "tools": [
+   {
+    "name": "get_collections_detroit_publishing_company",
+    "method": "GET",
+    "path_template": "/collections/detroit-publishing-company/",
+    "api_surface_template": "/collections/detroit-publishing-company/",
+    "params": [],
+    "query_parameter_names": [
+     "at",
+     "c",
+     "fo",
+     "q"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     5
+    ]
+   },
+   {
+    "name": "get_collections_historic_american_buildings_landscapes_and_e",
+    "method": "GET",
+    "path_template": "/collections/historic-american-buildings-landscapes-and-engineering-records/",
+    "api_surface_template": "/collections/historic-american-buildings-landscapes-and-engineering-records/",
+    "params": [],
+    "query_parameter_names": [
+     "at",
+     "c",
+     "fo",
+     "q"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     10
+    ]
+   },
+   {
+    "name": "get_collections_panoramic_photographs",
+    "method": "GET",
+    "path_template": "/collections/panoramic-photographs/",
+    "api_surface_template": "/collections/panoramic-photographs/",
+    "params": [],
+    "query_parameter_names": [
+     "at",
+     "c",
+     "fo",
+     "q"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     6
+    ]
+   },
+   {
+    "name": "get_collections_photochrom_prints",
+    "method": "GET",
+    "path_template": "/collections/photochrom-prints/",
+    "api_surface_template": "/collections/photochrom-prints/",
+    "params": [],
+    "query_parameter_names": [
+     "at",
+     "c",
+     "fo",
+     "q"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     3,
+     4
+    ]
+   },
+   {
+    "name": "get_collections_stereograph_cards",
+    "method": "GET",
+    "path_template": "/collections/stereograph-cards/",
+    "api_surface_template": "/collections/stereograph-cards/",
+    "params": [],
+    "query_parameter_names": [
+     "at",
+     "c",
+     "fo",
+     "q"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     9
+    ]
+   },
+   {
+    "name": "get_item_in0214",
+    "method": "GET",
+    "path_template": "/item/in0214/",
+    "api_surface_template": "/item/in0214/",
+    "params": [],
+    "query_parameter_names": [
+     "at",
+     "fo"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     25
+    ]
+   },
+   {
+    "name": "get_item_by_id",
+    "method": "GET",
+    "path_template": "/item/{numeric}/",
+    "api_surface_template": "/item/{numeric}/",
+    "params": [
+     {
+      "index": 1,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "2001703310",
+       "2001705953",
+       "2002696569",
+       "2002717351",
+       "2007661383",
+       "2007661407",
+       "2007661434",
+       "2008678175",
+       "2008679647",
+       "2016796148",
+       "2016812477",
+       "2016818886",
+       "2017650153",
+       "2017659189"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "at",
+     "fo"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     26,
+     27
+    ]
+   },
+   {
+    "name": "get_maps",
+    "method": "GET",
+    "path_template": "/maps/",
+    "api_surface_template": "/maps/",
+    "params": [],
+    "query_parameter_names": [
+     "at",
+     "c",
+     "fo",
+     "q"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     7
+    ]
+   },
+   {
+    "name": "get_photos",
+    "method": "GET",
+    "path_template": "/photos/",
+    "api_surface_template": "/photos/",
+    "params": [],
+    "query_parameter_names": [
+     "at",
+     "c",
+     "fo",
+     "q"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     0,
+     2
+    ]
+   },
+   {
+    "name": "get_resource_ppmsc",
+    "method": "GET",
+    "path_template": "/resource/ppmsc.08198/",
+    "api_surface_template": "/resource/ppmsc.08198/",
+    "params": [],
+    "query_parameter_names": [
+     "at",
+     "fo"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     28
+    ]
+   },
+   {
+    "name": "get_search",
+    "method": "GET",
+    "path_template": "/search/",
+    "api_surface_template": "/search/",
+    "params": [],
+    "query_parameter_names": [
+     "at",
+     "c",
+     "fa",
+     "fo",
+     "q"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200,
+     302
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     1,
+     8
+    ]
+   }
+  ],
+  "records": [
+   {
+    "ordinal": 0,
+    "method": "GET",
+    "path": "/photos/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 1,
+    "method": "GET",
+    "path": "/search/",
+    "status": 302,
+    "content_type": null
+   },
+   {
+    "ordinal": 2,
+    "method": "GET",
+    "path": "/photos/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 3,
+    "method": "GET",
+    "path": "/collections/photochrom-prints/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 4,
+    "method": "GET",
+    "path": "/collections/photochrom-prints/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 5,
+    "method": "GET",
+    "path": "/collections/detroit-publishing-company/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 6,
+    "method": "GET",
+    "path": "/collections/panoramic-photographs/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 7,
+    "method": "GET",
+    "path": "/maps/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 8,
+    "method": "GET",
+    "path": "/search/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 9,
+    "method": "GET",
+    "path": "/collections/stereograph-cards/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 10,
+    "method": "GET",
+    "path": "/collections/historic-american-buildings-landscapes-and-engineering-records/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 11,
+    "method": "GET",
+    "path": "/item/2002696569/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 12,
+    "method": "GET",
+    "path": "/item/2017659189/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 13,
+    "method": "GET",
+    "path": "/item/2001705953/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 14,
+    "method": "GET",
+    "path": "/item/2001703310/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 15,
+    "method": "GET",
+    "path": "/item/2008679647/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 16,
+    "method": "GET",
+    "path": "/item/2008678175/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 17,
+    "method": "GET",
+    "path": "/item/2017650153/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 18,
+    "method": "GET",
+    "path": "/item/2002717351/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 19,
+    "method": "GET",
+    "path": "/item/2016812477/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 20,
+    "method": "GET",
+    "path": "/item/2016796148/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 21,
+    "method": "GET",
+    "path": "/item/2016818886/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 22,
+    "method": "GET",
+    "path": "/item/2007661407/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 23,
+    "method": "GET",
+    "path": "/item/2007661434/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 24,
+    "method": "GET",
+    "path": "/item/2007661383/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 25,
+    "method": "GET",
+    "path": "/item/in0214/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 26,
+    "method": "GET",
+    "path": "/item/2002696569/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 27,
+    "method": "GET",
+    "path": "/item/2007661407/",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 28,
+    "method": "GET",
+    "path": "/resource/ppmsc.08198/",
+    "status": 200,
+    "content_type": "application/json"
+   }
+  ],
+  "excluded": [],
+  "templated_groups": 1,
+  "kind": "environment-manifest",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "confidence": "inferred",
+ "authority": "controlled-replay",
+ "environment": null,
+ "limitations": [
+  "Artifact identity is unavailable for this observation.",
+  "1 of 29 scenario transactions retained no response body; their tools replay status and content type only.",
+  "Artifact identity is unavailable for this observation.",
+  "Browser host platform and architecture were not observed.",
+  "Captured response-body bytes are the result of Playwright's Response.body() API. Playwright may satisfy that API with a credentialed follow-up load of the request URL when CDP has no body, so transaction and event links do not verify that retained bytes came from the original network transaction.",
+  "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+  "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+  "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+  "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+  "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+  "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+  "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+  "Scenario records are the capture's network transactions in request order; each record ordinal is the transaction's zero-based position.",
+  "Some selected network content was unavailable; per-transaction content states retain the reason.",
+  "Storage values are hashed only after declared-secret redaction.",
+  "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+ ],
+ "relationship_coverage": null,
+ "locations": [],
+ "evidence_links": [
+  "ev_2395092c17034b218c3faa02d0d1a781661b12c9dcb93654e756a6de5074a1a6"
+ ]
+}

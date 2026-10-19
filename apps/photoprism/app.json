@@ -1,0 +1,16 @@
+{
+  "app": "photoprism",
+  "title": "PhotoPrism",
+  "repo": "PhotoPrismEnv-REA",
+  "kind": "self-hosted",
+  "capture": "scenario",
+  "license": "AGPL-3.0",
+  "authors": "PhotoPrism UG and contributors",
+  "hf_license": "apache-2.0",
+  "version": "261007",
+  "image": "photoprism/photoprism:261007",
+  "image_digest": "sha256:0f85369636ad99ca9a1c33f2d04df6c590802d16b7c33b4a1ea026b595be06d1",
+  "port": 3401,
+  "domain": "photo library and media management",
+  "exclude_tools": "themes|settings|_info_by|notifications|newsletters|search_index|frontend|config$|version$|ping$|site$|session$|manifest$"
+}

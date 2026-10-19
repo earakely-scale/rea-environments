@@ -1,0 +1,620 @@
+{
+ "browser": {
+  "mode": "launch",
+  "executable_path": "/snap/bin/chromium"
+ },
+ "start_url": {
+  "url": "https://api.artic.edu/api/v1/departments",
+  "query": [
+   {
+    "name": "limit",
+    "value": {
+     "source": "literal",
+     "value": "20"
+    }
+   },
+   {
+    "name": "fields",
+    "value": {
+     "source": "literal",
+     "value": "id,title,subtype,parent_id"
+    }
+   }
+  ]
+ },
+ "storage": {
+  "cookies": [],
+  "local_storage": [],
+  "session_storage": []
+ },
+ "actions": [
+  {
+   "step_id": "start-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "search-artworks-amphora",
+   "action": "goto",
+   "destination": {
+    "url": "https://api.artic.edu/api/v1/artworks/search",
+    "query": [
+     {
+      "name": "q",
+      "value": {
+       "source": "literal",
+       "value": "amphora"
+      }
+     },
+     {
+      "name": "limit",
+      "value": {
+       "source": "literal",
+       "value": "5"
+      }
+     },
+     {
+      "name": "fields",
+      "value": {
+       "source": "literal",
+       "value": "id,title,date_display,department_title,is_public_domain"
+      }
+     }
+    ]
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "search-artworks-amphora-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "search-artworks-armor",
+   "action": "goto",
+   "destination": {
+    "url": "https://api.artic.edu/api/v1/artworks/search",
+    "query": [
+     {
+      "name": "q",
+      "value": {
+       "source": "literal",
+       "value": "field armor"
+      }
+     },
+     {
+      "name": "limit",
+      "value": {
+       "source": "literal",
+       "value": "5"
+      }
+     },
+     {
+      "name": "fields",
+      "value": {
+       "source": "literal",
+       "value": "id,title,date_display,department_title,is_public_domain"
+      }
+     }
+    ]
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "search-artworks-armor-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "list-artworks-by-ids",
+   "action": "goto",
+   "destination": {
+    "url": "https://api.artic.edu/api/v1/artworks",
+    "query": [
+     {
+      "name": "ids",
+      "value": {
+       "source": "literal",
+       "value": "27992,28560,16568,24645"
+      }
+     },
+     {
+      "name": "fields",
+      "value": {
+       "source": "literal",
+       "value": "id,title,artist_title,date_display"
+      }
+     }
+    ]
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "list-artworks-by-ids-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "search-artists-hokusai",
+   "action": "goto",
+   "destination": {
+    "url": "https://api.artic.edu/api/v1/artists/search",
+    "query": [
+     {
+      "name": "q",
+      "value": {
+       "source": "literal",
+       "value": "hokusai"
+      }
+     },
+     {
+      "name": "limit",
+      "value": {
+       "source": "literal",
+       "value": "3"
+      }
+     },
+     {
+      "name": "fields",
+      "value": {
+       "source": "literal",
+       "value": "id,title,birth_date,death_date"
+      }
+     }
+    ]
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "search-artists-hokusai-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "search-exhibitions-monet",
+   "action": "goto",
+   "destination": {
+    "url": "https://api.artic.edu/api/v1/exhibitions/search",
+    "query": [
+     {
+      "name": "q",
+      "value": {
+       "source": "literal",
+       "value": "monet"
+      }
+     },
+     {
+      "name": "limit",
+      "value": {
+       "source": "literal",
+       "value": "4"
+      }
+     },
+     {
+      "name": "fields",
+      "value": {
+       "source": "literal",
+       "value": "id,title,status,aic_start_at,aic_end_at"
+      }
+     }
+    ]
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "search-exhibitions-monet-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "artwork-27992",
+   "action": "goto",
+   "destination": {
+    "url": "https://api.artic.edu/api/v1/artworks/27992",
+    "query": [
+     {
+      "name": "fields",
+      "value": {
+       "source": "literal",
+       "value": "id,title,artist_display,artist_title,artist_id,date_display,date_start,date_end,medium_display,dimensions,place_of_origin,style_title,classification_title,department_title,gallery_title,gallery_id,artwork_type_title,artwork_type_id,main_reference_number,color,is_public_domain"
+      }
+     }
+    ]
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "artwork-27992-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "artwork-28560",
+   "action": "goto",
+   "destination": {
+    "url": "https://api.artic.edu/api/v1/artworks/28560",
+    "query": [
+     {
+      "name": "fields",
+      "value": {
+       "source": "literal",
+       "value": "id,title,artist_display,artist_title,artist_id,date_display,date_start,date_end,medium_display,dimensions,place_of_origin,style_title,classification_title,department_title,gallery_title,gallery_id,artwork_type_title,artwork_type_id,main_reference_number,color,is_public_domain"
+      }
+     }
+    ]
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "artwork-28560-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "artwork-20684",
+   "action": "goto",
+   "destination": {
+    "url": "https://api.artic.edu/api/v1/artworks/20684",
+    "query": [
+     {
+      "name": "fields",
+      "value": {
+       "source": "literal",
+       "value": "id,title,artist_display,artist_title,artist_id,date_display,date_start,date_end,medium_display,dimensions,place_of_origin,style_title,classification_title,department_title,gallery_title,gallery_id,artwork_type_title,artwork_type_id,main_reference_number,color,is_public_domain"
+      }
+     }
+    ]
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "artwork-20684-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "artwork-87479",
+   "action": "goto",
+   "destination": {
+    "url": "https://api.artic.edu/api/v1/artworks/87479",
+    "query": [
+     {
+      "name": "fields",
+      "value": {
+       "source": "literal",
+       "value": "id,title,artist_display,artist_title,artist_id,date_display,date_start,date_end,medium_display,dimensions,place_of_origin,style_title,classification_title,department_title,gallery_title,gallery_id,artwork_type_title,artwork_type_id,main_reference_number,color,is_public_domain"
+      }
+     }
+    ]
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "artwork-87479-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "artwork-24645",
+   "action": "goto",
+   "destination": {
+    "url": "https://api.artic.edu/api/v1/artworks/24645",
+    "query": [
+     {
+      "name": "fields",
+      "value": {
+       "source": "literal",
+       "value": "id,title,artist_display,artist_title,artist_id,date_display,date_start,date_end,medium_display,dimensions,place_of_origin,style_title,classification_title,department_title,gallery_title,gallery_id,artwork_type_title,artwork_type_id,main_reference_number,color,is_public_domain"
+      }
+     }
+    ]
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "artwork-24645-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "artwork-16568",
+   "action": "goto",
+   "destination": {
+    "url": "https://api.artic.edu/api/v1/artworks/16568",
+    "query": [
+     {
+      "name": "fields",
+      "value": {
+       "source": "literal",
+       "value": "id,title,artist_display,artist_title,artist_id,date_display,date_start,date_end,medium_display,dimensions,place_of_origin,style_title,classification_title,department_title,gallery_title,gallery_id,artwork_type_title,artwork_type_id,main_reference_number,color,is_public_domain"
+      }
+     }
+    ]
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "artwork-16568-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "artwork-185905",
+   "action": "goto",
+   "destination": {
+    "url": "https://api.artic.edu/api/v1/artworks/185905",
+    "query": [
+     {
+      "name": "fields",
+      "value": {
+       "source": "literal",
+       "value": "id,title,artist_display,artist_title,artist_id,date_display,date_start,date_end,medium_display,dimensions,place_of_origin,style_title,classification_title,department_title,gallery_title,gallery_id,artwork_type_title,artwork_type_id,main_reference_number,color,is_public_domain"
+      }
+     }
+    ]
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "artwork-185905-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "artwork-116363",
+   "action": "goto",
+   "destination": {
+    "url": "https://api.artic.edu/api/v1/artworks/116363",
+    "query": [
+     {
+      "name": "fields",
+      "value": {
+       "source": "literal",
+       "value": "id,title,artist_display,artist_title,artist_id,date_display,date_start,date_end,medium_display,dimensions,place_of_origin,style_title,classification_title,department_title,gallery_title,gallery_id,artwork_type_title,artwork_type_id,main_reference_number,color,is_public_domain"
+      }
+     }
+    ]
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "artwork-116363-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "artwork-52198",
+   "action": "goto",
+   "destination": {
+    "url": "https://api.artic.edu/api/v1/artworks/52198",
+    "query": [
+     {
+      "name": "fields",
+      "value": {
+       "source": "literal",
+       "value": "id,title,artist_display,artist_title,artist_id,date_display,date_start,date_end,medium_display,dimensions,place_of_origin,style_title,classification_title,department_title,gallery_title,gallery_id,artwork_type_title,artwork_type_id,main_reference_number,color,is_public_domain"
+      }
+     }
+    ]
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "artwork-52198-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "artwork-4575",
+   "action": "goto",
+   "destination": {
+    "url": "https://api.artic.edu/api/v1/artworks/4575",
+    "query": [
+     {
+      "name": "fields",
+      "value": {
+       "source": "literal",
+       "value": "id,title,artist_display,artist_title,artist_id,date_display,date_start,date_end,medium_display,dimensions,place_of_origin,style_title,classification_title,department_title,gallery_title,gallery_id,artwork_type_title,artwork_type_id,main_reference_number,color,is_public_domain"
+      }
+     }
+    ]
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "artwork-4575-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "artist-40610",
+   "action": "goto",
+   "destination": {
+    "url": "https://api.artic.edu/api/v1/artists/40610",
+    "query": [
+     {
+      "name": "fields",
+      "value": {
+       "source": "literal",
+       "value": "id,title,sort_title,alt_titles,birth_date,death_date,is_artist"
+      }
+     }
+    ]
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "artist-40610-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "artist-40810",
+   "action": "goto",
+   "destination": {
+    "url": "https://api.artic.edu/api/v1/artists/40810",
+    "query": [
+     {
+      "name": "fields",
+      "value": {
+       "source": "literal",
+       "value": "id,title,sort_title,alt_titles,birth_date,death_date,is_artist"
+      }
+     }
+    ]
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "artist-40810-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "artist-31492",
+   "action": "goto",
+   "destination": {
+    "url": "https://api.artic.edu/api/v1/artists/31492",
+    "query": [
+     {
+      "name": "fields",
+      "value": {
+       "source": "literal",
+       "value": "id,title,sort_title,alt_titles,birth_date,death_date,is_artist"
+      }
+     }
+    ]
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "artist-31492-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "gallery-2147478672",
+   "action": "goto",
+   "destination": {
+    "url": "https://api.artic.edu/api/v1/galleries/2147478672",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "gallery-2147478672-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "gallery-2147479703",
+   "action": "goto",
+   "destination": {
+    "url": "https://api.artic.edu/api/v1/galleries/2147479703",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "gallery-2147479703-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "artwork-type-1",
+   "action": "goto",
+   "destination": {
+    "url": "https://api.artic.edu/api/v1/artwork-types/1",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "artwork-type-1-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "artwork-type-18",
+   "action": "goto",
+   "destination": {
+    "url": "https://api.artic.edu/api/v1/artwork-types/18",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "artwork-type-18-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "category-term-PC-10",
+   "action": "goto",
+   "destination": {
+    "url": "https://api.artic.edu/api/v1/category-terms/PC-10",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "category-term-PC-10-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "category-term-PC-7",
+   "action": "goto",
+   "destination": {
+    "url": "https://api.artic.edu/api/v1/category-terms/PC-7",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "category-term-PC-7-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "exhibition-9036",
+   "action": "goto",
+   "destination": {
+    "url": "https://api.artic.edu/api/v1/exhibitions/9036",
+    "query": [
+     {
+      "name": "fields",
+      "value": {
+       "source": "literal",
+       "value": "id,title,status,aic_start_at,aic_end_at,gallery_title,artwork_ids,artist_ids"
+      }
+     }
+    ]
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "exhibition-9036-pause",
+   "action": "wait_for_timeout",
+   "duration_ms": 600
+  },
+  {
+   "step_id": "settle",
+   "action": "wait_for_timeout",
+   "duration_ms": 1500
+  }
+ ],
+ "capture": {
+  "events": [
+   "network"
+  ],
+  "network": {
+   "request_body": true,
+   "response_body": true,
+   "header_values": false
+  },
+  "limits": {
+   "max_network_body_bytes": 262144
+  }
+ }
+}

@@ -1,0 +1,18 @@
+# Pinry 2.1.13 (sqlite) for the rea showcase scenario capture. Loopback only; one compose project: rea-pinry.
+services:
+  pinry:
+    image: getpinry/pinry:2.1.13@sha256:9a619749ec5246e04694adc479a135e654a7ac5f34c15d6d134d917a62b4889b
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3403:80"
+    volumes:
+      - pinry-data:/data
+      # Same site config as the image, but the API sees Host with its port so absolute links read http://127.0.0.1:3403/...
+      - ./nginx-site.conf:/etc/nginx/sites-enabled/default:ro
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen(\"http://127.0.0.1/api/v2/pins/?limit=1\", timeout=4)"]
+      interval: 5s
+      timeout: 6s
+      retries: 36
+volumes:
+  pinry-data: {}

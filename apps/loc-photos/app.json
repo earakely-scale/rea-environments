@@ -1,0 +1,13 @@
+{
+  "app": "loc-photos",
+  "title": "Library of Congress JSON API (photos)",
+  "repo": "LocPhotosEnv-REA",
+  "kind": "public-api",
+  "capture": "scenario",
+  "license": "U.S. public domain (Library of Congress metadata); every item read is marked \"No known restrictions on publication\" or \"on reproduction\"",
+  "authors": "the Library of Congress",
+  "hf_license": "apache-2.0",
+  "version": "v1",
+  "origin": "https://www.loc.gov",
+  "domain": "historical photograph collections (public API)"
+}

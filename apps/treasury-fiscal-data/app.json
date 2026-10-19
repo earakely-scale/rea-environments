@@ -1,0 +1,13 @@
+{
+  "app": "treasury-fiscal-data",
+  "title": "Treasury Fiscal Data API",
+  "repo": "TreasuryFiscalDataEnv-REA",
+  "kind": "public-api",
+  "license": "U.S. public domain",
+  "authors": "the U.S. Department of the Treasury, Bureau of the Fiscal Service",
+  "hf_license": "apache-2.0",
+  "version": "v1/v2",
+  "origin": "https://api.fiscaldata.treasury.gov",
+  "domain": "federal finance (public debt, exchange rates, Treasury statements, auctions and agency receivables)",
+  "keep_regex": "^/services/api/fiscal_service/"
+}

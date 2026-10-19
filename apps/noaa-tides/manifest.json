@@ -1,0 +1,908 @@
+{
+ "evidence_id": "ev_a54a45f249d0ea4883e3b687ab1e4afd9c1671b34e14226298aeb2542dbdad82",
+ "subject": {
+  "name": "noaa-tides.scoped.har",
+  "digest": {
+   "sha256": "7e8a15258907151dac9391ac8687a3b17916c9a78208841634f11a33934e948f"
+  },
+  "local_path": "/home/ubuntu/capture/noaa-tides/noaa-tides.scoped.har",
+  "format": "file",
+  "architecture": null
+ },
+ "provider": {
+  "id": "rea-analysis-view",
+  "name": "REA analysis view projection",
+  "version": "1"
+ },
+ "analysis_profile": null,
+ "predicate_type": "rea.analysis-view",
+ "operation": "inspect_analysis_view",
+ "parameters": {
+  "parent_evidence_id": "ev_5ca46908fb465b0c7dddd2fa0a37a3f72870fa0add96c1ae818a5b9cb36c4766",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "raw_result": null,
+ "normalized_result": {
+  "parent_evidence_id": "ev_5ca46908fb465b0c7dddd2fa0a37a3f72870fa0add96c1ae818a5b9cb36c4766",
+  "parent_operation": "inspect_web_network_capture",
+  "parent_digest": "5ca46908fb465b0c7dddd2fa0a37a3f72870fa0add96c1ae818a5b9cb36c4766",
+  "view_digest": "fd1aca66243810f96ab81fafdcdd6b0a8c388345ca49ed01d0d78a9dce643874",
+  "artifact": {
+   "path": "/home/ubuntu/capture/noaa-tides/noaa-tides.scoped.har",
+   "sha256": "7e8a15258907151dac9391ac8687a3b17916c9a78208841634f11a33934e948f"
+  },
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 12,
+   "total": 12,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "limitations": [
+   "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+   "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+   "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+   "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+   "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+   "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+   "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+   "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+  ],
+  "unknowns": [
+   {
+    "kind": "authorization-model",
+    "statement": "Authorization headers and cookies are structurally excluded from captures; the manifest states no authorization model."
+   },
+   {
+    "kind": "response-semantics",
+    "statement": "Recorded statuses and bodies are retained only as pointers to parent records; the manifest states no response semantics."
+   },
+   {
+    "kind": "state-transition",
+    "statement": "Recorded exchanges are independent observations; the manifest states no ordering, side effects or state transitions between tools."
+   }
+  ],
+  "origin": "https://api.tidesandcurrents.noaa.gov",
+  "name": "api-tidesandcurrents-noaa-gov",
+  "tools": [
+   {
+    "name": "get_prod_datagetter",
+    "method": "GET",
+    "path_template": "/api/prod/datagetter",
+    "api_surface_template": "/api/prod/datagetter",
+    "params": [],
+    "query_parameter_names": [
+     "application",
+     "begin_date",
+     "datum",
+     "end_date",
+     "format",
+     "interval",
+     "product",
+     "range",
+     "station",
+     "time_zone",
+     "units"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200,
+     400
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     37,
+     38,
+     39,
+     40,
+     41,
+     42,
+     43,
+     44,
+     45,
+     46,
+     47,
+     48,
+     49,
+     50,
+     51,
+     52,
+     53
+    ]
+   },
+   {
+    "name": "get_dpapi_prod_webapi_htf_htf_annual",
+    "method": "GET",
+    "path_template": "/dpapi/prod/webapi/htf/htf_annual.json",
+    "api_surface_template": "/dpapi/prod/webapi/htf/htf_annual.json",
+    "params": [],
+    "query_parameter_names": [
+     "station",
+     "year"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     54,
+     55
+    ]
+   },
+   {
+    "name": "get_mdapi_prod_webapi_stations",
+    "method": "GET",
+    "path_template": "/mdapi/prod/webapi/stations.json",
+    "api_surface_template": "/mdapi/prod/webapi/stations.json",
+    "params": [],
+    "query_parameter_names": [
+     "type"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     1
+    ]
+   },
+   {
+    "name": "get_mdapi_prod_webapi_stations_benchmarks_by_id",
+    "method": "GET",
+    "path_template": "/mdapi/prod/webapi/stations/{numeric}/benchmarks.json",
+    "api_surface_template": "/mdapi/prod/webapi/stations/{numeric}/benchmarks.json",
+    "params": [
+     {
+      "index": 4,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1617760",
+       "8410140"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     35,
+     36
+    ]
+   },
+   {
+    "name": "get_mdapi_prod_webapi_stations_datums_by_id",
+    "method": "GET",
+    "path_template": "/mdapi/prod/webapi/stations/{numeric}/datums.json",
+    "api_surface_template": "/mdapi/prod/webapi/stations/{numeric}/datums.json",
+    "params": [
+     {
+      "index": 4,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "8638610",
+       "8724580",
+       "9410170",
+       "9414290",
+       "9455920"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "units"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     16,
+     17,
+     18,
+     19,
+     20
+    ]
+   },
+   {
+    "name": "get_mdapi_prod_webapi_stations_details_by_id",
+    "method": "GET",
+    "path_template": "/mdapi/prod/webapi/stations/{numeric}/details.json",
+    "api_surface_template": "/mdapi/prod/webapi/stations/{numeric}/details.json",
+    "params": [
+     {
+      "index": 4,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1617760",
+       "8410140",
+       "8724580",
+       "8771450",
+       "9447130"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     11,
+     12,
+     13,
+     14,
+     15
+    ]
+   },
+   {
+    "name": "get_mdapi_prod_webapi_stations_floodlevels_by_id",
+    "method": "GET",
+    "path_template": "/mdapi/prod/webapi/stations/{numeric}/floodlevels.json",
+    "api_surface_template": "/mdapi/prod/webapi/stations/{numeric}/floodlevels.json",
+    "params": [
+     {
+      "index": 4,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "8638610",
+       "8724580",
+       "8771450",
+       "9447130"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "units"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     28,
+     29,
+     30,
+     31
+    ]
+   },
+   {
+    "name": "get_mdapi_prod_webapi_stations_harcon_by_id",
+    "method": "GET",
+    "path_template": "/mdapi/prod/webapi/stations/{numeric}/harcon.json",
+    "api_surface_template": "/mdapi/prod/webapi/stations/{numeric}/harcon.json",
+    "params": [
+     {
+      "index": 4,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "8771450",
+       "9414290",
+       "9447130"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "units"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     21,
+     22,
+     23
+    ]
+   },
+   {
+    "name": "get_mdapi_prod_webapi_stations_notices_by_id",
+    "method": "GET",
+    "path_template": "/mdapi/prod/webapi/stations/{numeric}/notices.json",
+    "api_surface_template": "/mdapi/prod/webapi/stations/{numeric}/notices.json",
+    "params": [
+     {
+      "index": 4,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "8771450",
+       "9414290"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     32,
+     33
+    ]
+   },
+   {
+    "name": "get_mdapi_prod_webapi_stations_products_by_id",
+    "method": "GET",
+    "path_template": "/mdapi/prod/webapi/stations/{numeric}/products.json",
+    "api_surface_template": "/mdapi/prod/webapi/stations/{numeric}/products.json",
+    "params": [
+     {
+      "index": 4,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "9447130"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     34
+    ]
+   },
+   {
+    "name": "get_mdapi_prod_webapi_stations_sensors_by_id",
+    "method": "GET",
+    "path_template": "/mdapi/prod/webapi/stations/{numeric}/sensors.json",
+    "api_surface_template": "/mdapi/prod/webapi/stations/{numeric}/sensors.json",
+    "params": [
+     {
+      "index": 4,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "8638610",
+       "8761724",
+       "9410170",
+       "9414290"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     24,
+     25,
+     26,
+     27
+    ]
+   },
+   {
+    "name": "get_mdapi_prod_webapi_stations_by_station_id",
+    "method": "GET",
+    "path_template": "/mdapi/prod/webapi/stations/{station_id}",
+    "api_surface_template": "/mdapi/prod/webapi/stations/9414290.json",
+    "params": [
+     {
+      "index": 4,
+      "name": "station_id",
+      "rule": "sibling-variance",
+      "basis": "inferred",
+      "observed_values": [
+       "1617760.json",
+       "8410140.json",
+       "8638610.json",
+       "8724580.json",
+       "8761724.json",
+       "8771450.json",
+       "9410170.json",
+       "9414290.json",
+       "9447130.json",
+       "9455920.json"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     0,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10
+    ]
+   }
+  ],
+  "records": [
+   {
+    "ordinal": 0,
+    "method": "GET",
+    "path": "/mdapi/prod/webapi/stations/9414290.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 1,
+    "method": "GET",
+    "path": "/mdapi/prod/webapi/stations.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 2,
+    "method": "GET",
+    "path": "/mdapi/prod/webapi/stations/8724580.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 3,
+    "method": "GET",
+    "path": "/mdapi/prod/webapi/stations/9447130.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 4,
+    "method": "GET",
+    "path": "/mdapi/prod/webapi/stations/8771450.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 5,
+    "method": "GET",
+    "path": "/mdapi/prod/webapi/stations/8638610.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 6,
+    "method": "GET",
+    "path": "/mdapi/prod/webapi/stations/9410170.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 7,
+    "method": "GET",
+    "path": "/mdapi/prod/webapi/stations/8410140.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 8,
+    "method": "GET",
+    "path": "/mdapi/prod/webapi/stations/9455920.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 9,
+    "method": "GET",
+    "path": "/mdapi/prod/webapi/stations/8761724.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 10,
+    "method": "GET",
+    "path": "/mdapi/prod/webapi/stations/1617760.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 11,
+    "method": "GET",
+    "path": "/mdapi/prod/webapi/stations/8724580/details.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 12,
+    "method": "GET",
+    "path": "/mdapi/prod/webapi/stations/9447130/details.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 13,
+    "method": "GET",
+    "path": "/mdapi/prod/webapi/stations/8771450/details.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 14,
+    "method": "GET",
+    "path": "/mdapi/prod/webapi/stations/8410140/details.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 15,
+    "method": "GET",
+    "path": "/mdapi/prod/webapi/stations/1617760/details.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 16,
+    "method": "GET",
+    "path": "/mdapi/prod/webapi/stations/9414290/datums.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 17,
+    "method": "GET",
+    "path": "/mdapi/prod/webapi/stations/8724580/datums.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 18,
+    "method": "GET",
+    "path": "/mdapi/prod/webapi/stations/9455920/datums.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 19,
+    "method": "GET",
+    "path": "/mdapi/prod/webapi/stations/8638610/datums.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 20,
+    "method": "GET",
+    "path": "/mdapi/prod/webapi/stations/9410170/datums.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 21,
+    "method": "GET",
+    "path": "/mdapi/prod/webapi/stations/9414290/harcon.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 22,
+    "method": "GET",
+    "path": "/mdapi/prod/webapi/stations/8771450/harcon.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 23,
+    "method": "GET",
+    "path": "/mdapi/prod/webapi/stations/9447130/harcon.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 24,
+    "method": "GET",
+    "path": "/mdapi/prod/webapi/stations/9414290/sensors.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 25,
+    "method": "GET",
+    "path": "/mdapi/prod/webapi/stations/8638610/sensors.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 26,
+    "method": "GET",
+    "path": "/mdapi/prod/webapi/stations/8761724/sensors.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 27,
+    "method": "GET",
+    "path": "/mdapi/prod/webapi/stations/9410170/sensors.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 28,
+    "method": "GET",
+    "path": "/mdapi/prod/webapi/stations/8638610/floodlevels.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 29,
+    "method": "GET",
+    "path": "/mdapi/prod/webapi/stations/8771450/floodlevels.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 30,
+    "method": "GET",
+    "path": "/mdapi/prod/webapi/stations/8724580/floodlevels.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 31,
+    "method": "GET",
+    "path": "/mdapi/prod/webapi/stations/9447130/floodlevels.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 32,
+    "method": "GET",
+    "path": "/mdapi/prod/webapi/stations/9414290/notices.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 33,
+    "method": "GET",
+    "path": "/mdapi/prod/webapi/stations/8771450/notices.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 34,
+    "method": "GET",
+    "path": "/mdapi/prod/webapi/stations/9447130/products.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 35,
+    "method": "GET",
+    "path": "/mdapi/prod/webapi/stations/8410140/benchmarks.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 36,
+    "method": "GET",
+    "path": "/mdapi/prod/webapi/stations/1617760/benchmarks.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 37,
+    "method": "GET",
+    "path": "/api/prod/datagetter",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 38,
+    "method": "GET",
+    "path": "/api/prod/datagetter",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 39,
+    "method": "GET",
+    "path": "/api/prod/datagetter",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 40,
+    "method": "GET",
+    "path": "/api/prod/datagetter",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 41,
+    "method": "GET",
+    "path": "/api/prod/datagetter",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 42,
+    "method": "GET",
+    "path": "/api/prod/datagetter",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 43,
+    "method": "GET",
+    "path": "/api/prod/datagetter",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 44,
+    "method": "GET",
+    "path": "/api/prod/datagetter",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 45,
+    "method": "GET",
+    "path": "/api/prod/datagetter",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 46,
+    "method": "GET",
+    "path": "/api/prod/datagetter",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 47,
+    "method": "GET",
+    "path": "/api/prod/datagetter",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 48,
+    "method": "GET",
+    "path": "/api/prod/datagetter",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 49,
+    "method": "GET",
+    "path": "/api/prod/datagetter",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 50,
+    "method": "GET",
+    "path": "/api/prod/datagetter",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 51,
+    "method": "GET",
+    "path": "/api/prod/datagetter",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 52,
+    "method": "GET",
+    "path": "/api/prod/datagetter",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 53,
+    "method": "GET",
+    "path": "/api/prod/datagetter",
+    "status": 400,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 54,
+    "method": "GET",
+    "path": "/dpapi/prod/webapi/htf/htf_annual.json",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 55,
+    "method": "GET",
+    "path": "/dpapi/prod/webapi/htf/htf_annual.json",
+    "status": 200,
+    "content_type": "application/json"
+   }
+  ],
+  "excluded": [],
+  "templated_groups": 9,
+  "kind": "environment-manifest",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "confidence": "inferred",
+ "authority": "historical-reference",
+ "environment": null,
+ "limitations": [
+  "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+  "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+  "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+  "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+  "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+  "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+  "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+  "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+ ],
+ "relationship_coverage": null,
+ "locations": [
+  {
+   "kind": "artifact-path",
+   "path": "/home/ubuntu/capture/noaa-tides/noaa-tides.scoped.har"
+  }
+ ],
+ "evidence_links": [
+  "ev_5ca46908fb465b0c7dddd2fa0a37a3f72870fa0add96c1ae818a5b9cb36c4766"
+ ]
+}

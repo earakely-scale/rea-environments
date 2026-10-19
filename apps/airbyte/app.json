@@ -1,0 +1,16 @@
+{
+  "app": "airbyte",
+  "title": "Airbyte",
+  "repo": "AirbyteEnv-REA",
+  "kind": "self-hosted",
+  "license": "Elastic License 2.0 (ELv2)",
+  "authors": "Airbyte, Inc.",
+  "hf_license": "apache-2.0",
+  "version": "2.4.0",
+  "image": "airbyte/server:2.4.0",
+  "image_digest": "sha256:f3577020d4f3835be66d19da24a78baa9869f55d1a60f492325432b7d238df76",
+  "port": 3302,
+  "keep_regex": "^/api/public/v1/",
+  "domain": "data integration pipelines (ELT connectors, connections and sync jobs)",
+  "exclude_tools": "definitions|permissions"
+}

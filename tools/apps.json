@@ -202,5 +202,85 @@
     "authors": "the Vikunja authors",
     "repo": "VikunjaEnv-REA",
     "hf_license": "apache-2.0"
+  },
+  "sentry": {
+    "title": "Sentry",
+    "license": "FSL-1.1-Apache-2.0",
+    "authors": "Functional Software, Inc. (Sentry)",
+    "repo": "SentryEnv-REA",
+    "hf_license": "apache-2.0",
+    "kind": "self-hosted"
+  },
+  "noaa-tides": {
+    "title": "NOAA Tides and Currents API",
+    "license": "U.S. public domain",
+    "authors": "NOAA's Center for Operational Oceanographic Products and Services",
+    "repo": "NoaaTidesEnv-REA",
+    "hf_license": "apache-2.0",
+    "kind": "public-api"
+  },
+  "airbyte": {
+    "title": "Airbyte",
+    "license": "Elastic License 2.0 (ELv2)",
+    "authors": "Airbyte, Inc.",
+    "repo": "AirbyteEnv-REA",
+    "hf_license": "apache-2.0",
+    "kind": "self-hosted"
+  },
+  "openfda": {
+    "title": "openFDA",
+    "license": "U.S. public domain",
+    "authors": "the U.S. Food and Drug Administration",
+    "repo": "OpenFdaEnv-REA",
+    "hf_license": "apache-2.0",
+    "kind": "public-api"
+  },
+  "vault": {
+    "title": "HashiCorp Vault",
+    "license": "BUSL-1.1",
+    "authors": "HashiCorp, Inc.",
+    "repo": "VaultEnv-REA",
+    "hf_license": "apache-2.0",
+    "kind": "self-hosted"
+  },
+  "usgs-earthquakes": {
+    "title": "USGS Earthquake Catalog",
+    "license": "U.S. public domain",
+    "authors": "the U.S. Geological Survey",
+    "repo": "UsgsEarthquakesEnv-REA",
+    "hf_license": "apache-2.0",
+    "kind": "public-api"
+  },
+  "nomad": {
+    "title": "HashiCorp Nomad",
+    "license": "BUSL-1.1",
+    "authors": "HashiCorp",
+    "repo": "NomadEnv-REA",
+    "hf_license": "apache-2.0",
+    "kind": "self-hosted"
+  },
+  "federal-register": {
+    "title": "Federal Register API",
+    "license": "U.S. public domain",
+    "authors": "the Office of the Federal Register",
+    "repo": "FederalRegisterEnv-REA",
+    "hf_license": "apache-2.0",
+    "kind": "public-api"
+  },
+  "redpanda-console": {
+    "title": "Redpanda Console",
+    "license": "BSL-1.1",
+    "authors": "Redpanda Data, Inc.",
+    "repo": "RedpandaConsoleEnv-REA",
+    "hf_license": "apache-2.0",
+    "kind": "self-hosted"
+  },
+  "treasury-fiscal-data": {
+    "title": "Treasury Fiscal Data API",
+    "license": "U.S. public domain",
+    "authors": "the U.S. Department of the Treasury, Bureau of the Fiscal Service",
+    "repo": "TreasuryFiscalDataEnv-REA",
+    "hf_license": "apache-2.0",
+    "kind": "public-api"
   }
 }

@@ -1,0 +1,26 @@
+{
+ "app": "treasury-fiscal-data",
+ "kind": "public-api",
+ "captured_on": "2026-10-19",
+ "fair_access": "a declared User-Agent, one request at a time and at most 2 requests per second (52 capture requests, no key)",
+ "seeded_objects": "exchange rates for ten currencies, average interest rates on Treasury securities, Treasury-owned gold by facility, interest expense, Title XII advances for two states, agency net cost, Daily Treasury Statement cash and agency deposits/withdrawals, five sets of securities auctions, revenue collections, Monthly Treasury Statement outlays for three departments, savings bond sales, maturity rates, debt to the penny and receivables for two departments",
+ "app_version": "v1/v2",
+ "origin": "https://api.fiscaldata.treasury.gov",
+ "api_base": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/",
+ "licence": "U.S. public domain (works of the U.S. Government); the API needs no key or login",
+ "user_agent": "rea-environments showcase (https://github.com/earakely-scale/rea-environments)",
+ "tooling": {"rea": "6.6.0", "playwright-core": "1.58.2", "chromium": "Chromium 155.0.8059.79 snap", "node": "v24.22.0", "python": "3.12.3", "vm": "Ubuntu 24.04 amd64"},
+ "requests": {"research": 25, "capture": 52, "total": 77, "budget": 150, "pause_ms": 600, "page_size": 5},
+ "endpoints": {
+  "v1/accounting/od/rates_of_exchange": 10, "v2/accounting/od/avg_interest_rates": 4, "v2/accounting/od/gold_reserve": 3,
+  "v2/accounting/od/interest_expense": 3, "v2/accounting/od/title_xii": 3, "v2/accounting/od/statement_net_cost": 3,
+  "v1/accounting/dts/operating_cash_balance": 2, "v1/accounting/dts/deposits_withdrawals_operating_cash": 5,
+  "v1/accounting/od/auctions_query": 5, "v2/revenue/rcm": 2, "v1/accounting/mts/mts_table_5": 2,
+  "v1/accounting/od/securities_sales": 2, "v1/accounting/od/federal_maturity_rates": 1, "v2/accounting/od/debt_to_penny": 3,
+  "v2/accounting/od/debt_outstanding": 2, "v2/debt/tror": 2
+ },
+ "scoped_har": {"file": "treasury-fiscal-data.scoped.har", "sha256": "3e41c0dfb7af43dcc87399c0976cc7bbc3ed6111e22f02e4f610cfee0f8b1413", "bytes": 211445, "records": 52, "methods": {"GET": 52}, "statuses": {"200": 52}, "largest_body_bytes": 4307},
+ "scope_har": {"origin": "https://api.fiscaldata.treasury.gov", "keep_regex": "^/services/api/fiscal_service/", "drop_regex": "default (login|logout|signup|password|session|token|oauth|csrf)", "max_body": 60000, "max_records": 150, "kept": 52,
+  "dropped": {"other-origin": 0, "path": 0, "non-json": 0, "auth": 0, "big-body": 0, "over-max": 0},
+  "notes": ["the first record is the page navigation to debt_outstanding (a JSON document), the other 51 are in-page fetches", "the API sets load-balancer cookies; scope_har.py removes all cookies and headers except content-type/accept"]}
+}

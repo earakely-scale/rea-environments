@@ -1,0 +1,43 @@
+# PhotoPrism (sqlite) for the rea showcase scenario capture. Loopback only; one compose project: rea-photoprism.
+# PHOTOPRISM_AUTH_MODE=public removes the login and its access token: the API answers the browser without credentials.
+services:
+  photoprism:
+    image: photoprism/photoprism:261007
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3401:2342"
+    environment:
+      PHOTOPRISM_AUTH_MODE: "public"
+      PHOTOPRISM_ADMIN_USER: "rea-admin"
+      PHOTOPRISM_ADMIN_PASSWORD: "${PP_ADMIN_PASSWORD:?set from .admin}"
+      PHOTOPRISM_SITE_URL: "http://127.0.0.1:3401/"
+      PHOTOPRISM_SITE_TITLE: "Saltmarsh Depot Archive"
+      PHOTOPRISM_SITE_CAPTION: "Synthetic photo library"
+      PHOTOPRISM_DATABASE_DRIVER: "sqlite"
+      PHOTOPRISM_DISABLE_TENSORFLOW: "true"
+      PHOTOPRISM_DISABLE_FACES: "true"
+      PHOTOPRISM_DISABLE_CLASSIFICATION: "true"
+      PHOTOPRISM_DISABLE_PLACES: "true"
+      PHOTOPRISM_DISABLE_WEBDAV: "true"
+      PHOTOPRISM_DETECT_NSFW: "false"
+      PHOTOPRISM_UPLOAD_NSFW: "true"
+      PHOTOPRISM_DISABLE_BACKUPS: "true"
+      PHOTOPRISM_ORIGINALS_LIMIT: "100"
+      PHOTOPRISM_HTTP_COMPRESSION: "none"
+      PHOTOPRISM_LOG_LEVEL: "info"
+      PHOTOPRISM_READONLY: "false"
+      PHOTOPRISM_EXPERIMENTAL: "false"
+      PHOTOPRISM_DISABLE_CHOWN: "false"
+      PHOTOPRISM_DISABLE_SETTINGS: "false"
+    working_dir: "/photoprism"
+    volumes:
+      - originals:/photoprism/originals
+      - storage:/photoprism/storage
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://127.0.0.1:2342/api/v1/status"]
+      interval: 5s
+      timeout: 10s
+      retries: 60
+volumes:
+  originals: {}
+  storage: {}

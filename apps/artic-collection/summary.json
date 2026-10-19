@@ -1,0 +1,109 @@
+{
+ "app": "artic-collection",
+ "kind": "public-api",
+ "capture": "scenario",
+ "captured_on": "2026-10-19",
+ "fair_access": "no key, no login; 26 navigations in one browser session with a 600 ms pause after each (under 2 requests per second and under the API's 60 requests per minute); every request passes fields= so each body is 0.6-1.9 KB",
+ "seeded_objects": "Real public data: the department list, two artwork searches, an artist search, an exhibition search, a multi-id artwork list, and by-id reads of 10 public-domain artworks across 6 departments, 3 artists, 2 galleries, 2 artwork types, 2 category terms and 1 exhibition.",
+ "app_version": "v1",
+ "origin": "https://api.artic.edu",
+ "replaces": "met-collection (The Met Collection API exposes only departments, objects, objects/{id} and search; with 16 object reads, the department list and three v1.1 searches the manifest had 3 tools, below the 8-tool minimum, and no other endpoints exist)",
+ "endpoints": [
+  "/api/v1/departments",
+  "/api/v1/artworks/search",
+  "/api/v1/artworks (ids=)",
+  "/api/v1/artworks/{id}",
+  "/api/v1/artists/search",
+  "/api/v1/artists/{id}",
+  "/api/v1/exhibitions/search",
+  "/api/v1/exhibitions/{id}",
+  "/api/v1/galleries/{id}",
+  "/api/v1/artwork-types/{id}",
+  "/api/v1/category-terms/{id}"
+ ],
+ "records_read": {
+  "artworks": [
+   27992,
+   28560,
+   20684,
+   87479,
+   24645,
+   16568,
+   185905,
+   116363,
+   52198,
+   4575
+  ],
+  "artists": [
+   40610,
+   40810,
+   31492
+  ],
+  "galleries": [
+   2147478672,
+   2147479703
+  ],
+  "artwork_types": [
+   1,
+   18
+  ],
+  "category_terms": [
+   "PC-10",
+   "PC-7"
+  ],
+  "exhibitions": [
+   9036
+  ]
+ },
+ "scenario_steps": 52,
+ "scenario_navigations": 26,
+ "scenario_duration_ms": 23000,
+ "transactions": 26,
+ "transactions_by_method": {
+  "GET": 26
+ },
+ "transaction_statuses": {
+  "200": 26
+ },
+ "events_dropped": 0,
+ "events_omissions": [],
+ "tooling": {
+  "rea": "6.7.0",
+  "chromium": "Chromium 155.0.8059.79 snap",
+  "vm": "Ubuntu 24.04 amd64"
+ },
+ "evidence": {
+  "capture_evidence_id": "ev_5f3f80e48d8e884648a21246b95ac6d60d744e11a841599347d8c8d0bf2a6122",
+  "capture_file_sha256": "3a807e85c0db318a3cbecbc62f8c7125f4163f6b9c575b6f57f3d2057de5b0a0",
+  "capture_file_bytes": 183942,
+  "manifest_evidence_id": "ev_2fb61dbbfdb2a429b27771afd068d7d3d9e0d9d9595da2c62086dfcbefd4b2f2",
+  "manifest_norules_evidence_id": "ev_6fe79e4d6859f2633a259c7c75cca9a1a6fd70b51f5c2d5fedc64d175c451076",
+  "manifest_view_digest": "df12a88aba657f755d4cf14d74703a145fdadb18532570304b0cc07c0b50c3d3"
+ },
+ "manifest": {
+  "tools": 11,
+  "tools_by_method": {
+   "GET": 11
+  },
+  "tools_norules": 12,
+  "templated_groups": 6,
+  "params_by_rule": {
+   "numeric": 5,
+   "sibling-variance": 1
+  },
+  "query_parameter_names_total": 16,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "controlled-replay"
+ },
+ "retrieval_tasks": 12,
+ "eval": {
+  "openai/gpt-oss-120b:groq": "11/12 (missed qa-06, the amphora search)",
+  "zai-org/GLM-5.3-Flash:zai-org": "12/12"
+ }
+}

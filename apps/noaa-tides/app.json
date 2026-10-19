@@ -1,0 +1,13 @@
+{
+  "app": "noaa-tides",
+  "kind": "public-api",
+  "title": "NOAA Tides and Currents API",
+  "repo": "NoaaTidesEnv-REA",
+  "license": "U.S. public domain",
+  "authors": "NOAA's Center for Operational Oceanographic Products and Services",
+  "hf_license": "apache-2.0",
+  "version": "v1",
+  "origin": "https://api.tidesandcurrents.noaa.gov",
+  "domain": "coastal water levels, tide predictions and tide-station metadata (public data API)",
+  "keep_regex": "^/(mdapi|api|dpapi)/prod/"
+}

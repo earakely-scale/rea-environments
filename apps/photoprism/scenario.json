@@ -1,0 +1,696 @@
+{
+ "browser": {
+  "mode": "launch",
+  "executable_path": "/snap/bin/chromium"
+ },
+ "start_url": {
+  "url": "http://127.0.0.1:3401/library/browse",
+  "query": []
+ },
+ "secrets": [
+  {
+   "secret_id": "public_session",
+   "environment_variable": "PP_PUBLIC_SESSION"
+  },
+  {
+   "secret_id": "public_access_token",
+   "environment_variable": "PP_PUBLIC_TOKEN"
+  }
+ ],
+ "storage": {
+  "cookies": [],
+  "local_storage": [],
+  "session_storage": []
+ },
+ "actions": [
+  {
+   "step_id": "browse-ready",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "div.result >> nth=0"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "photo-json-01",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3401/api/v1/photos/ptn547rxew9tkh8d",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "photo-json-02",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3401/api/v1/photos/ptn547rggpa4goiu",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "photo-json-03",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3401/api/v1/photos/ptn547rcc1t5tlvt",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "photo-json-04",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3401/api/v1/photos/ptn547rh036bsns8",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "photo-json-05",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3401/api/v1/photos/ptn547qc6u1ia65c",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "photo-json-06",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3401/api/v1/photos/ptn547qvtjoc5bw1",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "photo-json-07",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3401/api/v1/photos/ptn547r9fipj7ua1",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "photo-json-08",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3401/api/v1/photos/ptn547rornra01bm",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "photo-json-09",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3401/api/v1/photos/ptn547qpwr5eurja",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "photo-json-10",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3401/api/v1/photos/ptn547q4hrl7uhqv",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "photo-json-11",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3401/api/v1/photos/ptn547qe13j7iqbw",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "photo-json-12",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3401/api/v1/photos/ptn547qygzmr7dns",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "albums-page",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3401/library/albums",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "albums-ready",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "div.result.is-album >> nth=0"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "album-view-1",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3401/library/albums/atn547u7js7hz0g1/view",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "album-view-1-ready",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "div.result >> nth=0"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "album-view-2",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3401/library/albums/atn547u7d7whcrik/view",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "album-view-2-ready",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "div.result >> nth=0"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "album-view-3",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3401/library/albums/atn547v63xwp7r9r/view",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "album-view-3-ready",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "div.result >> nth=0"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "album-view-4",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3401/library/albums/atn547vbhnsqimy9/view",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "album-view-4-ready",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "div.result >> nth=0"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "labels-page",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3401/library/labels",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "labels-ready",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "div.result >> nth=0"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "folders-page",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3401/library/folders",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "folders-ready",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "div.result >> nth=0"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "favorites-page",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3401/library/favorites",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "favorites-ready",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "div.result >> nth=0"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "ui-search-copper",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3401/library/browse",
+    "query": [
+     {
+      "name": "q",
+      "value": {
+       "source": "literal",
+       "value": "copper"
+      }
+     }
+    ]
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "ui-search-ready",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "div.result >> nth=0"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "json-newest-six",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3401/api/v1/photos",
+    "query": [
+     {
+      "name": "count",
+      "value": {
+       "source": "literal",
+       "value": "6"
+      }
+     },
+     {
+      "name": "offset",
+      "value": {
+       "source": "literal",
+       "value": "0"
+      }
+     },
+     {
+      "name": "merged",
+      "value": {
+       "source": "literal",
+       "value": "true"
+      }
+     },
+     {
+      "name": "order",
+      "value": {
+       "source": "literal",
+       "value": "newest"
+      }
+     }
+    ]
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "json-search-heron",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3401/api/v1/photos",
+    "query": [
+     {
+      "name": "count",
+      "value": {
+       "source": "literal",
+       "value": "24"
+      }
+     },
+     {
+      "name": "offset",
+      "value": {
+       "source": "literal",
+       "value": "0"
+      }
+     },
+     {
+      "name": "merged",
+      "value": {
+       "source": "literal",
+       "value": "true"
+      }
+     },
+     {
+      "name": "q",
+      "value": {
+       "source": "literal",
+       "value": "heron"
+      }
+     }
+    ]
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "json-label-tide-gauge",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3401/api/v1/photos",
+    "query": [
+     {
+      "name": "count",
+      "value": {
+       "source": "literal",
+       "value": "24"
+      }
+     },
+     {
+      "name": "offset",
+      "value": {
+       "source": "literal",
+       "value": "0"
+      }
+     },
+     {
+      "name": "merged",
+      "value": {
+       "source": "literal",
+       "value": "true"
+      }
+     },
+     {
+      "name": "label",
+      "value": {
+       "source": "literal",
+       "value": "tide-gauge"
+      }
+     }
+    ]
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "json-color-gold",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3401/api/v1/photos",
+    "query": [
+     {
+      "name": "count",
+      "value": {
+       "source": "literal",
+       "value": "24"
+      }
+     },
+     {
+      "name": "offset",
+      "value": {
+       "source": "literal",
+       "value": "0"
+      }
+     },
+     {
+      "name": "merged",
+      "value": {
+       "source": "literal",
+       "value": "true"
+      }
+     },
+     {
+      "name": "color",
+      "value": {
+       "source": "literal",
+       "value": "gold"
+      }
+     }
+    ]
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "json-folder-albums",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3401/api/v1/albums",
+    "query": [
+     {
+      "name": "count",
+      "value": {
+       "source": "literal",
+       "value": "24"
+      }
+     },
+     {
+      "name": "offset",
+      "value": {
+       "source": "literal",
+       "value": "0"
+      }
+     },
+     {
+      "name": "type",
+      "value": {
+       "source": "literal",
+       "value": "folder"
+      }
+     }
+    ]
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "scratch-albums-page",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3401/library/albums",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "scratch-albums-ready",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "div.result.is-album >> nth=0"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "scratch-add",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "button.action-add"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "scratch-open-edit",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "div.result:has-text(\"2026\") button.action-title-edit"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "scratch-title",
+   "action": "fill",
+   "locator": {
+    "kind": "css",
+    "selector": ".v-overlay--active .input-title input"
+   },
+   "value": {
+    "source": "literal",
+    "value": "Rea Scratch Album"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "scratch-location",
+   "action": "fill",
+   "locator": {
+    "kind": "css",
+    "selector": ".v-overlay--active .input-location input"
+   },
+   "value": {
+    "source": "literal",
+    "value": "Copperfield Annex"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "scratch-description",
+   "action": "fill",
+   "locator": {
+    "kind": "css",
+    "selector": ".v-overlay--active .input-description textarea:not(.v-textarea__sizer)"
+   },
+   "value": {
+    "source": "literal",
+    "value": "Scratch album made by the capture scenario."
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "scratch-save",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": ".v-overlay--active button.action-confirm"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "scratch-renamed",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "div.result:has-text(\"Rea Scratch Album\")"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "scratch-dialog-closed",
+   "action": "wait_for_timeout",
+   "duration_ms": 1500
+  },
+  {
+   "step_id": "scratch-open-view",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "div.result:has-text(\"Rea Scratch Album\") div.preview"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "scratch-view-ready",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "button.action-view-list"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "scratch-menu",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": "button.action-menu__btn"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "scratch-delete",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": ".action-delete.action-menu__item"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "scratch-delete-confirm",
+   "action": "click",
+   "locator": {
+    "kind": "css",
+    "selector": ".v-overlay--active button.action-confirm"
+   },
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "scratch-deleted",
+   "action": "wait_for_timeout",
+   "duration_ms": 1500
+  },
+  {
+   "step_id": "albums-again",
+   "action": "goto",
+   "destination": {
+    "url": "http://127.0.0.1:3401/library/albums",
+    "query": []
+   },
+   "wait_until": "load"
+  },
+  {
+   "step_id": "albums-again-ready",
+   "action": "wait_for",
+   "locator": {
+    "kind": "css",
+    "selector": "div.result.is-album >> nth=0"
+   },
+   "state": "visible",
+   "timeout_ms": 20000
+  },
+  {
+   "step_id": "settle",
+   "action": "wait_for_timeout",
+   "duration_ms": 1500
+  }
+ ],
+ "capture": {
+  "events": [
+   "network"
+  ],
+  "network": {
+   "request_body": true,
+   "response_body": true,
+   "header_values": false
+  },
+  "limits": {
+   "max_network_body_bytes": 65536,
+   "max_total_event_allocation_bytes": 67108864
+  }
+ }
+}

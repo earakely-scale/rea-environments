@@ -1,0 +1,23 @@
+# HashiCorp Vault 1.21.4 (BUSL-1.1) in server mode with file storage for the rea showcase capture.
+# Loopback only; one compose project: rea-vault. Initialised and unsealed by seed.py (one key share; material in .admin).
+services:
+  vault:
+    image: hashicorp/vault:1.21.4@sha256:4e33b126a59c0c333b76fb4e894722462659a6bec7c48c9ee8cea56fccfd2569
+    restart: unless-stopped
+    command: ["server"]
+    ports:
+      - "127.0.0.1:3303:8200"
+    environment:
+      SKIP_SETCAP: "true"
+      VAULT_ADDR: http://127.0.0.1:8200
+    volumes:
+      - ./vault.hcl:/vault/config/vault.hcl:ro
+      - vault-file:/vault/file
+    healthcheck:
+      # 200 for any initialised/sealed state: readiness of the listener, not of the seal.
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:8200/v1/sys/health?uninitcode=200&sealedcode=200&standbyok=true"]
+      interval: 5s
+      timeout: 5s
+      retries: 36
+volumes:
+  vault-file: {}

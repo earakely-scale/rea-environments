@@ -1,0 +1,24 @@
+# HashiCorp Nomad 1.11.3 (BUSL-1.1) as a single dev agent (server + client, in-memory state, ACLs off) for the rea
+# showcase capture. Loopback only; one compose project: rea-nomad. The UI is served at /ui, the HTTP API at /v1/.
+services:
+  nomad:
+    image: hashicorp/nomad:1.11.3@sha256:996069720c5dbb48c644bf5ac61f14593fb362408921b7d4c6086fb2cfc9f2c4
+    restart: unless-stopped
+    command: ["agent", "-dev", "-bind=0.0.0.0", "-dc=granite-point", "-region=saltmarsh", "-node=copperfield-annex-01"]
+    ports:
+      - "127.0.0.1:3304:4646"
+    environment:
+      NOMAD_SKIP_DOCKER_IMAGE_WARN: "1"
+    # The dev client creates its own cgroup for task processes (the default container cgroup mount is read-only) and
+    # mounts a tmpfs secrets dir in each task directory, which needs CAP_SYS_ADMIN and a mount-permitting profile.
+    # Running a Nomad client in Docker is unsupported upstream; this is only for a throwaway loopback dev agent.
+    cgroup: host
+    cap_add: ["SYS_ADMIN"]
+    security_opt: ["apparmor:unconfined"]
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:4646/v1/status/leader"]
+      interval: 5s
+      timeout: 5s
+      retries: 36

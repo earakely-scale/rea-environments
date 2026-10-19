@@ -1,0 +1,1269 @@
+{
+ "evidence_id": "ev_99db62d7bd04e3b25915a76aca88c17ebc8db08578ae869454ebe6babb9cbc5f",
+ "subject": {
+  "name": "airbyte.scoped.har",
+  "digest": {
+   "sha256": "1d67ea816437d694c369791740572fbab7d10aa6826ee568c5f98c7608e32016"
+  },
+  "local_path": "/home/ubuntu/capture/airbyte/airbyte.scoped.har",
+  "format": "file",
+  "architecture": null
+ },
+ "provider": {
+  "id": "rea-analysis-view",
+  "name": "REA analysis view projection",
+  "version": "1"
+ },
+ "analysis_profile": null,
+ "predicate_type": "rea.analysis-view",
+ "operation": "inspect_analysis_view",
+ "parameters": {
+  "parent_evidence_id": "ev_8e00dfaee9452108d545ea793346d937d5407358ab2ea30d6d614fcfac225307",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "raw_result": null,
+ "normalized_result": {
+  "parent_evidence_id": "ev_8e00dfaee9452108d545ea793346d937d5407358ab2ea30d6d614fcfac225307",
+  "parent_operation": "inspect_web_network_capture",
+  "parent_digest": "8e00dfaee9452108d545ea793346d937d5407358ab2ea30d6d614fcfac225307",
+  "view_digest": "1f636f3f48c5db0777e3ec0e584b82fa259fe9da0115be602f6d82a736d5f723",
+  "artifact": {
+   "path": "/home/ubuntu/capture/airbyte/airbyte.scoped.har",
+   "sha256": "1d67ea816437d694c369791740572fbab7d10aa6826ee568c5f98c7608e32016"
+  },
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 25,
+   "total": 25,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "limitations": [
+   "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+   "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+   "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+   "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+   "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+   "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+   "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+   "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+   "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+  ],
+  "unknowns": [
+   {
+    "kind": "authorization-model",
+    "statement": "Authorization headers and cookies are structurally excluded from captures; the manifest states no authorization model."
+   },
+   {
+    "kind": "response-semantics",
+    "statement": "Recorded statuses and bodies are retained only as pointers to parent records; the manifest states no response semantics."
+   },
+   {
+    "kind": "state-transition",
+    "statement": "Recorded exchanges are independent observations; the manifest states no ordering, side effects or state transitions between tools."
+   }
+  ],
+  "origin": "http://127.0.0.1:3302",
+  "name": "127-0-0-1-3302",
+  "tools": [
+   {
+    "name": "get_public_connections",
+    "method": "GET",
+    "path_template": "/api/public/v1/connections",
+    "api_surface_template": "/api/public/v1/connections",
+    "params": [],
+    "query_parameter_names": [
+     "includeDeleted",
+     "limit",
+     "workspaceIds"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     20,
+     21,
+     22,
+     56
+    ]
+   },
+   {
+    "name": "get_public_connections_by_uuid",
+    "method": "GET",
+    "path_template": "/api/public/v1/connections/{uuid}",
+    "api_surface_template": "/api/public/v1/connections/{uuid}",
+    "params": [
+     {
+      "index": 4,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "3d66652e-8a12-4010-b642-0f4ab142a238",
+       "68ba2580-878c-478d-b080-8f2712ac28c4",
+       "6a55626d-3203-4bc7-88f7-546af4d73081"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     23,
+     24,
+     25,
+     60
+    ]
+   },
+   {
+    "name": "get_public_destinations",
+    "method": "GET",
+    "path_template": "/api/public/v1/destinations",
+    "api_surface_template": "/api/public/v1/destinations",
+    "params": [],
+    "query_parameter_names": [
+     "workspaceIds"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     14,
+     15,
+     16
+    ]
+   },
+   {
+    "name": "get_public_destinations_by_uuid",
+    "method": "GET",
+    "path_template": "/api/public/v1/destinations/{uuid}",
+    "api_surface_template": "/api/public/v1/destinations/{uuid}",
+    "params": [
+     {
+      "index": 4,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "55deda3f-e1f3-4089-abdb-deee03e11919",
+       "bf35d114-580d-43be-bf03-8cdea60ec161",
+       "c449fdb8-23bb-4ec2-aecc-7e1f4f7137ad"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     17,
+     18,
+     19,
+     59
+    ]
+   },
+   {
+    "name": "get_public_jobs",
+    "method": "GET",
+    "path_template": "/api/public/v1/jobs",
+    "api_surface_template": "/api/public/v1/jobs",
+    "params": [],
+    "query_parameter_names": [
+     "connectionId",
+     "jobType",
+     "limit",
+     "status",
+     "workspaceIds"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     33,
+     34,
+     35,
+     36,
+     54
+    ]
+   },
+   {
+    "name": "post_public_jobs",
+    "method": "POST",
+    "path_template": "/api/public/v1/jobs",
+    "api_surface_template": "/api/public/v1/jobs",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "connectionId": "string",
+      "jobType": "string"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     52
+    ]
+   },
+   {
+    "name": "get_public_jobs_by_id",
+    "method": "GET",
+    "path_template": "/api/public/v1/jobs/{numeric}",
+    "api_surface_template": "/api/public/v1/jobs/{numeric}",
+    "params": [
+     {
+      "index": 4,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1",
+       "3"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     37,
+     53,
+     63
+    ]
+   },
+   {
+    "name": "get_public_organizations",
+    "method": "GET",
+    "path_template": "/api/public/v1/organizations",
+    "api_surface_template": "/api/public/v1/organizations",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     0
+    ]
+   },
+   {
+    "name": "get_public_permissions",
+    "method": "GET",
+    "path_template": "/api/public/v1/permissions",
+    "api_surface_template": "/api/public/v1/permissions",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     5
+    ]
+   },
+   {
+    "name": "get_public_sources",
+    "method": "GET",
+    "path_template": "/api/public/v1/sources",
+    "api_surface_template": "/api/public/v1/sources",
+    "params": [],
+    "query_parameter_names": [
+     "limit",
+     "offset",
+     "workspaceIds"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     6,
+     7,
+     8,
+     9,
+     44,
+     55
+    ]
+   },
+   {
+    "name": "post_public_sources",
+    "method": "POST",
+    "path_template": "/api/public/v1/sources",
+    "api_surface_template": "/api/public/v1/sources",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "name": "string",
+      "workspaceId": "string",
+      "definitionId": "string",
+      "configuration": "object"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     41
+    ]
+   },
+   {
+    "name": "delete_public_sources_by_uuid",
+    "method": "DELETE",
+    "path_template": "/api/public/v1/sources/{uuid}",
+    "api_surface_template": "/api/public/v1/sources/{uuid}",
+    "params": [
+     {
+      "index": 4,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "38759525-4e8f-40f1-aa8c-6018bd5c9d9d"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     204
+    ],
+    "content_types": [
+     "*/*"
+    ],
+    "record_ordinals": [
+     45
+    ]
+   },
+   {
+    "name": "get_public_sources_by_uuid",
+    "method": "GET",
+    "path_template": "/api/public/v1/sources/{uuid}",
+    "api_surface_template": "/api/public/v1/sources/{uuid}",
+    "params": [
+     {
+      "index": 4,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "3156a960-b32f-46a4-b89a-9160535abe55",
+       "38759525-4e8f-40f1-aa8c-6018bd5c9d9d",
+       "44204e5e-1a01-4cbc-9f3e-acf9a9c442c4",
+       "52d0951b-a361-4ce5-89b3-c654b083b2d1",
+       "78805f75-f349-4cc3-a43d-f54709cbcca3"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     10,
+     11,
+     12,
+     13,
+     43,
+     46,
+     57,
+     58
+    ]
+   },
+   {
+    "name": "patch_public_sources_by_uuid",
+    "method": "PATCH",
+    "path_template": "/api/public/v1/sources/{uuid}",
+    "api_surface_template": "/api/public/v1/sources/{uuid}",
+    "params": [
+     {
+      "index": 4,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "38759525-4e8f-40f1-aa8c-6018bd5c9d9d"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "name": "string",
+      "configuration": "object"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     42
+    ]
+   },
+   {
+    "name": "get_public_streams",
+    "method": "GET",
+    "path_template": "/api/public/v1/streams",
+    "api_surface_template": "/api/public/v1/streams",
+    "params": [],
+    "query_parameter_names": [
+     "destinationId",
+     "sourceId"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     26,
+     27
+    ]
+   },
+   {
+    "name": "get_public_tags",
+    "method": "GET",
+    "path_template": "/api/public/v1/tags",
+    "api_surface_template": "/api/public/v1/tags",
+    "params": [],
+    "query_parameter_names": [
+     "workspaceIds"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     28,
+     29,
+     51
+    ]
+   },
+   {
+    "name": "post_public_tags",
+    "method": "POST",
+    "path_template": "/api/public/v1/tags",
+    "api_surface_template": "/api/public/v1/tags",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "name": "string",
+      "color": "string",
+      "workspaceId": "string"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     47
+    ]
+   },
+   {
+    "name": "delete_public_tags_by_uuid",
+    "method": "DELETE",
+    "path_template": "/api/public/v1/tags/{uuid}",
+    "api_surface_template": "/api/public/v1/tags/{uuid}",
+    "params": [
+     {
+      "index": 4,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "c2cd4b49-1382-491c-ba6c-a33659109635"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     204
+    ],
+    "content_types": [],
+    "record_ordinals": [
+     50
+    ]
+   },
+   {
+    "name": "get_public_tags_by_uuid",
+    "method": "GET",
+    "path_template": "/api/public/v1/tags/{uuid}",
+    "api_surface_template": "/api/public/v1/tags/{uuid}",
+    "params": [
+     {
+      "index": 4,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "5d968903-f61e-4781-b246-fa262f950ee6",
+       "77bd5209-5520-4306-ab18-3c462f7e206d",
+       "c2cd4b49-1382-491c-ba6c-a33659109635",
+       "dfba26d0-7573-464a-a5ac-471fa19a898f"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     30,
+     31,
+     32,
+     49,
+     61
+    ]
+   },
+   {
+    "name": "patch_public_tags_by_uuid",
+    "method": "PATCH",
+    "path_template": "/api/public/v1/tags/{uuid}",
+    "api_surface_template": "/api/public/v1/tags/{uuid}",
+    "params": [
+     {
+      "index": 4,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "c2cd4b49-1382-491c-ba6c-a33659109635"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "name": "string",
+      "color": "string"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     48
+    ]
+   },
+   {
+    "name": "get_public_workspaces",
+    "method": "GET",
+    "path_template": "/api/public/v1/workspaces",
+    "api_surface_template": "/api/public/v1/workspaces",
+    "params": [],
+    "query_parameter_names": [
+     "includeDeleted"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     1,
+     4
+    ]
+   },
+   {
+    "name": "get_public_workspaces_by_uuid",
+    "method": "GET",
+    "path_template": "/api/public/v1/workspaces/{uuid}",
+    "api_surface_template": "/api/public/v1/workspaces/{uuid}",
+    "params": [
+     {
+      "index": 4,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "4cfeabc5-3805-40d8-ae6c-436f584f2367",
+       "87132187-b91d-46f3-ab2f-665b563b6503"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     2,
+     3,
+     62
+    ]
+   },
+   {
+    "name": "get_public_workspaces_definitions_destinations_by_uuid",
+    "method": "GET",
+    "path_template": "/api/public/v1/workspaces/{uuid}/definitions/destinations",
+    "api_surface_template": "/api/public/v1/workspaces/{uuid}/definitions/destinations",
+    "params": [
+     {
+      "index": 4,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "87132187-b91d-46f3-ab2f-665b563b6503"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     40
+    ]
+   },
+   {
+    "name": "get_public_workspaces_definitions_destinations_by_uuid_uuid",
+    "method": "GET",
+    "path_template": "/api/public/v1/workspaces/{uuid}/definitions/destinations/{uuid}",
+    "api_surface_template": "/api/public/v1/workspaces/{uuid}/definitions/destinations/{uuid}",
+    "params": [
+     {
+      "index": 4,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "87132187-b91d-46f3-ab2f-665b563b6503"
+      ]
+     },
+     {
+      "index": 7,
+      "name": "uuid_2",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "a7bcc9d8-13b3-4e49-b80d-d020b90045e3"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     39
+    ]
+   },
+   {
+    "name": "get_public_workspaces_definitions_sources_by_uuid_uuid_2",
+    "method": "GET",
+    "path_template": "/api/public/v1/workspaces/{uuid}/definitions/sources/{uuid}",
+    "api_surface_template": "/api/public/v1/workspaces/{uuid}/definitions/sources/{uuid}",
+    "params": [
+     {
+      "index": 4,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "87132187-b91d-46f3-ab2f-665b563b6503"
+      ]
+     },
+     {
+      "index": 7,
+      "name": "uuid_2",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "dfd88b22-b603-4c3d-aad7-3701784586b1"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     38
+    ]
+   }
+  ],
+  "records": [
+   {
+    "ordinal": 0,
+    "method": "GET",
+    "path": "/api/public/v1/organizations",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 1,
+    "method": "GET",
+    "path": "/api/public/v1/workspaces",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 2,
+    "method": "GET",
+    "path": "/api/public/v1/workspaces/4cfeabc5-3805-40d8-ae6c-436f584f2367",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 3,
+    "method": "GET",
+    "path": "/api/public/v1/workspaces/87132187-b91d-46f3-ab2f-665b563b6503",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 4,
+    "method": "GET",
+    "path": "/api/public/v1/workspaces",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 5,
+    "method": "GET",
+    "path": "/api/public/v1/permissions",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 6,
+    "method": "GET",
+    "path": "/api/public/v1/sources",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 7,
+    "method": "GET",
+    "path": "/api/public/v1/sources",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 8,
+    "method": "GET",
+    "path": "/api/public/v1/sources",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 9,
+    "method": "GET",
+    "path": "/api/public/v1/sources",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 10,
+    "method": "GET",
+    "path": "/api/public/v1/sources/78805f75-f349-4cc3-a43d-f54709cbcca3",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 11,
+    "method": "GET",
+    "path": "/api/public/v1/sources/44204e5e-1a01-4cbc-9f3e-acf9a9c442c4",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 12,
+    "method": "GET",
+    "path": "/api/public/v1/sources/52d0951b-a361-4ce5-89b3-c654b083b2d1",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 13,
+    "method": "GET",
+    "path": "/api/public/v1/sources/3156a960-b32f-46a4-b89a-9160535abe55",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 14,
+    "method": "GET",
+    "path": "/api/public/v1/destinations",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 15,
+    "method": "GET",
+    "path": "/api/public/v1/destinations",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 16,
+    "method": "GET",
+    "path": "/api/public/v1/destinations",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 17,
+    "method": "GET",
+    "path": "/api/public/v1/destinations/bf35d114-580d-43be-bf03-8cdea60ec161",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 18,
+    "method": "GET",
+    "path": "/api/public/v1/destinations/c449fdb8-23bb-4ec2-aecc-7e1f4f7137ad",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 19,
+    "method": "GET",
+    "path": "/api/public/v1/destinations/55deda3f-e1f3-4089-abdb-deee03e11919",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 20,
+    "method": "GET",
+    "path": "/api/public/v1/connections",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 21,
+    "method": "GET",
+    "path": "/api/public/v1/connections",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 22,
+    "method": "GET",
+    "path": "/api/public/v1/connections",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 23,
+    "method": "GET",
+    "path": "/api/public/v1/connections/68ba2580-878c-478d-b080-8f2712ac28c4",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 24,
+    "method": "GET",
+    "path": "/api/public/v1/connections/3d66652e-8a12-4010-b642-0f4ab142a238",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 25,
+    "method": "GET",
+    "path": "/api/public/v1/connections/6a55626d-3203-4bc7-88f7-546af4d73081",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 26,
+    "method": "GET",
+    "path": "/api/public/v1/streams",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 27,
+    "method": "GET",
+    "path": "/api/public/v1/streams",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 28,
+    "method": "GET",
+    "path": "/api/public/v1/tags",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 29,
+    "method": "GET",
+    "path": "/api/public/v1/tags",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 30,
+    "method": "GET",
+    "path": "/api/public/v1/tags/dfba26d0-7573-464a-a5ac-471fa19a898f",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 31,
+    "method": "GET",
+    "path": "/api/public/v1/tags/5d968903-f61e-4781-b246-fa262f950ee6",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 32,
+    "method": "GET",
+    "path": "/api/public/v1/tags/77bd5209-5520-4306-ab18-3c462f7e206d",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 33,
+    "method": "GET",
+    "path": "/api/public/v1/jobs",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 34,
+    "method": "GET",
+    "path": "/api/public/v1/jobs",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 35,
+    "method": "GET",
+    "path": "/api/public/v1/jobs",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 36,
+    "method": "GET",
+    "path": "/api/public/v1/jobs",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 37,
+    "method": "GET",
+    "path": "/api/public/v1/jobs/1",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 38,
+    "method": "GET",
+    "path": "/api/public/v1/workspaces/87132187-b91d-46f3-ab2f-665b563b6503/definitions/sources/dfd88b22-b603-4c3d-aad7-3701784586b1",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 39,
+    "method": "GET",
+    "path": "/api/public/v1/workspaces/87132187-b91d-46f3-ab2f-665b563b6503/definitions/destinations/a7bcc9d8-13b3-4e49-b80d-d020b90045e3",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 40,
+    "method": "GET",
+    "path": "/api/public/v1/workspaces/87132187-b91d-46f3-ab2f-665b563b6503/definitions/destinations",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 41,
+    "method": "POST",
+    "path": "/api/public/v1/sources",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 42,
+    "method": "PATCH",
+    "path": "/api/public/v1/sources/38759525-4e8f-40f1-aa8c-6018bd5c9d9d",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 43,
+    "method": "GET",
+    "path": "/api/public/v1/sources/38759525-4e8f-40f1-aa8c-6018bd5c9d9d",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 44,
+    "method": "GET",
+    "path": "/api/public/v1/sources",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 45,
+    "method": "DELETE",
+    "path": "/api/public/v1/sources/38759525-4e8f-40f1-aa8c-6018bd5c9d9d",
+    "status": 204,
+    "content_type": "*/*"
+   },
+   {
+    "ordinal": 46,
+    "method": "GET",
+    "path": "/api/public/v1/sources/38759525-4e8f-40f1-aa8c-6018bd5c9d9d",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 47,
+    "method": "POST",
+    "path": "/api/public/v1/tags",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 48,
+    "method": "PATCH",
+    "path": "/api/public/v1/tags/c2cd4b49-1382-491c-ba6c-a33659109635",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 49,
+    "method": "GET",
+    "path": "/api/public/v1/tags/c2cd4b49-1382-491c-ba6c-a33659109635",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 50,
+    "method": "DELETE",
+    "path": "/api/public/v1/tags/c2cd4b49-1382-491c-ba6c-a33659109635",
+    "status": 204,
+    "content_type": null
+   },
+   {
+    "ordinal": 51,
+    "method": "GET",
+    "path": "/api/public/v1/tags",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 52,
+    "method": "POST",
+    "path": "/api/public/v1/jobs",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 53,
+    "method": "GET",
+    "path": "/api/public/v1/jobs/3",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 54,
+    "method": "GET",
+    "path": "/api/public/v1/jobs",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 55,
+    "method": "GET",
+    "path": "/api/public/v1/sources",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 56,
+    "method": "GET",
+    "path": "/api/public/v1/connections",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 57,
+    "method": "GET",
+    "path": "/api/public/v1/sources/44204e5e-1a01-4cbc-9f3e-acf9a9c442c4",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 58,
+    "method": "GET",
+    "path": "/api/public/v1/sources/78805f75-f349-4cc3-a43d-f54709cbcca3",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 59,
+    "method": "GET",
+    "path": "/api/public/v1/destinations/bf35d114-580d-43be-bf03-8cdea60ec161",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 60,
+    "method": "GET",
+    "path": "/api/public/v1/connections/3d66652e-8a12-4010-b642-0f4ab142a238",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 61,
+    "method": "GET",
+    "path": "/api/public/v1/tags/77bd5209-5520-4306-ab18-3c462f7e206d",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 62,
+    "method": "GET",
+    "path": "/api/public/v1/workspaces/87132187-b91d-46f3-ab2f-665b563b6503",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 63,
+    "method": "GET",
+    "path": "/api/public/v1/jobs/3",
+    "status": 200,
+    "content_type": "application/json"
+   }
+  ],
+  "excluded": [],
+  "templated_groups": 13,
+  "kind": "environment-manifest",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "confidence": "inferred",
+ "authority": "historical-reference",
+ "environment": null,
+ "limitations": [
+  "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+  "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+  "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+  "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+  "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+  "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+  "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+  "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+  "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+ ],
+ "relationship_coverage": null,
+ "locations": [
+  {
+   "kind": "artifact-path",
+   "path": "/home/ubuntu/capture/airbyte/airbyte.scoped.har"
+  }
+ ],
+ "evidence_links": [
+  "ev_8e00dfaee9452108d545ea793346d937d5407358ab2ea30d6d614fcfac225307"
+ ]
+}

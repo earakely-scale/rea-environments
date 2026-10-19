@@ -1,0 +1,863 @@
+{
+ "evidence_id": "ev_c068c4ebf39cd85dc7535400efbe9bce560e5b02677b83e8c2fa18df8157f193",
+ "subject": {
+  "name": "treasury-fiscal-data.scoped.har",
+  "digest": {
+   "sha256": "3e41c0dfb7af43dcc87399c0976cc7bbc3ed6111e22f02e4f610cfee0f8b1413"
+  },
+  "local_path": "/home/ubuntu/capture/treasury-fiscal-data/treasury-fiscal-data.scoped.har",
+  "format": "file",
+  "architecture": null
+ },
+ "provider": {
+  "id": "rea-analysis-view",
+  "name": "REA analysis view projection",
+  "version": "1"
+ },
+ "analysis_profile": null,
+ "predicate_type": "rea.analysis-view",
+ "operation": "inspect_analysis_view",
+ "parameters": {
+  "parent_evidence_id": "ev_522a428f32046d80249b50c984b3b677afe911d6009c0c3b380de67e789e6496",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "raw_result": null,
+ "normalized_result": {
+  "parent_evidence_id": "ev_522a428f32046d80249b50c984b3b677afe911d6009c0c3b380de67e789e6496",
+  "parent_operation": "inspect_web_network_capture",
+  "parent_digest": "522a428f32046d80249b50c984b3b677afe911d6009c0c3b380de67e789e6496",
+  "view_digest": "414fe86be9af1cf29c066b4e2d8105e2162031922429ebf6660733427398bf32",
+  "artifact": {
+   "path": "/home/ubuntu/capture/treasury-fiscal-data/treasury-fiscal-data.scoped.har",
+   "sha256": "3e41c0dfb7af43dcc87399c0976cc7bbc3ed6111e22f02e4f610cfee0f8b1413"
+  },
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 16,
+   "total": 16,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "limitations": [
+   "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+   "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+   "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+   "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+   "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+   "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+   "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+   "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+  ],
+  "unknowns": [
+   {
+    "kind": "authorization-model",
+    "statement": "Authorization headers and cookies are structurally excluded from captures; the manifest states no authorization model."
+   },
+   {
+    "kind": "response-semantics",
+    "statement": "Recorded statuses and bodies are retained only as pointers to parent records; the manifest states no response semantics."
+   },
+   {
+    "kind": "state-transition",
+    "statement": "Recorded exchanges are independent observations; the manifest states no ordering, side effects or state transitions between tools."
+   }
+  ],
+  "origin": "https://api.fiscaldata.treasury.gov",
+  "name": "api-fiscaldata-treasury-gov",
+  "tools": [
+   {
+    "name": "get_services_fiscal_service_accounting_dts_deposits_withdraw",
+    "method": "GET",
+    "path_template": "/services/api/fiscal_service/v1/accounting/dts/deposits_withdrawals_operating_cash",
+    "api_surface_template": "/services/api/fiscal_service/v1/accounting/dts/deposits_withdrawals_operating_cash",
+    "params": [],
+    "query_parameter_names": [
+     "filter",
+     "page[size]"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     29,
+     30,
+     31,
+     32,
+     33
+    ]
+   },
+   {
+    "name": "get_services_fiscal_service_accounting_dts_operating_cash_ba",
+    "method": "GET",
+    "path_template": "/services/api/fiscal_service/v1/accounting/dts/operating_cash_balance",
+    "api_surface_template": "/services/api/fiscal_service/v1/accounting/dts/operating_cash_balance",
+    "params": [],
+    "query_parameter_names": [
+     "filter",
+     "page[size]"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     27,
+     28
+    ]
+   },
+   {
+    "name": "get_services_fiscal_service_accounting_mts_mts_table_5",
+    "method": "GET",
+    "path_template": "/services/api/fiscal_service/v1/accounting/mts/mts_table_5",
+    "api_surface_template": "/services/api/fiscal_service/v1/accounting/mts/mts_table_5",
+    "params": [],
+    "query_parameter_names": [
+     "fields",
+     "filter",
+     "page[size]"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     41,
+     42
+    ]
+   },
+   {
+    "name": "get_services_fiscal_service_accounting_od_auctions_query",
+    "method": "GET",
+    "path_template": "/services/api/fiscal_service/v1/accounting/od/auctions_query",
+    "api_surface_template": "/services/api/fiscal_service/v1/accounting/od/auctions_query",
+    "params": [],
+    "query_parameter_names": [
+     "fields",
+     "filter",
+     "page[size]",
+     "sort"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     34,
+     35,
+     36,
+     37,
+     38
+    ]
+   },
+   {
+    "name": "get_services_fiscal_service_accounting_od_federal_maturity_r",
+    "method": "GET",
+    "path_template": "/services/api/fiscal_service/v1/accounting/od/federal_maturity_rates",
+    "api_surface_template": "/services/api/fiscal_service/v1/accounting/od/federal_maturity_rates",
+    "params": [],
+    "query_parameter_names": [
+     "filter",
+     "page[size]",
+     "sort"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     45
+    ]
+   },
+   {
+    "name": "get_services_fiscal_service_accounting_od_rates_of_exchange",
+    "method": "GET",
+    "path_template": "/services/api/fiscal_service/v1/accounting/od/rates_of_exchange",
+    "api_surface_template": "/services/api/fiscal_service/v1/accounting/od/rates_of_exchange",
+    "params": [],
+    "query_parameter_names": [
+     "fields",
+     "filter",
+     "page[size]",
+     "sort"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10
+    ]
+   },
+   {
+    "name": "get_services_fiscal_service_accounting_od_securities_sales",
+    "method": "GET",
+    "path_template": "/services/api/fiscal_service/v1/accounting/od/securities_sales",
+    "api_surface_template": "/services/api/fiscal_service/v1/accounting/od/securities_sales",
+    "params": [],
+    "query_parameter_names": [
+     "filter",
+     "page[size]",
+     "sort"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     43,
+     44
+    ]
+   },
+   {
+    "name": "get_services_fiscal_service_accounting_od_avg_interest_rates",
+    "method": "GET",
+    "path_template": "/services/api/fiscal_service/v2/accounting/od/avg_interest_rates",
+    "api_surface_template": "/services/api/fiscal_service/v2/accounting/od/avg_interest_rates",
+    "params": [],
+    "query_parameter_names": [
+     "filter",
+     "page[size]",
+     "sort"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     11,
+     12,
+     13,
+     14
+    ]
+   },
+   {
+    "name": "get_services_fiscal_service_accounting_od_debt_outstanding",
+    "method": "GET",
+    "path_template": "/services/api/fiscal_service/v2/accounting/od/debt_outstanding",
+    "api_surface_template": "/services/api/fiscal_service/v2/accounting/od/debt_outstanding",
+    "params": [],
+    "query_parameter_names": [
+     "filter",
+     "page[size]"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     0,
+     49
+    ]
+   },
+   {
+    "name": "get_services_fiscal_service_accounting_od_debt_to_penny",
+    "method": "GET",
+    "path_template": "/services/api/fiscal_service/v2/accounting/od/debt_to_penny",
+    "api_surface_template": "/services/api/fiscal_service/v2/accounting/od/debt_to_penny",
+    "params": [],
+    "query_parameter_names": [
+     "filter",
+     "page[size]",
+     "sort"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     46,
+     47,
+     48
+    ]
+   },
+   {
+    "name": "get_services_fiscal_service_accounting_od_gold_reserve",
+    "method": "GET",
+    "path_template": "/services/api/fiscal_service/v2/accounting/od/gold_reserve",
+    "api_surface_template": "/services/api/fiscal_service/v2/accounting/od/gold_reserve",
+    "params": [],
+    "query_parameter_names": [
+     "filter",
+     "page[size]"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     15,
+     16,
+     17
+    ]
+   },
+   {
+    "name": "get_services_fiscal_service_accounting_od_interest_expense",
+    "method": "GET",
+    "path_template": "/services/api/fiscal_service/v2/accounting/od/interest_expense",
+    "api_surface_template": "/services/api/fiscal_service/v2/accounting/od/interest_expense",
+    "params": [],
+    "query_parameter_names": [
+     "filter",
+     "page[size]"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     18,
+     19,
+     20
+    ]
+   },
+   {
+    "name": "get_services_fiscal_service_accounting_od_statement_net_cost",
+    "method": "GET",
+    "path_template": "/services/api/fiscal_service/v2/accounting/od/statement_net_cost",
+    "api_surface_template": "/services/api/fiscal_service/v2/accounting/od/statement_net_cost",
+    "params": [],
+    "query_parameter_names": [
+     "filter",
+     "page[size]",
+     "sort"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     24,
+     25,
+     26
+    ]
+   },
+   {
+    "name": "get_services_fiscal_service_accounting_od_title_xii",
+    "method": "GET",
+    "path_template": "/services/api/fiscal_service/v2/accounting/od/title_xii",
+    "api_surface_template": "/services/api/fiscal_service/v2/accounting/od/title_xii",
+    "params": [],
+    "query_parameter_names": [
+     "filter",
+     "page[size]",
+     "sort"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     21,
+     22,
+     23
+    ]
+   },
+   {
+    "name": "get_services_fiscal_service_debt_tror",
+    "method": "GET",
+    "path_template": "/services/api/fiscal_service/v2/debt/tror",
+    "api_surface_template": "/services/api/fiscal_service/v2/debt/tror",
+    "params": [],
+    "query_parameter_names": [
+     "fields",
+     "filter",
+     "page[size]"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     50,
+     51
+    ]
+   },
+   {
+    "name": "get_services_fiscal_service_revenue_rcm",
+    "method": "GET",
+    "path_template": "/services/api/fiscal_service/v2/revenue/rcm",
+    "api_surface_template": "/services/api/fiscal_service/v2/revenue/rcm",
+    "params": [],
+    "query_parameter_names": [
+     "filter",
+     "page[size]"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     39,
+     40
+    ]
+   }
+  ],
+  "records": [
+   {
+    "ordinal": 0,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v2/accounting/od/debt_outstanding",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 1,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v1/accounting/od/rates_of_exchange",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 2,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v1/accounting/od/rates_of_exchange",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 3,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v1/accounting/od/rates_of_exchange",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 4,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v1/accounting/od/rates_of_exchange",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 5,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v1/accounting/od/rates_of_exchange",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 6,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v1/accounting/od/rates_of_exchange",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 7,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v1/accounting/od/rates_of_exchange",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 8,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v1/accounting/od/rates_of_exchange",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 9,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v1/accounting/od/rates_of_exchange",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 10,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v1/accounting/od/rates_of_exchange",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 11,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v2/accounting/od/avg_interest_rates",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 12,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v2/accounting/od/avg_interest_rates",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 13,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v2/accounting/od/avg_interest_rates",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 14,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v2/accounting/od/avg_interest_rates",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 15,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v2/accounting/od/gold_reserve",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 16,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v2/accounting/od/gold_reserve",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 17,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v2/accounting/od/gold_reserve",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 18,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v2/accounting/od/interest_expense",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 19,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v2/accounting/od/interest_expense",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 20,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v2/accounting/od/interest_expense",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 21,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v2/accounting/od/title_xii",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 22,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v2/accounting/od/title_xii",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 23,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v2/accounting/od/title_xii",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 24,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v2/accounting/od/statement_net_cost",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 25,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v2/accounting/od/statement_net_cost",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 26,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v2/accounting/od/statement_net_cost",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 27,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v1/accounting/dts/operating_cash_balance",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 28,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v1/accounting/dts/operating_cash_balance",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 29,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v1/accounting/dts/deposits_withdrawals_operating_cash",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 30,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v1/accounting/dts/deposits_withdrawals_operating_cash",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 31,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v1/accounting/dts/deposits_withdrawals_operating_cash",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 32,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v1/accounting/dts/deposits_withdrawals_operating_cash",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 33,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v1/accounting/dts/deposits_withdrawals_operating_cash",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 34,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v1/accounting/od/auctions_query",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 35,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v1/accounting/od/auctions_query",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 36,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v1/accounting/od/auctions_query",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 37,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v1/accounting/od/auctions_query",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 38,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v1/accounting/od/auctions_query",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 39,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v2/revenue/rcm",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 40,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v2/revenue/rcm",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 41,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v1/accounting/mts/mts_table_5",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 42,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v1/accounting/mts/mts_table_5",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 43,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v1/accounting/od/securities_sales",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 44,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v1/accounting/od/securities_sales",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 45,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v1/accounting/od/federal_maturity_rates",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 46,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v2/accounting/od/debt_to_penny",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 47,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v2/accounting/od/debt_to_penny",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 48,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v2/accounting/od/debt_to_penny",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 49,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v2/accounting/od/debt_outstanding",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 50,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v2/debt/tror",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 51,
+    "method": "GET",
+    "path": "/services/api/fiscal_service/v2/debt/tror",
+    "status": 200,
+    "content_type": "application/json"
+   }
+  ],
+  "excluded": [],
+  "templated_groups": 0,
+  "kind": "environment-manifest",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "confidence": "derived",
+ "authority": "historical-reference",
+ "environment": null,
+ "limitations": [
+  "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+  "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+  "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+  "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+  "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+  "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+  "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+  "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+ ],
+ "relationship_coverage": null,
+ "locations": [
+  {
+   "kind": "artifact-path",
+   "path": "/home/ubuntu/capture/treasury-fiscal-data/treasury-fiscal-data.scoped.har"
+  }
+ ],
+ "evidence_links": [
+  "ev_522a428f32046d80249b50c984b3b677afe911d6009c0c3b380de67e789e6496"
+ ]
+}

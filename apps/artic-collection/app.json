@@ -1,0 +1,13 @@
+{
+  "app": "artic-collection",
+  "title": "Art Institute of Chicago API",
+  "repo": "ArticCollectionEnv-REA",
+  "kind": "public-api",
+  "capture": "scenario",
+  "license": "CC0 1.0 (collection data)",
+  "authors": "the Art Institute of Chicago",
+  "hf_license": "apache-2.0",
+  "version": "v1",
+  "origin": "https://api.artic.edu",
+  "domain": "art museum collection (artworks, artists, galleries, exhibitions)"
+}

@@ -1,0 +1,13 @@
+{
+  "kind": "public-api",
+  "app": "federal-register",
+  "title": "Federal Register API",
+  "repo": "FederalRegisterEnv-REA",
+  "license": "U.S. public domain",
+  "authors": "the Office of the Federal Register",
+  "hf_license": "apache-2.0",
+  "version": "v1",
+  "origin": "https://www.federalregister.gov",
+  "domain": "U.S. federal rules, proposed rules, notices and presidential documents",
+  "keep_regex": "^/api/v1/"
+}

@@ -1,0 +1,126 @@
+{
+ "app": "lychee",
+ "kind": "self-hosted",
+ "capture": "scenario",
+ "image": "lycheeorg/lychee:v6.10.4",
+ "image_digest": "lycheeorg/lychee@sha256:4a695e81c0751b1a024cb87384a6cf4cd7c84c96c528d92bcc7effc8ce075a1e",
+ "app_version": "6.10.4",
+ "compose_project": "rea-lychee",
+ "origin": "http://127.0.0.1:3402",
+ "database": "sqlite (/conf/database.sqlite in the lychee-conf volume)",
+ "tooling": {
+  "rea": "6.7.0",
+  "chromium": "Chromium 155.0.8059.79 snap",
+  "node": "v24.22.0",
+  "python": "3.12.3",
+  "docker": "29.9.1",
+  "compose": "5.6.0",
+  "agent-env": "0.9.1334",
+  "vm": "Ubuntu 24.04 amd64"
+ },
+ "seeded_objects": {
+  "admin": "rea-admin (created with php artisan lychee:create_user; password generated at seed time, never recorded)",
+  "albums": [
+   "Saltmarsh Depot",
+   "Signal Box Nine (nested in Saltmarsh Depot)",
+   "Lighthouse Rota (pinned)",
+   "Lantern Gallery Repairs (nested in Lighthouse Rota)",
+   "Blue Heron Kitchen",
+   "Copperfield Annex"
+  ],
+  "album_fields": "description, copyright holder and licence per album (CC-BY-4.0, CC0, reserved, CC-BY-SA-4.0)",
+  "photos": 14,
+  "photo_fields": "title, description with invented measurements and codes (SD-0412, HK-208, CA-31), tags, taken_at date; 3 starred",
+  "images": "14 generated PNGs (stdlib zlib + struct: gradients, stripes, checker, rings, disc, horizon), 320-640 px wide, 707-4,947 bytes each",
+  "tags": [
+   "tide gauge",
+   "spring census",
+   "rolling stock",
+   "night shift",
+   "signal lamp",
+   "lamp room",
+   "brass rail",
+   "repaint",
+   "tide-table menu",
+   "heron blue",
+   "facade swatch"
+  ],
+  "users": [
+   "ada.finch",
+   "tomas.vey"
+  ],
+  "settings": "dropbox_key blanked (default sentinel \"disabled\")",
+  "scratch_during_capture": "album \"Rea scratch album\" created (POST), renamed and described (PATCH), deleted (DELETE 204) through the UI"
+ },
+ "ui_pages_visited": [
+  "/gallery (album list, storage-seeded session)",
+  "/gallery/<album> for all 6 albums (nested ones through their parents)",
+  "/gallery/<album>/<photo> (2 photo views, closed with Escape)",
+  "/tags",
+  "/tag/<id> for 8 of 11 tags",
+  "/timeline",
+  "/flow",
+  "/sharing",
+  "/search (two terms typed into the search box)",
+  "/gallery/<scratch album> (create, edit panel, danger zone delete)"
+ ],
+ "scenario_steps": 153,
+ "scenario_actions": 152,
+ "scenario_duration_ms": 50634,
+ "transactions": 134,
+ "transactions_by_method": {
+  "GET": 129,
+  "POST": 3,
+  "PATCH": 1,
+  "DELETE": 1
+ },
+ "statuses": {
+  "200": 130,
+  "204": 3,
+  "404": 1
+ },
+ "events": {
+  "dropped": 0,
+  "omissions": 0,
+  "response_bodies_unavailable": "3 (JavaScript bundles over the 256 KiB body limit)"
+ },
+ "evidence": {
+  "capture_evidence_id": "ev_4c93356ec80d86dddda8881ba10b66ea5bb7bb3dc22787cff2d986fe12319669",
+  "capture_confidence": "observed",
+  "capture_sha256": "420c6f740ee3b72b6d7217abde543a280ad51b66dac844786b87729db1473dd9",
+  "capture_bytes": 2395283,
+  "manifest_evidence_id": "ev_9b22b236f85033d95ac596940e36b339f2c0283a934e6fb1c604743c0ead1a86",
+  "manifest_norules_evidence_id": "ev_182989cb4c593e3e551c68ceacbc87b20e09f2be5afc18213f4e7f7864a161b4",
+  "manifest_view_digest": "8e76024b259e3c3392cbeb26152dd029e2faca814036baaf256ef0e212e1ad2e"
+ },
+ "manifest": {
+  "tools": 15,
+  "tools_by_method": {
+   "GET": 11,
+   "POST": 2,
+   "PATCH": 1,
+   "DELETE": 1
+  },
+  "tools_norules": 27,
+  "params_by_rule": {
+   "sibling-variance": 1
+  },
+  "query_parameter_names": [
+   "album_id",
+   "date",
+   "page",
+   "tag_id",
+   "terms"
+  ],
+  "tools_with_body_shape": [
+   "patch_album",
+   "post_album",
+   "post_metrics_photo"
+  ],
+  "excluded": {
+   "ui-page-or-asset": 66
+  },
+  "note": "with rules, sibling-variance folds 13 distinct Lychee endpoints whose last segment contains '::' (Auth::user, Auth::rights, Gallery::Init, Gallery::Footer, Gallery::getLayout, Gallery::getUploadLimits, Search::init, Sharing::all, Sharing::albums, Timeline::init, Timeline::dates, Flow::init, Users::count) into one tool get_by_v2_id with 34 records; without rules they are 13 separate tools (27 total)"
+ },
+ "sign_in": "storage seed: lychee_session cookie from seed.py's session, declared secret session_cookie (the UI login path is blocked by the anonymous Gallery::Init dropbox_api_key sentinel, see README-notes)"
+}

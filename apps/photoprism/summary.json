@@ -1,0 +1,147 @@
+{
+ "app": "photoprism",
+ "kind": "self-hosted",
+ "capture": "scenario",
+ "image": "photoprism/photoprism:261007",
+ "image_digest": "photoprism/photoprism@sha256:0f85369636ad99ca9a1c33f2d04df6c590802d16b7c33b4a1ea026b595be06d1",
+ "app_version": "261007",
+ "app_version_full": "261007-65faaae5d-Linux-AMD64-Plus",
+ "compose_project": "rea-photoprism",
+ "origin": "http://127.0.0.1:3401",
+ "database": "sqlite (PHOTOPRISM_DATABASE_DRIVER=sqlite, in the storage volume)",
+ "auth": "PHOTOPRISM_AUTH_MODE=public on loopback: no login. The UI's session calls still return the fixed public-mode session id and access token (the token the UI sends as X-Auth-Token is echoed as access_token and id); seed.py reads both through POST /api/v1/session into .admin and the scenario declares them as secrets public_session and public_access_token, so every recorded body carries [REDACTED:public_session] and [REDACTED:public_access_token] instead",
+ "seeded_objects": {
+  "site_title": "Saltmarsh Depot Archive",
+  "photos": "12 generated PNGs (gradients, stripes, rings, checks, discs; 200x160 to 640x427, 0.7-6 KB) in three originals folders (saltmarsh-depot, copperfield-annex, blue-heron-kitchen), each with a manual title, caption, keywords, notes, artist, copyright, licence, taken date (March-May 2024, UTC) and coordinates; 4 favourites",
+  "albums": [
+   "Saltmarsh Depot Survey (favourite, 4 photos)",
+   "Copperfield Annex Workshop (4)",
+   "Blue Heron Kitchen Tasting Night (4)",
+   "Granite Ledger Colour Study (favourite, 5)"
+  ],
+  "labels": [
+   "Tide Gauge",
+   "Signal Paint",
+   "Water Pattern",
+   "Crate Lot",
+   "Kiln Light"
+  ],
+  "people_as_artists": [
+   "Ada Finch",
+   "Rui Castellanos",
+   "Mina Okafor",
+   "Tomas Vey"
+  ],
+  "folders": [
+   "saltmarsh-depot",
+   "copperfield-annex",
+   "blue-heron-kitchen"
+  ],
+  "derived_by_photoprism": "main colour (gold, blue, green, ...), width, height, aspect ratio, file size, luminance and chroma per file; folder and month albums",
+  "scratch_during_capture": "Add Album created an album named after the month (POST), the edit dialog renamed it Rea Scratch Album with a location and description (PUT), the album view menu deleted it (DELETE)"
+ },
+ "ui_pages_visited": [
+  "/library/browse",
+  "/library/albums",
+  "/library/albums/{uid}/view (4 seeded albums + the scratch album)",
+  "/library/labels",
+  "/library/folders",
+  "/library/favorites",
+  "/library/browse?q=copper"
+ ],
+ "captured_on": "2026-10-19",
+ "tooling": {
+  "rea": "6.7.0",
+  "chromium": "Chromium 155.0.8059.79 snap",
+  "python": "3.12.3",
+  "docker": "29.9.1",
+  "compose": "v5.6.0",
+  "vm": "Ubuntu 24.04 amd64"
+ },
+ "scenario_steps": 55,
+ "scenario_navigations": 32,
+ "scenario_duration_ms": 9513,
+ "transactions": 277,
+ "transactions_by_method": {
+  "GET": 274,
+  "POST": 1,
+  "PUT": 1,
+  "DELETE": 1
+ },
+ "transaction_statuses": {
+  "200": 271,
+  "201": 1,
+  "no response (thumbnail loads aborted by the next navigation)": 5
+ },
+ "capture_limits": {
+  "max_network_body_bytes": 65536,
+  "max_total_event_allocation_bytes": 67108864
+ },
+ "capture_bodies": {
+  "captured": 225,
+  "not_exposed (request side of GETs)": 275,
+  "unavailable body-size-limit (app bundle, CSS, fonts)": 37,
+  "unavailable body-read-failed": 12
+ },
+ "events_dropped": 0,
+ "events_omissions": [],
+ "declared_secrets": [
+  "public_session (session_id)",
+  "public_access_token (access_token and id in the session replies)"
+ ],
+ "evidence": {
+  "capture_evidence_id": "ev_28d39ee2f958aaba2513fdbac537632e40e82a4855acc760da1d2448023e0c60",
+  "capture_file_sha256": "4210fe0f993bd5230688332e895dd860071b89c061f35eea92cef9bada99e31d",
+  "capture_file_bytes": 3155176,
+  "manifest_evidence_id": "ev_81f20a4edbd785a66b689f99eae57d55989b94f43432ad290e28fb9131bda1e0",
+  "manifest_norules_evidence_id": "ev_710869e110f67a15a7c4888b54410f92a735f4547a9467c5f868bc63b7521d0c",
+  "manifest_view_digest": "1fa9bb2f2ac54560fd05fb3765a8ab56e7b91ed1ab5f71ac2f45c96c4ce3214d"
+ },
+ "manifest": {
+  "tools": 13,
+  "tools_by_method": {
+   "GET": 10,
+   "POST": 1,
+   "PUT": 1,
+   "DELETE": 1
+  },
+  "tools_norules": 28,
+  "templated_groups": 6,
+  "params_by_rule": {
+   "opaque-token": 5,
+   "hex": 1
+  },
+  "query_parameter_names_total": 33,
+  "tools_with_body_shape": 2,
+  "excluded": {
+   "ui-page-or-asset": 21
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "controlled-replay",
+  "tool_names": [
+   "get_albums",
+   "post_albums",
+   "delete_albums_by_uid",
+   "get_albums_by_uid",
+   "put_albums_by_uid",
+   "get_albums_t_public_tile_500_by_uid",
+   "get_config",
+   "get_labels",
+   "get_photos",
+   "get_photos_by_uid",
+   "get_session",
+   "get_t_public_tile_500_by_hash",
+   "get_manifest"
+  ]
+ },
+ "retrieval_tasks": 10,
+ "eval": {
+  "openai/gpt-oss-120b:groq": "10/10",
+  "zai-org/GLM-5.3-Flash:zai-org": "10/10"
+ }
+}

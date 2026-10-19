@@ -1,0 +1,13 @@
+{
+  "app": "openfda",
+  "title": "openFDA",
+  "repo": "OpenFdaEnv-REA",
+  "kind": "public-api",
+  "license": "U.S. public domain",
+  "authors": "the U.S. Food and Drug Administration",
+  "hf_license": "apache-2.0",
+  "version": "v1",
+  "origin": "https://api.fda.gov",
+  "domain": "drug, device and food recalls, drug product listings and device classifications (U.S. government public API)",
+  "keep_regex": "^/(drug|device|food|other)/[a-z0-9]+\\.json$"
+}

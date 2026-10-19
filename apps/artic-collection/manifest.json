@@ -1,0 +1,608 @@
+{
+ "evidence_id": "ev_2fb61dbbfdb2a429b27771afd068d7d3d9e0d9d9595da2c62086dfcbefd4b2f2",
+ "subject": null,
+ "provider": {
+  "id": "rea-analysis-view",
+  "name": "REA analysis view projection",
+  "version": "1"
+ },
+ "analysis_profile": null,
+ "predicate_type": "rea.analysis-view",
+ "operation": "inspect_analysis_view",
+ "parameters": {
+  "parent_evidence_id": "ev_5f3f80e48d8e884648a21246b95ac6d60d744e11a841599347d8c8d0bf2a6122",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "raw_result": null,
+ "normalized_result": {
+  "parent_evidence_id": "ev_5f3f80e48d8e884648a21246b95ac6d60d744e11a841599347d8c8d0bf2a6122",
+  "parent_operation": "capture_browser_scenario",
+  "parent_digest": "5f3f80e48d8e884648a21246b95ac6d60d744e11a841599347d8c8d0bf2a6122",
+  "view_digest": "df12a88aba657f755d4cf14d74703a145fdadb18532570304b0cc07c0b50c3d3",
+  "artifact": {
+   "path": "",
+   "sha256": null
+  },
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 11,
+   "total": 11,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "limitations": [
+   "Artifact identity is unavailable for this observation.",
+   "Browser host platform and architecture were not observed.",
+   "Captured response-body bytes are the result of Playwright's Response.body() API. Playwright may satisfy that API with a credentialed follow-up load of the request URL when CDP has no body, so transaction and event links do not verify that retained bytes came from the original network transaction.",
+   "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+   "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+   "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+   "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+   "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+   "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+   "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+   "Scenario records are the capture's network transactions in request order; each record ordinal is the transaction's zero-based position.",
+   "Some selected network content was unavailable; per-transaction content states retain the reason.",
+   "Storage values are hashed only after declared-secret redaction.",
+   "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+  ],
+  "unknowns": [
+   {
+    "kind": "authorization-model",
+    "statement": "Authorization headers and cookies are structurally excluded from captures; the manifest states no authorization model."
+   },
+   {
+    "kind": "response-semantics",
+    "statement": "Recorded statuses and bodies are retained only as pointers to parent records; the manifest states no response semantics."
+   },
+   {
+    "kind": "state-transition",
+    "statement": "Recorded exchanges are independent observations; the manifest states no ordering, side effects or state transitions between tools."
+   }
+  ],
+  "origin": "https://api.artic.edu",
+  "name": "api-artic-edu",
+  "tools": [
+   {
+    "name": "get_artists_search",
+    "method": "GET",
+    "path_template": "/api/v1/artists/search",
+    "api_surface_template": "/api/v1/artists/search",
+    "params": [],
+    "query_parameter_names": [
+     "fields",
+     "limit",
+     "q"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     4
+    ]
+   },
+   {
+    "name": "get_artists_by_id",
+    "method": "GET",
+    "path_template": "/api/v1/artists/{numeric}",
+    "api_surface_template": "/api/v1/artists/{numeric}",
+    "params": [
+     {
+      "index": 3,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "31492",
+       "40610",
+       "40810"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "fields"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     16,
+     17,
+     18
+    ]
+   },
+   {
+    "name": "get_artwork_types_by_id",
+    "method": "GET",
+    "path_template": "/api/v1/artwork-types/{numeric}",
+    "api_surface_template": "/api/v1/artwork-types/{numeric}",
+    "params": [
+     {
+      "index": 3,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "1",
+       "18"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     21,
+     22
+    ]
+   },
+   {
+    "name": "get_artworks",
+    "method": "GET",
+    "path_template": "/api/v1/artworks",
+    "api_surface_template": "/api/v1/artworks",
+    "params": [],
+    "query_parameter_names": [
+     "fields",
+     "ids"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     3
+    ]
+   },
+   {
+    "name": "get_artworks_search",
+    "method": "GET",
+    "path_template": "/api/v1/artworks/search",
+    "api_surface_template": "/api/v1/artworks/search",
+    "params": [],
+    "query_parameter_names": [
+     "fields",
+     "limit",
+     "q"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     1,
+     2
+    ]
+   },
+   {
+    "name": "get_artworks_by_id",
+    "method": "GET",
+    "path_template": "/api/v1/artworks/{numeric}",
+    "api_surface_template": "/api/v1/artworks/{numeric}",
+    "params": [
+     {
+      "index": 3,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "116363",
+       "16568",
+       "185905",
+       "20684",
+       "24645",
+       "27992",
+       "28560",
+       "4575",
+       "52198",
+       "87479"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "fields"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15
+    ]
+   },
+   {
+    "name": "get_category_terms_by_category_term_id",
+    "method": "GET",
+    "path_template": "/api/v1/category-terms/{category_term_id}",
+    "api_surface_template": "/api/v1/category-terms/PC-10",
+    "params": [
+     {
+      "index": 3,
+      "name": "category_term_id",
+      "rule": "sibling-variance",
+      "basis": "inferred",
+      "observed_values": [
+       "PC-10",
+       "PC-7"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     23,
+     24
+    ]
+   },
+   {
+    "name": "get_departments",
+    "method": "GET",
+    "path_template": "/api/v1/departments",
+    "api_surface_template": "/api/v1/departments",
+    "params": [],
+    "query_parameter_names": [
+     "fields",
+     "limit"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     0
+    ]
+   },
+   {
+    "name": "get_exhibitions_search",
+    "method": "GET",
+    "path_template": "/api/v1/exhibitions/search",
+    "api_surface_template": "/api/v1/exhibitions/search",
+    "params": [],
+    "query_parameter_names": [
+     "fields",
+     "limit",
+     "q"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     5
+    ]
+   },
+   {
+    "name": "get_exhibitions_by_id",
+    "method": "GET",
+    "path_template": "/api/v1/exhibitions/{numeric}",
+    "api_surface_template": "/api/v1/exhibitions/{numeric}",
+    "params": [
+     {
+      "index": 3,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "9036"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "fields"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     25
+    ]
+   },
+   {
+    "name": "get_galleries_by_id",
+    "method": "GET",
+    "path_template": "/api/v1/galleries/{numeric}",
+    "api_surface_template": "/api/v1/galleries/{numeric}",
+    "params": [
+     {
+      "index": 3,
+      "name": "id",
+      "rule": "numeric",
+      "basis": "inferred",
+      "observed_values": [
+       "2147478672",
+       "2147479703"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     19,
+     20
+    ]
+   }
+  ],
+  "records": [
+   {
+    "ordinal": 0,
+    "method": "GET",
+    "path": "/api/v1/departments",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 1,
+    "method": "GET",
+    "path": "/api/v1/artworks/search",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 2,
+    "method": "GET",
+    "path": "/api/v1/artworks/search",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 3,
+    "method": "GET",
+    "path": "/api/v1/artworks",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 4,
+    "method": "GET",
+    "path": "/api/v1/artists/search",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 5,
+    "method": "GET",
+    "path": "/api/v1/exhibitions/search",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 6,
+    "method": "GET",
+    "path": "/api/v1/artworks/27992",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 7,
+    "method": "GET",
+    "path": "/api/v1/artworks/28560",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 8,
+    "method": "GET",
+    "path": "/api/v1/artworks/20684",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 9,
+    "method": "GET",
+    "path": "/api/v1/artworks/87479",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 10,
+    "method": "GET",
+    "path": "/api/v1/artworks/24645",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 11,
+    "method": "GET",
+    "path": "/api/v1/artworks/16568",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 12,
+    "method": "GET",
+    "path": "/api/v1/artworks/185905",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 13,
+    "method": "GET",
+    "path": "/api/v1/artworks/116363",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 14,
+    "method": "GET",
+    "path": "/api/v1/artworks/52198",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 15,
+    "method": "GET",
+    "path": "/api/v1/artworks/4575",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 16,
+    "method": "GET",
+    "path": "/api/v1/artists/40610",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 17,
+    "method": "GET",
+    "path": "/api/v1/artists/40810",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 18,
+    "method": "GET",
+    "path": "/api/v1/artists/31492",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 19,
+    "method": "GET",
+    "path": "/api/v1/galleries/2147478672",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 20,
+    "method": "GET",
+    "path": "/api/v1/galleries/2147479703",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 21,
+    "method": "GET",
+    "path": "/api/v1/artwork-types/1",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 22,
+    "method": "GET",
+    "path": "/api/v1/artwork-types/18",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 23,
+    "method": "GET",
+    "path": "/api/v1/category-terms/PC-10",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 24,
+    "method": "GET",
+    "path": "/api/v1/category-terms/PC-7",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 25,
+    "method": "GET",
+    "path": "/api/v1/exhibitions/9036",
+    "status": 200,
+    "content_type": "application/json"
+   }
+  ],
+  "excluded": [],
+  "templated_groups": 6,
+  "kind": "environment-manifest",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "confidence": "inferred",
+ "authority": "controlled-replay",
+ "environment": null,
+ "limitations": [
+  "Artifact identity is unavailable for this observation.",
+  "Artifact identity is unavailable for this observation.",
+  "Browser host platform and architecture were not observed.",
+  "Captured response-body bytes are the result of Playwright's Response.body() API. Playwright may satisfy that API with a credentialed follow-up load of the request URL when CDP has no body, so transaction and event links do not verify that retained bytes came from the original network transaction.",
+  "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+  "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+  "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+  "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+  "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+  "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+  "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+  "Scenario records are the capture's network transactions in request order; each record ordinal is the transaction's zero-based position.",
+  "Some selected network content was unavailable; per-transaction content states retain the reason.",
+  "Storage values are hashed only after declared-secret redaction.",
+  "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+ ],
+ "relationship_coverage": null,
+ "locations": [],
+ "evidence_links": [
+  "ev_5f3f80e48d8e884648a21246b95ac6d60d744e11a841599347d8c8d0bf2a6122"
+ ]
+}

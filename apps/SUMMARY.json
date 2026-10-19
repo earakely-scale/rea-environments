@@ -1,36 +1,35 @@
 {
- "grafana": {
-  "app_version": "13.2.4",
-  "origin": "http://127.0.0.1:3101",
-  "manifest_name": "127-0-0-1-3101",
-  "scoped_records": 105,
+ "airbyte": {
+  "app_version": "2.4.0",
+  "origin": "http://127.0.0.1:3302",
+  "manifest_name": "127-0-0-1-3302",
+  "scoped_records": 64,
   "methods": {
-   "GET": 97,
-   "POST": 5,
-   "PUT": 1,
+   "GET": 57,
+   "POST": 3,
+   "PATCH": 2,
    "DELETE": 2
   },
-  "scoped_har_bytes": 210061,
-  "scoped_har_sha256": "df4073963373141fa0abc3405d29e3cfe46a751e6dc7e4a051831a0b4b76323c",
-  "capture_evidence_id": "ev_29b2e855bc335aae5b1092deb7dc25fcf82c26d6d8ef61f12808371611dbfeaa",
-  "manifest_evidence_id": "ev_147d9d4ae195a6e8c1e1b0d158b982f0d23e984f24d30fa4acb9ac907fcca3ff",
-  "manifest_norules_evidence_id": "ev_2053c8653c67cd6aa74e6b94242691f0aac684e0ddfabb391cd589a84f8ca80d",
-  "tools": 48,
+  "scoped_har_bytes": 124694,
+  "scoped_har_sha256": "1d67ea816437d694c369791740572fbab7d10aa6826ee568c5f98c7608e32016",
+  "capture_evidence_id": "ev_8e00dfaee9452108d545ea793346d937d5407358ab2ea30d6d614fcfac225307",
+  "manifest_evidence_id": "ev_99db62d7bd04e3b25915a76aca88c17ebc8db08578ae869454ebe6babb9cbc5f",
+  "manifest_norules_evidence_id": "ev_3c5133ad68cdd567d8e87593cb13a78fb8296f8a8cbe623eac1cb160926a23c3",
+  "tools": 25,
   "tools_by_method": {
-   "GET": 41,
-   "POST": 4,
+   "GET": 18,
+   "POST": 3,
    "DELETE": 2,
-   "PUT": 1
+   "PATCH": 2
   },
-  "tools_norules": 50,
-  "templated_groups": 11,
+  "tools_norules": 25,
+  "templated_groups": 13,
   "params_by_rule": {
-   "after-uid-literal": 5,
-   "opaque-token": 2,
-   "numeric": 4
+   "uuid": 14,
+   "numeric": 1
   },
-  "params_total": 11,
-  "query_names": 32,
+  "params_total": 15,
+  "query_names": 16,
   "tools_with_body_shape": 5,
   "excluded": {},
   "unknowns": [
@@ -40,8 +39,292 @@
   ],
   "confidence": "inferred",
   "authority": "historical-reference",
-  "view_digest": "fee5fa58733f3c37aa8d7427300667af207498431c873180bd591e2782eeec66",
-  "parent_digest": "29b2e855bc335aae5b1092deb7dc25fcf82c26d6d8ef61f12808371611dbfeaa"
+  "view_digest": "1f636f3f48c5db0777e3ec0e584b82fa259fe9da0115be602f6d82a736d5f723",
+  "parent_digest": "8e00dfaee9452108d545ea793346d937d5407358ab2ea30d6d614fcfac225307"
+ },
+ "artic-collection": {
+  "app_version": "v1",
+  "origin": "https://api.artic.edu",
+  "manifest_name": "api-artic-edu",
+  "scoped_records": 26,
+  "methods": {
+   "GET": 26
+  },
+  "scoped_har_bytes": 183942,
+  "scoped_har_sha256": "3a807e85c0db318a3cbecbc62f8c7125f4163f6b9c575b6f57f3d2057de5b0a0",
+  "capture_evidence_id": "ev_5f3f80e48d8e884648a21246b95ac6d60d744e11a841599347d8c8d0bf2a6122",
+  "manifest_evidence_id": "ev_2fb61dbbfdb2a429b27771afd068d7d3d9e0d9d9595da2c62086dfcbefd4b2f2",
+  "manifest_norules_evidence_id": "ev_6fe79e4d6859f2633a259c7c75cca9a1a6fd70b51f5c2d5fedc64d175c451076",
+  "tools": 11,
+  "tools_by_method": {
+   "GET": 11
+  },
+  "tools_norules": 12,
+  "templated_groups": 6,
+  "params_by_rule": {
+   "numeric": 5,
+   "sibling-variance": 1
+  },
+  "params_total": 6,
+  "query_names": 16,
+  "tools_with_body_shape": 0,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "controlled-replay",
+  "view_digest": "df12a88aba657f755d4cf14d74703a145fdadb18532570304b0cc07c0b50c3d3",
+  "parent_digest": "5f3f80e48d8e884648a21246b95ac6d60d744e11a841599347d8c8d0bf2a6122",
+  "capture": "scenario"
+ },
+ "baserow": {
+  "app_version": "2.4.1",
+  "origin": "http://127.0.0.1:3204",
+  "manifest_name": "127-0-0-1-3204",
+  "scoped_records": 83,
+  "methods": {
+   "GET": 80,
+   "POST": 1,
+   "PATCH": 1,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 157373,
+  "scoped_har_sha256": "286207ccf9bec4e41170bbd802886c9bf3d11de51501e01faad00ffda415d93d",
+  "capture_evidence_id": "ev_85d6e0f7e7c20d307a860f6c35f7e696fa6baf0e1a54f19060d77989e82fadac",
+  "manifest_evidence_id": "ev_d41265c6d4379a907ba76eeebbfe708af1f9e04618bbab29c47d7ba9b1c2ac7c",
+  "manifest_norules_evidence_id": "ev_c6d455ba21c86b13bdf6da89c040de1cfaf37dcbdd511fc54edc494a075c247c",
+  "tools": 31,
+  "tools_by_method": {
+   "GET": 28,
+   "POST": 1,
+   "DELETE": 1,
+   "PATCH": 1
+  },
+  "tools_norules": 31,
+  "templated_groups": 23,
+  "params_by_rule": {
+   "numeric": 27
+  },
+  "params_total": 27,
+  "query_names": 26,
+  "tools_with_body_shape": 2,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "73d85eadcc80001f918310d2f48939ec00ef24e06fc49408d713cdaf45587cdd",
+  "parent_digest": "85d6e0f7e7c20d307a860f6c35f7e696fa6baf0e1a54f19060d77989e82fadac"
+ },
+ "bookstack": {
+  "app_version": "26.09.1",
+  "origin": "http://127.0.0.1:3219",
+  "manifest_name": "127-0-0-1-3219",
+  "scoped_records": 65,
+  "methods": {
+   "GET": 61,
+   "POST": 2,
+   "PUT": 1,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 127666,
+  "scoped_har_sha256": "1f807d4d2d2ef490cdc5cac50ffcbf573abfc967351038256b92e18f4ebe5366",
+  "capture_evidence_id": "ev_07a98c12a171833f8ca00f5f4769a165b358a5e2cca784718af469fc35ee5b77",
+  "manifest_evidence_id": "ev_47deffa8044f6f1c6835193c59746931187576db6b1c0cc367b7c4380714c322",
+  "manifest_norules_evidence_id": "ev_294a3fd78d221c90e5246cffd336196604377bca21248664f798c744606815ee",
+  "tools": 31,
+  "tools_by_method": {
+   "GET": 27,
+   "POST": 2,
+   "DELETE": 1,
+   "PUT": 1
+  },
+  "tools_norules": 31,
+  "templated_groups": 14,
+  "params_by_rule": {
+   "numeric": 14
+  },
+  "params_total": 14,
+  "query_names": 11,
+  "tools_with_body_shape": 3,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "9e25a0530da2302938a01675ca07fd7d373d8b750f864a0447aae0d20f6d6930",
+  "parent_digest": "07a98c12a171833f8ca00f5f4769a165b358a5e2cca784718af469fc35ee5b77"
+ },
+ "directus": {
+  "app_version": "11.17.4",
+  "origin": "http://127.0.0.1:3223",
+  "manifest_name": "127-0-0-1-3223",
+  "scoped_records": 90,
+  "methods": {
+   "GET": 77,
+   "PATCH": 11,
+   "POST": 1,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 219187,
+  "scoped_har_sha256": "1667a554741c257c7831f80302833dfff820050f35866ac9f0fd6bc1d6e5a8c9",
+  "capture_evidence_id": "ev_726c10bf55a915e584548f44ddfcacfabb7b72780f9ce24a1a1d18d093836af2",
+  "manifest_evidence_id": "ev_df3fc9049d7dd8e54cbefab23250d29be75af6e6ba7bbc9c3cc092e64c134c58",
+  "manifest_norules_evidence_id": "ev_2457c64e65ef78f193b7d85c778320f714e3e568b924b107e0b9a83bbcf227a2",
+  "tools": 43,
+  "tools_by_method": {
+   "GET": 41,
+   "POST": 1,
+   "PATCH": 1
+  },
+  "tools_norules": 43,
+  "templated_groups": 14,
+  "params_by_rule": {
+   "uuid": 9,
+   "numeric": 4
+  },
+  "params_total": 13,
+  "query_names": 73,
+  "tools_with_body_shape": 2,
+  "excluded": {
+   "non-json": 2
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "638e5bb97125c3ed5a50106b5d9cd6c484b0d0dd2b96ef232574da93ccb5a262",
+  "parent_digest": "726c10bf55a915e584548f44ddfcacfabb7b72780f9ce24a1a1d18d093836af2"
+ },
+ "espocrm": {
+  "app_version": "10.0.10",
+  "origin": "http://127.0.0.1:3216",
+  "manifest_name": "127-0-0-1-3216",
+  "scoped_records": 131,
+  "methods": {
+   "GET": 128,
+   "POST": 1,
+   "PUT": 1,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 260567,
+  "scoped_har_sha256": "b5fdf1ec365990047149655278e9a74f26b4fbbad53d75113ddb65ed89357b26",
+  "capture_evidence_id": "ev_f3ad613cd68560f8796fa77cc136de88152b4ab1158158d7b74a873455ec3fe9",
+  "manifest_evidence_id": "ev_318ff198f98931b6b5d15f468d8ba767e95abbeb05ed8eb65cd742f138117f34",
+  "manifest_norules_evidence_id": "ev_447a95c40dcdd9523cc24f7bc9c41ec47f387ab792deabbe55a3b62c91fc3556",
+  "tools": 88,
+  "tools_by_method": {
+   "GET": 85,
+   "POST": 1,
+   "DELETE": 1,
+   "PUT": 1
+  },
+  "tools_norules": 110,
+  "templated_groups": 35,
+  "params_by_rule": {
+   "opaque-token": 35
+  },
+  "params_total": 35,
+  "query_names": 196,
+  "tools_with_body_shape": 2,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "5248cf49d4edd4de1d8b7e0bbd0fa5ddae137c74b977c3657adf1c062122e1fb",
+  "parent_digest": "f3ad613cd68560f8796fa77cc136de88152b4ab1158158d7b74a873455ec3fe9"
+ },
+ "federal-register": {
+  "app_version": "v1",
+  "origin": "https://www.federalregister.gov",
+  "manifest_name": "www-federalregister-gov",
+  "scoped_records": 52,
+  "methods": {
+   "GET": 52
+  },
+  "scoped_har_bytes": 198774,
+  "scoped_har_sha256": "92b61ba4a50cd9beeb3af0913704c5a80536a2198a62c86f5e99d2eb56d7f5bf",
+  "capture_evidence_id": "ev_e824e8d53e2ce40fe1173e27f7002aa1e3e7f80707e999d864745bac26d86575",
+  "manifest_evidence_id": "ev_23d1066c3bc138a90ac041fe3012494bc348237ced0daac373a9dc2845357f19",
+  "manifest_norules_evidence_id": "ev_48bd2582653a2e2e8d30501448986264e01c2c4eeccc9cbb9a8e722aa6af3803",
+  "tools": 10,
+  "tools_by_method": {
+   "GET": 10
+  },
+  "tools_norules": 45,
+  "templated_groups": 3,
+  "params_by_rule": {
+   "sibling-variance": 3
+  },
+  "params_total": 3,
+  "query_names": 25,
+  "tools_with_body_shape": 0,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "f4d4bda1458d8e0c9c8ebec6d4d530566e5a2f06d4361386aeb6f0c1df8158fa",
+  "parent_digest": "e824e8d53e2ce40fe1173e27f7002aa1e3e7f80707e999d864745bac26d86575"
+ },
+ "ghost": {
+  "app_version": "5.130",
+  "origin": "http://127.0.0.1:3105",
+  "manifest_name": "127-0-0-1-3105",
+  "scoped_records": 76,
+  "methods": {
+   "GET": 72,
+   "POST": 3,
+   "PUT": 1
+  },
+  "scoped_har_bytes": 356087,
+  "scoped_har_sha256": "e094258cb20cd36f7a877e0f19825fa0d12191c5aea91f33ad51a08a10ce15e3",
+  "capture_evidence_id": "ev_f03cc058b2bdb78972c98464162d3063dba21e2e154c3a2c6df6f7d5aa94a437",
+  "manifest_evidence_id": "ev_1eb4590fb23ad38e07ec1085a2320dc95d8763c98defeaacc5b929f9efc6fd0f",
+  "manifest_norules_evidence_id": "ev_bfe4944c99e579eeb7d80ae761e06cc45d44f6fb1fb44f944cb8d8e536a42561",
+  "tools": 36,
+  "tools_by_method": {
+   "GET": 33,
+   "POST": 2,
+   "PUT": 1
+  },
+  "tools_norules": 37,
+  "templated_groups": 4,
+  "params_by_rule": {
+   "opaque-token": 4
+  },
+  "params_total": 4,
+  "query_names": 54,
+  "tools_with_body_shape": 3,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "1593c73542aced54e92e91bf0714ae4bcce22b773ba2890a8c5bdee0deee9226",
+  "parent_digest": "f03cc058b2bdb78972c98464162d3063dba21e2e154c3a2c6df6f7d5aa94a437"
  },
  "gitea": {
   "app_version": "28.1.0",
@@ -86,162 +369,81 @@
   "view_digest": "d160df2d1510f3bf665d454a45301b985a3535b6eea1793bded1e9691b62b075",
   "parent_digest": "1a2a26cf486e359cd4ee757d73a47f3544f937fc2877a815de9b3416349c2556"
  },
- "nocodb": {
-  "app_version": "2026.09.1",
-  "origin": "http://127.0.0.1:3103",
-  "manifest_name": "127-0-0-1-3103",
+ "grafana": {
+  "app_version": "13.2.4",
+  "origin": "http://127.0.0.1:3101",
+  "manifest_name": "127-0-0-1-3101",
   "scoped_records": 105,
   "methods": {
-   "GET": 80,
-   "POST": 23,
-   "PATCH": 1,
-   "DELETE": 1
-  },
-  "scoped_har_bytes": 324797,
-  "scoped_har_sha256": "fe7e31fddd225d7bd00ecd8739fd0a2a474ef7a36aa79398900bc81499093f65",
-  "capture_evidence_id": "ev_c2296ec7318f8978720a75499d6fb34a6c5f5f8943f2da32acc1eaaad450e08e",
-  "manifest_evidence_id": "ev_12b6ec59bee2946b7b74a675d71335b5c56a2c026712583c6342ca0a752d8616",
-  "manifest_norules_evidence_id": "ev_98629f8a878998eb1e29ca6a1800dc5fa0f2e1ef92db8f87bbc90e56dbb7b961",
-  "tools": 28,
-  "tools_by_method": {
-   "GET": 23,
-   "POST": 3,
-   "DELETE": 1,
-   "PATCH": 1
-  },
-  "tools_norules": 35,
-  "templated_groups": 20,
-  "params_by_rule": {
-   "opaque-token": 24,
-   "numeric": 1
-  },
-  "params_total": 25,
-  "query_names": 13,
-  "tools_with_body_shape": 3,
-  "excluded": {},
-  "unknowns": [
-   "authorization-model",
-   "response-semantics",
-   "state-transition"
-  ],
-  "confidence": "inferred",
-  "authority": "historical-reference",
-  "view_digest": "67dc3ce3bade67356c5b4eba4430e17303a59e7faeada017a85f1e5a54f168de",
-  "parent_digest": "c2296ec7318f8978720a75499d6fb34a6c5f5f8943f2da32acc1eaaad450e08e"
- },
- "mattermost": {
-  "app_version": "12.0.0",
-  "origin": "http://127.0.0.1:3104",
-  "manifest_name": "127-0-0-1-3104",
-  "scoped_records": 129,
-  "methods": {
-   "GET": 119,
-   "PUT": 2,
-   "POST": 7,
-   "DELETE": 1
-  },
-  "scoped_har_bytes": 322821,
-  "scoped_har_sha256": "e5874c112d0ab28d94c68595073b1e0512f0cadc8a47b5bf40914ef8d4cf470f",
-  "capture_evidence_id": "ev_7cc07ebe56003462bbd033d9c12c3a92d92badddff6f9199083c68e9a60357ba",
-  "manifest_evidence_id": "ev_97f3c9f89c92adf208d73e8e8e5de3dcb34c5a19fac09fbb29280d423f3f5342",
-  "manifest_norules_evidence_id": "ev_520a920a6a48370899829dcef7b21b4fdb812eb8f8b9abda7c5784cb1d1dfdaf",
-  "tools": 37,
-  "tools_by_method": {
-   "GET": 28,
-   "POST": 6,
-   "DELETE": 1,
-   "PUT": 2
-  },
-  "tools_norules": 58,
-  "templated_groups": 26,
-  "params_by_rule": {
-   "opaque-token": 32,
-   "numeric": 1
-  },
-  "params_total": 33,
-  "query_names": 16,
-  "tools_with_body_shape": 6,
-  "excluded": {},
-  "unknowns": [
-   "authorization-model",
-   "response-semantics",
-   "state-transition"
-  ],
-  "confidence": "inferred",
-  "authority": "historical-reference",
-  "view_digest": "79d4c613d0958989c5fe3854e20ec04a72c862a7ed3d94c41d71d8e55fd46e2e",
-  "parent_digest": "7cc07ebe56003462bbd033d9c12c3a92d92badddff6f9199083c68e9a60357ba"
- },
- "ghost": {
-  "app_version": "5.130",
-  "origin": "http://127.0.0.1:3105",
-  "manifest_name": "127-0-0-1-3105",
-  "scoped_records": 76,
-  "methods": {
-   "GET": 72,
-   "POST": 3,
-   "PUT": 1
-  },
-  "scoped_har_bytes": 356087,
-  "scoped_har_sha256": "e094258cb20cd36f7a877e0f19825fa0d12191c5aea91f33ad51a08a10ce15e3",
-  "capture_evidence_id": "ev_f03cc058b2bdb78972c98464162d3063dba21e2e154c3a2c6df6f7d5aa94a437",
-  "manifest_evidence_id": "ev_1eb4590fb23ad38e07ec1085a2320dc95d8763c98defeaacc5b929f9efc6fd0f",
-  "manifest_norules_evidence_id": "ev_bfe4944c99e579eeb7d80ae761e06cc45d44f6fb1fb44f944cb8d8e536a42561",
-  "tools": 36,
-  "tools_by_method": {
-   "GET": 33,
-   "POST": 2,
-   "PUT": 1
-  },
-  "tools_norules": 37,
-  "templated_groups": 4,
-  "params_by_rule": {
-   "opaque-token": 4
-  },
-  "params_total": 4,
-  "query_names": 54,
-  "tools_with_body_shape": 3,
-  "excluded": {},
-  "unknowns": [
-   "authorization-model",
-   "response-semantics",
-   "state-transition"
-  ],
-  "confidence": "inferred",
-  "authority": "historical-reference",
-  "view_digest": "1593c73542aced54e92e91bf0714ae4bcce22b773ba2890a8c5bdee0deee9226",
-  "parent_digest": "f03cc058b2bdb78972c98464162d3063dba21e2e154c3a2c6df6f7d5aa94a437"
- },
- "metabase": {
-  "app_version": "0.64.2.8",
-  "origin": "http://127.0.0.1:3201",
-  "manifest_name": "127-0-0-1-3201",
-  "scoped_records": 120,
-  "methods": {
-   "GET": 112,
-   "POST": 6,
+   "GET": 97,
+   "POST": 5,
    "PUT": 1,
-   "DELETE": 1
+   "DELETE": 2
   },
-  "scoped_har_bytes": 515053,
-  "scoped_har_sha256": "cd791130c103bf19299b14221ac2c27ae0bc9f8ae16e604c82ac4b34631a2d8a",
-  "capture_evidence_id": "ev_ae41d6f2a19b032ad77cd55df2547050605d49d7877db2e63b47c49647324924",
-  "manifest_evidence_id": "ev_97964117e7834ff3666205d78ca1a191235de72b54f4aa6bc0f96899674581a8",
-  "manifest_norules_evidence_id": "ev_84f096bec5f1ed85a460a85f07e3fd430869a4d65443c30f1b86c0e3f01e4cac",
-  "tools": 42,
+  "scoped_har_bytes": 210061,
+  "scoped_har_sha256": "df4073963373141fa0abc3405d29e3cfe46a751e6dc7e4a051831a0b4b76323c",
+  "capture_evidence_id": "ev_29b2e855bc335aae5b1092deb7dc25fcf82c26d6d8ef61f12808371611dbfeaa",
+  "manifest_evidence_id": "ev_147d9d4ae195a6e8c1e1b0d158b982f0d23e984f24d30fa4acb9ac907fcca3ff",
+  "manifest_norules_evidence_id": "ev_2053c8653c67cd6aa74e6b94242691f0aac684e0ddfabb391cd589a84f8ca80d",
+  "tools": 48,
   "tools_by_method": {
-   "GET": 37,
-   "POST": 3,
-   "DELETE": 1,
+   "GET": 41,
+   "POST": 4,
+   "DELETE": 2,
    "PUT": 1
   },
-  "tools_norules": 42,
-  "templated_groups": 23,
+  "tools_norules": 50,
+  "templated_groups": 11,
   "params_by_rule": {
-   "numeric": 25
+   "after-uid-literal": 5,
+   "opaque-token": 2,
+   "numeric": 4
   },
-  "params_total": 25,
-  "query_names": 31,
+  "params_total": 11,
+  "query_names": 32,
+  "tools_with_body_shape": 5,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "fee5fa58733f3c37aa8d7427300667af207498431c873180bd591e2782eeec66",
+  "parent_digest": "29b2e855bc335aae5b1092deb7dc25fcf82c26d6d8ef61f12808371611dbfeaa"
+ },
+ "grist": {
+  "app_version": "1.7.21",
+  "origin": "http://127.0.0.1:3220",
+  "manifest_name": "127-0-0-1-3220",
+  "scoped_records": 65,
+  "methods": {
+   "GET": 59,
+   "POST": 3,
+   "PATCH": 2,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 111326,
+  "scoped_har_sha256": "0ba1ce8653bb74e217cf221c92cb213dddcfaf807aa2fc13687c03295532d2c9",
+  "capture_evidence_id": "ev_f74ce8e1b2435b5ff5ce9cf930d3ece7b866503615fbd15e54657be3a268d1a1",
+  "manifest_evidence_id": "ev_017809f63eed60ddfc1f97299fe7f7e58e3d111585cd49939499d18341fdbb99",
+  "manifest_norules_evidence_id": "ev_3bddad8c7f0f504e41de8fddb818530ad3c43e50f6df5cf84b0b168755dac4be",
+  "tools": 31,
+  "tools_by_method": {
+   "DELETE": 1,
+   "PATCH": 2,
+   "GET": 25,
+   "POST": 3
+  },
+  "tools_norules": 43,
+  "templated_groups": 11,
+  "params_by_rule": {
+   "sibling-variance": 4,
+   "numeric": 7
+  },
+  "params_total": 11,
+  "query_names": 11,
   "tools_with_body_shape": 4,
   "excluded": {},
   "unknowns": [
@@ -251,8 +453,259 @@
   ],
   "confidence": "inferred",
   "authority": "historical-reference",
-  "view_digest": "437a73cfadda9494ecb912d01a8f2f5b07fde3beea46c09b3943e9a8c4d1338c",
-  "parent_digest": "ae41d6f2a19b032ad77cd55df2547050605d49d7877db2e63b47c49647324924"
+  "view_digest": "a9cd9321b0c3827510faf19bed8d8eab67027095814800c9a00547bf079ed431",
+  "parent_digest": "f74ce8e1b2435b5ff5ce9cf930d3ece7b866503615fbd15e54657be3a268d1a1"
+ },
+ "grocy": {
+  "app_version": "4.7.1",
+  "origin": "http://127.0.0.1:3222",
+  "manifest_name": "127-0-0-1-3222",
+  "scoped_records": 75,
+  "methods": {
+   "GET": 65,
+   "PUT": 8,
+   "POST": 1,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 144824,
+  "scoped_har_sha256": "4e673f0a954204d036082a7901bc0bdf4b116cea8b849a92ceaa88a87174662a",
+  "capture_evidence_id": "ev_853ed4f6409f2a62f73da27f0a83010aff0ba3f0365d71788c364cfade127838",
+  "manifest_evidence_id": "ev_cd77ac50b20a04df27506d51dc91c8e252065c659fbbde30e497181ddbd95b1a",
+  "manifest_norules_evidence_id": "ev_e138d49a40b50d7af0cee950fe93ff3ce350cd4d244c71c2f2a68f4d4d19ba99",
+  "tools": 45,
+  "tools_by_method": {
+   "GET": 40,
+   "POST": 1,
+   "DELETE": 1,
+   "PUT": 3
+  },
+  "tools_norules": 45,
+  "templated_groups": 22,
+  "params_by_rule": {
+   "numeric": 22
+  },
+  "params_total": 22,
+  "query_names": 9,
+  "tools_with_body_shape": 4,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "c9148cc638060df1ae7727f34a14bbb359a7f397eacfb8a818d338b7d2c7ae6a",
+  "parent_digest": "853ed4f6409f2a62f73da27f0a83010aff0ba3f0365d71788c364cfade127838"
+ },
+ "homebox": {
+  "app_version": "0.27.0",
+  "origin": "http://127.0.0.1:3208",
+  "manifest_name": "127-0-0-1-3208",
+  "scoped_records": 91,
+  "methods": {
+   "GET": 87,
+   "PUT": 2,
+   "POST": 1,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 256047,
+  "scoped_har_sha256": "249dbf323faaf79dc6a91d856dc6e7ebc494f2e8bfa3b15af85de7af0bcbf2cf",
+  "capture_evidence_id": "ev_cb9cef1bb6902484524658e34cfb3aa220e1f06dd807e8da93c2089899872e1c",
+  "manifest_evidence_id": "ev_12cd79fbad0e4c228684699815fdee9521ba2b9ede6c2b891c504603d1e4e457",
+  "manifest_norules_evidence_id": "ev_c3747d67e4a51ef2a5688ddc2829ae5649a7ac4234b61a555ad07d785b2e2e90",
+  "tools": 28,
+  "tools_by_method": {
+   "GET": 24,
+   "POST": 1,
+   "DELETE": 1,
+   "PUT": 2
+  },
+  "tools_norules": 28,
+  "templated_groups": 7,
+  "params_by_rule": {
+   "uuid": 7
+  },
+  "params_total": 7,
+  "query_names": 19,
+  "tools_with_body_shape": 3,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "da0c2a3473cd51ad682dbbaef9e634d163e3530b714c44bb7007eb09abaaeb8f",
+  "parent_digest": "cb9cef1bb6902484524658e34cfb3aa220e1f06dd807e8da93c2089899872e1c"
+ },
+ "immich": {
+  "app_version": "3.3.3",
+  "origin": "http://127.0.0.1:3207",
+  "manifest_name": "127-0-0-1-3207",
+  "scoped_records": 120,
+  "methods": {
+   "GET": 116,
+   "POST": 2,
+   "PATCH": 1,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 228076,
+  "scoped_har_sha256": "a525d5143fb73344d07d44ce129c5d9be7d83ef9a2d5dfc2f453bfa80b0647d0",
+  "capture_evidence_id": "ev_1a9cf44e9f31412cd6f46b77293c666f4bfa1f6f9afccc430ca3b8d83937590a",
+  "manifest_evidence_id": "ev_fda1218791c0c5ced99ef79739463e0a102755b2cdf71df008e93bd52e3ba617",
+  "manifest_norules_evidence_id": "ev_534b8b25b622007e06bda40b6a5c685a0fe74031d5103908cd8c9139c11e4948",
+  "tools": 45,
+  "tools_by_method": {
+   "GET": 41,
+   "POST": 2,
+   "DELETE": 1,
+   "PATCH": 1
+  },
+  "tools_norules": 45,
+  "templated_groups": 13,
+  "params_by_rule": {
+   "uuid": 13
+  },
+  "params_total": 13,
+  "query_names": 33,
+  "tools_with_body_shape": 3,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "b020aed8dcf38dce0be98bf4f188aaedd6edff1fb468619d4554591eff5796a1",
+  "parent_digest": "1a9cf44e9f31412cd6f46b77293c666f4bfa1f6f9afccc430ca3b8d83937590a"
+ },
+ "jellyfin": {
+  "app_version": "10.10.7",
+  "origin": "http://127.0.0.1:3224",
+  "manifest_name": "127-0-0-1-3224",
+  "scoped_records": 72,
+  "methods": {
+   "GET": 66,
+   "POST": 5,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 196660,
+  "scoped_har_sha256": "eb1bf56ca3ad61fccf0c9aec11fc580ae2929cf9703d8de26ff40f7fa7f602cc",
+  "capture_evidence_id": "ev_e0e8efc19b07b4df61b2a5753a06282b27892bc8404746372201bfdd27662ba9",
+  "manifest_evidence_id": "ev_e0005f7fdf6adba22caf1ff60dd317660ec3e9e5fbf91991a6bfdfd803d9feea",
+  "manifest_norules_evidence_id": "ev_a90058b46ccbbaf0ad5ec5625ce1a90bc7f9fef1365336ab8b8ea8248f02a946",
+  "tools": 34,
+  "tools_by_method": {
+   "GET": 32,
+   "POST": 2
+  },
+  "tools_norules": 34,
+  "templated_groups": 16,
+  "params_by_rule": {
+   "hex": 15
+  },
+  "params_total": 15,
+  "query_names": 75,
+  "tools_with_body_shape": 1,
+  "excluded": {
+   "non-json": 4
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "7e72d58877f1dd3d1525e9f9ef4e7ab6f4e18a2193f16dcc85a37629e7e6f981",
+  "parent_digest": "e0e8efc19b07b4df61b2a5753a06282b27892bc8404746372201bfdd27662ba9"
+ },
+ "keycloak": {
+  "app_version": "26.8.1",
+  "origin": "http://127.0.0.1:3210",
+  "manifest_name": "127-0-0-1-3210",
+  "scoped_records": 73,
+  "methods": {
+   "GET": 70,
+   "POST": 1,
+   "PUT": 1,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 197162,
+  "scoped_har_sha256": "7c78d99263c9fb922b3fbf714619a3d378f08781b2f677d6a473bd28d5b85b3b",
+  "capture_evidence_id": "ev_21d8808f42337b36a19f943f7bca1058d9f2c73b660d5bce1f10b05539ca525d",
+  "manifest_evidence_id": "ev_b1030270ddcec481e452055bb5db7711cf3539cb97b7d86b9733f1023452fafa",
+  "manifest_norules_evidence_id": "ev_6898940f9e4f1b716c00ced3346e4b1d5f7ba01aadd8269592edf408bf70ac1a",
+  "tools": 40,
+  "tools_by_method": {
+   "GET": 39,
+   "POST": 1
+  },
+  "tools_norules": 40,
+  "templated_groups": 19,
+  "params_by_rule": {
+   "uuid": 18
+  },
+  "params_total": 18,
+  "query_names": 25,
+  "tools_with_body_shape": 1,
+  "excluded": {
+   "non-json": 2
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "fe4d22680496c9af6776c662329fcd74cf38561f91904031d2a666881fc3a34d",
+  "parent_digest": "21d8808f42337b36a19f943f7bca1058d9f2c73b660d5bce1f10b05539ca525d"
+ },
+ "komga": {
+  "app_version": "1.29.1",
+  "origin": "http://127.0.0.1:3231",
+  "manifest_name": "127-0-0-1-3231",
+  "scoped_records": 116,
+  "methods": {
+   "GET": 95,
+   "POST": 17,
+   "PATCH": 2,
+   "DELETE": 2
+  },
+  "scoped_har_bytes": 254388,
+  "scoped_har_sha256": "4486c491d956d4a28b83a739ed6dd788f6bbb8f3790f73186583a35075870d9e",
+  "capture_evidence_id": "ev_5d1edee16d3181a6cb765a258edf8a455e0f669980a1b3943b5a465d859db5a8",
+  "manifest_evidence_id": "ev_2400fc90acfee4c519b06085c63026c94599134757eb02bfa872af0b32bbdc10",
+  "manifest_norules_evidence_id": "ev_4ddd7bd03e09d9e76f523b38d91aad40acb6ed3b176dd95a1220c4efbc51b94e",
+  "tools": 42,
+  "tools_by_method": {
+   "GET": 33,
+   "POST": 5,
+   "DELETE": 2,
+   "PATCH": 2
+  },
+  "tools_norules": 64,
+  "templated_groups": 11,
+  "params_by_rule": {
+   "sibling-variance": 11
+  },
+  "params_total": 11,
+  "query_names": 42,
+  "tools_with_body_shape": 7,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "2d682f99f6602a604e0e48d221034e11d807f7ca23d384b0ff364259f5734cf0",
+  "parent_digest": "5d1edee16d3181a6cb765a258edf8a455e0f669980a1b3943b5a465d859db5a8"
  },
  "linkding": {
   "app_version": "1.47.0",
@@ -298,37 +751,37 @@
   "view_digest": "ec9cfed116ab7829c1e34bbef9494b41c0deb4c84d8a55479811d0a1f8fae24e",
   "parent_digest": "07064b4e06c39fb3e0b3c5331f4786510cf63f2f2f798640f74bbec660a08b7e"
  },
- "komga": {
-  "app_version": "1.29.1",
-  "origin": "http://127.0.0.1:3231",
-  "manifest_name": "127-0-0-1-3231",
-  "scoped_records": 116,
+ "listmonk": {
+  "app_version": "6.2",
+  "origin": "http://127.0.0.1:3214",
+  "manifest_name": "127-0-0-1-3214",
+  "scoped_records": 68,
   "methods": {
-   "GET": 95,
-   "POST": 17,
-   "PATCH": 2,
-   "DELETE": 2
+   "GET": 65,
+   "POST": 1,
+   "PUT": 1,
+   "DELETE": 1
   },
-  "scoped_har_bytes": 254388,
-  "scoped_har_sha256": "4486c491d956d4a28b83a739ed6dd788f6bbb8f3790f73186583a35075870d9e",
-  "capture_evidence_id": "ev_5d1edee16d3181a6cb765a258edf8a455e0f669980a1b3943b5a465d859db5a8",
-  "manifest_evidence_id": "ev_2400fc90acfee4c519b06085c63026c94599134757eb02bfa872af0b32bbdc10",
-  "manifest_norules_evidence_id": "ev_4ddd7bd03e09d9e76f523b38d91aad40acb6ed3b176dd95a1220c4efbc51b94e",
-  "tools": 42,
+  "scoped_har_bytes": 134271,
+  "scoped_har_sha256": "db06948f2b2e2525759589dd9788f84edfa163926ae67c9c4e49c2f3b64962d0",
+  "capture_evidence_id": "ev_40b38ad41b4906c91a10812bd33a562c757b5bbf249f84f2f5b173e3fe59f0ba",
+  "manifest_evidence_id": "ev_2219c491a30c79107897a70884bbe76d8376ccb7f2c67943c7583baeea100cac",
+  "manifest_norules_evidence_id": "ev_ef5dbcf2430ac75898bfcf8fc69b9a8c55597f1e007704c3aebe78ceb38be6dc",
+  "tools": 29,
   "tools_by_method": {
-   "GET": 33,
-   "POST": 5,
-   "DELETE": 2,
-   "PATCH": 2
+   "GET": 26,
+   "POST": 1,
+   "DELETE": 1,
+   "PUT": 1
   },
-  "tools_norules": 64,
+  "tools_norules": 29,
   "templated_groups": 11,
   "params_by_rule": {
-   "sibling-variance": 11
+   "numeric": 11
   },
   "params_total": 11,
-  "query_names": 42,
-  "tools_with_body_shape": 7,
+  "query_names": 24,
+  "tools_with_body_shape": 2,
   "excluded": {},
   "unknowns": [
    "authorization-model",
@@ -337,253 +790,123 @@
   ],
   "confidence": "inferred",
   "authority": "historical-reference",
-  "view_digest": "2d682f99f6602a604e0e48d221034e11d807f7ca23d384b0ff364259f5734cf0",
-  "parent_digest": "5d1edee16d3181a6cb765a258edf8a455e0f669980a1b3943b5a465d859db5a8"
+  "view_digest": "cda0194e39b9d594bb110d23953ef7243f038946af8d8164c777edddecb0244a",
+  "parent_digest": "40b38ad41b4906c91a10812bd33a562c757b5bbf249f84f2f5b173e3fe59f0ba"
  },
- "baserow": {
-  "app_version": "2.4.1",
-  "origin": "http://127.0.0.1:3204",
-  "manifest_name": "127-0-0-1-3204",
-  "scoped_records": 83,
+ "loc-photos": {
+  "app_version": "v1",
+  "origin": "https://www.loc.gov",
+  "manifest_name": "www-loc-gov",
+  "scoped_records": 29,
   "methods": {
-   "GET": 80,
-   "POST": 1,
+   "GET": 29
+  },
+  "scoped_har_bytes": 817776,
+  "scoped_har_sha256": "2c73066562964d681ad285268eb259c311971da57b33b2b80199d7f06977ca9f",
+  "capture_evidence_id": "ev_2395092c17034b218c3faa02d0d1a781661b12c9dcb93654e756a6de5074a1a6",
+  "manifest_evidence_id": "ev_63d6f1ccb521b43d066ba25cf8d51f2bc63d3c570ef44e3d2fd69d598caa1f03",
+  "manifest_norules_evidence_id": "ev_6cf976c2bd2aad1a5bdad5760a915af2bff03181d6f7cefbd37f345cd66b1917",
+  "tools": 11,
+  "tools_by_method": {
+   "GET": 11
+  },
+  "tools_norules": 11,
+  "templated_groups": 1,
+  "params_by_rule": {
+   "numeric": 1
+  },
+  "params_total": 1,
+  "query_names": 39,
+  "tools_with_body_shape": 0,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "controlled-replay",
+  "view_digest": "2850d4617772c29749e1fcab31a115fd31cdc34f835f518ccefa7301a96b201e",
+  "parent_digest": "2395092c17034b218c3faa02d0d1a781661b12c9dcb93654e756a6de5074a1a6",
+  "capture": "scenario"
+ },
+ "lychee": {
+  "app_version": "6.10.4",
+  "origin": "http://127.0.0.1:3402",
+  "manifest_name": "127-0-0-1-3402",
+  "scoped_records": 134,
+  "methods": {
+   "GET": 129,
+   "POST": 3,
    "PATCH": 1,
    "DELETE": 1
   },
-  "scoped_har_bytes": 157373,
-  "scoped_har_sha256": "286207ccf9bec4e41170bbd802886c9bf3d11de51501e01faad00ffda415d93d",
-  "capture_evidence_id": "ev_85d6e0f7e7c20d307a860f6c35f7e696fa6baf0e1a54f19060d77989e82fadac",
-  "manifest_evidence_id": "ev_d41265c6d4379a907ba76eeebbfe708af1f9e04618bbab29c47d7ba9b1c2ac7c",
-  "manifest_norules_evidence_id": "ev_c6d455ba21c86b13bdf6da89c040de1cfaf37dcbdd511fc54edc494a075c247c",
-  "tools": 31,
+  "scoped_har_bytes": 2395283,
+  "scoped_har_sha256": "420c6f740ee3b72b6d7217abde543a280ad51b66dac844786b87729db1473dd9",
+  "capture_evidence_id": "ev_4c93356ec80d86dddda8881ba10b66ea5bb7bb3dc22787cff2d986fe12319669",
+  "manifest_evidence_id": "ev_9b22b236f85033d95ac596940e36b339f2c0283a934e6fb1c604743c0ead1a86",
+  "manifest_norules_evidence_id": "ev_182989cb4c593e3e551c68ceacbc87b20e09f2be5afc18213f4e7f7864a161b4",
+  "tools": 15,
+  "tools_by_method": {
+   "DELETE": 1,
+   "GET": 11,
+   "PATCH": 1,
+   "POST": 2
+  },
+  "tools_norules": 27,
+  "templated_groups": 11,
+  "params_by_rule": {
+   "sibling-variance": 1
+  },
+  "params_total": 1,
+  "query_names": 9,
+  "tools_with_body_shape": 3,
+  "excluded": {
+   "ui-page-or-asset": 66
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "controlled-replay",
+  "view_digest": "8e76024b259e3c3392cbeb26152dd029e2faca814036baaf256ef0e212e1ad2e",
+  "parent_digest": "4c93356ec80d86dddda8881ba10b66ea5bb7bb3dc22787cff2d986fe12319669",
+  "capture": "scenario"
+ },
+ "mattermost": {
+  "app_version": "12.0.0",
+  "origin": "http://127.0.0.1:3104",
+  "manifest_name": "127-0-0-1-3104",
+  "scoped_records": 129,
+  "methods": {
+   "GET": 119,
+   "PUT": 2,
+   "POST": 7,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 322821,
+  "scoped_har_sha256": "e5874c112d0ab28d94c68595073b1e0512f0cadc8a47b5bf40914ef8d4cf470f",
+  "capture_evidence_id": "ev_7cc07ebe56003462bbd033d9c12c3a92d92badddff6f9199083c68e9a60357ba",
+  "manifest_evidence_id": "ev_97f3c9f89c92adf208d73e8e8e5de3dcb34c5a19fac09fbb29280d423f3f5342",
+  "manifest_norules_evidence_id": "ev_520a920a6a48370899829dcef7b21b4fdb812eb8f8b9abda7c5784cb1d1dfdaf",
+  "tools": 37,
   "tools_by_method": {
    "GET": 28,
-   "POST": 1,
-   "DELETE": 1,
-   "PATCH": 1
-  },
-  "tools_norules": 31,
-  "templated_groups": 23,
-  "params_by_rule": {
-   "numeric": 27
-  },
-  "params_total": 27,
-  "query_names": 26,
-  "tools_with_body_shape": 2,
-  "excluded": {},
-  "unknowns": [
-   "authorization-model",
-   "response-semantics",
-   "state-transition"
-  ],
-  "confidence": "inferred",
-  "authority": "historical-reference",
-  "view_digest": "73d85eadcc80001f918310d2f48939ec00ef24e06fc49408d713cdaf45587cdd",
-  "parent_digest": "85d6e0f7e7c20d307a860f6c35f7e696fa6baf0e1a54f19060d77989e82fadac"
- },
- "memos": {
-  "app_version": "0.31.0",
-  "origin": "http://127.0.0.1:3205",
-  "manifest_name": "127-0-0-1-3205",
-  "scoped_records": 67,
-  "methods": {
-   "GET": 64,
-   "POST": 1,
-   "PATCH": 1,
-   "DELETE": 1
-  },
-  "scoped_har_bytes": 113900,
-  "scoped_har_sha256": "88d94da05d999e68d6b7b3692e0c3bab48b02390921bc66ea2352f39df4cf2de",
-  "capture_evidence_id": "ev_c312b72e2468894d9dfbe7bffe1b38ab8a60dfad82d049e36ffd9c199420c31e",
-  "manifest_evidence_id": "ev_9535f9c5f689cd44d904d5b6e3b3462b1bc522be7ae1397e1a2a0eca35296955",
-  "manifest_norules_evidence_id": "ev_d78af12ffd40cd37e54d3867dbfa97a6a8d6c7045ecbcd4c822862756519ab54",
-  "tools": 26,
-  "tools_by_method": {
-   "GET": 23,
-   "POST": 1,
-   "DELETE": 1,
-   "PATCH": 1
-  },
-  "tools_norules": 56,
-  "templated_groups": 12,
-  "params_by_rule": {
-   "sibling-variance": 5,
-   "uuid": 7
-  },
-  "params_total": 12,
-  "query_names": 6,
-  "tools_with_body_shape": 2,
-  "excluded": {},
-  "unknowns": [
-   "authorization-model",
-   "response-semantics",
-   "state-transition"
-  ],
-  "confidence": "inferred",
-  "authority": "historical-reference",
-  "view_digest": "5b95f0996f4029b569c1413bc4e89d9c9864e1fa928f8082b9393bc2301208fb",
-  "parent_digest": "c312b72e2468894d9dfbe7bffe1b38ab8a60dfad82d049e36ffd9c199420c31e"
- },
- "shlink": {
-  "app_version": "5.1.7",
-  "origin": "http://127.0.0.1:3206",
-  "manifest_name": "127-0-0-1-3206",
-  "scoped_records": 66,
-  "methods": {
-   "GET": 63,
-   "POST": 1,
-   "PATCH": 1,
-   "DELETE": 1
-  },
-  "scoped_har_bytes": 117350,
-  "scoped_har_sha256": "97a0390d535b7d6f2555d14a7402f5785ac85825b7077236bcfcc8ccbbc1714c",
-  "capture_evidence_id": "ev_4779d529d62305de670c032f0cdd9188c95cf86f0b549b9a0fac8554db69142b",
-  "manifest_evidence_id": "ev_a3d72b74e5d37d9c974dd35a57591dbbe52e160452a2cc3b63a4d2576e852336",
-  "manifest_norules_evidence_id": "ev_2bb6ae3d85e4109d51fbed6349c7c371dfd2c38596412c83e649052b90f906b4",
-  "tools": 17,
-  "tools_by_method": {
-   "GET": 15,
-   "POST": 1,
-   "PATCH": 1
-  },
-  "tools_norules": 43,
-  "templated_groups": 4,
-  "params_by_rule": {
-   "sibling-variance": 4
-  },
-  "params_total": 4,
-  "query_names": 27,
-  "tools_with_body_shape": 2,
-  "excluded": {
-   "non-json": 1
-  },
-  "unknowns": [
-   "authorization-model",
-   "response-semantics",
-   "state-transition"
-  ],
-  "confidence": "inferred",
-  "authority": "historical-reference",
-  "view_digest": "deb77b6e506397a3cd09d9b58da72487d1da7a42933140c54036da10d868b34e",
-  "parent_digest": "4779d529d62305de670c032f0cdd9188c95cf86f0b549b9a0fac8554db69142b"
- },
- "immich": {
-  "app_version": "3.3.3",
-  "origin": "http://127.0.0.1:3207",
-  "manifest_name": "127-0-0-1-3207",
-  "scoped_records": 120,
-  "methods": {
-   "GET": 116,
-   "POST": 2,
-   "PATCH": 1,
-   "DELETE": 1
-  },
-  "scoped_har_bytes": 228076,
-  "scoped_har_sha256": "a525d5143fb73344d07d44ce129c5d9be7d83ef9a2d5dfc2f453bfa80b0647d0",
-  "capture_evidence_id": "ev_1a9cf44e9f31412cd6f46b77293c666f4bfa1f6f9afccc430ca3b8d83937590a",
-  "manifest_evidence_id": "ev_fda1218791c0c5ced99ef79739463e0a102755b2cdf71df008e93bd52e3ba617",
-  "manifest_norules_evidence_id": "ev_534b8b25b622007e06bda40b6a5c685a0fe74031d5103908cd8c9139c11e4948",
-  "tools": 45,
-  "tools_by_method": {
-   "GET": 41,
-   "POST": 2,
-   "DELETE": 1,
-   "PATCH": 1
-  },
-  "tools_norules": 45,
-  "templated_groups": 13,
-  "params_by_rule": {
-   "uuid": 13
-  },
-  "params_total": 13,
-  "query_names": 33,
-  "tools_with_body_shape": 3,
-  "excluded": {},
-  "unknowns": [
-   "authorization-model",
-   "response-semantics",
-   "state-transition"
-  ],
-  "confidence": "inferred",
-  "authority": "historical-reference",
-  "view_digest": "b020aed8dcf38dce0be98bf4f188aaedd6edff1fb468619d4554591eff5796a1",
-  "parent_digest": "1a9cf44e9f31412cd6f46b77293c666f4bfa1f6f9afccc430ca3b8d83937590a"
- },
- "homebox": {
-  "app_version": "0.27.0",
-  "origin": "http://127.0.0.1:3208",
-  "manifest_name": "127-0-0-1-3208",
-  "scoped_records": 91,
-  "methods": {
-   "GET": 87,
-   "PUT": 2,
-   "POST": 1,
-   "DELETE": 1
-  },
-  "scoped_har_bytes": 256047,
-  "scoped_har_sha256": "249dbf323faaf79dc6a91d856dc6e7ebc494f2e8bfa3b15af85de7af0bcbf2cf",
-  "capture_evidence_id": "ev_cb9cef1bb6902484524658e34cfb3aa220e1f06dd807e8da93c2089899872e1c",
-  "manifest_evidence_id": "ev_12cd79fbad0e4c228684699815fdee9521ba2b9ede6c2b891c504603d1e4e457",
-  "manifest_norules_evidence_id": "ev_c3747d67e4a51ef2a5688ddc2829ae5649a7ac4234b61a555ad07d785b2e2e90",
-  "tools": 28,
-  "tools_by_method": {
-   "GET": 24,
-   "POST": 1,
+   "POST": 6,
    "DELETE": 1,
    "PUT": 2
   },
-  "tools_norules": 28,
-  "templated_groups": 7,
+  "tools_norules": 58,
+  "templated_groups": 26,
   "params_by_rule": {
-   "uuid": 7
-  },
-  "params_total": 7,
-  "query_names": 19,
-  "tools_with_body_shape": 3,
-  "excluded": {},
-  "unknowns": [
-   "authorization-model",
-   "response-semantics",
-   "state-transition"
-  ],
-  "confidence": "inferred",
-  "authority": "historical-reference",
-  "view_digest": "da0c2a3473cd51ad682dbbaef9e634d163e3530b714c44bb7007eb09abaaeb8f",
-  "parent_digest": "cb9cef1bb6902484524658e34cfb3aa220e1f06dd807e8da93c2089899872e1c"
- },
- "navidrome": {
-  "app_version": "0.64.2",
-  "origin": "http://127.0.0.1:3233",
-  "manifest_name": "127-0-0-1-3233",
-  "scoped_records": 71,
-  "methods": {
-   "GET": 68,
-   "POST": 1,
-   "PUT": 1,
-   "DELETE": 1
-  },
-  "scoped_har_bytes": 222808,
-  "scoped_har_sha256": "b516aa95b4651db7489d229659785af72dc85c906793b52919cd759f191dedf5",
-  "capture_evidence_id": "ev_3995896845c068943afaf1c5bb032f2e6f303a279f4c24c26fae001311ec22b7",
-  "manifest_evidence_id": "ev_e37526a3edbe955837e258ccc596d67628ca77f09f9b2a6eb2b27a967ab57f67",
-  "manifest_norules_evidence_id": "ev_475574445675330cc4afb2c4bd7951e3438bad141740bcba49b1b89248329bf9",
-  "tools": 25,
-  "tools_by_method": {
-   "GET": 22,
-   "POST": 1,
-   "DELETE": 1,
-   "PUT": 1
-  },
-  "tools_norules": 46,
-  "templated_groups": 9,
-  "params_by_rule": {
-   "sibling-variance": 8,
+   "opaque-token": 32,
    "numeric": 1
   },
-  "params_total": 9,
-  "query_names": 56,
-  "tools_with_body_shape": 2,
+  "params_total": 33,
+  "query_names": 16,
+  "tools_with_body_shape": 6,
   "excluded": {},
   "unknowns": [
    "authorization-model",
@@ -592,94 +915,8 @@
   ],
   "confidence": "inferred",
   "authority": "historical-reference",
-  "view_digest": "dd415d840a0ac4cf28450f55951e10ad4fd7ddbe3cd5c0b259a27385a821e7aa",
-  "parent_digest": "3995896845c068943afaf1c5bb032f2e6f303a279f4c24c26fae001311ec22b7"
- },
- "keycloak": {
-  "app_version": "26.8.1",
-  "origin": "http://127.0.0.1:3210",
-  "manifest_name": "127-0-0-1-3210",
-  "scoped_records": 73,
-  "methods": {
-   "GET": 70,
-   "POST": 1,
-   "PUT": 1,
-   "DELETE": 1
-  },
-  "scoped_har_bytes": 197162,
-  "scoped_har_sha256": "7c78d99263c9fb922b3fbf714619a3d378f08781b2f677d6a473bd28d5b85b3b",
-  "capture_evidence_id": "ev_21d8808f42337b36a19f943f7bca1058d9f2c73b660d5bce1f10b05539ca525d",
-  "manifest_evidence_id": "ev_b1030270ddcec481e452055bb5db7711cf3539cb97b7d86b9733f1023452fafa",
-  "manifest_norules_evidence_id": "ev_6898940f9e4f1b716c00ced3346e4b1d5f7ba01aadd8269592edf408bf70ac1a",
-  "tools": 40,
-  "tools_by_method": {
-   "GET": 39,
-   "POST": 1
-  },
-  "tools_norules": 40,
-  "templated_groups": 19,
-  "params_by_rule": {
-   "uuid": 18
-  },
-  "params_total": 18,
-  "query_names": 25,
-  "tools_with_body_shape": 1,
-  "excluded": {
-   "non-json": 2
-  },
-  "unknowns": [
-   "authorization-model",
-   "response-semantics",
-   "state-transition"
-  ],
-  "confidence": "inferred",
-  "authority": "historical-reference",
-  "view_digest": "fe4d22680496c9af6776c662329fcd74cf38561f91904031d2a666881fc3a34d",
-  "parent_digest": "21d8808f42337b36a19f943f7bca1058d9f2c73b660d5bce1f10b05539ca525d"
- },
- "vikunja": {
-  "app_version": "2.7",
-  "origin": "http://127.0.0.1:3211",
-  "manifest_name": "127-0-0-1-3211",
-  "scoped_records": 102,
-  "methods": {
-   "GET": 98,
-   "PUT": 1,
-   "POST": 1,
-   "PATCH": 1,
-   "DELETE": 1
-  },
-  "scoped_har_bytes": 378047,
-  "scoped_har_sha256": "10843162cbd00ebf87245969fcda682fa750ff07d0640cae18c1f9985883b314",
-  "capture_evidence_id": "ev_6172766db5dacc12fa38511878e7a2db573f50122947cad181f09d52b850cceb",
-  "manifest_evidence_id": "ev_19917e26dc88ca87887cb83f10d96d4f922051f312fa420ffdcd27d57f25b7e4",
-  "manifest_norules_evidence_id": "ev_512a333bb058854675add5c92a5fb4299feb66a47526f5660a605e105aa31e4d",
-  "tools": 28,
-  "tools_by_method": {
-   "GET": 24,
-   "POST": 1,
-   "DELETE": 1,
-   "PATCH": 1,
-   "PUT": 1
-  },
-  "tools_norules": 28,
-  "templated_groups": 20,
-  "params_by_rule": {
-   "numeric": 25
-  },
-  "params_total": 25,
-  "query_names": 39,
-  "tools_with_body_shape": 2,
-  "excluded": {},
-  "unknowns": [
-   "authorization-model",
-   "response-semantics",
-   "state-transition"
-  ],
-  "confidence": "inferred",
-  "authority": "historical-reference",
-  "view_digest": "9cc0d1da27fdaf1c20d32f66436a38355e6ae3a478eb8b656f7727d4d0e259ff",
-  "parent_digest": "6172766db5dacc12fa38511878e7a2db573f50122947cad181f09d52b850cceb"
+  "view_digest": "79d4c613d0958989c5fe3854e20ec04a72c862a7ed3d94c41d71d8e55fd46e2e",
+  "parent_digest": "7cc07ebe56003462bbd033d9c12c3a92d92badddff6f9199083c68e9a60357ba"
  },
  "mealie": {
   "app_version": "3.28",
@@ -725,36 +962,79 @@
   "view_digest": "27c785e952a0439ca9bfa4d16c3ced7272d2113bfcba65efd807696ba16d0428",
   "parent_digest": "b23b02ad2cf3e1cf793dae77441e7867b7043564dbe0ed4d18d89776611239be"
  },
- "paperless": {
-  "app_version": "2.20",
-  "origin": "http://127.0.0.1:3213",
-  "manifest_name": "127-0-0-1-3213",
-  "scoped_records": 108,
+ "memos": {
+  "app_version": "0.31.0",
+  "origin": "http://127.0.0.1:3205",
+  "manifest_name": "127-0-0-1-3205",
+  "scoped_records": 67,
   "methods": {
-   "GET": 102,
-   "POST": 3,
+   "GET": 64,
+   "POST": 1,
    "PATCH": 1,
-   "DELETE": 2
+   "DELETE": 1
   },
-  "scoped_har_bytes": 203943,
-  "scoped_har_sha256": "ab61f99d59b8a29032dadcf0aa5f682e94509e9fad91fe38506c5f822438884b",
-  "capture_evidence_id": "ev_8d7f7da6eb5cdd44da2be33be1860bd2d2d5d881ea2fe57e8d366307b1e39f43",
-  "manifest_evidence_id": "ev_d0c5614ab04ff480bbf669423cee11d97bb4f5819c5e3fb30b37eda931ac4c27",
-  "manifest_norules_evidence_id": "ev_4ab1de7e46207fdacdc9e05af7cffdbe6572d321c239890e3bab4e4822bd2a63",
-  "tools": 41,
+  "scoped_har_bytes": 113900,
+  "scoped_har_sha256": "88d94da05d999e68d6b7b3692e0c3bab48b02390921bc66ea2352f39df4cf2de",
+  "capture_evidence_id": "ev_c312b72e2468894d9dfbe7bffe1b38ab8a60dfad82d049e36ffd9c199420c31e",
+  "manifest_evidence_id": "ev_9535f9c5f689cd44d904d5b6e3b3462b1bc522be7ae1397e1a2a0eca35296955",
+  "manifest_norules_evidence_id": "ev_d78af12ffd40cd37e54d3867dbfa97a6a8d6c7045ecbcd4c822862756519ab54",
+  "tools": 26,
   "tools_by_method": {
-   "GET": 35,
-   "POST": 3,
-   "DELETE": 2,
+   "GET": 23,
+   "POST": 1,
+   "DELETE": 1,
    "PATCH": 1
   },
-  "tools_norules": 41,
-  "templated_groups": 21,
+  "tools_norules": 56,
+  "templated_groups": 12,
   "params_by_rule": {
-   "numeric": 21
+   "sibling-variance": 5,
+   "uuid": 7
   },
-  "params_total": 21,
-  "query_names": 46,
+  "params_total": 12,
+  "query_names": 6,
+  "tools_with_body_shape": 2,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "5b95f0996f4029b569c1413bc4e89d9c9864e1fa928f8082b9393bc2301208fb",
+  "parent_digest": "c312b72e2468894d9dfbe7bffe1b38ab8a60dfad82d049e36ffd9c199420c31e"
+ },
+ "metabase": {
+  "app_version": "0.64.2.8",
+  "origin": "http://127.0.0.1:3201",
+  "manifest_name": "127-0-0-1-3201",
+  "scoped_records": 120,
+  "methods": {
+   "GET": 112,
+   "POST": 6,
+   "PUT": 1,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 515053,
+  "scoped_har_sha256": "cd791130c103bf19299b14221ac2c27ae0bc9f8ae16e604c82ac4b34631a2d8a",
+  "capture_evidence_id": "ev_ae41d6f2a19b032ad77cd55df2547050605d49d7877db2e63b47c49647324924",
+  "manifest_evidence_id": "ev_97964117e7834ff3666205d78ca1a191235de72b54f4aa6bc0f96899674581a8",
+  "manifest_norules_evidence_id": "ev_84f096bec5f1ed85a460a85f07e3fd430869a4d65443c30f1b86c0e3f01e4cac",
+  "tools": 42,
+  "tools_by_method": {
+   "GET": 37,
+   "POST": 3,
+   "DELETE": 1,
+   "PUT": 1
+  },
+  "tools_norules": 42,
+  "templated_groups": 23,
+  "params_by_rule": {
+   "numeric": 25
+  },
+  "params_total": 25,
+  "query_names": 31,
   "tools_with_body_shape": 4,
   "excluded": {},
   "unknowns": [
@@ -764,132 +1044,8 @@
   ],
   "confidence": "inferred",
   "authority": "historical-reference",
-  "view_digest": "95a8ddf5c811c279f531f68480eec7b996cd1543e37f9ad2d0cef7a44411fc6b",
-  "parent_digest": "8d7f7da6eb5cdd44da2be33be1860bd2d2d5d881ea2fe57e8d366307b1e39f43"
- },
- "listmonk": {
-  "app_version": "6.2",
-  "origin": "http://127.0.0.1:3214",
-  "manifest_name": "127-0-0-1-3214",
-  "scoped_records": 68,
-  "methods": {
-   "GET": 65,
-   "POST": 1,
-   "PUT": 1,
-   "DELETE": 1
-  },
-  "scoped_har_bytes": 134271,
-  "scoped_har_sha256": "db06948f2b2e2525759589dd9788f84edfa163926ae67c9c4e49c2f3b64962d0",
-  "capture_evidence_id": "ev_40b38ad41b4906c91a10812bd33a562c757b5bbf249f84f2f5b173e3fe59f0ba",
-  "manifest_evidence_id": "ev_2219c491a30c79107897a70884bbe76d8376ccb7f2c67943c7583baeea100cac",
-  "manifest_norules_evidence_id": "ev_ef5dbcf2430ac75898bfcf8fc69b9a8c55597f1e007704c3aebe78ceb38be6dc",
-  "tools": 29,
-  "tools_by_method": {
-   "GET": 26,
-   "POST": 1,
-   "DELETE": 1,
-   "PUT": 1
-  },
-  "tools_norules": 29,
-  "templated_groups": 11,
-  "params_by_rule": {
-   "numeric": 11
-  },
-  "params_total": 11,
-  "query_names": 24,
-  "tools_with_body_shape": 2,
-  "excluded": {},
-  "unknowns": [
-   "authorization-model",
-   "response-semantics",
-   "state-transition"
-  ],
-  "confidence": "inferred",
-  "authority": "historical-reference",
-  "view_digest": "cda0194e39b9d594bb110d23953ef7243f038946af8d8164c777edddecb0244a",
-  "parent_digest": "40b38ad41b4906c91a10812bd33a562c757b5bbf249f84f2f5b173e3fe59f0ba"
- },
- "umami": {
-  "app_version": "3.4",
-  "origin": "http://127.0.0.1:3215",
-  "manifest_name": "127-0-0-1-3215",
-  "scoped_records": 100,
-  "methods": {
-   "GET": 97,
-   "POST": 2,
-   "DELETE": 1
-  },
-  "scoped_har_bytes": 151479,
-  "scoped_har_sha256": "f896fb119afe85ef513002099f9c2762402ec54cde9878bb58ee374824d67fc4",
-  "capture_evidence_id": "ev_12a4e7f97b75d77076ad5f7c072a7073a32f0c713f8488096e727a134cc78d35",
-  "manifest_evidence_id": "ev_6559a1b1ad3429225eecffeee0b3397adeb0a5cb9535d4de80544f3c9e175ead",
-  "manifest_norules_evidence_id": "ev_52c67b6be13a69bdc56d92c614042b647ccad346ccd7be6c6c237a770aba1f77",
-  "tools": 49,
-  "tools_by_method": {
-   "GET": 46,
-   "POST": 2,
-   "DELETE": 1
-  },
-  "tools_norules": 49,
-  "templated_groups": 37,
-  "params_by_rule": {
-   "uuid": 44
-  },
-  "params_total": 44,
-  "query_names": 70,
-  "tools_with_body_shape": 2,
-  "excluded": {},
-  "unknowns": [
-   "authorization-model",
-   "response-semantics",
-   "state-transition"
-  ],
-  "confidence": "inferred",
-  "authority": "historical-reference",
-  "view_digest": "cad72ab20b3fd578d0a384f682232bc189db96cea86cf73f87fdd65b59304c6f",
-  "parent_digest": "12a4e7f97b75d77076ad5f7c072a7073a32f0c713f8488096e727a134cc78d35"
- },
- "espocrm": {
-  "app_version": "10.0.10",
-  "origin": "http://127.0.0.1:3216",
-  "manifest_name": "127-0-0-1-3216",
-  "scoped_records": 131,
-  "methods": {
-   "GET": 128,
-   "POST": 1,
-   "PUT": 1,
-   "DELETE": 1
-  },
-  "scoped_har_bytes": 260567,
-  "scoped_har_sha256": "b5fdf1ec365990047149655278e9a74f26b4fbbad53d75113ddb65ed89357b26",
-  "capture_evidence_id": "ev_f3ad613cd68560f8796fa77cc136de88152b4ab1158158d7b74a873455ec3fe9",
-  "manifest_evidence_id": "ev_318ff198f98931b6b5d15f468d8ba767e95abbeb05ed8eb65cd742f138117f34",
-  "manifest_norules_evidence_id": "ev_447a95c40dcdd9523cc24f7bc9c41ec47f387ab792deabbe55a3b62c91fc3556",
-  "tools": 88,
-  "tools_by_method": {
-   "GET": 85,
-   "POST": 1,
-   "DELETE": 1,
-   "PUT": 1
-  },
-  "tools_norules": 110,
-  "templated_groups": 35,
-  "params_by_rule": {
-   "opaque-token": 35
-  },
-  "params_total": 35,
-  "query_names": 196,
-  "tools_with_body_shape": 2,
-  "excluded": {},
-  "unknowns": [
-   "authorization-model",
-   "response-semantics",
-   "state-transition"
-  ],
-  "confidence": "inferred",
-  "authority": "historical-reference",
-  "view_digest": "5248cf49d4edd4de1d8b7e0bbd0fa5ddae137c74b977c3657adf1c062122e1fb",
-  "parent_digest": "f3ad613cd68560f8796fa77cc136de88152b4ab1158158d7b74a873455ec3fe9"
+  "view_digest": "437a73cfadda9494ecb912d01a8f2f5b07fde3beea46c09b3943e9a8c4d1338c",
+  "parent_digest": "ae41d6f2a19b032ad77cd55df2547050605d49d7877db2e63b47c49647324924"
  },
  "miniflux": {
   "app_version": "2.3.3",
@@ -977,36 +1133,117 @@
   "view_digest": "16b9e566b91c27ac57150c25b8c359fa4fbe7e9259493cf7e47361d41bba6dfd",
   "parent_digest": "2df554f077a7336e5d535fa9e49df0b2d984c88dfc06c774e0343f26f9176a3e"
  },
- "bookstack": {
-  "app_version": "26.09.1",
-  "origin": "http://127.0.0.1:3219",
-  "manifest_name": "127-0-0-1-3219",
-  "scoped_records": 65,
+ "navidrome": {
+  "app_version": "0.64.2",
+  "origin": "http://127.0.0.1:3233",
+  "manifest_name": "127-0-0-1-3233",
+  "scoped_records": 71,
   "methods": {
-   "GET": 61,
-   "POST": 2,
+   "GET": 68,
+   "POST": 1,
    "PUT": 1,
    "DELETE": 1
   },
-  "scoped_har_bytes": 127666,
-  "scoped_har_sha256": "1f807d4d2d2ef490cdc5cac50ffcbf573abfc967351038256b92e18f4ebe5366",
-  "capture_evidence_id": "ev_07a98c12a171833f8ca00f5f4769a165b358a5e2cca784718af469fc35ee5b77",
-  "manifest_evidence_id": "ev_47deffa8044f6f1c6835193c59746931187576db6b1c0cc367b7c4380714c322",
-  "manifest_norules_evidence_id": "ev_294a3fd78d221c90e5246cffd336196604377bca21248664f798c744606815ee",
-  "tools": 31,
+  "scoped_har_bytes": 222808,
+  "scoped_har_sha256": "b516aa95b4651db7489d229659785af72dc85c906793b52919cd759f191dedf5",
+  "capture_evidence_id": "ev_3995896845c068943afaf1c5bb032f2e6f303a279f4c24c26fae001311ec22b7",
+  "manifest_evidence_id": "ev_e37526a3edbe955837e258ccc596d67628ca77f09f9b2a6eb2b27a967ab57f67",
+  "manifest_norules_evidence_id": "ev_475574445675330cc4afb2c4bd7951e3438bad141740bcba49b1b89248329bf9",
+  "tools": 25,
   "tools_by_method": {
-   "GET": 27,
-   "POST": 2,
+   "GET": 22,
+   "POST": 1,
    "DELETE": 1,
    "PUT": 1
   },
-  "tools_norules": 31,
-  "templated_groups": 14,
+  "tools_norules": 46,
+  "templated_groups": 9,
   "params_by_rule": {
-   "numeric": 14
+   "sibling-variance": 8,
+   "numeric": 1
   },
-  "params_total": 14,
-  "query_names": 11,
+  "params_total": 9,
+  "query_names": 56,
+  "tools_with_body_shape": 2,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "dd415d840a0ac4cf28450f55951e10ad4fd7ddbe3cd5c0b259a27385a821e7aa",
+  "parent_digest": "3995896845c068943afaf1c5bb032f2e6f303a279f4c24c26fae001311ec22b7"
+ },
+ "noaa-tides": {
+  "app_version": "v1",
+  "origin": "https://api.tidesandcurrents.noaa.gov",
+  "manifest_name": "api-tidesandcurrents-noaa-gov",
+  "scoped_records": 56,
+  "methods": {
+   "GET": 56
+  },
+  "scoped_har_bytes": 311519,
+  "scoped_har_sha256": "7e8a15258907151dac9391ac8687a3b17916c9a78208841634f11a33934e948f",
+  "capture_evidence_id": "ev_5ca46908fb465b0c7dddd2fa0a37a3f72870fa0add96c1ae818a5b9cb36c4766",
+  "manifest_evidence_id": "ev_a54a45f249d0ea4883e3b687ab1e4afd9c1671b34e14226298aeb2542dbdad82",
+  "manifest_norules_evidence_id": "ev_f09bba35a58574c41db88389c32004eb27bc56d59536ba75c9d85b6bb38a9a00",
+  "tools": 12,
+  "tools_by_method": {
+   "GET": 12
+  },
+  "tools_norules": 21,
+  "templated_groups": 9,
+  "params_by_rule": {
+   "numeric": 8,
+   "sibling-variance": 1
+  },
+  "params_total": 9,
+  "query_names": 17,
+  "tools_with_body_shape": 0,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "fd1aca66243810f96ab81fafdcdd6b0a8c388345ca49ed01d0d78a9dce643874",
+  "parent_digest": "5ca46908fb465b0c7dddd2fa0a37a3f72870fa0add96c1ae818a5b9cb36c4766"
+ },
+ "nocodb": {
+  "app_version": "2026.09.1",
+  "origin": "http://127.0.0.1:3103",
+  "manifest_name": "127-0-0-1-3103",
+  "scoped_records": 105,
+  "methods": {
+   "GET": 80,
+   "POST": 23,
+   "PATCH": 1,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 324797,
+  "scoped_har_sha256": "fe7e31fddd225d7bd00ecd8739fd0a2a474ef7a36aa79398900bc81499093f65",
+  "capture_evidence_id": "ev_c2296ec7318f8978720a75499d6fb34a6c5f5f8943f2da32acc1eaaad450e08e",
+  "manifest_evidence_id": "ev_12b6ec59bee2946b7b74a675d71335b5c56a2c026712583c6342ca0a752d8616",
+  "manifest_norules_evidence_id": "ev_98629f8a878998eb1e29ca6a1800dc5fa0f2e1ef92db8f87bbc90e56dbb7b961",
+  "tools": 28,
+  "tools_by_method": {
+   "GET": 23,
+   "POST": 3,
+   "DELETE": 1,
+   "PATCH": 1
+  },
+  "tools_norules": 35,
+  "templated_groups": 20,
+  "params_by_rule": {
+   "opaque-token": 24,
+   "numeric": 1
+  },
+  "params_total": 25,
+  "query_names": 13,
   "tools_with_body_shape": 3,
   "excluded": {},
   "unknowns": [
@@ -1016,37 +1253,246 @@
   ],
   "confidence": "inferred",
   "authority": "historical-reference",
-  "view_digest": "9e25a0530da2302938a01675ca07fd7d373d8b750f864a0447aae0d20f6d6930",
-  "parent_digest": "07a98c12a171833f8ca00f5f4769a165b358a5e2cca784718af469fc35ee5b77"
+  "view_digest": "67dc3ce3bade67356c5b4eba4430e17303a59e7faeada017a85f1e5a54f168de",
+  "parent_digest": "c2296ec7318f8978720a75499d6fb34a6c5f5f8943f2da32acc1eaaad450e08e"
  },
- "grist": {
-  "app_version": "1.7.21",
-  "origin": "http://127.0.0.1:3220",
-  "manifest_name": "127-0-0-1-3220",
-  "scoped_records": 65,
+ "nomad": {
+  "app_version": "1.11.3",
+  "origin": "http://127.0.0.1:3304",
+  "manifest_name": "127-0-0-1-3304",
+  "scoped_records": 131,
   "methods": {
-   "GET": 59,
-   "POST": 3,
-   "PATCH": 2,
+   "GET": 115,
+   "POST": 15,
    "DELETE": 1
   },
-  "scoped_har_bytes": 111326,
-  "scoped_har_sha256": "0ba1ce8653bb74e217cf221c92cb213dddcfaf807aa2fc13687c03295532d2c9",
-  "capture_evidence_id": "ev_f74ce8e1b2435b5ff5ce9cf930d3ece7b866503615fbd15e54657be3a268d1a1",
-  "manifest_evidence_id": "ev_017809f63eed60ddfc1f97299fe7f7e58e3d111585cd49939499d18341fdbb99",
-  "manifest_norules_evidence_id": "ev_3bddad8c7f0f504e41de8fddb818530ad3c43e50f6df5cf84b0b168755dac4be",
-  "tools": 31,
+  "scoped_har_bytes": 615790,
+  "scoped_har_sha256": "61df40951c6ee1872176416df0d5b0a6c2f8eaea91230c7f01b16ea47343df83",
+  "capture_evidence_id": "ev_09880f9a941052d3335d98097843a3ad3774778266aabd85fbe9093de61b6ad1",
+  "manifest_evidence_id": "ev_12982eae5eeb6c118ce31026d3377f17232a0b872b74ef36620d7c418752688d",
+  "manifest_norules_evidence_id": "ev_5300af8f30144a61e33ba661313b6f3267682d5abe3a80838ec0b091b73eca5c",
+  "tools": 39,
   "tools_by_method": {
+   "GET": 34,
    "DELETE": 1,
-   "PATCH": 2,
-   "GET": 25,
-   "POST": 3
+   "POST": 4
   },
-  "tools_norules": 43,
+  "tools_norules": 46,
+  "templated_groups": 6,
+  "params_by_rule": {
+   "uuid": 5,
+   "sibling-variance": 1
+  },
+  "params_total": 6,
+  "query_names": 36,
+  "tools_with_body_shape": 3,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "3c59407080b71952530f7de37e65234d114bc0708151668356a5a1f20ac95f89",
+  "parent_digest": "09880f9a941052d3335d98097843a3ad3774778266aabd85fbe9093de61b6ad1"
+ },
+ "openfda": {
+  "app_version": "v1",
+  "origin": "https://api.fda.gov",
+  "manifest_name": "api-fda-gov",
+  "scoped_records": 53,
+  "methods": {
+   "GET": 53
+  },
+  "scoped_har_bytes": 347854,
+  "scoped_har_sha256": "2d19831b1c27073e37639eb593dceb429dc8190cdd612c767e07fc0262671568",
+  "capture_evidence_id": "ev_831755436c6fab21a1196cc47650cc102eb756bc8286b8c8528cda928dcfaf90",
+  "manifest_evidence_id": "ev_4acb8641e2a8042c00762d967a519ccba688eff4255b13a44cc01ce5c6efa924",
+  "manifest_norules_evidence_id": "ev_4a38afdce6788df7b8aa53c1b2146458f7575a476f2fdf149517c96e17423c02",
+  "tools": 9,
+  "tools_by_method": {
+   "GET": 9
+  },
+  "tools_norules": 9,
+  "templated_groups": 0,
+  "params_by_rule": {},
+  "params_total": 0,
+  "query_names": 23,
+  "tools_with_body_shape": 0,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "derived",
+  "authority": "historical-reference",
+  "view_digest": "6924f07d7711efa2987c72fc2cfa37ea24cca60baa2198af23033ad4acac7607",
+  "parent_digest": "831755436c6fab21a1196cc47650cc102eb756bc8286b8c8528cda928dcfaf90"
+ },
+ "paperless": {
+  "app_version": "2.20",
+  "origin": "http://127.0.0.1:3213",
+  "manifest_name": "127-0-0-1-3213",
+  "scoped_records": 108,
+  "methods": {
+   "GET": 102,
+   "POST": 3,
+   "PATCH": 1,
+   "DELETE": 2
+  },
+  "scoped_har_bytes": 203943,
+  "scoped_har_sha256": "ab61f99d59b8a29032dadcf0aa5f682e94509e9fad91fe38506c5f822438884b",
+  "capture_evidence_id": "ev_8d7f7da6eb5cdd44da2be33be1860bd2d2d5d881ea2fe57e8d366307b1e39f43",
+  "manifest_evidence_id": "ev_d0c5614ab04ff480bbf669423cee11d97bb4f5819c5e3fb30b37eda931ac4c27",
+  "manifest_norules_evidence_id": "ev_4ab1de7e46207fdacdc9e05af7cffdbe6572d321c239890e3bab4e4822bd2a63",
+  "tools": 41,
+  "tools_by_method": {
+   "GET": 35,
+   "POST": 3,
+   "DELETE": 2,
+   "PATCH": 1
+  },
+  "tools_norules": 41,
+  "templated_groups": 21,
+  "params_by_rule": {
+   "numeric": 21
+  },
+  "params_total": 21,
+  "query_names": 46,
+  "tools_with_body_shape": 4,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "95a8ddf5c811c279f531f68480eec7b996cd1543e37f9ad2d0cef7a44411fc6b",
+  "parent_digest": "8d7f7da6eb5cdd44da2be33be1860bd2d2d5d881ea2fe57e8d366307b1e39f43"
+ },
+ "photoprism": {
+  "app_version": "261007",
+  "origin": "http://127.0.0.1:3401",
+  "manifest_name": "127-0-0-1-3401",
+  "scoped_records": 277,
+  "methods": {
+   "GET": 274,
+   "POST": 1,
+   "PUT": 1,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 3155176,
+  "scoped_har_sha256": "4210fe0f993bd5230688332e895dd860071b89c061f35eea92cef9bada99e31d",
+  "capture_evidence_id": "ev_28d39ee2f958aaba2513fdbac537632e40e82a4855acc760da1d2448023e0c60",
+  "manifest_evidence_id": "ev_81f20a4edbd785a66b689f99eae57d55989b94f43432ad290e28fb9131bda1e0",
+  "manifest_norules_evidence_id": "ev_710869e110f67a15a7c4888b54410f92a735f4547a9467c5f868bc63b7521d0c",
+  "tools": 13,
+  "tools_by_method": {
+   "GET": 10,
+   "POST": 1,
+   "DELETE": 1,
+   "PUT": 1
+  },
+  "tools_norules": 28,
+  "templated_groups": 6,
+  "params_by_rule": {
+   "opaque-token": 5,
+   "hex": 1
+  },
+  "params_total": 6,
+  "query_names": 33,
+  "tools_with_body_shape": 2,
+  "excluded": {
+   "ui-page-or-asset": 21
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "controlled-replay",
+  "view_digest": "1fa9bb2f2ac54560fd05fb3765a8ab56e7b91ed1ab5f71ac2f45c96c4ce3214d",
+  "parent_digest": "28d39ee2f958aaba2513fdbac537632e40e82a4855acc760da1d2448023e0c60",
+  "capture": "scenario"
+ },
+ "pinry": {
+  "app_version": "2.1.13",
+  "origin": "http://127.0.0.1:3403",
+  "manifest_name": "127-0-0-1-3403",
+  "scoped_records": 568,
+  "methods": {
+   "GET": 565,
+   "POST": 1,
+   "PATCH": 1,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 2303521,
+  "scoped_har_sha256": "921645f30e35acb43127cb5cc01dd241da871bfdefefb333be9d58cc75f42951",
+  "capture_evidence_id": "ev_0878c47a60e7fec405c266932194cb3b41b645d635c765b4593c2c6e5d382ac5",
+  "manifest_evidence_id": "ev_3953f182d0e7f30e5531f5d130571e19971d958e79ae1655db5a82879e766c44",
+  "manifest_norules_evidence_id": "ev_6da8f9078be29928b5a1836e9a61a4c2e1cdc2f821335eec072b16bafb97c409",
+  "tools": 12,
+  "tools_by_method": {
+   "GET": 9,
+   "POST": 1,
+   "DELETE": 1,
+   "PATCH": 1
+  },
+  "tools_norules": 12,
+  "templated_groups": 23,
+  "params_by_rule": {
+   "numeric": 5
+  },
+  "params_total": 5,
+  "query_names": 13,
+  "tools_with_body_shape": 2,
+  "excluded": {
+   "ui-page-or-asset": 34,
+   "other-origin": 4
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "controlled-replay",
+  "view_digest": "52d73d0b044f4f01bb6387fdfb74a880822edf141d6dbaa44e89fc351132a284",
+  "parent_digest": "0878c47a60e7fec405c266932194cb3b41b645d635c765b4593c2c6e5d382ac5",
+  "capture": "scenario"
+ },
+ "redpanda-console": {
+  "app_version": "3.12.0",
+  "origin": "http://127.0.0.1:3305",
+  "manifest_name": "127-0-0-1-3305",
+  "scoped_records": 87,
+  "methods": {
+   "GET": 80,
+   "POST": 3,
+   "PATCH": 1,
+   "DELETE": 3
+  },
+  "scoped_har_bytes": 197451,
+  "scoped_har_sha256": "5bc50a249c91ea871c1f1cf5d93990674c4436ebde14eca474ae01454715a5b2",
+  "capture_evidence_id": "ev_54e03e32f9f70689e0cde3c4a220fa8f93b4b0948cd7f4cc4db8f59c40324382",
+  "manifest_evidence_id": "ev_60042ee4b8db9701a8b70151626c426c9bb659811a29fc3c6d596f76d1582874",
+  "manifest_norules_evidence_id": "ev_e38570c82cc915d07328913d77fdf0f07fa259c26274cf5f32993b9a40b1cd00",
+  "tools": 37,
+  "tools_by_method": {
+   "GET": 31,
+   "DELETE": 2,
+   "POST": 3,
+   "PATCH": 1
+  },
+  "tools_norules": 54,
   "templated_groups": 11,
   "params_by_rule": {
-   "sibling-variance": 4,
-   "numeric": 7
+   "numeric": 6,
+   "sibling-variance": 5
   },
   "params_total": 11,
   "query_names": 11,
@@ -1059,8 +1505,95 @@
   ],
   "confidence": "inferred",
   "authority": "historical-reference",
-  "view_digest": "a9cd9321b0c3827510faf19bed8d8eab67027095814800c9a00547bf079ed431",
-  "parent_digest": "f74ce8e1b2435b5ff5ce9cf930d3ece7b866503615fbd15e54657be3a268d1a1"
+  "view_digest": "c56955393d9f3c2bfdab645e652c4bb2b5f98159173049250b898703d6999b44",
+  "parent_digest": "54e03e32f9f70689e0cde3c4a220fa8f93b4b0948cd7f4cc4db8f59c40324382"
+ },
+ "sentry": {
+  "app_version": "26.9.0",
+  "origin": "http://127.0.0.1:3301",
+  "manifest_name": "127-0-0-1-3301",
+  "scoped_records": 72,
+  "methods": {
+   "GET": 67,
+   "POST": 2,
+   "PUT": 2,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 419121,
+  "scoped_har_sha256": "ef68ab559bb35e106737bbe34c0e0442a12bcf8add0d65385775dda66e9486e4",
+  "capture_evidence_id": "ev_5d1ae1d1e71bdfa98a8f7124d3afb2acb81fbaad4eb7dcd625c754a2a5e316e5",
+  "manifest_evidence_id": "ev_e056febf1e58dc790d47d54f107a5d8737ccc5776bf97fd04f2b1cd79b15371f",
+  "manifest_norules_evidence_id": "ev_9bb4e1687a24ee6529c49832547ef317556a69277fa80f30f8c6e628aff7bfb1",
+  "tools": 34,
+  "tools_by_method": {
+   "GET": 29,
+   "PUT": 2,
+   "POST": 2,
+   "DELETE": 1
+  },
+  "tools_norules": 37,
+  "templated_groups": 34,
+  "params_by_rule": {
+   "numeric": 45,
+   "sibling-variance": 2,
+   "hex": 1
+  },
+  "params_total": 48,
+  "query_names": 10,
+  "tools_with_body_shape": 4,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "0d41f2cb2ab9addb2b71f0a91795a45298062594bdcce26c6c336a7fe5529ad5",
+  "parent_digest": "5d1ae1d1e71bdfa98a8f7124d3afb2acb81fbaad4eb7dcd625c754a2a5e316e5"
+ },
+ "shlink": {
+  "app_version": "5.1.7",
+  "origin": "http://127.0.0.1:3206",
+  "manifest_name": "127-0-0-1-3206",
+  "scoped_records": 66,
+  "methods": {
+   "GET": 63,
+   "POST": 1,
+   "PATCH": 1,
+   "DELETE": 1
+  },
+  "scoped_har_bytes": 117350,
+  "scoped_har_sha256": "97a0390d535b7d6f2555d14a7402f5785ac85825b7077236bcfcc8ccbbc1714c",
+  "capture_evidence_id": "ev_4779d529d62305de670c032f0cdd9188c95cf86f0b549b9a0fac8554db69142b",
+  "manifest_evidence_id": "ev_a3d72b74e5d37d9c974dd35a57591dbbe52e160452a2cc3b63a4d2576e852336",
+  "manifest_norules_evidence_id": "ev_2bb6ae3d85e4109d51fbed6349c7c371dfd2c38596412c83e649052b90f906b4",
+  "tools": 17,
+  "tools_by_method": {
+   "GET": 15,
+   "POST": 1,
+   "PATCH": 1
+  },
+  "tools_norules": 43,
+  "templated_groups": 4,
+  "params_by_rule": {
+   "sibling-variance": 4
+  },
+  "params_total": 4,
+  "query_names": 27,
+  "tools_with_body_shape": 2,
+  "excluded": {
+   "non-json": 1
+  },
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "deb77b6e506397a3cd09d9b58da72487d1da7a42933140c54036da10d868b34e",
+  "parent_digest": "4779d529d62305de670c032f0cdd9188c95cf86f0b549b9a0fac8554db69142b"
  },
  "sonarr": {
   "app_version": "4.0.20.3014",
@@ -1102,35 +1635,147 @@
   "view_digest": "3fbe77f9ed1264e6e87c27c2785602cfb27237c27ee809e298ab5b1a1d8bb357",
   "parent_digest": "c572a89136acc993cc0d84090da837a73206dc0d45291613dbd7a616120c4850"
  },
- "grocy": {
-  "app_version": "4.7.1",
-  "origin": "http://127.0.0.1:3222",
-  "manifest_name": "127-0-0-1-3222",
-  "scoped_records": 75,
+ "treasury-fiscal-data": {
+  "app_version": "v1/v2",
+  "origin": "https://api.fiscaldata.treasury.gov",
+  "manifest_name": "api-fiscaldata-treasury-gov",
+  "scoped_records": 52,
   "methods": {
-   "GET": 65,
-   "PUT": 8,
-   "POST": 1,
+   "GET": 52
+  },
+  "scoped_har_bytes": 211445,
+  "scoped_har_sha256": "3e41c0dfb7af43dcc87399c0976cc7bbc3ed6111e22f02e4f610cfee0f8b1413",
+  "capture_evidence_id": "ev_522a428f32046d80249b50c984b3b677afe911d6009c0c3b380de67e789e6496",
+  "manifest_evidence_id": "ev_c068c4ebf39cd85dc7535400efbe9bce560e5b02677b83e8c2fa18df8157f193",
+  "manifest_norules_evidence_id": "ev_11bc4a1c1c578ca5f2efca98848239760ee6fa020a6d2ca775bdcd25123606d0",
+  "tools": 16,
+  "tools_by_method": {
+   "GET": 16
+  },
+  "tools_norules": 16,
+  "templated_groups": 0,
+  "params_by_rule": {},
+  "params_total": 0,
+  "query_names": 44,
+  "tools_with_body_shape": 0,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "derived",
+  "authority": "historical-reference",
+  "view_digest": "414fe86be9af1cf29c066b4e2d8105e2162031922429ebf6660733427398bf32",
+  "parent_digest": "522a428f32046d80249b50c984b3b677afe911d6009c0c3b380de67e789e6496"
+ },
+ "umami": {
+  "app_version": "3.4",
+  "origin": "http://127.0.0.1:3215",
+  "manifest_name": "127-0-0-1-3215",
+  "scoped_records": 100,
+  "methods": {
+   "GET": 97,
+   "POST": 2,
    "DELETE": 1
   },
-  "scoped_har_bytes": 144824,
-  "scoped_har_sha256": "4e673f0a954204d036082a7901bc0bdf4b116cea8b849a92ceaa88a87174662a",
-  "capture_evidence_id": "ev_853ed4f6409f2a62f73da27f0a83010aff0ba3f0365d71788c364cfade127838",
-  "manifest_evidence_id": "ev_cd77ac50b20a04df27506d51dc91c8e252065c659fbbde30e497181ddbd95b1a",
-  "manifest_norules_evidence_id": "ev_e138d49a40b50d7af0cee950fe93ff3ce350cd4d244c71c2f2a68f4d4d19ba99",
-  "tools": 45,
+  "scoped_har_bytes": 151479,
+  "scoped_har_sha256": "f896fb119afe85ef513002099f9c2762402ec54cde9878bb58ee374824d67fc4",
+  "capture_evidence_id": "ev_12a4e7f97b75d77076ad5f7c072a7073a32f0c713f8488096e727a134cc78d35",
+  "manifest_evidence_id": "ev_6559a1b1ad3429225eecffeee0b3397adeb0a5cb9535d4de80544f3c9e175ead",
+  "manifest_norules_evidence_id": "ev_52c67b6be13a69bdc56d92c614042b647ccad346ccd7be6c6c237a770aba1f77",
+  "tools": 49,
   "tools_by_method": {
-   "GET": 40,
-   "POST": 1,
-   "DELETE": 1,
-   "PUT": 3
+   "GET": 46,
+   "POST": 2,
+   "DELETE": 1
   },
-  "tools_norules": 45,
-  "templated_groups": 22,
+  "tools_norules": 49,
+  "templated_groups": 37,
   "params_by_rule": {
-   "numeric": 22
+   "uuid": 44
   },
-  "params_total": 22,
+  "params_total": 44,
+  "query_names": 70,
+  "tools_with_body_shape": 2,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "cad72ab20b3fd578d0a384f682232bc189db96cea86cf73f87fdd65b59304c6f",
+  "parent_digest": "12a4e7f97b75d77076ad5f7c072a7073a32f0c713f8488096e727a134cc78d35"
+ },
+ "usgs-earthquakes": {
+  "app_version": "2.8.1",
+  "origin": "https://earthquake.usgs.gov",
+  "manifest_name": "earthquake-usgs-gov",
+  "scoped_records": 53,
+  "methods": {
+   "GET": 53
+  },
+  "scoped_har_bytes": 707036,
+  "scoped_har_sha256": "581298ceb2d346e1217781c3fe4bd84f841e0a7bf16bd60a5ea967ed6a57632e",
+  "capture_evidence_id": "ev_7058fa0affe6d87c4cbd13c21c24f8ff44df7188dae0fbaefcbbebf025d02f81",
+  "manifest_evidence_id": "ev_5ee5d9ec0205f46279b730995d6b4f5f8eea7f2e948837a67f91868491ccbce4",
+  "manifest_norules_evidence_id": "ev_d4fca0b8484a0b2d111f12f9cc0a3008a6e4026841b5e89bb06d6b0e4c8751bf",
+  "tools": 10,
+  "tools_by_method": {
+   "GET": 10
+  },
+  "tools_norules": 23,
+  "templated_groups": 9,
+  "params_by_rule": {
+   "sibling-variance": 5,
+   "numeric": 8
+  },
+  "params_total": 13,
+  "query_names": 28,
+  "tools_with_body_shape": 0,
+  "excluded": {},
+  "unknowns": [
+   "authorization-model",
+   "response-semantics",
+   "state-transition"
+  ],
+  "confidence": "inferred",
+  "authority": "historical-reference",
+  "view_digest": "25d848913abbbe25990725bf0e4c7b1ce30dceef21ab2e01426a69b94d4eecee",
+  "parent_digest": "7058fa0affe6d87c4cbd13c21c24f8ff44df7188dae0fbaefcbbebf025d02f81"
+ },
+ "vault": {
+  "app_version": "1.21.4",
+  "origin": "http://127.0.0.1:3303",
+  "manifest_name": "127-0-0-1-3303",
+  "scoped_records": 85,
+  "methods": {
+   "GET": 77,
+   "POST": 4,
+   "DELETE": 3,
+   "PUT": 1
+  },
+  "scoped_har_bytes": 176735,
+  "scoped_har_sha256": "02038b8412236a14ef63eaa9155a49ab89c2ad927d2c2d9fb2ab73b39430e6ea",
+  "capture_evidence_id": "ev_0f0dc760f8613dc5c13f30aa0c5199dd83579261e8233758d9beb3e2c0ea8c87",
+  "manifest_evidence_id": "ev_f813cf623fb7f6c6698adbe68d07fd4ce70f881b4802af308d4a62eac949826d",
+  "manifest_norules_evidence_id": "ev_8711a09c2b22c7423699ec6a8f3ba8c2876638db58faa7a20b59d88ac6976613",
+  "tools": 43,
+  "tools_by_method": {
+   "GET": 36,
+   "POST": 3,
+   "DELETE": 3,
+   "PUT": 1
+  },
+  "tools_norules": 44,
+  "templated_groups": 6,
+  "params_by_rule": {
+   "uuid": 5,
+   "sibling-variance": 1
+  },
+  "params_total": 6,
   "query_names": 9,
   "tools_with_body_shape": 4,
   "excluded": {},
@@ -1141,43 +1786,43 @@
   ],
   "confidence": "inferred",
   "authority": "historical-reference",
-  "view_digest": "c9148cc638060df1ae7727f34a14bbb359a7f397eacfb8a818d338b7d2c7ae6a",
-  "parent_digest": "853ed4f6409f2a62f73da27f0a83010aff0ba3f0365d71788c364cfade127838"
+  "view_digest": "0c6e377d564d1881395f7c5ff6397cffbaf54b0c329d19f4aeb5dfa8884ed162",
+  "parent_digest": "0f0dc760f8613dc5c13f30aa0c5199dd83579261e8233758d9beb3e2c0ea8c87"
  },
- "directus": {
-  "app_version": "11.17.4",
-  "origin": "http://127.0.0.1:3223",
-  "manifest_name": "127-0-0-1-3223",
-  "scoped_records": 90,
+ "vikunja": {
+  "app_version": "2.7",
+  "origin": "http://127.0.0.1:3211",
+  "manifest_name": "127-0-0-1-3211",
+  "scoped_records": 102,
   "methods": {
-   "GET": 77,
-   "PATCH": 11,
+   "GET": 98,
+   "PUT": 1,
    "POST": 1,
+   "PATCH": 1,
    "DELETE": 1
   },
-  "scoped_har_bytes": 219187,
-  "scoped_har_sha256": "1667a554741c257c7831f80302833dfff820050f35866ac9f0fd6bc1d6e5a8c9",
-  "capture_evidence_id": "ev_726c10bf55a915e584548f44ddfcacfabb7b72780f9ce24a1a1d18d093836af2",
-  "manifest_evidence_id": "ev_df3fc9049d7dd8e54cbefab23250d29be75af6e6ba7bbc9c3cc092e64c134c58",
-  "manifest_norules_evidence_id": "ev_2457c64e65ef78f193b7d85c778320f714e3e568b924b107e0b9a83bbcf227a2",
-  "tools": 43,
+  "scoped_har_bytes": 378047,
+  "scoped_har_sha256": "10843162cbd00ebf87245969fcda682fa750ff07d0640cae18c1f9985883b314",
+  "capture_evidence_id": "ev_6172766db5dacc12fa38511878e7a2db573f50122947cad181f09d52b850cceb",
+  "manifest_evidence_id": "ev_19917e26dc88ca87887cb83f10d96d4f922051f312fa420ffdcd27d57f25b7e4",
+  "manifest_norules_evidence_id": "ev_512a333bb058854675add5c92a5fb4299feb66a47526f5660a605e105aa31e4d",
+  "tools": 28,
   "tools_by_method": {
-   "GET": 41,
+   "GET": 24,
    "POST": 1,
-   "PATCH": 1
+   "DELETE": 1,
+   "PATCH": 1,
+   "PUT": 1
   },
-  "tools_norules": 43,
-  "templated_groups": 14,
+  "tools_norules": 28,
+  "templated_groups": 20,
   "params_by_rule": {
-   "uuid": 9,
-   "numeric": 4
+   "numeric": 25
   },
-  "params_total": 13,
-  "query_names": 73,
+  "params_total": 25,
+  "query_names": 39,
   "tools_with_body_shape": 2,
-  "excluded": {
-   "non-json": 2
-  },
+  "excluded": {},
   "unknowns": [
    "authorization-model",
    "response-semantics",
@@ -1185,48 +1830,7 @@
   ],
   "confidence": "inferred",
   "authority": "historical-reference",
-  "view_digest": "638e5bb97125c3ed5a50106b5d9cd6c484b0d0dd2b96ef232574da93ccb5a262",
-  "parent_digest": "726c10bf55a915e584548f44ddfcacfabb7b72780f9ce24a1a1d18d093836af2"
- },
- "jellyfin": {
-  "app_version": "10.10.7",
-  "origin": "http://127.0.0.1:3224",
-  "manifest_name": "127-0-0-1-3224",
-  "scoped_records": 72,
-  "methods": {
-   "GET": 66,
-   "POST": 5,
-   "DELETE": 1
-  },
-  "scoped_har_bytes": 196660,
-  "scoped_har_sha256": "eb1bf56ca3ad61fccf0c9aec11fc580ae2929cf9703d8de26ff40f7fa7f602cc",
-  "capture_evidence_id": "ev_e0e8efc19b07b4df61b2a5753a06282b27892bc8404746372201bfdd27662ba9",
-  "manifest_evidence_id": "ev_e0005f7fdf6adba22caf1ff60dd317660ec3e9e5fbf91991a6bfdfd803d9feea",
-  "manifest_norules_evidence_id": "ev_a90058b46ccbbaf0ad5ec5625ce1a90bc7f9fef1365336ab8b8ea8248f02a946",
-  "tools": 34,
-  "tools_by_method": {
-   "GET": 32,
-   "POST": 2
-  },
-  "tools_norules": 34,
-  "templated_groups": 16,
-  "params_by_rule": {
-   "hex": 15
-  },
-  "params_total": 15,
-  "query_names": 75,
-  "tools_with_body_shape": 1,
-  "excluded": {
-   "non-json": 4
-  },
-  "unknowns": [
-   "authorization-model",
-   "response-semantics",
-   "state-transition"
-  ],
-  "confidence": "inferred",
-  "authority": "historical-reference",
-  "view_digest": "7e72d58877f1dd3d1525e9f9ef4e7ab6f4e18a2193f16dcc85a37629e7e6f981",
-  "parent_digest": "e0e8efc19b07b4df61b2a5753a06282b27892bc8404746372201bfdd27662ba9"
+  "view_digest": "9cc0d1da27fdaf1c20d32f66436a38355e6ae3a478eb8b656f7727d4d0e259ff",
+  "parent_digest": "6172766db5dacc12fa38511878e7a2db573f50122947cad181f09d52b850cceb"
  }
 }

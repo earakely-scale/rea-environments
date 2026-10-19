@@ -1,0 +1,76 @@
+{
+ "app": "noaa-tides",
+ "kind": "public-api",
+ "captured_on": "2026-10-19",
+ "fair_access": "a declared User-Agent, the application parameter on data requests, one request at a time and at most 2 requests per second (about 72 requests in the session)",
+ "seeded_objects": "station records for ten named water-level stations (San Francisco, Key West, Seattle, Galveston Pier 21, Sewells Point, San Diego, Eastport, Anchorage, Grand Isle, Hilo) with their details, datums, harmonic constituents, sensors, flood levels, notices, products and benchmarks, the air-gap station list, short-range tide predictions, water levels, monthly means, high/low and weather readings, and two annual high-tide flooding counts",
+ "app_version": "v1",
+ "api_versions": {
+  "metadata": "mdapi/prod",
+  "data": "api/prod (datagetter)",
+  "derived_products": "dpapi/prod"
+ },
+ "origin": "https://api.tidesandcurrents.noaa.gov",
+ "user_agent": "rea-environments showcase (https://github.com/earakely-scale/rea-environments)",
+ "landing_document": "/mdapi/prod/webapi/stations/9414290.json",
+ "scoped_har": {
+  "file": "noaa-tides.scoped.har",
+  "sha256": "7e8a15258907151dac9391ac8687a3b17916c9a78208841634f11a33934e948f",
+  "bytes": 311519,
+  "records": 56,
+  "methods": {
+   "GET": 56
+  },
+  "statuses": {
+   "200": 55,
+   "400": 1
+  }
+ },
+ "scope_har": {
+  "origin": "https://api.tidesandcurrents.noaa.gov",
+  "keep_regex": "^/(mdapi|api|dpapi)/prod/",
+  "max_body": 60000,
+  "max_records": 150,
+  "kept": 56,
+  "dropped": {
+   "other-origin": 0,
+   "path": 0,
+   "non-json": 1,
+   "auth": 0,
+   "big-body": 3,
+   "over-max": 0
+  },
+  "notes": [
+   "big-body=3 are the three sea-level-trend reads (/dpapi/prod/webapi/product/sealvltrends.json): the endpoint ignored the station filter and returned all stations (319 KB each)",
+   "non-json=1 is the failed first attempt of the Hilo benchmarks read (status -1, no response; the page retried it once and the retry is kept)",
+   "the browser made no other request on the origin (no favicon probe); the full HAR held 60 entries",
+   "the datagetter datums read answers 400 (product moved to the metadata API) and water_temperature for Seattle answers 200 with a no-data error; both are kept as recorded"
+  ]
+ },
+ "endpoints": {
+  "/api/prod/datagetter?product=air_pressure": 1,
+  "/api/prod/datagetter?product=air_temperature": 1,
+  "/api/prod/datagetter?product=datums": 1,
+  "/api/prod/datagetter?product=high_low": 1,
+  "/api/prod/datagetter?product=monthly_mean": 2,
+  "/api/prod/datagetter?product=predictions": 6,
+  "/api/prod/datagetter?product=water_level": 3,
+  "/api/prod/datagetter?product=water_temperature": 1,
+  "/api/prod/datagetter?product=wind": 1,
+  "/dpapi/prod/webapi/htf/htf_annual.json": 2,
+  "/mdapi/prod/webapi/stations.json": 1,
+  "/mdapi/prod/webapi/stations/{id}.json": 10,
+  "/mdapi/prod/webapi/stations/{id}/benchmarks.json": 2,
+  "/mdapi/prod/webapi/stations/{id}/datums.json": 5,
+  "/mdapi/prod/webapi/stations/{id}/details.json": 5,
+  "/mdapi/prod/webapi/stations/{id}/floodlevels.json": 4,
+  "/mdapi/prod/webapi/stations/{id}/harcon.json": 3,
+  "/mdapi/prod/webapi/stations/{id}/notices.json": 2,
+  "/mdapi/prod/webapi/stations/{id}/products.json": 1,
+  "/mdapi/prod/webapi/stations/{id}/sensors.json": 4
+ },
+ "requests_in_session": {
+  "api.tidesandcurrents.noaa.gov": "72 in total: 1 curl user-agent check, 10 in a first capture run aborted by an unhandled transient fetch error, 1 curl re-check of that record, and 60 in the capture run (landing document, 58 reads and 1 retry)"
+ },
+ "forbidden_word_hits_in_scoped_har": 0
+}

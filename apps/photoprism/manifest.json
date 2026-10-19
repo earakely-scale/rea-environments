@@ -1,0 +1,1651 @@
+{
+ "evidence_id": "ev_81f20a4edbd785a66b689f99eae57d55989b94f43432ad290e28fb9131bda1e0",
+ "subject": null,
+ "provider": {
+  "id": "rea-analysis-view",
+  "name": "REA analysis view projection",
+  "version": "1"
+ },
+ "analysis_profile": null,
+ "predicate_type": "rea.analysis-view",
+ "operation": "inspect_analysis_view",
+ "parameters": {
+  "parent_evidence_id": "ev_28d39ee2f958aaba2513fdbac537632e40e82a4855acc760da1d2448023e0c60",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "raw_result": null,
+ "normalized_result": {
+  "parent_evidence_id": "ev_28d39ee2f958aaba2513fdbac537632e40e82a4855acc760da1d2448023e0c60",
+  "parent_operation": "capture_browser_scenario",
+  "parent_digest": "28d39ee2f958aaba2513fdbac537632e40e82a4855acc760da1d2448023e0c60",
+  "view_digest": "1fa9bb2f2ac54560fd05fb3765a8ab56e7b91ed1ab5f71ac2f45c96c4ce3214d",
+  "artifact": {
+   "path": "",
+   "sha256": null
+  },
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 13,
+   "total": 13,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "limitations": [
+   "54 of 277 scenario transactions retained no response body; their tools replay status and content type only.",
+   "Artifact identity is unavailable for this observation.",
+   "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+   "Browser host platform and architecture were not observed.",
+   "Captured response-body bytes are the result of Playwright's Response.body() API. Playwright may satisfy that API with a credentialed follow-up load of the request URL when CDP has no body, so transaction and event links do not verify that retained bytes came from the original network transaction.",
+   "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+   "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+   "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+   "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+   "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+   "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+   "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+   "Scenario records are the capture's network transactions in request order; each record ordinal is the transaction's zero-based position.",
+   "Some selected network content was unavailable; per-transaction content states retain the reason.",
+   "Storage values are hashed only after declared-secret redaction.",
+   "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+  ],
+  "unknowns": [
+   {
+    "kind": "authorization-model",
+    "statement": "Authorization headers and cookies are structurally excluded from captures; the manifest states no authorization model."
+   },
+   {
+    "kind": "response-semantics",
+    "statement": "Recorded statuses and bodies are retained only as pointers to parent records; the manifest states no response semantics."
+   },
+   {
+    "kind": "state-transition",
+    "statement": "Recorded exchanges are independent observations; the manifest states no ordering, side effects or state transitions between tools."
+   }
+  ],
+  "origin": "http://127.0.0.1:3401",
+  "name": "127-0-0-1-3401",
+  "tools": [
+   {
+    "name": "get_albums",
+    "method": "GET",
+    "path_template": "/api/v1/albums",
+    "api_surface_template": "/api/v1/albums",
+    "params": [],
+    "query_parameter_names": [
+     "category",
+     "count",
+     "offset",
+     "order",
+     "q",
+     "reverse",
+     "type",
+     "uid",
+     "year"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     56,
+     180,
+     229,
+     244,
+     250,
+     253,
+     272
+    ]
+   },
+   {
+    "name": "post_albums",
+    "method": "POST",
+    "path_template": "/api/v1/albums",
+    "api_surface_template": "/api/v1/albums",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "Title": "string",
+      "Favorite": "boolean"
+     }
+    },
+    "statuses": [
+     201
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     249
+    ]
+   },
+   {
+    "name": "delete_albums_by_uid",
+    "method": "DELETE",
+    "path_template": "/api/v1/albums/{uid}",
+    "api_surface_template": "/api/v1/albums/atn54osh90dmoeqd",
+    "params": [
+     {
+      "index": 3,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "atn54osh90dmoeqd"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     257
+    ]
+   },
+   {
+    "name": "get_albums_by_uid",
+    "method": "GET",
+    "path_template": "/api/v1/albums/{uid}",
+    "api_surface_template": "/api/v1/albums/atn547u7js7hz0g1",
+    "params": [
+     {
+      "index": 3,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "atn547u7d7whcrik",
+       "atn547u7js7hz0g1",
+       "atn547v63xwp7r9r",
+       "atn547vbhnsqimy9",
+       "atn54osh90dmoeqd"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     74,
+     95,
+     116,
+     137,
+     254
+    ]
+   },
+   {
+    "name": "put_albums_by_uid",
+    "method": "PUT",
+    "path_template": "/api/v1/albums/{uid}",
+    "api_surface_template": "/api/v1/albums/atn54osh90dmoeqd",
+    "params": [
+     {
+      "index": 3,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "atn54osh90dmoeqd"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "Title": "string",
+      "Location": "string",
+      "Description": "string"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     252
+    ]
+   },
+   {
+    "name": "get_albums_t_public_tile_500_by_uid",
+    "method": "GET",
+    "path_template": "/api/v1/albums/{uid}/t/public/tile_500",
+    "api_surface_template": "/api/v1/albums/atn54osh90dmoeqd/t/public/tile_500",
+    "params": [
+     {
+      "index": 3,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "atn54osh90dmoeqd"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "image/svg+xml"
+    ],
+    "record_ordinals": [
+     251
+    ]
+   },
+   {
+    "name": "get_config",
+    "method": "GET",
+    "path_template": "/api/v1/config",
+    "api_surface_template": "/api/v1/config",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     8,
+     50,
+     68,
+     89,
+     110,
+     131,
+     153,
+     174,
+     193,
+     213,
+     239,
+     266
+    ]
+   },
+   {
+    "name": "get_labels",
+    "method": "GET",
+    "path_template": "/api/v1/labels",
+    "api_surface_template": "/api/v1/labels",
+    "params": [],
+    "query_parameter_names": [
+     "all",
+     "count",
+     "offset",
+     "order",
+     "q"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     159
+    ]
+   },
+   {
+    "name": "get_photos",
+    "method": "GET",
+    "path_template": "/api/v1/photos",
+    "api_surface_template": "/api/v1/photos",
+    "params": [],
+    "query_parameter_names": [
+     "camera",
+     "color",
+     "count",
+     "country",
+     "favorite",
+     "label",
+     "latlng",
+     "lens",
+     "merged",
+     "month",
+     "offset",
+     "order",
+     "public",
+     "q",
+     "quality",
+     "reverse",
+     "s",
+     "year"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     15,
+     76,
+     97,
+     118,
+     139,
+     199,
+     219,
+     225,
+     226,
+     227,
+     228,
+     256
+    ]
+   },
+   {
+    "name": "get_photos_by_uid",
+    "method": "GET",
+    "path_template": "/api/v1/photos/{uid}",
+    "api_surface_template": "/api/v1/photos/ptn547rxew9tkh8d",
+    "params": [
+     {
+      "index": 3,
+      "name": "uid",
+      "rule": "opaque-token",
+      "basis": "inferred",
+      "observed_values": [
+       "ptn547q4hrl7uhqv",
+       "ptn547qc6u1ia65c",
+       "ptn547qe13j7iqbw",
+       "ptn547qpwr5eurja",
+       "ptn547qvtjoc5bw1",
+       "ptn547qygzmr7dns",
+       "ptn547r9fipj7ua1",
+       "ptn547rcc1t5tlvt",
+       "ptn547rggpa4goiu",
+       "ptn547rh036bsns8",
+       "ptn547rornra01bm",
+       "ptn547rxew9tkh8d"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     29,
+     30,
+     31,
+     32,
+     33,
+     34,
+     35,
+     36,
+     37,
+     38,
+     39,
+     40
+    ]
+   },
+   {
+    "name": "get_session",
+    "method": "GET",
+    "path_template": "/api/v1/session",
+    "api_surface_template": "/api/v1/session",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     7,
+     49,
+     67,
+     88,
+     109,
+     130,
+     152,
+     173,
+     192,
+     212,
+     238,
+     265
+    ]
+   },
+   {
+    "name": "get_t_public_tile_500_by_hash",
+    "method": "GET",
+    "path_template": "/api/v1/t/{hex}/public/tile_500",
+    "api_surface_template": "/api/v1/t/{hex}/public/tile_500",
+    "params": [
+     {
+      "index": 3,
+      "name": "hash",
+      "rule": "hex",
+      "basis": "inferred",
+      "observed_values": [
+       "179ba592353432962d9299bbfed2238ef2448e5a",
+       "2959f3560f5af12db35366d92daf1bae35d16607",
+       "2cc71c2d427f10214a0b30f977b613448d25c761",
+       "57ee1337263defec8d1e93c7a53e3d6e4e62ba64",
+       "8f31c4d5de5ee02a0a10038990f183d2e66c5e1c",
+       "cbcf4ff01c9abc9ca112136c5db63e24ebb54d6e",
+       "d1d16f47078dd128e93bb273230d86d0714276a3",
+       "dbc4b76f0ca1e0df2d51fa74b65a9d2885896ef6",
+       "e9f0cc29fc43878c0e8096a5be43288dd8f48b5e",
+       "ee96657f96ada2dd43b0caaadea70c4727180f21",
+       "f61194f184e7093955cf9283fa5c05a4261aacd5",
+       "f94a98c1996281d4ae84e15ff84d0fed722f8af2"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "image/jpeg"
+    ],
+    "record_ordinals": [
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     57,
+     58,
+     59,
+     77,
+     79,
+     80,
+     81,
+     98,
+     100,
+     101,
+     102,
+     119,
+     120,
+     121,
+     122,
+     140,
+     141,
+     142,
+     143,
+     144,
+     161,
+     162,
+     163,
+     164,
+     165,
+     182,
+     183,
+     184,
+     201,
+     202,
+     203,
+     204,
+     221,
+     222,
+     223,
+     224,
+     246,
+     247,
+     248,
+     274,
+     275,
+     276
+    ]
+   },
+   {
+    "name": "get_manifest",
+    "method": "GET",
+    "path_template": "/manifest.json",
+    "api_surface_template": "/manifest.json",
+    "params": [],
+    "query_parameter_names": [
+     "25e0a196"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/manifest+json"
+    ],
+    "record_ordinals": [
+     4,
+     48,
+     69,
+     90,
+     111,
+     132,
+     154,
+     175,
+     194,
+     214,
+     237,
+     267
+    ]
+   }
+  ],
+  "records": [
+   {
+    "ordinal": 4,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/manifest+json"
+   },
+   {
+    "ordinal": 7,
+    "method": "GET",
+    "path": "/api/v1/session",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 8,
+    "method": "GET",
+    "path": "/api/v1/config",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 15,
+    "method": "GET",
+    "path": "/api/v1/photos",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 17,
+    "method": "GET",
+    "path": "/api/v1/t/f94a98c1996281d4ae84e15ff84d0fed722f8af2/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 18,
+    "method": "GET",
+    "path": "/api/v1/t/d1d16f47078dd128e93bb273230d86d0714276a3/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 19,
+    "method": "GET",
+    "path": "/api/v1/t/2959f3560f5af12db35366d92daf1bae35d16607/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 20,
+    "method": "GET",
+    "path": "/api/v1/t/57ee1337263defec8d1e93c7a53e3d6e4e62ba64/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 21,
+    "method": "GET",
+    "path": "/api/v1/t/e9f0cc29fc43878c0e8096a5be43288dd8f48b5e/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 22,
+    "method": "GET",
+    "path": "/api/v1/t/179ba592353432962d9299bbfed2238ef2448e5a/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 23,
+    "method": "GET",
+    "path": "/api/v1/t/2cc71c2d427f10214a0b30f977b613448d25c761/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 24,
+    "method": "GET",
+    "path": "/api/v1/t/dbc4b76f0ca1e0df2d51fa74b65a9d2885896ef6/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 25,
+    "method": "GET",
+    "path": "/api/v1/t/cbcf4ff01c9abc9ca112136c5db63e24ebb54d6e/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 26,
+    "method": "GET",
+    "path": "/api/v1/t/f61194f184e7093955cf9283fa5c05a4261aacd5/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 27,
+    "method": "GET",
+    "path": "/api/v1/t/ee96657f96ada2dd43b0caaadea70c4727180f21/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 28,
+    "method": "GET",
+    "path": "/api/v1/t/8f31c4d5de5ee02a0a10038990f183d2e66c5e1c/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 29,
+    "method": "GET",
+    "path": "/api/v1/photos/ptn547rxew9tkh8d",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 30,
+    "method": "GET",
+    "path": "/api/v1/photos/ptn547rggpa4goiu",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 31,
+    "method": "GET",
+    "path": "/api/v1/photos/ptn547rcc1t5tlvt",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 32,
+    "method": "GET",
+    "path": "/api/v1/photos/ptn547rh036bsns8",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 33,
+    "method": "GET",
+    "path": "/api/v1/photos/ptn547qc6u1ia65c",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 34,
+    "method": "GET",
+    "path": "/api/v1/photos/ptn547qvtjoc5bw1",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 35,
+    "method": "GET",
+    "path": "/api/v1/photos/ptn547r9fipj7ua1",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 36,
+    "method": "GET",
+    "path": "/api/v1/photos/ptn547rornra01bm",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 37,
+    "method": "GET",
+    "path": "/api/v1/photos/ptn547qpwr5eurja",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 38,
+    "method": "GET",
+    "path": "/api/v1/photos/ptn547q4hrl7uhqv",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 39,
+    "method": "GET",
+    "path": "/api/v1/photos/ptn547qe13j7iqbw",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 40,
+    "method": "GET",
+    "path": "/api/v1/photos/ptn547qygzmr7dns",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 48,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/manifest+json"
+   },
+   {
+    "ordinal": 49,
+    "method": "GET",
+    "path": "/api/v1/session",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 50,
+    "method": "GET",
+    "path": "/api/v1/config",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 56,
+    "method": "GET",
+    "path": "/api/v1/albums",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 57,
+    "method": "GET",
+    "path": "/api/v1/t/cbcf4ff01c9abc9ca112136c5db63e24ebb54d6e/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 58,
+    "method": "GET",
+    "path": "/api/v1/t/57ee1337263defec8d1e93c7a53e3d6e4e62ba64/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 59,
+    "method": "GET",
+    "path": "/api/v1/t/dbc4b76f0ca1e0df2d51fa74b65a9d2885896ef6/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 67,
+    "method": "GET",
+    "path": "/api/v1/session",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 68,
+    "method": "GET",
+    "path": "/api/v1/config",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 69,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/manifest+json"
+   },
+   {
+    "ordinal": 74,
+    "method": "GET",
+    "path": "/api/v1/albums/atn547u7js7hz0g1",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 76,
+    "method": "GET",
+    "path": "/api/v1/photos",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 77,
+    "method": "GET",
+    "path": "/api/v1/t/8f31c4d5de5ee02a0a10038990f183d2e66c5e1c/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 79,
+    "method": "GET",
+    "path": "/api/v1/t/ee96657f96ada2dd43b0caaadea70c4727180f21/public/tile_500",
+    "status": null,
+    "content_type": null
+   },
+   {
+    "ordinal": 80,
+    "method": "GET",
+    "path": "/api/v1/t/f61194f184e7093955cf9283fa5c05a4261aacd5/public/tile_500",
+    "status": null,
+    "content_type": null
+   },
+   {
+    "ordinal": 81,
+    "method": "GET",
+    "path": "/api/v1/t/cbcf4ff01c9abc9ca112136c5db63e24ebb54d6e/public/tile_500",
+    "status": 200,
+    "content_type": null
+   },
+   {
+    "ordinal": 88,
+    "method": "GET",
+    "path": "/api/v1/session",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 89,
+    "method": "GET",
+    "path": "/api/v1/config",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 90,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/manifest+json"
+   },
+   {
+    "ordinal": 95,
+    "method": "GET",
+    "path": "/api/v1/albums/atn547u7d7whcrik",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 97,
+    "method": "GET",
+    "path": "/api/v1/photos",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 98,
+    "method": "GET",
+    "path": "/api/v1/t/dbc4b76f0ca1e0df2d51fa74b65a9d2885896ef6/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 100,
+    "method": "GET",
+    "path": "/api/v1/t/2cc71c2d427f10214a0b30f977b613448d25c761/public/tile_500",
+    "status": null,
+    "content_type": null
+   },
+   {
+    "ordinal": 101,
+    "method": "GET",
+    "path": "/api/v1/t/179ba592353432962d9299bbfed2238ef2448e5a/public/tile_500",
+    "status": null,
+    "content_type": null
+   },
+   {
+    "ordinal": 102,
+    "method": "GET",
+    "path": "/api/v1/t/e9f0cc29fc43878c0e8096a5be43288dd8f48b5e/public/tile_500",
+    "status": null,
+    "content_type": null
+   },
+   {
+    "ordinal": 109,
+    "method": "GET",
+    "path": "/api/v1/session",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 110,
+    "method": "GET",
+    "path": "/api/v1/config",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 111,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/manifest+json"
+   },
+   {
+    "ordinal": 116,
+    "method": "GET",
+    "path": "/api/v1/albums/atn547v63xwp7r9r",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 118,
+    "method": "GET",
+    "path": "/api/v1/photos",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 119,
+    "method": "GET",
+    "path": "/api/v1/t/57ee1337263defec8d1e93c7a53e3d6e4e62ba64/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 120,
+    "method": "GET",
+    "path": "/api/v1/t/2959f3560f5af12db35366d92daf1bae35d16607/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 121,
+    "method": "GET",
+    "path": "/api/v1/t/d1d16f47078dd128e93bb273230d86d0714276a3/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 122,
+    "method": "GET",
+    "path": "/api/v1/t/f94a98c1996281d4ae84e15ff84d0fed722f8af2/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 130,
+    "method": "GET",
+    "path": "/api/v1/session",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 131,
+    "method": "GET",
+    "path": "/api/v1/config",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 132,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/manifest+json"
+   },
+   {
+    "ordinal": 137,
+    "method": "GET",
+    "path": "/api/v1/albums/atn547vbhnsqimy9",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 139,
+    "method": "GET",
+    "path": "/api/v1/photos",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 140,
+    "method": "GET",
+    "path": "/api/v1/t/ee96657f96ada2dd43b0caaadea70c4727180f21/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 141,
+    "method": "GET",
+    "path": "/api/v1/t/cbcf4ff01c9abc9ca112136c5db63e24ebb54d6e/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 142,
+    "method": "GET",
+    "path": "/api/v1/t/2cc71c2d427f10214a0b30f977b613448d25c761/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 143,
+    "method": "GET",
+    "path": "/api/v1/t/179ba592353432962d9299bbfed2238ef2448e5a/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 144,
+    "method": "GET",
+    "path": "/api/v1/t/d1d16f47078dd128e93bb273230d86d0714276a3/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 152,
+    "method": "GET",
+    "path": "/api/v1/session",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 153,
+    "method": "GET",
+    "path": "/api/v1/config",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 154,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/manifest+json"
+   },
+   {
+    "ordinal": 159,
+    "method": "GET",
+    "path": "/api/v1/labels",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 161,
+    "method": "GET",
+    "path": "/api/v1/t/d1d16f47078dd128e93bb273230d86d0714276a3/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 162,
+    "method": "GET",
+    "path": "/api/v1/t/dbc4b76f0ca1e0df2d51fa74b65a9d2885896ef6/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 163,
+    "method": "GET",
+    "path": "/api/v1/t/8f31c4d5de5ee02a0a10038990f183d2e66c5e1c/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 164,
+    "method": "GET",
+    "path": "/api/v1/t/cbcf4ff01c9abc9ca112136c5db63e24ebb54d6e/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 165,
+    "method": "GET",
+    "path": "/api/v1/t/57ee1337263defec8d1e93c7a53e3d6e4e62ba64/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 173,
+    "method": "GET",
+    "path": "/api/v1/session",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 174,
+    "method": "GET",
+    "path": "/api/v1/config",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 175,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/manifest+json"
+   },
+   {
+    "ordinal": 180,
+    "method": "GET",
+    "path": "/api/v1/albums",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 182,
+    "method": "GET",
+    "path": "/api/v1/t/f94a98c1996281d4ae84e15ff84d0fed722f8af2/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 183,
+    "method": "GET",
+    "path": "/api/v1/t/e9f0cc29fc43878c0e8096a5be43288dd8f48b5e/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 184,
+    "method": "GET",
+    "path": "/api/v1/t/f61194f184e7093955cf9283fa5c05a4261aacd5/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 192,
+    "method": "GET",
+    "path": "/api/v1/session",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 193,
+    "method": "GET",
+    "path": "/api/v1/config",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 194,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/manifest+json"
+   },
+   {
+    "ordinal": 199,
+    "method": "GET",
+    "path": "/api/v1/photos",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 201,
+    "method": "GET",
+    "path": "/api/v1/t/57ee1337263defec8d1e93c7a53e3d6e4e62ba64/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 202,
+    "method": "GET",
+    "path": "/api/v1/t/dbc4b76f0ca1e0df2d51fa74b65a9d2885896ef6/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 203,
+    "method": "GET",
+    "path": "/api/v1/t/cbcf4ff01c9abc9ca112136c5db63e24ebb54d6e/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 204,
+    "method": "GET",
+    "path": "/api/v1/t/8f31c4d5de5ee02a0a10038990f183d2e66c5e1c/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 212,
+    "method": "GET",
+    "path": "/api/v1/session",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 213,
+    "method": "GET",
+    "path": "/api/v1/config",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 214,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/manifest+json"
+   },
+   {
+    "ordinal": 219,
+    "method": "GET",
+    "path": "/api/v1/photos",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 221,
+    "method": "GET",
+    "path": "/api/v1/t/e9f0cc29fc43878c0e8096a5be43288dd8f48b5e/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 222,
+    "method": "GET",
+    "path": "/api/v1/t/179ba592353432962d9299bbfed2238ef2448e5a/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 223,
+    "method": "GET",
+    "path": "/api/v1/t/2cc71c2d427f10214a0b30f977b613448d25c761/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 224,
+    "method": "GET",
+    "path": "/api/v1/t/dbc4b76f0ca1e0df2d51fa74b65a9d2885896ef6/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 225,
+    "method": "GET",
+    "path": "/api/v1/photos",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 226,
+    "method": "GET",
+    "path": "/api/v1/photos",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 227,
+    "method": "GET",
+    "path": "/api/v1/photos",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 228,
+    "method": "GET",
+    "path": "/api/v1/photos",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 229,
+    "method": "GET",
+    "path": "/api/v1/albums",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 237,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/manifest+json"
+   },
+   {
+    "ordinal": 238,
+    "method": "GET",
+    "path": "/api/v1/session",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 239,
+    "method": "GET",
+    "path": "/api/v1/config",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 244,
+    "method": "GET",
+    "path": "/api/v1/albums",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 246,
+    "method": "GET",
+    "path": "/api/v1/t/cbcf4ff01c9abc9ca112136c5db63e24ebb54d6e/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 247,
+    "method": "GET",
+    "path": "/api/v1/t/57ee1337263defec8d1e93c7a53e3d6e4e62ba64/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 248,
+    "method": "GET",
+    "path": "/api/v1/t/dbc4b76f0ca1e0df2d51fa74b65a9d2885896ef6/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 249,
+    "method": "POST",
+    "path": "/api/v1/albums",
+    "status": 201,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 250,
+    "method": "GET",
+    "path": "/api/v1/albums",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 251,
+    "method": "GET",
+    "path": "/api/v1/albums/atn54osh90dmoeqd/t/public/tile_500",
+    "status": 200,
+    "content_type": "image/svg+xml"
+   },
+   {
+    "ordinal": 252,
+    "method": "PUT",
+    "path": "/api/v1/albums/atn54osh90dmoeqd",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 253,
+    "method": "GET",
+    "path": "/api/v1/albums",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 254,
+    "method": "GET",
+    "path": "/api/v1/albums/atn54osh90dmoeqd",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 256,
+    "method": "GET",
+    "path": "/api/v1/photos",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 257,
+    "method": "DELETE",
+    "path": "/api/v1/albums/atn54osh90dmoeqd",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 265,
+    "method": "GET",
+    "path": "/api/v1/session",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 266,
+    "method": "GET",
+    "path": "/api/v1/config",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 267,
+    "method": "GET",
+    "path": "/manifest.json",
+    "status": 200,
+    "content_type": "application/manifest+json"
+   },
+   {
+    "ordinal": 272,
+    "method": "GET",
+    "path": "/api/v1/albums",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 274,
+    "method": "GET",
+    "path": "/api/v1/t/cbcf4ff01c9abc9ca112136c5db63e24ebb54d6e/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 275,
+    "method": "GET",
+    "path": "/api/v1/t/57ee1337263defec8d1e93c7a53e3d6e4e62ba64/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   },
+   {
+    "ordinal": 276,
+    "method": "GET",
+    "path": "/api/v1/t/dbc4b76f0ca1e0df2d51fa74b65a9d2885896ef6/public/tile_500",
+    "status": 200,
+    "content_type": "image/jpeg"
+   }
+  ],
+  "excluded": [
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3401",
+    "path_template": "/library/albums",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3401",
+    "path_template": "/library/albums/atn547u7d7whcrik/view",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3401",
+    "path_template": "/library/albums/atn547u7js7hz0g1/view",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3401",
+    "path_template": "/library/albums/atn547v63xwp7r9r/view",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3401",
+    "path_template": "/library/albums/atn547vbhnsqimy9/view",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3401",
+    "path_template": "/library/browse",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3401",
+    "path_template": "/library/favorites",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3401",
+    "path_template": "/library/folders",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3401",
+    "path_template": "/library/labels",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3401",
+    "path_template": "/static/build/app.d13f5a2a.css",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3401",
+    "path_template": "/static/build/app.fcdf4033.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3401",
+    "path_template": "/static/build/chunk/clipboard.e97f2ee6.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3401",
+    "path_template": "/static/build/chunk/en-json.8918ce65.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3401",
+    "path_template": "/static/build/chunk/rolldown-runtime.7467d20d.js",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3401",
+    "path_template": "/static/build/materialdesignicons-webfont.e9e6ff96.woff2",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3401",
+    "path_template": "/static/icons/logo.svg",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3401",
+    "path_template": "/static/icons/logo/144.png",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3401",
+    "path_template": "/static/icons/logo/16.png",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3401",
+    "path_template": "/static/icons/logo/32.png",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3401",
+    "path_template": "/static/img/avatar/tile_50.jpg",
+    "reason": "ui-page-or-asset"
+   },
+   {
+    "method": "GET",
+    "origin": "http://127.0.0.1:3401",
+    "path_template": "/static/js/browser-check.js",
+    "reason": "ui-page-or-asset"
+   }
+  ],
+  "templated_groups": 6,
+  "kind": "environment-manifest",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "confidence": "inferred",
+ "authority": "controlled-replay",
+ "environment": null,
+ "limitations": [
+  "Artifact identity is unavailable for this observation.",
+  "54 of 277 scenario transactions retained no response body; their tools replay status and content type only.",
+  "Artifact identity is unavailable for this observation.",
+  "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+  "Browser host platform and architecture were not observed.",
+  "Captured response-body bytes are the result of Playwright's Response.body() API. Playwright may satisfy that API with a credentialed follow-up load of the request URL when CDP has no body, so transaction and event links do not verify that retained bytes came from the original network transaction.",
+  "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+  "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+  "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+  "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+  "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+  "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+  "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+  "Scenario records are the capture's network transactions in request order; each record ordinal is the transaction's zero-based position.",
+  "Some selected network content was unavailable; per-transaction content states retain the reason.",
+  "Storage values are hashed only after declared-secret redaction.",
+  "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+ ],
+ "relationship_coverage": null,
+ "locations": [],
+ "evidence_links": [
+  "ev_28d39ee2f958aaba2513fdbac537632e40e82a4855acc760da1d2448023e0c60"
+ ]
+}

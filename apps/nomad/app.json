@@ -1,0 +1,16 @@
+{
+  "kind": "self-hosted",
+  "app": "nomad",
+  "title": "HashiCorp Nomad",
+  "repo": "NomadEnv-REA",
+  "license": "BUSL-1.1",
+  "authors": "HashiCorp",
+  "hf_license": "apache-2.0",
+  "version": "1.11.3",
+  "image": "hashicorp/nomad:1.11.3",
+  "image_digest": "sha256:996069720c5dbb48c644bf5ac61f14593fb362408921b7d4c6086fb2cfc9f2c4",
+  "port": 3304,
+  "keep_regex": "^/v1/(?!agent/|acl/|vars?(/|$)|operator/)",
+  "domain": "workload orchestration (cluster scheduler)",
+  "exclude_tools": "stats|status_leader|regions|search"
+}

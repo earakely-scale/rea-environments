@@ -1,0 +1,30 @@
+{
+ "app": "loc-photos",
+ "kind": "public-api",
+ "capture": "scenario",
+ "captured_on": "2026-10-19",
+ "app_version": "v1",
+ "origin": "https://www.loc.gov",
+ "fair_access": "28 navigations in one browser session (plus one server redirect), 900 ms wait between navigations (about one request per 1.3 s), no API key, no login; research before the capture used about 35 single requests at 1.2 s spacing",
+ "seeded_objects": "Real public records read from the Library of Congress JSON API: 15 items by id (Photochrom prints of Corfe, Dover and Threave castles, the Rhone, Illecillewaet and Bossons glaciers, Glacier Point, a bridge in Glenariff; Detroit Publishing Company views of High Bridge over the Kentucky River, the Natural Bridge Hotel and Rascon Bridge; panoramic photographs of the Grand Canyon and Fish Creek Canyon; the Busching Covered Bridge survey record), every one marked no known restrictions on publication or reproduction, plus 9 searches or collection listings, 2 file-resource lists and 1 resource record",
+ "endpoints": [
+  "/photos/?q=...&fo=json&c=5&at=results,pagination",
+  "/search/?q=...&fo=json&c=3&at=results (with fa=original-format:photo,+print,+drawing it answers 302 to /photos/)",
+  "/collections/photochrom-prints/?q=...&fo=json&c=6&at=results",
+  "/collections/detroit-publishing-company/?q=...&fo=json&c=6&at=results",
+  "/collections/panoramic-photographs/?q=...&fo=json&c=5&at=results",
+  "/collections/stereograph-cards/?q=...&fo=json&c=3&at=results",
+  "/collections/historic-american-buildings-landscapes-and-engineering-records/?q=...&fo=json&c=3&at=results",
+  "/maps/?q=...&fo=json&c=3&at=results",
+  "/item/{id}/?fo=json&at=item and at=resources",
+  "/resource/{id}/?fo=json&at=resource"
+ ],
+ "scenario_steps": 56,
+ "scenario_actions": 55,
+ "transactions": 29,
+ "statuses": {
+  "200": 28,
+  "302": 1
+ },
+ "replaces": "nasa-images (NASA Image and Video Library): its capture and manifest worked (25 transactions, 16 tools) but the retrieval-task generator found 0 candidates because every NASA record field sits three levels deep (collection.items[].data[]) and the generator reads two"
+}

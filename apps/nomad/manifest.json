@@ -1,0 +1,1978 @@
+{
+ "evidence_id": "ev_12982eae5eeb6c118ce31026d3377f17232a0b872b74ef36620d7c418752688d",
+ "subject": {
+  "name": "nomad.scoped.har",
+  "digest": {
+   "sha256": "61df40951c6ee1872176416df0d5b0a6c2f8eaea91230c7f01b16ea47343df83"
+  },
+  "local_path": "/home/ubuntu/capture/nomad/nomad.scoped.har",
+  "format": "file",
+  "architecture": null
+ },
+ "provider": {
+  "id": "rea-analysis-view",
+  "name": "REA analysis view projection",
+  "version": "1"
+ },
+ "analysis_profile": null,
+ "predicate_type": "rea.analysis-view",
+ "operation": "inspect_analysis_view",
+ "parameters": {
+  "parent_evidence_id": "ev_09880f9a941052d3335d98097843a3ad3774778266aabd85fbe9093de61b6ad1",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "raw_result": null,
+ "normalized_result": {
+  "parent_evidence_id": "ev_09880f9a941052d3335d98097843a3ad3774778266aabd85fbe9093de61b6ad1",
+  "parent_operation": "inspect_web_network_capture",
+  "parent_digest": "09880f9a941052d3335d98097843a3ad3774778266aabd85fbe9093de61b6ad1",
+  "view_digest": "3c59407080b71952530f7de37e65234d114bc0708151668356a5a1f20ac95f89",
+  "artifact": {
+   "path": "/home/ubuntu/capture/nomad/nomad.scoped.har",
+   "sha256": "61df40951c6ee1872176416df0d5b0a6c2f8eaea91230c7f01b16ea47343df83"
+  },
+  "coverage": {
+   "status": "complete-within-view",
+   "examined": 39,
+   "total": 39,
+   "next_offset": null,
+   "exhausted": true
+  },
+  "limitations": [
+   "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+   "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+   "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+   "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+   "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+   "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+   "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+   "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+   "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+  ],
+  "unknowns": [
+   {
+    "kind": "authorization-model",
+    "statement": "Authorization headers and cookies are structurally excluded from captures; the manifest states no authorization model."
+   },
+   {
+    "kind": "response-semantics",
+    "statement": "Recorded statuses and bodies are retained only as pointers to parent records; the manifest states no response semantics."
+   },
+   {
+    "kind": "state-transition",
+    "statement": "Recorded exchanges are independent observations; the manifest states no ordering, side effects or state transitions between tools."
+   }
+  ],
+  "origin": "http://127.0.0.1:3304",
+  "name": "127-0-0-1-3304",
+  "tools": [
+   {
+    "name": "get_allocation_by_uuid",
+    "method": "GET",
+    "path_template": "/v1/allocation/{uuid}",
+    "api_surface_template": "/v1/allocation/{uuid}",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "13d3d4ab-9e21-aba5-a4f5-44194bf36a89",
+       "61295f3f-e2ea-c06e-3808-5a2e094b2c72",
+       "f8af374d-bd2c-81c3-9f09-24699e41b107"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     54,
+     114,
+     115,
+     116
+    ]
+   },
+   {
+    "name": "get_allocations",
+    "method": "GET",
+    "path_template": "/v1/allocations",
+    "api_surface_template": "/v1/allocations",
+    "params": [],
+    "query_parameter_names": [
+     "namespace",
+     "resources",
+     "task_states"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     78
+    ]
+   },
+   {
+    "name": "get_client_allocation_stats_by_uuid",
+    "method": "GET",
+    "path_template": "/v1/client/allocation/{uuid}/stats",
+    "api_surface_template": "/v1/client/allocation/{uuid}/stats",
+    "params": [
+     {
+      "index": 3,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "058e96e8-7bce-f1eb-6670-2a4271e0a997",
+       "13d3d4ab-9e21-aba5-a4f5-44194bf36a89",
+       "33245b70-37c4-0904-4e6c-8499071379f3",
+       "de1eee1f-6167-1250-3bde-ccf633f184c5"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     19,
+     20,
+     21,
+     23,
+     24,
+     25,
+     72,
+     73,
+     74,
+     75
+    ]
+   },
+   {
+    "name": "get_client_stats",
+    "method": "GET",
+    "path_template": "/v1/client/stats",
+    "api_surface_template": "/v1/client/stats",
+    "params": [],
+    "query_parameter_names": [
+     "node_id"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     68
+    ]
+   },
+   {
+    "name": "get_deployment_by_uuid",
+    "method": "GET",
+    "path_template": "/v1/deployment/{uuid}",
+    "api_surface_template": "/v1/deployment/{uuid}",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "35375804-e31e-0b0c-3910-f6f8086f1970"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     119
+    ]
+   },
+   {
+    "name": "get_deployments",
+    "method": "GET",
+    "path_template": "/v1/deployments",
+    "api_surface_template": "/v1/deployments",
+    "params": [],
+    "query_parameter_names": [
+     "namespace"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     118
+    ]
+   },
+   {
+    "name": "get_evaluation_by_uuid",
+    "method": "GET",
+    "path_template": "/v1/evaluation/{uuid}",
+    "api_surface_template": "/v1/evaluation/{uuid}",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "6938b792-c934-81dc-2330-c84efe1f9255"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     117
+    ]
+   },
+   {
+    "name": "get_evaluations",
+    "method": "GET",
+    "path_template": "/v1/evaluations",
+    "api_surface_template": "/v1/evaluations",
+    "params": [],
+    "query_parameter_names": [
+     "filter",
+     "namespace",
+     "next_token",
+     "per_page",
+     "reverse"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     85,
+     120
+    ]
+   },
+   {
+    "name": "get_job_blue_heron_kitchen_orders_allocations",
+    "method": "GET",
+    "path_template": "/v1/job/blue-heron-kitchen-orders/allocations",
+    "api_surface_template": "/v1/job/blue-heron-kitchen-orders/allocations",
+    "params": [],
+    "query_parameter_names": [
+     "namespace"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     13,
+     30,
+     39,
+     109
+    ]
+   },
+   {
+    "name": "get_job_blue_heron_kitchen_orders_deployment",
+    "method": "GET",
+    "path_template": "/v1/job/blue-heron-kitchen-orders/deployment",
+    "api_surface_template": "/v1/job/blue-heron-kitchen-orders/deployment",
+    "params": [],
+    "query_parameter_names": [
+     "namespace"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     17,
+     26
+    ]
+   },
+   {
+    "name": "get_job_blue_heron_kitchen_orders_deployments",
+    "method": "GET",
+    "path_template": "/v1/job/blue-heron-kitchen-orders/deployments",
+    "api_surface_template": "/v1/job/blue-heron-kitchen-orders/deployments",
+    "params": [],
+    "query_parameter_names": [
+     "namespace"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     42,
+     110
+    ]
+   },
+   {
+    "name": "get_job_blue_heron_kitchen_orders_evaluations",
+    "method": "GET",
+    "path_template": "/v1/job/blue-heron-kitchen-orders/evaluations",
+    "api_surface_template": "/v1/job/blue-heron-kitchen-orders/evaluations",
+    "params": [],
+    "query_parameter_names": [
+     "namespace"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     14,
+     31,
+     40
+    ]
+   },
+   {
+    "name": "get_job_blue_heron_kitchen_orders_summary",
+    "method": "GET",
+    "path_template": "/v1/job/blue-heron-kitchen-orders/summary",
+    "api_surface_template": "/v1/job/blue-heron-kitchen-orders/summary",
+    "params": [],
+    "query_parameter_names": [
+     "namespace"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     16,
+     111
+    ]
+   },
+   {
+    "name": "get_job_blue_heron_kitchen_orders_versions",
+    "method": "GET",
+    "path_template": "/v1/job/blue-heron-kitchen-orders/versions",
+    "api_surface_template": "/v1/job/blue-heron-kitchen-orders/versions",
+    "params": [],
+    "query_parameter_names": [
+     "diffs",
+     "namespace"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     33,
+     34,
+     35,
+     43,
+     108
+    ]
+   },
+   {
+    "name": "get_job_copperfield_annex_ledger_sync_allocations",
+    "method": "GET",
+    "path_template": "/v1/job/copperfield-annex-ledger-sync/allocations",
+    "api_surface_template": "/v1/job/copperfield-annex-ledger-sync/allocations",
+    "params": [],
+    "query_parameter_names": [
+     "namespace"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     6
+    ]
+   },
+   {
+    "name": "get_job_granite_ledger_seaward_remeasure_allocations",
+    "method": "GET",
+    "path_template": "/v1/job/granite-ledger-seaward-remeasure/allocations",
+    "api_surface_template": "/v1/job/granite-ledger-seaward-remeasure/allocations",
+    "params": [],
+    "query_parameter_names": [
+     "namespace"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     8
+    ]
+   },
+   {
+    "name": "get_job_granite_ledger_stone_count_allocations",
+    "method": "GET",
+    "path_template": "/v1/job/granite-ledger-stone-count/allocations",
+    "api_surface_template": "/v1/job/granite-ledger-stone-count/allocations",
+    "params": [],
+    "query_parameter_names": [
+     "namespace"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     47
+    ]
+   },
+   {
+    "name": "get_job_granite_ledger_stone_count_evaluations",
+    "method": "GET",
+    "path_template": "/v1/job/granite-ledger-stone-count/evaluations",
+    "api_surface_template": "/v1/job/granite-ledger-stone-count/evaluations",
+    "params": [],
+    "query_parameter_names": [
+     "namespace"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     48,
+     112
+    ]
+   },
+   {
+    "name": "delete_job_rea_scratch_tide_probe",
+    "method": "DELETE",
+    "path_template": "/v1/job/rea-scratch-tide-probe",
+    "api_surface_template": "/v1/job/rea-scratch-tide-probe",
+    "params": [],
+    "query_parameter_names": [
+     "namespace",
+     "purge"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     128
+    ]
+   },
+   {
+    "name": "post_job_rea_scratch_tide_probe",
+    "method": "POST",
+    "path_template": "/v1/job/rea-scratch-tide-probe",
+    "api_surface_template": "/v1/job/rea-scratch-tide-probe",
+    "params": [],
+    "query_parameter_names": [
+     "namespace"
+    ],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "Job": "object"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     126
+    ]
+   },
+   {
+    "name": "get_job_rea_scratch_tide_probe_versions",
+    "method": "GET",
+    "path_template": "/v1/job/rea-scratch-tide-probe/versions",
+    "api_surface_template": "/v1/job/rea-scratch-tide-probe/versions",
+    "params": [],
+    "query_parameter_names": [
+     "namespace"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     127
+    ]
+   },
+   {
+    "name": "get_job_saltmarsh_depot_cold_store_allocations",
+    "method": "GET",
+    "path_template": "/v1/job/saltmarsh-depot-cold-store/allocations",
+    "api_surface_template": "/v1/job/saltmarsh-depot-cold-store/allocations",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     7
+    ]
+   },
+   {
+    "name": "get_job_saltmarsh_depot_cold_store_evaluations",
+    "method": "GET",
+    "path_template": "/v1/job/saltmarsh-depot-cold-store/evaluations",
+    "api_surface_template": "/v1/job/saltmarsh-depot-cold-store/evaluations",
+    "params": [],
+    "query_parameter_names": [
+     "namespace"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     113
+    ]
+   },
+   {
+    "name": "get_job_by_job_id",
+    "method": "GET",
+    "path_template": "/v1/job/{job_id}",
+    "api_surface_template": "/v1/job/blue-heron-kitchen-orders",
+    "params": [
+     {
+      "index": 2,
+      "name": "job_id",
+      "rule": "sibling-variance",
+      "basis": "inferred",
+      "observed_values": [
+       "blue-heron-kitchen-orders",
+       "copperfield-annex-ledger-sync",
+       "copperfield-annex-ledger-sync%2Fdispatch-1792369765-531d2d7b",
+       "granite-ledger-seaward-remeasure",
+       "granite-ledger-stone-count",
+       "lighthouse-rota-night-watch",
+       "rea-scratch-tide-probe",
+       "saltmarsh-depot-cold-store"
+      ]
+     }
+    ],
+    "query_parameter_names": [
+     "namespace"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200,
+     404
+    ],
+    "content_types": [
+     "application/json",
+     "text/plain"
+    ],
+    "record_ordinals": [
+     12,
+     29,
+     38,
+     46,
+     55,
+     69,
+     70,
+     71,
+     101,
+     102,
+     103,
+     104,
+     105,
+     106,
+     107,
+     125,
+     129
+    ]
+   },
+   {
+    "name": "get_jobs",
+    "method": "GET",
+    "path_template": "/v1/jobs",
+    "api_surface_template": "/v1/jobs",
+    "params": [],
+    "query_parameter_names": [
+     "filter",
+     "namespace",
+     "prefix"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     100,
+     121,
+     122,
+     130
+    ]
+   },
+   {
+    "name": "post_jobs",
+    "method": "POST",
+    "path_template": "/v1/jobs",
+    "api_surface_template": "/v1/jobs",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "Job": "object"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     124
+    ]
+   },
+   {
+    "name": "get_jobs_statuses",
+    "method": "GET",
+    "path_template": "/v1/jobs/statuses",
+    "api_surface_template": "/v1/jobs/statuses",
+    "params": [],
+    "query_parameter_names": [
+     "filter",
+     "namespace",
+     "per_page"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     2
+    ]
+   },
+   {
+    "name": "post_jobs_statuses",
+    "method": "POST",
+    "path_template": "/v1/jobs/statuses",
+    "api_surface_template": "/v1/jobs/statuses",
+    "params": [],
+    "query_parameter_names": [
+     "namespace"
+    ],
+    "body_shape": {
+     "type": "object",
+     "properties": {
+      "jobs": "array",
+      "namespace": "string"
+     }
+    },
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     5
+    ]
+   },
+   {
+    "name": "get_namespace_granite_ledger",
+    "method": "GET",
+    "path_template": "/v1/namespace/granite-ledger",
+    "api_surface_template": "/v1/namespace/granite-ledger",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     94
+    ]
+   },
+   {
+    "name": "get_namespace_lighthouse_rota",
+    "method": "GET",
+    "path_template": "/v1/namespace/lighthouse-rota",
+    "api_surface_template": "/v1/namespace/lighthouse-rota",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     93
+    ]
+   },
+   {
+    "name": "get",
+    "method": "GET",
+    "path_template": "/v1/namespaces",
+    "api_surface_template": "/v1/namespaces",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     3,
+     9,
+     15,
+     18,
+     32,
+     41,
+     49,
+     53,
+     81,
+     84,
+     92
+    ]
+   },
+   {
+    "name": "get_node_pool_saltmarsh_depot",
+    "method": "GET",
+    "path_template": "/v1/node/pool/saltmarsh-depot",
+    "api_surface_template": "/v1/node/pool/saltmarsh-depot",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     96
+    ]
+   },
+   {
+    "name": "get_node_pool_saltmarsh_depot_jobs",
+    "method": "GET",
+    "path_template": "/v1/node/pool/saltmarsh-depot/jobs",
+    "api_surface_template": "/v1/node/pool/saltmarsh-depot/jobs",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     97
+    ]
+   },
+   {
+    "name": "get_node_pools",
+    "method": "GET",
+    "path_template": "/v1/node/pools",
+    "api_surface_template": "/v1/node/pools",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     4,
+     60,
+     65,
+     80,
+     95
+    ]
+   },
+   {
+    "name": "get_node_by_uuid",
+    "method": "GET",
+    "path_template": "/v1/node/{uuid}",
+    "api_surface_template": "/v1/node/{uuid}",
+    "params": [
+     {
+      "index": 2,
+      "name": "uuid",
+      "rule": "uuid",
+      "basis": "inferred",
+      "observed_values": [
+       "976166e0-7b01-9d55-5a52-14f3b53d1ec9"
+      ]
+     }
+    ],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     22,
+     50,
+     56,
+     61,
+     66,
+     67,
+     99
+    ]
+   },
+   {
+    "name": "get_nodes",
+    "method": "GET",
+    "path_template": "/v1/nodes",
+    "api_surface_template": "/v1/nodes",
+    "params": [],
+    "query_parameter_names": [
+     "resources"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     59,
+     64,
+     79,
+     89,
+     98
+    ]
+   },
+   {
+    "name": "get_regions",
+    "method": "GET",
+    "path_template": "/v1/regions",
+    "api_surface_template": "/v1/regions",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     0,
+     10,
+     27,
+     36,
+     44,
+     51,
+     57,
+     62,
+     76,
+     82,
+     86,
+     91
+    ]
+   },
+   {
+    "name": "post_search_fuzzy",
+    "method": "POST",
+    "path_template": "/v1/search/fuzzy",
+    "api_surface_template": "/v1/search/fuzzy",
+    "params": [],
+    "query_parameter_names": [],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     1,
+     11,
+     28,
+     37,
+     45,
+     52,
+     58,
+     63,
+     77,
+     83,
+     87,
+     123
+    ]
+   },
+   {
+    "name": "get_status_leader",
+    "method": "GET",
+    "path_template": "/v1/status/leader",
+    "api_surface_template": "/v1/status/leader",
+    "params": [],
+    "query_parameter_names": [
+     "region"
+    ],
+    "body_shape": null,
+    "statuses": [
+     200
+    ],
+    "content_types": [
+     "application/json"
+    ],
+    "record_ordinals": [
+     88,
+     90
+    ]
+   }
+  ],
+  "records": [
+   {
+    "ordinal": 0,
+    "method": "GET",
+    "path": "/v1/regions",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 1,
+    "method": "POST",
+    "path": "/v1/search/fuzzy",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 2,
+    "method": "GET",
+    "path": "/v1/jobs/statuses",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 3,
+    "method": "GET",
+    "path": "/v1/namespaces",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 4,
+    "method": "GET",
+    "path": "/v1/node/pools",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 5,
+    "method": "POST",
+    "path": "/v1/jobs/statuses",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 6,
+    "method": "GET",
+    "path": "/v1/job/copperfield-annex-ledger-sync/allocations",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 7,
+    "method": "GET",
+    "path": "/v1/job/saltmarsh-depot-cold-store/allocations",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 8,
+    "method": "GET",
+    "path": "/v1/job/granite-ledger-seaward-remeasure/allocations",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 9,
+    "method": "GET",
+    "path": "/v1/namespaces",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 10,
+    "method": "GET",
+    "path": "/v1/regions",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 11,
+    "method": "POST",
+    "path": "/v1/search/fuzzy",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 12,
+    "method": "GET",
+    "path": "/v1/job/blue-heron-kitchen-orders",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 13,
+    "method": "GET",
+    "path": "/v1/job/blue-heron-kitchen-orders/allocations",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 14,
+    "method": "GET",
+    "path": "/v1/job/blue-heron-kitchen-orders/evaluations",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 15,
+    "method": "GET",
+    "path": "/v1/namespaces",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 16,
+    "method": "GET",
+    "path": "/v1/job/blue-heron-kitchen-orders/summary",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 17,
+    "method": "GET",
+    "path": "/v1/job/blue-heron-kitchen-orders/deployment",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 18,
+    "method": "GET",
+    "path": "/v1/namespaces",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 19,
+    "method": "GET",
+    "path": "/v1/client/allocation/058e96e8-7bce-f1eb-6670-2a4271e0a997/stats",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 20,
+    "method": "GET",
+    "path": "/v1/client/allocation/de1eee1f-6167-1250-3bde-ccf633f184c5/stats",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 21,
+    "method": "GET",
+    "path": "/v1/client/allocation/33245b70-37c4-0904-4e6c-8499071379f3/stats",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 22,
+    "method": "GET",
+    "path": "/v1/node/976166e0-7b01-9d55-5a52-14f3b53d1ec9",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 23,
+    "method": "GET",
+    "path": "/v1/client/allocation/058e96e8-7bce-f1eb-6670-2a4271e0a997/stats",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 24,
+    "method": "GET",
+    "path": "/v1/client/allocation/de1eee1f-6167-1250-3bde-ccf633f184c5/stats",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 25,
+    "method": "GET",
+    "path": "/v1/client/allocation/33245b70-37c4-0904-4e6c-8499071379f3/stats",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 26,
+    "method": "GET",
+    "path": "/v1/job/blue-heron-kitchen-orders/deployment",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 27,
+    "method": "GET",
+    "path": "/v1/regions",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 28,
+    "method": "POST",
+    "path": "/v1/search/fuzzy",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 29,
+    "method": "GET",
+    "path": "/v1/job/blue-heron-kitchen-orders",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 30,
+    "method": "GET",
+    "path": "/v1/job/blue-heron-kitchen-orders/allocations",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 31,
+    "method": "GET",
+    "path": "/v1/job/blue-heron-kitchen-orders/evaluations",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 32,
+    "method": "GET",
+    "path": "/v1/namespaces",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 33,
+    "method": "GET",
+    "path": "/v1/job/blue-heron-kitchen-orders/versions",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 34,
+    "method": "GET",
+    "path": "/v1/job/blue-heron-kitchen-orders/versions",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 35,
+    "method": "GET",
+    "path": "/v1/job/blue-heron-kitchen-orders/versions",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 36,
+    "method": "GET",
+    "path": "/v1/regions",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 37,
+    "method": "POST",
+    "path": "/v1/search/fuzzy",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 38,
+    "method": "GET",
+    "path": "/v1/job/blue-heron-kitchen-orders",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 39,
+    "method": "GET",
+    "path": "/v1/job/blue-heron-kitchen-orders/allocations",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 40,
+    "method": "GET",
+    "path": "/v1/job/blue-heron-kitchen-orders/evaluations",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 41,
+    "method": "GET",
+    "path": "/v1/namespaces",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 42,
+    "method": "GET",
+    "path": "/v1/job/blue-heron-kitchen-orders/deployments",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 43,
+    "method": "GET",
+    "path": "/v1/job/blue-heron-kitchen-orders/versions",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 44,
+    "method": "GET",
+    "path": "/v1/regions",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 45,
+    "method": "POST",
+    "path": "/v1/search/fuzzy",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 46,
+    "method": "GET",
+    "path": "/v1/job/granite-ledger-stone-count",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 47,
+    "method": "GET",
+    "path": "/v1/job/granite-ledger-stone-count/allocations",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 48,
+    "method": "GET",
+    "path": "/v1/job/granite-ledger-stone-count/evaluations",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 49,
+    "method": "GET",
+    "path": "/v1/namespaces",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 50,
+    "method": "GET",
+    "path": "/v1/node/976166e0-7b01-9d55-5a52-14f3b53d1ec9",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 51,
+    "method": "GET",
+    "path": "/v1/regions",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 52,
+    "method": "POST",
+    "path": "/v1/search/fuzzy",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 53,
+    "method": "GET",
+    "path": "/v1/namespaces",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 54,
+    "method": "GET",
+    "path": "/v1/allocation/f8af374d-bd2c-81c3-9f09-24699e41b107",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 55,
+    "method": "GET",
+    "path": "/v1/job/granite-ledger-stone-count",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 56,
+    "method": "GET",
+    "path": "/v1/node/976166e0-7b01-9d55-5a52-14f3b53d1ec9",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 57,
+    "method": "GET",
+    "path": "/v1/regions",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 58,
+    "method": "POST",
+    "path": "/v1/search/fuzzy",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 59,
+    "method": "GET",
+    "path": "/v1/nodes",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 60,
+    "method": "GET",
+    "path": "/v1/node/pools",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 61,
+    "method": "GET",
+    "path": "/v1/node/976166e0-7b01-9d55-5a52-14f3b53d1ec9",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 62,
+    "method": "GET",
+    "path": "/v1/regions",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 63,
+    "method": "POST",
+    "path": "/v1/search/fuzzy",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 64,
+    "method": "GET",
+    "path": "/v1/nodes",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 65,
+    "method": "GET",
+    "path": "/v1/node/pools",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 66,
+    "method": "GET",
+    "path": "/v1/node/976166e0-7b01-9d55-5a52-14f3b53d1ec9",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 67,
+    "method": "GET",
+    "path": "/v1/node/976166e0-7b01-9d55-5a52-14f3b53d1ec9",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 68,
+    "method": "GET",
+    "path": "/v1/client/stats",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 69,
+    "method": "GET",
+    "path": "/v1/job/blue-heron-kitchen-orders",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 70,
+    "method": "GET",
+    "path": "/v1/job/copperfield-annex-ledger-sync%2Fdispatch-1792369765-531d2d7b",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 71,
+    "method": "GET",
+    "path": "/v1/job/lighthouse-rota-night-watch",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 72,
+    "method": "GET",
+    "path": "/v1/client/allocation/13d3d4ab-9e21-aba5-a4f5-44194bf36a89/stats",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 73,
+    "method": "GET",
+    "path": "/v1/client/allocation/058e96e8-7bce-f1eb-6670-2a4271e0a997/stats",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 74,
+    "method": "GET",
+    "path": "/v1/client/allocation/de1eee1f-6167-1250-3bde-ccf633f184c5/stats",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 75,
+    "method": "GET",
+    "path": "/v1/client/allocation/33245b70-37c4-0904-4e6c-8499071379f3/stats",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 76,
+    "method": "GET",
+    "path": "/v1/regions",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 77,
+    "method": "POST",
+    "path": "/v1/search/fuzzy",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 78,
+    "method": "GET",
+    "path": "/v1/allocations",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 79,
+    "method": "GET",
+    "path": "/v1/nodes",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 80,
+    "method": "GET",
+    "path": "/v1/node/pools",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 81,
+    "method": "GET",
+    "path": "/v1/namespaces",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 82,
+    "method": "GET",
+    "path": "/v1/regions",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 83,
+    "method": "POST",
+    "path": "/v1/search/fuzzy",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 84,
+    "method": "GET",
+    "path": "/v1/namespaces",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 85,
+    "method": "GET",
+    "path": "/v1/evaluations",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 86,
+    "method": "GET",
+    "path": "/v1/regions",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 87,
+    "method": "POST",
+    "path": "/v1/search/fuzzy",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 88,
+    "method": "GET",
+    "path": "/v1/status/leader",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 89,
+    "method": "GET",
+    "path": "/v1/nodes",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 90,
+    "method": "GET",
+    "path": "/v1/status/leader",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 91,
+    "method": "GET",
+    "path": "/v1/regions",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 92,
+    "method": "GET",
+    "path": "/v1/namespaces",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 93,
+    "method": "GET",
+    "path": "/v1/namespace/lighthouse-rota",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 94,
+    "method": "GET",
+    "path": "/v1/namespace/granite-ledger",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 95,
+    "method": "GET",
+    "path": "/v1/node/pools",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 96,
+    "method": "GET",
+    "path": "/v1/node/pool/saltmarsh-depot",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 97,
+    "method": "GET",
+    "path": "/v1/node/pool/saltmarsh-depot/jobs",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 98,
+    "method": "GET",
+    "path": "/v1/nodes",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 99,
+    "method": "GET",
+    "path": "/v1/node/976166e0-7b01-9d55-5a52-14f3b53d1ec9",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 100,
+    "method": "GET",
+    "path": "/v1/jobs",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 101,
+    "method": "GET",
+    "path": "/v1/job/blue-heron-kitchen-orders",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 102,
+    "method": "GET",
+    "path": "/v1/job/lighthouse-rota-night-watch",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 103,
+    "method": "GET",
+    "path": "/v1/job/granite-ledger-stone-count",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 104,
+    "method": "GET",
+    "path": "/v1/job/granite-ledger-seaward-remeasure",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 105,
+    "method": "GET",
+    "path": "/v1/job/saltmarsh-depot-cold-store",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 106,
+    "method": "GET",
+    "path": "/v1/job/copperfield-annex-ledger-sync",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 107,
+    "method": "GET",
+    "path": "/v1/job/copperfield-annex-ledger-sync%2Fdispatch-1792369765-531d2d7b",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 108,
+    "method": "GET",
+    "path": "/v1/job/blue-heron-kitchen-orders/versions",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 109,
+    "method": "GET",
+    "path": "/v1/job/blue-heron-kitchen-orders/allocations",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 110,
+    "method": "GET",
+    "path": "/v1/job/blue-heron-kitchen-orders/deployments",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 111,
+    "method": "GET",
+    "path": "/v1/job/blue-heron-kitchen-orders/summary",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 112,
+    "method": "GET",
+    "path": "/v1/job/granite-ledger-stone-count/evaluations",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 113,
+    "method": "GET",
+    "path": "/v1/job/saltmarsh-depot-cold-store/evaluations",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 114,
+    "method": "GET",
+    "path": "/v1/allocation/f8af374d-bd2c-81c3-9f09-24699e41b107",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 115,
+    "method": "GET",
+    "path": "/v1/allocation/13d3d4ab-9e21-aba5-a4f5-44194bf36a89",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 116,
+    "method": "GET",
+    "path": "/v1/allocation/61295f3f-e2ea-c06e-3808-5a2e094b2c72",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 117,
+    "method": "GET",
+    "path": "/v1/evaluation/6938b792-c934-81dc-2330-c84efe1f9255",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 118,
+    "method": "GET",
+    "path": "/v1/deployments",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 119,
+    "method": "GET",
+    "path": "/v1/deployment/35375804-e31e-0b0c-3910-f6f8086f1970",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 120,
+    "method": "GET",
+    "path": "/v1/evaluations",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 121,
+    "method": "GET",
+    "path": "/v1/jobs",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 122,
+    "method": "GET",
+    "path": "/v1/jobs",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 123,
+    "method": "POST",
+    "path": "/v1/search/fuzzy",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 124,
+    "method": "POST",
+    "path": "/v1/jobs",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 125,
+    "method": "GET",
+    "path": "/v1/job/rea-scratch-tide-probe",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 126,
+    "method": "POST",
+    "path": "/v1/job/rea-scratch-tide-probe",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 127,
+    "method": "GET",
+    "path": "/v1/job/rea-scratch-tide-probe/versions",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 128,
+    "method": "DELETE",
+    "path": "/v1/job/rea-scratch-tide-probe",
+    "status": 200,
+    "content_type": "application/json"
+   },
+   {
+    "ordinal": 129,
+    "method": "GET",
+    "path": "/v1/job/rea-scratch-tide-probe",
+    "status": 404,
+    "content_type": "text/plain"
+   },
+   {
+    "ordinal": 130,
+    "method": "GET",
+    "path": "/v1/jobs",
+    "status": 200,
+    "content_type": "application/json"
+   }
+  ],
+  "excluded": [],
+  "templated_groups": 6,
+  "kind": "environment-manifest",
+  "view": {
+   "kind": "environment-manifest",
+   "template_rules": [
+    "after-uid-literal",
+    "opaque-token",
+    "sibling-variance"
+   ],
+   "include_query_parameter_names": true
+  }
+ },
+ "confidence": "inferred",
+ "authority": "historical-reference",
+ "environment": null,
+ "limitations": [
+  "A 32 MiB input, 96 MiB reply and 64-level nesting budget bound complete evidence. HAR/SAZ/qlog use a 192 MiB Node old-generation heap; mitmproxy decoding uses a 768 MiB Linux address-space limit. Each owned command has a 30-second deadline with independent cleanup.",
+  "Body shapes list top-level JSON key types from one recorded request each; they do not establish required fields or a complete schema.",
+  "Every record is decoded before selection; no partial success is returned on malformed input or a resource limit.",
+  "HAR text is producer-decoded Unicode. Original body bytes remain unknown unless content explicitly uses valid base64; declared sizes are preserved independently of retained bytes. mitmproxy 12.2.3 SaveHar may report null optional postData.text; that null is retained and omitted only from the upstream validation copy.",
+  "Known authentication headers/cookies and explicitly marked literal values are excluded. Unknown extension names do not establish sensitivity.",
+  "Observed query parameter names do not establish required parameters, value types or a complete API schema.",
+  "Opt-in template rules after-uid-literal, opaque-token, sibling-variance merge recorded literals by shape; merged parameters may conflate distinct resources.",
+  "This is retained producer evidence, without live browser transaction IDs, scenario provenance, execution attribution or deployment authenticity. Recorded URLs are never fetched.",
+  "Tool templates, parameters and names are inferences from recorded request lines; they do not establish handler identity, URL-space schemas or causality."
+ ],
+ "relationship_coverage": null,
+ "locations": [
+  {
+   "kind": "artifact-path",
+   "path": "/home/ubuntu/capture/nomad/nomad.scoped.har"
+  }
+ ],
+ "evidence_links": [
+  "ev_09880f9a941052d3335d98097843a3ad3774778266aabd85fbe9093de61b6ad1"
+ ]
+}
