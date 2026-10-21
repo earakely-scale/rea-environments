@@ -1,11 +1,13 @@
 // Drive the showcase Directus Data Studio with Chromium via playwright-core and record a HAR with bodies.
 // Login through /admin/login (the Data Studio uses session mode: an httpOnly session cookie, no token in page storage),
-// visit the main modules, then a scripted read/write/read sequence through fetch from inside the page against the REST
-// API at the root. JSON filters are sent percent-encoded so every recorded URL is a valid RFC 3986 URI.
+// visit the main modules, then a scripted read sequence through fetch from inside the page against the REST API at the
+// root, then writes on two scratch provisions, each read back at once (record_writes.mjs). JSON filters are sent
+// percent-encoded so every recorded URL is a valid RFC 3986 URI.
 import { chromium } from 'playwright-core';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import { recordWrites } from '../record_writes.mjs'; // shipped to ~/capture/ next to scope_har.py
 
 const BASE = process.env.BASE_URL || 'http://127.0.0.1:3223';
 const DIR = process.env.CAPTURE_DIR || path.join(os.homedir(), 'capture', 'directus');
@@ -71,9 +73,9 @@ const nav = async (href, ms = 1500) => {
   }
   await settle(ms);
 };
+// No provision row is opened: the item page's `fields=title` read answers without the id, which leaves REA unable to tell
+// what identifies a provision.
 await nav('/admin/content/provisions');
-const row = page.locator('tbody tr').nth(1);
-if (await row.count()) { await row.click(); await page.waitForURL(/\/admin\/content\/provisions\/\d+/, { timeout: 15000 }).catch(() => {}); await settle(1500); log(`opened ${new URL(page.url()).pathname}`); }
 await nav('/admin/users');
 await nav('/admin/files');
 await nav('/admin/insights');
@@ -112,16 +114,14 @@ await api('GET', `/dashboards/${ids.dashboards['Depot Overview']}`);
 await api('GET', `/panels/${ids.panels['Provisions on hand']}`);
 await api('GET', `/flows/${ids.flows['Announce new provisions']}`);
 await api('GET', `/comments/${ids.comments['night watch swap']}`);
-// write path on a scratch provision: create, edit, re-read, delete, re-read, count
-const created = await api('POST', '/items/provisions', { title: 'Rea Scratch Provision', category: 'Food', quantity: 1, unit: 'crate',
-  storage_bay: 'Bay Z9', supplier_note: 'Written during the capture.' });
-const sid = created?.data?.id;
-if (sid) {
-  await api('PATCH', `/items/provisions/${sid}`, { quantity: 2, supplier_note: 'Edited during the capture.' });
-  await api('GET', `/items/provisions/${sid}`);
-  await api('DELETE', `/items/provisions/${sid}`);
-  await api('GET', `/items/provisions/${sid}`);
-}
+// --- writes on two scratch provisions (Directus answers a missing item with 403, not 404) ---
+await recordWrites(api, {
+  collection: '/items/provisions', list: '/items/provisions?fields=*&sort=id', item: (id) => `/items/provisions/${id}`,
+  id: (c) => c?.data?.id,
+  create: (n) => ({ title: `Rea Scratch Provision ${n}`, category: 'Food', quantity: n, unit: 'crate', storage_bay: `Bay Z${n}`,
+    supplier_note: `Scratch provision ${n} written during the capture.` }),
+  update: (n) => ({ quantity: n + 10, supplier_note: `Scratch provision ${n} edited during the capture.` }),
+});
 await api('GET', `/items/provisions?aggregate=${enc({ count: '*' })}`);
 await settle(500);
 await context.close(); // flushes the HAR

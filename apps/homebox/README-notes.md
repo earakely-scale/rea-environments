@@ -95,3 +95,7 @@ After review, the shared task generator was tightened: an answer must be a disti
 - eval `openai/gpt-oss-120b:groq`: 10/10.
 - eval `zai-org/GLM-5.3-Flash:zai-org`: 10/10.
 - card and dry publish: 20 episodes, dataset 6.7 MB.
+
+## v0.2.0 capture
+
+Re-recorded on a fresh instance seeded by the same script, with the steps above unless stated: 101 scoped records, scoped HAR sha256 `c3002e43…`, 339,993 bytes; capture `ev_44a3e4e3…`. The write block records two scratch items with `record_writes.mjs`, updated by full-replace PUT. Scoping also drops the web app's own `/api/v1/users/self/settings` calls (`--drop-regex` gains `|/users/self/settings`): the settings PUT on first load sits between reads that return the same tags in another order, which left every entity tool recorded. `max_occurrences` is 22 because the read-backs repeat seeded values. 26 tools; the delete is served.

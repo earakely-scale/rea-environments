@@ -103,3 +103,7 @@ After review, the shared task generator was tightened: an answer must be a disti
 - eval `openai/gpt-oss-120b:groq`: 12/12.
 - eval `zai-org/GLM-5.3-Flash:zai-org`: 12/12.
 - card and dry publish: 24 episodes, dataset 6.7 MB.
+
+## v0.2.0 capture
+
+Re-recorded on a fresh instance seeded by the same script, with the steps above unless stated: 96 scoped records (GET 81, PATCH 11, POST 2, DELETE 2), scoped HAR sha256 `b72f2c44…`, 234,020 bytes; capture `ev_c5b6fd36…`. The write block records two scratch provisions with `record_writes.mjs`. The Data Studio no longer opens a provision row: its `fields=title` read returns the item without its id, which kept provisions from being a state type. 40 tools; the provisions create and update are served.

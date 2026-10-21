@@ -11,5 +11,6 @@
   "port": 3203,
   "keep_regex": "^/api/",
   "domain": "self-hosted bookmark manager",
-  "exclude_tools": "download|health$|version$"
+  "exclude_tools": "download|health$|version$",
+  "max_occurrences": 30
 }

@@ -109,3 +109,7 @@ After review, the shared task generator was tightened: an answer must be a disti
 - eval `openai/gpt-oss-120b:groq`: 12/12.
 - eval `zai-org/GLM-5.3-Flash:zai-org`: 12/12.
 - card and dry publish: 24 episodes, dataset 6.7 MB.
+
+## v0.2.0 capture
+
+Re-recorded on a fresh instance seeded by the same script, with the steps above unless stated: 86 scoped records (GET 80, POST 2, PUT 2, DELETE 2), scoped HAR sha256 `b509866b…`, 250,108 bytes; capture `ev_e695392f…`. The write block records two scratch playlists with `record_writes.mjs`: each created, updated by PUT and deleted, every write read back at once. 25 tools; the delete is served, the create and update are not (new playlists omit `imageAbsent`, which every seeded read carried).
