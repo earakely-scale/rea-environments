@@ -4,8 +4,8 @@
 Usage: scope_har.py IN.har OUT.har --origin http://127.0.0.1:PORT [--keep-regex REGEX] [--drop-regex REGEX] [--max-body BYTES] [--max-records N]
 Keeps entries on the origin whose path matches --keep-regex (default: ^/api/|^/apis/|^/ghost/api/) and whose content type is
 JSON-like, drops anything matching --drop-regex (default: login|logout|signup|password|session|token|oauth|csrf), scrubs
-secret-looking JSON fields in request and response bodies (password/secret/token/apikey/api_key/authorization/cookie) to
-"<scrubbed>", keeps only
+string values of secret-looking JSON fields in request and response bodies (password/secret/token/apikey/api_key/
+authorization/cookie) to "<scrubbed>" (booleans and numbers such as allowPasswordLogin or tokenTime are kept), keeps only
 content-type/accept headers and no cookies, drops entries whose response body exceeds --max-body, and keeps at most
 --max-records entries (the largest bodies go first). Prints a JSON summary to stderr."""
 import argparse, json, re, sys
@@ -16,7 +16,7 @@ JSONISH = re.compile(r"application/(json|[a-z.+-]*\+json)|text/plain|text/markdo
 
 def scrub(obj):
     if isinstance(obj, dict):
-        return {k: ("<scrubbed>" if SECRET_KEYS.search(k) and isinstance(v, (str, int, float)) else scrub(v)) for k, v in obj.items()}
+        return {k: ("<scrubbed>" if SECRET_KEYS.search(k) and isinstance(v, str) else scrub(v)) for k, v in obj.items()}
     if isinstance(obj, list):
         return [scrub(x) for x in obj]
     return obj

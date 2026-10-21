@@ -11,7 +11,7 @@ the Evidence it came from, and nothing executes {{APP_NAME}}. Tasks are graded d
 
 - **{{TOOL_COUNT}} tools** ({{TOOLS_BY_METHOD}}) over {{SCOPED_RECORDS}} recorded exchanges on `{{ORIGIN}}`; {{EXCLUDED_TEXT}}.
 - **Path parameters**: {{PARAMS_BY_RULE}}. REA's four format rules (numeric, uuid, hex, iso-date) applied unconditionally;
-  the three opt-in rules (`after-uid-literal`, `opaque-token`, `sibling-variance`) were requested and are labelled per
+  the four opt-in rules (`after-uid-literal`, `opaque-token`, `sibling-variance`, `prefix-variance`) were requested and are labelled per
   parameter. With the four format rules alone the manifest has {{TOOL_COUNT_NORULES}} tools.
 - **Unknowns** the manifest states explicitly: authorization model, response semantics beyond recorded exchanges, state
   transitions between tools.

@@ -66,7 +66,7 @@ h = wait_ready(); log(f"shlink {h.get('version')} ready at {BASE}")
 KEY = api_key()
 
 # Remove what an interrupted capture or probe may have left: scratch short URLs and the orphan "scratch" tag.
-for code in ("rea-scratch", "rea-probe"):
+for code in ("rea-scratch", "rea-scratch-1", "rea-scratch-2", "rea-probe"):
     if api("GET", f"/rest/v3/short-urls/{code}", ok=(404,))[0] is not None:
         api("DELETE", f"/rest/v3/short-urls/{code}"); log(f"removed leftover {code}")
 if "scratch" in api("GET", "/rest/v3/tags")[0]["tags"]["data"]:

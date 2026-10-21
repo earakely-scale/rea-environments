@@ -24,16 +24,18 @@ playwright-core 1.58.2, Chromium at the path provisioning reported, python3. Nev
    "Rui Castellanos". Do not name any proprietary delivery format or internal infrastructure.
 3. capture.mjs (playwright-core, channel-less `chromium.launch({ executablePath })`, `recordHar: {content: "embed", mode: "full"}`):
    log in through the UI, visit the main pages, then run a scripted sequence from inside the page with `fetch` against the
-   app's own JSON API: list collections, read each seeded object by id, 1-2 searches with query parameters, one create, one
-   update, one delete of a scratch object, and re-reads. Keep the API record count between 60 and 140 and avoid endpoints with
-   huge bodies (plugin catalogs, asset bundles). Print the HAR path.
+   app's own JSON API: list collections, read each seeded object by id, 1-2 searches with query parameters, then the writes
+   (see "Recording writes" below). Keep the API record count between 60 and 160 (each write target adds about 19) and avoid
+   endpoints with huge bodies (plugin catalogs, asset bundles). Print the HAR path.
 4. Scope and scrub with ~/capture/scope_har.py (shipped from showcase/tools/scope_har.py): `--origin http://127.0.0.1:<port>`;
    add `--keep-regex` for the app's API prefix (Ghost: ^/ghost/api/; Mattermost: ^/api/v4/; Gitea: ^/api/v1/; NocoDB: ^/api/;
-   Grafana: ^/api/|^/apis/). Check the summary: kept 60-140, methods include GET and at least one POST/PUT/PATCH/DELETE.
+   Grafana: ^/api/|^/apis/). Check the summary: kept 60-160 with no `over-max` drops (raise `--max-records`, default 150, if
+   it dropped the largest reads), methods include GET and at least one POST/PUT/PATCH/DELETE.
+   Only string values are scrubbed; booleans and numbers under secret-looking names (`allowPasswordLogin`) are kept.
    Then grep the scoped HAR for the admin password and any `hf_`/`ghp_`/`Bearer ` tokens: zero hits required.
 5. rea: `rea inspect-web-network-capture /abs/<app>.scoped.har har --format json > <app>.capture.json` then
    `rea inspect-analysis-view req.json --format json > <app>.manifest.json` where req.json is
-   {"source":{"kind":"inline","evidence":<capture.json>},"view":{"kind":"environment-manifest","template_rules":["after-uid-literal","opaque-token","sibling-variance"]}}.
+   {"source":{"kind":"inline","evidence":<capture.json>},"view":{"kind":"environment-manifest","template_rules":["after-uid-literal","opaque-token","sibling-variance","prefix-variance"]}}.
    If the view returns resource_constraint, lower --max-records / --max-body and redo from step 4. Also run the view WITHOUT
    template_rules and save <app>.manifest.norules.json for the card's comparison.
 6. summary.json: tools (count, by method), params by rule, query names count, excluded groups by reason, unknowns, confidence,
@@ -41,6 +43,18 @@ playwright-core 1.58.2, Chromium at the path provisioning reported, python3. Nev
    digest, app version string from its API.
 7. `docker compose -p <project> down -v`; remove the HAR with bodies that was NOT scoped (keep only the scoped one), remove .admin.
 8. scp back to the laptop: showcase/apps/<app>/{compose.yml,seed.*,capture.mjs,<app>.scoped.har,<app>.capture.json,<app>.manifest.json,<app>.manifest.norules.json,summary.json,README-notes.md}.
+
+## Recording writes
+Record each write target with `tools/record_writes.mjs` (ship it to ~/capture/ next to scope_har.py), through the script's
+own `api` helper. REA can only serve a write the capture shows the effect of, so the recording follows these rules:
+- **Read back every write at once**: the object and the list, before the next write. REA models a write tool from its
+  first call, so a create followed by an edit with no read in between leaves the tool unconfirmed.
+- **Two scratch objects per target**: create both, update both, delete both. With one object the update and delete
+  paths keep its id literally (`patch_recipes_rea_scratch_recipe`) instead of becoming templates.
+- **Vary every free-text member by object with a number** (`Rea scratch recipe 1`, `2`): unique fields that repeat fail the
+  second create, and path segments that differ only in letters (`…-one`, `…-two`) stay separate literal tools.
+- **Run the application's prerequisites**: an action it requires before a write (n8n archives a workflow before deleting
+  it) goes in `beforeDelete`; the read after a delete records the 404.
 
 ## Hard rules
 - Everything is synthetic; no real names, emails of real people, or external services. Apps bind to loopback only.

@@ -23,7 +23,7 @@ HOME = Path.home(); CAP = HOME / "capture"; SC = HOME / "showcase"; WORK = SC / 
 AE = str(SC / ".venv/bin/agent-env"); PY = str(SC / ".venv/bin/python")
 TARBALL = SC / "rea-agents.tgz"
 MODELS = ["openai/gpt-oss-120b:groq", "zai-org/GLM-5.3-Flash:zai-org"]
-RULES = ["after-uid-literal", "opaque-token", "sibling-variance"]
+RULES = ["after-uid-literal", "opaque-token", "sibling-variance", "prefix-variance"]
 COLLECTION = "earakely-scale/rea-environments-on-agentenv-6ad48fc54339527205162f82"
 DB = HOME / ".local/state/agent-env/document_store/local.db"
 SECRET_SHAPES = re.compile(r"hf_[A-Za-z0-9]{20,}|sk-[A-Za-z0-9_-]{16,}|ghp_[A-Za-z0-9]{20,}|xox[bp]-[A-Za-z0-9-]{10,}|Bearer [A-Za-z0-9._~+/-]{20,}")

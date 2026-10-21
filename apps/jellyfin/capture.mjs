@@ -1,12 +1,14 @@
 // Drive the showcase Jellyfin web client with Chromium via playwright-core and record a HAR with bodies.
 // Login through the web client's manual login form, visit the main views (hash routes, so the client loads once), then a
-// scripted read/write/read sequence through fetch from inside the page. The web client keeps its access token in
+// scripted read sequence and writes on two scratch playlists, each read back at once (record_writes.mjs), through fetch
+// from inside the page. The web client keeps its access token in
 // localStorage (jellyfin_credentials), not in a cookie, so the scripted calls read it there and send it in the
 // Authorization header, which the scoping tool strips from the HAR.
 import { chromium } from 'playwright-core';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import { recordWrites } from '../record_writes.mjs'; // shipped to ~/capture/ next to scope_har.py
 
 const BASE = process.env.BASE_URL || 'http://127.0.0.1:3224';
 const DIR = process.env.CAPTURE_DIR || path.join(os.homedir(), 'capture', 'jellyfin');
@@ -100,17 +102,32 @@ await api('GET', `/Items/Counts?userId=${uid}`);
 await api('GET', `/Search/Hints?userId=${uid}&searchTerm=Granite&limit=10`);
 await api('GET', `/Items?userId=${uid}&recursive=true&searchTerm=Kelp&includeItemTypes=Audio`);
 await api('GET', `/Items?userId=${uid}&recursive=true&isFavorite=true&includeItemTypes=Audio`);
-// write path on a scratch playlist: create, add an item, edit its metadata, favourite, re-read, delete, re-read
-const created = await api('POST', '/Playlists', { Name: 'Rea Scratch Playlist', Ids: [T['Granite Ledger']], UserId: uid, MediaType: 'Audio' });
-const sid = created?.Id;
-if (sid) {
-  await api('POST', `/Playlists/${sid}/Items?ids=${T['Copperfield Annex Shuffle']}&userId=${uid}`);
-  const dto = await api('GET', `/Items/${sid}?userId=${uid}`);
-  if (dto) await api('POST', `/Items/${sid}`, { ...dto, Overview: 'Scratch playlist written during the capture.' });
-  await api('POST', `/UserFavoriteItems/${sid}?userId=${uid}`);
-  await api('GET', `/Playlists/${sid}/Items?userId=${uid}`);
-  await api('DELETE', `/Items/${sid}`);
-  await api('GET', `/Items/${sid}?userId=${uid}`);
+// --- writes on scratch playlists: create two, edit both, delete both, every write read back (item and playlist list) ---
+const item = (id) => `/Items/${id}?userId=${uid}`;
+const playlists = `/Items?userId=${uid}&recursive=true&includeItemTypes=Playlist`;
+const readBack = async (id) => { await api('GET', item(id)); await api('GET', playlists); };
+const scratch = await recordWrites(api, {
+  collection: '/Playlists', list: playlists, item, id: (p) => p?.Id,
+  create: (n) => ({ Name: `Rea Scratch Playlist ${n}`, Ids: [T['Granite Ledger']], UserId: uid, MediaType: 'Audio' }),
+  remove: false,
+});
+// The web client's metadata editor posts the whole item back with its changes.
+for (const [i, id] of scratch.entries()) {
+  const dto = await api('GET', item(id));
+  if (dto) await api('POST', `/Items/${id}`, { ...dto, Overview: `Scratch playlist ${i + 1} written during the capture.` });
+  await readBack(id);
+}
+for (const id of scratch) { await api('DELETE', `/Items/${id}`); await readBack(id); }
+// adding an item and favouriting, on a third scratch playlist after the modelled writes, so their effect leaves those
+// writes' evidence intact
+const third = await api('POST', '/Playlists', { Name: 'Rea Scratch Playlist 3', Ids: [T['Granite Ledger']], UserId: uid, MediaType: 'Audio' });
+if (third?.Id) {
+  await readBack(third.Id);
+  await api('POST', `/Playlists/${third.Id}/Items?ids=${T['Copperfield Annex Shuffle']}&userId=${uid}`);
+  await api('GET', `/Playlists/${third.Id}/Items?userId=${uid}`);
+  await api('POST', `/UserFavoriteItems/${third.Id}?userId=${uid}`);
+  await readBack(third.Id);
+  await api('DELETE', `/Items/${third.Id}`); await readBack(third.Id);
 }
 await api('GET', `/Items?userId=${uid}&recursive=true&includeItemTypes=Playlist`);
 await settle(500);

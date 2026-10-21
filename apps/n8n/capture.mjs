@@ -8,6 +8,7 @@ import { chromium } from 'playwright-core';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import { recordWrites } from '../record_writes.mjs'; // shipped to ~/capture/ next to scope_har.py
 
 const BASE = process.env.BASE_URL || 'http://127.0.0.1:3218';
 const DIR = process.env.CAPTURE_DIR || path.join(os.homedir(), 'capture', 'n8n');
@@ -107,25 +108,16 @@ for (const id of Object.values(D)) {
 }
 await api('GET', `projects/${P}/data-tables/${D['Lamp Oil Drops']}/rows?${q({ skip: '0', take: '20', filter: { type: 'and', filters: [{ columnName: 'barge', condition: 'eq', value: 'Ember Compass' }] } })}`);
 await api('GET', 'credentials');
-// write path: a scratch tag (create, rename, list, delete, list) and a scratch workflow (create, rename, read, archive, delete, re-read)
-const tag = await api('POST', 'tags', { name: 'Rea scratch tag' });
-if (tag?.data?.id) {
-  await api('PATCH', `tags/${tag.data.id}`, { name: 'Rea scratch tag (edited)' });
-  await api('GET', 'tags');
-  await api('DELETE', `tags/${tag.data.id}`);
-  await api('GET', 'tags');
-}
-const wf = await api('POST', 'workflows', { name: 'Rea scratch workflow', active: false, connections: {}, settings: { executionOrder: 'v1' },
-  nodes: [{ parameters: {}, name: 'Start scratch', type: 'n8n-nodes-base.manualTrigger', typeVersion: 1, position: [0, 0] }] });
-if (wf?.data?.id) {
-  const upd = await api('PATCH', `workflows/${wf.data.id}`, { name: 'Rea scratch workflow (edited)', versionId: wf.data.versionId });
-  log(`scratch workflow renamed -> ${upd?.data?.name}`);
-  await api('GET', `workflows/${wf.data.id}`);
-  await api('POST', `workflows/${wf.data.id}/archive`, {});
-  await api('DELETE', `workflows/${wf.data.id}`);
-  await api('GET', `workflows/${wf.data.id}`);
-}
-await api('GET', `workflows?${q({ includeScopes: 'true', sortBy: 'name:asc', skip: '0', take: '50' })}`);
+// writes on two scratch workflows, each archived before its delete. Tags are not written: rea does not model them, and tag
+// writes in the same capture leave the workflow writes unmodelled too.
+await recordWrites(api, {
+  collection: 'workflows', list: `workflows?${q({ includeScopes: 'true', sortBy: 'name:asc', skip: '0', take: '50' })}`,
+  item: (id) => `workflows/${id}`, id: (w) => w?.data?.id,
+  create: (n) => ({ name: `Rea scratch workflow ${n}`, active: false, connections: {}, settings: { executionOrder: 'v1' },
+    nodes: [{ parameters: {}, name: 'Start scratch', type: 'n8n-nodes-base.manualTrigger', typeVersion: 1, position: [0, 0] }] }),
+  update: (n, created) => ({ name: `Rea scratch workflow ${n} (edited)`, versionId: created.data.versionId }),
+  beforeDelete: (id) => [['POST', `workflows/${id}/archive`, {}]],
+});
 await settle(500);
 await context.close(); // flushes the HAR
 if (browser) await browser.close();

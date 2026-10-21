@@ -12,5 +12,5 @@
   "keep_regex": "^/api/v1/",
   "domain": "home inventory and asset tracking",
   "exclude_tools": "status|currencies|settings|api_keys|members|groups_all|fields$|fields_values",
-  "max_occurrences": 16
+  "max_occurrences": 22
 }

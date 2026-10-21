@@ -1,12 +1,14 @@
 // Drive the showcase linkding with Chromium via playwright-core and record a HAR with bodies.
 // Login through the Django login form, then a scripted read sequence through fetch from inside the page against /api/
 // (DRF session authentication: the sessionid cookie is carried automatically, unsafe methods send X-CSRFToken from the
-// ld_csrftoken cookie), the main UI pages, and a write sequence on scratch objects. linkding's own UI is server-rendered and
-// does not call /api/, so the API traffic in this capture is the scripted sequence.
+// ld_csrftoken cookie), the main UI pages, then writes on two scratch bookmarks, tags and bundles, each read back at once
+// (record_writes.mjs). linkding's own UI is server-rendered and does not call /api/, so the API traffic in this capture is the
+// scripted sequence.
 import { chromium } from 'playwright-core';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import { recordWrites } from '../record_writes.mjs'; // shipped to ~/capture/ next to scope_har.py
 
 const BASE = process.env.BASE_URL || 'http://127.0.0.1:3203';
 const DIR = process.env.CAPTURE_DIR || path.join(os.homedir(), 'capture', 'linkding');
@@ -92,26 +94,39 @@ await api('GET', '/api/tags/?limit=2&offset=6');
 // --- main UI pages (server-rendered) ---
 for (const p of ['/bookmarks', '/bookmarks?q=%23granite-ledger', '/bookmarks/archived', '/tags', '/bundles', '/settings']) await visit(p, 800);
 
-// --- write path on scratch objects ---
-const sb = await api('POST', '/api/bookmarks/?disable_scraping&disable_html_snapshot', {
-  url: 'https://scratch.example.test/rea-capture', title: 'Rea scratch bookmark', description: 'Scratch bookmark written during the capture.',
-  notes: '', tag_names: ['night-shift'], unread: true, shared: false,
+// --- writes on scratch objects ---
+const bookmark = (id) => `/api/bookmarks/${id}/`;
+const readBookmark = async (id) => { await api('GET', bookmark(id)); await api('GET', '/api/bookmarks/'); };
+const scratch = (n, title, more = {}) => ({ url: `https://scratch.example.test/rea-capture-${n}`, title: `Rea scratch bookmark ${n}${title}`,
+  description: `Scratch bookmark ${n} written during the capture.`, notes: '', tag_names: ['night-shift'], ...more });
+const created = await recordWrites(api, {
+  collection: '/api/bookmarks/?disable_scraping&disable_html_snapshot', list: '/api/bookmarks/', item: bookmark, id: (b) => b?.id,
+  create: (n) => scratch(n, '', { unread: true, shared: false }),
+  update: (n) => ({ title: `Rea scratch bookmark ${n} (edited)`, unread: false }),
+  remove: false,
 });
-if (sb?.id) {
-  await api('PATCH', `/api/bookmarks/${sb.id}/`, { title: 'Rea scratch bookmark (edited)', unread: false });
-  await api('POST', `/api/bookmarks/${sb.id}/archive/`);
-  await api('GET', `/api/bookmarks/${sb.id}/`);
-  await api('POST', `/api/bookmarks/${sb.id}/unarchive/`);
-  await api('PUT', `/api/bookmarks/${sb.id}/`, { url: 'https://scratch.example.test/rea-capture', title: 'Rea scratch bookmark (replaced)', description: 'Replaced scratch bookmark.', notes: 'Scratch note.', tag_names: ['night-shift'] });
-  await api('DELETE', `/api/bookmarks/${sb.id}/`);
-  await api('GET', `/api/bookmarks/${sb.id}/`);
+for (const [i, id] of created.entries()) {
+  await api('PUT', bookmark(id), scratch(i + 1, ' (replaced)', { description: `Replaced scratch bookmark ${i + 1}.`, notes: `Scratch note ${i + 1}.` }));
+  await readBookmark(id);
 }
-const st = await api('POST', '/api/tags/', { name: 'rea-scratch-tag' });
-if (st?.id) { await api('GET', `/api/tags/${st.id}/`); await api('DELETE', `/api/tags/${st.id}/`); }
-const sbu = await api('POST', '/api/bundles/', { name: 'Rea scratch bundle', search: 'scratch', any_tags: '', all_tags: '', excluded_tags: '' });
-if (sbu?.id) { await api('PATCH', `/api/bundles/${sbu.id}/`, { name: 'Rea scratch bundle (edited)' }); await api('DELETE', `/api/bundles/${sbu.id}/`); }
-await api('GET', '/api/bookmarks/');
-await api('GET', '/api/bundles/');
+for (const id of created) { await api('DELETE', bookmark(id)); await readBookmark(id); }
+// archive and unarchive on a third scratch bookmark, after the modelled writes, so their effect leaves those writes' evidence intact
+const third = await api('POST', '/api/bookmarks/?disable_scraping&disable_html_snapshot', scratch(3, '', { unread: true, shared: false }));
+if (third?.id) {
+  await readBookmark(third.id);
+  await api('POST', `${bookmark(third.id)}archive/`); await readBookmark(third.id); await api('GET', '/api/bookmarks/archived/');
+  await api('POST', `${bookmark(third.id)}unarchive/`); await readBookmark(third.id);
+  await api('DELETE', bookmark(third.id)); await readBookmark(third.id);
+}
+await recordWrites(api, {
+  collection: '/api/tags/', list: '/api/tags/', item: (id) => `/api/tags/${id}/`, id: (t) => t?.id,
+  create: (n) => ({ name: `rea-scratch-tag-${n}` }),
+});
+await recordWrites(api, {
+  collection: '/api/bundles/', list: '/api/bundles/', item: (id) => `/api/bundles/${id}/`, id: (b) => b?.id,
+  create: (n) => ({ name: `Rea scratch bundle ${n}`, search: `scratch-${n}`, any_tags: '', all_tags: '', excluded_tags: '' }),
+  update: (n) => ({ name: `Rea scratch bundle ${n} (edited)` }),
+});
 await settle(300);
 await context.close();
 if (browser) await browser.close();

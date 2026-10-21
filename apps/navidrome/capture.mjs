@@ -1,6 +1,7 @@
 // Drive the showcase Navidrome web app with Chromium via playwright-core and record a HAR with bodies.
-// Login through the web UI, visit the main views (hash routes, so the app does not reload), then a scripted
-// read/write/read sequence against the native API /api through fetch from inside the page. The web app keeps its JWT in
+// Login through the web UI, visit the main views (hash routes, so the app does not reload), then a scripted read
+// sequence and writes on two scratch playlists, each read back at once (record_writes.mjs), against the native API /api
+// through fetch from inside the page. The web app keeps its JWT in
 // localStorage and sends it as x-nd-authorization; the script reads it in the page and does the same (request headers are
 // stripped by scope_har.py). The Subsonic API under /rest carries password-derived tokens in its query string and is
 // kept out of the scope.
@@ -8,6 +9,7 @@ import { chromium } from 'playwright-core';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import { recordWrites } from '../record_writes.mjs'; // shipped to ~/capture/ next to scope_har.py
 
 const BASE = process.env.BASE_URL || 'http://127.0.0.1:3233';
 const DIR = process.env.CAPTURE_DIR || path.join(os.homedir(), 'capture', 'navidrome');
@@ -89,15 +91,13 @@ await api('GET', `/api/user/${ids.admin}`);
 await api('GET', '/api/library');
 for (const id of Object.values(ids.libraries)) await api('GET', `/api/library/${id}`);
 
-// write path on a scratch playlist: create, update, re-read, delete, re-read
-const created = await api('POST', '/api/playlist', { name: 'Rea scratch playlist', comment: 'Scratch playlist written during the capture.', public: false });
-if (created?.id) {
-  await api('PUT', `/api/playlist/${created.id}`, { id: created.id, name: 'Rea scratch playlist (edited)', comment: 'Edited scratch playlist.', public: false });
-  await api('GET', `/api/playlist/${created.id}`);
-  await api('DELETE', `/api/playlist/${created.id}`);
-  await api('GET', `/api/playlist/${created.id}`);
-}
-await api('GET', '/api/playlist?_start=0&_end=10');
+// --- writes on two scratch playlists (POST answers {"id": ...}; PUT sends the whole playlist) ---
+await recordWrites(api, {
+  collection: '/api/playlist', list: '/api/playlist?_start=0&_end=10', item: (id) => `/api/playlist/${id}`, id: (p) => p?.id,
+  create: (n) => ({ name: `Rea scratch playlist ${n}`, comment: `Scratch playlist ${n} written during the capture.`, public: false }),
+  update: (n, created) => ({ id: created.id, name: `Rea scratch playlist ${n} (edited)`, comment: `Edited scratch playlist ${n}.`, public: false }),
+  updateMethod: 'PUT',
+});
 await settle(500);
 await context.close(); // flushes the HAR
 if (browser) await browser.close();

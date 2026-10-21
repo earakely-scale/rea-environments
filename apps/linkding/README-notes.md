@@ -77,3 +77,7 @@ After review, the shared task generator was tightened: an answer must be a disti
 - eval `openai/gpt-oss-120b:groq`: 11/12 (misses: `qa-11-get_bookmarks`: the model provider rejected a malformed tool call the model generated (HTTP 400), so the episode ended without an answer).
 - eval `zai-org/GLM-5.3-Flash:zai-org`: 12/12.
 - card and dry publish: 24 episodes, dataset 6.5 MB.
+
+## v0.2.0 capture
+
+Re-recorded on a fresh instance seeded by the same script, with the steps above unless stated: 118 scoped records, scoped HAR sha256 `194d6af3…`, 211,079 bytes; capture `ev_3dccc827…`. Two scratch bookmarks are created, patched, replaced by PUT and deleted, two tags created and deleted, two bundles created, patched and deleted, every write read back at once; archive and unarchive run on a third scratch bookmark after the modelled writes. `max_occurrences` is 30 because the read-backs repeat seeded values. 23 tools; seven write tools are served.

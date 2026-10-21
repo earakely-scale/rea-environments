@@ -1,10 +1,12 @@
 // Drive the showcase Komga web UI with Chromium via playwright-core and record a HAR with bodies.
 // Login through the UI (/login: the UI sends basic auth once to /api/v2/users/me and then rides the session cookie),
-// a scripted read sequence through fetch from inside the page, the main UI pages, then a write sequence on scratch objects.
+// a scripted read sequence through fetch from inside the page, the main UI pages, then writes on two scratch collections and
+// two scratch read lists, each write read back at once (record_writes.mjs).
 import { chromium } from 'playwright-core';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import { recordWrites } from '../record_writes.mjs'; // shipped to ~/capture/ next to scope_har.py
 
 const BASE = process.env.BASE_URL || 'http://127.0.0.1:3231';
 const DIR = process.env.CAPTURE_DIR || path.join(os.homedir(), 'capture', 'komga');
@@ -96,17 +98,18 @@ await api('GET', '/api/v1/books/ondeck');
 for (const p of ['/dashboard', `/libraries/${L}/series`, `/series/${S['lighthouse-rota']}`, `/book/${B['granite-ledger-01']}`,
   `/collections/${C['night-shift-reading']}`, `/readlists/${R['granite-ledger-audit-order']}`]) await visit(p, 2000);
 
-// --- write path on scratch objects ---
-const sc = await api('POST', '/api/v1/collections', { name: 'Rea scratch collection', ordered: false, seriesIds: [S['blue-heron-kitchen']] });
-if (sc?.id) {
-  await api('PATCH', `/api/v1/collections/${sc.id}`, { name: 'Rea scratch collection (edited)', ordered: true });
-  await api('GET', `/api/v1/collections/${sc.id}`);
-  await api('DELETE', `/api/v1/collections/${sc.id}`);
-  await api('GET', `/api/v1/collections/${sc.id}`);
-}
-const sr = await api('POST', '/api/v1/readlists', { name: 'Rea scratch read list', summary: 'Scratch read list written during the capture.', ordered: true, bookIds: [B['blue-heron-kitchen-01']] });
-if (sr?.id) { await api('PATCH', `/api/v1/readlists/${sr.id}`, { summary: 'Edited scratch read list.' }); await api('DELETE', `/api/v1/readlists/${sr.id}`); }
-await api('GET', '/api/v1/collections');
+// --- writes on scratch objects ---
+await recordWrites(api, {
+  collection: '/api/v1/collections', list: '/api/v1/collections', item: (id) => `/api/v1/collections/${id}`, id: (c) => c?.id,
+  create: (n) => ({ name: `Rea scratch collection ${n}`, ordered: false, seriesIds: [S['blue-heron-kitchen']] }),
+  update: (n) => ({ name: `Rea scratch collection ${n} (edited)`, ordered: true }),
+});
+await recordWrites(api, {
+  collection: '/api/v1/readlists', list: '/api/v1/readlists', item: (id) => `/api/v1/readlists/${id}`, id: (r) => r?.id,
+  create: (n) => ({ name: `Rea scratch read list ${n}`, summary: `Scratch read list ${n} written during the capture.`, ordered: true,
+    bookIds: [B['blue-heron-kitchen-01']] }),
+  update: (n) => ({ summary: `Edited scratch read list ${n}.` }),
+});
 await settle(500);
 await context.close();
 if (browser) await browser.close();
