@@ -114,3 +114,7 @@ After review, the shared task generator was tightened: an answer must be a disti
 - eval `openai/gpt-oss-120b:groq`: 12/12.
 - eval `zai-org/GLM-5.3-Flash:zai-org`: 12/12.
 - card and dry publish: 24 episodes, dataset 6.7 MB.
+
+## v0.2.0 capture
+
+Re-recorded on a fresh instance seeded by the same script, with the steps above unless stated: 96 scoped records (GET 85, POST 8, DELETE 3), scoped HAR sha256 `9424597c…`, 246,920 bytes; capture `ev_6f1c993c…`. The write block records two scratch playlists with `record_writes.mjs`: each created, its metadata edited and deleted, every write read back by item and in the playlist list. A third playlist then takes the add-item and favourite calls, so their effects stay out of the first two's evidence. 38 tools; no write is served: playlists are created through `/Playlists` but read back only through `/Items`, so the new playlists never become state and the create, edit and delete have no state target.

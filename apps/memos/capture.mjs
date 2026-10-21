@@ -4,11 +4,13 @@
 // application/proto), which is not JSON, so the scripted sequence uses the same services through their JSON REST mapping
 // under /api/v1. The UI keeps its short-lived access token in localStorage (`memos_access_token`, the refresh token is
 // an HttpOnly cookie); the script reads it in the page and sends it as `Authorization: Bearer ...`. Headers are stripped
-// by scoping.
+// by scoping. The writes create, edit and delete two scratch memos, each read back at once by name and in the memo list
+// (record_writes.mjs).
 import { chromium } from 'playwright-core';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import { recordWrites } from '../record_writes.mjs'; // shipped to ~/capture/ next to scope_har.py
 
 const BASE = process.env.BASE_URL || 'http://127.0.0.1:3205';
 const DIR = process.env.CAPTURE_DIR || path.join(os.homedir(), 'capture', 'memos');
@@ -86,16 +88,21 @@ await api('GET', '/api/v1/users/rea-admin/settings');
 await api('GET', '/api/v1/users/rea-admin/settings/GENERAL');
 await api('GET', '/api/v1/instance/stats');
 await api('GET', '/api/v1/users/rea-admin/notifications');
-// write path on a scratch memo: create, edit, re-read, delete, re-read, list again
-const created = await api('POST', '/api/v1/memos', { content: '#scratch Rea scratch memo written during the capture.', visibility: 'PRIVATE' });
-if (created?.name) {
-  const upd = await api('PATCH', `/api/v1/${created.name}?updateMask=content`, { name: created.name, content: '#scratch Rea scratch memo (edited).' });
-  log(`scratch memo edited -> ${upd?.content}`);
-  await api('GET', `/api/v1/${created.name}`);
-  await api('DELETE', `/api/v1/${created.name}`);
-  await api('GET', `/api/v1/${created.name}`);
+// --- writes on two scratch memos ---
+const memo = (name) => `/api/v1/${name}`;
+const MEMO_LIST = '/api/v1/memos?pageSize=20';
+const readMemo = async (name) => { await api('GET', memo(name)); await api('GET', MEMO_LIST); };
+const scratch = await recordWrites(api, {
+  collection: '/api/v1/memos', list: MEMO_LIST, item: memo, id: (m) => m?.name,
+  create: (n) => ({ content: `#scratch Rea scratch memo ${n} written during the capture.`, visibility: 'PRIVATE' }),
+  remove: false,
+});
+// an update names the field it changes in updateMask, which the helper's update path cannot carry
+for (const [i, name] of scratch.entries()) {
+  await api('PATCH', `${memo(name)}?updateMask=content`, { name, content: `#scratch Rea scratch memo ${i + 1} (edited).` });
+  await readMemo(name);
 }
-await api('GET', '/api/v1/memos?pageSize=20');
+for (const name of scratch) { await api('DELETE', memo(name)); await readMemo(name); }
 await settle(500);
 await context.close(); // flushes the HAR
 await browser.close();

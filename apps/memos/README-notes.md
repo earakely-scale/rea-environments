@@ -112,3 +112,7 @@ After review, the shared task generator was tightened: an answer must be a disti
 - eval `openai/gpt-oss-120b:groq`: 12/12.
 - eval `zai-org/GLM-5.3-Flash:zai-org`: 12/12.
 - card and dry publish: 24 episodes, dataset 6.5 MB.
+
+## v0.2.0 capture
+
+Re-recorded on a fresh instance seeded by the same script, with the steps above unless stated: 80 scoped records (GET 74, POST 2, PATCH 2, DELETE 2), scoped HAR sha256 `82239f71…`, 176,934 bytes; capture `ev_9a022f8f…`. The write block records two scratch memos with `record_writes.mjs`: each created, edited by PATCH with `updateMask=content` and deleted, every write read back by name and in the memo list. 26 tools, with the update and delete now templated on the memo id; no write is served: Memos names a memo `memos/<id>` while its paths carry only `<id>`, so the memo type's identity is never proven.
