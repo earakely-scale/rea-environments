@@ -7,6 +7,7 @@ import { chromium } from 'playwright-core';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import { recordWrites } from '../record_writes.mjs'; // shipped to ~/capture/ next to scope_har.py
 
 const BASE = process.env.BASE_URL || 'http://127.0.0.1:3206';
 const DIR = process.env.CAPTURE_DIR || path.join(os.homedir(), 'capture', 'shlink');
@@ -76,16 +77,14 @@ await api('GET', `/rest/v3/visits/non-orphan?startDate=${encodeURIComponent('202
 await api('GET', '/rest/v3/visits/orphan');
 await api('GET', '/rest/v3/visits/orphan?type=invalid_short_url');
 await api('GET', '/rest/v3/mercure-info');
-// write path on a scratch short URL: create, edit, re-read, delete, re-read, list again
-const created = await api('POST', '/rest/v3/short-urls', { longUrl: 'https://lighthouse-rota.example.test/scratch', customSlug: 'rea-scratch', title: 'Rea scratch link', tags: ['scratch'] });
-if (created?.shortCode) {
-  const upd = await api('PATCH', `/rest/v3/short-urls/${created.shortCode}`, { title: 'Rea scratch link (edited)', tags: ['scratch', 'lighthouse-rota'] });
-  log(`scratch link edited -> ${upd?.title}`);
-  await api('GET', `/rest/v3/short-urls/${created.shortCode}`);
-  await api('DELETE', `/rest/v3/short-urls/${created.shortCode}`);
-  await api('GET', `/rest/v3/short-urls/${created.shortCode}`);
-}
-await api('GET', '/rest/v3/short-urls?orderBy=title-ASC');
+// writes on two scratch short URLs, each with its own custom slug
+await recordWrites(api, {
+  collection: '/rest/v3/short-urls', list: '/rest/v3/short-urls?orderBy=title-ASC', item: (code) => `/rest/v3/short-urls/${code}`,
+  id: (s) => s?.shortCode,
+  create: (n) => ({ longUrl: `https://lighthouse-rota.example.test/scratch-${n}`, customSlug: `rea-scratch-${n}`,
+    title: `Rea scratch link ${n}`, tags: ['scratch'] }),
+  update: (n) => ({ title: `Rea scratch link ${n} (edited)`, tags: ['scratch', 'lighthouse-rota'] }),
+});
 await context.close(); // flushes the HAR
 await browser.close();
 log(`HAR written to ${HAR}`);

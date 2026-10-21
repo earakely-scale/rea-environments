@@ -1,12 +1,13 @@
 // Drive the showcase Mealie web UI with Chromium via playwright-core and record a HAR with bodies.
 // Login through the UI, a scripted read sequence through fetch from inside the page (first, so each tool's first record is a
-// seeded object), the main UI pages, then a scripted create/update/delete of a scratch recipe. The UI keeps its JWT in the
+// seeded object), the main UI pages, then writes on two scratch recipes, each read back at once. The UI keeps its JWT in the
 // (non-httpOnly) cookie "mealie.access_token" and sends it as a bearer header; the scripted calls read the cookie in the page
 // and do the same. Request headers and cookies are stripped by scope_har.py. Service workers are blocked (PWA).
 import { chromium } from 'playwright-core';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import { recordWrites } from '../record_writes.mjs'; // shipped to ~/capture/ next to scope_har.py
 
 const BASE = process.env.BASE_URL || 'http://127.0.0.1:3212';
 const DIR = process.env.CAPTURE_DIR || path.join(os.homedir(), 'capture', 'mealie');
@@ -87,16 +88,13 @@ for (const p of ['/g/lighthouse-rota', '/g/lighthouse-rota/r/smoked-kelp-broth',
   await visit(p, 1500);
 }
 
-// --- write path on a scratch recipe: create (POST), edit (PATCH), re-read, delete, re-read, re-list ---
-const slug = await api('POST', '/api/recipes', { name: 'Rea scratch recipe' });
-if (typeof slug === 'string') {
-  const upd = await api('PATCH', `/api/recipes/${slug}`, { description: 'Scratch recipe written during the capture.', recipeYield: '2 bowls' });
-  log(`scratch recipe edited -> ${upd?.description}`);
-  await api('GET', `/api/recipes/${slug}`);
-  await api('DELETE', `/api/recipes/${slug}`);
-  await api('GET', `/api/recipes/${slug}`);
-}
-await api('GET', '/api/recipes?page=1&perPage=20&orderBy=name&orderDirection=asc');
+// --- writes on two scratch recipes (POST answers the new recipe's slug) ---
+await recordWrites(api, {
+  collection: '/api/recipes', list: '/api/recipes?page=1&perPage=20&orderBy=name&orderDirection=asc', item: (slug) => `/api/recipes/${slug}`,
+  id: (slug) => (typeof slug === 'string' ? slug : undefined),
+  create: (n) => ({ name: `Rea scratch recipe ${n}` }),
+  update: (n) => ({ description: `Scratch recipe ${n} written during the capture.`, recipeYield: `${n + 1} bowls` }),
+});
 await settle(500);
 await context.close(); // flushes the HAR
 if (browser) await browser.close();
